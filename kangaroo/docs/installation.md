@@ -1,10 +1,6 @@
----
-sidebar_position: 1
----
-
 # Installation
 
-## Simple Instalation
+## Simple Installation
 1. Extract the zip file, and copy the content somewhere on disk.
 2. Drag&Drop the **install.mel** file into Maya Scene View
 3. You should see the new KangarooBuilder shelf already.
@@ -20,14 +16,14 @@ sidebar_position: 1
 If you just want to use the skinCluster/geometry tools or the shape editor - you are done at this point.
 
 
-## File Structure
+## File Structure for Saving Assets
 If you want to use the Builder and Puppet tools for creating assets, you'll have to first setup the file structure
 
 There are 2 important places - **assetsLocal** and **assetsServer**
 
 #### AssetsLocal
 AssetsLocal is the folder where you'll work. It can anywhere on your disk drive. Just create an empty folder, and specify that in the settings  
-![Alt text for accessibility](/img/settingAssetsLocal.jpg)
+![Alt text](images/settingAssetsLocal.jpg)
 
 #### AssetsServer
 AssetsServer can be one or more locations. And most of the time you exactly 2.

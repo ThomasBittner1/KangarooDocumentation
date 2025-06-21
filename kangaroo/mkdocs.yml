@@ -1,0 +1,5 @@
+site_name: Kangaroo-Builder
+nav:
+  - Installation: installation.md
+  - Builder & Puppet: builderAndPuppet.md
+  - Face Rig: face.md

@@ -2,15 +2,33 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Installation
 
-Let's discover **Docusaurus in less than 5 minutes**.
+## Simple Instalation
+1. Extract the zip file, and copy the content somewhere on disk.
+2. Drag&Drop the **install.mel** file into Maya Scene View
+3. You should see the new KangarooBuilder shelf already.
+4. Restart Maya
+`
 
-## Getting Started
+5. You may need do install numpy. We do that with pip install.
+In Windows it would look like this`:
+“C:\Program Files\Autodesk\Maya2024\bin\mayapy.exe” -m pip install ‐‐user numpy
+(you may need to change the path on maya version or installation location)
 
-Get started by **creating a new site**.
+If you just want to use the skinCluster/geometry tools or the shape editor - you are done at this point.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+
+## File Structure
+
+If you want to use the Builder and Puppet tools for creating assets, you'll have to first setup the file structure
+
+There are 2 important places:
+**assetsLocal**
+**assetsServer**
+
+AssetsLocal is the folder where you'll work. It can anywhere on your disk drive. Just create an empty folder, and specify that in the settings
+
 
 ### What you'll need
 

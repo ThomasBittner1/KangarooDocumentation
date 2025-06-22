@@ -18,7 +18,7 @@ mayapy.exe -m pip install ‐‐user numpy
 If you just want to use the skinCluster/geometry tools or the shape editor - you are done at this point.
 
 
-# Rig your First Character
+# Initiate your First Character
 
 First of all you need to understand that Kangaroo is not just a Rigging Tool. It's a **Rigging Pipeline** that helps you also
 increment/version your assets, and even backup and share with the team.  

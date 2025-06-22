@@ -1,5 +1,6 @@
 site_name: Kangaroo-Builder
 nav:
   - Getting Started: installation.md
-  - Builder & Puppet: builderAndPuppet.md
+  - Builder: builder.md
+  - Puppet: puppet.md
   - Face Rig: face.md

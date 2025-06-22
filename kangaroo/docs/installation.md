@@ -1,31 +1,46 @@
 # Installation
 
-## Simple Installation
 1. Extract the zip file, and copy the content somewhere on disk.
 2. Drag&Drop the **install.mel** file into Maya Scene View
 3. You should see the new KangarooBuilder shelf already.
 4. Restart Maya
 `
 
-5. You may need do install numpy. We do that with pip install.
-(you may need to change the path on maya version or installation location)`:
+If you get an error that numpy is missing, you'll have to install numpy, too.
+We do that with *pip install*.  
+Do the following thing in a CMD. You'll most likely have to  change the path on maya version or installation location)
+And if you get weird looking errors, try without the --user numpy flag
 ```bash
-“C:\Program Files\Autodesk\Maya2024\bin\mayapy.exe” -m pip install ‐‐user numpy
+cd C:\Program Files\Autodesk\Maya2024\bin 
+mayapy.exe -m pip install ‐‐user numpy
 ```
 
 If you just want to use the skinCluster/geometry tools or the shape editor - you are done at this point.
 
 
-## File Structure for Saving Assets
-If you want to use the Builder and Puppet tools for creating assets, you'll have to first setup the file structure
+# Rig your First Character
 
-There are 2 important places - **assetsLocal** and **assetsServer**
-
-#### AssetsLocal
-AssetsLocal is the folder where you'll work. It can anywhere on your disk drive. Just create an empty folder, and specify that in the settings  
+## AssetsLocal
+First we need to create the AssetsLocal folder. It's the folder where you'll work. 
+It can anywhere on your disk drive. Just create an empty folder, and specify that in the settings  
 ![Alt text](images/settingAssetsLocal.jpg)
 
-#### AssetsServer
+## AssetsServer
+To start creating characters, 99.95 % of the times you copy from an existing one and adjust.
+And we usually grab one from the server. **Templates** is a default one that comes with the tool, and has those options:
+```commandline
+BASEHUMAN
+BASEDOG (digigrade quadruped - dogs, cats, ...)
+BASEHORSE (unguligrade quadruped - horses, deers, ..) 
+BASEMOUSE (plantigrade quadruped - mouse, bears, ...)
+BASEBIRD
+BASEPROP 
+BASELEGOFIGURE
+```
+
+
+
+
 AssetsServer can be one or more locations. And most of the time you exactly 2.
 One is the template folder that comes with the installation. And the other one is a server on a shared location, such as a drive setup-ed with smart drive like Dropbox or Box.
 Or if you are working in a network, it can be a location on the network. 

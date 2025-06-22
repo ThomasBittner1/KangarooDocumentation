@@ -1,6 +1,10 @@
 site_name: Kangaroo-Builder
 nav:
+  - About: about.md
   - Getting Started: installation.md
   - Builder: builder.md
   - Puppet: puppet.md
-  - Face Rig: face.md
+  - Body: body.md
+  - Face: face.md
+  - Python: python.md
+  - FAQ: python.md

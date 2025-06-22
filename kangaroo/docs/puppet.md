@@ -58,8 +58,9 @@ it’s easier to do that in the blueprint skeleton and and build the blueprint r
 
 ## Attachers
 Attachers are all about spaces. Something like Hand IK follow the COG or the Spine. And it comes 
-with a ton of options. Like you can either have a switch or a blend. And there's an animation tool
-that lets the animators switch between the spaces (attachers) easily without changing the pose.
+with a few different options. Like you can either have a switch or a blend. Or you can choose to
+have just orientation, orientation+translation, or orientation and translation separately.
+And there's an animation tool that lets the animators switch between the spaces (attachers) easily without changing the pose.
 
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/8mK2lHDqR7c"
@@ -67,4 +68,28 @@ title="YouTube video player" frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe>
 update 0: To specify deformers/meshes for custom attachers, click the “Attach Deformers UI” 
-option on the same marking menu. And make sure you exclude deformers that are driven by this limb
+option on the same marking menu. And make sure you exclude deformers that are driven by this limb 
+![Alt text](images/puppet_deformerAttacherWindow.jpg)
+In this UI you can even specify a Vertex Id of where it should get attached. It's better to 
+leave it empty at first and let it find the closest vertex by itself. But in 1 out of 20 
+cases it doesn't find a nice vertex, then you can set one.
+Also, keep in mind that when you test build the character, it won't attach it yet, the actual attachment
+is happening later in the *puppetCustomAttachment()* function
+
+
+## Single Limbs
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/8g4ZYgOeuzg"
+title="YouTube video player" frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
+
+
+## Belt Limb
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/1BAzckDbrBE"
+title="YouTube video player" frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
+
+

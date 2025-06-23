@@ -16,7 +16,7 @@ To change the Locations, click in this order:
 2. Import BP Skeleton    
 3. Build BP Rig  
 
-You'll do thoes things a million times, so I just did a GIF for you to show it :-)
+You'll do those things a million times, so I just did a GIF for you to show it :-)
 ![Alt text](images/cleanImportBuild.gif)
 
 Basically the **BP Skeleton** is a file with simple joints. And the **BP Rig** is a small rig

@@ -7,4 +7,5 @@ nav:
   - Body: body.md
   - Face: face.md
   - Python: python.md
-  - FAQ: python.md
+  - FAQ: FAQ.md
+  - License: license.md

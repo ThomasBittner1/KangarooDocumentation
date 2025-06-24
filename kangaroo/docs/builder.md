@@ -26,6 +26,9 @@ And if not, the JSON Editor can help you. Just right click on the argument -> **
 ![Alt text](images/builder_jsoneditor.jpg)
 
 
+
+
+
 You can also create your own python functions and specify arguments and build buttons. But more to that
 in the Python section.
 For now let's check out some of the more important functions that we automatically.  

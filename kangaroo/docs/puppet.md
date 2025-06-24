@@ -10,7 +10,7 @@ Let's look at all the cool elements in the UI:
 The first table shows the **Limbs**, and below is the **Library**. You can just drag a limb from the 
 library into the Limbs. And whatever limb you have selected, you can adjust the limb attributes on the right side
 
-## Change the Guide Joint Locations
+# Change the Guide Joint Locations
 To change the Locations, click in this order:  
 1. Clean  
 2. Import BP Skeleton    
@@ -35,6 +35,8 @@ You can however move around the joint roots inbetween importing BP Skeleton and 
 Now let's look at some of the important Limbs. Below you'll see a lot of videos. 
 Keep in mind those videos are from 2022, but 95 % of those workflows is still the same today
 Just make sure to read the text here to see what changed.
+
+# The Limbs
 
 ## Spines, Cables, Tails, Straps, Pony Tails...
 We use the **Spine Limb** for all of these things. 
@@ -92,4 +94,32 @@ title="YouTube video player" frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe>
 
+
+# Bell Collider
+The **singleBone** limb comes with a Bell Collider. Bell Collider looks like dynamics but it's really just
+interactive angle calculations. It works great for short pants. 
+![Alt text](images/bellCollider.gif)  
+While it looks great in the video, it does
+come with the disadvantage that he can only handle cylinders. Those can be scaled, and translated and rotated though.
+
+It's quick to setup. Just add a singleBone limb, declare it as a bell with the **isBell** attribute, and
+define the **ringer** in the attacher below. The ringer in this case is another *singleBone* limb that is 
+located close to the bell. And the ringer itself doesn't need any extra settings. Actually it doesn't even know that 
+it's a ringer. We just named it ringer.  
+![Alt text](images/bellCollider_settings.jpg)  
+The **Bell Up Vector** is an important attribute to know about. Keep it at default (0,1,0) at first, but if it's flipping 
+strangely as you rotate the limb up 90 degrees, try setting it to (0,0,1) instead  
+The **Bell Settings** is the translate/rotate/scale/multiply attributes on the cylinders. But those are being
+set automatically when right-clicking on the limb: **Custom: Store Bell Settings**   
+![Alt text](images/bellCollider_rightClick.gif)
+
+
+
+
+# Dynamics
+These Limbs come with a Spring attribute.
+
+ * singleBone    
+ * singleTransform    
+ * spine (fk)    
 

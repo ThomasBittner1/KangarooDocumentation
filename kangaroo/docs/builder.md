@@ -20,6 +20,8 @@ whatever function you have selected.
 Looking at the function arguments, you probably just got a headache looking at some of the more complicated looking ones,
 like sPoseKeys or ddPoses in the picture above. But don't worry, a lot of them are being generated automatically using the
 build buttons.  
+
+## JSON Editor
 And if not, the JSON Editor can help you. Just right click on the argument -> **Show in JSON Editor**. And you get this cool looking UI:
 ![Alt text](images/builder_jsoneditor.jpg)
 
@@ -57,6 +59,7 @@ which can be handy in many situations.
 When you run that function, you'll see a GAMESKELETON group that you can export as an FBX. 
 You can even use the Function button *export FBX* to do that for you   
 
+
 ## *loadCtrlShapes()*
 This loads the ctrl shapes that you export in **Ctrls** -> **Export** -> **Export All Ctrls** 
 
@@ -71,6 +74,15 @@ And if you want to do stuff like Wrap Deformers or Morph, it's much cleaner to d
 python function before the loadDeformers(), and let the loadDeformers() just set the weights.  
 Easy deformers like *DeltaMush* that mainly just need weights and attribute values could can be handled 
 just in the loadDeformers() function
+
+The loadDeformers deserves a little more attention:  
+When you are loading the weights, many times you'll see the joints are just simple joints on the origin.  
+This could mean one of 2 things:  
+- when you exported, there was a joint weighted which due to new changes you did, the joint doesn't exist anymore. 
+In that case the skincluster *Move* tool can help you to move the weights to where they should be
+- Many setup functions especially in the face are happening **after** the loadDeformers() function. In those cases
+the loadDeformers() function will just create the simple joints since they don't exist yet. And then 
+the funtion later is smart enough to reconize them and put them into the proper place
 
 ## *importMayaFiles()*
 If you go to **Export** -> **MayaImp**, you can export some scene elements. Those get imported on the **mayaImport()** function
@@ -93,19 +105,38 @@ And later for the Face we'll add lots of orange functions
 You can create your own functions in Python and declare your own arguments and builder buttons. But that's another topic, shown in **Python**  
 
 
-# Tricks
+# Workflow Tricks
+
+## Hold and Pull
+**Hold** just saves a scene into the *_temp* folder of your character with a very simple name. And everytime you 
+click *Hold* again, it'll save another version and just increments the number.  
+Then when you click **Pull**, it opens whatever you saved last.  
+And with a right click on the *Pull* button you can either open an older version or Reference it. Or you can copy it to clipboard so
+you can get the path with CTRL+P
+![Alt text](images/PullScene.gif)  
+And he will delete older files automatically when you click *Push*.
+He'll basically just keep the current temp file count to a specific number. He'll actually tell you that in the log:   
+![Alt text](images/pushSceneLog.jpg)
+
 
 ## Selection Templates
-Selection Templates is the ST button on the right.  
-By default it lets you select all the functions until LoadDeformers or all the functions until before Clean.  
+Selection Templates is the **ST** button on the right.  
+By default it lets you select all the functions until *LoadDeformers()* or all the functions until *beforeClean()*.  
 And with right mouse click you can define your own selection templates.  
-The clean() functions are basically cleaning the scene.
+![Alt text](images/builder_selectionTemplate.gif)  
+If you wonder why we build until *clean()*: The clean() functions are basically cleaning the scene.
 You'll learn more about it later, but for some things like muscle joints or debugging skinCluster it's
 great to just build until before clean.
+
 
 ## Undo + Run Selected
 If you building the whole character and it just breaks at once function, you can just fix for example the python code or
 attributes, and run *Undo+Run Selected*, without having to run everything from the beginning. Basically the builder
 remembers the undo "position" before each function and then later can do lots of undos in a row until he'll get to
 wherever it was before the function.  
-Unfortunately that doesn't work whenever the function does somethign that's not undo supported such as importing something.
+Unfortunately that doesn't work whenever the function does something that's not undo supported such as importing something.
+
+
+## Filter Box for Assets
+If you are on a project with a ton of assets, you can convert the Assets Box to a Lineedit where you can search 
+for asset faster.

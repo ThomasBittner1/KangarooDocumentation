@@ -1,4 +1,3 @@
-# Builder
 
 The **Builder** is the first most important tool that you need to get familiar with for creating characters.
 
@@ -29,6 +28,8 @@ You can also create your own python functions and specify arguments and build bu
 in the Python section.
 For now let's check out some of the more important functions that we automatically.  
 
+
+# The Functions
 
 ## *importModel()* 
 
@@ -90,3 +91,21 @@ And later for the Face we'll add lots of orange functions
 
 ## Custom Functions
 You can create your own functions in Python and declare your own arguments and builder buttons. But that's another topic, shown in **Python**  
+
+
+# Tricks
+
+## Selection Templates
+Selection Templates is the ST button on the right.  
+By default it lets you select all the functions until LoadDeformers or all the functions until before Clean.  
+And with right mouse click you can define your own selection templates.  
+The clean() functions are basically cleaning the scene.
+You'll learn more about it later, but for some things like muscle joints or debugging skinCluster it's
+great to just build until before clean.
+
+## Undo + Run Selected
+If you building the whole character and it just breaks at once function, you can just fix for example the python code or
+attributes, and run *Undo+Run Selected*, without having to run everything from the beginning. Basically the builder
+remembers the undo "position" before each function and then later can do lots of undos in a row until he'll get to
+wherever it was before the function.  
+Unfortunately that doesn't work whenever the function does somethign that's not undo supported such as importing something.

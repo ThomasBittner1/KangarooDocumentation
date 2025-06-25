@@ -101,6 +101,7 @@ interactive angle calculations. It works great for short pants.
 ![Alt text](images/bellCollider.gif)  
 While it looks great in the video, it does
 come with the disadvantage that he can only handle cylinders. Those can be scaled, and translated and rotated though.
+And with some multiply attributes you can specify it to be weaker in either front, back or on the sides.
 
 It's quick to setup. Just add a singleBone limb, declare it as a bell with the **isBell** attribute, and
 define the **ringer** in the attacher below. The ringer in this case is another *singleBone* limb that is 

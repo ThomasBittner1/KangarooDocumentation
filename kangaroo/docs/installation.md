@@ -42,16 +42,15 @@ Without following those rules, Kangaroo won't recognize the folder as a project
 To start creating characters, 99.95 % of the times you copy from an existing one and adjust.
 And we usually grab one from the server. **Templates** is one server that comes with the tool, and has those options:
 
-```commandline
-BASEHUMAN
-BASEDOG (digigrade quadruped - dogs, cats, ...)
-BASEHORSE (unguligrade quadruped - horses, deers, ..) 
-BASEMOUSE (plantigrade quadruped - mouse, bears, ...)
-BASEBIRD
-BASEPROP 
-BASELEGOFIGURE
-```
-Let's go to the BASEHUMAN for example, and then in Export -> NEW, set the project and new asset name, and then click **Create** 
+- BASEHUMAN
+- BASEDOG (digigrade quadruped - dogs, cats, ...)
+- BASEHORSE (unguligrade quadruped - horses, deers, ..)
+- BASEMOUSE (plantigrade quadruped - mouse, bears, ...)
+- BASEBIRD
+- BASEPROP
+- BASELEGOFIGURE
+
+Let's go to the BASEHUMAN for example, and then in Export -> NEW, set the project and new asset name, and then click **Create**
 ![Alt text](images/newAssetGif.gif)
 By default it's doing UPPERCASE, it's recommended that you keep it this way since mixed casing can get uncomfortable in one out of 100 times.
 Just imagine two people create the same asset name but different casings ;-)
@@ -71,15 +70,16 @@ Or if you are working in a network, it can be a location on the network.
 
 If you don't have one yet, just create an empty folder again.
 And after that, open the **pathEnv.mel** file with a text editor, and change the path after default@ to be your server path.
+Important: even in Window, do not use **\\** for separating the folders, it all has to be **/**. If you
+copy/paste path in Windows, it'll do the wrong one, so you'll have to fix that
 ```bash
 putenv "KANGAROO_SERVER_PATH" "templates@./templates; default@C:/Users/thoma/Dropbox/assetsServer";
 ```
 See how there's the *template* server before? Yes, you remember it correctly, the template place where we copied character from before
 is another server!
 
-Also - the **pathEnv.mel** this is basically setting the Environment variable. 
-If you are a Pipeline TD you might say this is dirty and messy. But no, this is just a simple way to get you started.
-And if you are an independent freelancer, 
-95 % of the time this is enough. But if you want to set the Environment Variables in a different way, just comment out those lines with //, and
-create the Environment variables wherever you prefer
-There's even another file **example__Maya.env** where you can see how you would set it up in *the usual* way
+Also - the *pathEnv.mel* is basically setting the Environment variable.
+If you are a Pipeline TD you might say this is dirty and messy. But no, this is just a simple way to get you started quickly.
+If you want to set the Environment Variables in a different way, just comment out those lines with //, and
+create the Environment variables wherever you prefer. There's even another file **example__Maya.env** where you can
+see how you would set it up in *the usual* way

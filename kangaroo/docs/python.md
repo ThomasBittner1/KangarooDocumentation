@@ -18,7 +18,7 @@ Same thing happens on Errors in the Kangaroo Log - those are links you can just 
 # Simple way of adding function
 The simplest way to add a function is just in the character script. Basically the python file that is 
 inside your version folder.  
-It's the file that is shown in *white*
+It's the file that is shown in *white*, and it's usually the same name ass your asset.
 
 In there add a function that looks like this:
 ```python
@@ -49,7 +49,7 @@ the attribute in the builder, he'll log the sentence with the new number ;-)
 
 
 ## Scene Selection
-Getting the scene selection into the attributes is fast, on any attribute that is declared with an empty list,
+Getting the scene selection into the attributes is quick. On any attribute that is declared with an empty list,
 you can do the right click -> **Scene Selection** option  
 ![Alt text](images/python_selectedObjects.gif)
 
@@ -62,13 +62,12 @@ Let's add a button. Change the above code to this.
 def buttonFunction():
     print ('a button was clicked')
 
-
 @builderTools.addToBuild(iOrder=16, dButtons={'new button':buttonFunction})
 def simpleFunction(iLuckyNumber=20, sObjects=[]):
     print ('Hello, your lucky number is %d' % iLuckyNumber)
     print ('And the objects are: %s' % sObjects)
 ```
-AFter clicking the reload button, you'll get this button:
+After clicking the reload button, you'll get this button:
 ![Alt text](images/python_button.jpg)
 
 
@@ -81,10 +80,10 @@ If you want marking menus into the button, you just nest a few dictionaries:
 def buttonA():
     print ('buttonA was clicked')
 
-def buttonC():
+def buttonB():
     print ('buttonB was clicked')
 
-def buttonD():
+def buttonC():
     print ('buttonC was clicked')
 
 @builderTools.addToBuild(iOrder=16, dButtons={'new button':{'buttonA': buttonA, 'more buttons': {'buttonB':buttonB, 'buttonC':buttonC}}})
@@ -107,8 +106,6 @@ def incrementNumber(iLuckyNumber, _uiArgs={}):
     iLuckyNumber += 1
     _uiArgs['iLuckyNumber'].setText(str(iLuckyNumber))
 
-
-
 @builderTools.addToBuild(iOrder=16, dButtons={'increment':incrementNumber})
 def simpleFunction(iLuckyNumber=20):
     print ('Hello, your lucky number is %d' % iLuckyNumber)
@@ -117,3 +114,147 @@ def simpleFunction(iLuckyNumber=20):
 See how the button changes the attribute's value? This is basically what all those *fill* buttons in kangaroo
 are doing:
 ![Alt text](images/builder_incrementNumber.gif)
+
+
+## Logging
+While you might be happy enough with the print() function, sometimes it's cool if you can
+also log into the Kangaroo Log field at the bottom.
+
+```python
+import kangarooTools.report as report
+report.report.addLogText('Hello World')
+```
+There's just one little catch. You'll have to deselect the function and select it again.
+*Why?*
+Because after he finishes running, the log shows a generalized report how long the whole thing did etc.
+The *report.addLogText()* is more useful for example after you run've the whole thing, you can go back
+to the functions and check their logs. You can imagine it'd be a nightmare if in those cases you would have
+just used the print() function.
+![Alt text](images/python_reportLog.jpg)
+
+
+
+
+## Just Buttons
+Sometimes you just want to add a few buttons but no function to run in the builder.
+```python
+def buttonA():
+    print ('buttonA was clicked')
+
+@builderTools.addToBuild(iOrder=16, dButtons={'buttonA':buttonA})
+def simpleFunction():
+    pass
+```
+
+The the function looses its checkbox and gets an italic font.
+![Alt text](images/python_noCheckBox.jpg)
+
+
+
+
+## Progress Bar
+Making use of the progressbar at the bottom is easy.
+```python
+    import kangarooTools.report as report
+    import time
+    iCount = 100
+    report.report.resetProgress(iCount)
+    for i in range(iCount):
+        report.report.incrementProgress()
+        time.sleep(0.03)
+```
+![Alt text](images/python_progressBar.gif)
+
+
+## Progress Bar Window
+You can also have this little window you've probably seen on some other tools.
+![Alt text](images/python_progressBarExtraWindow.gif)
+It involes a bit more code though.
+And it's best to put it into a *try* block, because otherwise you'll have that annoying window left if if your code
+errors
+```python
+    import kangarooTools.utilsQt as utilsQt
+    import time
+    iCount = 100
+    qStatusWindow = utilsQt.QStatusWindow('Extra Window')
+    try:
+        qStatusWindow.setCount(iCount)
+        for i in range(iCount):
+            qStatusWindow.increment()
+            time.sleep(0.03)
+    except:
+        raise
+    finally:
+        qStatusWindow.end()
+```
+
+
+
+# Extra Builds
+So far we've just learned how to add some fun python stuff to your character file. But what if you want to make a company wide tool
+that other people can run, too?
+This is where extrabuilds come in.
+First we'll have to tell kangaroo with the Environment Variable **KANGAROO_EXTRABUILDS_PATH** a location where we have other python files
+with some builds
+
+If you want to do that with the *pathEnv.mel* file just to get started quickly - the entry would look something like this:
+```
+putenv "KANGAROO_EXTRABUILDS_PATH" "myBuilds@D:/mayaTools/KANGAROO/myExtraBuilds";
+```
+
+Btw, for more than one build folder you'd just add them all with the same variable but separated with the **;** sign
+```
+putenv "KANGAROO_EXTRABUILDS_PATH" "myBuildsA@D:/mayaTools/KANGAROO/myExtraBuildsA; myBuildsB@D:/mayaTools/KANGAROO/myExtraBuildsB";
+```
+
+You could start your new build file by just copying an existing one from the **kangarooBuilds** folder and rename.
+
+Or just start with a simple and clean file, and call it myNewBuild_v0.py:
+
+
+```python
+import numpy as np
+import kangarooTabTools.builder as builderTools
+import kangarooTools.utilFunctions as utils
+
+kBuilderColor = utils.uiColors.yellow
+
+@builderTools.addToBuild(iOrder=16)
+def simpleFunction(iLuckyNumber=20, sObjects=[]):
+    print ('Hello, your lucky number is %d' % iLuckyNumber)
+    print ('And the objects are: %s' % sObjects)
+
+```
+
+Then you can just add it to the builder like this:
+![Alt text](images/python_customBuild.gif)
+
+
+
+# Custom Limbs
+Writing your own puppet limbs is where things get very advanced, therefore a decent python level is required.
+Create an empy folder, and declare it with the Environment Variable **KANGAROO_EXTRALIMBS_PATH**.
+Copy/paste one of the existing limbs from the kangarooLimbs folder of your Kangaroo installation in to that new folder.
+Simplest one to start with is probably *singleTransform*.
+
+The difficult thing is the attachers. They get declared with an extra function:
+``` python
+    def generateAttachers_init(self):
+        return {'root': {'sTrs':'tr', 'bMulti':False},
+                'scale': {'sTrs':'s', 'bMulti':False}}
+```
+And then inside the feature function you can assign the actual transforms like this:
+```python
+dAttacherBuildData['root'] = (utils.getDagPath(self.cCtrl.sPasser), self.cCtrl)
+```
+
+The actual output joints are defined like this in the *\_\_init\_\_()* function:
+```python
+self.dOutputs['main'] = None
+```
+Basically in this case you can see that singleTransform limb only has one output.
+Then on the return, the first one (*fks* variable in this case) is a list of joints, and needs to be the same length as
+how many outputs you declared above
+```python
+return fks, cReturnCtrls, dAttacherBuildData
+```

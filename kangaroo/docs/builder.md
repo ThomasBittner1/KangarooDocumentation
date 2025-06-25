@@ -87,6 +87,11 @@ In that case the skincluster *Move* tool can help you to move the weights to whe
 the loadDeformers() function will just create the simple joints since they don't exist yet. And then 
 the funtion later is smart enough to reconize them and put them into the proper place
 
+Here you can see how those joints look like. You'll you see a lot of other *garbage* around, like those lattice boxes.
+All that is just there for debugging purposes, and will get deleted (cleaned) properly in the *clean()* function. 
+![Alt text](images/builder_jointsAtOrigin.jpg)  
+
+
 ## *importMayaFiles()*
 If you go to **Export** -> **MayaImp**, you can export some scene elements. Those get imported on the **mayaImport()** function
 

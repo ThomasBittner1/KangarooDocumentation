@@ -71,25 +71,37 @@ This loads the ctrl shapes that you export in **Ctrls** -> **Export** -> **Expor
 This loads the deformers (mainly skinCluster weights)   
 You can export the deformers in **Export** -> **Deformers**  
 Keep in mind this only saves **weights**, **attribute values** and **deformer orders**  
-Some riggers in the past expected it to also load the deformer structures such as blendShape targets, or wrap deformer setups.
-But for the blendShapes there are way cooler tools than that (see later in **Pose Editor** and **Shape Editor**).   
+It does NOT load deformer structures such as blendShape targets, or full wrap deformer setups.
+Because for the blendShapes there are way cooler tools than that (see later in **Pose Editor** and **Shape Editor**).
 And if you want to do stuff like Wrap Deformers or Morph, it's much cleaner to do that in a 
-python function before the loadDeformers(), and let the loadDeformers() just set the weights.  
-Easy deformers like *DeltaMush* that mainly just need weights and attribute values could can be handled 
-just in the loadDeformers() function
+python function before the loadDeformers(), and let the *loadDeformers()* just set the weights.  
+Easy deformers like *deltaMush* that mainly just need weights and attribute values could be handled
+just in the *loadDeformers()* function
 
-The loadDeformers deserves a little more attention:  
-When you are loading the weights, many times you'll see the joints are just simple joints on the origin.  
-This could mean one of 2 things:  
-- when you exported, there was a joint weighted which due to new changes you did, the joint doesn't exist anymore. 
+When you are loading the skinCluster weights, many times you'll see that some of the joints are just simple joints on the origin.
+This could mean one of two things:
+
+1. when you exported, there was a joint weighted which due to new changes you did, the joint doesn't exist anymore.
 In that case the skincluster *Move* tool can help you to move the weights to where they should be
-- Many setup functions especially in the face are happening **after** the loadDeformers() function. In those cases
-the loadDeformers() function will just create the simple joints since they don't exist yet. And then 
-the funtion later is smart enough to reconize them and put them into the proper place
+2. Many setup functions especially in the face are happening **after** the *loadDeformers()* function. In those cases
+the *loadDeformers()* function will just create the simple joints since they don't exist yet. And then 
+the function later is smart enough to recognize them and put them into the proper place
 
 Here you can see how those joints look like. You'll you see a lot of other *garbage* around, like those lattice boxes.
 All that is just there for debugging purposes, and will get deleted (cleaned) properly in the *clean()* function. 
-![Alt text](images/builder_jointsAtOrigin.jpg)  
+![Alt text](images/builder_jointsAtOrigin.jpg)
+
+If the model changed in topology, you can set the **bWorldSpaceIfNotMatching** flag to True
+![Alt text](images/builder_loadDeformerWorldspace.jpg)
+Actually this way it'll always just worldspace transfer the weights if the topology changed. And you'll see that he
+did that later for example when you rebuild, he'll ask you if you want to export the newly transferred weights.
+
+If you want to be more specific on how to load the deformers, you can do that in the deformerImport tool:
+![Alt text](images/builder_importDeformers.jpg)
+The **Load best fitting skinClusters** is a great button for situations where you are dealing with a character that has
+many meshes, and modellers decided to just blindly rename a lot of meshes
+
+
 
 
 ## *importMayaFiles()*

@@ -15,7 +15,7 @@ Same thing happens on Errors in the Kangaroo Log - those are links you can just 
 ![Alt text](images/python_error.jpg)
 
 
-# Simple way of adding function
+# Simple way of adding a Function
 The simplest way to add a function is just in the character script. Basically the python file that is 
 inside your version folder.  
 It's the file that is shown in *white*, and it's usually the same name ass your asset.
@@ -42,7 +42,7 @@ the *LoadDeformer()*, the priority attribute needs to be something higher than 5
 ![Alt text](images/python_order.jpg)
 
 
-## Attributes
+## Function Attributes
 Now let's run the function with the *Run Selected* button. It should come to no surprise that when you change
 the attribute in the builder, he'll log the sentence with the new number ;-)  
 ![Alt text](images/python_runSimpleFunction.jpg)
@@ -99,7 +99,7 @@ extract the function with that **<-->** button, which can be very handy if the m
 
 
 
-## Let python change your attributes
+## Let python change your Attributes
 ```python
 def incrementNumber(iLuckyNumber, _uiArgs={}):
     print ('Lucky number is %d' % iLuckyNumber)
@@ -127,7 +127,7 @@ report.report.addLogText('Hello World')
 There's just one little catch. You'll have to deselect the function and select it again.
 *Why?*
 Because after he finishes running, the log shows a generalized report how long the whole thing did etc.
-The *report.addLogText()* is more useful for example after you run've the whole thing, you can go back
+The *report.addLogText()* is more useful for example after you run've the whole thing and you want to go back
 to the functions and check their logs. You can imagine it'd be a nightmare if in those cases you would have
 just used the print() function.
 ![Alt text](images/python_reportLog.jpg)
@@ -141,19 +141,32 @@ Sometimes you just want to add a few buttons but no function to run in the build
 def buttonA():
     print ('buttonA was clicked')
 
-@builderTools.addToBuild(iOrder=16, dButtons={'buttonA':buttonA})
+@builderTools.addToBuild(iOrder=16, bNoCheckbox=True, dButtons={'buttonA':buttonA})
 def simpleFunction():
     pass
 ```
 
-The the function looses its checkbox and gets an italic font.
+The function then looses its checkbox and gets an italic font.
 ![Alt text](images/python_noCheckBox.jpg)
 
+
+
+## Yellow Lights
+By default the lights are always green if the function finished running and red when it errored.
+But sometimes you want to signal to the user that even though it ran, it wasn't quite without problems.
+To do that, simply *return False*.
+``` python
+return False
+```
+And then you get that yellow light:
+![Alt text](images/python_yellowLight.jpg)
 
 
 
 ## Progress Bar
 Making use of the progressbar at the bottom is easy.
+![Alt text](images/python_progressBar.gif)
+Just run this code:
 ```python
     import kangarooTools.report as report
     import time
@@ -163,14 +176,12 @@ Making use of the progressbar at the bottom is easy.
         report.report.incrementProgress()
         time.sleep(0.03)
 ```
-![Alt text](images/python_progressBar.gif)
-
 
 ## Progress Bar Window
 You can also have this little window you've probably seen on some other tools.
 ![Alt text](images/python_progressBarExtraWindow.gif)
 It involes a bit more code though.
-And it's best to put it into a *try* block, because otherwise you'll have that annoying window left if if your code
+And it's best to put some of it into a *try* block, because otherwise you'll have that annoying window left if your code
 errors
 ```python
     import kangarooTools.utilsQt as utilsQt
@@ -192,10 +203,12 @@ errors
 
 # Extra Builds
 So far we've just learned how to add some fun python stuff to your character file. But what if you want to make a company wide tool
-that other people can run, too?
+that other people can run, too - so everyone can just add the file at the top?
+![Alt text](images/python_customBuild.gif)
 This is where extrabuilds come in.
+
 First we'll have to tell kangaroo with the Environment Variable **KANGAROO_EXTRABUILDS_PATH** a location where we have other python files
-with some builds
+with some builds.
 
 If you want to do that with the *pathEnv.mel* file just to get started quickly - the entry would look something like this:
 ```
@@ -207,13 +220,12 @@ Btw, for more than one build folder you'd just add them all with the same variab
 putenv "KANGAROO_EXTRABUILDS_PATH" "myBuildsA@D:/mayaTools/KANGAROO/myExtraBuildsA; myBuildsB@D:/mayaTools/KANGAROO/myExtraBuildsB";
 ```
 
-You could start your new build file by just copying an existing one from the **kangarooBuilds** folder and rename.
+You could start your new build file by just copying an existing one from the *kangarooBuilds* folder and rename.
 
-Or just start with a simple and clean file, and call it myNewBuild_v0.py:
+Or just start with a simple and clean file, and call it *myNewBuild_v0.py*:
 
 
 ```python
-import numpy as np
 import kangarooTabTools.builder as builderTools
 import kangarooTools.utilFunctions as utils
 
@@ -226,22 +238,24 @@ def simpleFunction(iLuckyNumber=20, sObjects=[]):
 
 ```
 
-Then you can just add it to the builder like this:
-![Alt text](images/python_customBuild.gif)
+Then you can just add it to the builder like in the video (gif) above
 
 
 
 # Custom Limbs
 Writing your own puppet limbs is where things get very advanced, therefore a decent python level is required.
-Create an empy folder, and declare it with the Environment Variable **KANGAROO_EXTRALIMBS_PATH**.
-Copy/paste one of the existing limbs from the kangarooLimbs folder of your Kangaroo installation in to that new folder.
+Start by creating an empy folder, and declare it with the Environment Variable **KANGAROO_EXTRALIMBS_PATH**.
+Copy/paste one of the existing limbs from the *kangarooLimbs* folder of your Kangaroo installation in to that new folder.
 Simplest one to start with is probably *singleTransform*.
 
-The difficult thing is the attachers. They get declared with an extra function:
+The attributes that you see in the Puppet tool on the right side are all either just the function parameters of the
+*\_\_init\_\_()* function or the feature functions (*feature_fk()* in this case)
+
+The attachers get declared with extra functions:
 ``` python
-    def generateAttachers_init(self):
-        return {'root': {'sTrs':'tr', 'bMulti':False},
-                'scale': {'sTrs':'s', 'bMulti':False}}
+def generateAttachers_init(self):
+    return {'root': {'sTrs':'tr', 'bMulti':False},
+            'scale': {'sTrs':'s', 'bMulti':False}}
 ```
 And then inside the feature function you can assign the actual transforms like this:
 ```python

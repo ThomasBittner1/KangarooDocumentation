@@ -119,9 +119,11 @@ But now we can choose to do either a blendShape, or Ctrl pose
 ### BlendShape Targets
 First specify the meshes you want to use for blendShapes by adding them into the *Meshes Table*  
 And then select them again and click the EDIT button. This tells the tool that whatever you 
-sculpt on the mesh will go into that Target. Don't forget to deactivate the EDIT button
-when you are done. Otherwise it can get very uncomfortable....
+sculpt on the mesh will go into that Target.   
+Don't forget to deactivate the EDIT button when you are done!
 ![Alt text](images/PoseEditor_EditButton2.gif)  
+The tool I used in this gif is **Mesh Tools -> Sculpting Tools -> Grap Tool**. But when you have the EDIT button 
+activated, you can also select vertices and move them. Or use some of the *Geometry Tools* like *Smooth Vertices* 
 
 
 ### Ctrl Targets

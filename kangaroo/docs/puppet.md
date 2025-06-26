@@ -45,6 +45,11 @@ src="https://www.youtube.com/embed/kEA6R8v1gDk"
 title="YouTube video player" frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe>
+In version 5 the spine got a big update, where the **fkSpline** got those extra features:
+
+- Reverse FK
+- preIK in fkSpline (better for performance compared to switching to ikSpline)
+
 
 ## ArmLeg Limb
 <iframe width="560" height="315"
@@ -115,22 +120,41 @@ set automatically when right-clicking on the limb: **Custom: Store Bell Settings
 ![Alt text](images/bellCollider_rightClick.gif)
 
 TIP: Sometimes you might feel like the bell joint jumps a bit too quickly as the ringer touches it. 
-To fix that it can help a lot to setup the bell's attacher to move slightly with the ringer by around 50 % .
+To fix that it can help to setup the bell's attacher to move slightly with the ringer by around 50 % .
 
 ## Dynamics
-These Limbs come with a Spring attribute.
+### Spring
+The following limbs come with a **Spring** attribute:
 
  * singleBone    
  * singleTransform    
- * spine (fk)    
+ * spine (fk, fkSpline)
+
+They work with a very basic spring equation done with Expressions:
+```
+Acceleration = (Target - Position) * STIFFNESS - Velocity * DAMPING
+Velocity += Acceleration
+```
+*STIFFNESS* and *DAMPING* are the attributes that are exposed and can be tweaked, even by animators.   
+For tweaking those values, it's best to first keep them the same value, and try variations from 0-1.   
+*STIFFNESS* is how fast it comes back (stronger values = coming back quicker)  
+*DAMPING* is how loose it is (weaker values = looser)  
+
+### Spine Dynamics
+The Spine limb also has Dynamics attribute in the **advanced** section, which is using *hairSystem* under the hood.  
+Can give great results, too. But trickier to tweak the behavior. 
 
 
 ## Tweaker Ctrls
 Tweaker Ctrls are ctrls that follow your current setup, and then deform the mesh with an additional skinCluster.  
 
+This is done with the **postRefJoints** attribute, the following limbs have it:
 
+ * singleBone    
+ * singleTransform    
+ * belt
+ * spine (fk, ikSpline, simple)
 
-This is with the **postRefJoints** attributes.
 
 ##display_ctrl
 All template charcacters have that display_ctrl, which animators can use to turn on/off ctrls from all the limbs.

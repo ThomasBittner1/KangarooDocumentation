@@ -42,7 +42,7 @@ For now let's check out some of the more important functions that we automatical
 The *importModel()* function imports the model. Currently it's just that boring grey guy. 
 If you already have a model, go to export -> MODEL, and with the Explorer New Model button
 you get a folder that let's you copy a character in it
-![Alt text](images/addModel.gif)
+![Alt text](images/addModel.gif)  
 If you work in a company that has their own studio pipeline, you might want to grab
 the model automatically from the studio pipeline. To see how to do that, go to the python section.
 Bascially you'd create a script that from the character name and some version setups looks for the corresponding character model file
@@ -55,13 +55,6 @@ Blueprints is basically just a simple ma file with guide joints, and buildPuppet
 controls and rigging logic like Iks, Fks, Auto Clavicle, ...
 We'll get to those more in detail in **Puppet**. But for now let's continue checking out the 
 other important functions.
-
-## *create_GAMESKELETON()*
-This creates a duplicated hierarchy that is clean enough to run in Game Engines such as UE or Unity.
-You can even set the arguments to convert the joints to the typical UE joint namings/orientations,
-which can be handy in many situations.  
-When you run that function, you'll see a GAMESKELETON group that you can export as an FBX. 
-You can even use the Function button *export FBX* to do that for you   
 
 
 ## *loadCtrlShapes()*

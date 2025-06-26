@@ -27,12 +27,15 @@ make sure to specify the eyes in *attacher: eyes (c)*
 EyeLookatIndiv is for when you have some character that has the eyes pointing sideways. In those situations the
 EyesLookAt is not so great, since the main ctrl is at the front of the character.
 
-Once you've got the right setup in there, all you need to do is place the blueprints.
+Once you've got the right setup in there, all you need to do is place the blueprints.  
+And make sure that the polevector in the BP Rig is pointing *downwards*. Otherwise you'll get troubles later with the
+eyelid behavior.
 
 ### Iris and Pupil
 The *EyesLookat* limb also comes with **IrisScale** and **PupilScale** attributes. They reason why they 
 are on the *EyesLookat* limb is because those have the ctrls for scaling them: 
 *scaleX/scaleY* for Iris, and *scaleZ* for Pupil.  
+![Alt text](images/face_irisAndPupilScale.gif)
 And make sure to skin the **jnt_l_eyeIris** and **jnt_l_eyePupil** joints!
  
 
@@ -54,8 +57,11 @@ And later the function *blendShapesAndSliders()* is grabbing those baked meshes 
 
 
 # SliderBlueprints
-Sliderblueprints will come again and again in this chapter. Those are NOT the *blueprints* in the puppet tool. Instead they
-are just some simple joints that you export.
+Slider Blueprints are NOT the *blueprints* in the puppet tool. Instead they
+are just some simple joints for the Face Setups. There's no centralized place where you manage them. Instead every 
+function just creates them and puts them into the *__sliderBlueprints* group, and when you export them, you export them all together.
+![Alt text](images/face_sliderBlueprints.jpg)
+
 ## Mirror
 While you could theoretically mirror them with the *mirror* shelf button, usually we mirror them by just not exporting the 
 right side ones, and then the functions create them using the left side ones.
@@ -77,8 +83,55 @@ those cases you just have to guess when giving them good scale values, and rebui
 ## BaseLidCtrls
 The function *baseLidCtrls()* just creates those three arrow ctrls.
 
-## BlendShapes
+## Simple Lid Setup
+If you turn on the function *simpleLidSetup()*, you'll get those locators that you can move around
 
+
+## BlendShapes
+the *blendShapesAndSliders()* function is using the blendShapes mentioned below. If you are doing the blink
+with just blendShapes, it's advisable to also turn on the *TWEAKER_lids()* function, since animators might
+want some extra behavior.
+
+**blink_l_ctrl** is triggering those blendShapes:
+
+* blink
+* upCurveBlink (for some cartoony characters, creates **upCurveBlink** attribute on the blink_l_ctrl)
+
+**lidBot_l_ctrl** and **lidTop_l_ctrl** are triggering the following ones:
+
+* eyeUpperUp
+* eyeUpperDown
+* eyeLowerUp
+* eyeLowerDown
+
+When the eyeballs are looking into different directions, those blendshapes are being triggered:
+
+* eyelookUp
+* eyelookDown
+* eyelookLeft
+* eyelookRight
+
+Those are also being used for lookUp/Down 
+
+## splineLidSetup
+The function *splineLidSetup()* is creating splines that take care of a proper blink and some additional joints
+
+### Eyelid Zipper
+The *splineLidSetup()* function also comes with a bZipper attribute.   
+If you are struggling with the idea if you should add it or not, you might find this discussion useful:
+<a href="https://www.linkedin.com/posts/thomas-bittner-6bb6302_ive-just-added-eyelid-zipper-to-my-face-activity-7239912418816995329-2aJx?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABy3u8BK03tH_Bovh-T4-W99NGXldU3f_g" 
+target="_blank">LinkedIn Post on EyelidZipper</a>
+ 
+ 
+
+
+## Lattice Ctrls
+![Alt text](images/face_eyelattice.gif)  
+Just turn on the *eyeLatticeCtrls()* function and specify the eyeBall geos (**sLeftMeshes**, **sRightMeshes**), and the mesh that has
+the eyelid geos (**sSkinMeshes**).    
+After building, you'll have to fix the eyelid weights. It's best done with **Weightmaps -> Flood** and the *Replace Absolute* option.  
+![Alt text](images/face_eyeLatticeWeights.jpg)  
+And you are done. In many cases you might want to adjust the ctrl shapes a bit so they aren't buried inside the mesh.
 
 # Lips
 
@@ -125,3 +178,7 @@ so it finds the proper closest vertices.
 Nothing fancey, just 3 controls per side
 
 
+# Lip Zipper
+For the lips there are 2 ways to to the zipper.
+If you are using **bSPLINES** in the *baseMOUTHCtrls()* function, you can turn on the **bZipper** attribute.
+Or you can do the *postZipper()* function, which is creating a set of extra joints and an additional skinCluster

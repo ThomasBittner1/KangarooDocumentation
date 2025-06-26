@@ -1,6 +1,6 @@
-Kangaroo has some good tools for dealing with model changes. But certain things to have to be done manually.
+Kangaroo has some good tools for dealing with model changes. But certain things have to be done manually.
 
-Here's an overview of everything you can/should to do when model changes.
+Here's an overview of everything you can/should to do when a model changes.
 
 
 # Different Proportions

@@ -8,7 +8,8 @@ nav:
   - Face: face.md
   - Python: python.md
   - Tools: tools.md
-  - Picker: picker.md
+  - Animator Tools: picker.md
   - Model Change: modelChange.md
+  - Game Engines: gameEngines.md
   - FAQ: FAQ.md
   - License: license.md

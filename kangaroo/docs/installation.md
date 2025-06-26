@@ -21,7 +21,7 @@ If you just want to use the skinCluster/geometry tools or the shape editor - you
 # The Directories
 
 First of all you need to understand that Kangaroo is not just a Rigging Tool. It's a **Rigging Pipeline** that helps you also
-increment/version your assets, and even backup and share with the team.  
+increment/version your assets, and even backup and share with the team.    
 If you work in a studio where they have they own pipeline, then Kangaroo is still its own pipeline
 that runs parallel to the studio pipeline. Basically you can set things up to connect to the studio pipeline
 at two points:
@@ -93,9 +93,12 @@ see how you would set it up in *the usual* way
 # Roadmap for First Character
 Once you've setup-ed your directories and started the character with the **create NEW** tool, it's best to just read
 through the **Builder** and **Puppet** documentations. You can skip things under *Advanced* for now,
-but the other content needs to be understood. Otherwise you'll either get stuck quickly or just won't use the tool
-efficiently.
-After then you can continue with this little roadmap:
+but the other content needs to be understood. Otherwise you'll either get stuck quickly or just won't be able to use the tool
+efficiently.  
+After you've read through those two pages you can follow this roadmap below. And after each step make sure to build the
+whole character and see what you get. It needs to be understood that Kangaroo is a procedural tool where we don't 
+just work on a maya file and send that out when we are done.  
+Instead we work on the data that in the end creates the character with the *RunAll* button.  
 ### Specify your model
 The simple way to get you started is just dragging the model into the explorer. See *importModel()* function of Builder
 ### Place Blueprint Joints
@@ -103,9 +106,11 @@ The next thing would be placing the blueprints
 and remove or add some limbs.
 This is all done in the puppet tool.
 ### Skinning Character
-Create the weights. You can use the Plane Skinner. Or you just do it all with your own skinning tool workflow. Just make
+Create the weights. You can use the Plane Skinner, or you just do it all with your own skinning tool workflow. Just make
 sure to export the weights in *Export* -> *Deformers*
 ### Shaping Ctrls
 Shape the Ctrls and export them in *Ctrls* -> *Export Ctrl Shapes*
+### Body
+Read through the **Body** page and see what tools you can use to improve deformations.  
 ### Face Rig
 If there's one. Check **Face Rig** for more detail.

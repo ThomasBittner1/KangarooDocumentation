@@ -44,7 +44,7 @@ the *LoadDeformer()*, the priority attribute needs to be something higher than 5
 
 ## Function Attributes
 Now let's run the function with the *Run Selected* button. It should come to no surprise that when you change
-the attribute in the builder, he'll log the sentence with the new number ;-)  
+the attribute in the builder, he'll print the sentence with the new number.  
 ![Alt text](images/python_runSimpleFunction.jpg)
 
 
@@ -99,7 +99,7 @@ extract the function with that **<-->** button, which can be very handy if the m
 
 
 
-## Let python change your Attributes
+## Let the Button change your Attributes
 ```python
 def incrementNumber(iLuckyNumber, _uiArgs={}):
     print ('Lucky number is %d' % iLuckyNumber)
@@ -126,7 +126,7 @@ report.report.addLogText('Hello World')
 ```
 There's just one little catch. You'll have to deselect the function and select it again.
 *Why?*
-Because after he finishes running, the log shows a generalized report how long the whole thing did etc.
+Because after he finishes running, the log shows a generalized report how the whole thing did etc.  
 The *report.addLogText()* is more useful for example after you run've the whole thing and you want to go back
 to the functions and check their logs. You can imagine it'd be a nightmare if in those cases you would have
 just used the print() function.
@@ -153,7 +153,7 @@ The function then looses its checkbox and gets an italic font.
 
 ## Yellow Lights
 By default the lights are always green if the function finished running and red when it errored.
-But sometimes you want to signal to the user that even though it ran, it wasn't quite without problems.
+But sometimes you want to signal to the user that even though it didn't error, it wasn't quite without problems.
 To do that, simply *return False*.
 ``` python
 return False
@@ -179,7 +179,7 @@ Just run this code:
 
 ## Progress Bar Window
 You can also have this little window you've probably seen on some other tools.
-![Alt text](images/python_progressBarExtraWindow.gif)
+![Alt text](images/python_progressBarExtraWindow.gif)  
 It involes a bit more code though.
 And it's best to put some of it into a *try* block, because otherwise you'll have that annoying window left if your code
 errors
@@ -200,7 +200,7 @@ errors
 ```
 
 ## Getting Asset Info
-Here are some important functions for getting the Current Assets
+Here are some functions for getting the Current Assets
 ```python
 import kangarooTools.assets as assets
 assets.getCurrentAsset() # returns the current asset name
@@ -212,7 +212,7 @@ assets.getCurrentVersionPath() # returns the absolute version folder inside the 
 
 # Extra Builds
 So far we've just learned how to add some fun python stuff to your character file. But what if you want to make a company wide tool
-that other people can run, too - so everyone can just add the file at the top?
+that other people can run, too - so everyone can just add the file at the top as shown in this gif:
 ![Alt text](images/python_customBuild.gif)
 This is where extrabuilds come in.
 
@@ -247,15 +247,15 @@ def simpleFunction(iLuckyNumber=20, sObjects=[]):
 
 ```
 
-Then you can just add it to the builder like in the video (gif) above
+Then you can add it to the builder like shown above.
 
 
 
 # Connecting to Studio Pipeline
 If you've managed to read until here, you are ready to connect kangaroo to your studio pipeline.
 ## *importModel()* recreate
-Create a new **Extra Builds** file as shown above,
-and add a function in there called something like *importModel2()*. And in there create some code that
+Create a new **Extra Builds** file as shown in previous chapter,
+and add a function in there called something like *importModel2()*. In there create some code that
 looks in the files of your studio pipeline and imports the correct model.
 For doing that you'll most likely need the code snippets in **Getting Asset Info** for getting your current
 asset infos.
@@ -271,10 +271,10 @@ utils.importMayaFiles(sFiles, sNamespace=None, bReference=False, bReturnAllNodes
 
 
 # Custom Limbs
-Writing your own puppet limbs is where things get very advanced, therefore a decent python level is required.
-Start by creating an empy folder, and declare it with the Environment Variable **KANGAROO_EXTRALIMBS_PATH**.
-Copy/paste one of the existing limbs from the *kangarooLimbs* folder of your Kangaroo installation in to that new folder.
-Simplest one to start with is probably *singleTransform*.
+Writing your own puppet limbs is where things get very advanced, therefore a decent python level is required.  
+Start by creating an empy folder, and declare it with the Environment Variable **KANGAROO_EXTRALIMBS_PATH**.  
+Then copy/paste one of the existing limbs from the *kangarooLimbs* folder of your Kangaroo installation in to that new folder.
+Simplest one to start with is probably *singleTransform*.  
 
 The attributes that you see in the Puppet tool on the right side are all either just the function parameters of the
 *\_\_init\_\_()* function or the feature functions (*feature_fk()* in this case)

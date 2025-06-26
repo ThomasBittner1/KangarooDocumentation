@@ -92,7 +92,7 @@ This is a very specialized one just for upper leg rotating upwards like in a sit
 While you could also do that with Cones or MayaPose, this one is a more specialized one 
 that turns on as the legs rotate upwards,
 and stays stable when it rotates further. It also fades out as the legs rotate outwards, and you
-can control how much if and how much it should fade out when the leg rotates inwards.
+can control if and how much it should fade out when the leg rotates inwards.
 
 
 ### Custom 
@@ -107,7 +107,7 @@ And if you don't want to use DriverAttr, just give it the same as what you have 
 So *armUpper_l_ctrl.rx* in this case
 
 ## Targets
-As Targets we can do either BlendShape Poses or *Correctives*, or Ctrl Poses
+As Targets we can do either BlendShape Poses (*Correctives*), or Ctrl Poses.
 Both of them start in the same way, that you just drag&drop a pose from the *Interpolator Table*
 into the *Targets Table*
 If you drag more than one pose, then the Target is a combination of the poses, and you get that extra

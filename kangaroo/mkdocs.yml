@@ -7,5 +7,7 @@ nav:
   - Body: body.md
   - Face: face.md
   - Python: python.md
+  - Tools: tools.md
+  - Picker: picker.md
   - FAQ: FAQ.md
   - License: license.md

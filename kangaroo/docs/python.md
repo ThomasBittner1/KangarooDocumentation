@@ -199,6 +199,15 @@ errors
         qStatusWindow.end()
 ```
 
+## Getting Asset Info
+Here are some important functions for getting the Current Assets
+```python
+import kangarooTools.assets as assets
+assets.getCurrentAsset() # returns the current asset name
+assets.getCurrentProject() # returns the current project name
+assets.getCurrentVersionPath() # returns the absolute version folder inside the *_build* folder
+
+```
 
 
 # Extra Builds
@@ -242,6 +251,25 @@ Then you can just add it to the builder like in the video (gif) above
 
 
 
+# Connecting to Studio Pipeline
+If you've managed to read until here, you are ready to connect kangaroo to your studio pipeline.
+## *importModel()* recreate
+Create a new **Extra Builds** file as shown above,
+and add a function in there called something like *importModel2()*. And in there create some code that
+looks in the files of your studio pipeline and imports the correct model.
+For doing that you'll most likely need the code snippets in **Getting Asset Info** for getting your current
+asset infos.
+You might find this function useful for importing the file, once it found it:
+```python
+import kangarooTools.utilFunctions as utils
+utils.importMayaFiles(sFiles, sNamespace=None, bReference=False, bReturnAllNodes=False)
+```
+## *prepareForPublish()* recreate
+*** TODO: WRITE HOW THAT WORKS ***
+
+
+
+
 # Custom Limbs
 Writing your own puppet limbs is where things get very advanced, therefore a decent python level is required.
 Start by creating an empy folder, and declare it with the Environment Variable **KANGAROO_EXTRALIMBS_PATH**.
@@ -272,3 +300,4 @@ how many outputs you declared above
 ```python
 return fks, cReturnCtrls, dAttacherBuildData
 ```
+

@@ -114,6 +114,8 @@ The **Bell Settings** is the translate/rotate/scale/multiply attributes on the c
 set automatically when right-clicking on the limb: **Custom: Store Bell Settings**   
 ![Alt text](images/bellCollider_rightClick.gif)
 
+TIP: Sometimes you might feel like the bell joint jumps a bit too quickly as the ringer touches it. 
+To fix that it can help a lot to setup the bell's attacher to move slightly with the ringer by around 50 % .
 
 ## Dynamics
 These Limbs come with a Spring attribute.
@@ -129,3 +131,10 @@ Tweaker Ctrls are ctrls that follow your current setup, and then deform the mesh
 
 
 This is with the **postRefJoints** attributes.
+
+##display_ctrl
+All template charcacters have that display_ctrl, which animators can use to turn on/off ctrls from all the limbs.
+To specify which limbs belongs to which tag, just set the displayAttr attribute that every limb has.
+Some like the ArmLeg even come with an extra displayAttrSecondary one.
+Tip: When you do the face later, in the face functions you can see the sDisplayAttr atttribute on many of the 
+face setup functions

@@ -46,7 +46,6 @@ title="YouTube video player" frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe>
 
-
 ## ArmLeg Limb
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/BLg9ajB2rzU"
@@ -95,7 +94,8 @@ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; pic
 allowfullscreen></iframe>
 
 
-# Bell Collider
+# Advanced
+## Bell Collider
 The **singleBone** limb comes with a Bell Collider. Bell Collider looks like dynamics but it's really just
 interactive angle calculations. It works great for short pants. 
 ![Alt text](images/bellCollider.gif)  
@@ -115,12 +115,17 @@ set automatically when right-clicking on the limb: **Custom: Store Bell Settings
 ![Alt text](images/bellCollider_rightClick.gif)
 
 
-
-
-# Dynamics
+## Dynamics
 These Limbs come with a Spring attribute.
 
  * singleBone    
  * singleTransform    
  * spine (fk)    
 
+
+## Tweaker Ctrls
+Tweaker Ctrls are ctrls that follow your current setup, and then deform the mesh with an additional skinCluster.  
+
+
+
+This is with the **postRefJoints** attributes.

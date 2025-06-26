@@ -1,4 +1,5 @@
 
+# Basics
 The **Builder** is the first most important tool that you need to get familiar with for creating characters.
 
 The builder basically just manages a ton of Python functions from different files, and lets
@@ -96,7 +97,7 @@ If the model changed in topology, you can set the **bWorldSpaceIfNotMatching** f
 Actually this way it'll always just worldspace transfer the weights if the topology changed. And you'll see that he
 did that later for example when you rebuild, he'll ask you if you want to export the newly transferred weights.
 
-If you want to be more specific on how to load the deformers, you can do that in the deformerImport tool:
+If you want to be more specific on how to load the deformers, you can do that in the **deformerImport** tool:
 ![Alt text](images/builder_importDeformers.jpg)
 The **Load best fitting skinClusters** is a great button for situations where you are dealing with a character that has
 many meshes, and modellers decided to just blindly rename a lot of meshes
@@ -157,6 +158,11 @@ wherever it was before the function.
 Unfortunately that doesn't work whenever the function does something that's not undo supported such as importing something.
 
 
-## Filter Box for Assets
-If you are on a project with a ton of assets, you can convert the Assets Box to a Lineedit where you can search 
-for asset faster.
+# BLD file
+Everything you do in the builder like adding files, check/uncheck functions, setting function variables, or even
+just selecting stuff - gets saved into the into the *build.bld* file. The *build.bld* file is a
+JSON file, so with a text editor you could theoretically adjust it. But we don't do that very often.
+Whenever you do a wrong click such badly setting some variables that you'd like to undo - *Don't Panic!*
+Just click on the **Backup** button at the top right and choose an older one to switch to. You might even need to use
+it if your build file gets corrupted from a crash.
+![Alt text](images/builder_backups.gif)

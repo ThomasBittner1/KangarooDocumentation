@@ -99,7 +99,11 @@ many meshes, and modellers decided to just blindly rename a lot of meshes
 
 
 ## *importMayaFiles()*
-If you go to **Export** -> **MayaImp**, you can export some scene elements. Those get imported on the **mayaImport()** function
+If you go to **Export** -> **MayaImp**, you can export some scene elements. Those get imported on 
+the **mayaImport()** function.  
+If you want to check what files are there, you can do that with **right click**.  
+![Alt text](images/builder_mayaImport.gif)   
+
 
 ## *importTargets()*
 Very similar to importMayaFiles(). But Targets are just simple Polygon Meshes. Those are saved with a Numpy file format

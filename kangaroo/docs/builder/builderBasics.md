@@ -7,10 +7,10 @@ you run them. Either just selected functions or all at once for the final creati
 
 Go to that character you created from the previous section and click *Build All*  
 Now sit back and enjoy watching him build the character for you :-)
-![Alt text](images/builder_buildAll.gif)
+![Alt text](../images/builder_buildAll.gif)
 
 Now take a moment to get familiar with the UI:
-![Alt text](images/builder_filesAndFunctions.jpg)
+![Alt text](../images/builder_filesAndFunctions.jpg)
 
 At the top you have Python Files. You can add files, remove files or you can even uncheck them and then all their functions will disappear.
 Below are the actual functions. Even further below you can set function arguments for each function that you have selected.
@@ -24,7 +24,7 @@ build buttons.
 
 ## JSON Editor
 And if not, the JSON Editor can help you. Just right click on the argument -> **Show in JSON Editor**. And you get this cool looking UI:
-![Alt text](images/builder_jsoneditor.jpg)
+![Alt text](../images/builder_jsoneditor.jpg)
 
 
 
@@ -42,7 +42,7 @@ For now let's check out some of the more important functions that we automatical
 The *importModel()* function imports the model. Currently it's just that boring grey guy. 
 If you already have a model, go to export -> MODEL, and with the Explorer New Model button
 you get a folder that let's you copy a character in it
-![Alt text](images/addModel.gif)  
+![Alt text](../images/addModel.gif)  
 If you work in a company that has their own studio pipeline, you might want to grab
 the model automatically from the studio pipeline. To see how to do that, go to the python section.
 Bascially you'd create a script that from the character name and some version setups looks for the corresponding character model file
@@ -83,15 +83,15 @@ the function later is smart enough to recognize them and put them into the prope
 
 Here you can see how those joints look like. You'll you see a lot of other *garbage* around, like those lattice boxes.
 All that is just there for debugging purposes, and will get deleted (cleaned) properly in the *clean()* function. 
-![Alt text](images/builder_jointsAtOrigin.jpg)
+![Alt text](../images/builder_jointsAtOrigin.jpg)
 
 If the model changed in topology, you can set the **bWorldSpaceIfNotMatching** flag to True
-![Alt text](images/builder_loadDeformerWorldspace.jpg)
+![Alt text](../images/builder_loadDeformerWorldspace.jpg)
 Actually this way it'll always just worldspace transfer the weights if the topology changed. And you'll see that he
 did that later for example when you rebuild, he'll ask you if you want to export the newly transferred weights.
 
 If you want to be more specific on how to load the deformers, you can do that in the **deformerImport** tool:
-![Alt text](images/builder_importDeformers.jpg)
+![Alt text](../images/builder_importDeformers.jpg)
 The **Load best fitting skinClusters** is a great button for situations where you are dealing with a character that has
 many meshes, and modellers decided to just blindly rename a lot of meshes
 
@@ -102,7 +102,7 @@ many meshes, and modellers decided to just blindly rename a lot of meshes
 If you go to **Export** -> **MayaImp**, you can export some scene elements. Those get imported on 
 the **mayaImport()** function.  
 If you want to check what files are there, you can do that with **right click**.  
-![Alt text](images/builder_mayaImport.gif)   
+![Alt text](../images/builder_mayaImport.gif)   
 
 
 ## *importTargets()*
@@ -131,17 +131,17 @@ click *Hold* again, it'll save another version and just increments the number.
 Then when you click **Pull**, it opens whatever you saved last.  
 And with a right click on the *Pull* button you can either open an older version or Reference it. Or you can copy it to clipboard so
 you can get the path with CTRL+P
-![Alt text](images/PullScene.gif)  
+![Alt text](../images/PullScene.gif)  
 And he will delete older files automatically when you click *Push*.
 He'll basically just keep the current temp file count to a specific number. He'll actually tell you that in the log:   
-![Alt text](images/pushSceneLog.jpg)
+![Alt text](../images/pushSceneLog.jpg)
 
 
 ## Selection Templates
 Selection Templates is the **ST** button on the right.  
 By default it lets you select all the functions until *LoadDeformers()* or all the functions until *beforeClean()*.  
 And with right mouse click you can define your own selection templates.  
-![Alt text](images/builder_selectionTemplate.gif)  
+![Alt text](../images/builder_selectionTemplate.gif)  
 If you wonder why we build until *clean()*: The clean() functions are basically cleaning the scene.
 You'll learn more about it later, but for some things like muscle joints or debugging skinCluster it's
 great to just build until before clean.
@@ -162,4 +162,4 @@ JSON file, so with a text editor you could theoretically adjust it. But we don't
 Whenever you do a wrong click such badly setting some variables that you'd like to undo - *Don't Panic!*
 Just click on the **Backup** button at the top right and choose an older one to switch to. You might even need to use
 it if your build file gets corrupted from a crash.
-![Alt text](images/builder_backups.gif)
+![Alt text](../images/builder_backups.gif)

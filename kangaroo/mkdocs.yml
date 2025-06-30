@@ -1,10 +1,32 @@
-site_name: Kangaroo-Builder
+site_name: kangaroo-builder.com
+theme:
+  logo: assets/kangaroo.png
+  name: material
+  palette:
+    scheme: default
+    primary: sky
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.footer
+  copyright: "2025 Kangaroo Builder"
 nav:
   - About: about.md
   - Getting Started: installation.md
-  - Builder: builder.md
-  - Puppet: puppet.md
-  - Body: body.md
+  - Builder:
+     Basics: builder/builderBasics.md
+     Workflow Tricks: builder/workflowTricks.md
+     JSON Editor: builder/jsonEditor.md
+  - Puppet:
+      - Basics: puppet/puppetBasics.md
+      - Bell Collider: puppet/bellCollider.md
+      - Dynamics: puppet/dynamics.md
+      - Tweaker Ctrls: puppet/tweakerCtrls.md
+  - Body:
+      - Deformations: body/deformations.md
+      - Pose Editor: body/poseEditor.md
+      - Motion Capture: body/motionCapture.md
   - Face: face.md
   - Python: python.md
   - Tools: tools.md
@@ -13,3 +35,8 @@ nav:
   - Game Engines: gameEngines.md
   - FAQ: FAQ.md
   - License: license.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.details

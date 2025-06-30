@@ -1,0 +1,53 @@
+Face Rigging in Kangaroo has gotten very powerful in version 5. It's got many different setups to choose
+from for each part - mouth, brows, eyelids, etc and it's got some general squash/stretch ctrls.
+
+Most of the time you have the option of doing spline setups or blendShapes. You can also mix.
+
+The first thing to do when you do Face Rig is add the python file **facePro_v16.py** (right click on the Python Files
+in the builder -> **Add File** -> **+default** -> **facePro** -> **facePro_v16.py**
+
+
+
+## Puppet Limbs
+For things like Tongue (*Spine*), teeth (*SingleTransform* or *Belt*) we can use the puppet limbs that we also use for the body.
+You can also use Tweaker Ctrls if you want to give animators some extra modifiers. But make sure
+to first read through Face Tweaker Ctrls in here, since those might already give you better options for many cases.  
+
+
+## Shape Editor
+Shape Editor is where you can sculpt and manage the sculpted shapes. You'll use it heavily on blendShape setups. But
+it can also be handy for spline rigs, when it's all looking great but you want to add a corrective to adjust
+the shape a bit more.
+
+This video shows how it works:
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/cEBJ-tPLMuU"
+title="YouTube video player" frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
+
+Basically you just create a blendShape file such as *blendShapes.ma* that you import and manage in the *importBlendShapeFile()*
+And later the function *blendShapesAndSliders()* is grabbing those baked meshes and putting them into the rig as blendShapes.
+
+
+## SliderBlueprints
+Slider Blueprints are NOT the *blueprints* in the puppet tool. Instead they
+are just some simple joints for the Face Setups. There's no centralized place where you manage them. Instead every 
+function just creates them and puts them into the *__sliderBlueprints* group, and when you export them, you export them all together.
+![Alt text](../images/face_sliderBlueprints.jpg)
+
+### Mirror
+While you could theoretically mirror them with the *mirror* shelf button, usually we mirror them by just not exporting the 
+right side ones, and then the functions create them using the left side ones.
+To specify which ones get exported and which ones not you can switch the **doExport** attribute on each sliderBlueprint joint
+
+### Export 
+Exporting works with the button **-export \*Slider\* BPs-**. You'll find this button on many functions such as *BASELidCtrls()*,
+*blendShapesAndSliders()*, *parallelAttachTransforms()*. And it'll do the same thing on each function, it exports
+ALL the sliderBlueprints, not just the ones of the current function.
+### Placing them
+Most of the time it's best to build until before *parallelAttachTransforms()*, and then adjust their locations and scale.
+This way you can test right away if they work well with the blendShape they are driving.  
+Just whenever they are driving spline rigs such as the lips spline rig, that connection is already broken. And in 
+those cases you just have to guess when giving them good scale values, and rebuild.
+  

@@ -1,5 +1,5 @@
 
-## Tweaker Ctrls
+# Puppet Tweaker Ctrls
 Tweaker Ctrls are ctrls that follow your current setup, and then deform the mesh with an additional skinCluster.  
 
 This is done with the **postRefJoints** attribute, the following limbs have it:
@@ -9,6 +9,6 @@ This is done with the **postRefJoints** attribute, the following limbs have it:
  * belt
  * spine (fk, ikSpline, simple)
 
-!!! tip
-    When you do the face later, in the face functions you can see the sDisplayAttr atttribute on many of the 
-    face setup functions
+
+!!! Info
+    Later in the Face you'll see Face Tweaker Ctrls, those are similar logic like this. But more grouped together

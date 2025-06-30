@@ -22,12 +22,16 @@ nav:
       - Basics: puppet/puppetBasics.md
       - Bell Collider: puppet/bellCollider.md
       - Dynamics: puppet/dynamics.md
-      - Tweaker Ctrls: puppet/tweakerCtrls.md
+      - Puppet Tweaker Ctrls: puppet/tweakerCtrls.md
   - Body:
       - Deformations: body/deformations.md
       - Pose Editor: body/poseEditor.md
       - Motion Capture: body/motionCapture.md
-  - Face: face.md
+  - Face:
+      - General: face/general.md
+      - Eyes: face/eyes.md
+      - Brows: face/brows.md
+      - Face Tweaker Ctrls: face/faceTweakerCtrls.md
   - Python: python.md
   - Tools: tools.md
   - Animator Tools: picker.md

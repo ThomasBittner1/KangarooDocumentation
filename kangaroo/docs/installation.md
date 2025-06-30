@@ -1,4 +1,4 @@
-# Installation
+## Installation
 
 1. Extract the zip file, and copy the content somewhere on disk.
 2. Drag&Drop the **install.mel** file into Maya Scene View
@@ -18,7 +18,7 @@ mayapy.exe -m pip install ‐‐user numpy
 If you just want to use the skinCluster/geometry tools or the shape editor - you are done at this point.
 
 
-# The Directories
+## The Directories
 
 First of all you need to understand that Kangaroo is not just a Rigging Tool. It's a **Rigging Pipeline** that helps you also
 increment/version your assets, and even backup and share with the team.    
@@ -31,7 +31,7 @@ at two points:
 
 But how to do that is explained in **Python**
 
-## AssetsLocal
+### AssetsLocal
 First we need to create the AssetsLocal folder. It's the folder where you'll work. 
 It can anywhere on your disk drive that don't don't necessarily share with others. Just create an empty folder, and specify that in the settings  
 ![Alt text](images/settingAssetsLocal.jpg)
@@ -41,7 +41,7 @@ And all has to be UPPERCASE.
 Without following those rules, Kangaroo won't recognize the folder as a project
 
 
-## Templates
+### Templates
 To start creating characters, 99.95 % of the times you copy from an existing one and adjust.
 And we usually grab one from the server. **Templates** is one server that comes with the tool, and has those assets:
 
@@ -60,7 +60,7 @@ Just imagine two people create the same asset name but different casings ;-)
 But if you need to match the name from a studio pipeline, you have the option to do the *dangerous* mixed cases name 
 
 
-## AssetsServer
+### AssetsServer
 At this point you could theoretically jump to the next tutorial and just start building chaeracters.
 But you have to setup the server at some point anyway, why not do it now.
 
@@ -92,25 +92,17 @@ see how you would set it up in *the usual* way
 
 ## Roadmap for First Character
 Once you've setup-ed your directories and started the character with the **create NEW** tool, it's best to just read
-through the **Builder** and **Puppet** documentations. You can skip things under *Advanced* for now,
+through the [Builder Basics](builder/builderBasics.md) and [Puppet Basics](puppet/puppetBasics.md) documentations. You can skip things under *Advanced* for now,
 but the other content needs to be understood. Otherwise you'll either get stuck quickly or just won't be able to use the tool
 efficiently.  
 After you've read through those two pages you can follow this roadmap below. And after each step make sure to build the
 whole character and see what you get. It needs to be understood that Kangaroo is a procedural tool where we don't 
 just work on a maya file and send that out when we are done.  
-Instead we work on the data that in the end creates the character with the *RunAll* button.  
-#### Specify your model
-The simple way to get you started is just dragging the model into the explorer. See *importModel()* function of Builder
-#### Place Blueprint Joints
-The next thing would be placing the blueprints
-and remove or add some limbs.
-This is all done in the puppet tool.
-#### Skinning Character
-Create the weights. You can use the Plane Skinner, or you just do it all with your own skinning tool workflow. Just make
-sure to export the weights in *Export* -> *Deformers*
-#### Shaping Ctrls
-Shape the Ctrls and export them in *Ctrls* -> *Export Ctrl Shapes*
-#### Body
-Read through the **Body** page and see what tools you can use to improve deformations.  
-#### Face Rig
-If there's one. Check **Face Rig** for more detail.
+Instead we work on the data that in the end creates the character with the *RunAll* button.
+
+1. [Specify Your Model](builder/builderBasics.md#importmodel)
+2. [Place Blueprint Joints](puppet/puppetBasics.md#change-the-guide-joint-locations)
+3. Skin the Character, and [export weights](builder/builderBasics.md#loaddeformers)
+4. Shape the Ctrls, and [export them](builder/builderBasics.md#loadctrlshapes)
+5. Read through the **Body** page and see what tools you can use to improve deformations.  
+6. If there's one. Check **Face Rig** for more detail.

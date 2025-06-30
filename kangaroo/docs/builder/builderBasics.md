@@ -37,7 +37,7 @@ For now let's check out some of the more important functions that we automatical
 
 # The Functions
 
-## *importModel()* 
+##*importModel()*
 
 The *importModel()* function imports the model. Currently it's just that boring grey guy. 
 If you already have a model, go to export -> MODEL, and with the Explorer New Model button

@@ -1,7 +1,7 @@
 # SkinCluster Tools
-# Weightmap Tools
-# Geometry Tools
-# Plane Cutter
+## Weightmap Tools
+## Geometry Tools
+## Plane Cutter
 Plane Skinner is a tool that can get you quick first pass **SkinCluster** or **Proxy Geometries**
  
 <iframe width="560" height="315"

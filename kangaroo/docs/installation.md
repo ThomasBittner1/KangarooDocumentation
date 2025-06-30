@@ -90,7 +90,7 @@ create the Environment variables wherever you prefer. There's even another file 
 see how you would set it up in *the usual* way
 
 
-# Roadmap for First Character
+## Roadmap for First Character
 Once you've setup-ed your directories and started the character with the **create NEW** tool, it's best to just read
 through the **Builder** and **Puppet** documentations. You can skip things under *Advanced* for now,
 but the other content needs to be understood. Otherwise you'll either get stuck quickly or just won't be able to use the tool
@@ -99,18 +99,18 @@ After you've read through those two pages you can follow this roadmap below. And
 whole character and see what you get. It needs to be understood that Kangaroo is a procedural tool where we don't 
 just work on a maya file and send that out when we are done.  
 Instead we work on the data that in the end creates the character with the *RunAll* button.  
-### Specify your model
+#### Specify your model
 The simple way to get you started is just dragging the model into the explorer. See *importModel()* function of Builder
-### Place Blueprint Joints
+#### Place Blueprint Joints
 The next thing would be placing the blueprints
 and remove or add some limbs.
 This is all done in the puppet tool.
-### Skinning Character
+#### Skinning Character
 Create the weights. You can use the Plane Skinner, or you just do it all with your own skinning tool workflow. Just make
 sure to export the weights in *Export* -> *Deformers*
-### Shaping Ctrls
+#### Shaping Ctrls
 Shape the Ctrls and export them in *Ctrls* -> *Export Ctrl Shapes*
-### Body
+#### Body
 Read through the **Body** page and see what tools you can use to improve deformations.  
-### Face Rig
+#### Face Rig
 If there's one. Check **Face Rig** for more detail.

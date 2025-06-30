@@ -1,35 +1,6 @@
-# Body
 
-## Muscle Joints
-Muscle joints are simple lightweight joints that can be great for preserving volume,
-or some piston type parts
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/7A5NZNeP8vg"
-title="YouTube video player" frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
-
-
-## Blend Joints
-Those are simple joints that rotate a percentage of the main joints. And they have a lot of
-attributes to make them translate or scale based on their parents' rotation
-
-To add one, just specify the joint in the list.
-![Alt text](images/body_blendJointsAdd.gif)
-
-Then after running that function you'll get that joint. And you can adjust its values:
-![Alt text](images/body_blendJoint.gif)
-
-Mirroring and Saving those values can be done with the DEFAULTATTRS options.  
-![Alt text](images/body_blendJointsFill.jpg)
-Btw - the DEFAULTATTRS thing is a common workflow throughout all the kangaroo tools. Especially when
-we come to the face
-
-
-# Pose Editor
 Pose Editor is unavoidable especially when we do Cartoony Characters.  
 It consists of Interpolators, BlendShape Poses and Ctrl Poses  
-
 
 ## Interpolators
 Interpolators are little setups that measure (most of the time) the joints to see if and how strong
@@ -42,10 +13,10 @@ selection order doesn't matter here.
 SignedAngle is the simplest one, and great for simple rotations where you can assume that animators
 usually just rotate it in one angle.
 When it tells you to select Attribute of Ctrl, you just need to select it in the Channel Box like this:  
-![Alt text](images/poseEditior_attribute.jpg)  
+![Alt text](../images/poseEditior_attribute.jpg)  
 Once you created it, special attention is required on the Angle Axis and Up Axis. It might be a bit  
 confusing, because those are the ones on the joints, not the ctrl! 
-![Alt text](images/poseEditor_signedAngle.jpg)
+![Alt text](../images/poseEditor_signedAngle.jpg)
 
 
 ### mayaPose
@@ -62,14 +33,14 @@ If you are getting frustrated with one of the disadvantages, try cones
   
 ### Cones
 Cones just measure how close the joint's angle is to the cone's angle.
-![Alt text](images/poseEditor_cone.gif)
+![Alt text](../images/poseEditor_cone.gif)
 You have more options to adjust the timing. But they can get tricky to setup at first.  
 Common issues you have to tackle is that while it looks great when going into the pose, 
 if the ctrl moves further the pose fades out again which is unwanted behavior in 90 % of the cases.  
 And you have to make sure that there's not a small percentage of the pose turned on when 
 the character is in default.  
 But the good news is, those are easy to tackle if you are familiar with the **Range**
-![Alt text](images/cone_attributes.jpg)  
+![Alt text](../images/cone_attributes.jpg)  
 The first thing you notice on the Range is that it starts from the higher value and goes to 
 the smaller value, like 60-10 in the example above.
 The first value has to be the same or smaller than the *rotation distance* - In the picture above
@@ -98,7 +69,7 @@ can control if and how much it should fade out when the leg rotates inwards.
 ### Custom 
 The custom interpolator is good for 2 things - either driving by a control attribute,
 or you can use it to create your own interpolator type such as an *Interpolate By Distance Node*
-![Alt text](images/poseEditor_customInterpolator.jpg)  
+![Alt text](../images/poseEditor_customInterpolator.jpg)  
 You can see *CtrlAttrX*, *CtrlAttrY* and *CtrlAttrZ*, but you don't need to use all of them
 you can just use *CtrlAttrX* and keep the others empty.  
 *DriverAttr* the attribute that actually drives the interpolator. Basically the tool checks what value
@@ -112,7 +83,7 @@ Both of them start in the same way, that you just drag&drop a pose from the *Int
 into the *Targets Table*
 If you drag more than one pose, then the Target is a combination of the poses, and you get that extra
 button that lets you specify the blend mode - either *Multiply* or *Smallest*.
-![Alt text](images/poseEditor_draggingTargets.gif)  
+![Alt text](../images/poseEditor_draggingTargets.gif)  
 Ok, but until here it was still boring, it's not doing anything yet.
 But now we can choose to do either a blendShape, or Ctrl pose
 
@@ -121,20 +92,20 @@ First specify the meshes you want to use for blendShapes by adding them into the
 And then select them again and click the EDIT button. This tells the tool that whatever you 
 sculpt on the mesh will go into that Target.   
 Don't forget to deactivate the EDIT button when you are done!
-![Alt text](images/PoseEditor_EditButton2.gif)  
+![Alt text](../images/PoseEditor_EditButton2.gif)  
 The tool I used in this gif is **Mesh Tools -> Sculpting Tools -> Grap Tool**. But when you have the EDIT button 
 activated, you can also select vertices and move them. Or use some of the *Geometry Tools* like *Smooth Vertices* 
 
 
 ### Ctrl Targets
 When you create Targets on Ctrls, it just creates a Ctrl Locator for each Pose that you can move around
-![Alt text](images/poseEditor_addCtrl.gif)  
+![Alt text](../images/poseEditor_addCtrl.gif)  
 Whenever you click the *Add/Activate* button it just creates a locator if it doesn't exist yet. If 
 it already exists and is also activated, it'll just select it. So that's a multi functional button 
 that you'll be clicking a lot.  
 In the ctrl hierarchy you can see all the locators, for each target one. And those that are activated are shown
 while the others get hidden automatically. This way you could even adjust poses without the UI.
-![Alt text](images/poseEditor_locators.jpg)  
+![Alt text](../images/poseEditor_locators.jpg)  
 But most of the time you'll be faster to just select the locator using the *Add/Activate* button
 
 ## dResetAttrs
@@ -144,7 +115,7 @@ or apply the blendShapes.
 For that we can add the envelope attribute into the dResetAttr dictionary. Just open it with the JSON Editor
 and add it in there. You can see by default it already added all the fk2ik switches that makes sure you 
 are in FK while setting poses  
-![Alt text](images/poseEditor_dResetAttrs.jpg)  
+![Alt text](../images/poseEditor_dResetAttrs.jpg)  
 
 
 ## Mirror BlendShape
@@ -176,19 +147,20 @@ ctrls, or if you don't have any ctrls selected, he'll do all
 ## Export
 Just click the FillAndExport button. This one fills the ddInterpolators and ddPoseData attributes, and 
 creates the file *poseEditorExports.ma* in the mayaImport folder. 
-![Alt text](images/PoseEditor_FillAndExport.jpg)  
+![Alt text](../images/PoseEditor_FillAndExport.jpg)  
 
 
-# Model Change
+## Model Change
 Whenever the model changes, open the *poseEditorExports.ma* file from the *Export -> MayaImp* tool,
 and import the new model. Then select the new model + the corresponding Blendshape Mesh you have in scene,
 and click the button *Model Warp Selected Meshes*
 
 
-# Motion Capture
-Maya has a great tool for Motion Capture retargeting, which is called *humanIK*. Kangaroo is simplifying this for you.
-If just turn on the function *humanIkSkeleton()*, it'll create this skeleton:  
-![Alt text](images/body_motionCaptureSkeleton.jpg)  
-There's nothing for you to do at this point. Just know that it'll use this later under the hood when Animators apply 
-Motion Capture using the Picker.  
-For more information check: **Animator Tools**
+## Known Issues
+#### Soemtimes the Interpolator doesn't update anymore, even though I'm 100 % sure my settings are correct.
+This can be an evaluation problem that sometimes happens if the rig is either very complex, or if there's a cycle
+in there.  
+But there's a workaround: select the interpolator, and set **right click -> rebuild** 
+#### When I export using the **Fill and Export** button, he exports the whole rig.
+Check if you have some connections going from the meshes inside the *_poseEditorExport* group. Sometimes
+it could be a set. You can also try to just delete all your sets in scene

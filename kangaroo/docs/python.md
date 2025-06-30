@@ -2,7 +2,7 @@
 
 As you remember from the builder documentations, everything is written in Python. And we can customize a lot
 
-# PyCharm
+## PyCharm
 If you have pycharm installed, there's lots of quick ways to jump to a specific code.  
 But for that we have to link it first.  
 On the settings, 
@@ -15,7 +15,7 @@ Same thing happens on Errors in the Kangaroo Log - those are links you can just 
 ![Alt text](images/python_error.jpg)
 
 
-# Simple way of adding a Function
+## Simple way of adding a Function
 The simplest way to add a function is just in the character script. Basically the python file that is 
 inside your version folder.  
 It's the file that is shown in *white*, and it's usually the same name ass your asset.
@@ -210,7 +210,7 @@ assets.getCurrentVersionPath() # returns the absolute version folder inside the 
 ```
 
 
-# Extra Builds
+## Extra Builds
 So far we've just learned how to add some fun python stuff to your character file. But what if you want to make a company wide tool
 that other people can run, too - so everyone can just add the file at the top as shown in this gif:
 ![Alt text](images/python_customBuild.gif)
@@ -251,9 +251,9 @@ Then you can add it to the builder like shown above.
 
 
 
-# Connecting to Studio Pipeline
+## Connecting to Studio Pipeline
 If you've managed to read until here, you are ready to connect kangaroo to your studio pipeline.
-## *importModel()* recreate
+### *importModel()* recreate
 Create a new **Extra Builds** file as shown in previous chapter,
 and add a function in there called something like *importModel2()*. In there create some code that
 looks in the files of your studio pipeline and imports the correct model.
@@ -264,13 +264,13 @@ You might find this function useful for importing the file, once it found it:
 import kangarooTools.utilFunctions as utils
 utils.importMayaFiles(sFiles, sNamespace=None, bReference=False, bReturnAllNodes=False)
 ```
-## *prepareForPublish()* recreate
+### *prepareForPublish()* recreate
 *** TODO: WRITE HOW THAT WORKS ***
 
 
 
 
-# Custom Limbs
+## Custom Limbs
 Writing your own puppet limbs is where things get very advanced, therefore a decent python level is required.  
 Start by creating an empy folder, and declare it with the Environment Variable **KANGAROO_EXTRALIMBS_PATH**.  
 Then copy/paste one of the existing limbs from the *kangarooLimbs* folder of your Kangaroo installation in to that new folder.

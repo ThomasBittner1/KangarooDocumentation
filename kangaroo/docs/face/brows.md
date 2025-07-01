@@ -37,7 +37,7 @@ go along the lines of the surfaces, otherwise you might get the feeling the join
 ![Alt text](../images/face_browSplines_orientationLocators.jpg)  
 
 
-### fVerticalSplineOffset
+### Brow Splines - fVerticalSplineOffsets
 *fVerticalSplineOffsets* is the attribute that defines the exra rows. It's a list of all the rows. Negative is below the
 main brows, and positive is above. If you want those extra rows, you can try with  [-0.05, 0.1]
 Adjusting the speed of those is done with passer attributes.   
@@ -71,7 +71,7 @@ lightweight crease. But depending on the model, sometimes it's easier to just do
     Don't forget to save those values with the ** === DEFAULT ATTRS === ** button
 
 
-### Extra Attributes
+### Brow Splines - Extra Attributes
 Once you have a rough skinning pass, it's time to adjust the Passer Attributes.  
 On the Passer of *browMain_l_ctrl* you've got **multiplyIn/Out/Down/Up**, those are to finetune the movements when for example
 the brows shouldn't go down as much as they should go up. Even though thoes are on the main ctrl, the 
@@ -87,12 +87,17 @@ The passers of the three micro ctrls (**browSplines\[ABC\]_l_ctrl**) have
 
 ### Brow Splines - PoseLocs
 There are 2 sets of locators.
-#### Main Driven
-Those are driven by the **browMain_l_ctrl**, and are posing the Micro Ctrls (**browSplines\[ABC\]_l_ctrl**).
+#### Micro Ctrls
+Those are driven by the **browMain_l_ctrl**, and are posing the Micro Ctrls (**browSplines\[ABC\]_l_ctrl**):  
+![Alt text](../images/brows_mainPoseLocators.jpg)  
 Most of the time they are just used for the down motion and just the middle, to have the brow 
-straighten as the browMain_l_ctrl goes down. 
-#### Micro Driven
-Those are driven by the Micro Ctrls, and are posing the Tangent Ctrls.  
+straighten as the browMain_l_ctrl goes down:   
+![Alt text](../images/brows_straighten.gif)
+
+#### Tangent Ctrls
+With those you can pose the Tangent Ctrls:  
+![Alt text](../images/brows_tangentPoseLocators.jpg)
+
 
 
 

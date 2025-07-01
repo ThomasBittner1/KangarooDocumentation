@@ -31,7 +31,7 @@ And make sure to skin the **jnt_l_eyeIris** and **jnt_l_eyePupil** joints!
 # Eyelids
 ## Basic Ctrls
 The function *baseLidCtrls()* just creates those three arrow ctrls. Those are being used for all setup, no matter
-if blendShapes or splines.  
+if simple lid joints, blendShapes or splines.  
 ![Alt text](../images/face_basicLidCtrls.jpg)
 
 To get a good rom, apply **rom_eyes.anim**, which you'll find in almost every character at **Export -> Anim**
@@ -55,12 +55,20 @@ Locate them by clicking the button **Select Sibling Transforms**
 And then just place them, as you go through the rom that you applied:  
 ![Alt text](../images/face_placeSiblings.gif)  
 
+!!! tip
+    Some animators want to be able to achieve a blink by adjusting upperlid and lowerlid separate.  
+    In this case you can click the button **set extras from blink**, which will assign the values from the sibling transforms
+    of the blink onto the lower and upper ones.
 
 ## Eyelid BlendShapes
-the *blendShapesAndSliders()* function is using the blendShapes mentioned below.   
+The *blendShapesAndSliders()* function is using the blendShapes mentioned below.   
 !!! tip
     If you are doing the blink with just blendShapes, it's advisable to also turn on the *TWEAKER_lids()* function, 
     since animators might want some extra behavior.
+
+Those blendShapes also work well as correctives on top of Simple Lid Joints (*simpleLidSetup()*). Because if you just
+do blendShapes, a blink might be too linear. But getting the sperical motion from the joints and blendShape just as
+a corrective is giving you the top quality.
 
 **blink_l_ctrl** is triggering the following blendShapes:
 

@@ -104,5 +104,10 @@ Instead we work on the data that in the end creates the character with the *RunA
 2. [Place Blueprint Joints](puppet/puppetBasics.md#change-the-guide-joint-locations)
 3. Skin the Character, and [export weights](builder/builderBasics.md#loaddeformers)
 4. Shape the Ctrls, and [export them](builder/builderBasics.md#loadctrlshapes)
-5. Read through the **Body** page and see what tools you can use to improve deformations.  
-6. If there's one. Check **Face Rig** for more detail.
+5. When you click **RunAll** in the builder, you have your Rig.  
+
+!!! success
+    Congratulations! You finished your first Character :-) 
+
+Keep in mind if you got until here, it means you still just scratched the surface of what you can do with Kangaroo. 
+Best keep reading the documentation and see how you can improve your rig with what you've learend.

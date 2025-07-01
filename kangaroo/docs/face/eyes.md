@@ -50,7 +50,7 @@ Don't worry if it doesn't look good yet on the blink, for that you'll need to se
 ### Sibling Transforms
 those Transforms that you can move around. 
 Those are working with a similar concept as the  *poseLocators* you see in lots of other functions. They basically 
-just define the poses of the joints in all eyelid poses posed by the arrow ctrls (blink, wide, upperLidUp, upperLidDown, ...)  
+just define the poses of the joints in all eyelid posed by the arrow ctrls (blink, wide, upperLidUp, upperLidDown, ...)  
 Locate them by clicking the button **Select Sibling Transforms**
 And then just place them, as you go through the rom that you applied:  
 ![Alt text](../images/face_placeSiblings.gif)  
@@ -60,34 +60,45 @@ And then just place them, as you go through the rom that you applied:
     In this case you can click the button **set extras from blink**, which will assign the values from the sibling transforms
     of the blink onto the lower and upper ones.
 
+Many times you can get perfectly looking blinks using a acombination of good skinning and well placed Sibling Transforms.
+But it's not always the case. In some cases you'll hit limits where you have to add blendShapes on top.
+
 ## Eyelid BlendShapes
 The *blendShapesAndSliders()* function is using the blendShapes mentioned below.   
-!!! tip
-    If you are doing the blink with just blendShapes, it's advisable to also turn on the *TWEAKER_lids()* function, 
-    since animators might want some extra behavior.
 
-Those blendShapes also work well as correctives on top of Simple Lid Joints (*simpleLidSetup()*). Because if you just
-do blendShapes, a blink might be too linear. But getting the sperical motion from the joints and blendShape just as
-a corrective is giving you the top quality.
 
-**blink_l_ctrl** is triggering the following blendShapes:
-
-* blink
-* upCurveBlink (for some cartoony characters, creates **upCurveBlink** attribute on the blink_l_ctrl)
+**blink_l_ctrl** is triggering the following blendShapes:  
+```
+blink
+upCurveBlink (for some cartoony characters, creates **upCurveBlink** attribute on the blink_l_ctrl)
+```
 
 **lidBot_l_ctrl** and **lidTop_l_ctrl** are triggering the following ones:
+```
+eyeUpperUp
+eyeUpperDown
+eyeLowerUp
+eyeLowerDown
+```
 
-* eyeUpperUp
-* eyeUpperDown
-* eyeLowerUp
-* eyeLowerDown
+!!! tip
+    Those blendShapes also work well as correctives on top of Simple Lid Joints (*simpleLidSetup()*). Because if you just
+    do blendShapes, a blink might be too linear and even giving intersections with the eyeballs. 
+    But getting the spherical motion from the joints and blendShape just as a corrective is giving you the top quality.     
+    And yes, instead of joints you could solve the intersections by adding inbetweens, but the result is often not 
+    as clean.
+
 
 When the eyeballs are looking into different directions, those blendshapes are being triggered:
+```
+eyelookUp
+eyelookDown
+eyelookLeft
+eyelookRight
+```
+Those eyelook shapes can also be tweaked by animation with the *eyesLookAt_l_ctrl.lidFollow* attribute.
 
-* eyelookUp
-* eyelookDown
-* eyelookLeft
-* eyelookRight
+
 
 
 ## Eyelid Splines
@@ -196,3 +207,6 @@ the eyelid geos (**sSkinMeshes**).
 After building, you'll have to fix the eyelid weights. It's best done with **Weightmaps -> Flood** and the *Replace Absolute* option.  
 ![Alt text](../images/face_eyeLatticeWeights.jpg)  
 And you are done. In many cases you might want to adjust the ctrl shapes a bit so they aren't buried inside the mesh.
+
+
+## Tweakers

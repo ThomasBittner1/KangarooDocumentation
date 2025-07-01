@@ -31,8 +31,20 @@ And later the function *blendShapesAndSliders()* is grabbing those baked meshes 
 
 
 ## *blendShapesAndSliders()*
-*blendShapesAndSliders()* is the function that applies all the blendShapes created in the Shape Editor. 
+*blendShapesAndSliders()* is the function that applies all the blendShapes created in the Shape Editor.  
+This function basically knows about a huge list of shapes, and can even do some additional shapes defined in the 
+attributes **ddTargetsAsAttributes**, **ddExtraTargetSliders**, **ddCorrectives**
+Here's an overview of what shapes it can do:  
+[Eyelids](eyes.md#eyelid-blendshapes)  
+[Brows](brows.md#blendshapes)  
+[Brows Splines](brows.md#brow-splines-correctives)  
+[Mouth](mouth.md#blendshapes)  
+
+
+
 *Would you like to adjust the placement of the sliders it creates?* Check the following chapter *SliderBlueprints* 
+
+ 
 
 
 ## SliderBlueprints

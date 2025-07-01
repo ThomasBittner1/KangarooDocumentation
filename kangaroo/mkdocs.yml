@@ -28,7 +28,7 @@ nav:
       - Pose Editor: body/poseEditor.md
       - Motion Capture: body/motionCapture.md
   - Face:
-      - General: face/general.md
+      - General: face/faceGeneral.md
       - Eyes: face/eyes.md
       - Brows: face/brows.md
       - Mouth: face/mouth.md

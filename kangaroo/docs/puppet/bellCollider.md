@@ -3,7 +3,7 @@ The **singleBone** limb comes with a Bell Collider. Bell Collider looks like dyn
 interactive angle calculations. It works great for short pants. 
 ![Alt text](../images/bellCollider.gif)  
 While it looks great in the video, it does
-come with the disadvantage that he can only handle cylinders. Those can be scaled, and translated and rotated though.
+come with the disadvantage that he can only handle cylinders. But those can be scaled non-uniformly, translated and rotated.
 And with some multiply attributes you can specify it to be weaker in either front, back or on the sides.
 
 It's quick to setup. Just add a singleBone limb, declare it as a bell with the **isBell** attribute, and
@@ -17,6 +17,7 @@ The **Bell Settings** is the translate/rotate/scale/multiply attributes on the c
 set automatically when right-clicking on the limb: **Custom: Store Bell Settings**   
 ![Alt text](../images/bellCollider_rightClick.gif)
 
-TIP: Sometimes you might feel like the bell joint jumps a bit too quickly as the ringer touches it. 
-To fix that it can help to setup the bell's attacher to move slightly with the ringer by around 50 % .
+!!! tip
+    Sometimes you might feel like the bell joint jumps a bit too quickly as the ringer touches it. 
+    To fix that it can help to setup the bell's attacher to move slightly with the ringer by around 50 % .
 

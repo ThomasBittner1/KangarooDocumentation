@@ -2,14 +2,14 @@
 # Brows
 ## BlendShapes
 The blendShape targets that you can sculpt in the ShapeEditor are:
-
-* innerBrowDown
-* innerBrowUp
-* browIn
-* browOut
-* outerBrowUp
-* outerBrowDown
-
+```
+    innerBrowDown
+    innerBrowUp
+    browIn
+    browOut
+    outerBrowUp
+    outerBrowDown
+```
 !!! Note
     There are some additional corrective targets that can be sculpted, but those are only available when you use the
     Splines as shown below
@@ -23,7 +23,7 @@ is different to the control set you get with blendShapes.
 ### Brow Splines - Blueprints
 And those joints are sliding along the two nurbs surfaces **surface_forehead** and **surface_forehead_eyeSocket**
 ![Alt text](../images/face_browSplines_surfaces.jpg)  
-Most joints are sliding along the *surface_forhead** surface but the ones below the main line are sliding along
+Most joints are sliding along the *surface_forhead* surface but the ones below the main line are sliding along
 the *surface_forehead_eyeSocket*  
 To create those surfaces, first click the button **Import Default Surfaces** and shape them.    
 !!! tip 
@@ -103,21 +103,22 @@ With those you can pose the Tangent Ctrls:
 
 
 ### Brow Splines - Correctives
-For everything that can't be easily achieved with previous settings, we can use Correctives. 
-!!!
-    browSplinesSplitCtrlsUp
-    browSplinesSplitCtrlsDown
-    browSplinesInA
-    browSplinesInWrinklesA (same as browSplinesInA, but an additional wrinkle attribute will turn it on)
-    browSplinesUpA
-    browSplinesUpB
-    browSplinesUpC
-    browSplinesDownA
-    browSplinesDownB
-    browSplinesDownC
-    browSplinesSplitJointsUp (experimental - heavy!)
-    browSplinesSplitJointsDown (experimental - heavy!)
-
+If you get stuck not being able to hit a proper shapes with combination of skinning and poseLocators, there's still the 
+option of adding correctives.
+```
+browSplinesSplitCtrlsUp
+browSplinesSplitCtrlsDown
+browSplinesInA
+browSplinesInWrinklesA (same as browSplinesInA, but an additional wrinkle attribute will turn it on)
+browSplinesUpA
+browSplinesUpB
+browSplinesUpC
+browSplinesDownA
+browSplinesDownB
+browSplinesDownC
+browSplinesSplitJointsUp (experimental - heavy!)
+browSplinesSplitJointsDown (experimental - heavy!)
+```
 The ones starting with *browSplinesSplitCtrls* are probably the most used ones. Their pose is the **browMain_\[lr\]_ctrl** 
 going up or down. And then in the *blendShapesAndSliders()* function they will get split into the micro ctrls.
 

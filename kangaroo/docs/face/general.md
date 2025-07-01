@@ -30,10 +30,15 @@ Basically you just create a blendShape file such as *blendShapes.ma* that you im
 And later the function *blendShapesAndSliders()* is grabbing those baked meshes and putting them into the rig as blendShapes.
 
 
+## *blendShapesAndSliders()*
+*blendShapesAndSliders()* is the function that applies all the blendShapes created in the Shape Editor. 
+*Would you like to adjust the placement of the sliders it creates?* Check the following chapter *SliderBlueprints* 
+
+
 ## SliderBlueprints
 Slider Blueprints are NOT the *blueprints* in the puppet tool. Instead they
 are just some simple joints for the Face Setups. There's no centralized place where you manage them. Instead every 
-function just creates them and puts them into the *__sliderBlueprints* group, and when you export them, you export them all together.
+function just creates them and puts them into the *__sliderBlueprints* group. and when you export them, you export them all together.
 ![Alt text](../images/face_sliderBlueprints.jpg)
 
 ### Mirror
@@ -45,9 +50,21 @@ To specify which ones get exported and which ones not you can switch the **doExp
 Exporting works with the button **-export \*Slider\* BPs-**. You'll find this button on many functions such as *BASELidCtrls()*,
 *blendShapesAndSliders()*, *parallelAttachTransforms()*. And it'll do the same thing on each function, it exports
 ALL the sliderBlueprints, not just the ones of the current function.
+
+
 ### Placing them
 Most of the time it's best to build until before *parallelAttachTransforms()*, and then adjust their locations and scale.
 This way you can test right away if they work well with the blendShape they are driving.  
-Just whenever they are driving spline rigs such as the lips spline rig, that connection is already broken. And in 
-those cases you just have to guess when giving them good scale values, and rebuild.
+![Alt text](../images/face_placeSliderBlueprints.gif)
+
+
+Just whenever they are driving spline rigs such as the lips spline rig, the live connection from the sliderBlueprints already gets broken
+in the function where they are created. In those cases you just have to guess when giving them good scale values, and rebuild.
   
+
+## === DEFAULT ATTRS === 
+On many functions you'll see that **=== DEFAULT ATTRS ===** button. It's attributes that are usually on the passers of the 
+ctrls. But sometimes also pose locators. 
+
+
+

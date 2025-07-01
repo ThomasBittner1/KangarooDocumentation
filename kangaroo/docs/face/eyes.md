@@ -28,15 +28,32 @@ And make sure to skin the **jnt_l_eyeIris** and **jnt_l_eyePupil** joints!
  
 
 
-
-
 # Eyelids
 ## Basic Ctrls
 The function *baseLidCtrls()* just creates those three arrow ctrls. Those are being used for all setup, no matter
-if blendShapes or splines.
+if blendShapes or splines.  
+![Alt text](../images/face_basicLidCtrls.jpg)
 
-## Eyelid Locators
-If you turn on the function *simpleLidSetup()*, you'll get those locators that you can move around
+To get a good rom, apply **rom_eyes.anim**, which you'll find in almost every character at **Export -> Anim**
+Now the eyelids are not moving yet. For them to move, you'll hvae to either do *simpleLidSetup()* (Simple Lid Joints) or *splineLidSetup()* (Eyelid Splines)
+
+
+## Simple Lid Joints
+### Create and Skin
+If you turn on the function *simpleLidSetup()*, you'll get mainly 2 joints for each eye *jnt_l_eyeBlinkBot* and *jnt_l_eyeBlinkTop*
+and a few pose groups that define in which poses the joints should be as you move the arrow ctrls created 
+in **Basic Ctrls**
+
+After you've run that function, skin the joints. 
+Don't worry if it doesn't look good yet on the blink, for that you'll need to set the slibling transforms.
+
+### Sibling Transforms
+those Transforms that you can move around. 
+Those are working with a similar concept as the  *poseLocators* you see in lots of other functions. They basically 
+just define the poses of the joints in all eyelid poses posed by the arrow ctrls (blink, wide, upperLidUp, upperLidDown, ...)  
+Locate them by clicking the button **Select Sibling Transforms**
+And then just place them, as you go through the rom that you applied:  
+![Alt text](../images/face_placeSiblings.gif)  
 
 
 ## Eyelid BlendShapes
@@ -64,7 +81,6 @@ When the eyeballs are looking into different directions, those blendshapes are b
 * eyelookLeft
 * eyelookRight
 
-Those are also being used for lookUp/Down 
 
 ## Eyelid Splines
 ![Alt text](../images/face_eyelidSplinesCtrls.gif)

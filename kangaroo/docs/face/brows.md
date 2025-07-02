@@ -90,7 +90,7 @@ There are 2 sets of locators.
 #### Micro Ctrls
 Those are driven by the **browMain_l_ctrl**, and are posing the Micro Ctrls (**browSplines\[ABC\]_l_ctrl**):  
 ![Alt text](../images/brows_mainPoseLocators.jpg)  
-Most of the time they are just used for the down motion and just the middle, to have the brow 
+Very often they are just used for the down motion and just the middle, to have the brow 
 straighten as the browMain_l_ctrl goes down:   
 ![Alt text](../images/brows_straighten.gif)
 
@@ -100,6 +100,8 @@ With those you can pose the Tangent Ctrls:
 
 
 
+!!! tip
+    At this point it's very helpful to apply the Rom Animation by clicking the button **Create Rom Animation**
 
 
 ### Brow Splines - Correctives
@@ -126,4 +128,4 @@ going up or down. And then in the *blendShapesAndSliders()* function they will g
     Keep in mind you are not limited to those. You can create combo of them, and even combo with others.     
     And if it's still not enough, you can add extra correctives with the **ddCorrectives** attribute
     in *blendShapesAndSliders()* function.
-    
+

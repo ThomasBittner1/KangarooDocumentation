@@ -253,10 +253,10 @@ Then you can add it to the builder like shown above.
 
 ## Connecting to Studio Pipeline
 If you've managed to read until here, you are ready to connect kangaroo to your studio pipeline.
-### *importModel()* recreate
+### *importModel()* replace
 Create a new **Extra Builds** file as shown in previous chapter,
-and add a function in there called something like *importModel2()*. In there create some code that
-looks in the files of your studio pipeline and imports the correct model.
+and add a function in there called something like *importModel2()*. And uncheck the old one (*importModel()*).  
+In *importModel2()* create some code that looks in the files of your studio pipeline and imports the correct model.
 For doing that you'll most likely need the code snippets in [Getting Asset Info](#getting-asset-info) for getting your current
 asset infos.
 
@@ -268,9 +268,9 @@ asset infos.
     import kangarooTools.utilFunctions as utils
     utils.importMayaFiles(sFiles, sNamespace=None, bReference=False, bReturnAllNodes=False)
     ```
-### *prepareForPublish()* recreate
+### *prepareForPublish()* replace
 
-Let's look at the function *prepareForPublish()* from general_v13. 
+Let's look at the function *prepareForPublish()* in general_v13.py. 
 
 ```python 
 @builderTools.addToBuild(iOrder=1010)

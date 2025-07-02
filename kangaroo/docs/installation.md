@@ -52,6 +52,7 @@ And we usually grab one from the server. **Templates** is one server that comes 
 - BASEBIRD
 - BASEPROP
 - BASELEGOFIGURE
+- THOMAS (BlendShape driven Face Rig)
 
 Let's go to the BASEHUMAN for example, and then in **Export -> NEW**, set the project and new asset name, and then click **Create**
 ![Alt text](images/newAssetGif.gif)

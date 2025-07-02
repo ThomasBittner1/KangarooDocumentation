@@ -257,15 +257,87 @@ If you've managed to read until here, you are ready to connect kangaroo to your 
 Create a new **Extra Builds** file as shown in previous chapter,
 and add a function in there called something like *importModel2()*. In there create some code that
 looks in the files of your studio pipeline and imports the correct model.
-For doing that you'll most likely need the code snippets in **Getting Asset Info** for getting your current
+For doing that you'll most likely need the code snippets in [Getting Asset Info](#getting-asset-info) for getting your current
 asset infos.
-You might find this function useful for importing the file, once it found it:
-```python
-import kangarooTools.utilFunctions as utils
-utils.importMayaFiles(sFiles, sNamespace=None, bReference=False, bReturnAllNodes=False)
-```
+
+!!! tip
+    For finding the right file, it's best to use the python *os* module. And once you've cut together the file path
+    with that, you can use the following function to import the file. The *importMayaFiles()* is good because it 
+    can return the nodes he imported.
+    ```python
+    import kangarooTools.utilFunctions as utils
+    utils.importMayaFiles(sFiles, sNamespace=None, bReference=False, bReturnAllNodes=False)
+    ```
 ### *prepareForPublish()* recreate
-*** TODO: WRITE HOW THAT WORKS ***
+
+Let's look at the function *prepareForPublish()* from general_v13. 
+
+```python 
+@builderTools.addToBuild(iOrder=1010)
+def prepareForPublish(sRenameMaster='master', bDeleteUnrealModel=True):
+    sAsset = assets.assetManager.getCurrentAsset()
+    sUnrealModel = utils.data.get('sUnrealModel', None)
+    if not sUnrealModel:
+        bDeleteUnrealModel = False
+
+    utils.addStringAttr('master', 'sOldMasterName', 'master')
+    sMaster = cmds.rename('master', sRenameMaster)
+    ddMasters = {sMaster:{'sFilename':'RIG_%s_[v].ma' % sAsset,
+                           'sExtraFiles': 'fbx/GAME_%s.fbx' % (sAsset),
+                           'sDelete':['GAMEMODEL'] if bDeleteUnrealModel else []}}
+    utils.data.store('ddMasters', ddMasters, sNode=utils.kExportNode)
+    utils.data.store('bSaveInsteadOfExport', True, sNode=utils.kExportNode)
+
+```
+
+#### Change File name or Delete Nodes
+Focus on the dictionary:
+``` python
+ddMasters = {sMaster:{'sFilename':'RIG_%s_[v].ma' % sAsset,
+                       'sExtraFiles': 'fbx/GAME_%s.fbx' % (sAsset),
+                       'sDelete':['GAMEMODEL'] if bDeleteUnrealModel else []}}
+```
+You can see here that you have the power to decide how the filename should look like. And you can specify a few 
+maya nodes that should get deleted on publish. It's wise not to overuse the deletion thing, and instead add
+a function that deletes it. But in certain situations the *sDelete* key can be useful.
+
+
+#### Copy Output File to a certain Folder
+You can also add **sCopyToOutputFolder*:  
+``` python
+ddMasters = {'master':{'sFilename':'RIG_%s_[v].ma' % sAsset,
+                       'sCopyOutputToFolder': os.path.join(sParentFolder, '[v]'),
+                       'sExtraFiles': ['fbx/RIG_%s.fbx' % (sAsset), 'fbx/RIGSIMPLE_%s.fbx' % (sAsset)],
+                       'sDelete':['UNREALMODEL'] if bDeleteUnrealModel else []}}
+```
+The *\[v\]*' gets replaced with the version.
+
+
+#### Run a function after export
+In some cases the *ddMasters* keys are not enough. Sometimes in order to put things into the right place, you'll have to add some python code
+that manipulates the other pipeline, even runs some of their functions.
+This can be done with:  
+``` python
+nodes.data.store('sShareFuncPre', 'rig.global.pre_publish', sNode=nodes.kExportNode)
+nodes.data.store('sShareFuncPost', 'rig.global.post_publish', sNode=nodes.kExportNode)
+```
+
+The more useful one is definitely the **sShareFuncPost** one. You basically pass a function location that gets run
+after you've published to kangaroo in the usual way.  
+Keep in mind that the function you are passing here (*rig.global.post_publish* in the example above) needs to be importable in python.
+So the publish function later will run it as something like:
+``` python
+import rig.global
+rig.global.post_publish(sProject, sToAssetFolder, sComments)
+```
+
+Yes, you saw right - it's passing some infos. So the *post_publish()* function in this example needs to be declared in rig.gobal as 
+``` publish
+def post_publish(sProject, sToAssetFolder, sComments):
+    print ('sProject: ', sProject)
+    print ('sToAssetFolder: ', sToAssetFolder)
+    print ('sComments: ', sComments)
+```
 
 
 

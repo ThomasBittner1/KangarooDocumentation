@@ -1,4 +1,4 @@
-# Bell Collider
+
 The **singleBone** limb comes with a Bell Collider. Bell Collider looks like dynamics but it's really just
 interactive angle calculations. It works great for short pants. 
 ![Alt text](../images/bellCollider.gif)  
@@ -6,18 +6,30 @@ While it looks great in the video, it does
 come with the disadvantage that he can only handle cylinders. But those can be scaled non-uniformly, translated and rotated.
 And with some multiply attributes you can specify it to be weaker in either front, back or on the sides.
 
+## Setting it up
 It's quick to setup. Just add a singleBone limb, declare it as a bell with the **isBell** attribute, and
 define the **ringer** in the attacher below. The ringer in this case is another *singleBone* limb that is 
 located close to the bell. And the ringer itself doesn't need any extra settings. Actually it doesn't even know that 
 it's a ringer. We just named it ringer.  
 ![Alt text](../images/bellCollider_settings.jpg)  
-The **Bell Up Vector** is an important attribute to know about. Keep it at default (0,1,0) at first, but if it's flipping 
-strangely as you rotate the limb up 90 degrees, try setting it to (0,0,1) instead  
-The **Bell Settings** is the translate/rotate/scale/multiply attributes on the cylinders. But those are being
-set automatically when right-clicking on the limb: **Custom: Store Bell Settings**   
+
+## Shaping the Cylinders
+Then you need to fine tune the cylinders. Show them with setting **master.rigVis** to **True**. Ringer is easy to see, but for the bell,
+even though you'll see a bell in the scene - the one that you need to adjust is the hidden one right next to it in the outliner.  
+And then translate/rotate/scale the bell and the ringer.  
+Multiply values can be useful, too - but don't overuse them! They are only here to limit the bell in a certain direction.  
+When you are happy with how it works, save the settings in the puppet limb's right click menu **Custom: Store Bell Settings**   
 ![Alt text](../images/bellCollider_rightClick.gif)
 
-!!! tip
-    Sometimes you might feel like the bell joint jumps a bit too quickly as the ringer touches it. 
-    To fix that it can help to setup the bell's attacher to move slightly with the ringer by around 50 % .
+
+## Trouble shooting
+Especially when setting it up the first time, you might find it's not behaving as you want it to. Here's a few common issues
+and how to solve them:
+
+1. *The bell is flipping as I rotate it to 90 degrees:* Might be an easy solve - switch the **Bell Up Vector** from default of (0,1,0) to (0,0,1)
+2. *The bell *jumps* very unnatural as it touches the ringer:* Give the bell a blended attacher, that it already moves like the ringer 50 % without the bell settings. 
+
+
+
+
 

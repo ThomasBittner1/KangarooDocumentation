@@ -182,8 +182,17 @@ to use the JSON Editor!) and rebuild.
     If you set this ctrl pose to NOT be fully down, in the end it will fade back to default when the ctrl is fully down.
     Which can be unwanted behavior. 
 
+
+#### extra control on lids open widely
+Once you run the eyelid spline function, you'll get those extra curves:  
+![Alt text](../images/eyes_extraCurveBlueprints.jpg)   
+Those just specify how the lids behave when they get opened wider.   
+If you want to finetune those, you'll more likely want to set the **bLipsCanPushOut** value to **True**, otherwise
+the lips will always be constraint onto the eyeballs
+
+
 ### Eyelid Splines - BlendShape Correctives
-If the PoseLocs are not enough, you can also go more in detail with sculpting shapes. For that the **Shape Editor**
+If the PoseLocs are not enough, you can also go more in detail with sculpting shapes. For that the [Shape Editor](faceGeneral.md#shape-editor)
 needs to be understood.  
 When you are using the *Shape Editor*, many times doing the usual blendShapes mentioned above like *blink* are already 
 enough. But you can go move into detail:  
@@ -194,6 +203,7 @@ information into the target name. Basically it's having the lowerlid position an
 percentage separated by **X**. And if there's an **n** before a number, it means the number is negative.  
 *"splineLidCorrectiveX030X"* = lower lid 30 % up, nothing is after the second X therefore no pose for upper lid  
 *"splineLidCorrectiveX010X089"* = lower lid is 10 % up and upperlid is 89 % down.   
+If you have 2 poses (lower and upper), then it's spliting those in the *blendShapesAndSliders()* function, using the skinCluster weights.
 !!! tip
     The lower lid up as shown in the gif above is actually very common. 
     Often we add that shape but keep it unchanged, just to create a combo with the *squint*.

@@ -113,7 +113,23 @@ Box Ctrls Rotations:
     the lips forward or back. 
 
 
+## Rom
+At this point it's good to check out the Rom - by clicking the button **Create Rom Animation**. 
 
+## Mouth Directions
+If you move the mouth_ctrl up/down/left/right or rotate it in rotateZ, (Frame 75-135 in the ROM), you can do this with the 
+*mouthLeft/mouthRight/mouthUp/mouthDown* blendShapes (except the rotateZ).    
+But you can also do that with skinning. Select the area around the mouth, open the Face Skinning UI and click **Move Jaw/Head to frontPivots**
+
+Remember the mouth pivot blueprint? It's rotating the mouth along that pivot. But if you don't like the motion, there's
+not always the need to go back and adjust the blueprint - instead you can just adjust the passer values.   
+On the passer of mouth_ctrl, you can find those values you can adjust:
+![Alt text](../images/mouth_mouthDirectionAttributes.jpg)  
+
+!!! tip
+    If you feel like you want to do the mouth directions entirely with blendShapes because you are concerned that the joint movements
+    are just working against you, just set all those attributes to 0.0.  
+    Or if you also don't need the rotateZ, you can ignore this setup by just not skinning the joints.
 
 ## Splines
 You'll get the splines when you set **bSPLINE** to *True*. This option came with Kangaroo V5.  
@@ -161,7 +177,8 @@ It's using the **ClosestExpand** SkinCluster tool under the hood, therefore it's
 !!! tip
     Make sure to use the *Grow Selection* (CTRL >) and *Shrink Selection* (CTRL <) Maya commands and Soft Selection!
 
-At this point it's best to load the Rom Animation by clicking the button **Create Rom Animation**.
+At this point it's best to load the [Rom Animation](#rom)
+
 Now you can do a few combinations of:  
 
 - clicking the *Add to Big Joints* on different vertex selections
@@ -176,13 +193,27 @@ Now you can do a few combinations of:
 At this point try to get it to look clean, but don't worry too much about the details yet. That part comes later.
 
 #### Small Joints
-
-Once you find that it's sort of holding up the corner shapes, select the vertices of just the lips (or the whole face and lower the *Rigid/Fade Loops*),
-and click **Add To Small Joints**.  
+Did you notice that at this point in the Rom between 60 and 75 it's just rotating the box ctrls, but nothing is happening?  
+That's because the small joints are handling the lip rolls.  
+Select the vertices of just the lips (or the whole face and lower the *Rigid/Fade Loops*), and click **Add To Small Joints**.  
 To see the results, check the roll movements a bit later in the Rom that you applied before.
 
 
-### Splines - Pose Locators
+### Splines - Adjust Ctrl Behaviors
+At some point when the skinning looks somewhat clean, it's best to start adjusting the behaviors of the ctrls some more.  
+And you basically find 3 things:
+
+
+#### Corner Strenghtes
+Slider blueprints
+Multiply on the Passers
+pose values
+
+#### Pose Locators
+
+
+#### Lip Ctrl Passer Values
+reaction of the lip ctrls to the corner ctrls
 
 
 ### Splines - NLF Setup

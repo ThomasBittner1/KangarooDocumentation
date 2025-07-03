@@ -32,6 +32,7 @@ nav:
       - Eyes: face/eyes.md
       - Brows: face/brows.md
       - Mouth: face/mouth.md
+      - Squash/Stretch: face/squashStretch.md
       - Face Tweaker Ctrls: face/faceTweakerCtrls.md
   - Python: python.md
   - Tools: tools.md

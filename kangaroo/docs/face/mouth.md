@@ -265,9 +265,25 @@ Then you save their values with the [**=== Default Attr === **](faceGeneral.md#-
     *postZipper()* function if needed
 
 
-### Splines - NLF Setup
-*createNlfSetup()* can be very useful for characters that show a strong NLF line that you'd like to maintain on the corner shapes.  
-It is another function, but taking a lot of info from the *createBASEMouth()*, and would only make sense if you have its *bSLINE* attribute enabled. 
+## NLF Setup
+*NLF* stands for *Nasolabial Fold*, and it's that line between the nose wing and the mouth corners. Some characters have it more prominent than others.
+But the hardest ones to rig are those where you don't see the line in the model, but it's expected on the smile - such as many female characters.  
+In any case the *createNlfSetup()* can be very useful for keeping that line stable. But this function only works if you have *createBASEMouth()* with *bSLINE* attribute enabled.
+![Alt text](../images/mouth_nlfJoints.jpg)
 
-### Splines - Cheek Setup
+You can adjust how many ctrls you want, in this example it's the default - 2 at the top (*fTopCtrlPercs*) and one at the bottom (*fBotCtrlPercs*) 
+![Alt text](../images/mouth_nlfCtrlls.jpg)
 
+Each ctrl comes with extra attributes to adjust the behavior and they all come with Pose Locators for the Corner Poses.
+
+!!! warning
+    As mentioned above, those can get very tricky to setup on characters that don't show the NLF lines in the model. While this
+    function is unavoidable in some situations, you should always consider just using blendShapes instead to get the proper shapes needed.
+
+## Cheek Setup
+The setup is very similar to NLF lines, except that those lines are a bit further outside. And it's used mainly to enhance the smile a bit more
+by bulging out the cheeks
+![Alt text](../images/mouth_cheekSetup.jpg)
+
+!!! note
+    This can actually also be solved with BlendShapes. But of course there are pros and cons as mentioned in [BlendShapes vs Splines](faceGeneral.md#blendshapes-vs-splines) 

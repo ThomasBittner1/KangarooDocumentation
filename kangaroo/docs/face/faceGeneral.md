@@ -14,6 +14,25 @@ You can also use Tweaker Ctrls if you want to give animators some extra modifier
 to first read through Face Tweaker Ctrls in here, since those might already give you better options for many cases.  
 
 
+## BlendShapes vs Splines
+Most parts of the face (mouth, eyes, ..) come with two options - *BlendShapes* and *Splines*.  
+There are pros and cons to both approaches.
+Which one you choose depends on a lot of factors, not only the type of character.
+
+But generally, **use blendShapes if..**
+
+- you are doing a realistic character, or
+- you have a model team that has the capacity to sculpt blendShapes (not every modeler can model blendShapes!)
+
+**Use Spline rigs, if..**
+
+- you have talented riggers (setting up splines requires technical **and** artistic skills)
+- you feel that blendShapes would appear a bit to static since they are just turning on/off shapes
+
+Keep in mind that you can always use the blendShapes on top of the splines as correctives! 
+
+
+
 ## Shape Editor
 Shape Editor is where you can sculpt and manage the sculpted shapes. You'll use it heavily on blendShape setups. But
 it can also be handy for spline rigs, when it's all looking great but you want to add a corrective to adjust
@@ -74,9 +93,19 @@ Just whenever they are driving spline rigs such as the lips spline rig, the live
 in the function where they are created. In those cases you just have to guess when giving them good scale values, and rebuild.
   
 
-## === DEFAULT ATTRS === 
+## DEFAULT ATTRS 
 On many functions you'll see that **=== DEFAULT ATTRS ===** button. It's attributes that are usually on the passers of the 
-ctrls. But sometimes also pose locators. 
+ctrls that can be used to finetune the setup.  
 
+But sometimes also pose locators. 
+
+The button lets you mainly **Mirror** or **Fill** the attributes. Filling means putting their values into the functino attribute. 
+
+!!! warning
+    While it often does pose locators, it's not always the case. Check if that function has an extra button for filling 
+    the Pose Locator. Or if still unclear, click the *Info* or *Select* option in the *Default Attrs* menu.
+
+!!! tip
+    The [JSON Editor](../builder/jsonEditor.md) can be very useful for managing the attribute ones you filled them. 
 
 

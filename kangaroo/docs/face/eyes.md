@@ -220,3 +220,7 @@ And you are done. In many cases you might want to adjust the ctrl shapes a bit s
 
 
 ## Tweakers
+If you don't have spline rig for the eyelids, animators might ask for extra ctrls since the blue arrows are not enough.
+See [*TWEAKER_lids()*](faceTweakerCtrls.md#tweaker_lids) how to add them
+
+

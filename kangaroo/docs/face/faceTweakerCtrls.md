@@ -26,13 +26,3 @@ so it finds the proper closest vertices.
 ## TWEAKER_browsSimple
 Nothing fancey, just 3 controls per side
 
-
-# Lip Zipper
-For the lips there are 2 ways to to the zipper.
-If you are using **bSPLINES** in the *baseMOUTHCtrls()* function, you can turn on the **bZipper** attribute.
-Or you can do the *postZipper()* function, which is creating a set of extra joints and an additional skinCluster
-
-
-
-# Squash & Stretch
-The function *createBendSetup()* does that.

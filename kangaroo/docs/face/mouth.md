@@ -262,7 +262,7 @@ Then you save their values with the [**=== Default Attr === **](faceGeneral.md#-
 
 !!! warning
     This will mess with the zipper! So if you are adjusting the pivot groups, it's best to set **bZipper* to *False* and use the 
-    *postZipper()* function if needed
+    [*postZipper()*](#post-lip-zipper) function if needed
 
 
 ## NLF Setup
@@ -287,3 +287,11 @@ by bulging out the cheeks
 
 !!! note
     This can actually also be solved with BlendShapes. But of course there are pros and cons as mentioned in [BlendShapes vs Splines](faceGeneral.md#blendshapes-vs-splines) 
+
+
+# Post Lip Zipper
+If you are not using spline (or you are using spline but offsetted the pivot groups), then the only way to do a zipper is
+the *postZipper()* function.  
+This creates another skinCluster with the **__ZIPPER** suffix.
+
+

@@ -201,19 +201,68 @@ To see the results, check the roll movements a bit later in the Rom that you app
 
 ### Splines - Adjust Ctrl Behaviors
 At some point when the skinning looks somewhat clean, it's best to start adjusting the behaviors of the ctrls some more.  
-And you basically find 3 things:
+The following things (1-5) should be done roughly in the same order, but most likely you'll be jumping back and forward,
+and even might adjust skinCluster here and there.   
+The goal is to get the shapes and behaviors looking as good as possible without adding blendShapes (even though you can still
+add corrective blendShapes on top - the better the underlining setup, the more smooth the rig will be) 
 
 
-#### Corner Strenghtes
-Slider blueprints
-Multiply on the Passers
-pose values
+#### 1. Slider Blueprints
+Especially for the corners ctrls, try to find the right blueprint scale to get the best overall possible range.  
+!!! note
+    Unfortunately the slider blueprints don't affect the ctrls live. So you'll have to guess (or calculate) the scale,
+    and rerun the *BASEMouthCtrls()* function.
 
-#### Pose Locators
+
+#### 2. Corner Multiply Values
+The corner multiply values specify how much the joints should move based on the corner ctrl movements.  
+They should be used only in cases that scaling the slider blueprints couldn't solve. Such as if the cornerOut should be stronger
+than the cornerIn  
+![Alt text](../images/mouth_cornerMultiplies.jpg)
 
 
-#### Lip Ctrl Passer Values
-reaction of the lip ctrls to the corner ctrls
+#### 3. Defining a different Corner Range
+So far the poses happen on a unified range, where corner ctrls only go to 1.0s or -1.0s. But in some cases (especially cornerOut ones) you might 
+want to specify for example the ctrl corner_l_ctrl.tx to be 2.5. 
+
+This can be done with the **ddPoseCtrlValues** attribute.
+And it will affect Pose Locators, BlendShape Poses and even the *Create Rom Animation* button.
+
+!!! warning
+    While the kangaroo tools such as pose editor support this, it can be cleaner to stay in a unified range. Therefor it's best to try to solve things with 
+    Slider Blueprints and Corner Multiply Values first. 
+
+
+#### 4. Lip Ctrl Passer Values
+The lips attributes come with a few passer attributes that specify how the lip ctrls should react to the neighboring ones, and to the corner ctrls:  
+![Alt text](../images/mouth_lipsAttributes.jpg)
+
+
+
+#### 5. Pose Locators
+Almost all ctrls come with lots of poseLocators that are used to define the ctrl behaviors even more. In *funnel* and *lipPress* they are even
+used to define the whole pose.  
+And all the pose locators are easily found by just selecting the ctrls, and in the outliner press **f**. You'll always see the the currently
+activated one as shown and the others are invisible:
+![Alt text](../images/mouth_poseLocators.jpg)
+
+!!! tip
+    There's a lot of poseLocators in the *BASEMouthCtrls()* function, even for each detail ctrls. If you end up using them a lot, it's worth checking out the options under the
+    button ** -- PoseLoc Tools -- ** 
+
+### Adjusting Pivots for Lip Rolls
+In some characters you might be struggling with getting proper lip rolls because they pivot around the joints while ideally they should pivot
+around the center of the lips.
+But there's a solution - you can change the pivot using the offset groups ending with *Pivot*:
+![Alt text](../images/mouth_pivotgroups.jpg)
+
+Adjusting those will move the joints, so it's best to turn off the skinCluster. And show the curve with *mouth_ctrl.curveVis*.
+
+Then you save their values with the [**=== Default Attr === **](faceGeneral.md#-default-attrs--) button, and rebuild. You should be able to get nicer Lip Rolls now.
+
+!!! warning
+    This will mess with the zipper! So if you are adjusting the pivot groups, it's best to set **bZipper* to *False* and use the 
+    *postZipper()* function if needed
 
 
 ### Splines - NLF Setup

@@ -250,6 +250,16 @@ def simpleFunction(iLuckyNumber=20, sObjects=[]):
 Then you can add it to the builder like shown above.
 
 
+## Multiple Instances of a Function
+One some functions such as the *fingerPoses()* you can do right click -> *set function instant count*, and then you'll see the
+same function more than once:  
+![Alt text](images/python_functionInstanceCount.jpg)  
+By default you don't have that option, but you can turn it on with the *bCanGetDuplicated* flag:
+``` pythoon
+@builderTools.addToBuild(iOrder=105, dButtons={}, bCanGetDuplicated=True)
+```
+
+
 
 ## Connecting to Studio Pipeline
 If you've managed to read until here, you are ready to connect kangaroo to your studio pipeline.

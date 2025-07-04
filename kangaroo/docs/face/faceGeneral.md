@@ -106,6 +106,8 @@ The button lets you mainly **Mirror** or **Fill** the attributes. Filling means 
     the Pose Locator. Or if still unclear, click the *Info* or *Select* option in the *Default Attrs* menu.
 
 !!! tip
-    The [JSON Editor](../builder/jsonEditor.md) can be very useful for managing the attribute ones you filled them. 
+    If you want to update values after you've filled them, the The [JSON Editor](../builder/jsonEditor.md) can help you with this. 
 
-
+!!! tip
+    This *Default Attrs* button with so many menus is actually relatively easy to script in case you
+    want to create a similar button for your own tools. Just check out the [Python](../python.md) section

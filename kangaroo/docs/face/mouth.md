@@ -132,12 +132,14 @@ On the passer of mouth_ctrl, you can find those values you can adjust:
     Or if you also don't need the rotateZ, you can ignore this setup by just not skinning the joints.
 
 ## Splines
-You'll get the splines when you set **bSPLINE** to *True*. This option came with Kangaroo V5.  
-The great thing about the splines is that it's using the same controls like the blendShapes. So brings a lot of advantages:
+
+Splines are using the same controls like the blendShapes. This brings a few advantages:
 
 - You can use all the blendShapes stated above also as correctives
-- you can have some characters with blendShapes and some with splines, and animators will have the same sets of controls
+- You can have some characters with blendShapes and some with splines, and animators will have the same sets of controls
 
+You'll get the splines when you set **bSPLINE** to *True*.  
+And also set **bBorders** to *False*. The borders are useful for blendShapes, but not for Splines.
 
 ### Spline - The Joints
 For the spline rig there are the Big Joints (**jnt_l_botMouthSplineBig_???**) and the Small Joints (**jnt_l_botMouthSplineSmall_???**). 
@@ -269,16 +271,11 @@ Then you save their values with the [**=== Default Attr === **](faceGeneral.md#-
 *NLF* stands for *Nasolabial Fold*, and it's that line between the nose wing and the mouth corners. Some characters have it more prominent than others.
 But the hardest ones to rig are those where you don't see the line in the model, but it's expected on the smile - such as many female characters.  
 In any case the *createNlfSetup()* can be very useful for keeping that line stable. But this function only works if you have *createBASEMouth()* with *bSLINE* attribute enabled.
-![Alt text](../images/mouth_nlfJoints.jpg)
-
-You can adjust how many ctrls you want, in this example it's the default - 2 at the top (*fTopCtrlPercs*) and one at the bottom (*fBotCtrlPercs*) 
 ![Alt text](../images/mouth_nlfCtrlls.jpg)
 
-Each ctrl comes with extra attributes to adjust the behavior and they all come with Pose Locators for the Corner Poses.
+You can adjust how many ctrls you want, in the picture above it's the default - 2 at the top (*fTopCtrlPercs*) and one at the bottom (*fBotCtrlPercs*) 
 
-!!! warning
-    As mentioned above, those can get very tricky to setup on characters that don't show the NLF lines in the model. While this
-    function is unavoidable in some situations, you should always consider just using blendShapes instead to get the proper shapes needed.
+Each ctrl comes with extra attributes to adjust the behavior, and they all come a Pose Locator Setup driven by the Corner Poses.
 
 ## Cheek Setup
 The setup is very similar to NLF lines, except that those lines are a bit further outside. And it's used mainly to enhance the smile a bit more
@@ -286,7 +283,7 @@ by bulging out the cheeks
 ![Alt text](../images/mouth_cheekSetup.jpg)
 
 !!! note
-    This can actually also be solved with BlendShapes. But of course there are pros and cons as mentioned in [BlendShapes vs Splines](faceGeneral.md#blendshapes-vs-splines) 
+    This function is optional. Since it requires more technical abilities to manage so many joints, some projects in the past opted for blendShape NLF lines instead of this. 
 
 
 # Post Lip Zipper

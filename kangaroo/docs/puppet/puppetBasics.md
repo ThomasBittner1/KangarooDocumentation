@@ -104,3 +104,13 @@ There's the ctrl display_ctrl that has a lot of display attribute
 !!! info
     When you do the face later, in the face functions you can see the sDisplayAttr atttribute on many of the 
     face setup functions
+
+### Updating limbs
+Every limb has versions. The is important because when a limb gets improved, you'll ususally want to keep the 
+old behavior in existing characters that have already been animated.  
+But if you do want to change the versions, on the right side just switch them:  
+![Alt text](../images/puppet_limbVersions.jpg)  
+And if you want to just switch all limbs automatically to the latest one, you can do that with the 
+button **Maximize All Limbs**:  
+![Alt text](../images/puppet_maximizeLimbs.jpg)
+

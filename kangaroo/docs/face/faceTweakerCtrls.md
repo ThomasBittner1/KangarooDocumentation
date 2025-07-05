@@ -7,7 +7,7 @@ Tweaker Ctrls are some extra ctrls on top of your setup that animators can use t
     things here you could theoretically recreate with what you've learned in Tweaker Ctrls before. But the functions
     here are just engineered a bit more for facial rigging purposes.
 
-Apart from the **sockets** we usually just use those tweakers on blendShape driven setups. If you are already using
+Apart from the **sockets** we usually just use those tweakers on blendShape driven setups. But if you are already using
 spline setups such as *splineLidSetup()*, *browSplinesSurface()* or the *bSPLINE* mode of *BASEMouthCtrls()*, 
 most of the tweaker setups won't be that useful since those spline setups already come with a lot of ctrls.
 
@@ -16,7 +16,11 @@ most of the tweaker setups won't be that useful since those spline setups alread
 
 ### *TWEAKER_lids()*
 Those are for eyelids. Great for when you have blendShape driven Eyelids, and you just want to give animators some
-extra control.  
+extra control on top of those.  
+![Alt text](../images/tweakers_eyelids.jpg)
+First specify the skin mesh under **sAttachmesh**. This is so later the *parallelAttachFunction()* knows where to
+attach the passers to.
+
 To create the blueprints - select the vertex loop selected:   
 ![Alt text](../images/tweakers_eyevertices.jpg)  
 Click the button **Create Left Curve and Locators**.  
@@ -27,16 +31,21 @@ Make sure the locators are at the corners, since those are what separates bottom
 And then click **-Export Eyelid Tweaker BPs -** 
 
 ### *TWEAKER_sockets()*
+![Alt text](../images/tweakers_sockets.jpg)  
 That's the eye sockets. On cartoony characters animators almost always expect them to have some extra control when
 brows move down.  
 Creating the blueprints and exporting works the same as in [TWEAKER_lids](#tweaker_lids)
 
 ### *TWEAKER_browsSimple()*
-Nothing fancey, just 3 controls per side.  
-Creating the blueprints and exporting works the same as in [TWEAKER_lids](#tweaker_lids)
+Nothing fancy, just 3 controls per side:    
+![Alt text](../images/tweakers_simpleBrows.jpg)
+Creating the blueprints and exporting works the same as in [TWEAKER_lids](#tweaker_lids)  
+You do have some extra BPs for the brows to specify the orientations with **Create Left Brow Orientation Locators**:  
+![Alt text](../images/tweakers_browExtraBps.jpg)     
 
 
 ### *TWEAKER_lips()*
+![Alt text](../images/tweakers_lips.jpg)
 Creating the blueprints starts (!) the same as in [TWEAKER_lids](#tweaker_lids),  
 But then you need to specify the **bFlipInnerBpCurves** attribute. Set it to *True* if in the center cvs the upper 
 one is below the lower one.  
@@ -50,9 +59,18 @@ But setting it to *True* means he's running a joint spline through the vertices/
 
 
 ## SkinCluster
+### Easy ones first..
 All of these *TWEAKER_..()* functions come with a button called **Add Influences to Selected**.  
 And then you can use the **Flood** tool to bind those vertices.  
-Don't forget to set the **Chose Skin Cluster** to *__TWEAKER*!!
+Just set the **Choose Skin Cluster** to *__TWEAKER*, reload the list, enter the type of tweakers
+in the search field (tweakers, lips, etc), select the joints, put in a nice vertex selection -> **Flood**   
+On characters with lower resolution, also put the **Smooth Steps** to 1.
+![Alt text](../images/tweakers_paintTheSockets.jpg)   
+
+!!! tip 
+    For painting the sockets, close the eyelids and maybe even set the blink line to 0.5, (and reactivate the soft selection),
+    so the flood tool grabs a nicer area. Similar goes for the lips - open the mouth, this will give make the 
+    *flood* tool assign the weights better.
 
 !!! warning
     Do not use the maya tools or any other external tools for creating the skinClusters! That's because
@@ -64,8 +82,9 @@ Don't forget to set the **Chose Skin Cluster** to *__TWEAKER*!!
     For example if you already flooded the weights, but it's too smooth - run it with distribute 
     but in the same tool also set the *Smooth Steps* lower.
 
+    
 
-But the **TWEAKER_lips()** needs a bit more attention:  
+### Skinning Tweaker Lips Splines
 If you've set the *bSplines* attribute to *False*, most of it is the same, except it's best to open the Jaw 
 (and make sure the *parallelAttachTransforms()* function is run at this point) when clicking *Flood*. 
 This is so you don't get any cross weights between upper and lower.  
@@ -77,6 +96,7 @@ Because we have a joint for each vertex on the loop.
 
 
 ## Ctrl Attachments
+### *parallelAttachTransforms()*
 The *parallAttachTransforms()* function is making the ctrl passers follow the mesh.  
 It's called *parallel* because it seems like it's getting attached to the mesh, but in fact
 it's looking at which joints the closest vertex of each ctrl is bound to, and then recreates the
@@ -85,7 +105,14 @@ does NOT include the actual *__TWEAKER* skinCluster that those ctrls are influen
 get a cycle.
 It's similar for blendShapes, except instead of matrix nodes it's using range nodes.  
 
-In some rare cases it doesn't find a good vertex. Whenever that happens we can fix it with a python function
+### What if a ctrl doesn't follow nicely?
+In some rare cases it doesn't find a good vertex. You'll see that when for example on open mouth or closing eyelids 
+one or two ctrls are following a bit too slow or too fast.
+
+Whenever that happens, the first thing is check if your function has the **bSnapToBlueprintCvs** attribute.
+If it does, set that to *True*.
+
+If that doesn't help - we can fix it with a python function
 that's moving the passer groups closer to the actual vertex you'd like to bind to:
 
 ``` python

@@ -84,12 +84,13 @@ ALL the sliderBlueprints, not just the ones of the current function.
 
 
 ### Placing them
+*Kangaroo* tries to estimate the position/orientation/scale according to the actual blendShapes. This doesn't always
+look good by default, so you have the option to adjust it manually.  
 Most of the time it's best to build until before *parallelAttachTransforms()*, and then adjust their locations and scale.
 This way you can test right away if they work well with the blendShape they are driving.  
 ![Alt text](../images/face_placeSliderBlueprints.gif)
 
-
-Just whenever they are driving spline rigs such as the lips spline rig, the live connection from the sliderBlueprints already gets broken
+Unfortunately whenever they are driving spline rigs such as the lips spline rig, the live connection from the sliderBlueprints already gets broken
 in the function where they are created. In those cases you just have to guess when giving them good scale values, and rebuild.
   
 
@@ -111,3 +112,11 @@ The button lets you mainly **Mirror** or **Fill** the attributes. Filling means 
 !!! tip
     This *Default Attrs* button with so many menus is actually relatively easy to script in case you
     want to create a similar button for your own tools. Just check out the [Python](../python.md) section
+
+
+## Deformer Order
+The order how deformers are applied to the meshes is very important. The functions to add influences that you find on all the
+setup functions usually take care of it, but there's many things that can reshuffle the order in a bad way.  
+So you'll have to check here and there if the order is still correct:  
+![Alt text](../images/faceGeneral_deformerOrder.jpg)  
+Basically blendShape first, then the main skincluster (the one without a suffix), __TWEAKERS, eye lattices, __BEND and in the end __BENDTOP.

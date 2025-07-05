@@ -4,7 +4,7 @@
 2. Drag&Drop the **install.mel** file into Maya Scene View
 3. You should see the new KangarooBuilder shelf already.
 4. Restart Maya
-`
+
 
 If you get an error that numpy is missing, you'll have to install numpy, too.
 We do that with *pip install*.  
@@ -40,6 +40,9 @@ It's important that there are **2 underscores** before the name, and **2 undersc
 And all has to be UPPERCASE.  
 Without following those rules, Kangaroo won't recognize the folder as a project
 
+!!! note
+    You could also specify the assestLocal path with the Environment Variable **KANGAROO_WORK_PATH**. This can be 
+    useful if you are setting up kangaroo for a bigger rigging department
 
 ### Templates
 To start creating characters, 99.95 % of the times you copy from an existing one and adjust.

@@ -75,3 +75,15 @@ And apart from that you might still need to spend some time tweaking the weights
 You probably saw that by default he added all the bottom joints also into the *__BEND* skinCluster.  
 If could theoretically solve it all with one skinCluster, but then you'd have to adjust the blueprints
 so the lower and upper blueprints are not overlapping each other.
+
+
+## Ctrls Following
+*Kangaroo* tries to have most ctrls follow the squash/streth setup. This won't change the deformations, but animators still
+appreciate it if ctrls are always staying with the face geo.  
+For all the facial setups this should happen automatically in the function *parallelAttachCtrls()*.    
+But if you have some extra puppet limbs, you'll have to set this with the **FaceExtraMove** flag:   
+![Alt text](../images/bend_faceExtraMove.jpg)
+Limbs that have it supported are *spine*, *singleTransform*, *singleBone* and *belt*
+!!! note
+    on some limbs that attribute might be a further below:   
+    ![Alt text](../images/bend_faceExtraMove2.jpg)

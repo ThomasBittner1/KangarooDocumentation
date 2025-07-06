@@ -266,10 +266,10 @@ the function is before *loadDeformer()* (*iPriority* smaller than 50) or after (
 The easiest thing is to add it before. Then at the time it loads the deformer, the joints are there and
 everybody is happy.  
 
-But sometimes it makes sense to put the function after, because it needs another function to have run already.  
-For those cases, at the time you run the function you have to assume that the joint might be already there,
-since *loadDeformer()* created an empty joint at the origin. This means you have to restructure your joint creating
-code a bit to make it check if joint is already there or not.
+But sometimes it makes sense to put the function after.  
+For those cases, at the time you run the function you have to assume that the joints may or may not already be there, 
+since *loadDeformer()* creates an empty joint at the origin if it doesn't exist yet. This means you have to restructure your joint creating
+code a bit to make it check first if joint is already there or not.
 This example is from the NLF setup:  
 ``` python
 sJ = 'jnt_%s_nlf_%03d' % (sSide,j)

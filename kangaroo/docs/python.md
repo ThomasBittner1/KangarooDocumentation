@@ -28,7 +28,7 @@ def simpleFunction(iLuckyNumber=20, sObjects=[]):
     print ('And the objects are: %s' % sObjects)
 ```
 
-And then to get that into the builder, you need to click the reload button. Basically every time you change
+And then to get that into the builder, you need to click the **reload** button. Basically every time you change
 any of the scripts, the builder will only know about it if you click that button. Unless you switch to the
 character with the upper comboboxes, then he'll reload anyway
 ![Alt text](images/python_reloadButton.jpg)

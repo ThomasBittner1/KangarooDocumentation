@@ -63,19 +63,22 @@ it’s easier to do that in the blueprint skeleton and and build the blueprint r
 
 
 ### Attachers
-Attachers are all about spaces. Something like Hand IK follow the COG or the Spine. And it comes 
-with a few different options. Like you can either have a switch or a blend. Or you can choose to
+Attachers are all about spaces. For example the Hand IK following the COG or the Spine. 
+![Alt text](../images/puppet_attachers.jpg)  
+And they come with a few different options. Like you can either have a switch or a blend. Or you can choose to
 have just orientation, orientation+translation, or orientation and translation separately.
 And there's an animation tool that lets the animators switch between the spaces (attachers) easily without changing the pose.
 
+This video here explains very well how they work, but make sure to read the text below (*update 0*), about custom attachers,
+since those changed a bit in later versions.
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/8mK2lHDqR7c"
 title="YouTube video player" frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe>
-update 0: To specify deformers/meshes for custom attachers, click the “Attach Deformers UI” 
+update 0: At around 2:00 in the video: To specify deformers/meshes for custom attachers, click the **Attach Deformers UI** 
 option on the same marking menu. And make sure you exclude deformers that are driven by this limb 
-![Alt text](../images/puppet_deformerAttacherWindow.jpg)
+![Alt text](../images/puppet_deformerAttacherWindow.jpg)  
 In this UI you can even specify a Vertex Id of where it should get attached. It's better to 
 leave it empty at first and let it find the closest vertex by itself. But in 1 out of 20 
 cases it doesn't find a nice vertex, then you can set one.

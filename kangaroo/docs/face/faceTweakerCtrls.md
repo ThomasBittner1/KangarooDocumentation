@@ -5,9 +5,9 @@ Tweaker Ctrls are some extra ctrls on top of your setup that animators can use t
 !!! info
     Remember [Tweaker Ctrls in Puppet](../puppet/tweakerCtrls.md)? The Tweaker ctrls we are talking about here work with the same logic, and most
     things here you could theoretically recreate with what you've learned in Tweaker Ctrls before. But the functions
-    here are just engineered a bit more for facial rigging purposes.
+    here are  engineered a bit more specifically for facial rigging purposes.
 
-Apart from the **sockets** we usually just use those tweakers on blendShape driven setups. But if you are already using
+Apart from the **sockets** we usually just use those tweakers on blendShape driven setups. If you are already using
 spline setups such as *splineLidSetup()*, *browSplinesSurface()* or the *bSPLINE* mode of *BASEMouthCtrls()*, 
 most of the tweaker setups won't be that useful since those spline setups already come with a lot of ctrls.
 

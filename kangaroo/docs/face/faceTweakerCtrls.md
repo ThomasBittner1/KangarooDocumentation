@@ -69,7 +69,8 @@ On characters with lower resolution, also put the **Smooth Steps** to 1.
 
 !!! tip 
     For painting the sockets, close the eyelids and maybe even set the blink line to 0.5, (and reactivate the soft selection),
-    so the flood tool grabs a nicer area. Similar goes for the lips - open the mouth, this will give make the 
+    so the flood tool grabs a nicer area.  
+    Similar goes for the lips - open the mouth, this will give make the 
     *flood* tool assign the weights better.
 
 !!! warning
@@ -85,11 +86,9 @@ On characters with lower resolution, also put the **Smooth Steps** to 1.
     
 
 ### Skinning Tweaker Lips Splines
-If you've set the *bSplines* attribute to *False*, most of it is the same, except it's best to open the Jaw 
-(and make sure the *parallelAttachTransforms()* function is run at this point) when clicking *Flood*. 
-This is so you don't get any cross weights between upper and lower.  
+If you've set the **bSplines** attribute to *False*, most of it is the same as in the other setups tools. 
 
-If you are doing the *bSplines* mode, then you instead of the *Flood* tool, you should use the **SkinCluster -> ClosestExpand** tool 
+But if you **bSplines** as *True*, then instead of the *Flood* tool, you should use the **SkinCluster -> ClosestExpand** tool 
 for binding them.  
 *Why?*   
 Because we have a joint for each vertex on the loop.   
@@ -97,7 +96,7 @@ Because we have a joint for each vertex on the loop.
 
 ## Ctrl Attachments
 ### *parallelAttachTransforms()*
-The *parallAttachTransforms()* function is making the ctrl passers follow the mesh.  
+Same as for Custom Attachers, the *parallAttachTransforms()* function is making the ctrl passers follow the mesh.  
 It's called *parallel* because it seems like it's getting attached to the mesh, but in fact
 it's looking at which joints the closest vertex of each ctrl is bound to, and then recreates the
 skincluster behavior of that vertex with matrix nodes. It works for more than one skinCluster, but
@@ -110,7 +109,7 @@ In some rare cases it doesn't find a good vertex. You'll see that when for examp
 one or two ctrls are following a bit too slow or too fast.
 
 Whenever that happens, the first thing is check if your function has the **bSnapToBlueprintCvs** attribute.
-If it does, set that to *True*.
+If it does, try setting that to *True*.
 
 If that doesn't help - we can fix it with a python function
 that's moving the passer groups closer to the actual vertex you'd like to bind to:

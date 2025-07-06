@@ -32,7 +32,8 @@ And then to get that into the builder, you need to click the **reload** button. 
 any of the scripts, the builder will only know about it if you click that button. Unless you switch to the
 character with the upper comboboxes, then he'll reload anyway
 ![Alt text](images/python_reloadButton.jpg)
-
+!!! warning
+    Forgetting to click the **reload** button is a very common thing with kangaroo begginers. So best write it down ;-)
 Now let's look at the function. The important thing is the decorator that starts with *@builderTools.add...*. 
 If you don't have that, the function won't show up in the Builder.
 Do you see the **iOrder=16** parameter in the code above? That's the order number where shows up in the 
@@ -211,7 +212,7 @@ assets.getCurrentVersionPath() # returns the absolute version folder inside the 
 
 
 ## Extra Builds
-So far we've just learned how to add some fun python stuff to your character file. But what if you want to make a company wide tool
+So far we've just learned how to add some fun python stuff to our character file. But what if we want to make a company wide tool
 that other people can run, too - so everyone can just add the file at the top as shown in this gif:
 ![Alt text](images/python_customBuild.gif)
 This is where extrabuilds come in.

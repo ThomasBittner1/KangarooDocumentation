@@ -1,11 +1,12 @@
 
 ## What are they?
 Tweaker Ctrls are ctrls that follow your current setup, and then deform the mesh with an additional skinCluster.  
-
-
+In this example the Cube Ctrl is a tweaker, that follows the previous skinCluster and blendShape setup, but
+on top of that deforms the mesh with an additional skinCluster.
+![Alt text](../images/tweaker_cheek.gif)   
 
 !!! Info
-    Later in the Face you'll see Face Tweaker Ctrls, those are similar logic like this. So if you are planning
+    Later in the Face you'll learn about [Face Tweaker Ctrls](../face/faceTweakerCtrls.md), those are similar logic like this. So if you are planning
     to set some up for the face, it's recommended to check of those are already taken care in the Face Tweaker Ctrls
 
 
@@ -20,14 +21,16 @@ This is done with the **postRefJoints** attribute, the following limbs have it:
  * belt
  * spine (fk, ikSpline, simple)
 
-In this example we have a singleTransform limb. This is the simplest, but also the most common one.  
-There are 2 important settings:
+In the example shown above have the singleTransform limb. It's the simplest, but also the most common one.  
+Make sure to set **postRefJoints** attribute to *True*. And the second important thing is setting up
+the Custom Attachers, so it knows what to follow.
 
 ### Custom Attacher
+First we'll have to setup the [Attachers](puppetBasics.md#attachers), using the *Custom* option.
 ![Alt text](../images/tweaker_customAttacher.jpg)   
 The deformers you select there are crucial. Select all the deformers that the tweaker ctrl should follow.  
-But absolutely do NOT select the skinCluster that the tweaker ctrl will be driving. Otherwise you'd get a 
-cycle that might even be hard to locate.
+But absolutely do NOT select the skinCluster that the tweaker ctrl will be driving, otherwise you'd get a 
+cycle.
 
 And don't forget the blueprints.
 
@@ -61,4 +64,14 @@ And then create an additional skinCluster that the tweaker ctrl is driving.
 
 
 ## Spine Tweakers
-The spine is a little bie more complex
+With the spine you can also do some tweaker fk setup that runs on top of another setup:  
+![Alt text](../images/tweaker_tail.gif)  
+It works with the **fk**.  
+And you have to set the custom attachers on *ALL* (*root*, *fk_xx*), and for the *PostRefJoints* option you specify
+**ON (all fks have attacher)**
+![Alt text](../images/tweakers_spineAttributes.jpg)
+!!! note
+    This can also work well on the face for cartoony dog noses. But since you'll have a few more deformers there already, you'll
+    have to be very confident with how to [stack them](#stacking-them)
+
+

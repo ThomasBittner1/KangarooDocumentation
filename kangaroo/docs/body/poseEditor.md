@@ -155,6 +155,17 @@ Whenever the model changes, open the *poseEditorExports.ma* file from the *Expor
 and import the new model. Then select the new model + the corresponding Blendshape Mesh you have in scene,
 and click the button *Model Warp Selected Meshes*
 
+## Sharing Interpolators between Rigs
+It can be very helpful to share Interpolators between characters.
+And there are 2 ways:  
+### In the PoseEditor UI
+Right click on the interpolator -> Copy. Then go to your other character, and right click -> Paste
+### JSON Editor
+Once you exported the setup, you can open the JSONEditor by right click on **ddInterpolators**. Then at every entry
+you can do right click -> **Copy**. And then paste on the same location in the other character.
+
+!!! note
+    While you could also share Target Infos using the JSON Editor, we don't do that as often as sharing interpolators.
 
 ## Known Issues
 #### Soemtimes the Interpolator doesn't update anymore, even though I'm 100 % sure my settings are correct.

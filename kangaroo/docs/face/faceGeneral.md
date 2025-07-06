@@ -3,15 +3,15 @@ from for each part - mouth, brows, eyelids, etc and it's got some general squash
 
 Most of the time you have the option of doing spline setups or blendShapes. You can also mix.
 
-The first thing to do when you do Face Rig is add the python file **facePro_v16.py** (right click on the Python Files
-in the builder -> **Add File** -> **+default** -> **facePro** -> **facePro_v16.py**
+The first thing to do when you do Face Rig is add the python file **facePro_v18.py** (right click on the Python Files
+in the builder -> **Add File** -> **+default** -> **facePro** -> **facePro_v18.py**
 
 
 
 ## Puppet Limbs
 For things like Tongue (*Spine*), teeth (*SingleTransform* or *Belt*) we can use the puppet limbs that we also use for the body.
-You can also use Tweaker Ctrls if you want to give animators some extra modifiers. But make sure
-to first read through Face Tweaker Ctrls in here, since those might already give you better options for many cases.  
+You can also use [Tweaker Ctrls](../puppet/tweakerCtrls.md) if you want to give animators some extra modifiers. But make sure
+to first read through [Face Tweaker Ctrls](faceTweakerCtrls.md) in here, since those might already give you better options for many cases.  
 
 
 ## BlendShapes vs Splines

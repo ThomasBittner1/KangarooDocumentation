@@ -63,7 +63,7 @@ But setting it to *True* means he's running a joint spline through the vertices/
 All of these *TWEAKER_..()* functions come with a button called **Add Influences to Selected**.  
 And then you can use the **Flood** tool to bind those vertices.  
 Just set the **Choose Skin Cluster** to *__TWEAKER*, reload the list, enter the type of tweakers
-in the search field (tweakers, lips, etc), select the joints, put in a nice vertex selection -> **Flood**   
+in the search field (*lids*, *lips*, etc), select the joints, put in a nice vertex selection -> **Flood**   
 On characters with lower resolution, also put the **Smooth Steps** to 1.
 ![Alt text](../images/tweakers_paintTheSockets.jpg)   
 

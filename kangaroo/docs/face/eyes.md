@@ -224,3 +224,9 @@ If you don't have spline rig for the eyelids, animators might ask for extra ctrl
 See [*TWEAKER_lids()*](faceTweakerCtrls.md#tweaker_lids) how to add them
 
 
+## Blink Line
+There's an attribute on the **blink_l_ctrl** that can changes the blink when the eyes are closed.  
+Sounds simple - but it needs to be understood how it works under the hood since that's different in all these setups.  
+1. If you have just blendShapes, that blink line will not do anything.
+2. If you have *simpleLidSetup()* with the *siblingTransforms*, the blinkLine will rotate the eyelids up/down. Can be useful for small adjustments, but probably unstable if animators move it too much
+3. for Spline Rig it works much smoother

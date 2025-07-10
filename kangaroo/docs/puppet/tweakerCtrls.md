@@ -7,7 +7,7 @@ on top of that deforms the mesh with an additional skinCluster.
 
 !!! Info
     Later in the Face you'll learn about [Face Tweaker Ctrls](../face/faceTweakerCtrls.md), those are similar logic like this. So if you are planning
-    to set some up for the face, it's recommended to check of those are already taken care in the Face Tweaker Ctrls
+    to set some up for the face, it's recommended to check if those are already taken care in the Face Tweaker Ctrls
 
 
 ## How to set it up

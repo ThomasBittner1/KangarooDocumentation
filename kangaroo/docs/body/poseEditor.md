@@ -210,6 +210,14 @@ And then right click -> **paste** on the same location in the other character.
 !!! info
     While you could also share Target Infos using the JSON Editor, we don't do that as often as sharing interpolators.
 
+
+## Useful tools
+### TOOLS button
+The Tools button can warp, blend etc
+
+### Erase
+Select a few vertices, right click on the target -> erase. 
+
 ## Known Issues
 #### Sometimes the Interpolator doesn't update anymore, even though I'm 100 % sure my settings are correct.
 This is often an evaluation problem that happens if the rig is either very complex, or if there's a cycle
@@ -218,3 +226,13 @@ But there's a workaround: select the interpolator, and set **right click -> rebu
 #### When I export using the **Fill and Export** button, he exports the whole rig.
 Check if you have some connections going from the meshes inside the *_poseEditorExport* group. Sometimes
 it could be a set. You can also try to just delete all your sets in scene
+
+
+## Video
+To see it in action, you can watch the video below. But keep in mind it's a bit outdated!    
+Especialy the [model update](#model-change) part has changed a lot.
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/oPQHf2HOq5o"
+title="YouTube video player" frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>

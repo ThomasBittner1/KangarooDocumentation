@@ -15,9 +15,9 @@ nav:
   - About: about.md
   - Getting Started: installation.md
   - Builder:
-     Basics: builder/builderBasics.md
-     Workflow Tricks: builder/workflowTricks.md
-     JSON Editor: builder/jsonEditor.md
+     - Basics: builder/builderBasics.md
+     - Workflow Tricks: builder/workflowTricks.md
+     - JSON Editor: builder/jsonEditor.md
   - Puppet:
       - Basics: puppet/puppetBasics.md
       - Bell Collider: puppet/bellCollider.md
@@ -29,6 +29,7 @@ nav:
       - Motion Capture: body/motionCapture.md
   - Face:
       - General: face/faceGeneral.md
+      - Shape Editor: face/shapeEditor.md
       - Eyes: face/eyes.md
       - Brows: face/brows.md
       - Mouth: face/mouth.md
@@ -46,3 +47,6 @@ markdown_extensions:
   - admonition
   - pymdownx.superfences
   - pymdownx.details
+
+extra_css:
+  - extra.css

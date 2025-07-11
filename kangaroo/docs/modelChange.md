@@ -60,7 +60,7 @@ More infos on [Custom Attachers](puppet/puppetBasics.md#attachers)
 ### Different Mesh Names - change deformer files
 Very often the fastest thing is to change the names of the files in the deformer folder. Because those files contain
 the geometry name and the *loadDeformers()* function grabs the model from those names.
-![Alt text](../images/modelChange_names.jpg)
+![Alt text](images/modelChange_names.jpg)
 The names of the files consist of 2 or 3 parts, separated by double underscores (\_\_). And the second part is the mesh name.  
 So for example if the mesh got changed from *body_geo* to *torso_geo*, the file *deltaMush__body_geo__MOUTH.npz* needs to be changed to
 *deltaMush__torso_geo__MOUTH.npz*
@@ -110,6 +110,6 @@ And then basically every blueprint group in the mayaImport folder needs to be wa
 ## Maya Import Folder
 It's also good practise to go through all the files in the *mayaImport* folder and check one by one to see which needs to get updated.  
 Especially when you've created a Face Rig, you might have a few files in there!  
-![Alt text](../images/modelChange_mayaImport.jpg)
+![Alt text](images/modelChange_mayaImport.jpg)
 
 

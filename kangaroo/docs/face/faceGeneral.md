@@ -32,36 +32,54 @@ But generally, **use blendShapes if..**
 Keep in mind that you can always use the blendShapes on top of the splines as correctives! 
 
 
-
-## Shape Editor
-Shape Editor is where you can sculpt and manage the sculpted shapes. You'll use it heavily on blendShape setups. But
-it can also be handy for spline rigs, when it's all looking great but you want to add a corrective to adjust
-the shape a bit more.
-
-This video shows how it works:
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/cEBJ-tPLMuU"
-title="YouTube video player" frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
-
-Basically you just create a blendShape file such as *blendShapes.ma* that you import and manage in the *importBlendShapeFile()*
-And later the function *blendShapesAndSliders()* is grabbing those baked meshes and putting them into the rig as blendShapes.
-
-
 ## *blendShapesAndSliders()*
-*blendShapesAndSliders()* is the function that applies all the blendShapes created in the Shape Editor.  
-This function basically knows about a huge list of shapes, and can even do some additional shapes defined in the 
-attributes **ddTargetsAsAttributes**, **ddExtraTargetSliders**, **ddCorrectives**
-Here's an overview of what shapes it can do:  
+For setting up blendShape Ctrls you need to sculpt the shapes with the [Shape Editor](shapeEditor.md). And make sure
+that the blendShape file you create with the *Shape Editor* gets imported and baked in the *importBlendShapeFile()* function.  
+Then *blendShapesAndSliders()* is the function that takes all those baked target meshes and assigns them as blendShapes.  
+
+It's probably the most complex function inside the whole Kangaroo tool. It knows about a huge list of shapes, and can even do some additional shapes defined in the 
+attributes *ddTargetsAsAttributes*, *ddExtraTargetSliders* and *ddCorrectives*.   
+And it doesn't just assign those. 
+It also inverts some of them and does a lot of splitting. Most of the time it's just left/right, but also others 
+like splitting between all the lip ctrls, or upper/lower eyelids. And it creates and connects all the Combo Targets!   
+And as the name says it, it also creates many slider ctrls.   
+
+Below you can find an overview of what Targets it accepts.   
+### Eyes, Brows and Mouth
+For eyelids and mouth the ctrls are pretty much the same when you use the blendShape setup or spline setup. Therefore you can
+use the same blendShapes targets. The only difference is that for the spline rig those blendShape targets act more like correctives:  
 [Eyelids](eyes.md#eyelid-blendshapes)  
-[Brows](brows.md#blendshapes)  
-[Brows Splines](brows.md#brow-splines-correctives)  
-[Mouth](mouth.md#blendshapes)  
+[Mouth](mouth.md#blendshapes)    
+For the brows the ctrls are different between the blendShape setup and spline setup. That's why we have different sets of targets:  
+[Brows (BlendShape Setup)](brows.md#blendshapes)  
+[Brows (Splines Setup)](brows.md#brow-splines-correctives)  
 
+### Some more..
+```
+squint
+cheekRaiser
+cheekIn
+cheekOut
+puffFront
+mentalis
+chinRaiser
+lipStretch
+neckStretch
+```
 
+### Define your own Targets
+But likely you'll hit a point where you want to add a target that you can't find in any of the list. For that case
+we have 3 extra attributes on the *blendShapesAndSliders()* function: *ddTargetsAsAttributes*, *ddExtraTargetSliders* and *ddCorrectives*
+#### ddTargetsAsAttributes
 
-*Would you like to adjust the placement of the sliders it creates?* Check the following chapter *SliderBlueprints* 
+#### ddExtraTargetSliders
+
+#### ddCorrectives
+
+!!! info
+    You'll see that the *blendShapesAndSliders()* function creates all the ctrl positions, orientations and scale by guessing based
+    on the direction and distance of the targets. But very often you'll want to adjust that. And it's easy - all explained in the
+    following chapter [SliderBlueprints](#sliderblueprints). 
 
  
 

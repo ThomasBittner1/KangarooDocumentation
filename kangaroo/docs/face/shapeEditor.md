@@ -127,9 +127,117 @@ it'll follow again that the full shape does. You'll see the options on the right
     It's recommended to keep inbetweens to minimum. And if you do use them, watch out for the results carefully.
 
 
+## Meshes
+### Meshes - Add Secondary Meshes
+Easy, just select them and add them with the right click menu:
+![Alt text](../images/shapeEditor_addMeshes.gif)   
+!!! note
+    By default they are just sitting there and not following the main skin. But you can make it follow the skin with
+    the [Tools](#tools---make-meshes-follow) explained below.
+
+### Meshes - Main Mesh
+It's important to keep the Main Mesh (*skin* in this example) as the main mesh. It's usually always the case, unless
+you start replacing a few meshes. But it's easily fixed with right click menu:  
+![Alt text](../images/ShpeEditor_mainmesh.gif)   
+
+
+### Meshes - Model Change
+#### same topology
+If the model changed in topology, it's easy. Just select the new mesh, and then with right click on the mesh that
+you want to change -> **Model Change from "xxx" to "xxx"**
+![Alt text](../images/shapeEditor_modelChange.jpg)   
+#### different topology
+If the overall shape is still the same and modeling just changed the topology a bit, it's a bit of a manual process,
+but it's not difficult:  
+1. rename the old mesh  
+2. restart the shape editor  
+3. [add the new mesh](#meshes---add-secondary-meshes) (with correct name!)  
+4. [warp](#warp) the new mesh to the old mesh   
+5. if the old mesh was the main mesh: set it as [Main Mesh](#meshes---main-mesh)  
+6. check the lips on open targets! Targets like *jawOpen*. *upperUp* or *lowerDown* can get screwed on warp. If they 
+are screwed, either fix them manually or try the [Warp UVs](#warp-uvs)
+
+#### different topology and different shape
+If the topology is different AND the shape is entirely different, we are basically talking about making a new character.
+Check [Transfer to New Character](#transfer-to-new-character) further below.
+
+
+## Tools
+The *Shape Editor* comes with a lot of tools, and you won't use it efficiently unless you know about all the tools.
+![Alt text](../images/shapeEditor_tools.jpg)   
+For every tool in there, select the *Targets* and the *Mesh*! And for the mesh selection you can also select vertices
+and soft selection. 
+### Tools - Multiply
+The *Multiply* tool is probably the simplest but most important one. Ever had an animator tell you *Please make all
+shapes 1.5 as strong as they are currently?*
+Well, that's easy with the *Multiply* tool:    
+![Alt text](../images/shapeEditor_multiplyTool..gif)     
+But it doesn't stop there! Use the tool to multiply by a value smaller than 1.0 (like 0.35 or 0.8) if you want to lessen
+the effect on a shape in certain regions. Or even multiply by 0.0 to erase some small moving vertices.  
+Or multiply negative like -1.0 if you want to make a shape go the reverse direction!  
+Just below the *Multiply* in the marking menu you have the *Multiply in Y*. Seems a bit arbitrary because it only does
+it in Y, but we use it a lot for some tricks on the brow shapes.
+### Tools - Make Meshes Follow
+There are 3 types of tools you need to choose from depending on the situation: *Warp*, *Warp Rigid* and *Warp Wire*.  
+We'll explain them here. But if you get confused, try to watch that part in the [Video](#video) from 4.08.
+#### Warp
+If you set the main skin as the Master, the warp will just make meshes follow, and it's using the wrap deformer under the hood:     
+![Alt text](../images/shapeEditor_warp.jpg)
+#### Warp Rigid
+In the picture above you see that the cubes around the mouth are changing their shapes.  
+To solve that we have the *Warp Rigid*. This one analyzes all the islands of the mesh separately and makes sure
+their shape doesn't change:  
+![Alt text](../images/shapeEditor_warpRigid.jpg)       
+
+#### Warp UVs
+*Warp UVs* has similar results as *Warp*. But - if the uvs between the meshes are the same - it might do a better 
+job on the lips. But other areas might not be as nice as the wrap.
+!!! tip
+    Always try the *Warp* first. Try the *Warp UVs* only if the *Warp* is giving you issues that are hard to fix.
+
+#### Warp Wire
+The *Warp Wire* tool is used for eyelashes. The previous *warp* tools don't work well for eyelashes since they work 
+with *closest point* logic. And with eyelashes usually sticking out so far the results aren't just working without
+a lot of cleanups.  
+So the *Warp Wire* is under the hood using the *Wire Deformer* to move the meshes by a curve.   
+![Alt text](../images/shapeEditor_wireWarp.jpg)     
+You just have a create the curve with the *Curve from selected vertices* button in the *Extras* tab, and use that
+curve as the *Master*:  
+![Alt text](../images/shapeEditor_wireCurve.jpg)       
+
+
 ## Adding more Main Targets
+There's *Predefined Targets* and *Custom Targets*. Both can be added with the right click menu.  
+### Predefined Targets
+Under the Right click menu **Add Target** you'll see a lot of them:  
+![Alt text](../images/shapeEditor_predefinedShapes.jpg)     
+The ones that you see above the line are defined by the Kangaroo tool. If you add those in there, the *blendShapesAndSliders()* function
+will just add, mirror and connect them.  
+The ones below the line (in this image *A*, *B*, *EE*, ..) are the ones that you specified in the *blendShapesAndSliders()* in the 
+in the attributes **ddTargetsAsAttributes**, **ddExtraTargetSliders** or **ddCorrectives**. of the *blendShapesAndSliders()* function.  
+![Alt text](../images/shapeEditor_fromFunction.jpg)  
+!!! note
+    For those targets to appear in the menu it's important that you have the Kangaroo UI open and switched to the current character.
+    Once you've added the targets, it doesn't matter anymore if the Kangaroo UI is open or not.
+
 ### Custom Targets
 ### Generating TargetList File
+
+
+## Transfer to New Character
+Transfering to a new character is more advanced. It requires downloading Wrap3D (https://www.russian3dscanner.com/download/) 
+and possibly even getting a license.  
+
+At the time of writing this documention, you also have to specify the tool location in *kangarooShapeEditorUI.py* file:
+``` python
+kWrap3dExe = 'C:/Program Files/Faceform/Wrap 2023.11.4/WrapCmd.exe'
+```
+
+Once you have that all setup-ed, you'll have to create those relations between the 2 meshes.  
+![Alt text](../images/shapeEditor_transfer.jpg)  
+
+To see how that works in detail, watch the [Video](#video) below from 17:57
+
 
 
 ## Video

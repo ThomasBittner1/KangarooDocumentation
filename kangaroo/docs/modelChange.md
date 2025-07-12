@@ -39,11 +39,7 @@ The *warp* option will do the trick here.
 
 ### Topology change - Shape Editor
 This is a bit of a manual hack, but not too bad:  
-1. rename the old mesh  
-2. restart the shape editor  
-3. add the new mesh (with correct name)  
-4. use the *Tools* button to warp all the targets   
-5. if the old mesh was the main mesh: right click on the new mesh -> set as main mesh
+Also explained: [Pose Editor Model Update](body/poseEditor.md#model-change)
 
 ### Topology change - Other Target geos 
 Any other mesh you can just warp with the **Geometry -> Warp Pose**
@@ -97,11 +93,7 @@ target="_blank">LinkedIn Post on warpXForms</a>
 
 
 ### Different Proportions - Shape Editor
-There's a whole tab in the Shape Editor that deals with adjusting the shapes if the proportions and topology changed.    
-But it's more complex, and it requires downloading Wrap3D (https://www.russian3dscanner.com/download/) and possibly even getting a license.  
-!!! note
-    Once you've got that working it can be a great tool to warp all your shapes to a new character. 
-
+More complex but it's like creating a new character - check [Shape Editor](#transfrer)
 
 ### Different Proportions - Face
 And then basically every blueprint group in the mayaImport folder needs to be warped to the new mesh.

@@ -221,7 +221,38 @@ in the attributes **ddTargetsAsAttributes**, **ddExtraTargetSliders** or **ddCor
     Once you've added the targets, it doesn't matter anymore if the Kangaroo UI is open or not.
 
 ### Custom Targets
-### Generating TargetList File
+Custom targets are targets that you just put into that textfield on the right click menu:  
+![Alt text](../images/shapeEditor_customTarget.jpg)  
+Most likely by putting them in there, they won't do anything in the *blendShapesAndSliders()* function. Unless you put them
+into one of the attributes mentioned [above](#predefined-targets).
+
+### TargetList File
+If you are setting up things for a bigger project with more characters, you'll more likely want to predefine a list
+of shapes, so artists don't have to add one by one target throught the right click menu.  
+That's what Target lists are for, and you can switch between them in the combo box up there. 
+![Alt text](../images/shapeEditor_targetlistCombo.jpg)   
+!!! note
+    You can also set them at the beginning when you open the Shape Editor on a mesh the first time! Which is actually more recommended.
+Create a new empty folder and specify it with the environment variable **KANGAROO_TARGETLIST_PATH**.
+!!! note
+    To get started quickly, you can also do that with the *pathsEnv.mel* on the root folder of kangaroo installation directory.  
+
+In that folder just add a text file with the prefix **.targetlist**, such as *dog.targetlist*:
+```
+snarl True False
+jawOpen True False
+squint True False
+blink True False
+eyeWide True False
+lipStretch True False
+noseWrinkler True False
+earsBack True False
+```
+The True/False next to the names are all about the checkboxes. If you want the artist to be able to switch on/off, 
+make the first one True. And if you want that checkbox to be on by default, make the second one True, too.
+
+!!! note
+    To start with the *general* or *cartoon* one, grab those files from the installation folder *scripts\kangarooShapeEditor*
 
 
 ## Transfer to New Character

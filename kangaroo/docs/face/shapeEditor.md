@@ -104,6 +104,29 @@ Open the Shape Editor File from the templates asset *THOMAS*, and play around wi
 ![Alt text](../images/shapeEditor_sliders.gif)  
 
 
+## Mirror
+Mirroring contains 2 parts. *Creating Mirror* Table, and actually *Mirroring*
+### Mirror Table 
+Right click on the mesh in the *Mesh Table* at the bottom right:   
+![Alt text](../images/shapeEditor_mirrorTable.gif)   
+You can choose between:
+
+- middle mesh, edgeflow: maping vertices through the middle edge algorithm
+- middle mesh, vertex positions, mapping through vertex positions
+- middle mesh, face points: finds point on face, and does barycentric mapping
+- side meshes, ids: needs 2 meshes with same vertex orders 
+- side meshes, vertex positions: needs 2 meshes, maps by vertex positions
+- side meshes, face points, needs 2 meshes, maps by point on face and barycentric coordinates
+
+### Actually Mirroring
+Mirroring also works on vertex selection. But you do need to right click on the actual mesh for the mirror.
+![Alt text](../images/shapeEditor_mirror.gif)    
+!!! warning
+    Do not forget to select the mesh! Sometimes we assume that when we right click on the actual mesh it
+    would do the mesh. But from the power of being able to select vertices comes the responsibility to
+    also select the mesh.
+
+
 ## Inbetweens
 You can add inbetweens to any Target.
 ![Alt text](../images/shapeEditor_inbetween.gif) 
@@ -162,12 +185,12 @@ If the topology is different AND the shape is entirely different, we are basical
 Check [Transfer to New Character](#transfer-to-new-character) further below.
 
 
-## Tools
+## TOOLS
 The *Shape Editor* comes with a lot of tools, and you won't use it efficiently unless you know about all the tools.
 ![Alt text](../images/shapeEditor_tools.jpg)   
 For every tool in there, select the *Targets* and the *Mesh*! And for the mesh selection you can also select vertices
 and soft selection. 
-### Tools - Multiply
+### TOOLS - Multiply
 The *Multiply* tool is probably the simplest but most important one. Ever had an animator tell you *Please make all
 shapes 1.5 as strong as they are currently?*
 Well, that's easy with the *Multiply* tool:    
@@ -177,7 +200,7 @@ the effect on a shape in certain regions. Or even multiply by 0.0 to erase some 
 Or multiply negative like -1.0 if you want to make a shape go the reverse direction!  
 Just below the *Multiply* in the marking menu you have the *Multiply in Y*. Seems a bit arbitrary because it only does
 it in Y, but we use it a lot for some tricks on the brow shapes.
-### Tools - Make Meshes Follow
+#### TOOLS - Make Meshes Follow
 There are 3 types of tools you need to choose from depending on the situation: *Warp*, *Warp Rigid* and *Warp Wire*.  
 We'll explain them here. But if you get confused, try to watch that part in the [Video](#video) from 4.08.
 #### Warp
@@ -188,6 +211,8 @@ In the picture above you see that the cubes around the mouth are changing their 
 To solve that we have the *Warp Rigid*. This one analyzes all the islands of the mesh separately and makes sure
 their shape doesn't change:  
 ![Alt text](../images/shapeEditor_warpRigid.jpg)       
+#### Blend Ids
+This is if you want a target to have exactly the shape from another mesh
 
 #### Warp UVs
 *Warp UVs* has similar results as *Warp*. But - if the uvs between the meshes are the same - it might do a better 
@@ -238,7 +263,7 @@ Create a new empty folder and specify it with the environment variable **KANGARO
     To get started quickly, you can also do that with the *pathsEnv.mel* on the root folder of kangaroo installation directory.  
 
 In that folder just add a text file with the prefix **.targetlist**, such as *dog.targetlist*:
-```
+``` bash title='dog.targetlist'
 snarl True False
 jawOpen True False
 squint True False
@@ -253,6 +278,38 @@ make the first one True. And if you want that checkbox to be on by default, make
 
 !!! note
     To start with the *general* or *cartoon* one, grab those files from the installation folder *scripts\kangarooShapeEditor*
+
+
+## Bake/Fill
+If you want to sculpt the shapes in an external tool such as *ZBrush*, that's also doable.
+For creating meshes from the targets, click **Bake** under the *Extras* tab.    
+Then you can export those, and re-import. To put the shapes of those meshes back into the targets,
+select them and click the **Fill Selected Sculpts to Targets** button.  
+![Alt text](../images/shapeEditor_bakeAndfill.jpg)  
+!!! note
+    The **Fill Selected Sculpts to Targets** button is also useful for other situations, for exapmle when you baked 
+    shapes using another another python script.
+
+## Setting a target from another Mesh
+One way to do that is with the **Fill Selected Sculpts to Targets** button, if you just make sure that the selected mesh
+has the correct target name.  
+Another way is through the *TOOLS* button - [Blend Ids](#blend-ids)
+
+
+## Workflow Tricks
+### Create an Opposite Target
+For some targets we don't want to do much sculpting, we just want to generate it from negating another one.
+Best example is the *upperDown*, or *lowerUp*.  
+For the upperDown: select *upperUp* and *upperDown* together (order matters!), right click **Copy Deltas of ...**  
+And then use the multiply tool with -1.0:  
+![Alt text](../images/shapeEditor_oppositeTarget.gif)  
+
+
+### Make Delta from Current
+You can dial in a few targets, and then right click on one, *Make Delta from Current* puts the current shape
+into the current target.  
+Look at this example where we use the *upperUp* target to open the lips slightly on the *noseWrinkler*:  
+![Alt text](../images/shapeEditor_deltaFromCurrent.gif)  
 
 
 ## Transfer to New Character

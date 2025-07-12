@@ -39,10 +39,12 @@ Then *blendShapesAndSliders()* is the function that takes all those baked target
 
 It's probably the most complex function inside the whole Kangaroo tool. It knows about a huge list of shapes, and can even do some additional shapes defined in the 
 attributes *ddTargetsAsAttributes*, *ddExtraTargetSliders* and *ddCorrectives*.   
-And it doesn't just assign those. 
-It also inverts some of them and does a lot of splitting. Most of the time it's just left/right, but also others 
-like splitting between all the lip ctrls, or upper/lower eyelids. And it creates and connects all the Combo Targets!   
-And as the name says it, it also creates many slider ctrls.   
+It does all this: 
+
+- inverts some against the skinCluster
+- splits the targets (mostly left/right, but also others like lip ctrls, brow spline ctrls and upper/lower eyelids)
+- creates and connects all the Combo Targets   
+- creates many slider ctrls  
 
 Below you can find an overview of what Targets it accepts.   
 ### Eyes, Brows and Mouth

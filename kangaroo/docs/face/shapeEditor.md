@@ -185,6 +185,12 @@ If the topology is different AND the shape is entirely different, we are basical
 Check [Transfer to New Character](#transfer-to-new-character) further below.
 
 
+## Connecting the Rig
+### Getting Jaw from the Rig
+### Getting Eye Look from the rig
+
+
+
 ## TOOLS
 The *Shape Editor* comes with a lot of tools, and you won't use it efficiently unless you know about all the tools.
 ![Alt text](../images/shapeEditor_tools.jpg)   

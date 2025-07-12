@@ -70,6 +70,7 @@ The *blendShapesAndSliders()* function is using the blendShapes mentioned below.
 **blink_l_ctrl** is triggering the following blendShapes:  
 ```
 blink
+eyeWide
 upCurveBlink (for some cartoony characters, creates **upCurveBlink** attribute on the blink_l_ctrl)
 ```
 

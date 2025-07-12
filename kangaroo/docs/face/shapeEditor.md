@@ -228,9 +228,7 @@ So the *Warp Wire* is under the hood using the *Wire Deformer* to move the meshe
 ![Alt text](../images/shapeEditor_wireWarp.jpg)     
 You just have a create the curve with the *Curve from selected vertices* button in the *Extras* tab, and use that
 curve as the *Master*:  
-![Alt text](../images/shapeEditor_wireCurve.jpg)       
-
-
+![Alt text](../images/shapeEditor_wireCurve.jpg)
 ## Adding more Main Targets
 There's *Predefined Targets* and *Custom Targets*. Both can be added with the right click menu.  
 ### Predefined Targets
@@ -238,8 +236,8 @@ Under the Right click menu **Add Target** you'll see a lot of them:
 ![Alt text](../images/shapeEditor_predefinedShapes.jpg)     
 The ones that you see above the line are defined by the Kangaroo tool. If you add those in there, the *blendShapesAndSliders()* function
 will just add, mirror and connect them.  
-The ones below the line (in this image *A*, *B*, *EE*, ..) are the ones that you specified in the *blendShapesAndSliders()* in the 
-in the attributes **ddTargetsAsAttributes**, **ddExtraTargetSliders** or **ddCorrectives**. of the *blendShapesAndSliders()* function.  
+The ones below the line (in this image *A*, *B*, *EE*, ..) are the ones that you specified 
+in the attributes **ddTargetsAsAttributes**, **ddExtraTargetSliders** or **ddCorrectives** of the *blendShapesAndSliders()* function.  
 ![Alt text](../images/shapeEditor_fromFunction.jpg)  
 !!! note
     For those targets to appear in the menu it's important that you have the Kangaroo UI open and switched to the current character.

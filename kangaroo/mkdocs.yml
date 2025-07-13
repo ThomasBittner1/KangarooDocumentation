@@ -47,6 +47,9 @@ markdown_extensions:
   - admonition
   - pymdownx.superfences
   - pymdownx.details
+  - attr_list
 
-extra_css:
-  - extra.css
+#extra_css:
+#  - extra.css
+extra_javascript:
+  - javascripts/scroll-behavior-toggle.js

@@ -63,7 +63,8 @@ is happening later in the *puppetCustomAttachment()* function
 
 
 
-## Display Ctrl
+## Display Attributes
+### display_ctrl
 In all the template characters there's the *display_ctrl* that has a lot of display attributes:  
 ![Alt text](../images/puppet_displayCtrl.jpg)  
 
@@ -85,7 +86,16 @@ Usually these functions have an attribute called *sDisplayAttr*:
     and/or reorder entries.
     ![Alt text](../images/puppet_displayCtrlOrderOfAttributes.jpg)     
     
+### visibilityAttributes()
+For any ctrls that are not setup-ed for the *displayCtrl*, you can use the *visibilityAttributes()* function.
+![Alt text](../images/puppet_visibilityAttrs.jpg)     
+Just open the JSONEditor on the *dData* attribute, and add/adjust entries. If the attribute (most left label,
+*master.cuffCtrlVis* in this image) doesn't exist, he creates one. So you could even specify one that is created 
+on the display_ctrl, and just set it up to also switch some geometry visibility.
 
+### Python
+In the points above we've seen how to just add simple on/off switches. But if you need anything more fancy than
+that, it's best to solve that with a [Python](../python.md) function.
 
 
 ## Updating limbs

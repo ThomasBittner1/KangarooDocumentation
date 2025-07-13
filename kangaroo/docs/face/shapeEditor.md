@@ -122,9 +122,8 @@ You can choose between:
 Mirroring also works on vertex selection. But you do need to right click on the actual mesh for the mirror.
 ![Alt text](../images/shapeEditor_mirror.gif)    
 !!! warning
-    Do not forget to select the mesh! Sometimes we assume that when we right click on the actual mesh it
-    would do the mesh. But from the power of being able to select vertices comes the responsibility to
-    also select the mesh.
+    Do not forget to select the mesh in scene! Sometimes we assume that when we right click on the actual mesh in the UI it
+    would do the mesh. But from the power of being able to select vertices comes the responsibility to also select the mesh in scene.
 
 
 ## Inbetweens
@@ -347,6 +346,11 @@ make the first one True. And if you want that checkbox to be on by default, make
 
 !!! note
     To start with the *general* or *cartoon* one, grab those files from the installation folder *scripts\kangarooShapeEditor*
+
+!!! info
+    Do you want to share the blendShape file with another team, but you don't want to go through the stress of setting up
+    the Environment variable plus targetlist file for them?  
+    No problem, they don't need the targetlist file, since it also gets saved locally in the blendShape file.
 
 
 ## Bake/Fill

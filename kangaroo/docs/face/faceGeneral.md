@@ -7,7 +7,6 @@ The first thing to do when you do Face Rig is add the python file **facePro_v18.
 in the builder -> **Add File** -> **+default** -> **facePro** -> **facePro_v18.py**
 
 
-
 ## Puppet Limbs
 For things like Tongue (*Spine*), teeth (*SingleTransform* or *Belt*) we can use the puppet limbs that we also use for the body.
 You can also use [Tweaker Ctrls](../puppet/tweakerCtrls.md) if you want to give animators some extra modifiers. But make sure
@@ -78,7 +77,7 @@ we have 3 extra attributes on the *blendShapesAndSliders()* function: *ddTargets
 
 !!! note
     This section doesn't explain how to sculpt the targets, it only shows how to specify them in the builder function. For more info
-    about actually sculpting them, check the [Shape Editor](shapeEditor.md#predefined-targets)
+    about actually sculpting them, check the [Shape Editor](shapeEditor.md#adding-more-main-targets)
 
 
 #### ddTargetsAsAttributes

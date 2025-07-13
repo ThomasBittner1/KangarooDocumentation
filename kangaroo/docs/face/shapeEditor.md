@@ -313,6 +313,9 @@ in the attributes **ddTargetsAsAttributes**, **ddExtraTargetSliders** or **ddCor
     For those targets to appear in the menu it's important that you have the Kangaroo UI open and switched to the current character.
     Once you've added the targets, it doesn't matter anymore if the Kangaroo UI is open or not.
 
+!!! info
+    To see how you can set those attributes, check [Define your own Targets](faceGeneral.md#define-your-own-targets)
+
 ### Custom Targets
 Custom targets are targets that you just put into that textfield on the right click menu:  
 ![Alt text](../images/shapeEditor_customTarget.jpg)  

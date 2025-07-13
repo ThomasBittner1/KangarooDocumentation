@@ -95,14 +95,15 @@ see how you would set it up in *the usual* way
 
 
 ## Roadmap for First Character
-Once you've setup-ed your directories and started the character with the **create NEW** tool, it's best to just read
-through the [Builder Basics](builder/builderBasics.md) and [Puppet Basics](puppet/puppetBasics.md) documentations. You can skip things under *Advanced* for now,
-but the other content needs to be understood. Otherwise you'll either get stuck quickly or just won't be able to use the tool
-efficiently.  
-After you've read through those two pages you can follow this roadmap below. And after each step make sure to build the
-whole character and see what you get. It needs to be understood that Kangaroo is a procedural tool where we don't 
+Once you've setup-ed your directories and started the character with the **create NEW** tool, you can start actually 
+rig the character with the points below. 
+
+Always keep in mind that Kangaroo is a procedural tool where we don't 
 just work on a maya file and send that out when we are done.  
 Instead we work on the data that in the end creates the character with the *RunAll* button.
+
+And generally don't get carried away with one file for too long. Always just export and rebuild. And best regularly publish
+your character so you can track things back easier whenever something's not working.
 
 1. [Specify Your Model](builder/builderBasics.md#importmodel)
 2. [Place Blueprint Joints](puppet/puppetBasics.md#change-the-guide-joint-locations)

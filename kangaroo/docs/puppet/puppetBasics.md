@@ -36,33 +36,9 @@ Now let's look at some of the important Limbs. Below you'll see a lot of videos.
 Keep in mind those videos are from 2022, but 95 % of those workflows is still the same today
 Just make sure to read the text here to see what changed.
 
-## The Limbs
-
-### Spines, Cables, Tails, Straps, Pony Tails...
-We use the **Spine Limb** for all of these things. 
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/kEA6R8v1gDk"
-title="YouTube video player" frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
-In version 5 the spine got a big update, where the **fkSpline** got those extra features:
-
-- Reverse FK
-- preIK in fkSpline (better for performance compared to switching to ikSpline)
 
 
-### ArmLeg Limb
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/BLg9ajB2rzU"
-title="YouTube video player" frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
-update 0: Round Elbow got removed  
-update 1: For placing the pivot blueprints (legPrintLFT_ctrl, legOutBLFT_ctrl, legToesLFT_ctrl,…) 
-it’s easier to do that in the blueprint skeleton and and build the blueprint rig on top
-
-
-### Attachers
+## Attachers
 Attachers are all about spaces. For example the Hand IK following the COG or the Spine. 
 ![Alt text](../images/puppet_attachers.jpg)  
 And they come with a few different options. Like you can either have a switch or a blend. Or you can choose to
@@ -86,29 +62,33 @@ Also, keep in mind that when you test build the character, it won't attach it ye
 is happening later in the *puppetCustomAttachment()* function
 
 
-### Single Limbs
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/8g4ZYgOeuzg"
-title="YouTube video player" frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
+
+## Display Ctrl
+In all the template characters there's the *display_ctrl* that has a lot of display attributes:  
+![Alt text](../images/puppet_displayCtrl.jpg)  
+
+And that's just a simple *singleTransform* limb with its own blueprint:
+![Alt text](../images/puppet_displayLimb.jpg)  
+But don't parent it around in the puppet tool! It's important that this is at the top, first limb
+after the master limb (*m_placement* in this case)  
+
+And all the limbs have display attributes to which tag (attribute) they belong to:  
+![Alt text](../images/puppet_displayCtrlAttributes.jpg)     
+
+*But what about all the ctrls generated in functions outside of the puppet tool?*  
+Usually these functions have an attribute called *sDisplayAttr*:  
+![Alt text](../images/puppet_displayCtrlFaceFunctions.jpg)     
+
+!!! tip
+    If you don't like the order of the attributes on the ctrl, those are easily changed on the
+    *buildPuppet()* function. Just open that attribute in the [JSON Editor](../builder/jsonEditor.md), and add
+    and/or reorder entries.
+    ![Alt text](../images/puppet_displayCtrlOrderOfAttributes.jpg)     
+    
 
 
-### Belt Limb
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/1BAzckDbrBE"
-title="YouTube video player" frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
 
-
-### Display Attr
-There's the ctrl display_ctrl that has a lot of display attribute
-!!! info
-    When you do the face later, in the face functions you can see the sDisplayAttr atttribute on many of the 
-    face setup functions
-
-### Updating limbs
+## Updating limbs
 Every limb has versions. The is important because when a limb gets improved, you'll ususally want to keep the 
 old behavior in existing characters that have already been animated.  
 But if you do want to change the versions, on the right side just switch them:  
@@ -117,3 +97,5 @@ And if you want to just switch all limbs automatically to the latest one, you ca
 button **Maximize All Limbs**:  
 ![Alt text](../images/puppet_maximizeLimbs.jpg)
 
+!!! warning
+    Don't forget to click the **save** button!

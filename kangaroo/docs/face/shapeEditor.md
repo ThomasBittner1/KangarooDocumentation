@@ -186,9 +186,70 @@ Check [Transfer to New Character](#transfer-to-new-character) further below.
 
 
 ## Connecting the Rig
-### Getting Jaw from the Rig
-### Getting Eye Look from the rig
+There's two main reason why we need to connect the rig into the blendShape Editor - getting jawOpen/eyeLook joints into
+the *Shape Editor*, and getting certain poses into the *Shape Editor* so we can sculpt correctives.
+### Loading the Rig
+For both things you have to start by referencing the rig, using the *reference rig* button at the top of the Kangaroo UI.
+!!! note
+    If you are getting the rig with the *reference rig* button, you have to build/publish the rig before. If you don't want 
+    to publish, you can also *hold scene* where you've built the rig, and then with the right click menu of the *pull scene*
+    you can reference the rig in. More info on [hold/pull](../builder/workflowTricks.md#hold-pull)
+Then just hide the top group of the rig, you won't have to directly do anything in it unless you are trying to debug something.  
+Then having anything from it selected, click the **<<** button at the very bottom.
+![Alt text](../images/shapeEditor_transferFromRig.jpg)   
 
+### Getting Jaw from the Rig
+The benefit from having the jaw joint in the *Shape Editor* is that you can sculpt the jaw shape and also specify how 
+the jaw joint should behave. Having those 2 things in different places would make it difficult to polish the deformations.  
+
+To get the joints and skinning, select all the meshes and click the most bottom button *Get Skin Setup*. You should end up with joints that look like this:  
+![Alt text](../images/shapeEditor_jawJoints.jpg)     
+The skin weights are also taken from the rig, but it went through a few numpy operations to group the weights of the non-existing 
+joints to either *jnt_m_headMain* or *jnt_m_jawMain*.
+!!! note 
+    If after clicking the *Get Skin Setup* the joints don't look like in the image above, delete the current joints you have and try again. 
+    Sometimes if you have some joints in there already he tries to use them which may not always be helpful.  
+Try to activate the *jawOpen* target. It might look like this: 
+![Alt text](../images/shapeEditor_jawFirstVersionSkinning.gif)     
+You may have to fix some skinning, especially if you also added the teeth (which we didn't do in this case).  
+But more important, you'll have to fix the jaw motion. See how currently it's just rotating? Let's make it so it also
+translates it a bit, and at the same time even make the rotation a bit less.  
+This is happening with the **\*** button next to the *jawOpen*. That opens this UI, where you can adjust the rotateZ,
+and add some translation values:  
+![Alt text](../images/shapeEditor_jawOpenStarButton.jpg)     
+
+!!! tip
+    You probably just got a headache from those values because you don't know what space they should be, or how to even enter without seeing the result
+    right away!   
+    But don't worry, there's a trick:
+
+    1. Select the jaw joint, break the connections and then translate/rotate the jaw joint into a good place:
+    ![Alt text](../images/shapeEditor_jawJointBreakConnections.gif)
+    2. Make a screenshot of the values on the jnt_m_jawMain (or write those values down)
+    3. Click the **\*** button, enter the values in there. And when you click save, it'll restore the connections again  
+
+!!! note
+    The values in the **\*** button will also make it into the rig! Just make sure you have the *jawAutoTranslate()* function activated 
+    without any overrides in the attributes. It will work in a way that as the animator rotates the jaw_ctrl.rotateZ 
+    to what you have defined as rotateZ, it'll also translate the jaw ctrl the same way as the joint is being translated from the values you entered.
+
+### Getting Eye Look from the rig
+It all works the same as the jaw, but it's a little simpler because we are not sending back/forward values.
+Just make sure the eyeballs are skinned to the eye joints, and the targets that have the extra are *eyelookUp*, *eyelookDown*,
+*eyelooLeft*, *eyelookRight*.  
+And if you are a skilled modeler, you can create some nice eyelook targets:   
+![Alt text](../images/shapeEditor_eyelook.gif)     
+
+### Grab targets for corrective sculpting
+Especially for cartoony rig we want to use the *Shape Editor* to sculpt some correctives. Select any target and some mesh
+(full mesh or vertex/soft selection), and click the button **Pose Rig and Match Mesh/Vertex Selection**. 
+But before that with the **BS Off* or **BS On* buttons you should specify if you want to get the targets with or without 
+the already applied blendShapes.
+![Alt text](../images/shapeEditor_grabTargets.jpg)     
+!!! note
+    To know which target you need to specify here for which corrective, check 
+    [*blendShapesAndSliders()*](faceGeneral.md#blendshapesandsliders). You might even want to 
+    [define your own targets](faceGeneral.md#define-your-own-targets) for that.
 
 
 ## TOOLS
@@ -237,6 +298,10 @@ curve as the *Master*:
 ![Alt text](../images/shapeEditor_wireCurve.jpg)
 ## Adding more Main Targets
 There's *Predefined Targets* and *Custom Targets*. Both can be added with the right click menu.  
+!!! note
+    And this point it would help to have an overview of what targets you can actually add. Check the
+    [*blendShapesAndSliders()*](faceGeneral.md#blendshapesandsliders) function. 
+
 ### Predefined Targets
 Under the Right click menu **Add Target** you'll see a lot of them:  
 ![Alt text](../images/shapeEditor_predefinedShapes.jpg)     

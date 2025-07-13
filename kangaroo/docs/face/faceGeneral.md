@@ -71,17 +71,54 @@ neckStretch
 
 ### Define your own Targets
 But likely you'll hit a point where you want to add a target that you can't find in any of the list. For that case
-we have 3 extra attributes on the *blendShapesAndSliders()* function: *ddTargetsAsAttributes*, *ddExtraTargetSliders* and *ddCorrectives*
+we have 3 extra attributes on the *blendShapesAndSliders()* function: *ddTargetsAsAttributes*, *ddExtraTargetSliders* and *ddCorrectives*.
+!!! note 
+    Before reading those, make sure you know about the [JSON Editor](../builder/jsonEditor.md), since adjusting those
+    attributes directly would be a nightmare!
+
+!!! note
+    This section doesn't explain how to sculpt the targets, it only shows how to specify them in the builder function. For more info
+    about actually sculpting them, check the [Shape Editor](shapeEditor.md#predefined-targets)
+
+
 #### ddTargetsAsAttributes
+See how we have some extra phoneme attributes *F*, *O* and *U* on an already existing ctrl?  
+![Alt text](../images/shapeEditor_extraAttributes.jpg)   
+You can create as many as you like, define pretty much any ctrls that is there. And if you define a left ctrl, it automatically
+splits the shape and puts it onto the left/right ctrls using the *fSplitRadius*. 
+![Alt text](../images/faceGeneral_targetsAsAttributes.jpg)
+
+Under *sTarget* you specify be the name that you define in the *Shape Editor* (*O* in the picture above). 
+As the attribute goes to 1.0, the target will be activated.
+You can also add *sTargetNeg*, which then would get activated as the attribute goes to -1.0.
 
 #### ddExtraTargetSliders
+With the *ddExtraTargetSliders* attribute you can create new slider ctrls, like this one:  
+![Alt text](../images/faceGeneral_extraTargetSliderNose.gif)   
+We've specified it as bMirror=False, and only added the sTargetUp and sTargetDown shapes:
+![Alt text](../images/faceGeneral_extraTargetSliderNoseJsonEditor.jpg)  
 
-#### ddCorrectives
+Here's another one, where we've set bMirror=True, and also assigned the sTargetIn:  
+![Alt text](../images/faceGeneral_extraTargetSliderCheeks.jpg)  
 
 !!! info
     You'll see that the *blendShapesAndSliders()* function creates all the ctrl positions, orientations and scale by guessing based
     on the direction and distance of the targets. But very often you'll want to adjust that. And it's easy - all explained in the
     following chapter [SliderBlueprints](#sliderblueprints). 
+
+#### ddCorrectives
+
+The *ddCorrectives* attribute lets you specify some corrective targets. Here the target names are the keys on the left of
+the JSON Editor (*CornerDownRotateUp*, *upperLipUp*, *upperLipIn*):  
+![Alt text](../images/faceGeneral_ddCorrectives.jpg)    
+In the picture above we just specified some ctrls that are already coming from the face. But it doesn't have to be from the face functions.
+It can also be a ctrl from the puppet.  
+Here we created a corrective for when the trunk was down. We actually left the main target (*trunkDown*) as the default,
+but added Combos. 
+![Alt text](../images/faceGeneric_elephant.jpg)    
+Check the [Shape Editor](shapeEditor.md#grab-targets-for-corrective-sculpting) for how to add shape from the rig.
+
+
 
  
 

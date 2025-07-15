@@ -19,7 +19,7 @@ nav:
      - Workflow Tricks: builder/workflowTricks.md
      - JSON Editor: builder/jsonEditor.md
   - Puppet:
-      - General: puppet/puppetBasics.md
+      - General: puppet/puppetGeneral.md
       - Limbs: puppet/puppetLimbs.md
       - Bell Collider: puppet/bellCollider.md
       - Dynamics: puppet/dynamics.md

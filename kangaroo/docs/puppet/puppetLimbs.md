@@ -40,6 +40,24 @@ But there's 2 situations where you'd want to make the blueprint count lower:
 - Your spine joint count is very high (> 8) and you just don't want to take care of so many blueprint joints  
 - You want to quickly add more spine joints without having to go into the blueprints
 
+
+### Blueprint Curve
+For the blueprints we usually do joints. But the *Spine* has the option of doing a curve instead of joints.
+Just switch the **Blueprints Curve** attribute to **on**. When you create the blueprint skeleton and the curve 
+is created, the cv count will be the *Blueprint Count*.  
+This will give you 2 curves. One for the joint locations, and the other one for the up vectors.
+![Alt text](../images/puppetLimbs_blueprintCurve.jpg)
+!!! warning
+    Do not neglect the Up Curve! Is this is not laid out around the main curve in a clean way, you'll get twist issues.
+
+!!! tip
+    If you have long cables, don't don't lay out the curves manually since it'd take you a long time. Instead try this
+    trick first:  
+    ![Alt text](../images/puppetLimbs_createBlueprintCurve.gif)
+
+
+
+
 ### fk
 Let's start with the simplest case. Just some completely unfancy fk ctrls.  
 It's actually the default. Just leave all other features (in orange) unchecked, and only 
@@ -59,6 +77,7 @@ Many times we want to have more joints for better deformations, but keep the ctr
 make sense to switch to fkSpline:    
 ![Alt text](../images/puppetLimbs_fkspline.gif)  
 
+#### fkSpline - Add Remove Ctrls {#fksplineaddremovectrls}
 Adding/Removing ctrls and changing their locations works with the **ctrl percs** attribute. To add more
 you first have to resize the attribute. First thing after that you'll notice that it's just adding 0s at
 the end. But you can fix that by just right click again and *interpolate*
@@ -83,11 +102,11 @@ Animators sometimes want this on the torso:
 Those ctrls run on top of main ctrls and rev ctrls. 
 ![Alt text](../images/puppetLimbs_spineTweakerCtrls.gif)  
 !!! tip
-    The bottom square ctrl can be used for the hips especially in cartoon characters. But not always! 
+    The bottom square ctrl can be used for the hips especially in cartoony characters. But not always! 
     In many cases it's better to add the hips as a separate *singleTransform* or *singleBone* limb at the bottom.  
     
 
-#### fkSpline - stretchMode
+#### fkSpline - stretchMode {#fksplinestretchmode}
 The *stretchMode* attribute specifies how the joints should be aligned onto the curve.  
 The options are:  
 
@@ -105,7 +124,8 @@ for realistic creatures where you need to have the torsos keep their lengths:
     [*Advanced*](#advanced) section
 
 **CurveInfo nodes** is using the *pointOnCurveInfo* nodes, and the **motionPath nodes** are using the *motionPath* nodes. CurveInfo nodes
-is faster and should be used in 95 % of the cases. But motionPath gives better distribution in some cases.  
+is faster and should be used in 95 % of the cases. But motionPath gives better distribution in some cases.
+![Alt text](../images/puppetLimbs_spineCurveInfoNodesMotionPath.gif)  
 
 The difference between **soft twist** and **rigid twist** is that for *soft* it's creating a curve for the twisting, while for the rigid twist
 it's just finding the upvector points by interpolating some offset vectors.  
@@ -114,6 +134,43 @@ Rule of thumb is always use *rigid twist* first. And if it's giving you weird be
 !!! note
     In 99 % of the cases the twisting should be ok with either soft or rigid. If you hit that one percent where the twist is still 
     behaving strangly, try switching the *up axis* from [0,1,0] to [0,0,1]
+
+
+#### fkSpline - preIk
+PreIk is creating some ctrls that are manipulating the FK Ctrls.  
+![Alt text](../images/puppetLimbs_spinePreIk.gif)    
+!!! tip
+    This is mainly for speed optimizations on Biped Torsos. The torso in general is a bottle neck because not much can get calculated at the same time.
+    If on Bipeds animators want IK spine, in the past we would have always added ikSpline feature. And it would still be a valid approach, 
+    but creating the preIk spine has better performance since instead of creating extra blendable joint splines it's just manipulating the
+    root ctrls (fkSpline main ctrls).  
+    Other bonus you get from this is that animators can still utilize the *rev ctrls*.
+    
+
+
+### ikSpline
+*ikSpline* has some similarities to the *fkSpline*, with the main difference that it's ik   
+![Alt text](../images/puppetLimbs_spineIkSpline.gif)    
+
+!!! tip
+    As mentioned above - if you are creating a torso rig, consider just sticking with fkSpline and *preIk*, since in many cases that would be better for performance. 
+
+
+#### ikSpline - add/remove ctrls
+Adding/removing and positioning of ctrls is happening with the *Ctrl Percs* attribute.  
+![Alt text](../images/puppetLimbs_spineIkCtrlPercs.jpg)
+You can adjust it the same way as the *Ctrl Percs* [fkSpline](#fksplineaddremovectrls)
+
+
+#### Chest
+If *Chest Perc* is at 1.0, there's no chest, and the top ctrl is called *spineTopIk_ctrl*. If you give chest a lower value, 
+for example 0.8 - the top ctrl is then called *spineChestIk_ctrl*, and the lower ctrls are compressed between 0 and 0.8:  
+![Alt text](../images/puppetLimbs_spineChest.jpg)     
+
+
+#### ikSpline - stretchMode
+*stretchMode* behaves the same as on [fkSplines](#fksplinestretchmode)
+
 
 ### Advanced
 If you turn on the *Advanced* checkbox at the bottom, you'll get those extra squash joints:   
@@ -140,7 +197,7 @@ bottom and top ctrls of the spine:
 
 #### skinning the squash joints 
 If you already skinned the character, and you turned on the *Advanced* checkbox later, you can easily transfer the 
-skinning to those squash joints with right click option:  
+skinning to those squash joints by selecting the meshes and right click option:  
 ![Alt text](../images/puppetLimbs_spineSquashJointPaint.jpg)
 
 The Kangaroo Skinning Tools (*Flood*, *Move*, ..) come with another extra feature that other skinning tools don't give you:  

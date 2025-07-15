@@ -172,6 +172,23 @@ for example 0.8 - the top ctrl is then called *spineChestIk_ctrl*, and the lower
 *stretchMode* behaves the same as on [fkSplines](#fksplinestretchmode)
 
 
+#### iKSpline - cable
+Very often we use the Spine limb for cables 
+![Alt text](../images/puppetLimb_cable.gif)  
+See the image below for how attributes were set in the gif above:   
+![Alt text](../images/puppetLimbs_spineCableAttributes.jpg)  
+
+!!! warning
+    Watch out with the **Auto Tangents**! It can give great result, but since it's doing some aiming with automatic 
+    polevectors, it can get unstable in some cases.
+
+Other tips on cables:
+
+- Very often you'll want to activate the **Remove End Ctrls**, because you can still use the attachers on them without the ctrls
+- We've used the *Auto Tangent* in this example, but try first without, since it might be good enough already.
+- **Attach Middles To Line** is always activated by default. But often you don't want to have the ctrls follow the outer points.
+
+
 ### Advanced
 If you turn on the *Advanced* checkbox at the bottom, you'll get those extra squash joints:   
 ![Alt text](../images/puppetLimbs_squashJoints.jpg)    

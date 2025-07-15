@@ -1,5 +1,4 @@
-## Dynamics
-### Spring
+## Springs
 The following limbs come with a **Spring** attribute:
 
  * singleBone    
@@ -16,7 +15,7 @@ For tweaking those values, it's best to first keep them the same value, and try 
 *STIFFNESS* is how fast it comes back (stronger values = coming back quicker)  
 *DAMPING* is how loose it is (weaker values = looser)  
 
-### Spine Dynamics
+## Spine Dynamics
 The Spine limb also has Dynamics attribute in the **advanced** section, which is using *hairSystem* under the hood.  
 Can give great results, too. But trickier to tweak the behavior. 
 

@@ -109,3 +109,27 @@ button **Maximize All Limbs**:
 
 !!! warning
     Don't forget to click the **save** button!
+
+
+## Feature Ctrl Type
+The *Feature Ctrl* is a ctrl that holds some of the global arguments for this limb, such as FK2IK Switch or some extra visibiltiy switches.  
+You set it with the attributes called *Feature Ctrl Type* and *CustomFeatureCtrlName*.   
+For the *Feature Ctrl Type* you have 3 options: *Custom Ctrl*, *New Global Ctrl* and *Shape on All Ctrls*  
+![Alt text](../images/puppetLimbs_featureCtrlType.jpg)
+#### Custom Ctrl
+It's the simplest one, you just specify the name of a ctrl in the *Custom Feature Ctrl Name* field such as *cog_ctrl*.   
+But make sure that in the hierarchy this ctrl is built before the current limb!
+
+#### New Global Ctrl
+This is probably the most widely used one, it creates those cross ctrls:  
+![Alt text](../images/puppetLimbs_featureCrossCtrls.jpg)  
+
+#### Shape on All Ctrls
+Animators often ask for the global attributes to be accessible on each ctrl. But in Maya you cannot add one attributes onto more than
+one ctrl, and the closest thing how to solve this is putting the attributes on a shape node. In Maya you can create one shape node and
+make it appear on more than one transform (ctrl).  
+![Alt text](../images/puppetLimbs_shapeNode.jpg)   
+!!! warning
+    Some external tools such as *Studio Library* don't support this. And writing your own animation tools will likely be more complex 
+    since you always have to check on the ctrls if there's a shape node.
+

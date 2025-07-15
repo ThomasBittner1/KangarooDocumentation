@@ -87,6 +87,34 @@ Those ctrls run on top of main ctrls and rev ctrls.
     In many cases it's better to add the hips as a separate *singleTransform* or *singleBone* limb at the bottom.  
     
 
+#### fkSpline - stretchMode
+The *stretchMode* attribute specifies how the joints should be aligned onto the curve.  
+The options are:  
+
+- spline ik
+- curveInfo nodes (soft twist)
+- curveInfo nodes (rigid twist)
+- motionPath nodes (soft twist)
+- motionPath nodes (rigid twist)
+
+*Spline ik* is using the maya spline ik, which comes with extra *minStretch* and *maxStretch* values. This is very important 
+for realistic creatures where you need to have the torsos keep their lengths:  
+![Alt text](../images/puppetLimbs_splineIkLockLength.jpg)   
+!!! warning
+    *Spline Ik* does NOT have stable twist values! When you use that mode, you'll have to turn on the *Ctrl Twist* in the 
+    [*Advanced*](#advanced) section
+
+**CurveInfo nodes** is using the *pointOnCurveInfo* nodes, and the **motionPath nodes** are using the *motionPath* nodes. CurveInfo nodes
+is faster and should be used in 95 % of the cases. But motionPath gives better distribution in some cases.  
+
+The difference between **soft twist** and **rigid twist** is that for *soft* it's creating a curve for the twisting, while for the rigid twist
+it's just finding the upvector points by interpolating some offset vectors.  
+Rule of thumb is always use *rigid twist* first. And if it's giving you weird behavior, try *soft twist*
+
+!!! note
+    In 99 % of the cases the twisting should be ok with either soft or rigid. If you hit that one percent where the twist is still 
+    behaving strangly, try switching the *up axis* from [0,1,0] to [0,0,1]
+
 ### Advanced
 If you turn on the *Advanced* checkbox at the bottom, you'll get those extra squash joints:   
 ![Alt text](../images/puppetLimbs_squashJoints.jpg)    

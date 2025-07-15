@@ -133,3 +133,10 @@ make it appear on more than one transform (ctrl).
     Some external tools such as *Studio Library* don't support this. And writing your own animation tools will likely be more complex 
     since you always have to check on the ctrls if there's a shape node.
 
+
+## Mirror
+### Mirror Limbs
+
+
+### Mirror Blueprints
+

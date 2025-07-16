@@ -49,8 +49,11 @@ You do have some extra BPs for the brows to specify the orientations with **Crea
 Creating the blueprints starts (!) the same as in [TWEAKER_lids](#tweaker_lids),  
 But then you need to specify the **bFlipInnerBpCurves** attribute. Set it to *True* if in the center cvs the upper 
 one is below the lower one.  
-!!! warning
-    Do not forget the **bFlipInnerBpCurves**! If this is not set correctly, you probably won't notice it until it's already skinned.   
+!!! tip
+    If you made a mistake with the **bFlipInnerBpCurves** and you need to swich that attributes after you've already skinned it, you can fix
+    the weights with **distribute** option on either the *Flood* or the *ClosestExpand* tool. For both select the whole
+    mesh. For the *ClosestExpand* tool also set the loop attributes very high, so you let the fade out be handled by the
+    mask of the previous weights.
 
 And the lips come with another option - the **bSplines** attribute. If you leave it to False, 
 it works just as the other functions.  

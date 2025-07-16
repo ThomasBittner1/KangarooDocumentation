@@ -16,6 +16,13 @@ For tweaking those values, it's best to first keep them the same value, and try 
 *DAMPING* is how loose it is (weaker values = looser)  
 
 ## Spine Dynamics
-The Spine limb also has Dynamics attribute in the **advanced** section, which is using *hairSystem* under the hood.  
+The Spine limb also has Dynamics attribute in the **advanced** section, which is using **hairSystem** under the hood.  
 Can give great results, too. But trickier to tweak the behavior. 
+
+!!! tip
+    You can still tweak that behavior, but it's more advanced. You'll have to find the hairSystem node and in there
+    you can find all the attributes. You could even setup collisions for that.
+
+Here we attach both end points. 
+![Alt text](../images/dynamics_spineTwoEndPoints.gif)  
 

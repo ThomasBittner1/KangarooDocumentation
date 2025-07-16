@@ -27,7 +27,7 @@ Especially when setting it up the first time, you might find it's not behaving a
 and how to solve them:
 
 1. *The bell is flipping as I rotate it to 90 degrees:* Might be an easy solve - switch the **Bell Up Vector** from default of (0,1,0) to (0,0,1)
-2. *The bell *jumps* very unnatural as it touches the ringer:* Give the bell a blended attacher, that it already moves like the ringer 50 % without the bell settings. 
+2. *The bell *jumps* very unnatural as it touches the ringer:* Give the bell a blended attacher, that it already moves like the ringer 50 % without the bell setup. 
 
 
 

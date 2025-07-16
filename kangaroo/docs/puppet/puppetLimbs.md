@@ -232,8 +232,9 @@ because those squash joints don't have child joints?
 Well, no - those squash joints have a hidden attribute (*"skinParent"*) that make sure that the kangaroo skinning tools
 treat them as the main joints that have proper child joints.
 
-
-
+!!! tip
+    In the advanced section you can also turn on **Dynamics**. This is explained in the [Dynamics](dynamics.md#spine-dynamics) section.    
+    But before activating that, it's recommended to try the [Spring](dynamics.md#springs) first!
 
 ## ArmLeg
 

@@ -172,21 +172,28 @@ for example 0.8 - the top ctrl is then called *spineChestIk_ctrl*, and the lower
 *stretchMode* behaves the same as on [fkSplines](#fksplinestretchmode)
 
 
-#### iKSpline - cable
-Very often we use the Spine limb for cables 
+#### iKSpline - cables/straps
+Very often we use the Spine limb for cables/straps 
 ![Alt text](../images/puppetLimb_cable.gif)  
 See the image below for how attributes were set in the gif above:   
-![Alt text](../images/puppetLimbs_spineCableAttributes.jpg)  
+![Alt text](../images/puppetLimbs_spineCableAttributes.jpg)   
+The green rounded arrow ctrls that you see in the gif above are the Tangent Ctrls. 
+They are created automatically and just need to be turned on with the visibility attributes on the end ctrls.
 
-!!! warning
-    Watch out with the **Auto Tangents**! It can give great result, but since it's doing some aiming with automatic 
-    polevectors, it can get unstable in some cases.
-
-Other tips on cables:
+Other tips on cables/straps:
 
 - Very often you'll want to activate the **Remove End Ctrls**, because you can still use the attachers on them without the ctrls
-- We've used the *Auto Tangent* in this example, but try first without, since it might be good enough already.
 - **Attach Middles To Line** is always activated by default. But often you don't want to have the ctrls follow the outer points.
+- If you want the cables/straps extra smooth, try **Auto Tangent** as shown next topic
+
+
+#### ikSpline - Auto Tangent
+*Auto Tangent* tries to keep the curve smoother by aiming to the ctrls.
+![Alt text](../images/puppetLimbs_spineAutoAim.gif)    
+
+!!! warning
+    This is doing some aiming with automatic polevectors, so it can get unstable in some cases. 
+
 
 
 ### Advanced
@@ -205,12 +212,13 @@ Most of it should be self explanatory, except **distribute orientations** deserv
 See how how on the side the cubes of the spine are crashing with each others? It's because the joints
 are just orientating based on the ctrls around them. And the wider the bellies are in relation to their heights,
 the stronger the crashing will be.  
-The solution is *distribute orientations*, which assigns a new orientation to those joints that is blending between
+The solution is **Distribute Orientations**, which assigns a new orientation to those joints that is blending between
 bottom and top ctrls of the spine:  
 ![Alt text](../images/puppetLimbs_distributeRotations.gif)
 !!! tip
     You have two attributes on each squash joint to fine tune that behavior:  
-    ![Alt text](../images/puppetLimbs_distributeRotationsAttributes.jpg)
+    ![Alt text](../images/puppetLimbs_distributeRotationsAttributes.jpg)  
+    For saving those you'll have to do a [python function](../python.md#simple-way-of-adding-a-function).
 
 #### skinning the squash joints 
 If you already skinned the character, and you turned on the *Advanced* checkbox later, you can easily transfer the 

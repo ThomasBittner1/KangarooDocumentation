@@ -298,6 +298,17 @@ it would only work if they are in T-Pose. If arms are in A-Pose, the default wou
     the twist will get unstable for sure.
 
 
+### Bendy Joints
+Obviously we have *bendy joints* - activate them on in the *Advanced* section:  
+![Alt text](../images/puppetLimbs_bendyJoints.gif)    
+!!! warning
+    If you have a cartoony character, animators will crucify you if you don't add them.
+
+### Squash Stretch Joints
+This will make the bendy ctrls and knee/elbow stretch ctrls scalable. Makes sure to transfer the weights to the new squash joints!
+![Alt text](../images/puppetLimbs_armLegScaleJoints.gif)      
+
+
 ### Double Knee
 The *Double Knee* is here to help you for deformations:  
 ![Alt text](../images/puppetLimbs_doubleKnee.gif)   
@@ -305,12 +316,33 @@ The *Double Knee* is here to help you for deformations:
     You'll most likely want it for the knees! For elbows maybe..
 
 ## DogArmLeg
+The DogArmLeg is for any digigrade quadruped such as dogs, cats, ..  
+![Alt text](../images/puppetLimbs_dogarmleg.gif)      
+
+The tricky thing on the digigrade legs is getting the midfinger roll on the paws behave well. 
+One thing that helps is getting the *fingersMid* blueprint joint from the leg placed in the same line as the toes mid joints:   
+![Alt text](../images/puppetLimbs_dogToesBlueprints.jpg)      
+In some cases you might even want to tweak the *Dog Mid Finger* attributes on the finger limbs:  
+![Alt text](../images/puppetLimbs_dogToesAttributes.jpg)
+
+!!! tip
+    Make sure the model is anatomically correct on the toes! If the anatomy is not correct already in the model, getting a good looking midFinger roll is almost impossible.
 
 
 ## HorseArmLeg
+Works similar to the *DogArmLeg* in many ways. But it's simpler to setup because it doesn't need toes:   
+![Alt text](../images/puppetLimbs_horseLeg.gif)      
 
 
 ## BirdArmLeg
+Also similar to the *DogArmLeg*, but it's got the main difference that the first bone is an FK and second and third
+bones are the IK, while on *DogArmLeg* the IK is on the first two bones.  
+![Alt text](../images/puppetLimbs_birdLeg.gif)      
+
+
+## Clavicle, DogScapula
+
+
 
 ## Belt
 

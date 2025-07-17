@@ -162,7 +162,7 @@ Adding/removing and positioning of ctrls is happening with the *Ctrl Percs* attr
 You can adjust it the same way as the *Ctrl Percs* [fkSpline](#fksplineaddremovectrls)
 
 
-#### Chest
+#### ikSpline - Chest
 If *Chest Perc* is at 1.0, there's no chest, and the top ctrl is called *spineTopIk_ctrl*. If you give chest a lower value, 
 for example 0.8 - the top ctrl is then called *spineChestIk_ctrl*, and the lower ctrls are compressed between 0 and 0.8:  
 ![Alt text](../images/puppetLimbs_spineChest.jpg)     
@@ -237,6 +237,80 @@ treat them as the main joints that have proper child joints.
     But before activating that, it's recommended to try the [Spring](dynamics.md#springs) first!
 
 ## ArmLeg
+We use the same limb for the arms and the legs.
+On the leg we just switch the **Is Leg** attribute to **on**:  
+![Alt text](../images/puppetLimbs_leg.jpg)  
+This changes mainly the names (for example (*elbow* -> *knee*) default blueprints and default rotate orders.
+!!! warning
+    It's easy to forget! Because you'll find it's still working, but just later you'll realize that the knee is called elbow..
+
+### IK
+#### World Orient Ctrl
+*World Orient Ctrl* makes the ik ctrls as joints, so it can make use of the joint orient values. This is for feet that are on the ground.   
+Because the important thing on feet iks is that they translate in world space. But if they are oriented outwards in the model 
+(and you are forced to have the blueprints oriented outwards, too), a regular ctrl
+with a simple *transform* would not be able to have orientation and translation in different spaces. But the *joint* has 
+few extra power with the joint orient values.  
+Look at this gif, it would be impossible to get that behavior from transform joints:  
+![Alt text](../images/puppetLimbs_legIkWorldspaceJoint.gif)  
+!!! tip
+    If you are using *Studio Library*, make sure to switch to the latest version. Because older versions don't like joint ctrls. 
+*Why is it not just on by default??*  
+Well, it has a disadvantage: when you draw a rectangle to select all the ctrls, it'll *only*
+select the joint ctrls and not the others. This is because Maya is trying to help you by making joints a higher selection priority.
+Unfortunately it's not so helpful in this case. So if animators start whining because of that issue, you'll just have to tell the
+modelers to make the feet straight so you can switch that option off.
+
+#### Pivot Ctrls
+The **Pivot Ctrls** attribute just defines of which control you want to have as actual ctrls and which ones are just attributes 
+on the ik ctrl (*legIk_l_ctrl*).
+If all animators in the world agreed to one system, we wouldn't need this attribute. But here we are - most animators are very specific
+about which control they want to rotate and which control they want to slide as attribute.  
+This is what you get when you set it to **all**:
+![Alt text](../images/puppetLimbs_allPivotCtrls.jpg)
+Switch it to different settings - you'll notice some ctrls disappear, and you have attributes on the ik ctrl (*legIk_l_ctrl*) instead:  
+![Alt text](../images/puppetLimbs_pivotAttributes.jpg)
+
+#### Toe Fk Ctrl
+The *Toe Fk Ctrl* is the same idea - if it's on, you'll get this ctrl:   
+![Alt text](../images/puppetLimbs_legikCtrls.jpg)
+If it's off, you'll get *toeBend* attributes on the IKs (*legIk_l_ctrl.toeBend*)
+
+
+### Twist
+The Twist joints get created only if you activate the *Advanced*:  
+![Alt text](../images/puppetLimbs_twistJoints.jpg)   
+Watch out for bad flipping! The twist setup is actually very stable and flexible in latest kangaroo version, but only if all the attributes are set properly:  
+
+Let's look at *Upper Plane* and *Lower Up Axis* first. Those define which should be the stable axes and on which is ok to 
+flip if it goes into extremes.  
+**Upper Plane** is for the upper arm. On a biped arm, leave it as default (**Y**), but for a biped leg or quadruped arm/leg switch it to **Z**.  
+**Lower Up Axis** is for the lower limb. On a biped arm, leave it as default (**Z**), but for a biped leg or quadruped arm/leg switch it to **Y**.  
+
+For the upper arm will still have one more attribute - **Arm Twist From PoseT**. It should be *on* for bipeds (default), but should be *off* for quadrupeds using this
+limb.  
+*What is that doing??*   
+The first part of all the twist math in the upper arm is *removing* the twist from the upper arm orientation. To remove the twist it has to know in which
+space the twist should be removed. You might think it should just be the default of the arms. For the legs that would work, but for the arms
+it would only work if they are in T-Pose. If arms are in A-Pose, the default would have a non-straight pose which is giving issues on certain poses.
+!!! warning
+    Do not forget to switch it off for quadruped arms! If you rig a quadruped mouse or bear with this limb and you leave it as default in the arms,
+    the twist will get unstable for sure.
+
+
+### Double Knee
+The *Double Knee* is here to help you for deformations:  
+![Alt text](../images/puppetLimbs_doubleKnee.gif)   
+!!! tip
+    You'll most likely want it for the knees! For elbows maybe..
+
+## DogArmLeg
+
+
+## HorseArmLeg
+
+
+## BirdArmLeg
 
 ## Belt
 

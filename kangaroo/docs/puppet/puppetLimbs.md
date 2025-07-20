@@ -341,6 +341,45 @@ bones are the IK, while on *DogArmLeg* the IK is on the first two bones.
 
 
 ## Clavicle, DogScapula
+### Auto Clavicle
+The *Auto Clavicle* needs to be activated on the arm limbs!:   
+![Alt text](../images/puppetLimbs_autoclavicle.jpg)     
+!!! warning
+    Make sure you don't have the clavicle/scapula specified in the attachers! In older kangaroo versions you somehow
+    had to - but in latest Kangaroo 5 the next parent should always be the spine. And Kangaroo knows that when 
+    *Auto Clavicle* is on, the root of the arm will be attached the clavicle/scapula.
+
+
+### DogScapula
+The *DogScapula* should be used for most quadrupeds, and in the last Kangaroo versions it has evolved to something far 
+more complex than the *Clavicle*.  
+First thing you'll notice on the quadruped template characters it that the scapula blueprints start from the other side
+and far outside the character:  
+![Alt text](../images/puppetLimbs_scapulaBlueprints.jpg)  
+This is because the clavicle translates in spherical space, outside point is the pivot point of that spherical motion
+![Alt text](../images/puppetLimbs_scapulaBlueprintsSphere.jpg)   
+!!! note
+    If you are porting from an older version of Kangaroo, please recreate the blueprints. They changed quite a bit.
+
+*Why is it a spherical motion?*  
+Because the scapula translates around the ribcage. And especially for up/down this results in a spherical motion.
+But not so much for forward/back, that's why you can tune down that a bit with the attributes **Horiz Linear Front**
+and **Horiz Linear Back**.
+
+The **Pivot On End** attribute goes from 0.0 to 1.0 and specifies where the main ctrl should be located. In the following
+gif the left one is 1.0 and the right one is 0.0:  
+![Alt text](../images/puppetLimbs_claviclePivot.gif)    
+For most cases you'll want to keep *Pivot On End* at 1.0, and then let animators use the extra secondary ctrls to
+do some fine tuning:  
+![Alt text](../images/spineLimbs_clavicleSecondaryCtrls.gif)    
+
+And for automatically folling the arm, animators have a few options:  
+![Alt text](../images/puppetLimbs_autoScapula.gif)     
+
+!!! tip
+    While dogs and cats in real live both rotate and translate their scauplas on the walk, dogs rotate them more than 
+    translate them, and cats translate them more. You might want to set default values accordingly.
+
 
 
 

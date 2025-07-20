@@ -32,34 +32,61 @@ I can talk for an hour to explain why those are bad things, but here I'll keep i
 
 You can however move around the joint roots inbetween importing BP Skeleton and building BP Rig. 
 
-Now let's look at some of the important Limbs. Below you'll see a lot of videos. 
-Keep in mind those videos are from 2022, but 95 % of those workflows is still the same today
-Just make sure to read the text here to see what changed.
+## Limbs
+You can easily add limbs by dragging one from the libarary table into the limbs table:
 
+To see what you can do with all those limbs more in detail, check [The Limbs](puppetLimbs.md)
 
 
 ## Attachers
 Attachers are all about spaces. For example the Hand IK following the COG or the Spine. 
-![Alt text](../images/puppet_attachers.jpg)  
-And they come with a few different options. Like you can either have a switch or a blend. Or you can choose to
-have just orientation, orientation+translation, or orientation and translation separately.
-And there's an animation tool that lets the animators switch between the spaces (attachers) easily without changing the pose.
+And they need to be fully understood to really use Kangaroo efficiently.  
+Look at how many attachers just the arm limb has:  
+![Alt text](../images/attachers_armLeg.jpg) 
+And this is not even everything, with attachers you can even make things follow some deformers!    
 
-This video here explains very well how they work, but make sure to read the text below (*update 0*), about custom attachers,
-since those changed a bit in later versions.
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/8mK2lHDqR7c"
-title="YouTube video player" frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
-update 0: At around 2:00 in the video: To specify deformers/meshes for custom attachers, click the **Attach Deformers UI** 
-option on the same marking menu. And make sure you exclude deformers that are driven by this limb 
-![Alt text](../images/puppet_deformerAttacherWindow.jpg)  
-In this UI you can even specify a Vertex Id of where it should get attached. It's better to 
-leave it empty at first and let it find the closest vertex by itself. But in 1 out of 20 
-cases it doesn't find a nice vertex, then you can set one.
-Also, keep in mind that when you test build the character, it won't attach it yet, the actual attachment
-is happening later in the *puppetCustomAttachment()* function
+For each of the attachers you can add/remove output points by adjusting the count value:  
+![Alt text](../images/attachers_adjustCount.jpg) 
+!!! note
+    Not all attachers have that count value! Especially for the root you'll notice on some
+    that can only one output point.
+
+### translate/rotate/scale
+You see how every attacher has either **(t)**, **(tr)**, **(r)** or **(s)**? Those specify if 
+translate, rotate or scale is affected.   
+Whereever you see **(tr)**, you can split it into *(t)* and *(r)*:  
+![Alt text](../images/attachers_splitTR.gif)  
+!!! tip
+    This is very important for head or top neck ctrls. Animators always want to control the 
+    position separate to the orientation.
+    
+
+### Switch vs Blend
+By default it's just a switch. Animators prefer that in most cases since it's the simplest:  
+![Alt text](../images/attachers_switchAttr.gif)  
+
+If you activate the **blend** checkbox, you'll get an extra attribute for each output point:  
+![Alt text](../images/attachers_blendAttributes.gif)    
+Those attributes DON'T behave the same as constraint weights. Instead it's an additive system
+being clamped to stay within 0 and 1.  
+Basically from top to bottom they overwrite the previous/upper ones. The first one (in this case *parentA*)
+is always 1.0 and locked.  
+If you set *parentB* to 0.8, *parentB* has 80 % influence and *parentA* has 20 %.
+If then you set *parentC* to 0.5, *parentC* has 50 %, *parentB* has 50 % also, and *parentA* has 0
+
+!!! tip
+    Animators usually prefer switch, but blend can be very useful when you setup some special rigs such as props or costumes.  
+
+
+### Custom Attachers
+Custom Attachers are primarily used to have some ctrls follow the the geometry or deformers. Most of the time
+we do deformers, which looks like it's following the mesh but actually just has some nodes that replicate the
+deformer behavior at the point where the ctrl is.  
+
+![Alt text](../images/attachers_customAttacher.gif)  
+
+!!! note
+    Custom attachers are heavily used for [Tweaker Ctrls](tweakerCtrls.md)
 
 
 

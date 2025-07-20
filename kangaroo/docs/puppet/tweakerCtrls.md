@@ -26,7 +26,7 @@ Make sure to set **postRefJoints** attribute to *True*. And the second important
 the Custom Attachers, so it knows what to follow.
 
 ### Custom Attacher
-First we'll have to setup the [Attachers](puppetBasics.md#attachers), using the *Custom* option.
+First we'll have to setup the [Attachers](puppetGeneral.md#custom-attachers), using the *Custom* option.
 ![Alt text](../images/tweaker_customAttacher.jpg)   
 The deformers you select there are crucial. Select all the deformers that the tweaker ctrl should follow.  
 But absolutely do NOT select the skinCluster that the tweaker ctrl will be driving, otherwise you'd get a 

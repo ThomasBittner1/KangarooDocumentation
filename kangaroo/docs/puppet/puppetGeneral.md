@@ -1,8 +1,7 @@
 ## Puppet
 
-Puppet is the second most important tool for building characters. It defines the main
-ctrls of the character, such as spine logics, arm/leg FK/IK, Auto Clavicle, etc.
-The puppet generates the blueprints.ma file (guide joints) and the puppet.rig - which then the builder uses to build the rig.
+The Puppet tool defines the main ctrls of the character, such as spine logics, arm/leg FK/IK, Auto Clavicle, etc.  
+It generates the blueprints.ma file (guide joints) and the puppet.rig - which then the builder uses to build the rig.
 
 Let's look at all the cool elements in the UI:
 ![Alt text](../images/puppet_ui.jpg)
@@ -19,23 +18,75 @@ To change the Locations, click in this order:
 You'll do those things a million times, so I just did a GIF for you to show it :-)
 ![Alt text](../images/cleanImportBuild.gif)
 
-Basically the **BP Skeleton** is a file with simple joints. And the **BP Rig** is a small rig
-build on top of those Skeleton that helps you place it. 
+**BP Skeleton** is a file with simple joints that tells the builder where the locations are.
+And the **BP Rig** is a small rig with ctrls and some logic build on top of the *BP Skeleton* that helps you place it. 
 
-Once you have the BP Rig built, place the joints using the ctrls. 
+Once you have the BP Rig built, place the joints using the *BP Rig* ctrls. 
 
-When you are done, click the button **Extract+Export Skel**.  
-Theoretically it also lets you export without building the BP Rig.
-**But never export without building the BP Rig!**  
-**And also never open the previous BP Rig and export from there!**  
-I can talk for an hour to explain why those are bad things, but here I'll keep it simple: Don't Do It!
+!!! tip
+    A quick way of importing the model is just clicking the button **Import Model**. 
+    This runs the importModel() function from the builder.
 
-You can however move around the joint roots inbetween importing BP Skeleton and building BP Rig. 
+![Alt text](../images/puppetGeneral_placeBlueprints.gif)  
 
-## Limbs
-You can easily add limbs by dragging one from the libarary table into the limbs table:
+There's a lot of ctrls that can make the placing process very efficient, as long as you move around the ctrls in the
+right order:  
+![Alt text](../images/puppetGeneral_fingerBlueprints.gif)  
 
-To see what you can do with all those limbs more in detail, check [The Limbs](puppetLimbs.md)
+The feet might overwhelm you a bit at the first time:  
+![Alt text](../images/puppetGeneral_legBlueprints.jpg)   
+But if you have a character that just has shoes, you might be able to get rid of the toes!   
+Then it becomes a little simpler:  
+![Alt text](../images/puppetGeneral_legBlueprintsSimpler.jpg)   
+
+The big ctrl in the middle with the three arrows is the one that tells the orientation of the foot. 
+
+!!! Note 
+    If you want to have the feet translate in worldspace (animators usually hate it if they are not), you don't actually
+    have to put that ctrl in worldspace. Check [World Orient Ctrl](puppetGeneral.md#worldorientctrlarmlegik)
+
+The light red sphere ctrls are the pivots that animation will get for doing things like foot roll and footRocker. For the side 
+sphere you might be wondering why there's 2 on each side. That's because they also define the orientation. The pivot point
+is basically in the middle and aiming to them.
+
+!!! note
+    On the hands you have the same complexity with all the pivots. Because hands also have the same rocker/roll setup, 
+    except that in most cases it's barely used. 
+
+When you are done placing the blueprints, click the button **Extract+Export Skel**.  
+There are 2 very strict rules:
+
+- **Never export without having built the BP Rig!**  
+- **Never open the previous BP Rig and export from there!**
+  
+Always just follow the Clean/Import BP Skeleton/Build BP Rig workflow from above. It's just to keep things clean, 
+and any unintentional change resulting from some bad shortcuts can get expensive when we
+are talking about animation ctrls.
+
+{# movearoundchildjoints}
+!!! tip
+    You can however move around the joint roots inbetween importing BP Skeleton and building BP Rig. 
+    But ONLY joint roots! If you do want to move around child joints, make sure to only translate them in X. And don't
+    change the sign (postive <-> negative)  
+    Moving around joint roots can be useful when placing them for the first time after creation.  
+
+!!! note
+    Theoretically it does let you export without building the BP Rig, but that's not recommended it's only there
+    for debugging purposes. 
+
+
+## Adding Limbs
+You can easily add limbs by dragging one from the libarary table into the limbs table:  
+![Alt text](../images/puppetGeneral_addingLimb.gif)   
+And the first thing after you created a new limb (and maybe adjust some attributes) is place the blueprints.
+If you've already built the *Blueprint Rig* at this point, you have to rebuild it.  
+First import the *Blueprint Skeleton*. At this point you could build the *Blueprint Rig*, but often it'll make your
+life easier if between building *Blueprint Skeleton* and *Blueprint Rig* you click *Create Missing BP Joints*, 
+and move around **just the root** (Careful with child joints in this step! Read [this](#movearoundchildjoints))     
+![Alt text](../images/puppetGeneral_limbFirstBlueprintPlacement.gif)  
+
+!!! tip
+    For a full reference of what limbs are there, check the [Limbs Reference](puppetLimbs.md)
 
 
 ## Attachers

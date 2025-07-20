@@ -29,6 +29,7 @@ And make sure to skin the **jnt_l_eyeIris** and **jnt_l_eyePupil** joints!
 
 
 # Eyelids
+If you didn't add the facePro python file, add it now (facePro_v18.py at the time of this writing). 
 ## Basic Ctrls
 The function *baseLidCtrls()* just creates those three arrow ctrls. Those are being used for all setup, no matter
 if simple lid joints, blendShapes or splines.  

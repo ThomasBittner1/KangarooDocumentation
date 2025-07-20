@@ -245,7 +245,7 @@ This changes mainly the names (for example (*elbow* -> *knee*) default blueprint
     It's easy to forget! Because you'll find it's still working, but just later you'll realize that the knee is called elbow..
 
 ### IK
-#### World Orient Ctrl
+#### World Orient Ctrl {#worldorientctrlarmlegik}
 *World Orient Ctrl* makes the ik ctrls as joints, so it can make use of the joint orient values. This is for feet that are on the ground.   
 Because the important thing on feet iks is that they translate in world space. But if they are oriented outwards in the model 
 (and you are forced to have the blueprints oriented outwards, too), a regular ctrl
@@ -381,6 +381,12 @@ And for automatically folling the arm, animators have a few options:
     translate them, and cats translate them more. You might want to set default values accordingly.
 
 
+## Finger
+The *finger* is a bit of a special limb. It should only be used with for arms/legs. For any extra special case it's 
+best to use the spine.
+
+!!! if you want to create some more alienated finger setup where you find that the finger limb doesn't help you, you can
+    use the spine limb, make it simply *fk* and activate *Finger Ctrl Names*  
 
 
 ## Belt
@@ -406,6 +412,9 @@ And something cool - when you create the blueprints for a left and right belt, i
 ![Alt text](../images/puppetLimbs_beltBlueprintMirrorBehavior.gif)     
 
 
+## Eyes
+There's **Eye**, **EyesLookat** and **EyeLookatIndiv**. 
+Those are explained in [Eyes](../face/eyes.md#eye-puppet-limbs).
 
 ## *Custom Limbs*
 Yes, you can define Custom Limbs. It's rare that we need to do that since the existing ones have a lot of options,

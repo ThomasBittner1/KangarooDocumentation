@@ -213,10 +213,30 @@ make it appear on more than one transform (ctrl).
 
 ## Mirror
 ### Mirror Limbs
-
+Mirroring the limbs is easy. Just right click -> miror from selected. *Recursive* means that he'll also mirror the children:  
+![Alt text](../images/puppetGeneral_mirrorLimb.gif)   
 
 ### Mirror Blueprints
+The blueprints will get mirrored automatically. But if you want to have them unsymmetrical, you can specify that with
+the triangle ctrl (*bpGlobal_ctrl*):  
+Left/right limbs:  
+![Alt text](../images/puppetGeneral_blueprintMirror.gif)   
+
+For some Middle Limbs he'll try to keep the joints in the symmetry axis, unless you tell him not to with the triangle ctrl:   
+![Alt text](../images/puppetGeneral_symmetryForMiddleOnes.gif)   
+
 
 
 
 ## Nearest Worldspace Matrix
+Animators often want ctrls to be oriented straight in worldspace. 
+On some limbs such as *Spine* and *SingleBone* you can find a few attributes starting with **Orient To Nearest Straight Matrix**:  
+![Alt text](../images/puppetGeneral_nearestStraightMatrix.jpg)   
+Those will orient the ctrls to be in world space.  
+!!! tip
+    Whenever you want some ctrls to be oriented straight, you should always check first if you can solve that with the blueprints.
+    Those *Orient To Nearest...* attributes should only be used if orienting the blueprints doesn't work well. 
+
+While most of the time this is easily adjustable with 
+blueprints, in some places it's more convenient to not rotate them straight.
+

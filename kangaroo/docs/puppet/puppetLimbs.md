@@ -385,7 +385,8 @@ And for automatically folling the arm, animators have a few options:
 The *finger* is a bit of a special limb. It should only be used with for arms/legs. For any extra special case it's 
 best to use the spine.
 
-!!! if you want to create some more alienated finger setup where you find that the finger limb doesn't help you, you can
+!!! tip
+    If you want to create some more alienated finger setup where you find that the finger limb doesn't help you, you can
     use the spine limb, make it simply *fk* and activate *Finger Ctrl Names*  
 
 

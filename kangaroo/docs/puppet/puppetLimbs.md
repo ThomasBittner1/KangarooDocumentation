@@ -384,6 +384,28 @@ And for automatically folling the arm, animators have a few options:
 
 
 ## Belt
+So many characters have belts, so we created a limb that specificly rigs that. But actually the belt
+can do more - it can rig anything that's shaped in a circle such as wrist bands, pants cuffs, etc.  
+![Alt text](../images/spineLimbs_belt.gif)     
+The blueprints are very simple. It's just a curve and the ctrl positions are the CVs:    
+![Alt text](../images/puppetLimbs_beltBlueprints.jpg)     
+
+You can specify the ctrl count with the **Ctrl Counts** attribute, and the joint count with the **Curve Joints** attribute.  
+
+### Simple Joints
+You can also set *Curve Joints* to *None*. In that case it won't put the joints on a spline, and instead will
+create a joint for each ctrl.  
+And in that case the result is the same as if you would put a few singleTransforms in a circle. We use this very often
+for simple things such as wrist cuffs or pants cuffs where animators don't need anything fancy, just a few ctrls laid
+out in a circle.   
+!!! note 
+    You may have to revisit the blueprints if you switch to no curve joints - since the ctrls are placed at where the 
+    CVs are, the joints will also be on the cvs and NOT on the actual curve!    
+
+And something cool - when you create the blueprints for a left and right belt, it still mirrors the layout live!  
+![Alt text](../images/puppetLimbs_beltBlueprintMirrorBehavior.gif)     
+
+
 
 ## *Custom Limbs*
 Yes, you can define Custom Limbs. It's rare that we need to do that since the existing ones have a lot of options,

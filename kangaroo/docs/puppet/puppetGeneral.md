@@ -63,8 +63,7 @@ Always just follow the Clean/Import BP Skeleton/Build BP Rig workflow from above
 and any unintentional change resulting from some bad shortcuts can get expensive when we
 are talking about animation ctrls.
 
-{# movearoundchildjoints}
-!!! tip
+!!! tip 
     You can however move around the joint roots inbetween importing BP Skeleton and building BP Rig. 
     But ONLY joint roots! If you do want to move around child joints, make sure to only translate them in X. And don't
     change the sign (postive <-> negative)  
@@ -78,11 +77,11 @@ are talking about animation ctrls.
 ## Adding Limbs
 You can easily add limbs by dragging one from the libarary table into the limbs table:  
 ![Alt text](../images/puppetGeneral_addingLimb.gif)   
-And the first thing after you created a new limb (and maybe adjust some attributes) is place the blueprints.
+And the first thing you do after you created a new limb (and maybe adjusted some attributes) is place the blueprints.
 If you've already built the *Blueprint Rig* at this point, you have to rebuild it.  
 First import the *Blueprint Skeleton*. At this point you could build the *Blueprint Rig*, but often it'll make your
 life easier if between building *Blueprint Skeleton* and *Blueprint Rig* you click *Create Missing BP Joints*, 
-and move around **just the root** (Careful with child joints in this step! Read [this](#movearoundchildjoints))     
+and move around **just the root** (Careful with child joints in this step!)     
 ![Alt text](../images/puppetGeneral_limbFirstBlueprintPlacement.gif)  
 
 !!! tip

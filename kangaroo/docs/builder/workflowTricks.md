@@ -1,6 +1,5 @@
-## Workflow Tricks
 
-### Hold, Pull
+## Hold, Pull
 The **Hold** button at the top left of the UI just saves the current scene into the *_temp* folder of your character with a very simple name. 
 And every time you click *Hold* again, it'll save another version and just increments the number.  
 And when you click **Pull**, it opens whatever you saved last.  
@@ -12,7 +11,7 @@ He'll basically just keep the current temp file count to a specific number. He'l
 ![Alt text](../images/pushSceneLog.jpg)
 
 
-### Selection Templates
+## Selection Templates
 Selection Templates is the **ST** button on the right.  
 By default it lets you select all the functions until *LoadDeformers()* or all the functions until *beforeClean()*.  
 And with right mouse click you can define your own selection templates.  
@@ -23,7 +22,7 @@ And with right mouse click you can define your own selection templates.
     great to just build until before clean.
 
 
-### Undo + Run Selected
+## Undo + Run Selected
 If you trying to build the whole character, and it suddenly breaks at once function, you can just fix for example the python code or
 attributes, and click *Undo+Run Selected*, without having to run everything from the beginning. Basically the builder
 remembers the undo *position* before each function and then later can do lots of undos in a row until he'll get to

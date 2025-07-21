@@ -17,7 +17,7 @@ You need numpy python module. You can install it like this in a command prompt:
 Most likely this is because the loadDeformer function is skinning some influences that don’t exist in the rig anymore. If those influences don’t exist in the rig, the loadDeformer function will create them as simple joints outside the hierarchy.
 To debug that, either just run until loadDeformer or Run All with the clean function turned off. Then look at joints outside the hierarchy. Easiest way to fix the weights of those is with the move skinCluster tool
 
-### Maya crashes randomly after building
+### Maya crashes very often
 Make sure you are in DG mode at the time you open Maya. Windows -> Settings -> Preferences -> Animation: switch to DG at the very top. Then restart maya and verify that it’s still on DG
 
 ### While I’m building, I’m getting a message asking if to create Empty Map Mesh Cluster

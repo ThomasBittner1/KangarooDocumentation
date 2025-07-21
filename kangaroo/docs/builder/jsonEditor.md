@@ -1,7 +1,7 @@
 
 
-The JSON Editor is a tool inside the builder, that lets you edit complex attributes. By complex attributes
-we are talking about dictionaries or lists that can have a lot of other lists/dictionaries embedded.  
+The JSON Editor is a tool inside the builder that lets you edit complex attributes. By complex attributes
+we are talking about dictionaries or lists that can have other lists/dictionaries embedded - all defined as a single string value.  
 
 Imagine you have a very long string that defines this python dictionary:
 
@@ -18,9 +18,9 @@ And it's very straight forward to use. You have all those tools, which for the m
 - copy/paste
 - rename
 - remove
-- filter items
-- ordering items (**up/down buttons**, only appear on *lists*)
+- filter items fields at the top of each column
+- ordering items with *up/down* buttons (only appear on *lists*)
 
-Look at how quickly I'm just removing all the *pinky* items:    
+Look at how few clicks are needed to remove all *pinky* items:    
 ![Alt text](../images/jsonEditor_deletePinky.gif)    
 

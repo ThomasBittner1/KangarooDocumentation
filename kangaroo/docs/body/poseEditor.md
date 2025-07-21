@@ -148,9 +148,13 @@ are in FK while setting poses
 
 ## Mirror
 
+### Mirror Interpolator
+For mirroring any target, you first have to mirror the Interpolator. Don't worry if you forget, he'll remind you.
+Right click on Interpolator -> Mirror:  
+
+
+
 ### Flip BlendShape
-For mirroring a BlendShape, you first have to mirror the Interpolator. Don't worry if you forget, he'll remind you.
-Right click on Interpolator -> Mirror  
 Right click on Targets -> The *Mirror* menu there gives you a lot of options to mirror just left to right
 for Geo, or just    Ctrls, etc.
 For BlendShapes most of the time you choose **Side:Pose Combinations and Flip Meshes** which just creates an

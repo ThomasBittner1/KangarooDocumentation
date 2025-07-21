@@ -9,10 +9,12 @@ hide:
 
 Kangaroo-Builder is a tool for creating Rigs. It’s a complete system that includes:
 
-- Rig Builder  
-- Extra tools for creating Face Rigs  
+- Body Rig Builder  
+- Face Rig Builder 
 - Pipeline for collaborating/sharing within the Team and creating Backups  
 - Skinning, WeightMaps and Geometry tools   
+- Pose Editor
+
 
 <br>
 
@@ -21,14 +23,3 @@ My big dream over these years was to create the one ultimate rigging system that
 Kangaroo-Builder is the result of that." </em></div>
 
 <br>
-
-Check out the insanely powerful skinning tools in this video  
-
-Or to get a first impression how the builder/puppet tool works, watch this video 
-
-And if that still didn’t impress you, the Face Builder definitely will! Watch this Face Rig Intro video
-
-But with those 3 videos you only scratched the surface of what kangaroo-builder can do.
-
-Go to Tutorials page and watch all 30 videos from top top bottom to get a more deep understanding.
-

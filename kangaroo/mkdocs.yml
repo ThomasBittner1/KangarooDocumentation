@@ -20,7 +20,7 @@ nav:
      - JSON Editor: builder/jsonEditor.md
   - Puppet:
       - General: puppet/puppetGeneral.md
-      - Limbs Reference: puppet/puppetLimbs.md
+      - Limbs Reference: puppet/limbsReference.md
       - Bell Collider: puppet/bellCollider.md
       - Dynamics: puppet/dynamics.md
       - Puppet Tweaker Ctrls: puppet/tweakerCtrls.md

@@ -150,7 +150,7 @@ Unfortunately whenever they are driving spline rigs such as the lips spline rig,
 in the function where they are created. In those cases you just have to guess when giving them good scale values, and rebuild.
   
 
-## DEFAULT ATTRS 
+## DEFAULT ATTRS {#defaultattrs}
 On many functions you'll see that **=== DEFAULT ATTRS ===** button. It's attributes that are usually on the passers of the 
 ctrls that can be used to finetune the setup.  
 

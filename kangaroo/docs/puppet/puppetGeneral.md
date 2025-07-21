@@ -13,7 +13,7 @@ library into the Limbs. And whatever limb you have selected, you can adjust the 
 To change the Locations, click in this order:  
 1. Clean  
 2. Import BP Skeleton    
-3. Build BP Rig  
+3. Build BP Rig
 
 You'll do those things a million times, so I just did a GIF for you to show it :-)
 ![Alt text](../images/cleanImportBuild.gif)
@@ -43,7 +43,7 @@ The big ctrl in the middle with the three arrows is the one that tells the orien
 
 !!! Note 
     If you want to have the feet translate in worldspace (animators usually hate it if they are not), you don't actually
-    have to put that ctrl in worldspace. Check [World Orient Ctrl](puppetGeneral.md#worldorientctrlarmlegik)
+    have to put that ctrl in worldspace. Check [World Orient Ctrl](limbsReference.md#worldorientctrlarmlegik)
 
 The light red sphere ctrls are the pivots that animation will get for doing things like foot roll and footRocker. For the side 
 sphere you might be wondering why there's 2 on each side. That's because they also define the orientation. The pivot point
@@ -85,7 +85,7 @@ and move around **just the root** (Careful with child joints in this step!)
 ![Alt text](../images/puppetGeneral_limbFirstBlueprintPlacement.gif)  
 
 !!! tip
-    For a full reference of what limbs are there, check the [Limbs Reference](puppetLimbs.md)
+    For a full reference of what limbs are there, check the [Limbs Reference](limbsReference.md)
 
 
 ## Attachers

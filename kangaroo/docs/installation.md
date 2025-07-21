@@ -106,7 +106,7 @@ And generally don't get carried away with one file for too long. Always just exp
 your character so you can track things back easier whenever something's not working.
 
 1. [Specify Your Model](builder/builderBasics.md#importmodel)
-2. [Place Blueprint Joints](puppet/puppetBasics.md#change-the-guide-joint-locations)
+2. [Place Blueprint Joints](puppet/puppetGeneral.md#change-the-guide-joint-locations)
 3. Skin the Character, and [export weights](builder/builderBasics.md#loaddeformers)
 4. Shape the Ctrls, and [export them](builder/builderBasics.md#loadctrlshapes)
 5. When you click **RunAll** in the builder, you have your Rig.  

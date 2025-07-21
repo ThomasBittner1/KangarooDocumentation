@@ -260,7 +260,7 @@ But there's a solution - you can change the pivot using the offset groups ending
 
 Adjusting those will move the joints, so it's best to turn off the skinCluster. And show the curve with *mouth_ctrl.curveVis*.
 
-Then you save their values with the [**=== Default Attr === **](faceGeneral.md#default-attrs-) button, and rebuild. You should be able to get nicer Lip Rolls now.
+Then you save their values with the [**=== Default Attr === **](faceGeneral.md#defaultattrs) button, and rebuild. You should be able to get nicer Lip Rolls now.
 
 !!! warning
     This will mess with the zipper! So if you are adjusting the pivot groups, it's best to set **bZipper* to *False* and use the 

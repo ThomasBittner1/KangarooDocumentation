@@ -8,6 +8,6 @@ longer ones.
 So it's easier to do that by right click on the argument -> **Show in JSON Editor**. And you get this cool looking UI:
 ![Alt text](../images/builder_jsoneditor.jpg)
 
-Many functions have the [=== DEFAULT ATTRS ===](../face/faceGeneral.md#default-attrs)  buttons that fill some dictionary (actually string) attributes
+Many functions have the [=== DEFAULT ATTRS ===](../face/faceGeneral.md#defaultattrs)  buttons that fill some dictionary (actually string) attributes
 with sometimes huge amounts of data. If you want to edit that filled data, the *JSON Editor* is pretty much unavoidable.
 

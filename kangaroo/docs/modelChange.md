@@ -46,7 +46,7 @@ Any other mesh you can just warp with the **Geometry -> Warp Pose**
 
 ### Topology change - Custom Attachers 
 Custom attacher setups in the Puppet tool should be fine in most cases. Unless you specified a vertex.  
-More infos on [Custom Attachers](puppet/puppetBasics.md#attachers)
+More infos on [Custom Attachers](puppet/puppetGeneral.md#attachers)
 !!! warning
     It's easy to forget adjusting the vertex id! You'll know if later some ctrls suddenly fly around when you rotate some irrelevant ctrl.
 
@@ -93,7 +93,7 @@ target="_blank">LinkedIn Post on warpXForms</a>
 
 
 ### Different Proportions - Shape Editor
-More complex but it's like creating a new character - check [Shape Editor](#transfrer)
+More complex, it's like creating a new character - check [Shape Editor](face/shapeEditor.md#transfer-to-new-character)
 
 ### Different Proportions - Face
 And then basically every blueprint group in the mayaImport folder needs to be warped to the new mesh.

@@ -150,14 +150,14 @@ it'll follow again that the full shape does. You'll see the options on the right
 
 
 ## Meshes
-### Meshes - Add Secondary Meshes
+### Meshes - Add Secondary Meshes {#addsecondarymeshes}
 Easy, just select them and add them with the right click menu:
 ![Alt text](../images/shapeEditor_addMeshes.gif)   
 !!! note
     By default they are just sitting there and not following the main skin. But you can make it follow the skin with
-    the [Tools](#tools---make-meshes-follow) explained below.
+    the [Tools](#makemeshesfollow) explained below.
 
-### Meshes - Main Mesh
+### Meshes - Main Mesh {#meshesmainmesh}
 It's important to keep the Main Mesh (*skin* in this example) as the main mesh. It's usually always the case, unless
 you start replacing a few meshes. But it's easily fixed with right click menu:  
 ![Alt text](../images/ShpeEditor_mainmesh.gif)   
@@ -173,9 +173,9 @@ If the overall shape is still the same and modeling just changed the topology a 
 but it's not difficult:  
 1. rename the old mesh  
 2. restart the shape editor  
-3. [add the new mesh](#meshes---add-secondary-meshes) (with correct name!)  
+3. [add the new mesh](#addsecondarymeshes) (with correct name!)  
 4. [warp](#warp) the new mesh to the old mesh   
-5. if the old mesh was the main mesh: set it as [Main Mesh](#meshes---main-mesh)  
+5. if the old mesh was the main mesh: set it as [Main Mesh](#meshesmainmesh)     
 6. check the lips on open targets! Targets like *jawOpen*. *upperUp* or *lowerDown* can get screwed on warp. If they 
 are screwed, either fix them manually or try the [Warp UVs](#warp-uvs)
 
@@ -266,7 +266,7 @@ the effect on a shape in certain regions. Or even multiply by 0.0 to erase some 
 Or multiply negative like -1.0 if you want to make a shape go the reverse direction!  
 Just below the *Multiply* in the marking menu you have the *Multiply in Y*. Seems a bit arbitrary because it only does
 it in Y, but we use it a lot for some tricks on the brow shapes.
-#### TOOLS - Make Meshes Follow
+#### TOOLS - Make Meshes Follow {#makemeshesfollow}
 There are 3 types of tools you need to choose from depending on the situation: *Warp*, *Warp Rigid* and *Warp Wire*.  
 We'll explain them here. But if you get confused, try to watch that part in the [Video](#video) from 4.08.
 #### Warp

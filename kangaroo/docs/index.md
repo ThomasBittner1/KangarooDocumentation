@@ -1,4 +1,11 @@
-# About
+---
+title: ""
+hide:
+    title: true
+---
+
+# <!-- dummy title to prevent auto-generated one-->
+
 
 Kangaroo-Builder is a tool for creating Rigs. It’s a complete system that includes:
 

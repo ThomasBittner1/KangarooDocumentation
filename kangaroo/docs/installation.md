@@ -8,19 +8,21 @@
 
 If you get an error that numpy is missing, you'll have to install numpy, too.
 We do that with *pip install*.  
-Do the following thing in a CMD. You'll most likely have to  change the path on maya version or installation location)
-And if you get weird looking errors, try without the --user numpy flag
+Do the following thing in a Command Prompt (cmd). You'll most likely have to change the path on maya version or installation location.
+
 ```bash
 cd C:\Program Files\Autodesk\Maya2024\bin 
 mayapy.exe -m pip install ‐‐user numpy
 ```
+!!! note
+    If you get weird looking errors, try without the --user numpy flag
 
 If you just want to use the skinCluster/geometry tools or the shape editor - you are done at this point.
 
 
 ## The Directories
 
-First of all you need to understand that Kangaroo is not just a Rigging Tool. It's a **Rigging Pipeline** that helps you also
+First of all you need to understand that Kangaroo is not just a Rigging Tool. It's a *Rigging Pipeline* that helps you also
 increment/version your assets, and even backup and share with the team.    
 If you work in a studio where they have they own pipeline, then Kangaroo is still its own pipeline
 that runs parallel to the studio pipeline. Basically you can set things up to connect to the studio pipeline
@@ -57,6 +59,7 @@ And we usually grab one from the server. **Templates** is one server that comes 
 - BASELEGOFIGURE
 - THOMAS (BlendShape driven Face Rig)
 
+<a id="createnew"></a>
 Let's go to the BASEHUMAN for example, and then in **Export -> NEW**, set the project and new asset name, and then click **Create**
 ![Alt text](images/newAssetGif.gif)
 By default it's doing UPPERCASE. It's recommended that you keep it this way since mixed casing can get uncomfortable in one out of 100 cases.
@@ -95,7 +98,7 @@ see how you would set it up in *the usual* way
 
 
 ## Roadmap for First Character
-Once you've setup-ed your directories and started the character with the **create NEW** tool, you can start actually 
+Once you've setup-ed your directories and started the character with the [**create NEW**](#createnew) tool, you can start actually 
 rig the character with the points below. 
 
 Always keep in mind that Kangaroo is a procedural tool where we don't 
@@ -105,10 +108,10 @@ Instead we work on the data that in the end creates the character with the *RunA
 And generally don't get carried away with one file for too long. Always just export and rebuild. And best regularly publish
 your character so you can track things back easier whenever something's not working.
 
-1. [Specify Your Model](builder/builderBasics.md#importmodel)
+1. [Specify Your Model](builder/builderGeneral.md#importmodel)
 2. [Place Blueprint Joints](puppet/puppetGeneral.md#change-the-guide-joint-locations)
-3. Skin the Character, and [export weights](builder/builderBasics.md#loaddeformers)
-4. Shape the Ctrls, and [export them](builder/builderBasics.md#loadctrlshapes)
+3. Skin the Character, and [export weights](builder/builderGeneral.md#loaddeformers)
+4. Shape the Ctrls, and [export them](builder/builderGeneral.md#loadctrlshapes)
 5. When you click **RunAll** in the builder, you have your Rig.  
 
 !!! success

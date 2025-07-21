@@ -24,23 +24,27 @@ If you just want to use the skinCluster/geometry tools or the shape editor - you
 
 First of all you need to understand that Kangaroo is not just a Rigging Tool. It's a *Rigging Pipeline* that helps you also
 increment/version your assets, and even backup and share with the team.    
-If you work in a studio where they have they own pipeline, then Kangaroo is still its own pipeline
-that runs parallel to the studio pipeline. Basically you can set things up to connect to the studio pipeline
+If you work in a studio where they have their own studio pipeline, then Kangaroo is still another pipeline
+that runs parallel to the studio pipeline. You can set things up to connect to the studio pipeline
 at two points:
 
 1. grabbing the model from studio pipeline, and later
 2. publishing the actual rig into the studio pipeline
 
-But how to do that is explained in **Python**
+But how to do that is explained in [Python - Connecting to Studio Pipeline](python.md#connecting-to-studio-pipeline)
 
 ### AssetsLocal
 First we need to create the AssetsLocal folder. It's the folder where you'll work. 
-It can anywhere on your disk drive that don't don't necessarily share with others. Just create an empty folder, and specify that in the settings  
+It can be anywhere on your disk drive and doesn't necessarily have to be shared with others. 
+Just create an empty folder, and specify that in the settings:    
 ![Alt text](images/settingAssetsLocal.jpg)
-Then inside that new folder, let's create another empty folder for your project, and name it \_\_MYPROJECT\_\_
+
+**After changing the settings, Restart Maya.**
+
+Then inside that new folder, let's create another empty folder for your project, and name it *\_\_MYPROJECT\_\_*
 It's important that there are **2 underscores** before the name, and **2 underscores** after the name. 
 And all has to be UPPERCASE.  
-Without following those rules, Kangaroo won't recognize the folder as a project
+Without following those rules, Kangaroo won't recognize the folder as a project.
 
 !!! note
     You could also specify the assestLocal path with the Environment Variable **KANGAROO_WORK_PATH**. This can be 

@@ -425,3 +425,11 @@ But if you do want to go into detail and make your own limb, you can find how to
 !!! warning
     A decent Python level is required for creating Custom Limbs! Before writing your own custom limb it's recommended to see if you can 
     solve it with simple [Python Functions](../python.md#simple-way-of-adding-a-function)
+
+
+## Wheel
+This is for cars
+!!! warning 
+    "wheel" is new and hasn't been tested in production yet
+
+

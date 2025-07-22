@@ -1,5 +1,5 @@
 
-Pose Editor is new in Kangaroo v5 and it has very quickly become an unavoidable tool for almost every character we work on.
+Pose Editor is one of the biggest additions in Kangaroo 5.
 
 To open it, click the function *poseEditorApply()* and then the button **Open Editor**:  
 ![Alt text](../images/poseEditior_openIt.jpg)  

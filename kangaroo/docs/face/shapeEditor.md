@@ -1,6 +1,6 @@
 The Shape Editor is a tool for modeling Facial Shapes (targets).  
 
-!!! info 
+!!! info "Video" 
     If you prefer watching videos, on this one you can jump down to [Video](#video). But keep in mind that some menu options
     changed since the time of making that video.
 
@@ -34,7 +34,7 @@ He created a new blendShape node. And all the Targets that you see in the UI are
 the blendShape, just like you've already used before:    
 ![Alt text](../images/shapeEditor_blendShape.jpg)  
 
-!!! info
+!!! info "Kangaroo Tool Tip"
     While in the gif above I just selected vertices and moved them, you can do a lot more. For example you can use
     the sculpting tools (**Mesh Tools -> Sculpting Tools**) or use some Kangaroo Geometry Tools such as the **Match**
     or **Smooth Vertices** tools.
@@ -121,7 +121,7 @@ You can choose between:
 ### Actually Mirroring
 Mirroring also works on vertex selection. But you do need to right click on the actual mesh for the mirror.
 ![Alt text](../images/shapeEditor_mirror.gif)    
-!!! warning
+!!! warning "Don't Forget"
     Do not forget to select the mesh in scene! Sometimes we assume that when we right click on the actual mesh in the UI it
     would do the mesh. But from the power of being able to select vertices comes the responsibility to also select the mesh in scene.
 
@@ -153,7 +153,7 @@ it'll follow again that the full shape does. You'll see the options on the right
 ### Meshes - Add Secondary Meshes {#addsecondarymeshes}
 Easy, just select them and add them with the right click menu:
 ![Alt text](../images/shapeEditor_addMeshes.gif)   
-!!! note
+!!! info "Kangaroo Tool Tip"
     By default they are just sitting there and not following the main skin. But you can make it follow the skin with
     the [Tools](#makemeshesfollow) explained below.
 

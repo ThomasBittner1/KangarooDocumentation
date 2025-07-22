@@ -9,74 +9,93 @@ It consists of Interpolators, BlendShape Poses and Ctrl Poses
 ## Interpolators
 Interpolators are little setups that measure (most of the time) the joints to see if and how strong
 we are in a pose.   
-There's a few different types: signedAngle, cones, mayaPose, upleg, custom.  
-To add interpolators, just click the *Add* Button. It tells you what you need to select. And the 
-selection order doesn't matter here. 
+There's a few different types: *signedAngle, cones, mayaPose, upleg, custom*.  
+To add interpolators, just click the *Add* Button at the very top left of the UI. It tells you what you need to select. And the 
+selection order doesn't matter here.  
+![Alt text](../images/poseEditor_add.jpg)   
 
 ### signedAngle
 SignedAngle is the simplest one, and great for simple rotations where you can assume that animators
 usually just rotate it in one angle.
-When it tells you to select Attribute of Ctrl, you just need to select it in the Channel Box like this:  
+In the marking menu it says *Select Attribute of Ctrl and Joint*. That means just select the joint, then the ctrl and
+it in the Channel Box mark it like this:  
 ![Alt text](../images/poseEditior_attribute.jpg)  
-Once you created it, special attention is required on the Angle Axis and Up Axis. It might be a bit  
+Once it created it, special attention is required on the Angle Axis and Up Axis. It might be a bit  
 confusing, because those are the ones on the joints, not the ctrl! 
 ![Alt text](../images/poseEditor_signedAngle.jpg)
 
 
 ### mayaPose
-This is using the maya native interpolator. It interpolates between all the interpolator's poses at 
+This is using the maya native interpolator. It interpolates between all the poses of the interpolator at 
 once, and normalizes them in some way that whenever you are in one pose, all the other poses are 0.  
 That's a great thing for when you are doing upper arm or clavicle corrective poses where it's important
 that all the poses blend nicely with each others. 
 But it comes with quite a few disadvantages:  
+
 - You can't adjust the timing   
 - Inbetween the poses, the timing can get a bit unnatural (For correctives it might be fine, but could be an issue for ctrls).   
 - You always need to have at least 4 poses (manageable, just add a few extra poses you don't use)  
-- The math is very complicated. Sometimes it can happen that some pose output is *INF*, or suddenly all poses having the same output number like 0.25.
-Whenever that happens just try to align them a bit nicer and make sure that you not less than 4 poses.
+- The math is not understandable for the most of us, so output can be somewhat confusing. And sometimes when things are wrong it might even output  *INF*, 
+or suddenly all poses having the same output number like 0.25.
+
+- Whenever that happens just try to align them a bit nicer and make sure that you not less than 4 poses.
   
-### Cones
+### Cone
 Cones just measure how close the joint's angle is to the cone's angle.
 ![Alt text](../images/poseEditor_cone.gif)
 Their main advantage is that you have more options to adjust the timing.   
 But they can get tricky to set up at first.  
-Common issues you have to tackle is that while it looks great when going into the pose, 
-if the ctrl moves further the pose fades out again. This is unwanted behavior in 90 % of the cases.    
-Another thing to watch out for is that poses can be activated for some percentage when we are
+First thing to watch out for is that poses by mistake might be activated for some percentage when we are
 in another pose, or even when we are in default pose!
 !!! warning
     Poses being activated in default or while fully in another pose can have a very bad impact. Therefore
     when dealing with cones this should always be watched out carefully.
-But the good news is, it's all *easy* tackle if you are familiar with the **Range**
+
+To handle that, make sure you get familiar with the **Range**
 
 ![Alt text](../images/cone_attributes.jpg)  
 The first thing you notice on the Range is that it starts from the higher value and goes to 
-the smaller value, like 60-10 in the example above.
-The first value has to be the same or smaller than the *rotation distance* - In the picture above
-the rotation is (0,0,-80) so the rotation distance would be 80.
-Notice I said *rotation distance* and not just rotation?
-That means even though the angle of the rotation has a negative value, the rotation distance is still positive.    
+the smaller value, like 60-10 in the example above. This is because we are talking about the angle *difference*.
+So if the angle difference coming from the rig is 0.0, that means we are fully in that pose. 
+The first value (60) is the angle difference from where the pose starts interpolating. 
+It has to be *the same or smaller* than the *rotation distance* of the pose. 
+*What is rotation distance??* 
+Well, in the picture above the rotation is (0,0,-80) so the rotation distance would be 80.
+So even though the angle of the rotation has a negative value, the rotation distance is still positive.
+(if you have a more complex rotation such as (30,0,-80), the rotation difference would be harder to calculate,
+so try to avoid that)
 
-Also, the range start cannot be bigger than 89. Otherwise it wouldn't be a cone anymore.  
+The second issue that comes with cones is that they work great as the rig moves into the pose, but when it moves
+further, the pose fades out. And that can get very nasty. 
+Let's look at this example (which happens *a lot* in production!). In here I have range as 15-0, so it starts at 15, 
+and is full when it is at 0. And the issue is as soon as the arm goes just a bit further, the costume (sphere in
+this case) jumps back:  
+![Alt text](../images/poseEditor_coneproblem.gif)
 
-Now we can also use the range to work around our issue with the pose fading out as the ctrl 
-moves further than the pose:  
-Overshoot the rotation by maybe 30 degrees (0,0,-80) becomes (0,0,-110), and then set the end 
-range to 30, so the range becomes (89-30). When you double click on the pose telling him to jump into 
-that pose, he'll jump to (0,0,-80), and not (0,0,-110), because 110-30 = 80
+Here's the solution - set the attributes like this:  
+![Alt text](../images/poseEditor_coneSolutionAttributes.jpg)  
+And it'll look much better!
+![Alt text](../images/poseEditor_coneSolution.gif)    
+
+!!! note
+    When you do a cone pose on the upper arm, make sure to set the spine end joint as the JointParent! Otherwise
+    you'll hit issues when the clavicle moves around:  
+    ![Alt text](../images/poseEditor_coneSpineAsParent.jpg)    
+    
 
 
 !!! tip
     If you are unsure if you should use cone or mayaPose - you can start with one and later convert to the other one with right click on the interpolator.  
-    But don't forget the [signedAngle](#signedangle)! Simple rotations like elbows or knees should be handled with *signedAngle*
+    But don't neglect the [signedAngle](#signedangle)! Simple rotations like elbows or knees should be handled with *signedAngle*.
+    And even complex orientaions like from neck or spine can be handled with *signedAngle* in some cases.
 
 
 ### Upleg
 This is a very specialized one just for upper leg rotating upwards like in a sitting pose. 
-While you could also do that with Cones or MayaPose, this one is a more specialized one 
-that turns on as the legs rotate upwards,
-and stays stable when it rotates further. It also fades out as the legs rotate outwards, and you
-can control if and how much it should fade out when the leg rotates inwards.
+While you could also do that with *Cone* or *MayaPose*, this one is a more special engineered for the uplegs going up.
+It has a few options such as fading out as the legs rotate outwards. And you can even control if and how much it 
+should fade out when the leg rotates inwards.
+
 
 
 ### Custom 
@@ -98,6 +117,11 @@ would be the actual output value of the distance node.
     If you don't want to use DriverAttr, just give it the same as what you have for CtrlAttrX. 
     This would then be the result of *(1) drive things by a control attribute* 
     mentioned above.
+
+!!! note
+    Unfortunately at this time it only works when CtrlAttr starts at 0. If you have an attribute (like scale) where the default is 1.0,
+    this won't work. 
+
 
 ## Targets
 We can do either **BlendShape Targets** (*Correctives*), or **Ctrl Targets**.

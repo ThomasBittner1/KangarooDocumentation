@@ -77,7 +77,7 @@ Here's the solution - set the attributes like this:
 And it'll look much better!
 ![Alt text](../images/poseEditor_coneSolution.gif)    
 
-!!! note
+!!! warning "Watch Out"
     When you do a cone pose on the upper arm, make sure to set the spine end joint as the JointParent! Otherwise
     you'll hit issues when the clavicle moves around:  
     ![Alt text](../images/poseEditor_coneSpineAsParent.jpg)    
@@ -85,8 +85,8 @@ And it'll look much better!
 
 
 !!! tip
-    If you are unsure if you should use cone or mayaPose - you can start with one and later convert to the other one with right click on the interpolator.  
-    But don't neglect the [signedAngle](#signedangle)! Simple rotations like elbows or knees should be handled with *signedAngle*.
+    If you are unsure if you should use *cone* or *mayaPose*: Start with one and later convert to the other one with right click on the interpolator.  
+    But don't neglect [signedAngle](#signedangle)! Simple rotations like elbows or knees should be handled with *signedAngle*.
     And even complex orientaions like from neck or spine can be handled with *signedAngle* in some cases.
 
 
@@ -109,16 +109,15 @@ You can see *CtrlAttrX*, *CtrlAttrY* and *CtrlAttrZ*, but you don't need to use 
 you can just use *CtrlAttrX* and keep the others empty.  
 *DriverAttr* the attribute that actually drives the interpolator. Basically the tool checks what value
 the DriverAttr has when the CtrlAttrs reach the pose etc..  
-You can also think of the DriverAttr as an inbetween step between the ControlAttr and the actual Pose Output.  
-In the example of creating an *Interpolate By Distance* - ControlAttrs would be an Animator Ctrl, and DriverAttr
+You can also think of the DriverAttr as an inbetween step between the CtrlAttr and the actual Pose Output. 
+In the example of creating an *Interpolate By Distance*: CtrlAttr would be from an Animator Ctrl, and DriverAttr
 would be the actual output value of the distance node.  
 
-!!! note
+!!! tip
     If you don't want to use DriverAttr, just give it the same as what you have for CtrlAttrX. 
-    This would then be the result of *(1) drive things by a control attribute* 
-    mentioned above.
+    This would then be a simple driving pose by an attribute. 
 
-!!! note
+!!! limitation "Current Limitation"
     Unfortunately at this time it only works when CtrlAttr starts at 0. If you have an attribute (like scale) where the default is 1.0,
     this won't work. 
 
@@ -130,33 +129,37 @@ into the *Targets Table*.
 If you drag more than one pose, then the Target is a combination of the poses, and you get that extra
 button (**M** or **S**) that lets you specify the blend mode - either *Multiply* or *Smallest*.
 ![Alt text](../images/poseEditor_draggingTargets.gif)  
-Ok, until here it was still boring because it's not doing anything yet.
-But now we can choose to do either a blendShape, manipulate a Ctrl
+
+And next we can choose to do either a blendShape, manipulate a Ctrl.
 
 ### BlendShape Targets
 First specify the meshes you want to use for blendShapes by adding them into the *Meshes Table*  
 And then select them again and click the **EDIT MESH** button. This tells the tool that whatever you 
 sculpt on the mesh will go into that Target.   
-Don't forget to deactivate the *EDIT* button when you are done!
+
+
 ![Alt text](../images/PoseEditor_EditButton2.gif)  
-!!! info
-    The tool I used in this gif is **Mesh Tools -> Sculpting Tools -> Grap Tool**. But when you have the *EDIT* button 
-    activated, you can also select vertices and move them. Or use some of the *Geometry Tools* like *Smooth Vertices* 
-!!! note
+The tool I used in this gif is **Mesh Tools -> Sculpting Tools -> Grap Tool**. But when you have the *EDIT* button 
+activated, you can also select vertices and move them. Or use some of the *Geometry Tools* like *Smooth Vertices* 
+
+!!! note "Kangaroo Tool Tip"
     If you haven't tried out the *Smooth Vertices* tool yet, sculpting correctives is where it most useful! Because many
     times we are dealing with vertices that are collapsed and we want to smooth them out again.
+
+!!! warning "Remember"
+    Don't forget to deactivate the *EDIT* button when you are done!
 
 ### Ctrl Targets
 When you create Targets on Ctrls, it just creates a Ctrl Locator for each Pose that you can move around
 ![Alt text](../images/poseEditor_addCtrl.gif)  
 Whenever you click the **Add/Activate** button, it creates a locator if it doesn't exist yet and selects it. If 
 the locator already exists, it'll only select it.   
-So in short: that's a multi functional button that you'll be clicking a lot.  
+So that's a multi functional button that you'll be clicking a lot.  
 
 In the ctrl hierarchy (outliner) you can see all the locators, for each target one. And those that are activated are shown
 while the others get hidden automatically. This way you could even adjust poses without the UI.
 ![Alt text](../images/poseEditor_locators.jpg)  
-But most of the time you'll be faster to just select the locator using the *Add/Activate* button
+But most of the time you'll be faster to just select the locator by using the *Add/Activate* button
 
 ## dResetAttrs
 When you have a for example deltaMush or a blendShape target that shrinks the 
@@ -166,40 +169,59 @@ For that we can add some attributes into the *dResetAttr* dictionary. Just open 
 and add things in there. You can see by default it already has all the fk2ik switches that make sure you
 are in FK while setting poses  
 ![Alt text](../images/poseEditor_dResetAttrs.jpg)  
-!!! warning
-    Do not neglect the *dResetAttr*! We might be tempted to not bother because we can get things done without touching it,
+!!! warning "Don't Forget"
+    Do not forget the *dResetAttr*! We might be tempted to not bother because we can get things done without touching it,
     but it can get very uncomfortable later when you realize that some deformer quietly corrupted your poses more and more whenever you built or published.
 
 ## Mirror
 
+For mirroring things it's very important that the names of the interpolators and Targets specify if it's a left, right or middle pose.
+So if an interpolator is called *interp_signedAngle_NEW*, it's a middle one! Name it properly to something like *interp_l_elbow*. 
+The *\_l\_* in there tells that it's a left one.  
+Similar for the targets. But if you renamed the interpolator properly before creating the target, the target usually already has
+a good name. 
+
 ### Mirror Interpolator
 For mirroring any target, you first have to mirror the Interpolator. Don't worry if you forget, he'll remind you.
 Right click on Interpolator -> Mirror:  
-
+![Alt text](../images/poseEditor_mirrorInterpolator.gif)  
 
 
 ### Flip BlendShape
-Right click on Targets -> The *Mirror* menu there gives you a lot of options to mirror just left to right
-for Geo, or just    Ctrls, etc.
-For BlendShapes most of the time you choose **Side:Pose Combinations and Flip Meshes** which just creates an
-opposite target (if it's not there yet) and gives it the flipped pose. 
-You'll have to set the mirror table for that first by right click on the mesh in the Meshes Table. And also
-here don't worry if you forget, he'll remind you. 
+First you have to set the mirror table with the right click menu on the mesh in the Meshes Table. 
+![Alt text](../images/poseEditor_setMirrorTable.gif)  
+Your options are:  
+
+- middle mesh (edgeflow)
+- middle mesh (vertex positions)
+- middle mesh (face points)
+- side meshes (ids)
+- side meshes (vertex positions)
+- side meshes (face points)  
+
+Edgeflow is that mirror algorithm where it takes a middle edge and with that finds all the other vertices by the
+edge connection patterns.
+
+Then to do the actual flipping: Right click on Targets -> The **Side:Pose Combinations and Flip Meshes**
+![Alt text](../images/poseEditor_flipPose.gif)  
 
 
-### Split BlendShape Target 
-Flipping does not work well in cases where you want to sculpt a little bit into the middle (central line of the character), 
-such as on upperLegUp shapes. It'd work great for just one side, but when you have left and right like in a sitting pose, it
-won't blend well together. While you could create one for left and one for right and then do a combination
-target for both together, in most cases it's nicer to do the *Split Target* option.
+### Split into Left/Right 
+Flipping does not work well in cases where you want to sculpt a little bit in the middle (central line of the character), 
+such as on upperLegUp shapes. It'd work great for just each side separately, but when you have left and right combined such as 
+in a sitting pose, it won't blend well together. Theoretically you could create one for left and one for right and then do a combination
+target for both together. But in most cases it's nicer to do the *Split Target* option.
 
-To use that - just sculpt everything into the left target (or the right one, wouldn't matter), and then 
-in the right click mirror menu click **Side:Pose Combinations and Split Current Combined Shape into Left/Right**
+To do splitting - when sculpting it, have the *EDIT* button activated just on the left target (or the right one, wouldn't matter).
+So at first you end up with a situation where when you activate the left target, the right side gets activated the same time.
+And all you have to do is click **Side:Pose Combinations and Split Current Combined Shape into Left/Right**
+![Alt text](../images/poseEditor_splitTarget.gif)  
 
 
 ### Mirror Ctrls
 For the ctrls you just choose **Side:Pose Combinations and Ctrls**. You can do either the selected
 ctrls, or if you don't have any ctrls selected, he'll do all 
+![Alt text](../images/poseEditor_mirrorCtrls.jpg)  
 
 
 ## Export
@@ -209,7 +231,7 @@ creates the file *poseEditorExports.ma* in the *mayaImport* folder.
 
 
 ## Model Change
-Whenever the model changes, open the *poseEditorExports.ma* file from the *Export -> MayaImp* tool,
+Whenever the model changed, open the *poseEditorExports.ma* file from the *Export -> MayaImp* tool,
 and import the new model. Then select the new model + the corresponding Blendshape Mesh you have in scene:    
 ![Alt text](../images/poseEditor_selectionForModelChange.jpg)  
 
@@ -225,17 +247,25 @@ cases do *Warp*
 It can be very helpful to share Interpolators between characters.
 And there are 2 ways:  
 ### In the PoseEditor UI
-Right click on the interpolator -> Copy. Then go to your other character, and right click -> Paste
-### JSON Editor
-Once you exported the setup, you can open the [JSON Editor](../builder/jsonEditor.md) by right click 
-on **ddInterpolators** attribute. Then having the interpolators you want to transfer selected, right click -> **Copy**. 
+Right click on the interpolator -> *Copy*. Then go to your other character, and right click -> *Paste*  
+![Alt text](../images/poseEditor_copy.jpg)  
+
+!!! warning "Known bug"
+    Currently the *Paste* option doesn't show up unless you click on an existing interpolator. So if you want to paste
+    an interpolator to a new character that doesn't have any interpolators yet, just create a dummy one that you delete
+    again after.
+
+### With the JSON Editor
+Once you exported the setup with the *Fill and Export from Scene* button, you can open the *JSON Editor* by right click 
+on **ddInterpolators** attribute:  
+![Alt text](../images/poseEditor_jsonEditor.jpg)  
+
+Then having the interpolators you want to transfer selected, right click -> **Copy**. 
 And then right click -> **paste** on the same location in the other character.
 
-!!! note
-    Currently there's a small bug that you can only *paste* if there are already interpolators there. Just create a 
-    dummy one if you run into this situation. You can delete it later. 
+Check [JSON Editor](../builder/jsonEditor.md) for more information.
 
-!!! info
+!!! note
     While you could also share Target Infos using the JSON Editor, we don't do that as often as sharing interpolators.
 
 

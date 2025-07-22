@@ -270,11 +270,34 @@ Check [JSON Editor](../builder/jsonEditor.md) for more information.
 
 
 ## Useful tools
-### TOOLS button
-The Tools button can warp, blend etc
 
-### Erase
-Select a few vertices, right click on the target -> erase. 
+### Multiply
+The multiply tool just multiplies by a certain value. In this gif we just multiplied things by 0.0 to fix some artefacts:  
+![Alt text](../images/poseEditor_multiply.gif)  
+But it doesn't stop there! You can also use the multiply tool to improve your shapes by using vertex soft selection and maybe even 
+multiply by something higher than 0, such as 0.3. 
+!!! note
+    You see a similar tool under the right click menu of the targets called *Erase*. That's pretty much the same as 
+    multiply by 0.0.
+
+### Warp
+The warp tool can warp secondary meshes. Most of the time we sculpt things on the main mesh such as the skin. And then
+we just warp to secondary meshes such as costume. To do that, put the skin mesh (*body_geo*) into the **Master** field,
+select all the targets, select the mesh in the scene, and then **TOOLS -> Warp ..**.
+![Alt text](../images/poseEditor_warp.jpg)  
+!!! warning "Known Bug"
+    At this time the warp tool expects you to already have the mesh inside the mesh table and have it activated for all targets.
+    Basically what you get when you check the mesh having all targets selected. If you don't do that, it'll either
+    quietly do nothing, or give you a strange error.
+!!! note
+    Don't forget to have the mesh that you want to warp selected in scene. Btw, you can also do vertex and soft selection
+    for that, and it'll only warp the vertices you have selected.
+
+
+### Blend IDs
+If you have another mesh that has the pose sculpted already, the *Blend IDs* tool can help you with that, also under 
+the **TOOLS** button.
+
 
 ## Known Issues
 #### Sometimes the Interpolator doesn't update anymore, even though I'm 100 % sure my settings are correct.

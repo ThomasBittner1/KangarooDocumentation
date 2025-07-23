@@ -143,7 +143,7 @@ it'll follow again that the full shape does. You'll see the options on the right
     have more than one inbetween. So in the picture above where there are 3 inbetweens (red marks) the current weight
     is closer to the first one, therefore the *Closest Inbetween* would only touch the first one. 
 
-!!! warning
+!!! warning "Watch Out"
     When the *blendShapesAndSliders()* adds the blendShapes, the logic of inbetweens is a bit complicated because of a few
     mathematical challenges on how those inbetweens work. This means in certain situations you might find things behaving a bit strange.   
     It's recommended to keep inbetweens to minimum. And if you do use them, watch out for the results carefully.
@@ -266,7 +266,7 @@ the effect on a shape in certain regions. Or even multiply by 0.0 to erase some 
 Or multiply negative like -1.0 if you want to make a shape go the reverse direction!  
 Just below the *Multiply* in the marking menu you have the *Multiply in Y*. Seems a bit arbitrary because it only does
 it in Y, but we use it a lot for some tricks on the brow shapes.
-#### TOOLS - Make Meshes Follow {#makemeshesfollow}
+### TOOLS - Make Meshes Follow {#makemeshesfollow}
 There are 3 types of tools you need to choose from depending on the situation: *Warp*, *Warp Rigid* and *Warp Wire*.  
 We'll explain them here. But if you get confused, try to watch that part in the [Video](#video) from 4.08.
 #### Warp

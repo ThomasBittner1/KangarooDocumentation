@@ -2,18 +2,21 @@
 Kangaroo's Skinning Tools are an alternative to weight painting. The idea is that you always select vertices with soft selection,
 and then click the buttons. This usually keeps the weights cleaner than if you were using painting tools.  
 
-The best thing to learn about the skinning tools is by watching the [Video](https://www.youtube.com/watch?v=z4GYYWd6gS4).  
-Use this page more as a *table of contents*. It contains a lot of direct links to the proper time stamps of that video.
+![Alt text](../images/tools_skinCluster.jpg)  
+
+The best way to learn about the skinning tools is by watching [this video](https://www.youtube.com/watch?v=z4GYYWd6gS4).  
+Use this page more as a *table of contents*. You'll see a lot of direct links to the proper time stamps of that video.
 
 
 ## Choose SkinCluster
-The skinning tools work for multiple skinClusters, and the attribute is **Choose SkinCluster**. If you leave it empty,
-it chooses the default one. 
+The skinning tools work for multiple skinClusters, and the attribute to specify which one is **Choose SkinCluster**. 
+If you leave it empty, it chooses the default one. 
 !!! info "Video"
     Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=8m13s) to see in action how *Choose SkinCluster* works.
 !!! note
     One thing that got added after the video was created is that you can also specify suffixes in the *Choose SkinCluster*
-    field, such as *\_\_BEND* or *\_\_ZIPPER* 
+    field, such as *\_\_BEND* or *\_\_ZIPPER*.  
+    This makes it easier when you have more meshes all with same skinClusters suffixes.
  
 
 
@@ -24,7 +27,7 @@ It's similar to what the Maya *Flood* button is doing, but here you have more op
 -  Select more than one influence at the same time. It assigns the weights by closest joints to each vertex, and smoothes
 on top (you can control the smoothness with the *Smooth Steps* 
 - You can do more than one influences at the same time
-- You can flood joints that are not in the skinCluster yet, he'll ask you if add them
+- You can flood joints that are not in the skinCluster yet, he'll ask you if they should be added
 
 
 !!! info "Video"
@@ -33,13 +36,13 @@ on top (you can control the smoothness with the *Smooth Steps*
 
 ### Distribute 
 *Distribute Weights* is an option inside the *Flood* tool. This gets overlooked a lot, but it's one of those powerful 
-features that actually make Kangaroo Skinning Tools special!   
-It first gathers all the weights assigned to the selected joints (in the flood menu), and then reassigns the weights based 
+features that make Kangaroo Skinning Tools special!   
+It first gathers all the weights assigned to the selected joints, and then reassigns the weights based 
 on closest joints to each vertex.
 This is useful for:  
 
-- when you changed the joint positions, many times with this you can just clean up the skinning in one click
-- if you've bound them with normal *Flood* settings, but with bad *Smooth Steps*. Correct the smooth steps and Flood again
+- when you changed the joint positions
+- if you've bound them with normal *Flood* settings, but with bad *Smooth Steps*
 
 
 !!! tip
@@ -57,11 +60,13 @@ This is useful for:
 *Closest Expand* tool is for situations such as lips or eyelids, where you have joint splines and each joint is located
 on a vertex.  
 It basically finds the closest vertices for each joint, and then expands the influence. How much you expand is defined
-with the *Expanded Full Weight Loops* and *Expanded Fade Out Loops".  
+with the *Expanded Full Weight Loops* and *Expanded Fade Out Loops*.
+  
 The tool also works for high density meshes where you are skipping joints, for example you only have a joint for each second
 or third vertex. If you are skipping many joints, keep an eye on the *Max Connection Path Count* option.  
 
-This tool also comes with a **Distribute** attribute. The idea is the same as with the one in the *Flood* tool - it first
+### Distribute
+The *ClosestExpand* tool also comes with a **Distribute** attribute. The idea is the same as with the one in the *Flood* tool - it first
 gathers all the weights that are already on the joints, and uses that as a mask for the new operation.   
 Make sure to set *Full Weight Loops* to a higher value such as 30, because the fade out amount is already handled through 
 the previous weights.  
@@ -81,8 +86,8 @@ But don't overuse it!!
 
 
 ## Average
-This averages the weights. Often you use it on buttons. It can also average islands separately, which is for when 
-for example you have a lot of buttons combined into a single mesh.  
+This averages the weights. Often you use it on buttons. It can also average islands separately, which is 
+for example when you have a lot of buttons combined into a single mesh.  
 
 !!! info "Video"
     Check Average Tool [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=4m08s)
@@ -90,6 +95,7 @@ for example you have a lot of buttons combined into a single mesh.
 
 ## Transfer 
 Transfers weights from another mesh. Make sure you try using it together with Vertex (Soft) Selection!
+But there's also a lot of other imporant hidden features, best watch the video from the link below:
 
 !!! info "Video"
     Check Average Tool [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=4m45s)
@@ -168,15 +174,15 @@ without getting weight artefacts.
 
 
 ## MaxInf
-This makes sure that each vertex has not more than a specific amount of influences. Very important when you are rigging for Game Engines.
+This makes sure that each vertex has not more than a specific amount of influences. Very important when you are rigging for Game Engines.  
 Only works on full meshes (no vertex selection)
 !!! info "Video"
     Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=25m29s) to see it in action.   
 
 
 ## Normalize
-Nothing fancy, just does what the maya normalize does, except that you can choose a specific skinCluster
-
+Nothing fancy, just does what the maya normalize does, except that you can choose a specific skinCluster  
+Only works on full meshes (no vertex selection)
 
 
 ## Python

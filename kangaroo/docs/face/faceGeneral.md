@@ -158,14 +158,14 @@ But sometimes also pose locators.
 
 The button lets you mainly **Mirror** or **Fill** the attributes. Filling means putting their values into the functino attribute. 
 
-!!! warning
+!!! warning "Watch Out"
     While it often does pose locators, it's not always the case. Check if that function has an extra button for filling 
     the Pose Locator. Or if still unclear, click the *Info* or *Select* option in the *Default Attrs* menu.
 
-!!! tip
+!!! tip "Kangaroo Tool Tip"
     If you want to update values after you've filled them, the The [JSON Editor](../builder/jsonEditor.md) can help you with this. 
 
-!!! tip
+!!! tip "Python"
     This *Default Attrs* button with so many menus is actually relatively easy to script in case you
     want to create a similar button for your own tools. Just check out the [Python](../python.md) section
 

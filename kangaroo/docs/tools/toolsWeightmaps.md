@@ -1,6 +1,8 @@
 
 Weightmap tools are for adjusting weightmaps from deformers such as lattice, morph, deltamesh, ... basically almost
 all deformers apart from skinCluster.
+
+![Alt text](../images/tools_weightmaps.jpg)  
  
 The best thing to learn about the weightmap tools is by watching the [Video](https://www.youtube.com/watch?v=N2GJ6WLeMU0)  
 

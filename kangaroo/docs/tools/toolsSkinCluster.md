@@ -1,48 +1,34 @@
 
-Kangaroo's Skinning Tools are an alternative to weight painting. The idea is that you select vertices with soft selection,
-and then click the buttons.  
-Might sound like a big change to some people, but if you master the big collection of tools available here, the big chance
-is that you'll be much faster than if you were following your original painting approach.
-!!! info "Video"
-    Also interesting subject on this - [Why can I not paint Weights Kangaroo Skin Tools](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=15m57s).
-
-
-At the bottom there's a collection of tools. Remember - *all* tools work with soft selection! If you are not doing 
-softselection, you won't be utilizing it properly.
-
-And try to use *Undo* and *Redo* as many times as possible. The idea is to overshoot some values -> apply -> undo if
-it was too strong -> adjust values accordingly -> do again ...  
-The advantage with this workflow is that this usually keeps the weights cleaner, compared to if you do a million 
-painting strokes with a painting tool....
+Kangaroo's Skinning Tools are an alternative to weight painting. The idea is that you always select vertices with soft selection,
+and then click the buttons. This usually keeps the weights cleaner than if you were using painting tools.  
 
 The best thing to learn about the skinning tools is actually by watching the [Video](https://www.youtube.com/watch?v=z4GYYWd6gS4).  
-This page is more just a *table of contents*, and actually you'll see a lot of direct links to the proper time stamps in there.
+Use this page more as a *table of contents*. It contains a lot of direct links to the proper time stamps of that video.
 
 
+## Choose SkinCluster
 The skinning tools work for multiple skinClusters, and the attribute is **Choose SkinCluster**. If you leave it empty,
 it chooses the default one. 
 !!! info "Video"
     Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=8m13s) to see in action how *Choose SkinCluster* works.
+!!! note
+    One thing that got added after the video was created is that you can also specify suffixes in the *Choose SkinCluster*
+    field, such as *\_\_BEND* or *\_\_ZIPPER* 
  
 
 
+
 ## Flood
-The name is from the Maya *Flood* button, but here you have more options:  
+It's similar to what the Maya *Flood* button is doing, but here you have more options:  
 
 -  Select more than one influence at the same time. It assigns the weights by closest joints to each vertex, and smoothes
 on top (you can control the smoothness with the *Smooth Steps* 
+- You can do more than one influences at the same time
+- You can flood joints that are not in the skinCluster yet, he'll ask you if add them
 
-
-### Joint Lines
-The joint line for each joint is just the line from the Joint to the its *Joint Child*.   
-*But what if a joint has more than one children, which one will he pick??*  
-By default he takes only joints that are in the selection. But this can be a problem sometimes when the child joints
-are not in selection.  
-So whenever you do have that issue, you can switch *Joint Lines* to *Yes And Include Children Not In Input For Closest Joints*   
 
 !!! info "Video"
     Flood is the first thing shown in the [Video](https://www.youtube.com/watch?v=z4GYYWd6gS4)
-
 
 
 ### Distribute 
@@ -53,7 +39,7 @@ on closest joints to each vertex.
 This is useful for:  
 
 - when you changed the joint positions, many times with this you can just clean up the skinning in one click
-- if you've bound them with normal *Flood* settings, but with bad *Smooth Step*. Correct the smooth steps and Flood again
+- if you've bound them with normal *Flood* settings, but with bad *Smooth Steps*. Correct the smooth steps and Flood again
 
 
 !!! tip
@@ -62,7 +48,7 @@ This is useful for:
 
     
 !!! info "Video"
-    Check Distribute Option in the [Video from 1:32](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=1m32s)
+    Check Distribute Option [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=1m36s)
 
 
 
@@ -142,6 +128,10 @@ meshes selected, and he can mirror from left to right meshes.
 
 **Mirror Middle** is the second button in that tool - it just averages left/right, best apply it just to vertices close to the symmetry line.
 
+!!! info "Video"
+    Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=20m50s) to see it in action.    
+    Just the *Mirror Middle* is a new button and therefore not shown in the video.
+
 
 
 ## Move
@@ -154,6 +144,10 @@ You specify joints in the tab. Weights from joints in the left column get assign
 - For the right ones - if you add a comma (","), he does text replacing (left part of the comma with right part)
 example: "^, namespace0:" will find the To joints in the namespace "namespace0:"
 - You can also add joints to the columns by right click *Set From Selected*
+
+!!! info "Video"
+    Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=21m39s) to see it in action.    
+
 
 !!! tip
     This is also a great tool to use in Python for creating your own tools.
@@ -174,8 +168,10 @@ without getting weight artefacts.
 
 
 ## MaxInf
-This makes sure that each vertex has only a specific amount of influences. Very important when you are rigging for Game Engines.
+This makes sure that each vertex has not more than a specific amount of influences. Very important when you are rigging for Game Engines.
 Only works on full meshes (no vertex selection)
+!!! info "Video"
+    Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=25m29s) to see it in action.   
 
 
 ## Normalize

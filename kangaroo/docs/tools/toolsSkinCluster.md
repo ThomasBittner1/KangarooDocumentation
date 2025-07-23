@@ -2,7 +2,7 @@
 Kangaroo's Skinning Tools are an alternative to weight painting. The idea is that you always select vertices with soft selection,
 and then click the buttons. This usually keeps the weights cleaner than if you were using painting tools.  
 
-The best thing to learn about the skinning tools is actually by watching the [Video](https://www.youtube.com/watch?v=z4GYYWd6gS4).  
+The best thing to learn about the skinning tools is by watching the [Video](https://www.youtube.com/watch?v=z4GYYWd6gS4).  
 Use this page more as a *table of contents*. It contains a lot of direct links to the proper time stamps of that video.
 
 

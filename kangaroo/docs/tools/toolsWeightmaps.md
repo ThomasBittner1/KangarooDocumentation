@@ -1,17 +1,15 @@
 
-z
-###
-
-## Weightmap Tools
-## Geometry Tools
-## Plane Cutter
-Plane Skinner is a tool that can get you quick first pass **SkinCluster** or **Proxy Geometries**
+Weightmap tools are for adjusting weightmaps from deformers such as lattice, morph, deltamesh, ... basically almost
+all deformers apart from skinCluster.
  
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/sQqQVCS2vWY"
-title="YouTube video player" frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
+The best thing to learn about the weightmap tools is by watching the [Video](https://www.youtube.com/watch?v=N2GJ6WLeMU0)  
 
+
+Weightmap have similar features as skinCluster tools. They can do:  
+
+- **Flood** (first section of the [Video](https://www.youtube.com/watch?v=N2GJ6WLeMU0))
+- **Smooth/Average** ([Video](https://www.youtube.com/watch?v=N2GJ6WLeMU0&t=0m55s))
+- **Transfer** ([Video](https://www.youtube.com/watch?v=N2GJ6WLeMU0&t=1m19s))
+- **Mirror** ([Video](https://www.youtube.com/watch?v=N2GJ6WLeMU0&t=1m48s))
 
 

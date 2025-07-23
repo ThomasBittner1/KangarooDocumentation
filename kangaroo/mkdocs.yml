@@ -37,7 +37,11 @@ nav:
       - Squash/Stretch: face/squashStretch.md
       - Face Tweaker Ctrls: face/faceTweakerCtrls.md
   - Python: python.md
-  - Tools: tools.md
+  - Tools: 
+      - SkinCluster: tools/toolsSkinCluster.md
+      - Weightmaps: tools/toolsWeightmaps.md
+      - Geometry: tools/toolsGeometry.md
+      - Plane Cutter: tools/toolsPlaneCutter.md
   - Animator Tools: picker.md
   - Model Changes: modelChange.md
   - Game Engines: gameEngines.md

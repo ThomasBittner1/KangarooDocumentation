@@ -47,6 +47,7 @@ nav:
       - SkinCluster: tools/toolsSkinCluster.md
       - Weightmaps: tools/toolsWeightmaps.md
       - Geometry: tools/toolsGeometry.md
+      - Deformer Import: tools/toolsDeformerImport.md
       - Plane Cutter: tools/toolsPlaneCutter.md
   - Animator Tools: picker.md
   - Model Change: modelChange.md

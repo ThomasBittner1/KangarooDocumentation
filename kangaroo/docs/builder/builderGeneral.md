@@ -86,13 +86,7 @@ If the model changed in topology, you can set the **bWorldSpaceIfNotMatching** f
 Actually this way it'll always just worldspace transfer the weights if the topology changed. And you'll see that he
 did that later for example when you rebuild, he'll ask you if you want to export the newly transferred weights.
 
-If you want to be more specific on how to load the deformers, you can do that in the **deformerImport** tool:
-![Alt text](../images/builder_importDeformers.jpg)
-The button **Load best fitting skinClusters** for example is a great button for situations where you are dealing with a character that has
-many meshes, and modellers decided to just blindly rename a lot of meshes
-!!! note
-    after using that tool to fix weights, you'll have to reexport them, so the *loadDeformer()* function 
-    loads it properly again.
+If you want to be more specific on how to load the deformers, you can do that in the [**deformerImport**](../tools/toolsDeformerImport.md) tool:
 
 
 

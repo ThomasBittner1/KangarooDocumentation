@@ -172,7 +172,7 @@ on the display_ctrl, and just set it up to also switch some geometry visibility.
 
 ### Python
 In the points above we've seen how to just add simple on/off switches. But if you need anything more fancy than
-that, it's best to solve that with a [Python](../python.md) function.
+that, it's best to solve that with a [Python](../python/python1.md) function.
 
 
 ## Updating limbs
@@ -239,4 +239,10 @@ Those will orient the ctrls to be in world space.
 
 While most of the time this is easily adjustable with 
 blueprints, in some places it's more convenient to not rotate them straight.
+
+
+
+## Joint Parents
+The very first attribute on the top starts with *PARENTS*  
+This doesn't really change the rig logic, but it specifies where the joints should be parented.
 

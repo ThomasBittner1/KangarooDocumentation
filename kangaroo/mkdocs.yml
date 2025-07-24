@@ -36,7 +36,10 @@ nav:
       - Mouth: face/mouth.md
       - Squash/Stretch: face/squashStretch.md
       - Face Tweaker Ctrls: face/faceTweakerCtrls.md
-  - Python: python.md
+  - Python: 
+        - Python I: python/python1.md
+        - Python II: python/python2.md
+        - Library: python/pythonLibrary.md
   - Tools: 
       - SkinCluster: tools/toolsSkinCluster.md
       - Weightmaps: tools/toolsWeightmaps.md

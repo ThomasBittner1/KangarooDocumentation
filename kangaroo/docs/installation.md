@@ -31,7 +31,7 @@ at two points:
 1. grabbing the model from studio pipeline, and later
 2. publishing the actual rig into the studio pipeline
 
-But how to do that is explained in [Python - Connecting to Studio Pipeline](python.md#connecting-to-studio-pipeline)
+But how to do that is explained in [Python - Connecting to Studio Pipeline](python/python1.md#connecting-to-studio-pipeline)
 
 ### AssetsLocal
 First we need to create the AssetsLocal folder. It's the folder where you'll work. 

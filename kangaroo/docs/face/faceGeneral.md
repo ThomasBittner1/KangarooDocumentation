@@ -167,7 +167,7 @@ The button lets you mainly **Mirror** or **Fill** the attributes. Filling means 
 
 !!! tip "Python"
     This *Default Attrs* button with so many menus is actually relatively easy to script in case you
-    want to create a similar button for your own tools. Just check out the [Python](../python.md) section
+    want to create a similar button for your own tools. Just check out the [Python](../python/python1.md) section
 
 
 ## Deformer Order

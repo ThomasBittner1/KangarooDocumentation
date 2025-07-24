@@ -33,6 +33,8 @@ on top (you can control the smoothness with the *Smooth Steps*
 !!! info "Video"
     Flood is the first thing shown in the [Video](https://www.youtube.com/watch?v=z4GYYWd6gS4)
 
+One thing not fully explained in the video is **Joint Lines**.
+Joint Lines are ... 
 
 ### Distribute 
 *Distribute Weights* is an option inside the *Flood* tool. This gets overlooked a lot, but it's one of those powerful 

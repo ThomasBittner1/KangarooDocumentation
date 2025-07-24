@@ -218,7 +218,7 @@ bottom and top ctrls of the spine:
 !!! tip
     You have two attributes on each squash joint to fine tune that behavior:  
     ![Alt text](../images/puppetLimbs_distributeRotationsAttributes.jpg)  
-    For saving those you'll have to do a [python function](../python.md#simple-way-of-adding-a-function).
+    For saving those you'll have to do a [python function](../python/python1.md#simple-way-of-adding-a-function).
 
 #### skinning the squash joints 
 If you already skinned the character, and you turned on the *Advanced* checkbox later, you can easily transfer the 
@@ -417,19 +417,20 @@ And something cool - when you create the blueprints for a left and right belt, i
 There's **Eye**, **EyesLookat** and **EyeLookatIndiv**. 
 Those are explained in [Eyes](../face/eyes.md#eye-puppet-limbs).
 
+
+## Wheel 
+This is for cars
+!!! warning "New Limb" 
+    "wheel" is new and hasn't been tested in production yet
+
+
 ## *Custom Limbs*
 Yes, you can define Custom Limbs. It's rare that we need to do that since the existing ones have a lot of options,
 and additional features might be easier to handle by just adding additional functions.  
-But if you do want to go into detail and make your own limb, you can find how to do that [here](../python.md#custom-limbs)
+But if you do want to go into detail and make your own limb, you can find how to do that [here](../python/python2.md#custom-limbs)
 
-!!! warning
+!!! warning "Decent Python level required!"
     A decent Python level is required for creating Custom Limbs! Before writing your own custom limb it's recommended to see if you can 
-    solve it with simple [Python Functions](../python.md#simple-way-of-adding-a-function)
-
-
-## Wheel
-This is for cars
-!!! warning 
-    "wheel" is new and hasn't been tested in production yet
+    solve it with simple [Python Functions](../python/python1.md#simple-way-of-adding-a-function)
 
 

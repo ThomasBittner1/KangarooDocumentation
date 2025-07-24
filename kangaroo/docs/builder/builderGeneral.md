@@ -38,7 +38,7 @@ If you already have a model, go to export -> MODEL, and with the Explorer New Mo
 you get a folder that let's you copy a character in it
 ![Alt text](../images/addModel.gif)  
 If you work in a company that has their own studio pipeline, you might want to grab
-the model automatically from the studio pipeline. To see how to do that, go [python](../python.md#connecting-to-studio-pipeline)
+the model automatically from the studio pipeline. To see how to do that, go [python](../python/python2.md#connecting-to-studio-pipeline)
 Bascially you'd create a script that from the character name and some version setups looks for the corresponding character model file
 in your studio pipeline.
 
@@ -119,7 +119,7 @@ And later for the Face we'll add lots of orange functions
 
 
 ## Custom Functions
-You can create your own functions in Python and declare your own arguments and builder buttons. But that's another topic, shown in [Python](../python.md)  
+You can create your own functions in Python and declare your own arguments and builder buttons. But that's another topic, shown in [Python](../python/python1.md)  
 
 
 

@@ -32,7 +32,7 @@ Keep in mind that you can always use the blendShapes on top of the splines as co
 
 
 ## *blendShapesAndSliders()*
-For setting up blendShape Ctrls you need to sculpt the shapes with the [Shape Editor](shapeEditor.md). And make sure
+For setting up blendShape Ctrls you need to sculpt the shapes with the [Shape Editor](shapeEditor1.md). And make sure
 that the blendShape file you create with the *Shape Editor* gets imported and baked in the *importBlendShapeFile()* function.  
 Then *blendShapesAndSliders()* is the function that takes all those baked target meshes and assigns them as blendShapes.  
 
@@ -77,7 +77,7 @@ we have 3 extra attributes on the *blendShapesAndSliders()* function: *ddTargets
 
 !!! note
     This section doesn't explain how to sculpt the targets, it only shows how to specify them in the builder function. For more info
-    about actually sculpting them, check the [Shape Editor](shapeEditor.md#adding-more-main-targets)
+    about actually sculpting them, check the [Shape Editor](shapeEditor2.md#adding-more-main-targets)
 
 
 #### ddTargetsAsAttributes
@@ -115,7 +115,7 @@ It can also be a ctrl from the puppet.
 Here we created a corrective for when the trunk was down. We actually left the main target (*trunkDown*) as the default,
 but added Combos. 
 ![Alt text](../images/faceGeneric_elephant.jpg)    
-Check the [Shape Editor](shapeEditor.md#grab-targets-for-corrective-sculpting) for how to add shape from the rig.
+Check the [Shape Editor](shapeEditor2.md#grab-targets-for-corrective-sculpting) for how to add shape from the rig.
 
 
 

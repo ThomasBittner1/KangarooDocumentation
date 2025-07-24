@@ -26,16 +26,19 @@ nav:
       - Puppet Tweaker Ctrls: puppet/tweakerCtrls.md
   - Body:
       - Deformations: body/deformations.md
-      - Pose Editor: body/poseEditor.md
       - Motion Capture: body/motionCapture.md
+      - Pose Editor I: body/poseEditor1.md
+      - Pose Editor II: body/poseEditor2.md
   - Face:
       - General: face/faceGeneral.md
-      - Shape Editor: face/shapeEditor.md
       - Eyes: face/eyes.md
       - Brows: face/brows.md
       - Mouth: face/mouth.md
       - Squash/Stretch: face/squashStretch.md
       - Face Tweaker Ctrls: face/faceTweakerCtrls.md
+      - Shape Editor I: face/shapeEditor1.md
+      - Shape Editor II: face/shapeEditor2.md
+
   - Python: 
         - Python I: python/python1.md
         - Python II: python/python2.md
@@ -46,7 +49,7 @@ nav:
       - Geometry: tools/toolsGeometry.md
       - Plane Cutter: tools/toolsPlaneCutter.md
   - Animator Tools: picker.md
-  - Model Changes: modelChange.md
+  - Model Change: modelChange.md
   - Game Engines: gameEngines.md
   - FAQ: FAQ.md
   - License: license.md

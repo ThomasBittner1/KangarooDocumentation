@@ -39,9 +39,10 @@ If you are using *Shape Editor* or *Pose Editor*, the warping is tied into there
 of those tools, you can use this tool to warp them.
 
 !!! info "Video"
-    See how it works in this [video (Model Change)](https://www.youtube.com/watch?v=3V0RUjhqewY&t=7m14s). For the options, the video recommends *matrix*, but 
-    lately is has shown that most of the time *Wrap Deformer* is the best option, even if topology is the same.  
-    **The first part of this video is very outdated**, we now use the Pose Editor instead of those python functions!
+    See how it works in this [video (Model Change)](https://www.youtube.com/watch?v=3V0RUjhqewY&t=7m14s).  
+    For the options, the video recommends *matrix*, but lately is has shown that most of the time **Wrap Deformer** 
+    is the best option, even if topology is the same.  
+    **The first part of this video is outdated!**. We now use the Pose Editor instead of those python functions.
 
 
 ## Warp Secondary Poses 
@@ -52,7 +53,7 @@ of those tools, you can use this tool to warp them.
 
 !!! info "Video"
     See how it works in this [video](https://www.youtube.com/watch?v=3V0RUjhqewY&t=6m45s).   
-    **The first part of this video is very outdated**, we now use the Pose Editor instead of those python functions!
+    **The first part of this video is outdated!**. We now use the Pose Editor instead of those python functions.
 
 
 ## Head Reset

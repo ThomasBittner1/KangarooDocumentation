@@ -1,6 +1,5 @@
-Kangaroo has lots of good tools for dealing with model changes. It's best to be familiar with all of them,
-so that in every situation you can decide which ones to use.
-
+Kangaroo has lots of good tools for dealing with model changes. This document gives you an overview of what tools you
+can/should use for different situations. 
 
 
 ## Same Topology - Different shape
@@ -9,7 +8,7 @@ When the topology and proportions are the same, things are relatively easy.
 *LoadDeformer()* will load the files without issues since (by default) it's just loading by vertex order.     
 But blendShapes, such as in ShapeEditor or PoseEditor need some attention.
 ### Same Topology - PoseEditor
-See [Pose Editor Model Update](body/poseEditor.md#model-change)  
+See [Pose Editor Model Update](body/poseEditor2.md#model-change)  
 You might be able to use the *blendShape* option. But if not - the *warp* option should work just fine, too.
 ### Same Topology - Shape Editor model update
 Select the mesh in the meshes table -> add model update
@@ -31,15 +30,15 @@ go to **Export -> Deformers -> Select Changed Meshes**.
     that it transfered the weights by asking you if you want to save the weights.
 
 ### Topology change - PoseEditor
-See [Pose Editor Model Update](body/poseEditor.md#model-change)  
+See [Pose Editor Model Update](body/poseEditor2.md#model-change)  
 The *warp* option will do the trick here. 
 !!! note
     In some cases when meshes got split into more meshes, you may have to do a few different hacks such as using the
-    [TOOLS -> wrap](body/poseEditor.md#useful-tools) option 
+    [TOOLS -> wrap](body/poseEditor2.md#useful-tools) option 
 
 ### Topology change - Shape Editor
 This is a bit of a manual hack, but not too bad:  
-Also explained: [Pose Editor Model Update](body/poseEditor.md#model-change)
+Also explained: [Pose Editor Model Update](body/poseEditor2.md#model-change)
 
 ### Topology change - Other Target geos 
 Any other mesh you can just warp with the **Geometry -> Warp Pose**
@@ -93,7 +92,7 @@ target="_blank">LinkedIn Post on warpXForms</a>
 
 
 ### Different Proportions - Shape Editor
-More complex, it's like creating a new character - check [Shape Editor](face/shapeEditor.md#transfer-to-new-character)
+More complex, it's like creating a new character - check [Shape Editor](face/shapeEditor2.md#transfer-to-new-character)
 
 ### Different Proportions - Face
 And then basically every blueprint group in the mayaImport folder needs to be warped to the new mesh.

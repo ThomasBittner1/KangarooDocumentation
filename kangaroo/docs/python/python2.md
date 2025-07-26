@@ -66,7 +66,7 @@ If you've managed to read until here, you are ready to connect kangaroo to your 
 Create a new **Extra Builds** file as shown in previous chapter,
 and add a function in there called something like *importModel2()*. And uncheck the old one (*importModel()*).  
 In *importModel2()* create some code that looks in the files of your studio pipeline and imports the correct model.
-For doing that you'll most likely need the code snippets in [Getting Asset Info](#getting-asset-info) for getting your current
+For doing that you'll most likely need the code snippets in [Getting Asset Info](python1.md#getting-asset-info) for getting your current
 asset infos.
 
 !!! tip

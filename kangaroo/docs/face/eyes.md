@@ -104,7 +104,12 @@ Those eyelook shapes can also be tweaked by animation with the *eyesLookAt_l_ctr
 
 
 ## Eyelid Splines
-![Alt text](../images/face_eyelidSplinesCtrls.gif)
+<video autoplay muted loop controls width="640">
+    <source src="../../images/face_eyelidSplinesCtrls.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+
 The function *splineLidSetup()* is creating splines that take care of a proper blink using some additional joints.  
 You'll see there's quite a few chapters just for the *Eyelid Splines*, but 90 % of the time just the first sections 
 are required. And actually sometimes it doesn't take more than 5 minutes to get nice Eyelid Spline Setup.    

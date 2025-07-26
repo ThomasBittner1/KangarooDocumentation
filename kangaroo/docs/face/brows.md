@@ -17,7 +17,13 @@ The blendShape targets that you can sculpt in the ShapeEditor are:
 ## Brow Splines
 If you want a spline rig with a ton of ctrls, use the *browSplinesSurface()* function. On the brows the control set
 is different to the control set you get with blendShapes.
-![Alt text](../images/face_browSplines.gif)
+
+<video autoplay muted loop controls width="640">
+    <source src="../../images/face_browSplines.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+
 
 
 ### Brow Splines - Blueprints

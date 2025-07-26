@@ -43,7 +43,7 @@ the blendShape, just like you've already used before:
     or **Smooth Vertices** tools.
 
 !!! note
-    You are not limited to just *general* or *cartoon*! Later in [Adding More Main Targets](#adding-more-main-targets)
+    You are not limited to just *general* or *cartoon*! Later in [Adding More Main Targets](shapeEditor2.md#adding-more-main-targets)
     you'll see how to either create your own custom lists or just add targets to your existing collection. 
 
 Now to sculpt some main targets by clicking the *Edit* button and sculpt:
@@ -92,7 +92,13 @@ Look at this example. See how it moves more linear, but if I move one alone it s
 ### Combos - add Percentage
 When you open the blendShapes.ma on the *THOMAS* asset, you'll see a combo called jawOpen50_mouthClose. This just means
 that the jawOpen will only go to 0.5 (50 %):  
-![Alt text](../images/shapeEditor_comboWithPercantage.gif)   
+
+<video controls width="640">
+    <source src="../../images/shapeEditor_comboWithPercantage.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+   
 Try it out! But don't overuse them. The art of sculpting shapes is making this work with the simplest logics. But if you
 do need the extra complexity, it's there.  
 Changing and adding percentages happens through the marking menu:  
@@ -104,7 +110,11 @@ At the bottom you see a lot of sliders. Those are just representations of how th
 a great way to get a feeling of how they will work later.   
 On each slider you could also isolate the targets with the right click menu, so you can see what targets are driven by them.   
 Open the Shape Editor File from the templates asset *THOMAS*, and play around with the sliders:  
-![Alt text](../images/shapeEditor_sliders.gif)  
+<video autoplay muted loop controls width="640">
+    <source src="../../images/shapeEditor_sliders.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
 
 
 ## Mirror
@@ -158,7 +168,7 @@ Easy, just select them and add them with the right click menu:
 ![Alt text](../images/shapeEditor_addMeshes.gif)   
 !!! info "Kangaroo Tool Tip"
     By default they are just sitting there and not following the main skin. But you can make it follow the skin with
-    the [Tools](#makemeshesfollow) explained below.
+    the [Tools](shapeEditor2.md#makemeshesfollow) explained below.
 
 ### Meshes - Main Mesh {#meshesmainmesh}
 It's important to keep the Main Mesh (*skin* in this example) as the main mesh. It's usually always the case, unless
@@ -177,12 +187,12 @@ but it's not difficult:
 1. rename the old mesh  
 2. restart the shape editor  
 3. [add the new mesh](#addsecondarymeshes) (with correct name!)  
-4. [warp](#warp) the new mesh to the old mesh   
+4. [warp](shapeEditor2.md#warp) the new mesh to the old mesh   
 5. if the old mesh was the main mesh: set it as [Main Mesh](#meshesmainmesh)     
 6. check the lips on open targets! Targets like *jawOpen*. *upperUp* or *lowerDown* can get screwed on warp. If they 
-are screwed, either fix them manually or try the [Warp UVs](#warp-uvs)
+are screwed, either fix them manually or try the [Warp UVs](shapeEditor2.md#warp-uvs)
 
 #### different topology and different shape
 If the topology is different AND the shape is entirely different, we are basically talking about making a new character.
-Check [Transfer to New Character](#transfer-to-new-character) further below.
+Check [Transfer to New Character](shapeEditor2.md#transfer-to-new-character) further below.
 

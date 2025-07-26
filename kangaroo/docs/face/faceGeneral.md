@@ -144,7 +144,12 @@ ALL the sliderBlueprints, not just the ones of the current function.
 look good by default, so you have the option to adjust it manually.  
 Most of the time it's best to build until before *parallelAttachTransforms()*, and then adjust their locations and scale.
 This way you can test right away if they work well with the blendShape they are driving.  
-![Alt text](../images/face_placeSliderBlueprints.gif)
+
+<video autoplay muted loop controls width="640">
+    <source src="../../images/face_placeSliderBlueprints.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
 
 Unfortunately whenever they are driving spline rigs such as the lips spline rig, the live connection from the sliderBlueprints already gets broken
 in the function where they are created. In those cases you just have to guess when giving them good scale values, and rebuild.

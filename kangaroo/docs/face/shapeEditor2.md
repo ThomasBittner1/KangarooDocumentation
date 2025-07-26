@@ -1,4 +1,5 @@
 
+
 ## Connecting the Rig
 There's two main reason why we need to connect the rig into the blendShape Editor - getting jawOpen/eyeLook joints into
 the *Shape Editor*, and getting certain poses into the *Shape Editor* so we can sculpt correctives.
@@ -83,7 +84,11 @@ Just below the *Multiply* in the marking menu you have the *Multiply in Y*. Seem
 it in Y, but we use it a lot for some tricks on the brow shapes.
 ### TOOLS - Make Meshes Follow {#makemeshesfollow}
 There are 3 types of tools you need to choose from depending on the situation: *Warp*, *Warp Rigid* and *Warp Wire*.  
-We'll explain them here. But if you get confused, try to watch that part in the [Video](#video) from 4.08.
+
+!!! video
+    We'll explain here right below. But if you get confused, try to watch that part 
+    [the video from here](https://www.youtube.com/watch?v=cEBJ-tPLMuU&t=4m08s)
+ 
 #### Warp
 If you set the main skin as the Master, the warp will just make meshes follow, and it's using the wrap deformer under the hood:     
 ![Alt text](../images/shapeEditor_warp.jpg)
@@ -193,15 +198,21 @@ For some targets we don't want to do much sculpting, we just want to generate it
 Best example is the *upperDown*, or *lowerUp*.  
 For the upperDown: select *upperUp* and *upperDown* together (order matters!), right click **Copy Deltas of ...**  
 And then use the multiply tool with -1.0:  
-![Alt text](../images/shapeEditor_oppositeTarget.gif)  
+
+<video controls width="640">
+    <source src="../../images/shapeEditor_oppositeTarget.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
 
 ### Make Delta from Current
 You can dial in a few targets, and then right click on one, *Make Delta from Current* puts the current shape
 into the current target.  
 Look at this example where we use the *upperUp* target to open the lips slightly on the *noseWrinkler*:  
-![Alt text](../images/shapeEditor_deltaFromCurrent.gif)  
-
+<video controls width="640">
+    <source src="../../images/shapeEditor_deltaFromCurrent.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
 ## Transfer to New Character
 Transfering to a new character is more advanced. It requires downloading Wrap3D (https://www.russian3dscanner.com/download/) 
@@ -215,6 +226,8 @@ kWrap3dExe = 'C:/Program Files/Faceform/Wrap 2023.11.4/WrapCmd.exe'
 Once you have that all setup-ed, you'll have to create those relations between the 2 meshes.  
 ![Alt text](../images/shapeEditor_transfer.jpg)  
 
-To see how that works in detail, watch the [Video](#video) below from 17:57
+!!! video
+    To see how that works in detail, watch [this part of the Video](https://www.youtube.com/watch?v=cEBJ-tPLMuU&t=17m57s)
+
 
 

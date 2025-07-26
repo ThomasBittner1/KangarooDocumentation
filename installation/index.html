@@ -1,0 +1,1691 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../builder/builderGeneral/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Getting Started - kangaroo-builder.com</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="sky" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="kangaroo-builder.com" class="md-header__button md-logo" aria-label="kangaroo-builder.com" data-md-component="logo">
+      
+  <img src="../assets/kangaroo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            kangaroo-builder.com
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Getting Started
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="kangaroo-builder.com" class="md-nav__button md-logo" aria-label="kangaroo-builder.com" data-md-component="logo">
+      
+  <img src="../assets/kangaroo.png" alt="logo">
+
+    </a>
+    kangaroo-builder.com
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Directories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Directories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assetslocal" class="md-nav__link">
+    <span class="md-ellipsis">
+      AssetsLocal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Templates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assetsserver" class="md-nav__link">
+    <span class="md-ellipsis">
+      AssetsServer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roadmap-for-first-character" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roadmap for First Character
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Builder
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Builder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../builder/builderGeneral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../builder/workflowTricks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workflow Tricks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../builder/jsonEditor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JSON Editor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Puppet
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Puppet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../puppet/puppetGeneral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../puppet/limbsReference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Limbs Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../puppet/bellCollider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bell Collider
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../puppet/dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../puppet/tweakerCtrls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Puppet Tweaker Ctrls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Body
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Body
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../body/deformations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deformations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../body/motionCapture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Motion Capture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../body/poseEditor1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pose Editor I
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../body/poseEditor2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pose Editor II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Face
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Face
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../face/faceGeneral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../face/eyes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Eyes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../face/brows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Brows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../face/mouth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mouth
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../face/squashStretch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Squash/Stretch
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../face/faceTweakerCtrls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Face Tweaker Ctrls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../face/shapeEditor1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shape Editor I
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../face/shapeEditor2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shape Editor II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/python1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python I
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/python2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/pythonLibrary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/toolsSkinCluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SkinCluster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/toolsWeightmaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Weightmaps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/toolsGeometry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Geometry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/toolsDeformerImport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deformer Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/toolsPlaneCutter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Plane Cutter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../picker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Animator Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelChange/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Change
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gameEngines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Game Engines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelNamingConvention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Naming Convention
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    License
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Directories
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Directories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assetslocal" class="md-nav__link">
+    <span class="md-ellipsis">
+      AssetsLocal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Templates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assetsserver" class="md-nav__link">
+    <span class="md-ellipsis">
+      AssetsServer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roadmap-for-first-character" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roadmap for First Character
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Getting Started</h1>
+
+<h2 id="installation">Installation</h2>
+<ol>
+<li>Extract the zip file, and copy the content somewhere on disk.</li>
+<li>Drag&amp;Drop the <strong>install.mel</strong> file into Maya Scene View</li>
+<li>You should see the new KangarooBuilder shelf already.</li>
+<li>Restart Maya</li>
+</ol>
+<p>If you get an error that numpy is missing, you'll have to install numpy, too.
+We do that with <em>pip install</em>.<br />
+Do the following thing in a Command Prompt (cmd). You'll most likely have to change the path on maya version or installation location.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>C:<span class="se">\P</span>rogram<span class="w"> </span>Files<span class="se">\A</span>utodesk<span class="se">\M</span>aya2024<span class="se">\b</span>in<span class="w"> </span>
+mayapy.exe<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>‐‐user<span class="w"> </span>numpy
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you get weird looking errors, try without the --user numpy flag</p>
+</div>
+<p>If you just want to use the skinCluster/geometry tools or the shape editor - you are done at this point.</p>
+<h2 id="the-directories">The Directories</h2>
+<p>First of all you need to understand that Kangaroo is not just a Rigging Tool. It's a <em>Rigging Pipeline</em> that helps you also
+increment/version your assets, and even backup and share with the team.  <br />
+If you work in a studio where they have their own studio pipeline, then Kangaroo is still another pipeline
+that runs parallel to the studio pipeline. You can set things up to connect to the studio pipeline
+at two points:</p>
+<ol>
+<li>grabbing the model from studio pipeline, and later</li>
+<li>publishing the actual rig into the studio pipeline</li>
+</ol>
+<p>But how to do that is explained in <a href="../python/python1/#connecting-to-studio-pipeline">Python - Connecting to Studio Pipeline</a></p>
+<h3 id="assetslocal">AssetsLocal</h3>
+<p>First we need to create the AssetsLocal folder. It's the folder where you'll work. 
+It can be anywhere on your disk drive and doesn't necessarily have to be shared with others. 
+Just create an empty folder, and specify that in the settings:  <br />
+<img alt="Alt text" src="../images/settingAssetsLocal.jpg" /></p>
+<p><strong>After changing the settings, Restart Maya.</strong></p>
+<p>Then inside that new folder, let's create another empty folder for your project, and name it <em>__MYPROJECT__</em>
+It's important that there are <strong>2 underscores</strong> before the name, and <strong>2 underscores</strong> after the name. 
+And all has to be UPPERCASE.<br />
+Without following those rules, Kangaroo won't recognize the folder as a project.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You could also specify the assestLocal path with the Environment Variable <strong>KANGAROO_WORK_PATH</strong>. This can be 
+useful if you are setting up kangaroo for a bigger rigging department</p>
+</div>
+<h3 id="templates">Templates</h3>
+<p>To start creating characters, 99.95 % of the times you copy from an existing one and adjust.
+And we usually grab one from the server. <strong>Templates</strong> is one server that comes with the tool, and has those assets:</p>
+<ul>
+<li>BASEHUMAN</li>
+<li>BASEDOG (digigrade quadruped - dogs, cats, ...)</li>
+<li>BASEHORSE (unguligrade quadruped - horses, deers, ..)</li>
+<li>BASEMOUSE (plantigrade quadruped - mouse, bears, ...)</li>
+<li>BASEBIRD</li>
+<li>BASEPROP</li>
+<li>BASELEGOFIGURE</li>
+<li>THOMAS (BlendShape driven Face Rig)</li>
+</ul>
+<p><a id="createnew"></a>
+Let's go to the BASEHUMAN for example, and then in <strong>Export -&gt; NEW</strong>, set the project and new asset name, and then click <strong>Create</strong>
+<img alt="Alt text" src="../images/newAssetGif.gif" />
+By default it's doing UPPERCASE. It's recommended that you keep it this way since mixed casing can get uncomfortable in one out of 100 cases.
+Just imagine two people create the same asset name but different casings ;-)
+But if you need to match the name from a studio pipeline, you have the option to do the <em>dangerous</em> mixed cases name </p>
+<h3 id="assetsserver">AssetsServer</h3>
+<p>At this point you could theoretically jump to the next tutorial and just start building chaeracters.
+But you have to setup the server at some point anyway, why not do it now.</p>
+<p>You need a server location where you publish the characters to. And that is for one or two things:</p>
+<ol>
+<li>Backup your work </li>
+<li>Sharing with the rigging team</li>
+</ol>
+<p>The new server should be on another disk, that could be a folder setup-ed with Smartdrive from Dropbox, Box or GoogleDrive.
+The most stable with previous tests has been Dropbox.
+Or if you are working in a network, it can be a location on the network. </p>
+<p>If you don't have one yet, just create an empty folder again.
+And after that, open the <strong>pathEnv.mel</strong> file with a text editor, and change the path after <em>default@</em> to be your server path.
+Important: even in Windows, do not use <strong>\</strong> for separating the folders, it all has to be <strong>/</strong>. If you
+copy/paste path in Windows, it'll do the wrong one and you'll have to fix that.
+<div class="highlight"><pre><span></span><code>putenv<span class="w"> </span><span class="s2">&quot;KANGAROO_SERVER_PATH&quot;</span><span class="w"> </span><span class="s2">&quot;templates@./templates; default@C:/Users/thoma/Dropbox/assetsServer&quot;</span><span class="p">;</span>
+</code></pre></div>
+See how there's the <em>template</em> server before? Yes, you remember it correctly, the template place where we copied character from before
+is another server!</p>
+<p>Also - the <em>pathEnv.mel</em> is basically setting the Environment variable.
+If you are a Pipeline TD you might say this is dirty and messy. But no, this is just a simple way to get you started quickly.
+If you want to set the Environment Variables in a different way, just comment out those lines with //, and
+create the Environment variables wherever you prefer. There's even another file <strong>example__Maya.env</strong> where you can
+see how you would set it up in <em>the usual</em> way</p>
+<h2 id="roadmap-for-first-character">Roadmap for First Character</h2>
+<p>Once you've setup-ed your directories and started the character with the <a href="#createnew"><strong>create NEW</strong></a> tool, you can start actually 
+rig the character with the points below. </p>
+<p>Always keep in mind that Kangaroo is a procedural tool where we don't 
+just work on a maya file and send that out when we are done.<br />
+Instead we work on the data that in the end creates the character with the <em>RunAll</em> button.</p>
+<p>And generally don't get carried away with one file for too long. Always just export and rebuild. And best regularly publish
+your character so you can track things back easier whenever something's not working.</p>
+<ol>
+<li><a href="../builder/builderGeneral/#importmodel">Specify Your Model</a></li>
+<li><a href="../puppet/puppetGeneral/#change-the-guide-joint-locations">Place Blueprint Joints</a></li>
+<li>Skin the Character, and <a href="../builder/builderGeneral/#loaddeformers">export weights</a></li>
+<li>Shape the Ctrls, and <a href="../builder/builderGeneral/#loadctrlshapes">export them</a></li>
+<li>When you click <strong>RunAll</strong> in the builder, you have your Rig.  </li>
+</ol>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Congratulations! You finished your first Character :-) </p>
+</div>
+<p>Keep in mind if you got until here, it means you still just scratched the surface of what you can do with Kangaroo. 
+Best keep reading the documentation and see how you can improve your rig with what you've learend.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../builder/builderGeneral/" class="md-footer__link md-footer__link--next" aria-label="Next: General">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                General
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.footer"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../javascripts/scroll-behavior-toggle.js"></script>
+      
+    
+  </body>
+</html>

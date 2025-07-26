@@ -1,0 +1,1861 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../squashStretch/">
+      
+      
+        <link rel="next" href="../shapeEditor1/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Face Tweaker Ctrls - kangaroo-builder.com</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="sky" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#what-are-they" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="kangaroo-builder.com" class="md-header__button md-logo" aria-label="kangaroo-builder.com" data-md-component="logo">
+      
+  <img src="../../assets/kangaroo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            kangaroo-builder.com
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Face Tweaker Ctrls
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="kangaroo-builder.com" class="md-nav__button md-logo" aria-label="kangaroo-builder.com" data-md-component="logo">
+      
+  <img src="../../assets/kangaroo.png" alt="logo">
+
+    </a>
+    kangaroo-builder.com
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Builder
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Builder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../builder/builderGeneral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../builder/workflowTricks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workflow Tricks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../builder/jsonEditor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JSON Editor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Puppet
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Puppet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../puppet/puppetGeneral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../puppet/limbsReference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Limbs Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../puppet/bellCollider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bell Collider
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../puppet/dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../puppet/tweakerCtrls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Puppet Tweaker Ctrls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Body
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Body
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../body/deformations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deformations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../body/motionCapture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Motion Capture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../body/poseEditor1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pose Editor I
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../body/poseEditor2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pose Editor II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Face
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Face
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faceGeneral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eyes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Eyes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Brows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mouth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mouth
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../squashStretch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Squash/Stretch
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Face Tweaker Ctrls
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Face Tweaker Ctrls
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-they" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are they?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Functions...
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Functions...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tweaker_lids" class="md-nav__link">
+    <span class="md-ellipsis">
+      TWEAKER_lids()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tweaker_sockets" class="md-nav__link">
+    <span class="md-ellipsis">
+      TWEAKER_sockets()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tweaker_browssimple" class="md-nav__link">
+    <span class="md-ellipsis">
+      TWEAKER_browsSimple()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tweaker_lips" class="md-nav__link">
+    <span class="md-ellipsis">
+      TWEAKER_lips()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skincluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      SkinCluster
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SkinCluster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#easy-ones-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      Easy ones first..
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skinning-tweaker-lips-splines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skinning Tweaker Lips Splines
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ctrl-attachments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ctrl Attachments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ctrl Attachments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parallelattachtransforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      parallelAttachTransforms()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-if-a-ctrl-doesnt-follow-nicely" class="md-nav__link">
+    <span class="md-ellipsis">
+      What if a ctrl doesn't follow nicely?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-lips-tweakers-more-than-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the Lips Tweakers more than once
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shapeEditor1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shape Editor I
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shapeEditor2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shape Editor II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/python1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python I
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/python2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/pythonLibrary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/toolsSkinCluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SkinCluster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/toolsWeightmaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Weightmaps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/toolsGeometry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Geometry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/toolsDeformerImport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deformer Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/toolsPlaneCutter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Plane Cutter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../picker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Animator Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelChange/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Change
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameEngines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Game Engines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelNamingConvention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Naming Convention
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    License
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-they" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are they?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Functions...
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Functions...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tweaker_lids" class="md-nav__link">
+    <span class="md-ellipsis">
+      TWEAKER_lids()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tweaker_sockets" class="md-nav__link">
+    <span class="md-ellipsis">
+      TWEAKER_sockets()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tweaker_browssimple" class="md-nav__link">
+    <span class="md-ellipsis">
+      TWEAKER_browsSimple()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tweaker_lips" class="md-nav__link">
+    <span class="md-ellipsis">
+      TWEAKER_lips()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skincluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      SkinCluster
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SkinCluster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#easy-ones-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      Easy ones first..
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skinning-tweaker-lips-splines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skinning Tweaker Lips Splines
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ctrl-attachments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ctrl Attachments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ctrl Attachments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parallelattachtransforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      parallelAttachTransforms()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-if-a-ctrl-doesnt-follow-nicely" class="md-nav__link">
+    <span class="md-ellipsis">
+      What if a ctrl doesn't follow nicely?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-lips-tweakers-more-than-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the Lips Tweakers more than once
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Face Tweaker Ctrls</h1>
+
+<h2 id="what-are-they">What are they?</h2>
+<p>Tweaker Ctrls are some extra ctrls on top of your setup that animators can use to add some secondary behavior.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Remember <a href="../../puppet/tweakerCtrls/">Tweaker Ctrls in Puppet</a>? The Tweaker ctrls we are talking about here work with the same logic, and most
+things here you could theoretically recreate with what you've learned in Tweaker Ctrls before. But the functions
+here are  engineered a bit more specifically for facial rigging purposes.</p>
+</div>
+<p>Apart from the <strong>sockets</strong> we usually just use those tweakers on blendShape driven setups. If you are already using
+spline setups such as <em>splineLidSetup()</em>, <em>browSplinesSurface()</em> or the <em>bSPLINE</em> mode of <em>BASEMouthCtrls()</em>, 
+most of the tweaker setups won't be that useful since those spline setups already come with a lot of ctrls.</p>
+<h2 id="the-functions">The Functions...</h2>
+<h3 id="tweaker_lids"><em>TWEAKER_lids()</em></h3>
+<p>Those are for eyelids. Great for when you have blendShape driven Eyelids, and you just want to give animators some
+extra control on top of those.<br />
+<img alt="Alt text" src="../../images/tweakers_eyelids.jpg" />
+First specify the skin mesh under <strong>sAttachmesh</strong>. This is so later the <em>parallelAttachFunction()</em> knows where to
+attach the passers to.</p>
+<p>To create the blueprints - select the vertex loop selected: <br />
+<img alt="Alt text" src="../../images/tweakers_eyevertices.jpg" /><br />
+Click the button <strong>Create Left Curve and Locators</strong>.<br />
+That gives you this curve with locators. <br />
+<img alt="Alt text" src="../../images/tweakers_eyeCurve.jpg" />  <br />
+Make sure the locators are at the corners, since those are what separates bottom and top lids.  </p>
+<p>And then click <strong>-Export Eyelid Tweaker BPs -</strong> </p>
+<h3 id="tweaker_sockets"><em>TWEAKER_sockets()</em></h3>
+<p><img alt="Alt text" src="../../images/tweakers_sockets.jpg" /><br />
+That's the eye sockets. On cartoony characters animators almost always expect them to have some extra control when
+brows move down.<br />
+Creating the blueprints and exporting works the same as in <a href="#tweaker_lids">TWEAKER_lids</a></p>
+<h3 id="tweaker_browssimple"><em>TWEAKER_browsSimple()</em></h3>
+<p>Nothing fancy, just 3 controls per side:  <br />
+<img alt="Alt text" src="../../images/tweakers_simpleBrows.jpg" />
+Creating the blueprints and exporting works the same as in <a href="#tweaker_lids">TWEAKER_lids</a><br />
+You do have some extra BPs for the brows to specify the orientations with <strong>Create Left Brow Orientation Locators</strong>:<br />
+<img alt="Alt text" src="../../images/tweakers_browExtraBps.jpg" />     </p>
+<h3 id="tweaker_lips"><em>TWEAKER_lips()</em></h3>
+<p><img alt="Alt text" src="../../images/tweakers_lips.jpg" />
+Creating the blueprints starts (!) the same as in <a href="#tweaker_lids">TWEAKER_lids</a>,<br />
+But then you need to specify the <strong>bFlipInnerBpCurves</strong> attribute. Set it to <em>True</em> if in the center cvs the upper 
+one is below the lower one.  </p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you made a mistake with the <strong>bFlipInnerBpCurves</strong> and you need to swich that attributes after you've already skinned it, you can fix
+the weights with <strong>distribute</strong> option on either the <em>Flood</em> or the <em>ClosestExpand</em> tool. For both select the whole
+mesh. For the <em>ClosestExpand</em> tool also set the loop attributes very high, so you let the fade out be handled by the
+mask of the previous weights.</p>
+</div>
+<p>And the lips come with another option - the <strong>bSplines</strong> attribute. If you leave it to False, 
+it works just as the other functions.<br />
+But setting it to <em>True</em> means he's running a joint spline through the vertices/ctrls. The result is much nicer in
+90 % of the cases. But it is somewhat heavier because the spline is following the previous deformers etc.</p>
+<h2 id="skincluster">SkinCluster</h2>
+<h3 id="easy-ones-first">Easy ones first..</h3>
+<p>All of these <em>TWEAKER_..()</em> functions come with a button called <strong>Add Influences to Selected</strong>.<br />
+And then you can use the <strong>Flood</strong> tool to bind those vertices.<br />
+Just set the <strong>Choose Skin Cluster</strong> to <em>__TWEAKER</em>, reload the list, enter the type of tweakers
+in the search field (<em>lids</em>, <em>lips</em>, etc), select the joints, put in a nice vertex selection -&gt; <strong>Flood</strong> <br />
+On characters with lower resolution, also put the <strong>Smooth Steps</strong> to 1.
+<img alt="Alt text" src="../../images/tweakers_paintTheSockets.jpg" />   </p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For painting the sockets, close the eyelids and maybe even set the blink line to 0.5, (and reactivate the soft selection),
+so the flood tool grabs a nicer area.<br />
+Similar goes for the lips - open the mouth, this will give make the 
+<em>flood</em> tool assign the weights better.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not use the maya tools or any other external tools for creating the skinClusters! That's because
+for the tweakers the skinCluster needs extra settings under the hood. Those would not happen with any tool
+that is not from Kangaroo.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The <strong>Flood</strong> tool can also be very useful with the <em>Distribute</em> option activated.<br />
+For example if you already flooded the weights, but it's too smooth - run it with distribute 
+but in the same tool also set the <em>Smooth Steps</em> lower.</p>
+</div>
+<h3 id="skinning-tweaker-lips-splines">Skinning Tweaker Lips Splines</h3>
+<p>If you've set the <strong>bSplines</strong> attribute to <em>False</em>, most of it is the same as in the other setups tools. </p>
+<p>But if you <strong>bSplines</strong> as <em>True</em>, then instead of the <em>Flood</em> tool, you should use the <strong>SkinCluster -&gt; ClosestExpand</strong> tool 
+for binding them.<br />
+<em>Why?</em> <br />
+Because we have a joint for each vertex on the loop.   </p>
+<h2 id="ctrl-attachments">Ctrl Attachments</h2>
+<h3 id="parallelattachtransforms"><em>parallelAttachTransforms()</em></h3>
+<p>Same as for Custom Attachers, the <em>parallAttachTransforms()</em> function is making the ctrl passers follow the mesh.<br />
+It's called <em>parallel</em> because it seems like it's getting attached to the mesh, but in fact
+it's looking at which joints the closest vertex of each ctrl is bound to, and then recreates the
+skincluster behavior of that vertex with matrix nodes. It works for more than one skinCluster, but
+does NOT include the actual <em>__TWEAKER</em> skinCluster that those ctrls are influencing. Otherwise you'd
+get a cycle.
+It's similar for blendShapes, except instead of matrix nodes it's using range nodes.  </p>
+<h3 id="what-if-a-ctrl-doesnt-follow-nicely">What if a ctrl doesn't follow nicely?</h3>
+<p>In some rare cases it doesn't find a good vertex. You'll see that when for example on open mouth or closing eyelids 
+one or two ctrls are following a bit too slow or too fast.</p>
+<p>Whenever that happens, the first thing is check if your function has the <strong>bSnapToBlueprintCvs</strong> attribute.
+If it does, try setting that to <em>True</em>.</p>
+<p>If that doesn't help - we can fix it with a python function
+that's moving the passer groups closer to the actual vertex you'd like to bind to:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@builderTools</span><span class="o">.</span><span class="n">addToBuild</span><span class="p">(</span><span class="n">iOrder</span><span class="o">=</span><span class="mf">85.5</span><span class="p">,</span> <span class="n">dButtons</span><span class="o">=</span><span class="p">{})</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">adjustmentsForParallelTransforms</span><span class="p">():</span>
+    <span class="n">cmds</span><span class="o">.</span><span class="n">setAttr</span><span class="p">(</span><span class="s1">&#39;grp_l_tweakerLipsTopPasser_003.t&#39;</span><span class="p">,</span> <span class="mf">3.356</span><span class="p">,</span> <span class="mf">49.845</span><span class="p">,</span> <span class="mf">8.152</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">s</span><span class="p">,</span><span class="n">sSide</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;lr&#39;</span><span class="p">):</span>
+
+        <span class="n">cmds</span><span class="o">.</span><span class="n">setAttr</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grp_m_tweakerLipsBotPasser_000.t&#39;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">49.769</span><span class="p">,</span> <span class="mf">12.009</span><span class="p">)</span>
+        <span class="n">cmds</span><span class="o">.</span><span class="n">setAttr</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grp_m_tweakerLipsTopPasser_000.t&#39;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">49.747</span><span class="p">,</span> <span class="mf">12.267</span><span class="p">)</span>
+
+        <span class="n">fSideMultipl</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span> <span class="k">if</span> <span class="n">sSide</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span> <span class="k">else</span> <span class="mf">1.0</span>
+        <span class="n">cmds</span><span class="o">.</span><span class="n">setAttr</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grp_</span><span class="si">{</span><span class="n">sSide</span><span class="si">}</span><span class="s1">_tweakerLipsBotPasser_002.t&#39;</span><span class="p">,</span> <span class="n">fSideMultipl</span><span class="o">*</span><span class="mf">2.72</span><span class="p">,</span> <span class="mf">49.79</span><span class="p">,</span> <span class="mf">9.59</span><span class="p">)</span>
+        <span class="n">cmds</span><span class="o">.</span><span class="n">setAttr</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;grp_</span><span class="si">{</span><span class="n">sSide</span><span class="si">}</span><span class="s1">_tweakerLipsTopPasser_002.t&#39;</span><span class="p">,</span> <span class="n">fSideMultipl</span><span class="o">*</span><span class="mf">2.653</span><span class="p">,</span> <span class="mf">49.817</span><span class="p">,</span> <span class="mf">9.665</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See the <em>iOrder=85.5</em> flag in <em>addToBuild</em> decorator? This is to make sure the function runs between
+the <em>TWEAKER_*()</em> functions and <em>parallAttachTransforms()</em></p>
+</div>
+<h2 id="using-the-lips-tweakers-more-than-once">Using the Lips Tweakers more than once</h2>
+<p>The <em>TWEAKER_lips()</em> function can be added more than once on the same character. It works in a way that the second one follows the first one with an additional skinCluster.<br />
+Setting it up is a bit more advanced:</p>
+<ul>
+<li>right click on <em>TWEAKER_lips()</em> -&gt; <em>set function instance count</em> -&gt; 2 (or more)</li>
+<li>on the second function that just appeared: set the <strong>sSuffix</strong> attribute to something like 'A', otherwise you'll end up having clashing names </li>
+<li>And for the second function you also have to add the first skincluster (.._TWEAKER) into the <em>sAdditionalAttachDeformers()</em> list, so it also follows the first one</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../squashStretch/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Squash/Stretch">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Squash/Stretch
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../shapeEditor1/" class="md-footer__link md-footer__link--next" aria-label="Next: Shape Editor I">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Shape Editor I
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../javascripts/scroll-behavior-toggle.js"></script>
+      
+    
+  </body>
+</html>

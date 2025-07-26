@@ -1,0 +1,2038 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../faceTweakerCtrls/">
+      
+      
+        <link rel="next" href="../shapeEditor2/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Shape Editor I - kangaroo-builder.com</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="sky" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#its-not-the-pose-editor" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="kangaroo-builder.com" class="md-header__button md-logo" aria-label="kangaroo-builder.com" data-md-component="logo">
+      
+  <img src="../../assets/kangaroo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            kangaroo-builder.com
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Shape Editor I
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="kangaroo-builder.com" class="md-nav__button md-logo" aria-label="kangaroo-builder.com" data-md-component="logo">
+      
+  <img src="../../assets/kangaroo.png" alt="logo">
+
+    </a>
+    kangaroo-builder.com
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Builder
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Builder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../builder/builderGeneral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../builder/workflowTricks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workflow Tricks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../builder/jsonEditor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JSON Editor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Puppet
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Puppet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../puppet/puppetGeneral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../puppet/limbsReference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Limbs Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../puppet/bellCollider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bell Collider
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../puppet/dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../puppet/tweakerCtrls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Puppet Tweaker Ctrls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Body
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Body
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../body/deformations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deformations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../body/motionCapture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Motion Capture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../body/poseEditor1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pose Editor I
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../body/poseEditor2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pose Editor II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Face
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Face
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faceGeneral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eyes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Eyes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Brows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mouth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mouth
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../squashStretch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Squash/Stretch
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faceTweakerCtrls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Face Tweaker Ctrls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Shape Editor I
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shape Editor I
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#its-not-the-pose-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      It's NOT the Pose Editor!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Combos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#combos-create-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combos - Create Them
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combos-multiplyminimum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combos - Multiply/Minimum
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combos-add-percentage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combos - add Percentage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-sliders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extra Sliders
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mirror" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mirror
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mirror">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mirror-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mirror Table
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actually-mirroring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actually Mirroring
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inbetweens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inbetweens
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inbetweens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interpolate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpolate
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meshes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meshes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Meshes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addsecondarymeshes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meshes - Add Secondary Meshes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meshesmainmesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meshes - Main Mesh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meshes-model-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meshes - Model Change
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Meshes - Model Change">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#same-topology" class="md-nav__link">
+    <span class="md-ellipsis">
+      same topology
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#different-topology" class="md-nav__link">
+    <span class="md-ellipsis">
+      different topology
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#different-topology-and-different-shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      different topology and different shape
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shapeEditor2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shape Editor II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/python1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python I
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/python2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/pythonLibrary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/toolsSkinCluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SkinCluster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/toolsWeightmaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Weightmaps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/toolsGeometry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Geometry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/toolsDeformerImport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deformer Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/toolsPlaneCutter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Plane Cutter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../picker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Animator Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelChange/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Change
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameEngines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Game Engines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelNamingConvention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Naming Convention
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    License
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#its-not-the-pose-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      It's NOT the Pose Editor!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Combos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#combos-create-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combos - Create Them
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combos-multiplyminimum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combos - Multiply/Minimum
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combos-add-percentage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combos - add Percentage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-sliders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extra Sliders
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mirror" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mirror
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mirror">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mirror-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mirror Table
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actually-mirroring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actually Mirroring
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inbetweens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inbetweens
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inbetweens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interpolate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpolate
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meshes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meshes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Meshes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addsecondarymeshes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meshes - Add Secondary Meshes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meshesmainmesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meshes - Main Mesh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meshes-model-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meshes - Model Change
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Meshes - Model Change">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#same-topology" class="md-nav__link">
+    <span class="md-ellipsis">
+      same topology
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#different-topology" class="md-nav__link">
+    <span class="md-ellipsis">
+      different topology
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#different-topology-and-different-shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      different topology and different shape
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Shape Editor I</h1>
+
+<p>The Shape Editor is a tool for modeling Facial Shapes (targets).  </p>
+<div class="admonition info">
+<p class="admonition-title">Video</p>
+<p>To see how the Shape Editor looks in action, you can also watch this <a href="https://www.youtube.com/embed/cEBJ-tPLMuU">Video</a>.<br />
+But keep in mind that some menu options changed since the time of making that video.</p>
+</div>
+<p>You can open the <em>Shape Editor</em> with the shelf button <img alt="Alt text" src="../../images/shapeEditor_shelfButton.jpg" /> </p>
+<p><img alt="Alt text" src="../../images/shapeEditor_ui.jpg" />   <br />
+On the left side of the UI you see all the Main Targets. And on the right side you see the Combo Targets.</p>
+<h2 id="its-not-the-pose-editor">It's NOT the Pose Editor!</h2>
+<p>You might find a few similarities to the <a href="../../body/poseEditor1/">Pose Editor</a>, but the architecture and how we
+use it is quite different:   </p>
+<ul>
+<li>The <em>Pose Editor</em> runs on the actual rig, but the <em>Shape Editor</em> runs on another file that gets imported in the <em>importBlendShapeFile()</em>
+and gets applied to the rig in the function <em>blendShapesAndSliders()</em></li>
+<li>While the <em>Pose Editor</em> focuses on how shapes are driven and can add shapes on its own, the <em>Shape Editor</em> mainly (apart from combos) is just
+about sculpting and managing the shapes.</li>
+</ul>
+<h2 id="getting-started">Getting Started</h2>
+<p>You can select any polygon mesh, and click the <strong>&lt;&lt;</strong> button:  <br />
+<img alt="Alt text" src="../../images/shapeEditor_initiate.gif" /><br />
+If that polygon mesh wasn't used with the <em>Shape Editor</em> yet, it'll ask you to choose a <em>Target List</em>. <br />
+By default you just have <em>cartoon</em> and <em>general</em>. If you are creating a blendShape rig where you want to do most 
+shapes including mouth, eyes, etc with blendShapes - choose <em>general</em>. But if you are doing a rig where you want
+do do most tarets with splines, then <em>cartoon</em> is a better start, because it only lists the targets that doesn't 
+have spline rigs.  </p>
+<p><em>What did he do under the hood?</em><br />
+He created a new blendShape node. And all the Targets that you see in the UI are basically blendShape Targets on 
+the blendShape, just like you've already used before:  <br />
+<img alt="Alt text" src="../../images/shapeEditor_blendShape.jpg" />  </p>
+<div class="admonition info">
+<p class="admonition-title">Kangaroo Tool Tip</p>
+<p>While in the gif above I just selected vertices and moved them, you can do a lot more. For example you can use
+the sculpting tools (<strong>Mesh Tools -&gt; Sculpting Tools</strong>) or use some Kangaroo Geometry Tools such as the <strong>Match</strong>
+or <strong>Smooth Vertices</strong> tools.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You are not limited to just <em>general</em> or <em>cartoon</em>! Later in <a href="#adding-more-main-targets">Adding More Main Targets</a>
+you'll see how to either create your own custom lists or just add targets to your existing collection. </p>
+</div>
+<p>Now to sculpt some main targets by clicking the <em>Edit</em> button and sculpt:
+<img alt="Alt text" src="../../images/ShapeEditor_EDIT.gif" />  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here we have a similarity to the <em>Pose Editor</em> but also a difference. While in the <em>Pose Editor</em> you also have those
+<em>EDIT</em> buttons that you use to sculpt the Targets, in the <em>Pose Editor</em> you have to select the meshes, while in the
+<em>Shape Editor</em> it just does it on all the meshes that are in the collection. </p>
+</div>
+<h2 id="combos">Combos</h2>
+<h3 id="combos-create-them">Combos - Create Them</h3>
+<p>Combo targets is the Table on the right side. You can create any combination between 2, 3, 4, ... Main Targets. Most of the
+time we create combination of just 2 targets. Sometimes 3, and very rarely 4. <br />
+For a combination of 2 targets the combo would be called for example <em>cornerUp_upperUp</em>. A combination of 3 would be
+<em>cornerUp_noseWrinkler_upperUp</em>. It's basically the main targets' names ordered alphabetically and separated by a single _.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You will never have to name them yourself, the tool takes care of it. You just need to be aware that whenever you create a <em>Main Target</em>
+yourself, it <em>cannot</em> have the _ sign in there.</p>
+</div>
+<p>Creating them is easy, just select the main targets, right click -&gt; <strong>create combo Targets</strong>:<br />
+<img alt="Alt text" src="../../images/shapeEditor_comboTargets.gif" /></p>
+<h3 id="combos-multiplyminimum">Combos - Multiply/Minimum</h3>
+<p>In the gif above you can see that in the end we switch between the evaluation modes <em>Muliply</em> and <em>Minimum</em>.<br />
+<em>Multiply</em> means that the main targets are just multiplied. So if <em>cornerUp</em> is activated 0.8 and <em>upperUp</em> is activated 0.5,
+the combination will be 0.4 (0.8 * 0.5).<br />
+And in <em>Minimum</em> in the same example it would be 0.5, because 0.5 is the smaller one between 0.8 and 0.5.  </p>
+<p>Both modes have pros and cons. If you use <em>Multiply</em>, the result will be smoother but the issue is that the shape will not 
+be driven linearly while all main targets are being activated the same time. For example if you have 2 main targets that are both 
+activated as 0.5, the combo target will be 0.25. But ideally it should also be 0.5. Look at this example where we have
+a combination of 3 Main Targets. See how it moves slower at smaller values, and then speeds up at higher values?
+<img alt="Alt text" src="../../images/shapeEditor_multiply.gif" />  </p>
+<p>If you need it to run linearly, you can switch to <em>Minimum</em>. If all main targets are 0.5, the combo target would be 0.5, too. But <em>Minimum</em> has
+the ugly disadvantage that it's not as smooth as <em>Multiply</em>. In certain situations you'll find that as one main target is being 
+activated slowly, the combo might suddenly change from getting activated to not reacting.<br />
+Look at this example. See how it moves more linear, but if I move one alone it starts activating at one point? Animators hate that!
+<img alt="Alt text" src="../../images/shapeEditor_minimum.gif" />  </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The disadvantages of both modes (<em>Multiply</em> and <em>Minimum</em>) are only getting worse the more Main Targets you use for the 
+combo. So keep it to a minimum! Any combination of more than 3 targets can get very nasty.</p>
+</div>
+<h3 id="combos-add-percentage">Combos - add Percentage</h3>
+<p>When you open the blendShapes.ma on the <em>THOMAS</em> asset, you'll see a combo called jawOpen50_mouthClose. This just means
+that the jawOpen will only go to 0.5 (50 %):<br />
+<img alt="Alt text" src="../../images/shapeEditor_comboWithPercantage.gif" /> <br />
+Try it out! But don't overuse them. The art of sculpting shapes is making this work with the simplest logics. But if you
+do need the extra complexity, it's there.<br />
+Changing and adding percentages happens through the marking menu:<br />
+<img alt="Alt text" src="../../images/shapeEditor_setPercentage.jpg" />   </p>
+<h2 id="extra-sliders">Extra Sliders</h2>
+<p>At the bottom you see a lot of sliders. Those are just representations of how the rig will later set them up. So they are basically
+a great way to get a feeling of how they will work later. <br />
+On each slider you could also isolate the targets with the right click menu, so you can see what targets are driven by them. <br />
+Open the Shape Editor File from the templates asset <em>THOMAS</em>, and play around with the sliders:<br />
+<img alt="Alt text" src="../../images/shapeEditor_sliders.gif" />  </p>
+<h2 id="mirror">Mirror</h2>
+<p>Mirroring contains 2 parts. <em>Creating Mirror</em> Table, and actually <em>Mirroring</em></p>
+<h3 id="mirror-table">Mirror Table</h3>
+<p>Right click on the mesh in the <em>Mesh Table</em> at the bottom right: <br />
+<img alt="Alt text" src="../../images/shapeEditor_mirrorTable.gif" /> <br />
+You can choose between:</p>
+<ul>
+<li>middle mesh, edgeflow: maping vertices through the middle edge algorithm</li>
+<li>middle mesh, vertex positions, mapping through vertex positions</li>
+<li>middle mesh, face points: finds point on face, and does barycentric mapping</li>
+<li>side meshes, ids: needs 2 meshes with same vertex orders </li>
+<li>side meshes, vertex positions: needs 2 meshes, maps by vertex positions</li>
+<li>side meshes, face points, needs 2 meshes, maps by point on face and barycentric coordinates</li>
+</ul>
+<h3 id="actually-mirroring">Actually Mirroring</h3>
+<p>Mirroring also works on vertex selection. But you do need to right click on the actual mesh for the mirror.
+<img alt="Alt text" src="../../images/shapeEditor_mirror.gif" />    </p>
+<div class="admonition warning">
+<p class="admonition-title">Don't Forget</p>
+<p>Do not forget to select the mesh in scene! Sometimes we assume that when we right click on the actual mesh in the UI it
+would do the mesh. But from the power of being able to select vertices comes the responsibility to also select the mesh in scene.</p>
+</div>
+<h2 id="inbetweens">Inbetweens</h2>
+<p>You can add inbetweens to any Target.
+<img alt="Alt text" src="../../images/shapeEditor_inbetween.gif" /> </p>
+<h3 id="interpolate">Interpolate</h3>
+<p>Inbetweens are basically another shape stored in the node. It may not appear like this at first because when you apply the 
+inbetween, it gives it a default shape which is the interpolated shape at the time of when you apply it.<br />
+BUT if you change the Full Target, the inbetween will NOT change.<br />
+But there's a solution to it - you can re-interpolate the inbetweens. You'll loose the shape that you sculpted on the inbetween, but
+it'll follow again that the full shape does. You'll see the options on the right click menu:  <br />
+<img alt="Alt text" src="../../images/shapeEditor_inbetweenInterpolate.jpg" />   </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You'll see the words <em>All Inbetweens</em> and <em>Closest Inbetwween</em> a lot in the <em>Shape Editor</em>. It's relevant when you 
+have more than one inbetween. So in the picture above where there are 3 inbetweens (red marks) the current weight
+is closer to the first one, therefore the <em>Closest Inbetween</em> would only touch the first one. </p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Watch Out</p>
+<p>When the <em>blendShapesAndSliders()</em> adds the blendShapes, the logic of inbetweens is a bit complicated because of a few
+mathematical challenges on how those inbetweens work. This means in certain situations you might find things behaving a bit strange. <br />
+It's recommended to keep inbetweens to minimum. And if you do use them, watch out for the results carefully.</p>
+</div>
+<h2 id="meshes">Meshes</h2>
+<h3 id="addsecondarymeshes">Meshes - Add Secondary Meshes</h3>
+<p>Easy, just select them and add them with the right click menu:
+<img alt="Alt text" src="../../images/shapeEditor_addMeshes.gif" />   </p>
+<div class="admonition info">
+<p class="admonition-title">Kangaroo Tool Tip</p>
+<p>By default they are just sitting there and not following the main skin. But you can make it follow the skin with
+the <a href="#makemeshesfollow">Tools</a> explained below.</p>
+</div>
+<h3 id="meshesmainmesh">Meshes - Main Mesh</h3>
+<p>It's important to keep the Main Mesh (<em>skin</em> in this example) as the main mesh. It's usually always the case, unless
+you start replacing a few meshes. But it's easily fixed with right click menu:<br />
+<img alt="Alt text" src="../../images/ShpeEditor_mainmesh.gif" />   </p>
+<h3 id="meshes-model-change">Meshes - Model Change</h3>
+<h4 id="same-topology">same topology</h4>
+<p>If the model changed in topology, it's easy. Just select the new mesh, and then with right click on the mesh that
+you want to change -&gt; <strong>Model Change from "xxx" to "xxx"</strong>
+<img alt="Alt text" src="../../images/shapeEditor_modelChange.jpg" />   </p>
+<h4 id="different-topology">different topology</h4>
+<p>If the overall shape is still the same and modeling just changed the topology a bit, it's a bit of a manual process,
+but it's not difficult:<br />
+1. rename the old mesh<br />
+2. restart the shape editor<br />
+3. <a href="#addsecondarymeshes">add the new mesh</a> (with correct name!)<br />
+4. <a href="#warp">warp</a> the new mesh to the old mesh <br />
+5. if the old mesh was the main mesh: set it as <a href="#meshesmainmesh">Main Mesh</a>   <br />
+6. check the lips on open targets! Targets like <em>jawOpen</em>. <em>upperUp</em> or <em>lowerDown</em> can get screwed on warp. If they 
+are screwed, either fix them manually or try the <a href="#warp-uvs">Warp UVs</a></p>
+<h4 id="different-topology-and-different-shape">different topology and different shape</h4>
+<p>If the topology is different AND the shape is entirely different, we are basically talking about making a new character.
+Check <a href="#transfer-to-new-character">Transfer to New Character</a> further below.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../faceTweakerCtrls/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Face Tweaker Ctrls">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Face Tweaker Ctrls
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../shapeEditor2/" class="md-footer__link md-footer__link--next" aria-label="Next: Shape Editor II">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Shape Editor II
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../javascripts/scroll-behavior-toggle.js"></script>
+      
+    
+  </body>
+</html>

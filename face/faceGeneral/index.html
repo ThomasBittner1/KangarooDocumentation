@@ -1,0 +1,1919 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../body/poseEditor2/">
+      
+      
+        <link rel="next" href="../eyes/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>General - kangaroo-builder.com</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="sky" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#puppet-limbs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="kangaroo-builder.com" class="md-header__button md-logo" aria-label="kangaroo-builder.com" data-md-component="logo">
+      
+  <img src="../../assets/kangaroo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            kangaroo-builder.com
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              General
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="kangaroo-builder.com" class="md-nav__button md-logo" aria-label="kangaroo-builder.com" data-md-component="logo">
+      
+  <img src="../../assets/kangaroo.png" alt="logo">
+
+    </a>
+    kangaroo-builder.com
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Builder
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Builder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../builder/builderGeneral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../builder/workflowTricks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workflow Tricks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../builder/jsonEditor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JSON Editor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Puppet
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Puppet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../puppet/puppetGeneral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../puppet/limbsReference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Limbs Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../puppet/bellCollider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bell Collider
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../puppet/dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../puppet/tweakerCtrls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Puppet Tweaker Ctrls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Body
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Body
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../body/deformations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deformations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../body/motionCapture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Motion Capture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../body/poseEditor1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pose Editor I
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../body/poseEditor2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pose Editor II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Face
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Face
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#puppet-limbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Puppet Limbs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blendshapes-vs-splines" class="md-nav__link">
+    <span class="md-ellipsis">
+      BlendShapes vs Splines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blendshapesandsliders" class="md-nav__link">
+    <span class="md-ellipsis">
+      blendShapesAndSliders()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="blendShapesAndSliders()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eyes-brows-and-mouth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eyes, Brows and Mouth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      Some more..
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-your-own-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Define your own Targets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Define your own Targets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ddtargetsasattributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      ddTargetsAsAttributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ddextratargetsliders" class="md-nav__link">
+    <span class="md-ellipsis">
+      ddExtraTargetSliders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ddcorrectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      ddCorrectives
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sliderblueprints" class="md-nav__link">
+    <span class="md-ellipsis">
+      SliderBlueprints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SliderBlueprints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mirror" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mirror
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placing-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      Placing them
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defaultattrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      DEFAULT ATTRS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deformer-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deformer Order
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eyes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Eyes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Brows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mouth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mouth
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../squashStretch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Squash/Stretch
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faceTweakerCtrls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Face Tweaker Ctrls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shapeEditor1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shape Editor I
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shapeEditor2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shape Editor II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/python1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python I
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/python2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/pythonLibrary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/toolsSkinCluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SkinCluster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/toolsWeightmaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Weightmaps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/toolsGeometry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Geometry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/toolsDeformerImport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deformer Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/toolsPlaneCutter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Plane Cutter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../picker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Animator Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelChange/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Change
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameEngines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Game Engines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelNamingConvention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Naming Convention
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    License
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#puppet-limbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Puppet Limbs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blendshapes-vs-splines" class="md-nav__link">
+    <span class="md-ellipsis">
+      BlendShapes vs Splines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blendshapesandsliders" class="md-nav__link">
+    <span class="md-ellipsis">
+      blendShapesAndSliders()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="blendShapesAndSliders()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eyes-brows-and-mouth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eyes, Brows and Mouth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      Some more..
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-your-own-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Define your own Targets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Define your own Targets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ddtargetsasattributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      ddTargetsAsAttributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ddextratargetsliders" class="md-nav__link">
+    <span class="md-ellipsis">
+      ddExtraTargetSliders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ddcorrectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      ddCorrectives
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sliderblueprints" class="md-nav__link">
+    <span class="md-ellipsis">
+      SliderBlueprints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SliderBlueprints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mirror" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mirror
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placing-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      Placing them
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defaultattrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      DEFAULT ATTRS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deformer-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deformer Order
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>General</h1>
+
+<p>Face Rigging in Kangaroo has gotten very powerful in version 5. It's got many different setups to choose
+from for each part - mouth, brows, eyelids, etc and it's got some general squash/stretch ctrls.</p>
+<p>Most of the time you have the option of doing spline setups or blendShapes. You can also mix.</p>
+<p>The first thing to do when you do Face Rig is add the python file <strong>facePro_v18.py</strong> (right click on the Python Files
+in the builder -&gt; <strong>Add File</strong> -&gt; <strong>+default</strong> -&gt; <strong>facePro</strong> -&gt; <strong>facePro_v18.py</strong></p>
+<h2 id="puppet-limbs">Puppet Limbs</h2>
+<p>For things like Tongue (<em>Spine</em>), teeth (<em>SingleTransform</em> or <em>Belt</em>) we can use the puppet limbs that we also use for the body.
+You can also use <a href="../../puppet/tweakerCtrls/">Tweaker Ctrls</a> if you want to give animators some extra modifiers. But make sure
+to first read through <a href="../faceTweakerCtrls/">Face Tweaker Ctrls</a> in here, since those might already give you better options for many cases.  </p>
+<h2 id="blendshapes-vs-splines">BlendShapes vs Splines</h2>
+<p>Most parts of the face (mouth, eyes, ..) come with two options - <em>BlendShapes</em> and <em>Splines</em>.<br />
+There are pros and cons to both approaches.
+Which one you choose depends on a lot of factors, not only the type of character.</p>
+<p>But generally, <strong>use blendShapes if..</strong></p>
+<ul>
+<li>you are doing a realistic character, or</li>
+<li>you have a model team that has the capacity to sculpt blendShapes (not every modeler can model blendShapes!)</li>
+</ul>
+<p><strong>Use Spline rigs, if..</strong></p>
+<ul>
+<li>you have talented riggers (setting up splines requires technical <strong>and</strong> artistic skills)</li>
+<li>you feel that blendShapes would appear a bit to static since they are just turning on/off shapes</li>
+</ul>
+<p>Keep in mind that you can always use the blendShapes on top of the splines as correctives! </p>
+<h2 id="blendshapesandsliders"><em>blendShapesAndSliders()</em></h2>
+<p>For setting up blendShape Ctrls you need to sculpt the shapes with the <a href="../shapeEditor1/">Shape Editor</a>. And make sure
+that the blendShape file you create with the <em>Shape Editor</em> gets imported and baked in the <em>importBlendShapeFile()</em> function.<br />
+Then <em>blendShapesAndSliders()</em> is the function that takes all those baked target meshes and assigns them as blendShapes.  </p>
+<p>It's probably the most complex function inside the whole Kangaroo tool. It knows about a huge list of shapes, and can even do some additional shapes defined in the 
+attributes <em>ddTargetsAsAttributes</em>, <em>ddExtraTargetSliders</em> and <em>ddCorrectives</em>. <br />
+It does all this: </p>
+<ul>
+<li>inverts some against the skinCluster</li>
+<li>splits the targets (mostly left/right, but also others like lip ctrls, brow spline ctrls and upper/lower eyelids)</li>
+<li>creates and connects all the Combo Targets   </li>
+<li>creates many slider ctrls  </li>
+</ul>
+<p>Below you can find an overview of what Targets it accepts.   </p>
+<h3 id="eyes-brows-and-mouth">Eyes, Brows and Mouth</h3>
+<p>For eyelids and mouth the ctrls are pretty much the same when you use the blendShape setup or spline setup. Therefore you can
+use the same blendShapes targets. The only difference is that for the spline rig those blendShape targets act more like correctives:<br />
+<a href="../eyes/#eyelid-blendshapes">Eyelids</a><br />
+<a href="../mouth/#blendshapes">Mouth</a>  <br />
+For the brows the ctrls are different between the blendShape setup and spline setup. That's why we have different sets of targets:<br />
+<a href="../brows/#blendshapes">Brows (BlendShape Setup)</a><br />
+<a href="../brows/#brow-splines-correctives">Brows (Splines Setup)</a>  </p>
+<h3 id="some-more">Some more..</h3>
+<div class="highlight"><pre><span></span><code>squint
+cheekRaiser
+cheekIn
+cheekOut
+puffFront
+mentalis
+chinRaiser
+lipStretch
+neckStretch
+</code></pre></div>
+<h3 id="define-your-own-targets">Define your own Targets</h3>
+<p>But likely you'll hit a point where you want to add a target that you can't find in any of the list. For that case
+we have 3 extra attributes on the <em>blendShapesAndSliders()</em> function: <em>ddTargetsAsAttributes</em>, <em>ddExtraTargetSliders</em> and <em>ddCorrectives</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before reading those, make sure you know about the <a href="../../builder/jsonEditor/">JSON Editor</a>, since adjusting those
+attributes directly would be a nightmare!</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section doesn't explain how to sculpt the targets, it only shows how to specify them in the builder function. For more info
+about actually sculpting them, check the <a href="../shapeEditor2/#adding-more-main-targets">Shape Editor</a></p>
+</div>
+<h4 id="ddtargetsasattributes">ddTargetsAsAttributes</h4>
+<p>See how we have some extra phoneme attributes <em>F</em>, <em>O</em> and <em>U</em> on an already existing ctrl?<br />
+<img alt="Alt text" src="../../images/shapeEditor_extraAttributes.jpg" /> <br />
+You can create as many as you like, define pretty much any ctrls that is there. And if you define a left ctrl, it automatically
+splits the shape and puts it onto the left/right ctrls using the <em>fSplitRadius</em>. 
+<img alt="Alt text" src="../../images/faceGeneral_targetsAsAttributes.jpg" /></p>
+<p>Under <em>sTarget</em> you specify be the name that you define in the <em>Shape Editor</em> (<em>O</em> in the picture above). 
+As the attribute goes to 1.0, the target will be activated.
+You can also add <em>sTargetNeg</em>, which then would get activated as the attribute goes to -1.0.</p>
+<h4 id="ddextratargetsliders">ddExtraTargetSliders</h4>
+<p>With the <em>ddExtraTargetSliders</em> attribute you can create new slider ctrls, like this one:<br />
+<img alt="Alt text" src="../../images/faceGeneral_extraTargetSliderNose.gif" /> <br />
+We've specified it as bMirror=False, and only added the sTargetUp and sTargetDown shapes:
+<img alt="Alt text" src="../../images/faceGeneral_extraTargetSliderNoseJsonEditor.jpg" />  </p>
+<p>Here's another one, where we've set bMirror=True, and also assigned the sTargetIn:<br />
+<img alt="Alt text" src="../../images/faceGeneral_extraTargetSliderCheeks.jpg" />  </p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>You'll see that the <em>blendShapesAndSliders()</em> function creates all the ctrl positions, orientations and scale by guessing based
+on the direction and distance of the targets. But very often you'll want to adjust that. And it's easy - all explained in the
+following chapter <a href="#sliderblueprints">SliderBlueprints</a>. </p>
+</div>
+<h4 id="ddcorrectives">ddCorrectives</h4>
+<p>The <em>ddCorrectives</em> attribute lets you specify some corrective targets. Here the target names are the keys on the left of
+the JSON Editor (<em>CornerDownRotateUp</em>, <em>upperLipUp</em>, <em>upperLipIn</em>):<br />
+<img alt="Alt text" src="../../images/faceGeneral_ddCorrectives.jpg" />  <br />
+In the picture above we just specified some ctrls that are already coming from the face. But it doesn't have to be from the face functions.
+It can also be a ctrl from the puppet.<br />
+Here we created a corrective for when the trunk was down. We actually left the main target (<em>trunkDown</em>) as the default,
+but added Combos. 
+<img alt="Alt text" src="../../images/faceGeneric_elephant.jpg" />  <br />
+Check the <a href="../shapeEditor2/#grab-targets-for-corrective-sculpting">Shape Editor</a> for how to add shape from the rig.</p>
+<h2 id="sliderblueprints">SliderBlueprints</h2>
+<p>Slider Blueprints are NOT the <em>blueprints</em> in the puppet tool. Instead they
+are just some simple joints for the Face Setups. There's no centralized place where you manage them. Instead every 
+function just creates them and puts them into the <em>__sliderBlueprints</em> group. and when you export them, you export them all together.
+<img alt="Alt text" src="../../images/face_sliderBlueprints.jpg" /></p>
+<h3 id="mirror">Mirror</h3>
+<p>While you could theoretically mirror them with the <em>mirror</em> shelf button, usually we mirror them by just not exporting the 
+right side ones, and then the functions create them using the left side ones.
+To specify which ones get exported and which ones not you can switch the <strong>doExport</strong> attribute on each sliderBlueprint joint</p>
+<h3 id="export">Export</h3>
+<p>Exporting works with the button <strong>-export *Slider* BPs-</strong>. You'll find this button on many functions such as <em>BASELidCtrls()</em>,
+<em>blendShapesAndSliders()</em>, <em>parallelAttachTransforms()</em>. And it'll do the same thing on each function, it exports
+ALL the sliderBlueprints, not just the ones of the current function.</p>
+<h3 id="placing-them">Placing them</h3>
+<p><em>Kangaroo</em> tries to estimate the position/orientation/scale according to the actual blendShapes. This doesn't always
+look good by default, so you have the option to adjust it manually.<br />
+Most of the time it's best to build until before <em>parallelAttachTransforms()</em>, and then adjust their locations and scale.
+This way you can test right away if they work well with the blendShape they are driving.<br />
+<img alt="Alt text" src="../../images/face_placeSliderBlueprints.gif" /></p>
+<p>Unfortunately whenever they are driving spline rigs such as the lips spline rig, the live connection from the sliderBlueprints already gets broken
+in the function where they are created. In those cases you just have to guess when giving them good scale values, and rebuild.</p>
+<h2 id="defaultattrs">DEFAULT ATTRS</h2>
+<p>On many functions you'll see that <strong>=== DEFAULT ATTRS ===</strong> button. It's attributes that are usually on the passers of the 
+ctrls that can be used to finetune the setup.  </p>
+<p>But sometimes also pose locators. </p>
+<p>The button lets you mainly <strong>Mirror</strong> or <strong>Fill</strong> the attributes. Filling means putting their values into the functino attribute. </p>
+<div class="admonition warning">
+<p class="admonition-title">Watch Out</p>
+<p>While it often does pose locators, it's not always the case. Check if that function has an extra button for filling 
+the Pose Locator. Or if still unclear, click the <em>Info</em> or <em>Select</em> option in the <em>Default Attrs</em> menu.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Kangaroo Tool Tip</p>
+<p>If you want to update values after you've filled them, the The <a href="../../builder/jsonEditor/">JSON Editor</a> can help you with this. </p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Python</p>
+<p>This <em>Default Attrs</em> button with so many menus is actually relatively easy to script in case you
+want to create a similar button for your own tools. Just check out the <a href="../../python/python1/">Python</a> section</p>
+</div>
+<h2 id="deformer-order">Deformer Order</h2>
+<p>The order how deformers are applied to the meshes is very important. The functions to add influences that you find on all the
+setup functions usually take care of it, but there's many things that can reshuffle the order in a bad way.<br />
+So you'll have to check here and there if the order is still correct:<br />
+<img alt="Alt text" src="../../images/faceGeneral_deformerOrder.jpg" /><br />
+Basically blendShape first, then the main skincluster (the one without a suffix), __TWEAKERS, eye lattices, __BEND and in the end __BENDTOP.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../body/poseEditor2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Pose Editor II">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Pose Editor II
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../eyes/" class="md-footer__link md-footer__link--next" aria-label="Next: Eyes">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Eyes
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../javascripts/scroll-behavior-toggle.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1881 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../face/shapeEditor2/">
+      
+      
+        <link rel="next" href="../python2/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Python I - kangaroo-builder.com</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="sky" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pycharm" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="kangaroo-builder.com" class="md-header__button md-logo" aria-label="kangaroo-builder.com" data-md-component="logo">
+      
+  <img src="../../assets/kangaroo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            kangaroo-builder.com
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python I
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="kangaroo-builder.com" class="md-nav__button md-logo" aria-label="kangaroo-builder.com" data-md-component="logo">
+      
+  <img src="../../assets/kangaroo.png" alt="logo">
+
+    </a>
+    kangaroo-builder.com
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Builder
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Builder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../builder/builderGeneral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../builder/workflowTricks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workflow Tricks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../builder/jsonEditor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JSON Editor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Puppet
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Puppet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../puppet/puppetGeneral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../puppet/limbsReference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Limbs Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../puppet/bellCollider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bell Collider
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../puppet/dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../puppet/tweakerCtrls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Puppet Tweaker Ctrls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Body
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Body
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../body/deformations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deformations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../body/motionCapture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Motion Capture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../body/poseEditor1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pose Editor I
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../body/poseEditor2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pose Editor II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Face
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Face
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../face/faceGeneral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../face/eyes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Eyes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../face/brows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Brows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../face/mouth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mouth
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../face/squashStretch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Squash/Stretch
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../face/faceTweakerCtrls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Face Tweaker Ctrls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../face/shapeEditor1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shape Editor I
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../face/shapeEditor2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shape Editor II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Python I
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python I
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pycharm" class="md-nav__link">
+    <span class="md-ellipsis">
+      PyCharm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simple-way-of-adding-a-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simple way of adding a Function
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Attributes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scene-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scene Selection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buttons
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#marking-menus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marking Menus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#let-the-button-change-your-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Let the Button change your Attributes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#just-buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Just Buttons
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yellow-lights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Yellow Lights
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#progress-bar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Progress Bar
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#progress-bar-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      Progress Bar Window
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-asset-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Asset Info
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-instances-of-a-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple Instances of a Function
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pythonLibrary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/toolsSkinCluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SkinCluster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/toolsWeightmaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Weightmaps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/toolsGeometry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Geometry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/toolsDeformerImport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deformer Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/toolsPlaneCutter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Plane Cutter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../picker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Animator Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelChange/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Change
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameEngines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Game Engines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelNamingConvention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Naming Convention
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    License
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pycharm" class="md-nav__link">
+    <span class="md-ellipsis">
+      PyCharm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simple-way-of-adding-a-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simple way of adding a Function
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Attributes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scene-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scene Selection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buttons
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#marking-menus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marking Menus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#let-the-button-change-your-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Let the Button change your Attributes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#just-buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Just Buttons
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yellow-lights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Yellow Lights
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#progress-bar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Progress Bar
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#progress-bar-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      Progress Bar Window
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-asset-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Asset Info
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-instances-of-a-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple Instances of a Function
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Python I</h1>
+
+<p>As you remember from the builder documentations, everything is written in Python. And we can customize a lot</p>
+<h2 id="pycharm">PyCharm</h2>
+<p>If you have pycharm installed, there's lots of quick ways to jump to a specific code.<br />
+But for that we have to link it first.<br />
+On the settings, 
+<img alt="Alt text" src="../../images/python_pycharm.jpg" /></p>
+<p>And then you can go to any function to the builder and with right click quickly jump to the code.<br />
+<img alt="Alt text" src="../../images/python_goToFunction.gif" /></p>
+<p>Same thing happens on Errors in the Kangaroo Log - those are links you can just click on 
+<img alt="Alt text" src="../../images/python_error.jpg" /></p>
+<h2 id="simple-way-of-adding-a-function">Simple way of adding a Function</h2>
+<p>The simplest way to add a function is just in the character script. Basically the python file that is 
+inside your version folder.<br />
+It's the file that is shown in <em>white</em>, and it's usually the same name ass your asset.</p>
+<p>In there add a function that looks like this:
+<div class="highlight"><pre><span></span><code><span class="nd">@builderTools</span><span class="o">.</span><span class="n">addToBuild</span><span class="p">(</span><span class="n">iOrder</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">simpleFunction</span><span class="p">(</span><span class="n">iLuckyNumber</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">sObjects</span><span class="o">=</span><span class="p">[]):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Hello, your lucky number is </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">iLuckyNumber</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;And the objects are: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">sObjects</span><span class="p">)</span>
+</code></pre></div></p>
+<p>And then to get that into the builder, you need to click the <strong>reload</strong> button. Basically every time you change
+any of the scripts, the builder will only know about it if you click that button. Unless you switch to the
+character with the upper comboboxes, then he'll reload anyway
+<img alt="Alt text" src="../../images/python_reloadButton.jpg" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Forgetting to click the <strong>reload</strong> button is a very common thing with kangaroo begginers. So best write it down ;-)</p>
+</div>
+<p>Now let's look at the function. The important thing is the decorator that starts with <em>@builderTools.add...</em>. 
+If you don't have that, the function won't show up in the Builder.
+Do you see the <strong>iOrder=16</strong> parameter in the code above? That's the order number where shows up in the 
+builder. The numbers are listed on the right side of the <em>Function Table</em>. Basically for finding the correct 
+order number, just look in the table at which place you'd like it to be. If you want the function to run after
+the <em>LoadDeformer()</em>, the priority attribute needs to be something higher than 50.
+<img alt="Alt text" src="../../images/python_order.jpg" /></p>
+<h2 id="function-attributes">Function Attributes</h2>
+<p>Now let's run the function with the <em>Run Selected</em> button. It should come to no surprise that when you change
+the attribute in the builder, he'll print the sentence with the new number.<br />
+<img alt="Alt text" src="../../images/python_runSimpleFunction.jpg" /></p>
+<h2 id="scene-selection">Scene Selection</h2>
+<p>Getting the scene selection into the attributes is quick. On any attribute that is declared with an empty list,
+you can do the right click -&gt; <strong>Scene Selection</strong> option<br />
+<img alt="Alt text" src="../../images/python_selectedObjects.gif" /></p>
+<h2 id="buttons">Buttons</h2>
+<p>Let's add a button. Change the above code to this.</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">buttonFunction</span><span class="p">():</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;a button was clicked&#39;</span><span class="p">)</span>
+
+<span class="nd">@builderTools</span><span class="o">.</span><span class="n">addToBuild</span><span class="p">(</span><span class="n">iOrder</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">dButtons</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;new button&#39;</span><span class="p">:</span><span class="n">buttonFunction</span><span class="p">})</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">simpleFunction</span><span class="p">(</span><span class="n">iLuckyNumber</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">sObjects</span><span class="o">=</span><span class="p">[]):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Hello, your lucky number is </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">iLuckyNumber</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;And the objects are: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">sObjects</span><span class="p">)</span>
+</code></pre></div>
+After clicking the reload button, you'll get this button:
+<img alt="Alt text" src="../../images/python_button.jpg" /></p>
+<h2 id="marking-menus">Marking Menus</h2>
+<p>If you want marking menus into the button, you just nest a few dictionaries:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">buttonA</span><span class="p">():</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;buttonA was clicked&#39;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">buttonB</span><span class="p">():</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;buttonB was clicked&#39;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">buttonC</span><span class="p">():</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;buttonC was clicked&#39;</span><span class="p">)</span>
+
+<span class="nd">@builderTools</span><span class="o">.</span><span class="n">addToBuild</span><span class="p">(</span><span class="n">iOrder</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">dButtons</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;new button&#39;</span><span class="p">:{</span><span class="s1">&#39;buttonA&#39;</span><span class="p">:</span> <span class="n">buttonA</span><span class="p">,</span> <span class="s1">&#39;more buttons&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;buttonB&#39;</span><span class="p">:</span><span class="n">buttonB</span><span class="p">,</span> <span class="s1">&#39;buttonC&#39;</span><span class="p">:</span><span class="n">buttonC</span><span class="p">}}})</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">simpleFunction</span><span class="p">():</span>
+    <span class="k">pass</span>
+</code></pre></div>
+<p>Clicking the reload button with this new code, you'll that that super cool looking marking menu. You can even
+extract the function with that <strong>&lt;--&gt;</strong> button, which can be very handy if the menu gets complex.</p>
+<p><img alt="Alt text" src="../../images/python_markingMenu.gif" /></p>
+<h2 id="let-the-button-change-your-attributes">Let the Button change your Attributes</h2>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">incrementNumber</span><span class="p">(</span><span class="n">iLuckyNumber</span><span class="p">,</span> <span class="n">_uiArgs</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Lucky number is </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">iLuckyNumber</span><span class="p">)</span>
+    <span class="n">iLuckyNumber</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">_uiArgs</span><span class="p">[</span><span class="s1">&#39;iLuckyNumber&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">iLuckyNumber</span><span class="p">))</span>
+
+<span class="nd">@builderTools</span><span class="o">.</span><span class="n">addToBuild</span><span class="p">(</span><span class="n">iOrder</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">dButtons</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;increment&#39;</span><span class="p">:</span><span class="n">incrementNumber</span><span class="p">})</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">simpleFunction</span><span class="p">(</span><span class="n">iLuckyNumber</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Hello, your lucky number is </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">iLuckyNumber</span><span class="p">)</span>
+</code></pre></div>
+<p>See how the button changes the attribute's value? This is basically what all those <em>fill</em> buttons in kangaroo
+are doing:
+<img alt="Alt text" src="../../images/builder_incrementNumber.gif" /></p>
+<h2 id="logging">Logging</h2>
+<p>While you might be happy enough with the print() function, sometimes it's cool if you can
+also log into the Kangaroo Log field at the bottom.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">kangarooTools.report</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">report</span>
+<span class="n">report</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">addLogText</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">)</span>
+</code></pre></div>
+There's just one little catch. You'll have to deselect the function and select it again.
+<em>Why?</em>
+Because after he finishes running, the log shows a generalized report how the whole thing did etc.<br />
+The <em>report.addLogText()</em> is more useful for example after you run've the whole thing and you want to go back
+to the functions and check their logs. You can imagine it'd be a nightmare if in those cases you would have
+just used the print() function.
+<img alt="Alt text" src="../../images/python_reportLog.jpg" /></p>
+<h2 id="just-buttons">Just Buttons</h2>
+<p>Sometimes you just want to add a few buttons but no function to run in the builder.
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">buttonA</span><span class="p">():</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;buttonA was clicked&#39;</span><span class="p">)</span>
+
+<span class="nd">@builderTools</span><span class="o">.</span><span class="n">addToBuild</span><span class="p">(</span><span class="n">iOrder</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">bNoCheckbox</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dButtons</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;buttonA&#39;</span><span class="p">:</span><span class="n">buttonA</span><span class="p">})</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">simpleFunction</span><span class="p">():</span>
+    <span class="k">pass</span>
+</code></pre></div></p>
+<p>The function then looses its checkbox and gets an italic font.
+<img alt="Alt text" src="../../images/python_noCheckBox.jpg" /></p>
+<h2 id="yellow-lights">Yellow Lights</h2>
+<p>By default the lights are always green if the function finished running and red when it errored.
+But sometimes you want to signal to the user that even though it didn't error, it wasn't quite without problems.
+To do that, simply <em>return False</em>.
+<div class="highlight"><pre><span></span><code><span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+And then you get that yellow light:
+<img alt="Alt text" src="../../images/python_yellowLight.jpg" /></p>
+<h2 id="progress-bar">Progress Bar</h2>
+<p>Making use of the progressbar at the bottom is easy.
+<img alt="Alt text" src="../../images/python_progressBar.gif" />
+Just run this code:
+<div class="highlight"><pre><span></span><code>    <span class="kn">import</span><span class="w"> </span><span class="nn">kangarooTools.report</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">report</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+    <span class="n">iCount</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">report</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">resetProgress</span><span class="p">(</span><span class="n">iCount</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iCount</span><span class="p">):</span>
+        <span class="n">report</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">incrementProgress</span><span class="p">()</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.03</span><span class="p">)</span>
+</code></pre></div></p>
+<h2 id="progress-bar-window">Progress Bar Window</h2>
+<p>You can also have this little window you've probably seen on some other tools.
+<img alt="Alt text" src="../../images/python_progressBarExtraWindow.gif" /><br />
+It involes a bit more code though.
+And it's best to put some of it into a <em>try</em> block, because otherwise you'll have that annoying window left if your code
+errors
+<div class="highlight"><pre><span></span><code>    <span class="kn">import</span><span class="w"> </span><span class="nn">kangarooTools.utilsQt</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">utilsQt</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+    <span class="n">iCount</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">qStatusWindow</span> <span class="o">=</span> <span class="n">utilsQt</span><span class="o">.</span><span class="n">QStatusWindow</span><span class="p">(</span><span class="s1">&#39;Extra Window&#39;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">qStatusWindow</span><span class="o">.</span><span class="n">setCount</span><span class="p">(</span><span class="n">iCount</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iCount</span><span class="p">):</span>
+            <span class="n">qStatusWindow</span><span class="o">.</span><span class="n">increment</span><span class="p">()</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.03</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">raise</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">qStatusWindow</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+</code></pre></div></p>
+<h2 id="getting-asset-info">Getting Asset Info</h2>
+<p>Here are some functions for getting the Current Assets
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">kangarooTools.assets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">assets</span>
+<span class="n">assets</span><span class="o">.</span><span class="n">getCurrentAsset</span><span class="p">()</span> <span class="c1"># returns the current asset name</span>
+<span class="n">assets</span><span class="o">.</span><span class="n">getCurrentProject</span><span class="p">()</span> <span class="c1"># returns the current project name</span>
+<span class="n">assets</span><span class="o">.</span><span class="n">getCurrentVersionPath</span><span class="p">()</span> <span class="c1"># returns the absolute version folder inside the *_build* folder</span>
+</code></pre></div></p>
+<h2 id="multiple-instances-of-a-function">Multiple Instances of a Function</h2>
+<p>One some functions such as the <em>fingerPoses()</em> you can do right click -&gt; <em>set function instant count</em>, and then you'll see the
+same function more than once:<br />
+<img alt="Alt text" src="../../images/python_functionInstanceCount.jpg" /><br />
+By default you don't have that option, but you can turn it on with the <em>bCanGetDuplicated</em> flag:
+<div class="highlight"><pre><span></span><code>@builderTools.addToBuild(iOrder=105, dButtons={}, bCanGetDuplicated=True)
+</code></pre></div></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../face/shapeEditor2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Shape Editor II">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Shape Editor II
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../python2/" class="md-footer__link md-footer__link--next" aria-label="Next: Python II">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Python II
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="../../javascripts/scroll-behavior-toggle.js"></script>
+      
+    
+  </body>
+</html>

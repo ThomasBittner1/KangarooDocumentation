@@ -135,3 +135,9 @@ going up or down. And then in the *blendShapesAndSliders()* function they will g
     And if it's still not enough, you can add extra correctives with the **ddCorrectives** attribute
     in *blendShapesAndSliders()* function.
 
+## Trouble Shooting
+
+### for BrowsSplinesSurface the brows are moving in a different direction than the ctrls
+The brows are moving in straight lines of the surface. At this time the best is to adjust the orientation of the ctrls so 
+they are oriented to the lines of the surfaces. (There could be a fix in future to support ctrls going more diagonal)
+

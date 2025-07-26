@@ -14,8 +14,8 @@ Now there's a very important and easy to miss attribute - **bFlipInnerMouthCurve
 are so close together, that in the middle the upper vertices are lower than the lower vertices. If this is the case,
 then you'll need to set that attribute to True. Otherwise False.    
 ![Alt text](../images/mouth_bFlipInnerMouthCurves.jpg)    
-!!! warning
-    This gets forgetten easily! Make sure to check this on every character.
+!!! warning "Don't forget!"
+    Make sure to doublecheck the *bFlipInnerMouthCurves*, you might not notice it's wrong until the very end.
  
 
 And then select the loop of the outer corner of the lips, and press **Create Outer Curves and Locators**
@@ -25,7 +25,13 @@ And then select the loop of the outer corner of the lips, and press **Create Out
 Then click **Create Mouth Pivot**. Imagine if the mouth moves left/right in a sperical motion, where should the center be?  
 That's where you place the *bp_m_mouthPivot*
 
-![Alt text](../images/mouth_mouthPivot.jpg)  
+It's important that the X axis is pointing up, Y axis is pointing back, and the Z axis is pointing to the right.  
+*Why is not not closer to worldspace?* That's because it's closer to how the head joint is. 
+![Alt text](../images/mouth_pivotBlueprintOrientation.jpg)  
+
+!!! warning "Watch out"
+    If when translating the mouth_ctrl up/down/left/right things are moving in wrong directions, check the orientation of this blueprint. 
+    If the lip ctrls are not translating up/down in Y, it could also be the fault of this mouth pivot blueprint.     
 
 ### Blueprints - Slide Surfaces
 This is only for spline rigs. If you leave the *bSPLINE* attribute as False, you can skip this.   
@@ -34,7 +40,14 @@ of the teeth, instead of the shape of the skin.
 For now just shape it roughly, but very likely you'll be revisiting this later and adjust the shape.
 ![Alt text](../images/mouth_slidingPlane.jpg)  
 
+!!! warning "Watch Out"
+    Make sure that this spans from almost the symmetry line to as far back as the lip ctrls should go, and ideally
+    a bit further.  
+    If the lip ctrls or the corner ctrls are doing some very bad jumps or generally some unstable motions, 
+    this surface is often not placed well.
+
 ## Upper and Lower Ctrls
+### Count and Position
 The Lip Ctrls (Upper and Lower Lips Ctrls) are the only dynamic ones, where you can specify how many you'd like.  
 And you do that with the **fLeftLipParamPercs**. Now thats's a bit technical and needs to be understood.
 If you set the attribute to *[0.20, 0.33, 0.5]*, you'll get this many lip ctrls:  
@@ -46,6 +59,10 @@ Or if you don't want the middle, just set it to *[0.33]*
     You see how we don't specify parameters after 0.5? That's because as the name already says it, we only specify 
     the left ones, and the right ones are mirrored. 
 
+### Orientation
+The orientation of those ctrls happens with the slider blueprints (*sliderBp_l_lipsBot1*, *sliderBp_l_lipsBot0*, ..). 
+But unlike the other (simpler) slider blueprints, the ones for the lips are not live!  
+So you have to adjust before running the *BASEMouthCtrls()*, export those and rebuild.
 
 
 ## BlendShapes
@@ -199,6 +216,17 @@ Did you notice that at this point in the Rom between 60 and 75 it's just rotatin
 That's because the small joints are handling the lip rolls.  
 Select the vertices of just the lips (or the whole face and lower the *Rigid/Fade Loops*), and click **Add To Small Joints**.  
 To see the results, check the roll movements a bit later in the Rom that you applied before.
+
+
+#### Fixing Weights
+If your weights got messy because you changed spline joint count (either by adjusting the curves or iSkipSplineJoints flag),
+or if just used the smooth tool too much - there's a way to fix this.
+
+In the FaceSkininng UI, click the “Distribute BigJoints” and “Distribute SmallJoints” buttons.
+
+This grabs the current weights of all the joints, and uses that as a mask while redoing the expand weights operation.
+
+
 
 
 ### Splines - Adjust Ctrl Behaviors

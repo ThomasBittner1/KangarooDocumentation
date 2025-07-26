@@ -75,5 +75,15 @@ for when sculpting Correctives and you want to relax some faces that are collaps
 Here you can slide or move perpendicular some vertices along a curve. It can be useful for sculpting some expressions 
 on a very curved mouth
 
-
  
+## Warp XForms
+This warps xforms between 2 meshes. 
+You have an option to do *blueprint ctrls* for the **Blueprint Rig**.
+So you can use that tool if the proportions changed but topology is the same, or if you are setting up a new character
+that has same topology but different proportions.
+!!! video
+    There's a short video on LinkedIn that demonstrates it:  
+    <a href="https://www.linkedin.com/posts/thomas-bittner-6bb6302_this-is-the-tool-i-use-for-warping-guide-activity-7221427670796910594-lcWI?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABy3u8BK03tH_Bovh-T4-W99NGXldU3f_g" 
+    target="_blank">LinkedIn Post on warpXForms</a>
+
+

@@ -893,6 +893,81 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#jaw" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jaw
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Jaw">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto-translate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auto Translate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Auto Translate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-shape-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      From Shape Editor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#without-shape-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Without Shape Editor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jawopen-blendshape-pose" class="md-nav__link">
+    <span class="md-ellipsis">
+      jawOpen blendShape Pose
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-why-is-the-pose-rig-button-in-the-shape-editor-not-going-to-the-correct-pose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting: Why is the Pose Rig Button in the Shape Editor not going to the correct pose?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-why-does-the-jaw-rotate-sideways-if-i-rotate-it-upwards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting: Why does the jaw rotate sideways if I rotate it upwards?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1697,6 +1772,81 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#jaw" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jaw
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Jaw">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto-translate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auto Translate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Auto Translate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-shape-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      From Shape Editor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#without-shape-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Without Shape Editor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jawopen-blendshape-pose" class="md-nav__link">
+    <span class="md-ellipsis">
+      jawOpen blendShape Pose
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-why-is-the-pose-rig-button-in-the-shape-editor-not-going-to-the-correct-pose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting: Why is the Pose Rig Button in the Shape Editor not going to the correct pose?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-why-does-the-jaw-rotate-sideways-if-i-rotate-it-upwards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting: Why does the jaw rotate sideways if I rotate it upwards?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1865,8 +2015,83 @@ want to create a similar button for your own tools. Just check out the <a href="
 <p>The order how deformers are applied to the meshes is very important. The functions to add influences that you find on all the
 setup functions usually take care of it, but there's many things that can reshuffle the order in a bad way.<br />
 So you'll have to check here and there if the order is still correct:<br />
-<img alt="Alt text" src="../../images/faceGeneral_deformerOrder.jpg" /><br />
-Basically blendShape first, then the main skincluster (the one without a suffix), __TWEAKERS, eye lattices, __BEND and in the end __BENDTOP.</p>
+<div class="highlight"><pre><span></span><code>skinCluster__head_geo__BENDTOP
+skinCluster__head_geo__BEND
+lattice__head_geo__r_EYE
+lattice__head_geo__l_EYE
+skinCluster__head_geo__TWEAKER
+skinCluster__head_geo
+blendShape__head_geo
+</code></pre></div>
+Basically blendShape first, then the main skincluster (the one without a suffix), __TWEAKERS, eye lattices, __BEND and in the end __BENDTOP.
+This is assuming the head geo is called head_geo, so in your case those deformers might be called different.
+You might also not have all of them, or you might have some extra ones.<br />
+<img alt="Alt text" src="../../images/faceGeneral_deformerOrder.jpg" />  </p>
+<h2 id="jaw">Jaw</h2>
+<p>In the simplest form, the jaw ctrl is just a <em>singleBone</em> limb. Make sure that the blueprints look like this, basically the polevector is pointing 
+downwards, and don't use any <em>Adjust Axis Orient</em> values.<br />
+<img alt="Alt text" src="../../images/faceGeneral_jawBlueprints.jpg" /></p>
+<h3 id="auto-translate">Auto Translate</h3>
+<h4 id="from-shape-editor">From Shape Editor</h4>
+<p>If you use the <em>Shape Editor</em>, make sure to keep <em>fOverwriteRotation</em> and <em>fOverwriteTranslation</em> in the 
+<em>jawAutoTranslate()</em> function as <em>None</em>, since those values should be coming from the shape Editor.<br />
+And then see <a href="../shapeEditor2/#getting-jaw-from-the-rig">Shape Editor - Getting Jaw from the Rig</a> to see how to setup that
+in the Shape Editor.<br />
+The extra rotations (X, Y) and all translations are fully activated on the Z rotation that you've specified in the <strong>*</strong> button.</p>
+<h4 id="without-shape-editor">Without Shape Editor</h4>
+<p>If you don't use the Shape Editor, you can set the jaw with the attributes in the image below. Similar to the 
+<em>Shape Editor</em> setup - The extra rotations (X, Y) and all translations are fully activated on the Z rotation 
+(3rd number in <em>OverwriteRotation</em>)</p>
+<p><img alt="Alt text" src="../../images/faceGeneral_jawOpenOverrideValues.jpg" />  </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Don't forget to set those values to <em>None</em> if you are getting the jawOpen values from the <em>Shape Editor</em>! If you
+have some values in there and they are different than what's in the <em>Shape Editor</em>, things can get messy.</p>
+</div>
+<h3 id="jawopen-blendshape-pose">jawOpen blendShape Pose</h3>
+<p>By default the <em>jawOpen</em> blendShape target is NOT getting activated at the same timing of the <em>Auto Translate</em>.    </p>
+<p>Check in this table to see at which value the jawOpen is getting activated:  </p>
+<table>
+<thead>
+<tr>
+<th>Current Functions/Attributes</th>
+<th>rotateZ value he's using for jawOpen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BASEMouthCtrls()</strong> active with <strong>bSPLINES</strong> as <em>True</em></td>
+<td><em>jawOpen</em> entry in the <em>dPoseCtrlValues</em></td>
+</tr>
+<tr>
+<td><strong>BASEMouthCtrls()</strong> active with <strong>bSPLINES</strong> as <em>False</em></td>
+<td><em>Auto Translate</em> (either <em>Shape Editor</em> or override values)</td>
+</tr>
+<tr>
+<td><strong>BASEMouthCtrls()</strong> NOT active</td>
+<td><em>Auto Translate</em> (either <em>Shape Editor</em> or override values)</td>
+</tr>
+</tbody>
+</table>
+<p>So in short - when you doing Mouth splines, it's taking from the <em>dPoseCtrlValues</em>, and it can be an issue that it's 
+different timing than the <em>Auto Translate</em>!<br />
+Therefore when you are doing splines, it's recommended to set the <em>jawOpen</em> in <em>dPoseCtrlValues</em> to the same as the rotateZ that you have in the <em>Shape Editor</em> * button or override value.</p>
+<div class="admonition question">
+<p class="admonition-title">Why does it not just take the jawOpen rotateZ for mouth splines from the ShapeEditor or override values?</p>
+<p>That's because when doing mouth splines, the <em>BASEMouthCtrls()</em> function is also creating locator setup. And it's more important that the
+jawOpen is following the locator setup than following the RotateZ value</p>
+</div>
+<h3 id="troubleshooting-why-is-the-pose-rig-button-in-the-shape-editor-not-going-to-the-correct-pose">Troubleshooting: Why is the <strong>Pose Rig</strong> Button in the Shape Editor not going to the correct pose?</h3>
+<p><strong>Mouth splines:</strong><br />
+There's a little gotcha: If you change the <em>jawOpen</em> in the <em>dPoseCtrlValues</em>, you need to rebuild and reference the rig again. <br />
+This is some sort of exception, since for most other targets the <em>Pose Rig</em> buttons will take the values directly from the builder.</p>
+<p><strong>No Mouth Splines:</strong><br />
+You also need to rebuild/rereference the rig, <strong>even if you change the values in the * button of the Shape Editor!</strong></p>
+<h3 id="troubleshooting-why-does-the-jaw-rotate-sideways-if-i-rotate-it-upwards">Troubleshooting: Why does the jaw rotate sideways if I rotate it upwards?</h3>
+<p>This is a little issue that happens here and there, but here's the fix:<br />
+It's most likely happening because it’s getting the motion from the joints in the blendShape file, and in there the jaw joint
+is at the origin. Either delete the joints in the blendShape file, or set them properly by getting Skin Setup from the rig.<br />
+Or you just disable the jawAutoTranslate function, you may not always need it.</p>
 
 
 

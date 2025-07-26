@@ -1350,51 +1350,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#i-want-to-change-the-orientation-of-a-singlebone-or-singletransform-using-the-adjustaxisorientation-how-do-i-set-those-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      I want to change the orientation of a singleBone or singleTransform using the adjustAxisOrientation. How do I set those values?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#i-have-a-jawopen-shape-in-the-shape-editor-at-which-rotatez-value-of-the-jaw_ctrl-will-it-be-activated-fully" class="md-nav__link">
-    <span class="md-ellipsis">
-      I have a jawOpen shape in the Shape Editor. At which rotateZ value of the jaw_ctrl will it be activated fully?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#in-shape-editor-when-i-click-match-scene-selection-selected-targets-the-jaw-open-pose-not-the-same-that-i-specify-on-the-button" class="md-nav__link">
-    <span class="md-ellipsis">
-      In Shape Editor: when I click “Match Scene Selection Selected Targets”, the jaw open pose not the same that I specify on the * button.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-does-the-jaw-rotate-sideways-if-i-rotate-it-up-reverse-to-open" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why does the jaw rotate sideways if I rotate it up (reverse to open)?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#in-the-shape-editor-its-tricky-to-set-the-jawopen-values-on-the-button-any-tips-on-that" class="md-nav__link">
-    <span class="md-ellipsis">
-      In the shape editor it’s tricky to set the jawOpen values on the * button, any tips on that?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#whats-the-correct-order-of-deformers-on-the-face-rig" class="md-nav__link">
     <span class="md-ellipsis">
       What’s the correct order of deformers on the face rig?
@@ -1639,51 +1594,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#i-want-to-change-the-orientation-of-a-singlebone-or-singletransform-using-the-adjustaxisorientation-how-do-i-set-those-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      I want to change the orientation of a singleBone or singleTransform using the adjustAxisOrientation. How do I set those values?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#i-have-a-jawopen-shape-in-the-shape-editor-at-which-rotatez-value-of-the-jaw_ctrl-will-it-be-activated-fully" class="md-nav__link">
-    <span class="md-ellipsis">
-      I have a jawOpen shape in the Shape Editor. At which rotateZ value of the jaw_ctrl will it be activated fully?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#in-shape-editor-when-i-click-match-scene-selection-selected-targets-the-jaw-open-pose-not-the-same-that-i-specify-on-the-button" class="md-nav__link">
-    <span class="md-ellipsis">
-      In Shape Editor: when I click “Match Scene Selection Selected Targets”, the jaw open pose not the same that I specify on the * button.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-does-the-jaw-rotate-sideways-if-i-rotate-it-up-reverse-to-open" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why does the jaw rotate sideways if I rotate it up (reverse to open)?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#in-the-shape-editor-its-tricky-to-set-the-jawopen-values-on-the-button-any-tips-on-that" class="md-nav__link">
-    <span class="md-ellipsis">
-      In the shape editor it’s tricky to set the jawOpen values on the * button, any tips on that?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#whats-the-correct-order-of-deformers-on-the-face-rig" class="md-nav__link">
     <span class="md-ellipsis">
       What’s the correct order of deformers on the face rig?
@@ -1817,21 +1727,6 @@ To go around that problem, go into the studio library code. Find the file animat
 to
 <div class="highlight"><pre><span></span><code>if maya.cmds.nodeType(node_path) in [“transform”, “joint”]:
 </code></pre></div></p>
-<h3 id="i-want-to-change-the-orientation-of-a-singlebone-or-singletransform-using-the-adjustaxisorientation-how-do-i-set-those-values">I want to change the orientation of a singleBone or singleTransform using the adjustAxisOrientation. How do I set those values?</h3>
-<p>First build the rig with adjustAxisOrientation as 0,0,0. Then manually rotate the slider group of the ctrl to how you want it, and store those values into the adjustAxisOrientation. And then rebuild the rig.</p>
-<h3 id="i-have-a-jawopen-shape-in-the-shape-editor-at-which-rotatez-value-of-the-jaw_ctrl-will-it-be-activated-fully">I have a jawOpen shape in the Shape Editor. At which rotateZ value of the jaw_ctrl will it be activated fully?</h3>
-<p>If you have BASEMouthCtrls function active, and bSPLINES flag is True, it’s the jawOpen entry in the dPoseCtrlValues.
-If you have either BASEMouthCtrls function disabled or bSPLINES flag is False, it will take the rotateZ from the shape editor file (rotateZ of jnt_m_jawMain in the * button)
-However the joint values that are specified in the * button are activated at a different value! They get activated at the value of the rotateZ in the * button. 
-Unfortunately this is a small flaw in the system, those two should generally be called the same time. To go around this issue you can specify the fPoseCtrlValue flag in the jawAutoTranslate function to be the same as what you defined in the dPoseCtrlValues of the BASEMouthCtrls function.
-One extra little gotcha - if you change the ‘jawOpen’ pose in the dPoseCtrlValues, and if you want to click the button “Match Selected Targets Scene Selection” in the Shape Editor to get the shape from the rig, you first have to rebuild the rig and load it in again. Otherwise it would take the old ‘jawOpen’ value from dPoseCtrlValues. This is an exception, because for other poses the shape editor will look directly inside the entries (in the UI) of dPoseCtrlValues</p>
-<h3 id="in-shape-editor-when-i-click-match-scene-selection-selected-targets-the-jaw-open-pose-not-the-same-that-i-specify-on-the-button">In Shape Editor: when I click “Match Scene Selection Selected Targets”, the jaw open pose not the same that I specify on the * button.</h3>
-<p>It could be that the rig doesn’t know yet about those values from the * buttons. Save the blendShape file, rebuild the rig (make sure to have importBlendShapeFile and jawAutoTranslate activated!), and use that newly built rig in the “Transfer from Referenced Rig” section. Best also make sure to turn off the blendshapes in the referenced rig for getting the jaw shape again</p>
-<h3 id="why-does-the-jaw-rotate-sideways-if-i-rotate-it-up-reverse-to-open">Why does the jaw rotate sideways if I rotate it up (reverse to open)?</h3>
-<p>This is most likely happening because it’s getting the motion from the joints in the blendShape file, and in there the jaw joint is at the origin. Either delete the joints in the blendShape file, or set them properly by getting Skin Setup from the rig
-You could also disable the jawAutoTranslate function</p>
-<h3 id="in-the-shape-editor-its-tricky-to-set-the-jawopen-values-on-the-button-any-tips-on-that">In the shape editor it’s tricky to set the jawOpen values on the * button, any tips on that?</h3>
-<p>Yes. Cut the translate/rotate/scale connections of the jaw joint (jnt_m_jawMain) -&gt; place the jaw joint to where you’d like it to be -&gt; screengrab its translate/rotate/scale values -&gt; after reloading the shape editor and the connections are restored, enter those values into the start button</p>
 <h3 id="whats-the-correct-order-of-deformers-on-the-face-rig">What’s the correct order of deformers on the face rig?</h3>
 <p>In the Channel Box, the order should appear like this from top to bottom (so the evaluation order would be reverse of that):
 skinCluster__head_geo__BEND

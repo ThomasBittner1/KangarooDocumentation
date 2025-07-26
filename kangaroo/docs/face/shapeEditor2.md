@@ -33,7 +33,7 @@ This is happening with the **\*** button next to the *jawOpen*. That opens this 
 and add some translation values:  
 ![Alt text](../images/shapeEditor_jawOpenStarButton.jpg)     
 
-!!! tip
+!!! tip "Trick how to find the proper Jaw Values"
     You probably just got a headache from those values because you don't know what space they should be, or how to even enter without seeing the result
     right away!   
     But don't worry, there's a trick:

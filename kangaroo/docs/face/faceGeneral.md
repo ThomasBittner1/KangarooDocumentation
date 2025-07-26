@@ -181,3 +181,68 @@ setup functions usually take care of it, but there's many things that can reshuf
 So you'll have to check here and there if the order is still correct:  
 ![Alt text](../images/faceGeneral_deformerOrder.jpg)  
 Basically blendShape first, then the main skincluster (the one without a suffix), __TWEAKERS, eye lattices, __BEND and in the end __BENDTOP.
+
+
+## Jaw
+
+In the simplest form, the jaw ctrl is just a *singleBone* limb. Make sure that the blueprints look like this, basically the polevector is pointing 
+downwards, and don't use any *Adjust Axis Orient* values.  
+![Alt text](../images/faceGeneral_jawBlueprints.jpg)
+
+### Auto Translate
+#### From Shape Editor
+If you use the *Shape Editor*, make sure to keep *fOverwriteRotation* and *fOverwriteTranslation* in the 
+*jawAutoTranslate()* function as *None*, since those values should be coming from the shape Editor.  
+And then see [Shape Editor - Getting Jaw from the Rig](shapeEditor2.md#getting-jaw-from-the-rig) to see how to setup that
+in the Shape Editor.  
+The extra rotations (X, Y) and all translations are fully activated on the Z rotation that you've specified in the **\*** button.
+
+#### Without Shape Editor
+If you don't use the Shape Editor, you can set the jaw with the attributes in the image below. Similar to the 
+*Shape Editor* setup - The extra rotations (X, Y) and all translations are fully activated on the Z rotation 
+(3rd number in *OverwriteRotation*)
+  
+![Alt text](../images/faceGeneral_jawOpenOverrideValues.jpg)  
+
+!!! Warning
+    Don't forget to set those values to *None* if you are getting the jawOpen values from the *Shape Editor*! If you
+    have some values in there and they are different than what's in the *Shape Editor*, things can get messy.
+
+### jawOpen blendShape Pose
+
+By default the *jawOpen* blendShape target is NOT getting activated at the same timing of the *Auto Translate*.    
+
+Check in this table to see at which value the jawOpen is getting activated:  
+
+| Current Functions/Attributes                             | rotateZ value he's using for jawOpen
+|----------------------------------------------------------|---------------
+| **BASEMouthCtrls()** active with **bSPLINES** as *True*  |  *jawOpen* entry in the *dPoseCtrlValues*          |
+| **BASEMouthCtrls()** active with **bSPLINES** as *False* |  *Auto Translate* (either *Shape Editor* or override values)   |
+| **BASEMouthCtrls()** NOT active                          |  *Auto Translate* (either *Shape Editor* or override values)          |
+
+So in short - when you doing Mouth splines, it's taking from the *dPoseCtrlValues*, and it can be an issue that it's 
+different timing than the *Auto Translate*!  
+Therefore when you are doing splines, it's recommended to set the *jawOpen* in *dPoseCtrlValues* to the same as the rotateZ that you have in the *Shape Editor* * button or override value.
+!!! question "Why does it not just take the jawOpen rotateZ for mouth splines from the ShapeEditor or override values?"    
+    That's because when doing mouth splines, the *BASEMouthCtrls()* function is also creating locator setup. And it's more important that the
+    jawOpen is following the locator setup than following the RotateZ value
+
+### Troubleshooting: Why is the **Pose Rig** Button in the Shape Editor not going to the correct pose?  
+**Mouth splines:**  
+There's a little gotcha: If you change the *jawOpen* in the *dPoseCtrlValues*, you need to rebuild and reference the rig again.   
+This is some sort of exception, since for most other targets the *Pose Rig* buttons will take the values directly from the builder.
+
+**No Mouth Splines:**  
+You also need to rebuild/rereference the rig, **even if you change the values in the * button of the Shape Editor!**
+
+### Troubleshooting: Why does the jaw rotate sideways if I rotate it upwards?
+This is a little issue that happens here and there, but here's the fix:  
+It's most likely happening because it’s getting the motion from the joints in the blendShape file, and in there the jaw joint
+is at the origin. Either delete the joints in the blendShape file, or set them properly by getting Skin Setup from the rig.  
+Or you just disable the jawAutoTranslate function, you may not always need it.
+
+
+
+
+
+ 

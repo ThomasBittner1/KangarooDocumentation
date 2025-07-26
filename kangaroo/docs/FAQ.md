@@ -39,27 +39,6 @@ to
 if maya.cmds.nodeType(node_path) in [“transform”, “joint”]:
 ```
 
-### I want to change the orientation of a singleBone or singleTransform using the adjustAxisOrientation. How do I set those values?
-First build the rig with adjustAxisOrientation as 0,0,0. Then manually rotate the slider group of the ctrl to how you want it, and store those values into the adjustAxisOrientation. And then rebuild the rig.
-
-### I have a jawOpen shape in the Shape Editor. At which rotateZ value of the jaw_ctrl will it be activated fully?
-If you have BASEMouthCtrls function active, and bSPLINES flag is True, it’s the jawOpen entry in the dPoseCtrlValues.
-If you have either BASEMouthCtrls function disabled or bSPLINES flag is False, it will take the rotateZ from the shape editor file (rotateZ of jnt_m_jawMain in the * button)
-However the joint values that are specified in the * button are activated at a different value! They get activated at the value of the rotateZ in the * button. 
-Unfortunately this is a small flaw in the system, those two should generally be called the same time. To go around this issue you can specify the fPoseCtrlValue flag in the jawAutoTranslate function to be the same as what you defined in the dPoseCtrlValues of the BASEMouthCtrls function.
-One extra little gotcha - if you change the ‘jawOpen’ pose in the dPoseCtrlValues, and if you want to click the button “Match Selected Targets Scene Selection” in the Shape Editor to get the shape from the rig, you first have to rebuild the rig and load it in again. Otherwise it would take the old ‘jawOpen’ value from dPoseCtrlValues. This is an exception, because for other poses the shape editor will look directly inside the entries (in the UI) of dPoseCtrlValues
-
-
-###In Shape Editor: when I click “Match Scene Selection Selected Targets”, the jaw open pose not the same that I specify on the * button.
-It could be that the rig doesn’t know yet about those values from the * buttons. Save the blendShape file, rebuild the rig (make sure to have importBlendShapeFile and jawAutoTranslate activated!), and use that newly built rig in the “Transfer from Referenced Rig” section. Best also make sure to turn off the blendshapes in the referenced rig for getting the jaw shape again
-
-
-### Why does the jaw rotate sideways if I rotate it up (reverse to open)?
-This is most likely happening because it’s getting the motion from the joints in the blendShape file, and in there the jaw joint is at the origin. Either delete the joints in the blendShape file, or set them properly by getting Skin Setup from the rig
-You could also disable the jawAutoTranslate function
-
-### In the shape editor it’s tricky to set the jawOpen values on the * button, any tips on that?
-Yes. Cut the translate/rotate/scale connections of the jaw joint (jnt_m_jawMain) -> place the jaw joint to where you’d like it to be -> screengrab its translate/rotate/scale values -> after reloading the shape editor and the connections are restored, enter those values into the start button
 
 
 ### What’s the correct order of deformers on the face rig?

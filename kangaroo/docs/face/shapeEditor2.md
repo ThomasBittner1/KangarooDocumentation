@@ -86,8 +86,7 @@ it in Y, but we use it a lot for some tricks on the brow shapes.
 There are 3 types of tools you need to choose from depending on the situation: *Warp*, *Warp Rigid* and *Warp Wire*.  
 
 !!! video
-    We'll explain here right below. But if you get confused, try to watch that part 
-    [the video from here](https://www.youtube.com/watch?v=cEBJ-tPLMuU&t=4m08s)
+    We'll explain all the objects right below. But you can also watch it in [the video from here (Secondary Meshes)](https://www.youtube.com/watch?v=cEBJ-tPLMuU&t=4m08s).
  
 #### Warp
 If you set the main skin as the Master, the warp will just make meshes follow, and it's using the wrap deformer under the hood:     

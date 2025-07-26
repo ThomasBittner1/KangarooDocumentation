@@ -179,8 +179,20 @@ The button lets you mainly **Mirror** or **Fill** the attributes. Filling means 
 The order how deformers are applied to the meshes is very important. The functions to add influences that you find on all the
 setup functions usually take care of it, but there's many things that can reshuffle the order in a bad way.  
 So you'll have to check here and there if the order is still correct:  
-![Alt text](../images/faceGeneral_deformerOrder.jpg)  
+```
+skinCluster__head_geo__BENDTOP
+skinCluster__head_geo__BEND
+lattice__head_geo__r_EYE
+lattice__head_geo__l_EYE
+skinCluster__head_geo__TWEAKER
+skinCluster__head_geo
+blendShape__head_geo
+```
 Basically blendShape first, then the main skincluster (the one without a suffix), __TWEAKERS, eye lattices, __BEND and in the end __BENDTOP.
+This is assuming the head geo is called head_geo, so in your case those deformers might be called different.
+You might also not have all of them, or you might have some extra ones.  
+![Alt text](../images/faceGeneral_deformerOrder.jpg)  
+
 
 
 ## Jaw

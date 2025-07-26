@@ -1476,6 +1476,50 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Download
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contact
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1790,8 +1834,12 @@ ALL the sliderBlueprints, not just the ones of the current function.</p>
 <p><em>Kangaroo</em> tries to estimate the position/orientation/scale according to the actual blendShapes. This doesn't always
 look good by default, so you have the option to adjust it manually.<br />
 Most of the time it's best to build until before <em>parallelAttachTransforms()</em>, and then adjust their locations and scale.
-This way you can test right away if they work well with the blendShape they are driving.<br />
-<img alt="Alt text" src="../../images/face_placeSliderBlueprints.gif" /></p>
+This way you can test right away if they work well with the blendShape they are driving.  </p>
+<video autoplay muted loop controls width="640">
+    <source src="../../images/face_placeSliderBlueprints.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
 <p>Unfortunately whenever they are driving spline rigs such as the lips spline rig, the live connection from the sliderBlueprints already gets broken
 in the function where they are created. In those cases you just have to guess when giving them good scale values, and rebuild.</p>
 <h2 id="defaultattrs">DEFAULT ATTRS</h2>

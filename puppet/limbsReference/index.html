@@ -473,6 +473,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="SingleTransform/SingleBone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adjustaxisorientation" class="md-nav__link">
+    <span class="md-ellipsis">
+      adjustAxisOrientation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1740,6 +1755,50 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Download
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contact
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1770,6 +1829,21 @@
       SingleTransform/SingleBone
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="SingleTransform/SingleBone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adjustaxisorientation" class="md-nav__link">
+    <span class="md-ellipsis">
+      adjustAxisOrientation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2209,6 +2283,10 @@
 <li>jaw_ctrl (<em>SingleBone</em>)</li>
 </ul>
 <p>You have a quite a lot of options about how much translation, rotation and scale values you want to expose. And also if you want pivot ctrls or super ctrls.</p>
+<h4 id="adjustaxisorientation">adjustAxisOrientation</h4>
+<p>The <em>singleBone</em> has the option of specifying another orientation, in case you want to change the orientation without adjusting the blueprints:<br />
+First build the rig with <em>adjustAxisOrientation</em> as 0,0,0. Then manually rotate the slider group of the ctrl to how you 
+want it, and store those values into the <em>adjustAxisOrientation</em>. And then rebuild the rig.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Be careful with the Scale options. If this limb has child limbs, it's not good to expose all or some scale axes, since 
@@ -2510,7 +2588,7 @@ bones are the IK, while on <em>DogArmLeg</em> the IK is on the first two bones.<
 <img alt="Alt text" src="../../images/puppetLimbs_birdLeg.gif" />      </p>
 <h2 id="clavicle-dogscapula">Clavicle, DogScapula</h2>
 <h3 id="auto-clavicle">Auto Clavicle</h3>
-<p>The <em>Auto Clavicle</em> needs to be activated on the arm limbs!: <br />
+<p>The <em>Auto Clavicle</em> needs to be activated on the arm limbs: <br />
 <img alt="Alt text" src="../../images/puppetLimbs_autoclavicle.jpg" />     </p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -2540,8 +2618,10 @@ gif the left one is 1.0 and the right one is 0.0:<br />
 For most cases you'll want to keep <em>Pivot On End</em> at 1.0, and then let animators use the extra secondary ctrls to
 do some fine tuning:<br />
 <img alt="Alt text" src="../../images/spineLimbs_clavicleSecondaryCtrls.gif" />    </p>
-<p>And for automatically folling the arm, animators have a few options:<br />
-<img alt="Alt text" src="../../images/puppetLimbs_autoScapula.gif" />     </p>
+<p>And for automatically folling the arm, animators have a few options - they can either have it rotate (aim), or
+they can have it locked in position to the arms.</p>
+<p><img alt="Alt text" src="../../images/puppetLimbs_autoScapula.gif" />   <br />
+Especially the <em>autoVert</em> attribute is unavoidable when animators are animating a walk </p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>While dogs and cats in real live both rotate and translate their scauplas on the walk, dogs rotate them more than 

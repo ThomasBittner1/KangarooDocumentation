@@ -1314,15 +1314,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#i-got-an-error-that-numpy-is-not-installed" class="md-nav__link">
-    <span class="md-ellipsis">
-      I got an error that numpy is not installed
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#after-building-the-character-some-vertices-are-stretched-to-the-origin" class="md-nav__link">
     <span class="md-ellipsis">
       After building the character, some vertices are stretched to the origin
@@ -1523,6 +1514,50 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Download
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contact
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1562,15 +1597,6 @@
   <a href="#does-it-work-in-linux-or-mac" class="md-nav__link">
     <span class="md-ellipsis">
       Does it work in Linux or Mac?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#i-got-an-error-that-numpy-is-not-installed" class="md-nav__link">
-    <span class="md-ellipsis">
-      I got an error that numpy is not installed
     </span>
   </a>
   
@@ -1765,20 +1791,17 @@
 
 <h1 id="faq">FAQ</h1>
 <h3 id="which-maya-versions-are-supported">Which Maya versions are supported?</h3>
-<p>Maya 2022
-Maya 2023
-Maya 2024
-Maya 2025</p>
+<p>Maya 2022 (Windows)
+Maya 2023 (Windows, Linux)
+Maya 2024 (Windows, Linux)
+Maya 2025 (Windows, Linux)</p>
 <h3 id="does-it-work-in-linux-or-mac">Does it work in Linux or Mac?</h3>
 <p>The latest version 5 does support all three systems</p>
-<h3 id="i-got-an-error-that-numpy-is-not-installed">I got an error that numpy is not installed</h3>
-<p>You need numpy python module. You can install it like this in a command prompt:
-“C:\Program Files\Autodesk\Maya2022\bin\mayapy.exe” -m pip install ‐‐user numpy</p>
 <h3 id="after-building-the-character-some-vertices-are-stretched-to-the-origin">After building the character, some vertices are stretched to the origin</h3>
-<p>Most likely this is because the loadDeformer function is skinning some influences that don’t exist in the rig anymore. If those influences don’t exist in the rig, the loadDeformer function will create them as simple joints outside the hierarchy.
+<p>Most likely this is because the loadDeformer function is skinning some influences that don’t exist in the rig anymore. If those influences don’t exist in the rig, the <em>loadDeformer()</em> function will create them as simple joints outside the hierarchy.
 To debug that, either just run until loadDeformer or Run All with the clean function turned off. Then look at joints outside the hierarchy. Easiest way to fix the weights of those is with the move skinCluster tool</p>
 <h3 id="maya-crashes-very-often">Maya crashes very often</h3>
-<p>Make sure you are in DG mode at the time you open Maya. Windows -&gt; Settings -&gt; Preferences -&gt; Animation: switch to DG at the very top. Then restart maya and verify that it’s still on DG</p>
+<p>Make sure you are in <strong>DG</strong> mode at the time you open Maya. Windows -&gt; Settings -&gt; Preferences -&gt; Animation: switch to DG at the very top. Then restart maya and verify that it’s still on <em>DG</em></p>
 <h3 id="while-im-building-im-getting-a-message-asking-if-to-create-empty-map-mesh-cluster">While I’m building, I’m getting a message asking if to create Empty Map Mesh Cluster</h3>
 <p>The full message could be: “None of the 3 skinClusters exists: splitSkinCluster__eyebrows, skinCluster__eyebrows__MOUTH, skinCluster__eyebrows
 Create an empty Map Mesh Cluster?”

@@ -12,6 +12,12 @@ The most simple limbs are the **SingleTransform** and **SingleBone**. They are r
 
 You have a quite a lot of options about how much translation, rotation and scale values you want to expose. And also if you want pivot ctrls or super ctrls.
 
+#### adjustAxisOrientation
+The *singleBone* has the option of specifying another orientation, in case you want to change the orientation without adjusting the blueprints:  
+First build the rig with *adjustAxisOrientation* as 0,0,0. Then manually rotate the slider group of the ctrl to how you 
+want it, and store those values into the *adjustAxisOrientation*. And then rebuild the rig.
+
+
 !!! warning
     Be careful with the Scale options. If this limb has child limbs, it's not good to expose all or some scale axes, since 
     scaling things non-uniformely will not pass well onto the other child limbs.  
@@ -342,7 +348,7 @@ bones are the IK, while on *DogArmLeg* the IK is on the first two bones.
 
 ## Clavicle, DogScapula
 ### Auto Clavicle
-The *Auto Clavicle* needs to be activated on the arm limbs!:   
+The *Auto Clavicle* needs to be activated on the arm limbs:   
 ![Alt text](../images/puppetLimbs_autoclavicle.jpg)     
 !!! warning
     Make sure you don't have the clavicle/scapula specified in the attachers! In older kangaroo versions you somehow
@@ -373,9 +379,11 @@ For most cases you'll want to keep *Pivot On End* at 1.0, and then let animators
 do some fine tuning:  
 ![Alt text](../images/spineLimbs_clavicleSecondaryCtrls.gif)    
 
-And for automatically folling the arm, animators have a few options:  
-![Alt text](../images/puppetLimbs_autoScapula.gif)     
+And for automatically folling the arm, animators have a few options - they can either have it rotate (aim), or
+they can have it locked in position to the arms.
 
+![Alt text](../images/puppetLimbs_autoScapula.gif)     
+Especially the *autoVert* attribute is unavoidable when animators are animating a walk 
 !!! tip
     While dogs and cats in real live both rotate and translate their scauplas on the walk, dogs rotate them more than 
     translate them, and cats translate them more. You might want to set default values accordingly.

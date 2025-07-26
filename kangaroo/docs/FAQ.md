@@ -1,24 +1,23 @@
 # FAQ
 
 ### Which Maya versions are supported?
-Maya 2022
-Maya 2023
-Maya 2024
-Maya 2025
+Maya 2022 (Windows)
+Maya 2023 (Windows, Linux)
+Maya 2024 (Windows, Linux)
+Maya 2025 (Windows, Linux)
+
 
 ### Does it work in Linux or Mac?
 The latest version 5 does support all three systems
 
-### I got an error that numpy is not installed
-You need numpy python module. You can install it like this in a command prompt:
-“C:\Program Files\Autodesk\Maya2022\bin\mayapy.exe” -m pip install ‐‐user numpy
 
 ### After building the character, some vertices are stretched to the origin
-Most likely this is because the loadDeformer function is skinning some influences that don’t exist in the rig anymore. If those influences don’t exist in the rig, the loadDeformer function will create them as simple joints outside the hierarchy.
+Most likely this is because the loadDeformer function is skinning some influences that don’t exist in the rig anymore. If those influences don’t exist in the rig, the *loadDeformer()* function will create them as simple joints outside the hierarchy.
 To debug that, either just run until loadDeformer or Run All with the clean function turned off. Then look at joints outside the hierarchy. Easiest way to fix the weights of those is with the move skinCluster tool
 
 ### Maya crashes very often
-Make sure you are in DG mode at the time you open Maya. Windows -> Settings -> Preferences -> Animation: switch to DG at the very top. Then restart maya and verify that it’s still on DG
+Make sure you are in **DG** mode at the time you open Maya. Windows -> Settings -> Preferences -> Animation: switch to DG at the very top. Then restart maya and verify that it’s still on *DG*
+
 
 ### While I’m building, I’m getting a message asking if to create Empty Map Mesh Cluster
 The full message could be: “None of the 3 skinClusters exists: splitSkinCluster__eyebrows, skinCluster__eyebrows__MOUTH, skinCluster__eyebrows
@@ -26,7 +25,6 @@ Create an empty Map Mesh Cluster?”
 It happens in the function autoSetupSliders. For splitting some shapes to bottom (jaw) and top (non jaw), he’s trying to get that from one of the mentioned skinClusters. But if they don’t exist, we’ll have to create one. After running that function, you can see there’s a new Mesh called *__MAPS – in this case eyebrows__MAPS. Locate that and check that the faceBottom weights are good, meaning that jaw and below is 1 and everything else is 0. In the eyebrows example, everything needs to be 0 because it has no jaw.
 Then export it under Export -> Maps.
 This will then import it in the imporMapMeshes function, and you should not get that error anymore later.
-
 
 
 ### When I use Studio Library on Kangaroo Rigs, it breaks on saving Animation, and creates some transforms called CURVE1, CURVE2,..

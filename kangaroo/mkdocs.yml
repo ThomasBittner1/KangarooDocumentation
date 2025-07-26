@@ -55,6 +55,8 @@ nav:
   - Model Naming Convention: modelNamingConvention.md
   - FAQ: FAQ.md
   - License: license.md
+  - Download: download.md
+  - Contact: contact.md
 
 markdown_extensions:
   - admonition

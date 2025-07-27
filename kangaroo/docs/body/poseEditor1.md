@@ -240,7 +240,8 @@ edge connection patterns.
 
 Then to do the actual flipping: Right click on Targets -> The **Side:Pose Combinations and Flip Meshes**
 ![Alt text](../images/poseEditor_flipPose.gif)  
-
+!!! warning "Select Mesh"
+    Don't forget to select the mesh! 
 
 ### Split into Left/Right 
 Flipping does not work well in cases where you want to sculpt a little bit in the middle (central line of the character), 

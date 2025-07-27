@@ -1,4 +1,10 @@
 
+## Running Kangaroo Tools
+Many tools in Kangaroo you can run separately in Python. Whenever you click some of the Tool Buttons, check the
+output log at the bottom:
+![Alt text](../images/python_runKangarooToolsInPython.jpg)
+
+
 ## Extra Builds
 In [Python I](python1.md) we've learned how to add some fun python stuff to our character file. But what if we want to make a company wide tool
 that other people can run, too - so everyone can just add the file at the top as shown in this gif:

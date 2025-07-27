@@ -1,4 +1,5 @@
-Most tools in the Kangaroo UI can be called through Python. To see the functions, just check the Log after running them. And then copy/paste that into your Python script.
+A lot of functions used by Kangaroo tools are very useful. This document shows the most useful ones for whenever you want
+to add a python function to your asset.
 
 
 ## Utility Nodes
@@ -105,4 +106,50 @@ Sometimes when the driver values on the sDriverAttr are a result of a specific p
 In this function we also have sDriverAttr, however no fDriverVals. Those are created under the hood from the sCtrlAttr and fCtrlValues flags.
 ``` python
 nodes.setDrivenKeyController(sCtrlAttr, fCtrlValues, sDriverAttr, sDrivenAttr, fDrivenVals, sInTanType='linear', sOutTanType='linear', sFullName=None)
+```
+
+
+## Curves
+
+Import the following functions like this:
+``` python
+import kangarooTools.curves as curves
+```
+
+### Create *pointOnCurveInfo* node
+``` python
+sNode, sPoint = curves.createPointInfoNode(sBeltCurve, fParam=0.5)
+```
+
+That node needs the parameter. To quickly convert between parameter, positions and percentages chech the following chapter.
+
+
+### Getting Curves Values
+
+There's a ton of functions that convert between points, params and percs with functions. They are easy to find since
+they all have the same naming convention.
+
+Here some examples:
+``` python
+#  Getting points from the joint Percentages:
+fPointsOnCurve = curves.getPointsFromPercs(sCurve, [0, 0.2, 0.5, 0.8, 1.0], bReturnNumpy=True)
+
+# Getting points from the joint Percentages:
+fPointsOnCurve = curves.getParamsFromPercs(sCurve, [0, 0.2, 0.5, 0.8, 1.0], bReturnNumpy=True)
+
+# Getting percentages from Params:
+aPercs = curves.getPercsFromParams(sCtrlBpCurves[0], [0, 0.5, 1.4])
+
+```
+
+
+## Joints to Ctrls Weighting
+The *getCtrlWeightings2()* function takes joint params (or percentages) and ctrl params (or percentages) and gives you back a list
+with the length of the joints.
+
+For each joint something like *[2, 3, 0.25]*. In this example it means the weighing for this joint is between ctrl 2 
+and ctrl 3, with the ratio of 0.25 (0.0 would mean fully at ctrl 2, and 1.0 would mean fully at ctrl 3)
+
+``` python
+xCtrlWeightings = xforms.getCtrlWeightings2(fJointParams, fCtrlParams, fIsCircleWithParamLength=None)
 ```

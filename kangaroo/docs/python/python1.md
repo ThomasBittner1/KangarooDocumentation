@@ -28,11 +28,12 @@ def simpleFunction(iLuckyNumber=20, sObjects=[]):
     print ('And the objects are: %s' % sObjects)
 ```
 
-And then to get that into the builder, you need to click the **reload** button. Basically every time you change
-any of the scripts, the builder will only know about it if you click that button. Unless you switch to the
-character with the upper comboboxes, then he'll reload anyway
+
+And then to get that into the builder, you need to click the ![Alt text](../images/python_reloadButtonSmall.jpg) (*reload*) 
+button. Basically every time you change any of the scripts, the builder will only know about it if you click that button. 
+Unless you switch to the character with the upper comboboxes, then he'll reload anyway
 ![Alt text](../images/python_reloadButton.jpg)
-!!! warning
+!!! warning "Remember!"
     Forgetting to click the **reload** button is a very common thing with kangaroo begginers. So best write it down ;-)
 Now let's look at the function. The important thing is the decorator that starts with *@builderTools.add...*. 
 If you don't have that, the function won't show up in the Builder.

@@ -20,5 +20,6 @@ Then after running that function you'll get that joint. And you can adjust its v
 
 Mirroring and Saving those values can be done with the DEFAULTATTRS options.  
 ![Alt text](../images/body_blendJointsFill.jpg)
-Btw - the DEFAULTATTRS thing is a common workflow throughout all the kangaroo tools. Especially when
-we come to the face
+!!! note 
+    the DEFAULTATTRS thing is a common workflow throughout all the kangaroo tools. Especially when
+    we come to the face

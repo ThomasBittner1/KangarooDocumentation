@@ -2,19 +2,26 @@
 Pose Editor is one of the biggest additions in Kangaroo 5.
 
 To open it, click the function *poseEditorApply()* and then the button **Open Editor**:  
-![Alt text](../images/poseEditior_openIt.jpg)  
+![Alt text](../images/poseEditor_openIt.jpg)  
 
 It consists of Interpolators, BlendShape Poses and Ctrl Poses  
 
 
 !!! info "Video" 
     To see how the Pose Editor works in action, you can also watch this [Video](https://www.youtube.com/embed/oPQHf2HOq5o).    
-    Especially the [model update (Python II)](poseEditor2.md#model-change) part has changed.
+    Especially the [model update (Pose Editor II)](poseEditor2.md#model-change) part has changed.
 
-## Interpolators
-Interpolators are little setups that measure (most of the time) the joints to see if and how strong
+## Interpolators - Calculate the Pose
+Interpolators are little setups that analyze the rig to see if and how strong
 we are in a pose.   
-There's a few different types: *signedAngle, cones, mayaPose, upleg, custom*.  
+There's a few different types: 
+
+- signedAngle - simple rotations like elbow, knees
+- cones - 3 dimensional rotations
+- mayaPose - 3 dimensional rotations
+- upleg - specialized for upper leg going up
+- custom - attributes or create your own custom
+
 To add interpolators, just click the *Add* Button at the very top left of the UI. It tells you what you need to select. And the 
 selection order doesn't matter here.  
 ![Alt text](../images/poseEditor_add.jpg)   
@@ -22,12 +29,22 @@ selection order doesn't matter here.
 ### signedAngle
 SignedAngle is the simplest one, and great for simple rotations where you can assume that animators
 usually just rotate it in one angle.
-In the marking menu it says *Select Attribute of Ctrl and Joint*. That means just select the joint, then the ctrl and
+As the right side of the menu says - *Select Attribute of Ctrl and Joint*: select the joint, then the ctrl and
 it in the Channel Box mark it like this:  
 ![Alt text](../images/poseEditior_attribute.jpg)  
 Once it created it, special attention is required on the Angle Axis and Up Axis. It might be a bit  
 confusing, because those are the ones on the joints, not the ctrl! 
 ![Alt text](../images/poseEditor_signedAngle.jpg)
+*Angle Axis* is always the rotation axis of the joints that we want to measure (usually different to the CtrlAttr because
+it's in different space). And the *Up Axis* is one of the other two. 
+*Which one?* Just try it out which one is more stable in your case.
+
+Here's a short video how we create the singedAngle for the knee:
+<video autoplay muted loop controls width="1400">
+    <source src="../../images/poseEditor_creatingSignedAngle.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+In this video we didn't have to set the Angle Axis and Up Axis, becasue on elbows and knees the default is already correct.
 
 
 ### mayaPose
@@ -44,56 +61,56 @@ But it comes with quite a few disadvantages:
 or suddenly all poses having the same output number like 0.25.
 
 - Whenever that happens just try to align them a bit nicer and make sure that you not less than 4 poses.
-  
+
+Here's a short video how we create them for the upper arm:
+<video autoplay muted loop controls width="1920">
+    <source src="../../images/poseEditor_creatingMayaPose.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+
 ### Cone
-Cones just measure how close the joint's angle is to the cone's angle.
+Cones just measure *how small the angle is* between joint and the cone.
 ![Alt text](../images/poseEditor_cone.gif)
-Their main advantage is that you have more options to adjust the timing.   
-But they can get tricky to set up at first.  
-First thing to watch out for is that poses by mistake might be activated for some percentage when we are
-in another pose, or even when we are in default pose!
-!!! warning
-    Poses being activated in default or while fully in another pose can have a very bad impact. Therefore
-    when dealing with cones this should always be watched out carefully.
 
-To handle that, make sure you get familiar with the **Range**
+It's also 3-dimensional poses such as the *MayaPose*, and the first part of just creating them is 
+almost identical to the MayaPose.
+Actually you can even convert between Cones and MayaPose with right-click on the interpolator!
 
-![Alt text](../images/cone_attributes.jpg)  
+But then the algorithm they use for calculating the poses couldn't be more different - and 
+you have more options to *adjust the timing*. And you don't need to have a minimum of 4 poses! Even just one is enough.
+
+Then there's the attribute called **Range**, which is very important! Neglecting this *will* put you in trouble.
+
 The first thing you notice on the Range is that it starts from the higher value and goes to 
-the smaller value, like 60-10 in the example above. This is because we are talking about the angle *difference*.
-So if the angle difference coming from the rig is 0.0, that means we are fully in that pose. 
-The first value (60) is the angle difference from where the pose starts interpolating. 
-It has to be *the same or smaller* than the *rotation distance* of the pose. 
-*What is rotation distance??* 
-Well, in the picture above the rotation is (0,0,-80) so the rotation distance would be 80.
-So even though the angle of the rotation has a negative value, the rotation distance is still positive.
-(if you have a more complex rotation such as (30,0,-80), the rotation difference would be harder to calculate,
-so try to avoid that)
+the smaller value. The first important thing you ahve to pay atttention to is that the Start (bigger value)
+needs to be **equal or smaller than the positive rotation value, and not bigger than 89**:
+![Alt text](../images/cone_attributes.jpg)  
 
-The second issue that comes with cones is that they work great as the rig moves into the pose, but when it moves
+!!! note "If you love math.."
+    Instead of *positive rotation value* the correct explanation is actually the angle *difference*.
+    In the picture above the rotation is (0,0,-45) so the angle distance is 45.
+    So even though the angle of the rotation has a negative value, the rotation distance is still positive.
+    If you have a more complex rotation such as (30,0,-80), the rotation difference would be much harder to calculate,
+    so try to avoid that.
+
+
+Another thing to be aware with cones is that by default they work great as the rig moves into the pose, but when it moves
 further, the pose fades out. And that can get very nasty. 
-Let's look at this example (which happens *a lot* in production!). In here I have range as 15-0, so it starts at 15, 
-and is full when it is at 0. And the issue is as soon as the arm goes just a bit further, the costume (sphere in
-this case) jumps back:  
+Let's look at this example (which happens *a lot* in production!). In here I have range as 15-0, so it starts at 15. 
+Now the issue is as soon as the arm goes just a bit further, the costume (sphere in this case) jumps back:  
 ![Alt text](../images/poseEditor_coneproblem.gif)
 
-Here's the solution - set the attributes like this:  
+Here's the solution - overshoot the rotation of the pose and set a higher end range:  
 ![Alt text](../images/poseEditor_coneSolutionAttributes.jpg)  
-And it'll look much better!
+And immediately it'll look much better!
 ![Alt text](../images/poseEditor_coneSolution.gif)    
 
 !!! warning "Watch Out"
-    When you do a cone pose on the upper arm, make sure to set the spine end joint as the JointParent! Otherwise
+    When you do a cone pose or mayaPose on the upper arm, make sure to set the spine end joint as the JointParent! Otherwise
     you'll hit issues when the clavicle moves around:  
     ![Alt text](../images/poseEditor_coneSpineAsParent.jpg)    
     
-
-
-!!! tip
-    If you are unsure if you should use *cone* or *mayaPose*: Start with one and later convert to the other one with right click on the interpolator.  
-    But don't neglect [signedAngle](#signedangle)! Simple rotations like elbows or knees should be handled with *signedAngle*.
-    And even complex orientaions like from neck or spine can be handled with *signedAngle* in some cases.
-
 
 ### Upleg
 This is a very specialized one just for upper leg rotating upwards like in a sitting pose. 
@@ -127,7 +144,7 @@ would be the actual output value of the distance node.
     this won't work. 
 
 
-## Targets
+## Targets - Manipulate the Rig
 We can do either **BlendShape Targets** (*Correctives*), or **Ctrl Targets**.
 Both of them start in the same way, that you just drag&drop a pose from the *Interpolator Table*
 into the *Targets Table*.  
@@ -143,7 +160,12 @@ And then select them again and click the **EDIT MESH** button. This tells the to
 sculpt on the mesh will go into that Target.   
 
 
-![Alt text](../images/PoseEditor_EditButton2.gif)  
+
+<video autoplay muted loop controls width="1180">
+    <source src="../../images/PoseEditor_EditButton2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+  
 The tool I used in this gif is **Mesh Tools -> Sculpting Tools -> Grap Tool**. But when you have the *EDIT* button 
 activated, you can also select vertices and move them. Or use some of the *Geometry Tools* like *Smooth Vertices* 
 

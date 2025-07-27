@@ -178,10 +178,19 @@ activated, you can also select vertices and move them. Or use some of the *Geome
 
 ### Ctrl Targets
 When you create Targets on Ctrls, it just creates a Ctrl Locator for each Pose that you can move around
-![Alt text](../images/poseEditor_addCtrl.gif)  
+<video autoplay muted loop controls width="1182">
+    <source src="../../images/poseEditor_addCtrl.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+ 
 Whenever you click the **Add/Activate** button, it creates a locator if it doesn't exist yet and selects it. If 
 the locator already exists, it'll only select it.   
 So that's a multi functional button that you'll be clicking a lot.  
+
+!!! Note
+    You might have an attribute on the master group called *Poses Loc VIS* that needs to be set to *On* to 
+    see the locator right away:  
+    ![Alt text](../images/poseEditor_visAttr.jpg)  
 
 In the ctrl hierarchy (outliner) you can see all the locators, for each target one. And those that are activated are shown
 while the others get hidden automatically. This way you could even adjust poses without the UI.

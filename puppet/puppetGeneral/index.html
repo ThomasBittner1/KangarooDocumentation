@@ -1946,9 +1946,13 @@ position separate to the orientation.</p>
 <h3 id="switch-vs-blend">Switch vs Blend</h3>
 <p>By default it's just a switch. Animators prefer that in most cases since it's the simplest:<br />
 <img alt="Alt text" src="../../images/attachers_switchAttr.gif" />  </p>
+<div class="admonition note">
+<p class="admonition-title">Kangaroo Tool Tip</p>
+<p>There's this <a href="../../picker/#space-switch">tool</a> for animators to switch between the spaces.</p>
+</div>
 <p>If you activate the <strong>blend</strong> checkbox, you'll get an extra attribute for each output point:<br />
 <img alt="Alt text" src="../../images/attachers_blendAttributes.gif" />  <br />
-Those attributes DON'T behave the same as constraint weights. Instead it's an additive system
+Those attributes <em>don't</em> behave the same as constraint weights. Instead it's an additive system
 being clamped to stay within 0 and 1.<br />
 Basically from top to bottom they overwrite the previous/upper ones. The first one (in this case <em>parentA</em>)
 is always 1.0 and locked.<br />
@@ -1956,30 +1960,39 @@ If you set <em>parentB</em> to 0.8, <em>parentB</em> has 80 % influence and <em>
 If then you set <em>parentC</em> to 0.5, <em>parentC</em> has 50 %, <em>parentB</em> has 50 % also, and <em>parentA</em> has 0</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Animators usually prefer switch, but blend can be very useful when you setup some special rigs such as props or costumes.  </p>
+<p>Animators usually prefer switch because blend seems very technical. But the blend can be very 
+useful when you setup some special rigs such as props or costumes.  </p>
 </div>
 <h3 id="custom-attachers">Custom Attachers</h3>
-<p>Custom Attachers are primarily used to have some ctrls follow the the geometry or deformers. Most of the time
-we do deformers, which looks like it's following the mesh but actually just has some nodes that replicate the
-deformer behavior at the point where the ctrl is.  </p>
-<p><img alt="Alt text" src="../../images/attachers_customAttacher.gif" />  </p>
+<p>Custom Attachers are primarily used to have some ctrls follow the geometry or deformers. Most of the time
+we make them follow deformers. This looks like the ctrls are following the mesh, but actually they are driven by nodes that replicate the
+deformer behavior at the vertex closest to the ctrl.<br />
+To use them, just set the combo box to <strong>&lt;Custom&gt;</strong> and having the mesh selected, open the <strong>Attach Deformer UI</strong>:<br />
+<img alt="Alt text" src="../../images/attachers_customAttacher.gif" />  </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Custom attachers are heavily used for <a href="../tweakerCtrls/">Tweaker Ctrls</a></p>
 </div>
+<p>You can also specify a vertex at the bottom. But <em>DO NOT</em> use that unless you have to. Because setting a vertex id means having
+geometry data inside the puppet data and that gets messy when the mesh topology changes or you want to reuse the setup
+for another character with different topology:<br />
+<img alt="Alt text" src="../../images/puppet_customAttacherVertexId.jpg" />  </p>
 <h2 id="display-attributes">Display Attributes</h2>
 <h3 id="display_ctrl">display_ctrl</h3>
 <p>In all the template characters there's the <em>display_ctrl</em> that has a lot of display attributes:<br />
 <img alt="Alt text" src="../../images/puppet_displayCtrl.jpg" />  </p>
 <p>And that's just a simple <em>singleTransform</em> limb with its own blueprint:
 <img alt="Alt text" src="../../images/puppet_displayLimb.jpg" /><br />
-But don't parent it around in the puppet tool! It's important that this is at the top, first limb
+Don't move it around in the hierarchy in puppet tool! It's important that this is at the top, first limb
 after the master limb (<em>m_placement</em> in this case)  </p>
 <p>And all the limbs have display attributes to which tag (attribute) they belong to:<br />
 <img alt="Alt text" src="../../images/puppet_displayCtrlAttributes.jpg" />     </p>
+<div class="admonition note">
+<p class="admonition-title">Other Ctrls..</p>
 <p><em>But what about all the ctrls generated in functions outside of the puppet tool?</em><br />
 Usually these functions have an attribute called <em>sDisplayAttr</em>:<br />
 <img alt="Alt text" src="../../images/puppet_displayCtrlFaceFunctions.jpg" />     </p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If you don't like the order of the attributes on the ctrl, those are easily changed on the
@@ -1990,7 +2003,7 @@ and/or reorder entries.
 <h3 id="visibilityattributes">visibilityAttributes()</h3>
 <p>For any ctrls that are not setup-ed for the <em>displayCtrl</em>, you can use the <em>visibilityAttributes()</em> function.
 <img alt="Alt text" src="../../images/puppet_visibilityAttrs.jpg" />   <br />
-Just open the JSONEditor on the <em>dData</em> attribute, and add/adjust entries. If the attribute (most left label,
+Just open the <a href="../../builder/jsonEditor/">JSONEditor</a> on the <em>dData</em> attribute, and add/adjust entries. If the attribute (most left label,
 <em>master.cuffCtrlVis</em> in this image) doesn't exist, he creates one. So you could even specify one that is created 
 on the display_ctrl, and just set it up to also switch some geometry visibility.</p>
 <h3 id="python">Python</h3>
@@ -2005,8 +2018,8 @@ And if you want to just switch all limbs automatically to the latest one, you ca
 button <strong>Maximize All Limbs</strong>:<br />
 <img alt="Alt text" src="../../images/puppet_maximizeLimbs.jpg" /></p>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Don't forget to click the <strong>save</strong> button!</p>
+<p class="admonition-title">Don't Forget!</p>
+<p>Don't forget to click the <strong>save</strong> button after updating limb versions!</p>
 </div>
 <h2 id="feature-ctrl-type">Feature Ctrl Type</h2>
 <p>The <em>Feature Ctrl</em> is a ctrl that holds some of the global arguments for this limb, such as FK2IK Switch or some extra visibiltiy switches.<br />
@@ -2020,7 +2033,7 @@ But make sure that in the hierarchy this ctrl is built before the current limb!<
 <p>This is probably the most widely used one, it creates those cross ctrls:<br />
 <img alt="Alt text" src="../../images/puppetLimbs_featureCrossCtrls.jpg" />  </p>
 <h4 id="shape-on-all-ctrls">Shape on All Ctrls</h4>
-<p>Animators often ask for the global attributes to be accessible on each ctrl. But in Maya you cannot add one attributes onto more than
+<p>Animators often ask for the global attributes to be accessible on each ctrl. But in Maya you cannot add one attribute onto more than
 one ctrl, and the closest thing how to solve this is putting the attributes on a shape node. In Maya you can create one shape node and
 make it appear on more than one transform (ctrl).<br />
 <img alt="Alt text" src="../../images/puppetLimbs_shapeNode.jpg" />   </p>
@@ -2031,14 +2044,13 @@ since you always have to check on the ctrls if there's a shape node.</p>
 </div>
 <h2 id="mirror">Mirror</h2>
 <h3 id="mirror-limbs">Mirror Limbs</h3>
-<p>Mirroring the limbs is easy. Just right click -&gt; miror from selected. <em>Recursive</em> means that he'll also mirror the children:<br />
+<p>Mirroring the limbs is easy. Just right click -&gt; <strong>mirror from selected</strong>. <em>Recursive</em> means that he'll also mirror the children:<br />
 <img alt="Alt text" src="../../images/puppetGeneral_mirrorLimb.gif" />   </p>
 <h3 id="mirror-blueprints">Mirror Blueprints</h3>
 <p>The blueprints will get mirrored automatically. But if you want to have them unsymmetrical, you can specify that with
-the triangle ctrl (<em>bpGlobal_ctrl</em>):<br />
-Left/right limbs:<br />
+the triangle ctrl (<em>bpGlobal_ctrl</em>): <br />
 <img alt="Alt text" src="../../images/puppetGeneral_blueprintMirror.gif" />   </p>
-<p>For some Middle Limbs he'll try to keep the joints in the symmetry axis, unless you tell him not to with the triangle ctrl: <br />
+<p>For Middle Limbs he'll try to keep the joints in the symmetry axis, unless you tell him not to with the triangle ctrl: <br />
 <img alt="Alt text" src="../../images/puppetGeneral_symmetryForMiddleOnes.gif" />   </p>
 <h2 id="nearest-worldspace-matrix">Nearest Worldspace Matrix</h2>
 <p>Animators often want ctrls to be oriented straight in worldspace. 
@@ -2053,8 +2065,12 @@ Those <em>Orient To Nearest...</em> attributes should only be used if orienting 
 <p>While most of the time this is easily adjustable with 
 blueprints, in some places it's more convenient to not rotate them straight.</p>
 <h2 id="joint-parents">Joint Parents</h2>
-<p>The very first attribute on the top starts with <em>PARENTS</em><br />
-This doesn't really change the rig logic, but it specifies where the joints should be parented.</p>
+<p>The very first attribute on the top starts with <em>PARENT</em><br />
+This doesn't really change the rig logic, but it specifies where the joints should be parented to.
+<img alt="Alt text" src="../../images/puppet_skeletonJoints.jpg" /><br />
+See how those joints would be better parented under one of the lower spine joints? That's what you can fix with 
+the <em>PARENT</em> attributee:<br />
+<img alt="Alt text" src="../../images/puppet_skeletonJointsBad.jpg" />  </p>
 
 
 

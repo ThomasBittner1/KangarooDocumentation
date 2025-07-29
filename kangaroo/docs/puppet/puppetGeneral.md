@@ -7,27 +7,28 @@ Let's look at all the cool elements in the UI:
 ![Alt text](../images/puppet_ui.jpg)
 
 The first table shows the **Limbs**, and below is the **Library**. You can just drag a limb from the 
-library into the Limbs. And whatever limb you have selected, you can adjust the limb attributes on the right side
+library into the Limbs. And whatever limb you have selected, you can adjust the **Limb Attributes** on the right side
 
 ## Change the Guide Joint Locations
-To change the Locations, click in this order:  
-1. Clean  
-2. Import BP Skeleton    
-3. Build BP Rig
+To change the Locations, you need the **BP Rig**. And to get the *BP Rig*, click those buttons in the right order:  
+1. **Clean**  
+2. **Import BP Skeleton**    
+3. **Build BP Rig**
 
-You'll do those things a million times, so I just did a GIF for you to show it :-)
+You'll click these 3 buttons together a million times, here's a gif that shows this process:
 ![Alt text](../images/cleanImportBuild.gif)
 
 **BP Skeleton** is a file with simple joints that tells the builder where the locations are.
 And the **BP Rig** is a small rig with ctrls and some logic build on top of the *BP Skeleton* that helps you place it. 
 
-Once you have the BP Rig built, place the joints using the *BP Rig* ctrls. 
+Once you have the BP Rig built, place its ctrls:  
+![Alt text](../images/puppetGeneral_placeBlueprints.gif)  
 
 !!! tip
     A quick way of importing the model is just clicking the button **Import Model**. 
-    This runs the importModel() function from the builder.
+    This runs the importModel() function from the builder.  
+    ![Alt text](../images/puppet_importModel.jpg)
 
-![Alt text](../images/puppetGeneral_placeBlueprints.gif)  
 
 There's a lot of ctrls that can make the placing process very efficient, as long as you move around the ctrls in the
 right order:  
@@ -37,17 +38,18 @@ The feet might overwhelm you a bit at the first time:
 ![Alt text](../images/puppetGeneral_legBlueprints.jpg)   
 But if you have a character that just has shoes, you might be able to get rid of the toes!   
 Then it becomes a little simpler:  
-![Alt text](../images/puppetGeneral_legBlueprintsSimpler.jpg)   
+![Alt text](../images/puppetGeneral_legBlueprintsSimpler.jpg)    
 
-The big ctrl in the middle with the three arrows is the one that tells the orientation of the foot. 
+The big ctrl in the middle with the three arrows ![Alt text](../images/puppet_bigOnWithThreeArrows.jpg) is the one 
+that tells the orientation of the foot. 
 
 !!! Note 
     If you want to have the feet translate in worldspace (animators usually hate it if they are not), you don't actually
-    have to put that ctrl in worldspace. Check [World Orient Ctrl](limbsReference.md#worldorientctrlarmlegik)
+    have to orient that ctrl to be in worldspace. Check [World Orient Ctrl](limbsReference.md#worldorientctrlarmlegik)
 
-The light red sphere ctrls are the pivots that animation will get for doing things like foot roll and footRocker. For the side 
-sphere you might be wondering why there's 2 on each side. That's because they also define the orientation. The pivot point
-is basically in the middle and aiming to them.
+The light red sphere ctrls ![Alt text](../images/puppet_lightRedSphereCtrls.jpg) are the pivots for things like foot roll and footRocker. 
+For the sphere on the inside/outside you might be wondering why there's 2 on each side. That's because they also define the orientation. The pivot point
+is basically in the middle and aiming to one of them.
 
 !!! note
     On the hands you have the same complexity with all the pivots. Because hands also have the same rocker/roll setup, 
@@ -59,8 +61,8 @@ There are 2 very strict rules:
 - **Never export without having built the BP Rig!**  
 - **Never open the previous BP Rig and export from there!**
   
-Always just follow the Clean/Import BP Skeleton/Build BP Rig workflow from above. It's just to keep things clean, 
-and any unintentional change resulting from some bad shortcuts can get expensive when we
+Always follow the 3 button click workflow (Clean -> Import BP Skeleton -> Build BP Rig) from above. It's just to keep things clean. 
+Any unintentional change resulting from some bad shortcuts can get expensive when we
 are talking about animation ctrls.
 
 !!! tip 
@@ -75,13 +77,15 @@ are talking about animation ctrls.
 
 
 ## Adding Limbs
-You can easily add limbs by dragging one from the libarary table into the limbs table:  
-![Alt text](../images/puppetGeneral_addingLimb.gif)   
+You can easily add limbs by dragging one from the libarary table into the limbs table:   
+![Alt text](../images/puppetGeneral_addingLimb.gif)  
+
 And the first thing you do after you created a new limb (and maybe adjusted some attributes) is place the blueprints.
-If you've already built the *Blueprint Rig* at this point, you have to rebuild it.  
-First import the *Blueprint Skeleton*. At this point you could build the *Blueprint Rig*, but often it'll make your
+If you've already built the *BP Rig*, you'll have to rebuild it.  
+First import the *BP Skeleton*. At this point you could build the *Blueprint Rig*, but often it'll make your
 life easier if between building *Blueprint Skeleton* and *Blueprint Rig* you click *Create Missing BP Joints*, 
-and move around **just the root** (Careful with child joints in this step!)     
+and move around **just the root** (Careful with child joints in this step!).  
+Watch this gif to see how it looks in action:  
 ![Alt text](../images/puppetGeneral_limbFirstBlueprintPlacement.gif)  
 
 !!! tip
@@ -91,7 +95,7 @@ and move around **just the root** (Careful with child joints in this step!)
 ## Attachers
 Attachers are all about spaces. For example the Hand IK following the COG or the Spine. 
 And they need to be fully understood to really use Kangaroo efficiently.  
-Look at how many attachers just the arm limb has:  
+Look at how many attachers alone the arm limb has:  
 ![Alt text](../images/attachers_armLeg.jpg) 
 And this is not even everything, with attachers you can even make things follow some deformers!    
 
@@ -104,10 +108,11 @@ For each of the attachers you can add/remove output points by adjusting the coun
 ### translate/rotate/scale
 You see how every attacher has either **(t)**, **(tr)**, **(r)** or **(s)**? Those specify if 
 translate, rotate or scale is affected.   
-Whereever you see **(tr)**, you can split it into *(t)* and *(r)*:  
+Whereever you see **(tr)**, you can split it into *(t)* and *(r)*.  
+In this gif I'm splitting them, and copying from (t) to (r) using the **CTRL+C** and **CTRL+P** 
 ![Alt text](../images/attachers_splitTR.gif)  
 !!! tip
-    This is very important for head or top neck ctrls. Animators always want to control the 
+    This is very useful for head or top neck ctrls. Animators always want to control the 
     position separate to the orientation.
     
 

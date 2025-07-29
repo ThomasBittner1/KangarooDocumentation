@@ -10,7 +10,7 @@ This is an animation tool that can do stuff like:
 
 ## For Animators..
 
-![Alt text](../images/picker.jpg)  
+![Alt text](images/picker.jpg)  
 
 !!! video
     The best way to see how it works is watching the first 1min 45seconds from this [video](https://www.youtube.com/watch?v=5W2JQYoyohQ)
@@ -83,7 +83,7 @@ The tool is installed by default if you've installed Kangaroo-Builder as shown i
 Animators can just open it from the same install that you have.  
 
 But in case they don't have access to it, all you need to give them is the **kangarooAnimation** folder.  
-![Alt text](../images/picker_folder.jpg)
+![Alt text](images/picker_folder.jpg)
 This folder is isolated and is not linking to any other libraries.
 
 If animators have that folder sourced, they can open the UI with those Python lines:

@@ -176,7 +176,7 @@ you start replacing a few meshes. But it's easily fixed with right click menu:
 ![Alt text](../images/ShpeEditor_mainmesh.gif)   
 
 
-### Meshes - Model Change
+### Meshes - Model Change {#meshesmodelchange}
 #### same topology
 If the model changed in topology, it's easy. Just select the new mesh, and then with right click on the mesh that
 you want to change -> **Model Change from "xxx" to "xxx"**

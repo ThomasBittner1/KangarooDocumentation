@@ -12,7 +12,7 @@ But blendShapes, such as in ShapeEditor or PoseEditor need some attention.
 See [Pose Editor Model Update](body/poseEditor2.md#model-change)  
 You might be able to use the *blendShape* option. But if not - the *warp* option should work just fine, too.
 ### Same Topology - Shape Editor model update
-See [Shape Editor Model Update](face/shapeEditor1.md#meshes---model-change)
+See [Shape Editor Model Update](face/shapeEditor1.md#meshesmodelchange)
 ### Same Topology - Other Target geos 
 Any other mesh you can just warp with the [Geometry Tools](tools/toolsGeometry.md#warp-poses)
 

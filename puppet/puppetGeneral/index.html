@@ -1843,23 +1843,24 @@ It generates the blueprints.ma file (guide joints) and the puppet.rig - which th
 <p>Let's look at all the cool elements in the UI:
 <img alt="Alt text" src="../../images/puppet_ui.jpg" /></p>
 <p>The first table shows the <strong>Limbs</strong>, and below is the <strong>Library</strong>. You can just drag a limb from the 
-library into the Limbs. And whatever limb you have selected, you can adjust the limb attributes on the right side</p>
+library into the Limbs. And whatever limb you have selected, you can adjust the <strong>Limb Attributes</strong> on the right side</p>
 <h2 id="change-the-guide-joint-locations">Change the Guide Joint Locations</h2>
-<p>To change the Locations, click in this order:<br />
-1. Clean<br />
-2. Import BP Skeleton  <br />
-3. Build BP Rig</p>
-<p>You'll do those things a million times, so I just did a GIF for you to show it :-)
+<p>To change the Locations, you need the <strong>BP Rig</strong>. And to get the <em>BP Rig</em>, click those buttons in the right order:<br />
+1. <strong>Clean</strong><br />
+2. <strong>Import BP Skeleton</strong>  <br />
+3. <strong>Build BP Rig</strong></p>
+<p>You'll click these 3 buttons together a million times, here's a gif that shows this process:
 <img alt="Alt text" src="../../images/cleanImportBuild.gif" /></p>
 <p><strong>BP Skeleton</strong> is a file with simple joints that tells the builder where the locations are.
 And the <strong>BP Rig</strong> is a small rig with ctrls and some logic build on top of the <em>BP Skeleton</em> that helps you place it. </p>
-<p>Once you have the BP Rig built, place the joints using the <em>BP Rig</em> ctrls. </p>
+<p>Once you have the BP Rig built, place its ctrls:<br />
+<img alt="Alt text" src="../../images/puppetGeneral_placeBlueprints.gif" />  </p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>A quick way of importing the model is just clicking the button <strong>Import Model</strong>. 
-This runs the importModel() function from the builder.</p>
+This runs the importModel() function from the builder.<br />
+<img alt="Alt text" src="../../images/puppet_importModel.jpg" /></p>
 </div>
-<p><img alt="Alt text" src="../../images/puppetGeneral_placeBlueprints.gif" />  </p>
 <p>There's a lot of ctrls that can make the placing process very efficient, as long as you move around the ctrls in the
 right order:<br />
 <img alt="Alt text" src="../../images/puppetGeneral_fingerBlueprints.gif" />  </p>
@@ -1867,16 +1868,17 @@ right order:<br />
 <img alt="Alt text" src="../../images/puppetGeneral_legBlueprints.jpg" /> <br />
 But if you have a character that just has shoes, you might be able to get rid of the toes! <br />
 Then it becomes a little simpler:<br />
-<img alt="Alt text" src="../../images/puppetGeneral_legBlueprintsSimpler.jpg" />   </p>
-<p>The big ctrl in the middle with the three arrows is the one that tells the orientation of the foot. </p>
+<img alt="Alt text" src="../../images/puppetGeneral_legBlueprintsSimpler.jpg" />    </p>
+<p>The big ctrl in the middle with the three arrows <img alt="Alt text" src="../../images/puppet_bigOnWithThreeArrows.jpg" /> is the one 
+that tells the orientation of the foot. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you want to have the feet translate in worldspace (animators usually hate it if they are not), you don't actually
-have to put that ctrl in worldspace. Check <a href="../limbsReference/#worldorientctrlarmlegik">World Orient Ctrl</a></p>
+have to orient that ctrl to be in worldspace. Check <a href="../limbsReference/#worldorientctrlarmlegik">World Orient Ctrl</a></p>
 </div>
-<p>The light red sphere ctrls are the pivots that animation will get for doing things like foot roll and footRocker. For the side 
-sphere you might be wondering why there's 2 on each side. That's because they also define the orientation. The pivot point
-is basically in the middle and aiming to them.</p>
+<p>The light red sphere ctrls <img alt="Alt text" src="../../images/puppet_lightRedSphereCtrls.jpg" /> are the pivots for things like foot roll and footRocker. 
+For the sphere on the inside/outside you might be wondering why there's 2 on each side. That's because they also define the orientation. The pivot point
+is basically in the middle and aiming to one of them.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>On the hands you have the same complexity with all the pivots. Because hands also have the same rocker/roll setup, 
@@ -1888,8 +1890,8 @@ There are 2 very strict rules:</p>
 <li><strong>Never export without having built the BP Rig!</strong>  </li>
 <li><strong>Never open the previous BP Rig and export from there!</strong></li>
 </ul>
-<p>Always just follow the Clean/Import BP Skeleton/Build BP Rig workflow from above. It's just to keep things clean, 
-and any unintentional change resulting from some bad shortcuts can get expensive when we
+<p>Always follow the 3 button click workflow (Clean -&gt; Import BP Skeleton -&gt; Build BP Rig) from above. It's just to keep things clean. 
+Any unintentional change resulting from some bad shortcuts can get expensive when we
 are talking about animation ctrls.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1904,13 +1906,14 @@ Moving around joint roots can be useful when placing them for the first time aft
 for debugging purposes. </p>
 </div>
 <h2 id="adding-limbs">Adding Limbs</h2>
-<p>You can easily add limbs by dragging one from the libarary table into the limbs table:<br />
-<img alt="Alt text" src="../../images/puppetGeneral_addingLimb.gif" /> <br />
-And the first thing you do after you created a new limb (and maybe adjusted some attributes) is place the blueprints.
-If you've already built the <em>Blueprint Rig</em> at this point, you have to rebuild it.<br />
-First import the <em>Blueprint Skeleton</em>. At this point you could build the <em>Blueprint Rig</em>, but often it'll make your
+<p>You can easily add limbs by dragging one from the libarary table into the limbs table: <br />
+<img alt="Alt text" src="../../images/puppetGeneral_addingLimb.gif" />  </p>
+<p>And the first thing you do after you created a new limb (and maybe adjusted some attributes) is place the blueprints.
+If you've already built the <em>BP Rig</em>, you'll have to rebuild it.<br />
+First import the <em>BP Skeleton</em>. At this point you could build the <em>Blueprint Rig</em>, but often it'll make your
 life easier if between building <em>Blueprint Skeleton</em> and <em>Blueprint Rig</em> you click <em>Create Missing BP Joints</em>, 
-and move around <strong>just the root</strong> (Careful with child joints in this step!)   <br />
+and move around <strong>just the root</strong> (Careful with child joints in this step!).<br />
+Watch this gif to see how it looks in action:<br />
 <img alt="Alt text" src="../../images/puppetGeneral_limbFirstBlueprintPlacement.gif" />  </p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1919,7 +1922,7 @@ and move around <strong>just the root</strong> (Careful with child joints in thi
 <h2 id="attachers">Attachers</h2>
 <p>Attachers are all about spaces. For example the Hand IK following the COG or the Spine. 
 And they need to be fully understood to really use Kangaroo efficiently.<br />
-Look at how many attachers just the arm limb has:<br />
+Look at how many attachers alone the arm limb has:<br />
 <img alt="Alt text" src="../../images/attachers_armLeg.jpg" /> 
 And this is not even everything, with attachers you can even make things follow some deformers!    </p>
 <p>For each of the attachers you can add/remove output points by adjusting the count value:<br />
@@ -1932,11 +1935,12 @@ that can only one output point.</p>
 <h3 id="translaterotatescale">translate/rotate/scale</h3>
 <p>You see how every attacher has either <strong>(t)</strong>, <strong>(tr)</strong>, <strong>(r)</strong> or <strong>(s)</strong>? Those specify if 
 translate, rotate or scale is affected. <br />
-Whereever you see <strong>(tr)</strong>, you can split it into <em>(t)</em> and <em>(r)</em>:<br />
+Whereever you see <strong>(tr)</strong>, you can split it into <em>(t)</em> and <em>(r)</em>.<br />
+In this gif I'm splitting them, and copying from (t) to (r) using the <strong>CTRL+C</strong> and <strong>CTRL+P</strong> 
 <img alt="Alt text" src="../../images/attachers_splitTR.gif" />  </p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>This is very important for head or top neck ctrls. Animators always want to control the 
+<p>This is very useful for head or top neck ctrls. Animators always want to control the 
 position separate to the orientation.</p>
 </div>
 <h3 id="switch-vs-blend">Switch vs Blend</h3>

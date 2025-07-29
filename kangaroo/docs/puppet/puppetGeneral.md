@@ -210,11 +210,11 @@ You set it with the attributes called *Feature Ctrl Type* and *CustomFeatureCtrl
 For the *Feature Ctrl Type* you have 3 options: *Custom Ctrl*, *New Global Ctrl* and *Shape on All Ctrls*  
 ![Alt text](../images/puppetLimbs_featureCtrlType.jpg)
 #### Custom Ctrl
-It's the simplest one, you just specify the name of a ctrl in the *Custom Feature Ctrl Name* field such as *cog_ctrl*.   
+It's the simplest one, you just specify the name of an already existing ctrl in the *Custom Feature Ctrl Name* field such as *cog_ctrl*.   
 But make sure that in the hierarchy this ctrl is built before the current limb!
 
 #### New Global Ctrl
-This is probably the most widely used one, it creates those cross ctrls:  
+This is probably the one used most of the time.  
 ![Alt text](../images/puppetLimbs_featureCrossCtrls.jpg)  
 
 #### Shape on All Ctrls

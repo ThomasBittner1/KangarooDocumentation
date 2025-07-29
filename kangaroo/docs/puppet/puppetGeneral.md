@@ -119,10 +119,13 @@ In this gif I'm splitting them, and copying from (t) to (r) using the **CTRL+C**
 ### Switch vs Blend
 By default it's just a switch. Animators prefer that in most cases since it's the simplest:  
 ![Alt text](../images/attachers_switchAttr.gif)  
+!!! note "Kangaroo Tool Tip"
+    There's this [tool](../picker.md#space-switch) for animators to switch between the spaces.
+
 
 If you activate the **blend** checkbox, you'll get an extra attribute for each output point:  
 ![Alt text](../images/attachers_blendAttributes.gif)    
-Those attributes DON'T behave the same as constraint weights. Instead it's an additive system
+Those attributes *don't* behave the same as constraint weights. Instead it's an additive system
 being clamped to stay within 0 and 1.  
 Basically from top to bottom they overwrite the previous/upper ones. The first one (in this case *parentA*)
 is always 1.0 and locked.  
@@ -130,18 +133,24 @@ If you set *parentB* to 0.8, *parentB* has 80 % influence and *parentA* has 20 %
 If then you set *parentC* to 0.5, *parentC* has 50 %, *parentB* has 50 % also, and *parentA* has 0
 
 !!! tip
-    Animators usually prefer switch, but blend can be very useful when you setup some special rigs such as props or costumes.  
+    Animators usually prefer switch because blend seems very technical. But the blend can be very 
+    useful when you setup some special rigs such as props or costumes.  
 
 
 ### Custom Attachers
-Custom Attachers are primarily used to have some ctrls follow the the geometry or deformers. Most of the time
-we do deformers, which looks like it's following the mesh but actually just has some nodes that replicate the
-deformer behavior at the point where the ctrl is.  
-
+Custom Attachers are primarily used to have some ctrls follow the geometry or deformers. Most of the time
+we make them follow deformers. This looks like the ctrls are following the mesh, but actually they are driven by nodes that replicate the
+deformer behavior at the vertex closest to the ctrl.  
+To use them, just set the combo box to **<Custom\>** and having the mesh selected, open the **Attach Deformer UI**:  
 ![Alt text](../images/attachers_customAttacher.gif)  
 
 !!! note
     Custom attachers are heavily used for [Tweaker Ctrls](tweakerCtrls.md)
+
+You can also specify a vertex at the bottom. But *DO NOT* use that unless you have to. Because setting a vertex id means having
+geometry data inside the puppet data and that gets messy when the mesh topology changes or you want to reuse the setup
+for another character with different topology:  
+![Alt text](../images/puppet_customAttacherVertexId.jpg)  
 
 
 
@@ -152,15 +161,17 @@ In all the template characters there's the *display_ctrl* that has a lot of disp
 
 And that's just a simple *singleTransform* limb with its own blueprint:
 ![Alt text](../images/puppet_displayLimb.jpg)  
-But don't parent it around in the puppet tool! It's important that this is at the top, first limb
+Don't move it around in the hierarchy in puppet tool! It's important that this is at the top, first limb
 after the master limb (*m_placement* in this case)  
 
 And all the limbs have display attributes to which tag (attribute) they belong to:  
 ![Alt text](../images/puppet_displayCtrlAttributes.jpg)     
 
-*But what about all the ctrls generated in functions outside of the puppet tool?*  
-Usually these functions have an attribute called *sDisplayAttr*:  
-![Alt text](../images/puppet_displayCtrlFaceFunctions.jpg)     
+
+!!! note "Other Ctrls.."
+    *But what about all the ctrls generated in functions outside of the puppet tool?*  
+    Usually these functions have an attribute called *sDisplayAttr*:  
+    ![Alt text](../images/puppet_displayCtrlFaceFunctions.jpg)     
 
 !!! tip
     If you don't like the order of the attributes on the ctrl, those are easily changed on the
@@ -171,7 +182,7 @@ Usually these functions have an attribute called *sDisplayAttr*:
 ### visibilityAttributes()
 For any ctrls that are not setup-ed for the *displayCtrl*, you can use the *visibilityAttributes()* function.
 ![Alt text](../images/puppet_visibilityAttrs.jpg)     
-Just open the JSONEditor on the *dData* attribute, and add/adjust entries. If the attribute (most left label,
+Just open the [JSONEditor](../builder/jsonEditor.md) on the *dData* attribute, and add/adjust entries. If the attribute (most left label,
 *master.cuffCtrlVis* in this image) doesn't exist, he creates one. So you could even specify one that is created 
 on the display_ctrl, and just set it up to also switch some geometry visibility.
 
@@ -189,8 +200,8 @@ And if you want to just switch all limbs automatically to the latest one, you ca
 button **Maximize All Limbs**:  
 ![Alt text](../images/puppet_maximizeLimbs.jpg)
 
-!!! warning
-    Don't forget to click the **save** button!
+!!! warning "Don't Forget!"
+    Don't forget to click the **save** button after updating limb versions!
 
 
 ## Feature Ctrl Type
@@ -207,7 +218,7 @@ This is probably the most widely used one, it creates those cross ctrls:
 ![Alt text](../images/puppetLimbs_featureCrossCtrls.jpg)  
 
 #### Shape on All Ctrls
-Animators often ask for the global attributes to be accessible on each ctrl. But in Maya you cannot add one attributes onto more than
+Animators often ask for the global attributes to be accessible on each ctrl. But in Maya you cannot add one attribute onto more than
 one ctrl, and the closest thing how to solve this is putting the attributes on a shape node. In Maya you can create one shape node and
 make it appear on more than one transform (ctrl).  
 ![Alt text](../images/puppetLimbs_shapeNode.jpg)   
@@ -218,16 +229,15 @@ make it appear on more than one transform (ctrl).
 
 ## Mirror
 ### Mirror Limbs
-Mirroring the limbs is easy. Just right click -> miror from selected. *Recursive* means that he'll also mirror the children:  
+Mirroring the limbs is easy. Just right click -> **mirror from selected**. *Recursive* means that he'll also mirror the children:  
 ![Alt text](../images/puppetGeneral_mirrorLimb.gif)   
 
 ### Mirror Blueprints
 The blueprints will get mirrored automatically. But if you want to have them unsymmetrical, you can specify that with
-the triangle ctrl (*bpGlobal_ctrl*):  
-Left/right limbs:  
+the triangle ctrl (*bpGlobal_ctrl*):   
 ![Alt text](../images/puppetGeneral_blueprintMirror.gif)   
 
-For some Middle Limbs he'll try to keep the joints in the symmetry axis, unless you tell him not to with the triangle ctrl:   
+For Middle Limbs he'll try to keep the joints in the symmetry axis, unless you tell him not to with the triangle ctrl:   
 ![Alt text](../images/puppetGeneral_symmetryForMiddleOnes.gif)   
 
 
@@ -248,6 +258,10 @@ blueprints, in some places it's more convenient to not rotate them straight.
 
 
 ## Joint Parents
-The very first attribute on the top starts with *PARENTS*  
-This doesn't really change the rig logic, but it specifies where the joints should be parented.
+The very first attribute on the top starts with *PARENT*  
+This doesn't really change the rig logic, but it specifies where the joints should be parented to.
+![Alt text](../images/puppet_skeletonJoints.jpg)  
+See how those joints would be better parented under one of the lower spine joints? That's what you can fix with 
+the *PARENT* attributee:  
+![Alt text](../images/puppet_skeletonJointsBad.jpg)  
 

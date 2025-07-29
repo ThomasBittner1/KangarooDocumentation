@@ -20,12 +20,16 @@ This is an animation tool that can do stuff like:
 ### Fk2Ik Switch
 !!! video
     Whatch it in the video from [here](https://www.youtube.com/watch?v=5W2JQYoyohQ&t=1m14s)
+!!! note "Isolated Menu"
+    If you just want this switch without the whole UI, that's possible and you can see [here](#isolated-menus) how it looks.
 
 
 ### Space Switch
 The space switch button can help animators to switch between spaces. 
 !!! video
     Whatch it in the video from [here](https://www.youtube.com/watch?v=5W2JQYoyohQ&t=1m18s)
+!!! note "Isolated Menu"
+    If you just want this switch without the whole UI, that's possible and you can see [here](#isolated-menus) how it looks.
 
 ### Mirror 
 !!! video
@@ -65,13 +69,17 @@ And then you'll have 2 picker tabs for that character.
 Sometimes animators don't want the whole UI, but they just want some menus. Below are some python codes that you can 
 for example add to a shelf button. I'll then open small switch menus from those buttons.
 
-**Switching Spaces:**
+**Switching Spaces:**   
+To get this menu, run the python lines below:  
+![Alt text](images/spaceSwitchMenu.gif)
 ```python 
 import kangarooAnimation.KangarooMatchTools as KangarooMatchTools; 
 KangarooMatchTools.spaceSwitchMenu()
-```
+``` 
 
-**Switching between Fk and Ik:**
+**Switching between Fk and Ik:**  
+![Alt text](images/fk2ikswitchmenu.gif)  
+Run those lines to get that menu:  
 ```python 
 import kangarooAnimation.KangarooMatchTools as KangarooMatchTools; 
 KangarooMatchTools.humanLimbsSwitchMenu()

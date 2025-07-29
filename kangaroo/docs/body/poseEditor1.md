@@ -5,7 +5,7 @@ To open it, click the function *poseEditorApply()* and then the button **Open Ed
 ![Alt text](../images/poseEditor_openIt.jpg)  
 
 It consists of Interpolators, Interpolator Attributes and Targets, Meshes and Ctrl Tables.  
-![Alt text](../images/poseEditor_ui..jpg)  
+![Alt text](../images/poseEditor_ui.jpg)  
 
 !!! info "Video" 
     To see how the Pose Editor works in action, you can also watch this [Video](https://www.youtube.com/embed/oPQHf2HOq5o).    

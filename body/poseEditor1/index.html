@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#interpolators-calculate-the-pose" class="md-skip">
+        <a href="#interpolators-calculating-the-pose" class="md-skip">
           Skip to content
         </a>
       
@@ -652,13 +652,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#interpolators-calculate-the-pose" class="md-nav__link">
+  <a href="#interpolators-calculating-the-pose" class="md-nav__link">
     <span class="md-ellipsis">
-      Interpolators - Calculate the Pose
+      Interpolators - Calculating the Pose
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Interpolators - Calculate the Pose">
+    <nav class="md-nav" aria-label="Interpolators - Calculating the Pose">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -712,13 +712,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#targets-manipulate-the-rig" class="md-nav__link">
+  <a href="#targets-manipulating-the-rig" class="md-nav__link">
     <span class="md-ellipsis">
-      Targets - Manipulate the Rig
+      Targets - Manipulating the Rig
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Targets - Manipulate the Rig">
+    <nav class="md-nav" aria-label="Targets - Manipulating the Rig">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1556,13 +1556,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#interpolators-calculate-the-pose" class="md-nav__link">
+  <a href="#interpolators-calculating-the-pose" class="md-nav__link">
     <span class="md-ellipsis">
-      Interpolators - Calculate the Pose
+      Interpolators - Calculating the Pose
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Interpolators - Calculate the Pose">
+    <nav class="md-nav" aria-label="Interpolators - Calculating the Pose">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1616,13 +1616,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#targets-manipulate-the-rig" class="md-nav__link">
+  <a href="#targets-manipulating-the-rig" class="md-nav__link">
     <span class="md-ellipsis">
-      Targets - Manipulate the Rig
+      Targets - Manipulating the Rig
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Targets - Manipulate the Rig">
+    <nav class="md-nav" aria-label="Targets - Manipulating the Rig">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1738,22 +1738,23 @@
 <p>Pose Editor is one of the biggest additions in Kangaroo 5.</p>
 <p>To open it, click the function <em>poseEditorApply()</em> and then the button <strong>Open Editor</strong>:<br />
 <img alt="Alt text" src="../../images/poseEditor_openIt.jpg" />  </p>
-<p>It consists of Interpolators, BlendShape Poses and Ctrl Poses  </p>
+<p>It consists of Interpolators, Interpolator Attributes and Targets, Meshes and Ctrl Tables.<br />
+<img alt="Alt text" src="../../images/poseEditor_ui.jpg" />  </p>
 <div class="admonition info">
 <p class="admonition-title">Video</p>
 <p>To see how the Pose Editor works in action, you can also watch this <a href="https://www.youtube.com/embed/oPQHf2HOq5o">Video</a>.  <br />
 Especially the <a href="../poseEditor2/#model-change">model update (Pose Editor II)</a> part has changed.</p>
 </div>
-<h2 id="interpolators-calculate-the-pose">Interpolators - Calculate the Pose</h2>
+<h2 id="interpolators-calculating-the-pose">Interpolators - Calculating the Pose</h2>
 <p>Interpolators are little setups that analyze the rig to see if and how strong
 we are in a pose. <br />
 There's a few different types: </p>
 <ul>
-<li>signedAngle - simple rotations like elbow, knees</li>
-<li>cones - 3 dimensional rotations</li>
-<li>mayaPose - 3 dimensional rotations</li>
-<li>upleg - specialized for upper leg going up</li>
-<li>custom - attributes or create your own custom</li>
+<li><strong>signedAngle</strong> - simple rotations like elbow, knees</li>
+<li><strong>cones</strong> - 3 dimensional rotations</li>
+<li><strong>mayaPose</strong> - 3 dimensional rotations</li>
+<li><strong>upleg</strong> - specialized for upper leg going up</li>
+<li><strong>custom</strong> - attributes or for creating your own custom interpolator</li>
 </ul>
 <p>To add interpolators, just click the <em>Add</em> Button at the very top left of the UI. It tells you what you need to select. And the 
 selection order doesn't matter here.<br />
@@ -1767,9 +1768,10 @@ it in the Channel Box mark it like this:<br />
 Once it created it, special attention is required on the Angle Axis and Up Axis. It might be a bit<br />
 confusing, because those are the ones on the joints, not the ctrl! 
 <img alt="Alt text" src="../../images/poseEditor_signedAngle.jpg" />
-<em>Angle Axis</em> is always the rotation axis of the joints that we want to measure (usually different to the CtrlAttr because
+<em>Angle Axis</em> is the rotation axis of the joints that we want to measure (usually different to the CtrlAttr because
 it's in different space). And the <em>Up Axis</em> is one of the other two. 
-<em>Which one?</em> Just try it out which one is more stable in your case.</p>
+<em>Which one?</em> Just try it out which one is more stable in your case. But never set <em>Angle Axis</em> and <em>Up Axis</em> to 
+be identlical, because this <em>will</em> lead to troubles. </p>
 <p>Here's a short video how we create the singedAngle for the knee:</p>
 <video autoplay muted loop controls width="1400">
     <source src="../../images/poseEditor_creatingSignedAngle.mp4" type="video/mp4">
@@ -1781,18 +1783,14 @@ it's in different space). And the <em>Up Axis</em> is one of the other two.
 once, and normalizes them in some way that whenever you are in one pose, all the other poses are 0.<br />
 That's a great thing for when you are doing upper arm or clavicle corrective poses where it's important
 that all the poses blend nicely with each others. 
-But it comes with quite a few disadvantages:  </p>
+But it comes with a few disadvantages:  </p>
 <ul>
 <li>You can't adjust the timing   </li>
-<li>Inbetween the poses, the timing can get a bit unnatural (For correctives it might be fine, but could be an issue for ctrls).   </li>
+<li>The timing can get a bit uneven between the poses (for correctives this might be fine, but could be an issue for ctrls).   </li>
 <li>You always need to have at least 4 poses (manageable, just add a few extra poses you don't use)  </li>
-<li>
-<p>The math is not understandable for the most of us, so output can be somewhat confusing. And sometimes when things are wrong it might even output  <em>INF</em>, 
-or suddenly all poses having the same output number like 0.25.</p>
-</li>
-<li>
-<p>Whenever that happens just try to align them a bit nicer and make sure that you not less than 4 poses.</p>
-</li>
+<li>The math is not understandable for the most of us, so the output can sometimes be somewhat unexpected. And in some 
+cases when things are wrong it might even output something like <em>INF</em> or all poses having the same output number like 0.25. 
+Whenever that happens just try to align them a bit nicer and make sure that you not less than 4 poses.</li>
 </ul>
 <p>Here's a short video how we create them for the upper arm:</p>
 <video autoplay muted loop controls width="1920">
@@ -1808,22 +1806,22 @@ almost identical to the MayaPose.
 Actually you can even convert between Cones and MayaPose with right-click on the interpolator!</p>
 <p>But then the algorithm they use for calculating the poses couldn't be more different - and 
 you have more options to <em>adjust the timing</em>. And you don't need to have a minimum of 4 poses! Even just one is enough.</p>
-<p>Then there's the attribute called <strong>Range</strong>, which is very important! Neglecting this <em>will</em> put you in trouble.</p>
+<p>There's the attribute called <strong>Range</strong>, which is very important! Neglecting this <em>will</em> put you in trouble.</p>
 <p>The first thing you notice on the Range is that it starts from the higher value and goes to 
-the smaller value. The first important thing you ahve to pay atttention to is that the Start (bigger value)
+the smaller value. The first important thing you have to pay attention to is that the Start (bigger value)
 needs to be <strong>equal or smaller than the positive rotation value, and not bigger than 89</strong>:
 <img alt="Alt text" src="../../images/cone_attributes.jpg" />  </p>
 <div class="admonition note">
 <p class="admonition-title">If you love math..</p>
-<p>Instead of <em>positive rotation value</em> the correct explanation is actually the angle <em>difference</em>.
+<p>Instead of <em>positive rotation value</em> the correct explanation is actually the <em>angle difference</em>.
 In the picture above the rotation is (0,0,-45) so the angle distance is 45.
-So even though the angle of the rotation has a negative value, the rotation distance is still positive.
-If you have a more complex rotation such as (30,0,-80), the rotation difference would be much harder to calculate,
-so try to avoid that.</p>
+So even though the angle of the rotation has a negative value, the angle distance is still positive.
+If the rotation is (30,0,0), the angle distance would be 30. And If you have a more complex rotation such as (30,0,-80), 
+the rotation difference would be much harder to calculate, so try to avoid that.</p>
 </div>
 <p>Another thing to be aware with cones is that by default they work great as the rig moves into the pose, but when it moves
 further, the pose fades out. And that can get very nasty. 
-Let's look at this example (which happens <em>a lot</em> in production!). In here I have range as 15-0, so it starts at 15. 
+Let's look at this example below (which happens <em>a lot</em> in production!). In here I have range as 15-0, so it starts at 15. 
 Now the issue is as soon as the arm goes just a bit further, the costume (sphere in this case) jumps back:<br />
 <img alt="Alt text" src="../../images/poseEditor_coneproblem.gif" /></p>
 <p>Here's the solution - overshoot the rotation of the pose and set a higher end range:<br />
@@ -1850,8 +1848,8 @@ should fade out when the leg rotates inwards.</p>
 <p><img alt="Alt text" src="../../images/poseEditor_customInterpolator.jpg" /><br />
 You can see <em>CtrlAttrX</em>, <em>CtrlAttrY</em> and <em>CtrlAttrZ</em>, but you don't need to use all of them
 you can just use <em>CtrlAttrX</em> and keep the others empty.<br />
-<em>DriverAttr</em> the attribute that actually drives the interpolator. Basically the tool checks what value
-the DriverAttr has when the CtrlAttrs reach the pose etc..<br />
+<em>DriverAttr</em> is the attribute that actually drives the output. Basically the tool checks what value
+the DriverAttr has when the CtrlAttrs is 0, and when it reaches the pose.<br />
 You can also think of the DriverAttr as an inbetween step between the CtrlAttr and the actual Pose Output. 
 In the example of creating an <em>Interpolate By Distance</em>: CtrlAttr would be from an Animator Ctrl, and DriverAttr
 would be the actual output value of the distance node.  </p>
@@ -1862,11 +1860,13 @@ This would then be a simple driving pose by an attribute. </p>
 </div>
 <div class="admonition limitation">
 <p class="admonition-title">Current Limitation</p>
-<p>Unfortunately at this time it only works when CtrlAttr starts at 0. If you have an attribute (like scale) where the default is 1.0,
-this won't work. </p>
+<p>Unfortunately at this time it only works when CtrlAttr starts at 0. If you have an attribute where for example the default is 1.0,
+this won't work.</p>
 </div>
-<h2 id="targets-manipulate-the-rig">Targets - Manipulate the Rig</h2>
-<p>We can do either <strong>BlendShape Targets</strong> (<em>Correctives</em>), or <strong>Ctrl Targets</strong>.
+<h2 id="targets-manipulating-the-rig">Targets - Manipulating the Rig</h2>
+<p>In the previous chapter we just created Interpolators that calculate the pose - but they didn't do anything yet. Now 
+we'll discuss what those Interpolators can actually drive.<br />
+We can do either <strong>BlendShape Targets</strong> (<em>Correctives</em>), or <strong>Ctrl Targets</strong>.
 Both of them start in the same way, that you just drag&amp;drop a pose from the <em>Interpolator Table</em>
 into the <em>Targets Table</em>.<br />
 If you drag more than one pose, then the Target is a combination of the poses, and you get that extra
@@ -1877,6 +1877,7 @@ button (<strong>M</strong> or <strong>S</strong>) that lets you specify the blen
 <p>First specify the meshes you want to use for blendShapes by adding them into the <em>Meshes Table</em><br />
 And then select them again and click the <strong>EDIT MESH</strong> button. This tells the tool that whatever you 
 sculpt on the mesh will go into that Target.   </p>
+<p>To see it in action check this video:  </p>
 <video autoplay muted loop controls width="1180">
     <source src="../../images/PoseEditor_EditButton2.mp4" type="video/mp4">
     Your browser does not support the video tag.
@@ -1886,38 +1887,40 @@ sculpt on the mesh will go into that Target.   </p>
 activated, you can also select vertices and move them. Or use some of the <em>Geometry Tools</em> like <em>Smooth Vertices</em> </p>
 <div class="admonition note">
 <p class="admonition-title">Kangaroo Tool Tip</p>
-<p>If you haven't tried out the <em>Smooth Vertices</em> tool yet, sculpting correctives is where it most useful! Because many
-times we are dealing with vertices that are collapsed and we want to smooth them out again.</p>
+<p>If you haven't tried out the <a href="../../tools/toolsGeometry/#smooth-vertices"><strong>Smooth Vertices</strong></a> tool yet, 
+sculpting correctives is where it most useful! Because many times we are dealing with vertices that are 
+collapsed, and we want to smooth them out again.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Remember</p>
 <p>Don't forget to deactivate the <em>EDIT</em> button when you are done!</p>
 </div>
 <h3 id="ctrl-targets">Ctrl Targets</h3>
-<p>When you create Targets on Ctrls, it just creates a Ctrl Locator for each Pose that you can move around</p>
+<p>When you create Targets on Ctrls, it just creates a Ctrl Locator for each Ctrl that you can move around</p>
 <video autoplay muted loop controls width="1182">
     <source src="../../images/poseEditor_addCtrl.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 
-<p>Whenever you click the <strong>Add/Activate</strong> button, it creates a locator if it doesn't exist yet and selects it. If 
-the locator already exists, it'll only select it. <br />
+<p>Whenever you click the <strong>Add/Activate</strong> above the ctrls table button, it creates a locator if it doesn't exist yet and selects it. If 
+the locator already exists, it'll just select it.   <br />
 So that's a multi functional button that you'll be clicking a lot.  </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You might have an attribute on the master group called <em>Poses Loc VIS</em> that needs to be set to <em>On</em> to 
-see the locator right away:<br />
+<p>It could be that you don't see the Locator right away. And the reason most of the time is that the attribute on the master group called <strong>Poses Loc VIS</strong> is set to <em>Off</em>.
+Just switch it to <em>On</em> and you should see it see the locator right away:<br />
 <img alt="Alt text" src="../../images/poseEditor_visAttr.jpg" />  </p>
 </div>
 <p>In the ctrl hierarchy (outliner) you can see all the locators, for each target one. And those that are activated are shown
-while the others get hidden automatically. This way you could even adjust poses without the UI.
+while the others get hidden automatically. You can even adjust the poses without the UI, just by grabbing the locators
+in the outliner.<br />
 <img alt="Alt text" src="../../images/poseEditor_locators.jpg" /><br />
 But most of the time you'll be faster to just select the locator by using the <em>Add/Activate</em> button</p>
 <h2 id="dresetattrs">dResetAttrs</h2>
 <p>When you have a for example deltaMush or a blendShape target that shrinks the 
-skin to avoid collisions, it would constantly get into the way of sculpting. It would also corrupt stuff when you export
+skin to avoid collisions, it would constantly get into the way of sculpting. It could also corrupt stuff when you export
 or apply the blendShapes.<br />
-For that we can add some attributes into the <em>dResetAttr</em> dictionary. Just open it with the JSON Editor
+For that we can add some attributes into the <em>dResetAttr</em> dictionary. Just open it with the <a href="../../builder/jsonEditor/">JSON Editor</a>
 and add things in there. You can see by default it already has all the fk2ik switches that make sure you
 are in FK while setting poses<br />
 <img alt="Alt text" src="../../images/poseEditor_dResetAttrs.jpg" />  </p>
@@ -1937,7 +1940,8 @@ a good name. </p>
 Right click on Interpolator -&gt; Mirror:<br />
 <img alt="Alt text" src="../../images/poseEditor_mirrorInterpolator.gif" />  </p>
 <h3 id="flip-blendshape">Flip BlendShape</h3>
-<p>First you have to set the mirror table with the right click menu on the mesh in the Meshes Table. 
+<p>For flipping blendShapes, we need to first tell him how to find and map the opposite vertices.
+We do that by setting the mirror table with the right click menu on the mesh in the Meshes Table: <br />
 <img alt="Alt text" src="../../images/poseEditor_setMirrorTable.gif" /><br />
 Your options are:  </p>
 <ul>
@@ -1950,7 +1954,7 @@ Your options are:  </p>
 </ul>
 <p>Edgeflow is that mirror algorithm where it takes a middle edge and with that finds all the other vertices by the
 edge connection patterns.</p>
-<p>Then to do the actual flipping: Right click on Targets -&gt; The <strong>Side:Pose Combinations and Flip Meshes</strong>
+<p>Then to do the actual flipping: Right click on Target -&gt; <strong>Side:Pose Combinations and Flip Meshes</strong>
 <img alt="Alt text" src="../../images/poseEditor_flipPose.gif" />  </p>
 <div class="admonition warning">
 <p class="admonition-title">Select Mesh</p>

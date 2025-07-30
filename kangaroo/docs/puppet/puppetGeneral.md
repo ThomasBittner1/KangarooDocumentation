@@ -1,4 +1,9 @@
-## Puppet
+---
+title: Puppet General
+---
+
+# Puppet General
+
 
 The Puppet tool defines the main ctrls of the character, such as spine logics, arm/leg FK/IK, Auto Clavicle, etc.  
 It generates the blueprints.ma file (guide joints) and the puppet.rig - which then the builder uses to build the rig.

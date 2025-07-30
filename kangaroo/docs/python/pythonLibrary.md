@@ -153,3 +153,32 @@ and ctrl 3, with the ratio of 0.25 (0.0 would mean fully at ctrl 2, and 1.0 woul
 ``` python
 xCtrlWeightings = xforms.getCtrlWeightings2(fJointParams, fCtrlParams, fIsCircleWithParamLength=None)
 ```
+
+
+## Create Deformers
+Since the *loadDeformer()* handles mainly weights, in some cases it's cleaner to create the deformers in python
+before the *loadDeformer()* function.
+``` python
+import kangarooTools.deformers as deformers
+```
+### Create Morph
+For blending a mesh to another, use the morph
+``` python
+deformers.createMorph(sChild, sParent)
+```
+
+### Legacy Wrap Deformer
+``` python
+sUnorderedWraps, sBase = deformers.createWrap(sChildren, sParent, bExclusiveBind=True)
+```
+
+### Proximity Wrap Deformer
+``` python
+deformers.createProximityWrap(sChild, sDrivers, sName=None, bCreateBaseMesh=False, fFalloffScale=10.0)
+```
+
+### Add blendShape Targets
+``` python
+import kangarooTools.blendShapes as blendShapes
+sTargetAttrs = blendShapes.addTargets(sMesh, sTargetMeshes)
+```

@@ -48,8 +48,8 @@ Sounds simple but the real power is that it supports vertex (soft) selection.
 So you could select vertices across different meshes:  
 ![Alt text](../images/deformerImport_vertexSelection.jpg)   
 
-Maybe even switch to an older version where you liked the weights more (note how it turning red means you are not on
-current version):  
+Maybe even switch to an older version where you liked the weights more (note how it turns orange - that just indicates you are not on
+latest version):  
 ![Alt text](../images/deformerImport_olderVersion.jpg)   
 
 And click the **Load** button.

@@ -1206,6 +1206,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#create-deformers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Deformers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Deformers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-morph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Morph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-wrap-deformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Legacy Wrap Deformer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proximity-wrap-deformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proximity Wrap Deformer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-blendshape-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add blendShape Targets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1771,6 +1822,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#create-deformers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Deformers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Deformers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-morph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Morph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-wrap-deformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Legacy Wrap Deformer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proximity-wrap-deformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proximity Wrap Deformer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-blendshape-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add blendShape Targets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1889,6 +1991,25 @@ with the length of the joints.</p>
 <p>For each joint something like <em>[2, 3, 0.25]</em>. In this example it means the weighing for this joint is between ctrl 2 
 and ctrl 3, with the ratio of 0.25 (0.0 would mean fully at ctrl 2, and 1.0 would mean fully at ctrl 3)</p>
 <div class="highlight"><pre><span></span><code><span class="n">xCtrlWeightings</span> <span class="o">=</span> <span class="n">xforms</span><span class="o">.</span><span class="n">getCtrlWeightings2</span><span class="p">(</span><span class="n">fJointParams</span><span class="p">,</span> <span class="n">fCtrlParams</span><span class="p">,</span> <span class="n">fIsCircleWithParamLength</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="create-deformers">Create Deformers</h2>
+<p>Since the <em>loadDeformer()</em> handles mainly weights, in some cases it's cleaner to create the deformers in python
+before the <em>loadDeformer()</em> function.
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">kangarooTools.deformers</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">deformers</span>
+</code></pre></div></p>
+<h3 id="create-morph">Create Morph</h3>
+<p>For blending a mesh to another, use the morph
+<div class="highlight"><pre><span></span><code><span class="n">deformers</span><span class="o">.</span><span class="n">createMorph</span><span class="p">(</span><span class="n">sChild</span><span class="p">,</span> <span class="n">sParent</span><span class="p">)</span>
+</code></pre></div></p>
+<h3 id="legacy-wrap-deformer">Legacy Wrap Deformer</h3>
+<div class="highlight"><pre><span></span><code><span class="n">sUnorderedWraps</span><span class="p">,</span> <span class="n">sBase</span> <span class="o">=</span> <span class="n">deformers</span><span class="o">.</span><span class="n">createWrap</span><span class="p">(</span><span class="n">sChildren</span><span class="p">,</span> <span class="n">sParent</span><span class="p">,</span> <span class="n">bExclusiveBind</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="proximity-wrap-deformer">Proximity Wrap Deformer</h3>
+<div class="highlight"><pre><span></span><code><span class="n">deformers</span><span class="o">.</span><span class="n">createProximityWrap</span><span class="p">(</span><span class="n">sChild</span><span class="p">,</span> <span class="n">sDrivers</span><span class="p">,</span> <span class="n">sName</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bCreateBaseMesh</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fFalloffScale</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="add-blendshape-targets">Add blendShape Targets</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">kangarooTools.blendShapes</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">blendShapes</span>
+<span class="n">sTargetAttrs</span> <span class="o">=</span> <span class="n">blendShapes</span><span class="o">.</span><span class="n">addTargets</span><span class="p">(</span><span class="n">sMesh</span><span class="p">,</span> <span class="n">sTargetMeshes</span><span class="p">)</span>
 </code></pre></div>
 
 

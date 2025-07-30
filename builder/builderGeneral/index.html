@@ -20,7 +20,7 @@
     
     
       
-        <title>General - kangaroo-builder.com</title>
+        <title>Builder General - kangaroo-builder.com</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#what-is-the-builder" class="md-skip">
+        <a href="#builder-general" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              General
+              Builder General
             
           </span>
         </div>
@@ -292,6 +292,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -323,6 +325,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -405,9 +409,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#other-functions" class="md-nav__link">
+  <a href="#theres-more" class="md-nav__link">
     <span class="md-ellipsis">
-      Other Functions
+      There's more...
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Functions
     </span>
   </a>
   
@@ -419,18 +432,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#custom-functions" class="md-nav__link">
+  <a href="#buildbld-file" class="md-nav__link">
     <span class="md-ellipsis">
-      Custom Functions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bld-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      BLD file
+      build.bld file
     </span>
   </a>
   
@@ -1491,6 +1495,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1572,9 +1578,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#other-functions" class="md-nav__link">
+  <a href="#theres-more" class="md-nav__link">
     <span class="md-ellipsis">
-      Other Functions
+      There's more...
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Functions
     </span>
   </a>
   
@@ -1586,18 +1601,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#custom-functions" class="md-nav__link">
+  <a href="#buildbld-file" class="md-nav__link">
     <span class="md-ellipsis">
-      Custom Functions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bld-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      BLD file
+      build.bld file
     </span>
   </a>
   
@@ -1619,57 +1625,77 @@
 
 
 
-  <h1>General</h1>
-
+<h1 id="builder-general">Builder General</h1>
 <h2 id="what-is-the-builder">What is the builder?</h2>
 <p>The <strong>Builder</strong> is the first most important tool that you need to get familiar with for creating characters.</p>
-<p>The builder basically just manages a ton of Python functions from different files, and lets
-you run them. Either just selected functions or all at once for the final creation using the <strong>Build All</strong> button</p>
-<p>Go to that character you created from the previous section and click <em>Build All</em><br />
-Now sit back and enjoy watching him build the character for you :-)
+<p>The builder is basically a central tool that manages a ton of Python functions from different files, and lets
+you run them. Either just selected functions or all at once for the final creation using the <strong>Run All</strong> button.</p>
+<p>Go to that character you created from the previous section and click <strong>Run All</strong><br />
+Now sit back and enjoy watching him build the character for you:<br />
 <img alt="Alt text" src="../../images/builder_buildAll.gif" /></p>
-<p>Now take a moment to get familiar with the UI:
+<p>Take a moment to get familiar with the UI:
 <img alt="Alt text" src="../../images/builder_filesAndFunctions.jpg" /></p>
 <p>At the top you have Python Files. You can add files, remove files or you can even uncheck them and then all their functions will disappear.
-Below are the actual functions. Even further below you can set function arguments for each function that you have selected.
-And on the right side (you'll have to drag the splitter a bit) you can see buttons and a description for 
+Below are the actual functions. Even further below you can set function arguments for the function that you have selected.
+And on the right side you can see buttons and a description for 
 whatever function you have selected.</p>
-<p>Looking at the function arguments, you probably just got a headache looking at some of the more complicated looking ones,
-like sPoseKeys or ddPoses in the picture above. But don't worry, a lot of them are being generated automatically using the
-build buttons. And if not, the <a href="../jsonEditor/">JSON Editor</a> can help you.  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you don't see the right section, you might have to drag the splitter a bit:<br />
+<img alt="Alt text" src="../../images/builderGeneral_dragRightSide.gif" /></p>
+</div>
 <p>You can also create your own python functions and specify arguments and build buttons. But more to that
-in the Python section.
+in <a href="../../python/python1/#simple-way-of-adding-a-function">Python - Simple way of adding a function</a> section.
 For now let's check out some of the more important functions that we automatically.  </p>
 <h2 id="the-functions">The Functions</h2>
 <h3 id="importmodel"><em>importModel()</em></h3>
-<p>The <em>importModel()</em> function imports the model. Currently it's just that boring grey guy. 
+<p>The <em>importModel()</em> function imports the model.<br />
+<img alt="Alt text" src="../../images/builder_importModelFunction.jpg" /><br />
+If you copied from BASEHUMAN, it's just that boring grey guy. 
 If you already have a model, go to export -&gt; MODEL, and with the Explorer New Model button
 you get a folder that let's you copy a character in it
-<img alt="Alt text" src="../../images/addModel.gif" /><br />
-If you work in a company that has their own studio pipeline, you might want to grab
-the model automatically from the studio pipeline. To see how to do that, go <a href="../../python/python2/#connecting-to-studio-pipeline">python</a>
-Bascially you'd create a script that from the character name and some version setups looks for the corresponding character model file
-in your studio pipeline.</p>
+<img alt="Alt text" src="../../images/addModel.gif" />  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you work in a company that has their own studio pipeline for handling assets, you might want to grab
+the model automatically from the studio pipeline. To see how to do that, go to
+<a href="../../python/python2/#connecting-to-studio-pipeline">Python - Connecting to a Studio Pipeline</a>.<br />
+Basically you'd create a script that looks for the corresponding character model file in your studio pipeline.</p>
+</div>
 <h3 id="importblueprints-buildpuppet"><em>importBlueprints()</em>, <em>buildPuppet()</em></h3>
-<p>importBlueprints and buildPuppet are the functions is grabbing the work you do in the puppet tool.
-Blueprints is basically just a simple ma file with guide joints, and buildPuppet is generating all the 
-controls and rigging logic like Iks, Fks, Auto Clavicle, ...
-We'll get to those more in detail in <strong>Puppet</strong>. But for now let's continue checking out the 
-other important functions.</p>
+<p><em>importBlueprints()</em> and <em>buildPuppet()</em> are the functions for grabbing the work you do in the puppet tool.<br />
+<img alt="Alt text" src="../../images/builderGeneral_puppetFunctions.jpg" /><br />
+It's for creating the main controls and rigging logic like Iks, Fks, Auto Clavicle, ...<br />
+Check <a href="../../puppet/puppetGeneral/"><strong>Puppet</strong></a> for more detail. </p>
 <h3 id="loadctrlshapes"><em>loadCtrlShapes()</em></h3>
-<p>This loads the ctrl shapes that you export in <strong>Ctrls</strong> -&gt; <strong>Export</strong> -&gt; <strong>Export All Ctrls</strong> </p>
+<p>This loads the ctrl shapes. To export the ctrls shapes that he should load - go to <strong>Ctrls</strong> -&gt; <strong>Export</strong> -&gt; <strong>Export All Ctrls</strong>: <br />
+<img alt="Alt text" src="../../images/builderGeneral_ctrlShapeExport.jpg" /><br />
+This just exports the shape of <em>all</em> ctrls in scene.  </p>
 <h3 id="loaddeformers"><em>loadDeformers()</em></h3>
-<p>This loads the deformers (mainly skinCluster weights) <br />
+<p>This loads all the deformers (mainly skinCluster weights) from the <em>deformers</em> folder. <br />
 You can export the deformers in <strong>Export</strong> -&gt; <strong>Deformers</strong><br />
-Keep in mind this only saves <strong>weights</strong>, <strong>attribute values</strong> and <strong>deformer orders</strong><br />
+<img alt="Alt text" src="../../images/builderGeneral_exportDeformers.jpg" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Kangaroo Tool Tip</p>
+<p>To use this function most efficiently it's best to get familiar with everything on <a href="../../tools/toolsDeformerImport/">Deformer Import Tool</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Limitation</p>
+<p>This only saves/loads <strong>weights</strong>, <strong>attribute values</strong> and <strong>deformer orders</strong>.<br />
 It does NOT load deformer structures such as blendShape targets, or full wrap deformer setups.
-Because for the blendShapes there are way cooler tools than that (see later in <strong>Pose Editor</strong> and <strong>Shape Editor</strong>).
-And if you want to do stuff like Wrap Deformers or Morph, it's much cleaner to do that in a 
-python function before the loadDeformers(), and let the <em>loadDeformers()</em> just set the weights.<br />
-Easy deformers like <em>deltaMush</em> that mainly just need weights and attribute values could be handled
-just in the <em>loadDeformers()</em> function</p>
-<p>When you are loading the skinCluster weights, many times you'll see that some of the joints are just simple joints on the origin.
-This could mean one of two things:</p>
+Because there are more optimized tools (see 
+<a href="../../body/poseEditor1/">Pose Editor</a>, <a href="../../face/shapeEditor1/">Shape Editor</a>,
+<a href="../../python/python1/#simple-way-of-adding-a-function">Python - adding function</a> and
+<a href="../../python/pythonLibrary/#create-deformers">Python Library - Create Deformers</a>)
+But easy deformers like <em>deltaMush</em> that mainly just need weights and attribute values can be handled
+just in the <em>loadDeformers()</em> function.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Joints at the Origin</p>
+<p>When you are loading the skinCluster weights, many times you'll see that some of the joints are just simple joints 
+on the origin.<br />
+<img alt="Alt text" src="../../images/builder_jointsAtOrigin.jpg" />  </p>
+<p>This is not always bad, it could mean one of two things:</p>
 <ol>
 <li>when you exported, there was a joint weighted which due to new changes you did, the joint doesn't exist anymore.
 In that case the skincluster <em>Move</em> tool can help you to move the weights to where they should be</li>
@@ -1677,22 +1703,12 @@ In that case the skincluster <em>Move</em> tool can help you to move the weights
 the <em>loadDeformers()</em> function will just create the simple joints since they don't exist yet. And then 
 the function later is smart enough to recognize them and put them into the proper place</li>
 </ol>
-<p>Here you can see how those joints look like.<br />
-<img alt="Alt text" src="../../images/builder_jointsAtOrigin.jpg" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You'll you see there's also a lot of other <em>garbage</em> around, like some lattice boxes.
-All that is just there for debugging purposes, and will get deleted (cleaned) properly in the <em>clean()</em> function.</p>
 </div>
-<p>If the model changed in topology, you can set the <strong>bWorldSpaceIfNotMatching</strong> flag to True
-<img alt="Alt text" src="../../images/builder_loadDeformerWorldspace.jpg" />
-Actually this way it'll always just worldspace transfer the weights if the topology changed. And you'll see that he
-did that later for example when you rebuild, he'll ask you if you want to export the newly transferred weights.</p>
-<p>If you want to be more specific on how to load the deformers, you can do that in the <a href="../../tools/toolsDeformerImport/"><strong>deformerImport</strong></a> tool:</p>
 <h3 id="importmayafiles"><em>importMayaFiles()</em></h3>
-<p>If you go to <strong>Export</strong> -&gt; <strong>MayaImp</strong>, you can export some scene elements. Those get imported on 
-the <strong>mayaImport()</strong> function.<br />
-If you want to check what files are there, you can do that with <strong>right click</strong>.<br />
+<p>This just imports simple maya files:<br />
+<img alt="Alt text" src="../../images/builderGeneral_importMayaFilesFunction.jpg" />    </p>
+<p>To add files that he should import - go to  <strong>Export</strong> -&gt; <strong>MayaImp</strong>,</p>
+<p>If you want to quickly check what files are there, you can do that with <em>right click</em>:<br />
 <img alt="Alt text" src="../../images/builder_mayaImport.gif" />   </p>
 <h3 id="importtargets"><em>importTargets()</em></h3>
 <p>Very similar to importMayaFiles(). But Targets are just simple Polygon Meshes. Those are saved with a Numpy file format
@@ -1701,29 +1717,31 @@ but there are many situations where you have some simple meshes and you don't wa
 If you go to <strong>Export</strong> -&gt; <strong>Targets</strong>, you can export the selected meshes.<br />
 By default it creates a file for each mesh and the mesh name is defined in the file name. 
 This makes it very easy to manage later</p>
-<h3 id="other-functions">Other Functions</h3>
-<p>Now I've just shown you the important basic functions. But there's a looooot more, like all the green ones.
-And later for the Face we'll add lots of orange functions</p>
-<h2 id="custom-functions">Custom Functions</h2>
-<p>You can create your own functions in Python and declare your own arguments and builder buttons. But that's another topic, shown in <a href="../../python/python1/">Python</a>  </p>
-<h2 id="bld-file">BLD file</h2>
+<h3 id="theres-more">There's more...</h3>
+<p>Now you've just seen the important basic functions. But there's a looooot more, like all the green ones.
+And later for the Face we'll add lots of orange functions.</p>
+<h3 id="custom-functions">Custom Functions</h3>
+<p>You can create your own functions in Python and declare your own arguments and builder buttons. 
+See <a href="../../python/python1/#simple-way-of-adding-a-function">Python - simple way of adding functions</a> and 
+<a href="../../python/python2/#extra-builds">Python - Create Extra Builds </a></p>
+<h2 id="buildbld-file">build.bld file</h2>
 <p>Everything you do in the builder like adding files, check/uncheck functions, setting function variables, or even
-just selecting stuff - gets saved in the <em>build.bld</em> file.<br />
-Whenever you do a wrong click such badly setting some variables that you'd like to undo - <em>Don't Panic!</em>
+just selecting stuff - gets saved in the <em>build.bld</em> file.  </p>
+<p>The <em>build.bld</em> file is a JSON file, so with a text editor you could theoretically adjust it. But we do that
+mainly just for debugging purposes.</p>
+<p>Whenever you do a wrong click such badly setting some variables that you'd like to undo - <em>Don't Panic!</em>
 Just click on the <strong>Backup</strong> button at the top right and choose an older one to switch to. You might even need to use
-it if your build file gets corrupted from a crash.
+that button if your build file gets corrupted from a crash.
 <img alt="Alt text" src="../../images/builder_backups.gif" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The <em>build.bld</em> file is a
-JSON file, so with a text editor you could theoretically adjust it. But we don't do that very often.</p>
-</div>
 
 
 
 
 
 
+
+  
+  
 
 
 

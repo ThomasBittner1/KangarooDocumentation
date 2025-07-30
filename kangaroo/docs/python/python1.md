@@ -34,7 +34,7 @@ button. Basically every time you change any of the scripts, the builder will onl
 Unless you switch to the character with the upper comboboxes, then he'll reload anyway
 ![Alt text](../images/python_reloadButton.jpg)
 !!! warning "Remember!"
-    Forgetting to click the **reload** button is a very common thing with kangaroo begginers. So best write it down ;-)
+    Forgetting to click the **reload** button is a very common thing with kangaroo beginners. So best write it down ;-)
 Now let's look at the function. The important thing is the decorator that starts with *@builderTools.add...*. 
 If you don't have that, the function won't show up in the Builder.
 Do you see the **iOrder=16** parameter in the code above? That's the order number where shows up in the 

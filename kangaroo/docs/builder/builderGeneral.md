@@ -52,7 +52,7 @@ you get a folder that let's you copy a character in it
 
 
 ### *importBlueprints()*, *buildPuppet()*
-*importBlueprints()* and *buildPuppet()* are the functions for grabbing the work you do in the puppet tool.  
+*importBlueprints()* and *buildPuppet()* are the functions for grabbing the work you do in the [**Puppet Tool**](../puppet/puppetGeneral.md).  
 ![Alt text](../images/builderGeneral_puppetFunctions.jpg)  
 It's for creating the main controls and rigging logic like Iks, Fks, Auto Clavicle, ...  
 Check [**Puppet**](../puppet/puppetGeneral.md) for more detail. 
@@ -125,7 +125,7 @@ And later for the Face we'll add lots of orange functions.
 ### Custom Functions
 You can create your own functions in Python and declare your own arguments and builder buttons. 
 See [Python - simple way of adding functions](../python/python1.md#simple-way-of-adding-a-function) and 
-[Python - Create Extra Builds ](../python/python2.md#extra-builds)
+[Python - Create Extra Builds](../python/python2.md#extra-builds).
 
 
 

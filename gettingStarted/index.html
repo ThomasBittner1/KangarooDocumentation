@@ -1569,19 +1569,20 @@
 <h3 id="numpy">Numpy</h3>
 <p>If you get an error that numpy is missing, you'll have to install numpy, too.
 We do that with <em>pip install</em>.  </p>
-<p>If you are in Windows, navigate to your maya installation folder, it will look something like this:
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>C:<span class="se">\P</span>rogram<span class="w"> </span>Files<span class="se">\A</span>utodesk<span class="se">\M</span>aya2024<span class="se">\b</span>in<span class="w"> </span>
+<p>Here we'll explain how to do that in Windows. If you are on Linux or Mac it would be a bit different but similar.</p>
+<p>Navigate to your maya installation folder, it will look something like this:
+<div class="highlight"><pre><span></span><code>C:<span class="se">\P</span>rogram<span class="w"> </span>Files<span class="se">\A</span>utodesk<span class="se">\M</span>aya2024<span class="se">\b</span>in<span class="w"> </span>
 </code></pre></div>
-In there open a <em>Command Prompt</em>, and run
+In there open a <em>Command Prompt</em> (either by right click, or type <em>cmd</em> in the address bar), and run
 <div class="highlight"><pre><span></span><code>./mayapy.exe<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>‐‐user<span class="w"> </span>numpy
 </code></pre></div></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you get weird looking errors, try without the --user numpy flag</p>
+<p>If you get weird looking errors from <em>mayapy.exe</em>, try without the --user numpy flag</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">video</p>
-<p>If you are struggling with it, watch this video. In here we already have a Windows explorer open with
+<p>If you are struggling with installing numpy, watch this video. In here we already have a Windows explorer open with
 the location of Maya:
 <video autoplay muted loop controls width="1170">
     <source src="../../images/gettingStarted_installNumpy.mp4" type="video/mp4">
@@ -1602,7 +1603,7 @@ at two points:</p>
 <li>grabbing the model from studio pipeline, and later</li>
 <li>publishing the actual rig into the studio pipeline</li>
 </ol>
-<p>But how to do that is explained in <a href="../python/python2/#connecting-to-studio-pipeline">Python - Connecting to Studio Pipeline</a></p>
+<p>For more detail see <a href="../python/python2/#connecting-to-studio-pipeline">Python - Connecting to Studio Pipeline</a>.</p>
 </div>
 <h3 id="assetslocal">AssetsLocal</h3>
 <p>First we need to create the AssetsLocal folder. It's the folder where you'll work. 
@@ -1699,7 +1700,14 @@ your character so you can track things back easier whenever something's not work
 </ol>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
-<p>Congratulations! You finished your first Character :-) </p>
+<p>Congratulations, you finished your first Character! </p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">But where's the Rig??</p>
+<p>After you've published, click the <em>Explorer Rig</em> button. 
+<img alt="Alt text" src="../images/gettingStarted_explorerRig.jpg" /> <br />
+If you switch to the server with the <em>Server</em> checkbox, the <em>Explorer Rig</em> button would open the location
+on the server.</p>
 </div>
 <p>Keep in mind if you got until here, it means you still just scratched the surface of what you can do with Kangaroo. 
 Best keep reading the documentation and see how you can improve your rig with what you've learend.</p>

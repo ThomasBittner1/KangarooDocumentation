@@ -930,7 +930,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#eyelid-splines-blendshape-correctives" class="md-nav__link">
+  <a href="#eyelidsplinecorrectives" class="md-nav__link">
     <span class="md-ellipsis">
       Eyelid Splines - BlendShape Correctives
     </span>
@@ -965,6 +965,15 @@
   <a href="#blink-line" class="md-nav__link">
     <span class="md-ellipsis">
       Blink Line
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blink-bottom-and-top-separate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blink Bottom and Top Separate
     </span>
   </a>
   
@@ -1768,7 +1777,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#eyelid-splines-blendshape-correctives" class="md-nav__link">
+  <a href="#eyelidsplinecorrectives" class="md-nav__link">
     <span class="md-ellipsis">
       Eyelid Splines - BlendShape Correctives
     </span>
@@ -1808,6 +1817,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#blink-bottom-and-top-separate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blink Bottom and Top Separate
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1839,25 +1857,27 @@
 <p>Usually those are already setup-ed when you copied from another character. If you do need to set them up yourself,
 make sure to specify the eyes in <em>attacher: eyes (c)</em>
 <img alt="Alt text" src="../../images/face_eyesLookat.jpg" />
-EyeLookatIndiv is for when you have some character that has the eyes pointing sideways. In those situations the
-EyesLookAt is not so great, since the main ctrl is at the front of the character.</p>
+<em>EyeLookatIndiv</em> is for when you have a character that has the eyes pointing sideways. In those situations the
+<em>EyesLookAt</em> is not so great, since the main ctrl is at the front of the character.</p>
 <p>Once you've got the right setup in there, all you need to do is place the blueprints.<br />
 And make sure that the polevector in the BP Rig is pointing <em>downwards</em>. Otherwise you'll get troubles later with the
-eyelid behavior.</p>
+eyelid behavior.<br />
+<img alt="Alt text" src="../../images/eyes_blueprintRig.jpg" />  </p>
 <h3 id="iris-and-pupil">Iris and Pupil</h3>
-<p>The <em>EyesLookat</em> limb also comes with <strong>IrisScale</strong> and <strong>PupilScale</strong> attributes. They reason why they 
-are on the <em>EyesLookat</em> limb is because those have the ctrls for scaling them: 
+<p>The <em>EyesLookat</em> limb also comes with <strong>IrisScale</strong> and <strong>PupilScale</strong> attributes.<br />
+<img alt="Alt text" src="../../images/eyes_irisAndPupilScaleAttributes.jpg" />
+They reason why they are on the <em>EyesLookat</em> limb is because those have the ctrls for scaling them: 
 <em>scaleX/scaleY</em> for Iris, and <em>scaleZ</em> for Pupil.<br />
 <img alt="Alt text" src="../../images/face_irisAndPupilScale.gif" />
-And make sure to skin the <strong>jnt_l_eyeIris</strong> and <strong>jnt_l_eyePupil</strong> joints!</p>
+Make sure to skin the <strong>jnt_l_eyeIris</strong> and <strong>jnt_l_eyePupil</strong> joints!</p>
 <h1 id="eyelids">Eyelids</h1>
-<p>If you didn't add the facePro python file, add it now (facePro_v18.py at the time of this writing). </p>
+<p>If you didn't add the facePro python file, add it now as shown in <a href="../faceGeneral/">faceGeneral</a> (facePro_v18.py at the time of this writing). </p>
 <h2 id="basic-ctrls">Basic Ctrls</h2>
 <p>The function <em>baseLidCtrls()</em> just creates those three arrow ctrls. Those are being used for all setup, no matter
 if simple lid joints, blendShapes or splines.<br />
 <img alt="Alt text" src="../../images/face_basicLidCtrls.jpg" /></p>
-<p>To get a good rom, apply <strong>rom_eyes.anim</strong>, which you'll find in almost every character at <strong>Export -&gt; Anim</strong>
-Now the eyelids are not moving yet. For them to move, you'll hvae to either do <em>simpleLidSetup()</em> (Simple Lid Joints) or <em>splineLidSetup()</em> (Eyelid Splines)</p>
+<p>To get a good rom, apply <strong>rom_eyes.anim</strong>, which you'll find in almost every character at <strong>Export -&gt; Anim</strong>.<br />
+But at this point the eyelids are not moving yet. For them to move, you'll hvae to either do <em>simpleLidSetup()</em> (Simple Lid Joints) or <em>splineLidSetup()</em> (Eyelid Splines)</p>
 <h2 id="simple-lid-joints">Simple Lid Joints</h2>
 <h3 id="create-and-skin">Create and Skin</h3>
 <p>If you turn on the function <em>simpleLidSetup()</em>, you'll get mainly 2 joints for each eye <em>jnt_l_eyeBlinkBot</em> and <em>jnt_l_eyeBlinkTop</em>
@@ -1866,18 +1886,13 @@ in <strong>Basic Ctrls</strong></p>
 <p>After you've run that function, skin the joints. 
 Don't worry if it doesn't look good yet on the blink, for that you'll need to set the slibling transforms.</p>
 <h3 id="sibling-transforms">Sibling Transforms</h3>
-<p>those Transforms that you can move around. 
-Those are working with a similar concept as the  <em>poseLocators</em> you see in lots of other functions. They basically 
-just define the poses of the joints in all eyelid posed by the arrow ctrls (blink, wide, upperLidUp, upperLidDown, ...)<br />
-Locate them by clicking the button <strong>Select Sibling Transforms</strong>
-And then just place them, as you go through the rom that you applied:<br />
+<p>Those are transforms that you can move around, and they define the poses of the lid joints (<em>jnt_l_eyeBlinkBot</em> and <em>jnt_l_eyeBlinkTop</em>).<br />
+They are working with a similar concept as the  <em>poseLocators</em> you see in lots of other functions. Basically they 
+just define the poses of the joints in all eyelid poses that are posed by the arrow ctrls (blink, wide, upperLidUp, upperLidDown, ...)<br />
+Locate them by clicking the button <strong>Select Sibling Transforms</strong>:<br />
+<img alt="Alt text" src="../../images/eyes_selectSiblingTransformsButton.jpg" />  </p>
+<p>And then just place them, as you go through the rom that you applied:<br />
 <img alt="Alt text" src="../../images/face_placeSiblings.gif" />  </p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Some animators want to be able to achieve a blink by adjusting upperlid and lowerlid separate.<br />
-In this case you can click the button <strong>set extras from blink</strong>, which will assign the values from the sibling transforms
-of the blink onto the lower and upper ones.</p>
-</div>
 <p>Many times you can get perfectly looking blinks using a acombination of good skinning and well placed Sibling Transforms.
 But it's not always the case. In some cases you'll hit limits where you have to add blendShapes on top.</p>
 <h2 id="eyelid-blendshapes">Eyelid BlendShapes</h2>
@@ -1994,7 +2009,7 @@ Which can be unwanted behavior. </p>
 Those just specify how the lids behave when they get opened wider. <br />
 If you want to finetune those, you'll more likely want to set the <strong>bLipsCanPushOut</strong> value to <strong>True</strong>, otherwise
 the lips will always be constraint onto the eyeballs</p>
-<h3 id="eyelid-splines-blendshape-correctives">Eyelid Splines - BlendShape Correctives</h3>
+<h3 id="eyelidsplinecorrectives">Eyelid Splines - BlendShape Correctives</h3>
 <p>If the PoseLocs are not enough, you can also go more in detail with sculpting shapes. For that the <a href="../shapeEditor1/">Shape Editor</a>
 needs to be understood.<br />
 When you are using the <em>Shape Editor</em>, many times doing the usual blendShapes mentioned above like <em>blink</em> are already 
@@ -2028,6 +2043,14 @@ Sounds simple - but it needs to be understood how it works under the hood since 
 1. If you have just blendShapes, that blink line will not do anything.
 2. If you have <em>simpleLidSetup()</em> with the <em>siblingTransforms</em>, the blinkLine will rotate the eyelids up/down. Can be useful for small adjustments, but probably unstable if animators move it too much
 3. for Spline Rig it works much smoother</p>
+<h2 id="blink-bottom-and-top-separate">Blink Bottom and Top Separate</h2>
+<p>Some animators want to be able to achieve a blink by adjusting upperlid and lowerlid separate.<br />
+To do that, set the <strong>bExtrasAreAlsoForBlink</strong> attribute in the <em>BASELidCtrls()</em> function.<br />
+<img alt="Alt text" src="../../images/eyes_extrasAreForBlinkAttr.jpg" /><br />
+This means that later the blink shape will get split into bottom and top.</p>
+<p>If you've placed siblings in the function <em>simpleLidSetup()</em>, you can use the <strong>set extras from blink</strong> button, which will assign the values from the sibling transforms
+of the blink onto the lower and upper ones:<br />
+<img alt="Alt text" src="../../images/eyes_setExtrasFromBlink.jpg" /></p>
 
 
 

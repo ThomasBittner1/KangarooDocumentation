@@ -813,6 +813,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Known Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sometimes-the-interpolator-doesnt-update-anymore-even-though-im-100-sure-my-settings-are-correct" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sometimes the Interpolator doesn't update anymore, even though I'm 100 % sure my settings are correct.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-i-export-using-the-fill-and-export-button-he-exports-the-whole-rig" class="md-nav__link">
+    <span class="md-ellipsis">
+      When I export using the Fill and Export button, he exports the whole rig.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1717,6 +1750,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Known Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sometimes-the-interpolator-doesnt-update-anymore-even-though-im-100-sure-my-settings-are-correct" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sometimes the Interpolator doesn't update anymore, even though I'm 100 % sure my settings are correct.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-i-export-using-the-fill-and-export-button-he-exports-the-whole-rig" class="md-nav__link">
+    <span class="md-ellipsis">
+      When I export using the Fill and Export button, he exports the whole rig.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1743,7 +1809,7 @@
 <div class="admonition info">
 <p class="admonition-title">Video</p>
 <p>To see how the Pose Editor works in action, you can also watch this <a href="https://www.youtube.com/embed/oPQHf2HOq5o">Video</a>.  <br />
-Especially the <a href="../poseEditor2/#model-change">model update (Pose Editor II)</a> part has changed.</p>
+But keep in mind it's a bit outdated, especially the <a href="../poseEditor2/#model-change">model update (Pose Editor II)</a> part has changed.</p>
 </div>
 <h2 id="interpolators-calculating-the-pose">Interpolators - Calculating the Pose</h2>
 <p>Interpolators are little setups that analyze the rig to see if and how strong
@@ -1793,13 +1859,13 @@ cases when things are wrong it might even output something like <em>INF</em> or 
 Whenever that happens just try to align them a bit nicer and make sure that you not less than 4 poses.</li>
 </ul>
 <p>Here's a short video how we create them for the upper arm:</p>
-<video autoplay muted loop controls width="1920">
+<video autoplay muted loop controls width="1700">
     <source src="../../images/poseEditor_creatingMayaPose.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 
 <h3 id="cone">Cone</h3>
-<p>Cones just measure <em>how small the angle is</em> between joint and the cone.
+<p>Cones just calculate <em>how small the angle is</em> between joint and the cone.
 <img alt="Alt text" src="../../images/poseEditor_cone.gif" /></p>
 <p>It's also 3-dimensional poses such as the <em>MayaPose</em>, and the first part of just creating them is 
 almost identical to the MayaPose.
@@ -1895,6 +1961,12 @@ collapsed, and we want to smooth them out again.</p>
 <p class="admonition-title">Remember</p>
 <p>Don't forget to deactivate the <em>EDIT</em> button when you are done!</p>
 </div>
+<div class="admonition bug">
+<p class="admonition-title">Known Bug</p>
+<p>When clicking the <em>EDIT</em> button, Maya creates a little bit of a cycle, which in some rare cases might temporarily mess up evaluation
+a bit. If you notice that your interpolator stays at 100 %, you'll have to rebuild the interpolator by right click -&gt; <strong>Force Rebuild</strong> <br />
+See <a href="#known-issues">here</a> for more info.</p>
+</div>
 <h3 id="ctrl-targets">Ctrl Targets</h3>
 <p>When you create Targets on Ctrls, it just creates a Ctrl Locator for each Ctrl that you can move around</p>
 <video autoplay muted loop controls width="1182">
@@ -1967,8 +2039,12 @@ in a sitting pose, it won't blend well together. Theoretically you could create 
 target for both together. But in most cases it's nicer to do the <em>Split Target</em> option.</p>
 <p>To do splitting - when sculpting it, have the <em>EDIT</em> button activated just on the left target (or the right one, wouldn't matter).
 So at first you end up with a situation where when you activate the left target, the right side gets activated the same time.
-And all you have to do is click <strong>Side:Pose Combinations and Split Current Combined Shape into Left/Right</strong>
-<img alt="Alt text" src="../../images/poseEditor_splitTarget.gif" />  </p>
+And all you have to do is click <strong>Side:Pose Combinations and Split Current Combined Shape into Left/Right</strong></p>
+<video autoplay muted loop controls width="1142">
+    <source src="../../images/poseEditor_splitTarget.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
 <h3 id="mirror-ctrls">Mirror Ctrls</h3>
 <p>For the ctrls you just choose <strong>Side:Pose Combinations and Ctrls</strong>. You can do either the selected
 ctrls, or if you don't have any ctrls selected, he'll do all 
@@ -1977,6 +2053,14 @@ ctrls, or if you don't have any ctrls selected, he'll do all
 <p>Click the <strong>FillAndExport</strong> button. It fills the <em>ddInterpolators</em> and <em>ddPoseData</em> attributes, and 
 creates the file <em>poseEditorExports.ma</em> in the <em>mayaImport</em> folder. 
 <img alt="Alt text" src="../../images/PoseEditor_FillAndExport.jpg" />  </p>
+<h2 id="known-issues">Known Issues</h2>
+<h4 id="sometimes-the-interpolator-doesnt-update-anymore-even-though-im-100-sure-my-settings-are-correct">Sometimes the Interpolator doesn't update anymore, even though I'm 100 % sure my settings are correct.</h4>
+<p>This is often an evaluation problem that happens if the rig is either very complex, or if there's a cycle
+in there.<br />
+But there's a workaround: select the interpolator, and set <strong>right click -&gt; rebuild</strong>.  </p>
+<h4 id="when-i-export-using-the-fill-and-export-button-he-exports-the-whole-rig">When I export using the <strong>Fill and Export</strong> button, he exports the whole rig.</h4>
+<p>Check if you have some connections going from the meshes inside the <em>_poseEditorExport</em> group. Sometimes
+it could be a set. You can also try to just delete all your sets in scene</p>
 
 
 

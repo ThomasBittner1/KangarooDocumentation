@@ -9,19 +9,21 @@
 If you get an error that numpy is missing, you'll have to install numpy, too.
 We do that with *pip install*.  
 
-If you are in Windows, navigate to your maya installation folder, it will look something like this:
+Here we'll explain how to do that in Windows. If you are on Linux or Mac it would be a bit different but similar.
+
+Navigate to your maya installation folder, it will look something like this:
 ```bash
-cd C:\Program Files\Autodesk\Maya2024\bin 
+C:\Program Files\Autodesk\Maya2024\bin 
 ```
-In there open a *Command Prompt*, and run
+In there open a *Command Prompt* (either by right click, or type *cmd* in the address bar), and run
 ``` bash
 ./mayapy.exe -m pip install ‐‐user numpy
 ```
 !!! note
-    If you get weird looking errors, try without the --user numpy flag
+    If you get weird looking errors from *mayapy.exe*, try without the --user numpy flag
 
 !!! info "video"
-    If you are struggling with it, watch this video. In here we already have a Windows explorer open with
+    If you are struggling with installing numpy, watch this video. In here we already have a Windows explorer open with
     the location of Maya:
     <video autoplay muted loop controls width="1170">
         <source src="../../images/gettingStarted_installNumpy.mp4" type="video/mp4">
@@ -45,7 +47,7 @@ increment/version your assets, and even backup and share with the team.
     1. grabbing the model from studio pipeline, and later
     2. publishing the actual rig into the studio pipeline
 
-    But how to do that is explained in [Python - Connecting to Studio Pipeline](python/python2.md#connecting-to-studio-pipeline)
+    For more detail see [Python - Connecting to Studio Pipeline](python/python2.md#connecting-to-studio-pipeline).
 
 ### AssetsLocal
 First we need to create the AssetsLocal folder. It's the folder where you'll work. 
@@ -146,7 +148,14 @@ your character so you can track things back easier whenever something's not work
 5. When you click **RunAll** in the builder, you have your Rig.  
 
 !!! success
-    Congratulations! You finished your first Character :-) 
+    Congratulations, you finished your first Character! 
+
+!!! question "But where's the Rig??"  
+    After you've published, click the *Explorer Rig* button. 
+    ![Alt text](images/gettingStarted_explorerRig.jpg)   
+    If you switch to the server with the *Server* checkbox, the *Explorer Rig* button would open the location
+    on the server.
+
 
 Keep in mind if you got until here, it means you still just scratched the surface of what you can do with Kangaroo. 
 Best keep reading the documentation and see how you can improve your rig with what you've learend.

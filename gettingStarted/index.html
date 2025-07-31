@@ -276,6 +276,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Numpy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1458,6 +1473,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Numpy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1536,21 +1566,36 @@
 <li>You should see the new KangarooBuilder shelf already.</li>
 <li>Restart Maya</li>
 </ol>
+<h3 id="numpy">Numpy</h3>
 <p>If you get an error that numpy is missing, you'll have to install numpy, too.
-We do that with <em>pip install</em>.<br />
-Do the following thing in a Command Prompt (cmd). You'll most likely have to change the path on maya version or installation location.</p>
+We do that with <em>pip install</em>.  </p>
+<p>If you are in Windows, navigate to your maya installation folder, it will look something like this:
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>C:<span class="se">\P</span>rogram<span class="w"> </span>Files<span class="se">\A</span>utodesk<span class="se">\M</span>aya2024<span class="se">\b</span>in<span class="w"> </span>
-mayapy.exe<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>‐‐user<span class="w"> </span>numpy
 </code></pre></div>
+In there open a <em>Command Prompt</em>, and run
+<div class="highlight"><pre><span></span><code>./mayapy.exe<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>‐‐user<span class="w"> </span>numpy
+</code></pre></div></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you get weird looking errors, try without the --user numpy flag</p>
 </div>
-<p>If you just want to use the skinCluster/geometry tools or the shape editor - you are done at this point.</p>
+<div class="admonition info">
+<p class="admonition-title">video</p>
+<p>If you are struggling with it, watch this video. In here we already have a Windows explorer open with
+the location of Maya:
+<video autoplay muted loop controls width="1170">
+    <source src="../../images/gettingStarted_installNumpy.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video></p>
+</div>
 <h2 id="the-directories">The Directories</h2>
+<p>If you just want to use the SkinCluster/Geometry Tools or the Shape Editor or the Picker - you don't need to setup the directories.</p>
+<p>But if you want to build characters, there's a little bit of more setup we have to do now.</p>
 <p>First of all you need to understand that Kangaroo is not just a Rigging Tool. It's a <em>Rigging Pipeline</em> that helps you also
-increment/version your assets, and even backup and share with the team.  <br />
-If you work in a studio where they have their own studio pipeline, then Kangaroo is still another pipeline
+increment/version your assets, and even backup and share with the team.    </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you work in a studio where they have their own studio pipeline, then Kangaroo is still another pipeline
 that runs parallel to the studio pipeline. You can set things up to connect to the studio pipeline
 at two points:</p>
 <ol>
@@ -1558,10 +1603,12 @@ at two points:</p>
 <li>publishing the actual rig into the studio pipeline</li>
 </ol>
 <p>But how to do that is explained in <a href="../python/python2/#connecting-to-studio-pipeline">Python - Connecting to Studio Pipeline</a></p>
+</div>
 <h3 id="assetslocal">AssetsLocal</h3>
 <p>First we need to create the AssetsLocal folder. It's the folder where you'll work. 
 It can be anywhere on your disk drive and doesn't necessarily have to be shared with others. 
-Just create an empty folder, and specify that in the settings:  <br />
+Just create an empty folder, and specify that by clicking on the <strong>Settings</strong> button, copy/paste it into
+the <em>Assets Local Dir</em>, and click <strong>Save</strong>:<br />
 <img alt="Alt text" src="../images/settingAssetsLocal.jpg" /></p>
 <p><strong>After changing the settings, Restart Maya.</strong></p>
 <p>Then inside that new folder, let's create another empty folder for your project, and name it <em>__MYPROJECT__</em>
@@ -1569,7 +1616,7 @@ It's important that there are <strong>2 underscores</strong> before the name, an
 And all has to be UPPERCASE.<br />
 Without following those rules, Kangaroo won't recognize the folder as a project.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">Environment Variables</p>
 <p>You could also specify the assestLocal path with the Environment Variable <strong>KANGAROO_WORK_PATH</strong>. This can be 
 useful if you are setting up kangaroo for a bigger rigging department</p>
 </div>
@@ -1577,52 +1624,71 @@ useful if you are setting up kangaroo for a bigger rigging department</p>
 <p>To start creating characters, 99.95 % of the times you copy from an existing one and adjust.
 And we usually grab one from the server. <strong>Templates</strong> is one server that comes with the tool, and has those assets:</p>
 <ul>
-<li>BASEHUMAN</li>
-<li>BASEDOG (digigrade quadruped - dogs, cats, ...)</li>
-<li>BASEHORSE (unguligrade quadruped - horses, deers, ..)</li>
-<li>BASEMOUSE (plantigrade quadruped - mouse, bears, ...)</li>
-<li>BASEBIRD</li>
-<li>BASEPROP</li>
-<li>BASELEGOFIGURE</li>
-<li>THOMAS (BlendShape driven Face Rig)</li>
+<li><strong>BASEHUMAN</strong></li>
+<li><strong>BASEDOG</strong> (digigrade quadruped - dogs, cats, ...)</li>
+<li><strong>BASEHORSE</strong> (unguligrade quadruped - horses, deers, ..)</li>
+<li><strong>BASEMOUSE</strong> (plantigrade quadruped - mouse, bears, ...)</li>
+<li><strong>BASEBIRD</strong></li>
+<li><strong>BASEPROP</strong></li>
+<li><strong>BASELEGOFIGURE</strong></li>
+<li><strong>THOMAS</strong> (BlendShape driven Face Rig)</li>
 </ul>
 <p><a id="createnew"></a>
-Let's go to the BASEHUMAN for example, and then in <strong>Export -&gt; NEW</strong>, set the project and new asset name, and then click <strong>Create</strong>
-<img alt="Alt text" src="../images/newAssetGif.gif" />
-By default it's doing UPPERCASE. It's recommended that you keep it this way since mixed casing can get uncomfortable in one out of 100 cases.
-Just imagine two people create the same asset name but different casings ;-)
-But if you need to match the name from a studio pipeline, you have the option to do the <em>dangerous</em> mixed cases name </p>
+Let's go to the BASEHUMAN, and then in <strong>Export -&gt; NEW</strong>, set the project and new asset name, and then click <strong>Create</strong>:
+    <video autoplay muted loop controls width="826">
+        <source src="../../images/gettingStarted_createNewAsset.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video></p>
+<div class="admonition note">
+<p class="admonition-title">UPPERCASE/MixedCase</p>
+<p>By default it's automatically converting the name to UPPERCASE. It's recommended that you keep it this way 
+since mixed casing can get ugly in one out of 100 times.
+Just imagine one person create <em>"MyCharacter"</em>, and one person creates <em>"myCharacter"</em>.<br />
+But if you need to match the name from a studio pipeline, you have the option to do the <em>dangerous</em> mixed cases name. </p>
+</div>
 <h3 id="assetsserver">AssetsServer</h3>
-<p>At this point you could theoretically jump to the next tutorial and just start building chaeracters.
+<p>At this point you could theoretically jump to the next tutorial and just start building characters.
 But you have to setup the server at some point anyway, why not do it now.</p>
 <p>You need a server location where you publish the characters to. And that is for one or two things:</p>
 <ol>
 <li>Backup your work </li>
 <li>Sharing with the rigging team</li>
 </ol>
-<p>The new server should be on another disk, that could be a folder setup-ed with Smartdrive from Dropbox, Box or GoogleDrive.
-The most stable with previous tests has been Dropbox.
+<p>The new server should be on another disk. It could be a folder setup-ed with Smartdrive from <em>Dropbox</em>, <em>Box</em> or <em>GoogleDrive</em>.
 Or if you are working in a network, it can be a location on the network. </p>
+<div class="admonition note">
+<p class="admonition-title">Smart Drives</p>
+<p>In case you want to do it with a smart drive, and you have to decide - we've tried all the smart drives in Windows, and the most stable one has been Dropbox.</p>
+</div>
 <p>If you don't have one yet, just create an empty folder again.
 And after that, open the <strong>pathEnv.mel</strong> file with a text editor, and change the path after <em>default@</em> to be your server path.
-Important: even in Windows, do not use <strong>\</strong> for separating the folders, it all has to be <strong>/</strong>. If you
-copy/paste path in Windows, it'll do the wrong one and you'll have to fix that.
+Important: even in Windows, do not use <strong>\</strong> for separating the folders, it all has to be <strong>/</strong>. 
 <div class="highlight"><pre><span></span><code>putenv<span class="w"> </span><span class="s2">&quot;KANGAROO_SERVER_PATH&quot;</span><span class="w"> </span><span class="s2">&quot;templates@./templates; default@C:/Users/thoma/Dropbox/assetsServer&quot;</span><span class="p">;</span>
-</code></pre></div>
-See how there's the <em>template</em> server before? Yes, you remember it correctly, the template place where we copied character from before
-is another server!</p>
-<p>Also - the <em>pathEnv.mel</em> is basically setting the Environment variable.
+</code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Windows</p>
+<p>If you copy/paste path in Windows, it'll do the wrong slash! So you have to replace all <strong>\</strong> with <strong>/</strong>.</p>
+</div>
+<p>See how there's a <em>template</em> server defined? This is the template place where we copied character from before. Template is
+another <em>server</em>.</p>
+<div class="admonition info">
+<p class="admonition-title">Environment Variables</p>
+<p>The <em>pathEnv.mel</em> file is basically setting the Environment variable.
 If you are a Pipeline TD you might say this is dirty and messy. But no, this is just a simple way to get you started quickly.
 If you want to set the Environment Variables in a different way, just comment out those lines with //, and
 create the Environment variables wherever you prefer. There's even another file <strong>example__Maya.env</strong> where you can
-see how you would set it up in <em>the usual</em> way</p>
+see how you would set it up in a <em>pipeline friendly</em> way</p>
+</div>
 <h2 id="roadmap-for-first-character">Roadmap for First Character</h2>
-<p>Once you've setup-ed your directories and started the character with the <a href="#createnew"><strong>create NEW</strong></a> tool, you can start actually 
-rig the character with the points below. </p>
+<p>Once you've setup-ed your directories and started the character with the <a href="#createnew"><strong>create NEW</strong></a> tool, you are ready
+to actually rig your character by following the points below!  </p>
+<div class="admonition note">
+<p class="admonition-title">Keep in Mind!</p>
 <p>Always keep in mind that Kangaroo is a procedural tool where we don't 
 just work on a maya file and send that out when we are done.<br />
 Instead we work on the data that in the end creates the character with the <em>RunAll</em> button.</p>
-<p>And generally don't get carried away with one file for too long. Always just export and rebuild. And best regularly publish
+</div>
+<p>And generally don't get carried away with one maya scene for too long. Always just export and rebuild. And best regularly publish
 your character so you can track things back easier whenever something's not working.</p>
 <ol>
 <li><a href="../builder/builderGeneral/#importmodel">Specify Your Model</a></li>

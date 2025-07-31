@@ -9,7 +9,7 @@ It consists of Interpolators, Interpolator Attributes and Targets, Meshes and Ct
 
 !!! info "Video" 
     To see how the Pose Editor works in action, you can also watch this [Video](https://www.youtube.com/embed/oPQHf2HOq5o).    
-    Especially the [model update (Pose Editor II)](poseEditor2.md#model-change) part has changed.
+    But keep in mind it's a bit outdated, especially the [model update (Pose Editor II)](poseEditor2.md#model-change) part has changed.
 
 ## Interpolators - Calculating the Pose
 Interpolators are little setups that analyze the rig to see if and how strong
@@ -63,14 +63,14 @@ cases when things are wrong it might even output something like *INF* or all pos
 Whenever that happens just try to align them a bit nicer and make sure that you not less than 4 poses.
 
 Here's a short video how we create them for the upper arm:
-<video autoplay muted loop controls width="1920">
+<video autoplay muted loop controls width="1700">
     <source src="../../images/poseEditor_creatingMayaPose.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 
 
 ### Cone
-Cones just measure *how small the angle is* between joint and the cone.
+Cones just calculate *how small the angle is* between joint and the cone.
 ![Alt text](../images/poseEditor_cone.gif)
 
 It's also 3-dimensional poses such as the *MayaPose*, and the first part of just creating them is 
@@ -256,7 +256,11 @@ target for both together. But in most cases it's nicer to do the *Split Target* 
 To do splitting - when sculpting it, have the *EDIT* button activated just on the left target (or the right one, wouldn't matter).
 So at first you end up with a situation where when you activate the left target, the right side gets activated the same time.
 And all you have to do is click **Side:Pose Combinations and Split Current Combined Shape into Left/Right**
-![Alt text](../images/poseEditor_splitTarget.gif)  
+<video autoplay muted loop controls width="1142">
+    <source src="../../images/poseEditor_splitTarget.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
 
 
 ### Mirror Ctrls

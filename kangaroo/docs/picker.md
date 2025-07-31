@@ -86,7 +86,7 @@ KangarooMatchTools.humanLimbsSwitchMenu()
 ```
 
 ### Tool Installation
-The tool is installed by default if you've installed Kangaroo-Builder as shown in the [Getting Started](installation.md) page
+The tool is installed by default if you've installed Kangaroo-Builder as shown in the [Getting Started](gettingStarted.md) page
 (The first part is enough - no need to setup things like assetsLocal or servers).
 Animators can just open it from the same install that you have.  
 

@@ -15,7 +15,7 @@ theme:
   copyright: "2025 Kangaroo Builder"
 nav:
   - Home: index.md
-  - Getting Started: installation.md
+  - Getting Started: gettingStarted.md
   - Builder:
      - General: builder/builderGeneral.md
      - Workflow Tricks: builder/workflowTricks.md

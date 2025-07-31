@@ -178,6 +178,11 @@ activated, you can also select vertices and move them. Or use some of the *Geome
 !!! warning "Remember"
     Don't forget to deactivate the *EDIT* button when you are done!
 
+!!! bug "Known Bug"
+    When clicking the *EDIT* button, Maya creates a little bit of a cycle, which in some rare cases might temporarily mess up evaluation
+    a bit. If you notice that your interpolator stays at 100 %, you'll have to rebuild the interpolator by right click -> **Force Rebuild**   
+    See [here](#known-issues) for more info.
+
 ### Ctrl Targets
 When you create Targets on Ctrls, it just creates a Ctrl Locator for each Ctrl that you can move around
 <video autoplay muted loop controls width="1182">
@@ -274,4 +279,13 @@ Click the **FillAndExport** button. It fills the *ddInterpolators* and *ddPoseDa
 creates the file *poseEditorExports.ma* in the *mayaImport* folder. 
 ![Alt text](../images/PoseEditor_FillAndExport.jpg)  
 
+
+## Known Issues
+#### Sometimes the Interpolator doesn't update anymore, even though I'm 100 % sure my settings are correct.
+This is often an evaluation problem that happens if the rig is either very complex, or if there's a cycle
+in there.  
+But there's a workaround: select the interpolator, and set **right click -> rebuild**.  
+#### When I export using the **Fill and Export** button, he exports the whole rig.
+Check if you have some connections going from the meshes inside the *_poseEditorExport* group. Sometimes
+it could be a set. You can also try to just delete all your sets in scene
 

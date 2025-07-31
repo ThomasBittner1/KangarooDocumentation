@@ -67,12 +67,3 @@ If you have another mesh that has the pose sculpted already, the *Blend IDs* too
 the **TOOLS** button.
 
 
-## Known Issues
-#### Sometimes the Interpolator doesn't update anymore, even though I'm 100 % sure my settings are correct.
-This is often an evaluation problem that happens if the rig is either very complex, or if there's a cycle
-in there.  
-But there's a workaround: select the interpolator, and set **right click -> rebuild**.  
-#### When I export using the **Fill and Export** button, he exports the whole rig.
-Check if you have some connections going from the meshes inside the *_poseEditorExport* group. Sometimes
-it could be a set. You can also try to just delete all your sets in scene
-

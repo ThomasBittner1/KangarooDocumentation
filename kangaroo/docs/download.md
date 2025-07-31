@@ -1,5 +1,5 @@
 
-Download of Kangaroo Version 4 is not available yet.
+Download of Kangaroo Version 5 is not available yet.
 
 In the meantime, please download from [www.kangaroo-builder.com](https://www.kangaroo-builder.com) 
 

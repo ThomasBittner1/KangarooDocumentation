@@ -12,31 +12,33 @@ For the eyeballs you have 3 specific limbs:
 Usually those are already setup-ed when you copied from another character. If you do need to set them up yourself,
 make sure to specify the eyes in *attacher: eyes (c)*
 ![Alt text](../images/face_eyesLookat.jpg)
-EyeLookatIndiv is for when you have some character that has the eyes pointing sideways. In those situations the
-EyesLookAt is not so great, since the main ctrl is at the front of the character.
+*EyeLookatIndiv* is for when you have a character that has the eyes pointing sideways. In those situations the
+*EyesLookAt* is not so great, since the main ctrl is at the front of the character.
 
 Once you've got the right setup in there, all you need to do is place the blueprints.  
 And make sure that the polevector in the BP Rig is pointing *downwards*. Otherwise you'll get troubles later with the
-eyelid behavior.
+eyelid behavior.  
+![Alt text](../images/eyes_blueprintRig.jpg)  
 
 ### Iris and Pupil
-The *EyesLookat* limb also comes with **IrisScale** and **PupilScale** attributes. They reason why they 
-are on the *EyesLookat* limb is because those have the ctrls for scaling them: 
+The *EyesLookat* limb also comes with **IrisScale** and **PupilScale** attributes.  
+![Alt text](../images/eyes_irisAndPupilScaleAttributes.jpg)
+They reason why they are on the *EyesLookat* limb is because those have the ctrls for scaling them: 
 *scaleX/scaleY* for Iris, and *scaleZ* for Pupil.  
 ![Alt text](../images/face_irisAndPupilScale.gif)
-And make sure to skin the **jnt_l_eyeIris** and **jnt_l_eyePupil** joints!
+Make sure to skin the **jnt_l_eyeIris** and **jnt_l_eyePupil** joints!
  
 
 
 # Eyelids
-If you didn't add the facePro python file, add it now (facePro_v18.py at the time of this writing). 
+If you didn't add the facePro python file, add it now as shown in [faceGeneral](faceGeneral.md) (facePro_v18.py at the time of this writing). 
 ## Basic Ctrls
 The function *baseLidCtrls()* just creates those three arrow ctrls. Those are being used for all setup, no matter
 if simple lid joints, blendShapes or splines.  
 ![Alt text](../images/face_basicLidCtrls.jpg)
 
-To get a good rom, apply **rom_eyes.anim**, which you'll find in almost every character at **Export -> Anim**
-Now the eyelids are not moving yet. For them to move, you'll hvae to either do *simpleLidSetup()* (Simple Lid Joints) or *splineLidSetup()* (Eyelid Splines)
+To get a good rom, apply **rom_eyes.anim**, which you'll find in almost every character at **Export -> Anim**.  
+But at this point the eyelids are not moving yet. For them to move, you'll hvae to either do *simpleLidSetup()* (Simple Lid Joints) or *splineLidSetup()* (Eyelid Splines)
 
 
 ## Simple Lid Joints
@@ -49,17 +51,14 @@ After you've run that function, skin the joints.
 Don't worry if it doesn't look good yet on the blink, for that you'll need to set the slibling transforms.
 
 ### Sibling Transforms
-those Transforms that you can move around. 
-Those are working with a similar concept as the  *poseLocators* you see in lots of other functions. They basically 
-just define the poses of the joints in all eyelid posed by the arrow ctrls (blink, wide, upperLidUp, upperLidDown, ...)  
-Locate them by clicking the button **Select Sibling Transforms**
+Those are transforms that you can move around, and they define the poses of the lid joints (*jnt_l_eyeBlinkBot* and *jnt_l_eyeBlinkTop*).  
+They are working with a similar concept as the  *poseLocators* you see in lots of other functions. Basically they 
+just define the poses of the joints in all eyelid poses that are posed by the arrow ctrls (blink, wide, upperLidUp, upperLidDown, ...)  
+Locate them by clicking the button **Select Sibling Transforms**:  
+![Alt text](../images/eyes_selectSiblingTransformsButton.jpg)  
+
 And then just place them, as you go through the rom that you applied:  
 ![Alt text](../images/face_placeSiblings.gif)  
-
-!!! tip
-    Some animators want to be able to achieve a blink by adjusting upperlid and lowerlid separate.  
-    In this case you can click the button **set extras from blink**, which will assign the values from the sibling transforms
-    of the blink onto the lower and upper ones.
 
 Many times you can get perfectly looking blinks using a acombination of good skinning and well placed Sibling Transforms.
 But it's not always the case. In some cases you'll hit limits where you have to add blendShapes on top.
@@ -237,3 +236,14 @@ Sounds simple - but it needs to be understood how it works under the hood since 
 1. If you have just blendShapes, that blink line will not do anything.
 2. If you have *simpleLidSetup()* with the *siblingTransforms*, the blinkLine will rotate the eyelids up/down. Can be useful for small adjustments, but probably unstable if animators move it too much
 3. for Spline Rig it works much smoother
+
+
+## Blink Bottom and Top Separate
+Some animators want to be able to achieve a blink by adjusting upperlid and lowerlid separate.  
+To do that, set the **bExtrasAreAlsoForBlink** attribute in the *BASELidCtrls()* function.  
+![Alt text](../images/eyes_extrasAreForBlinkAttr.jpg)  
+This means that later the blink shape will get split into bottom and top.
+
+If you've placed siblings in the function *simpleLidSetup()*, you can use the **set extras from blink** button, which will assign the values from the sibling transforms
+of the blink onto the lower and upper ones:  
+![Alt text](../images/eyes_setExtrasFromBlink.jpg)

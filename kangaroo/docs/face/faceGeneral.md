@@ -168,18 +168,22 @@ ALL the sliderBlueprints, not just the ones of the current function.
 
 ## DEFAULT ATTRS {#defaultattrs}
 On many functions you'll see that **=== DEFAULT ATTRS ===** button. It deals with attributes that are usually on the passers of the 
-ctrls that can be used to finetune the setup.  
+ctrls that can be used to finetune the setup. Sometimes it also handles pose locators.  
+![Alt text](../images/faceGeneral_defaultAttrsButton.gif)  
 
-But sometimes also pose locators. 
+The button lets you **Mirror** and **Fill** the attributes. Filling means putting their values into the function attribute. 
 
-The button lets you mainly **Mirror** or **Fill** the attributes. Filling means putting their values into the function attribute. 
+!!! tip "Kangaroo Tool Tip"
+    If you want to update values after you've filled them, the [JSON Editor](../builder/jsonEditor.md) can help you with this. 
+
+!!! tip "Kangaroo Tool Tip"
+    Since most attributes are on passer groups, there's the shelf button ![Alt text](../images/faceGeneral_selPssr.jpg) (*selPssr*),
+    that selects the passers on all selected ctrls.
 
 !!! warning "Watch Out"
     While it often does pose locators, it's not always the case. Check if that function has an extra button for filling 
     the Pose Locator. If unclear, you can also click the *Info* or *Select* option in the *Default Attrs* menu.
 
-!!! tip "Kangaroo Tool Tip"
-    If you want to update values after you've filled them, the The [JSON Editor](../builder/jsonEditor.md) can help you with this. 
 
 ## Deformer Order
 The order how deformers are applied to the meshes is very important. If you are clicking the function buttons to add 

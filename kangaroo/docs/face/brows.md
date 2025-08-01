@@ -60,8 +60,8 @@ main brows, and positive is above.
 ![Alt text](../images/brows_verticalSplineOffsets.jpg)  
 
 Adjusting the speed of those is done with passer attributes:     
-![Alt text](../images/brows_extraRowsPasser.jpg)
-
+![Alt text](../images/brows_extraRowsPasser.jpg)  
+Then saving it works with the [** === DEFAULT ATTRS === **](faceGeneral.md#defaultattrs) button.
  
 ### Brow Splines - skinCluster
 For skinning them, just select the mesh and click the button **Add Influences to Selected**. This just adds the influences,

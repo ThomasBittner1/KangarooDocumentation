@@ -1,8 +1,11 @@
-For lips you also have option between blendShapes and splines.  
-But what's different to the other setups is that on the lips you do both ways with the same function: *BASEMouthCtrls()*
+For mouth you also have option between blendShapes and splines.  
+But what's different to the other setups is that on the mouth both ways happen with the same function: *BASEMouthCtrls()*
 
 ## Blueprints
-The first part of the blueprints is the same between blendShapes and Splines
+Creating the blueprints also happen with the buttons on the side:  
+![Alt text](../images/mouth_blueprintButtons.jpg)    
+When you are doing blendShape rig, you don't need to do the *Corner Sliding Plane*, but the other 3 things you need.
+
 
 ### Blueprints - Inner and Outer Curves
 First select the closest (or smallest) loop of vertices, and press **Create Inner Curves and Locators**
@@ -11,19 +14,18 @@ This gives you this blueprint curve with locators. Make sure the locators are at
 are separating the top and the bottom.  
 ![Alt text](../images/mouth_blueprintcurve.jpg)    
 Now there's a very important and easy to miss attribute - **bFlipInnerMouthCurves**. On many characters the lips
-are so close together, that in the middle the upper vertices are lower than the lower vertices. If this is the case,
-then you'll need to set that attribute to True. Otherwise False.    
+are so close together, that some upper vertices are lower than the lower vertices. If this is the case,
+then you'll need to set that attribute to *True*. Otherwise False.    
 ![Alt text](../images/mouth_bFlipInnerMouthCurves.jpg)    
 !!! warning "Don't forget!"
-    Make sure to doublecheck the *bFlipInnerMouthCurves*, you might not notice it's wrong until the very end.
- 
+    Make sure to doublecheck the *bFlipInnerMouthCurves*. You might not notice if it's wrong until the very end. And
+    even though there are tools to fix the skinning if it was flipped, it's still better to have it correct from the start.
 
-And then select the loop of the outer corner of the lips, and press **Create Outer Curves and Locators**
+Next select the loop of the outer corner of the lips, and press **Create Outer Curves and Locators**
 ![Alt text](../images/mouth_edgeloopOutside.jpg)  
 
 ### Blueprints - Mouth Pivot
-Then click **Create Mouth Pivot**. Imagine if the mouth moves left/right in a sperical motion, where should the center be?  
-That's where you place the *bp_m_mouthPivot*
+Then click **Create Mouth Pivot**. When the mouth moves left/right in a sperical motion, the *bp_m_mouthPivot* is where the center is. 
 
 It's important that the X axis is pointing up, Y axis is pointing back, and the Z axis is pointing to the right.  
 *Why is not not closer to worldspace?* That's because it's closer to how the head joint is. 
@@ -47,22 +49,24 @@ For now just shape it roughly, but very likely you'll be revisiting this later a
     this surface is often not placed well.
 
 ## Upper and Lower Ctrls
-### Count and Position
-The Lip Ctrls (Upper and Lower Lips Ctrls) are the only dynamic ones, where you can specify how many you'd like.  
-And you do that with the **fLeftLipParamPercs**. Now thats's a bit technical and needs to be understood.
+### Count/Positions
+The Lip Ctrls (Upper and Lower Lips Ctrls) are the only ones where you can decide many you want.  
+And you do that with the **fLeftLipParamPercs**:   
+![Alt text](../images/mouth_leftLipParams.jpg)  
+It might look a little *"technical"* at first glance, so here's the explanation:    
 If you set the attribute to *[0.20, 0.33, 0.5]*, you'll get this many lip ctrls:  
 ![Alt text](../images/mouth_lipCtrls.jpg)  
 *Is it too many?* Yes, for a human most likely. But for dogs thave have long mouths, this could be the right amount.  
 For humans you might want to set it to *[0.33, 0.5]*, which means one in the middle (yellow) and one on each side.
 Or if you don't want the middle, just set it to *[0.33]*
 !!! note
-    You see how we don't specify parameters after 0.5? That's because as the name already says it, we only specify 
+    You see how we don't specify parameters higher than 0.5? That's because as the name already says it, we only specify 
     the left ones, and the right ones are mirrored. 
 
 ### Orientation
 The orientation of those ctrls happens with the slider blueprints (*sliderBp_l_lipsBot1*, *sliderBp_l_lipsBot0*, ..). 
-But unlike the other (simpler) slider blueprints, the ones for the lips are not live!  
-So you have to adjust before running the *BASEMouthCtrls()*, export those and rebuild.
+Keep in mind that unlike the other (simpler) slider blueprints, the ones for the lips are not live!  
+So you have to adjust before running the *BASEMouthCtrls()*, export those and rebuild to see the result.
 
 
 ## BlendShapes
@@ -80,20 +84,30 @@ Corners (*lipsCorner_\[lr\]_ctrl*):
     cornerInUp (diagonal)
     cornerInDown (diagonal)
 ```    
-If you are using the diagonal ones, you need to set **bbCornerBarycentricCoords** in *blendShapesAndSliders()* to **True**.     
+If you are using the diagonal ones, you need to set **bCornerBarycentricCoords** in *blendShapesAndSliders()* to **True**.     
 !!! note
     For simple rigs you'll likely get away with just the simple ones (*cornerIn, cornerOuot, cornerUp, cornerDown*). 
-    Or use the simple ones and add combos, such as *cornerOut_cornerUp* instead of *cornerOutUp*.  
+    You can even use the simple ones and add combos, such as *cornerOut_cornerUp* instead of *cornerOutUp*.    
     But for more high fidelity rigs you'll definitely get better blending between the poses if you use the diagonal ones.
 
 
-Upper/Lower Lips (*lipsTop[0-9]_[lr]_ctrl*):
+Upper/Lower Lips - those are triggered from the [Upper and Lower Ctrls](#upper-and-lower-ctrls):
 ```
     upperUp (upper lip raiser)
     upperDown (opposite of upperUp)
     lowerDown (lower lip depressor)
     lowerUp (opposite of lowerDown)
 ```    
+They are being split between all the lip ctrls. If it's just one at each side, it's using the split radius. But if there are more 
+than 2 lip ctrls it's using some split-by-curve algorithm. It often gives great weights - but whenever it doesn't, 
+you can adjust the weights with the skinClusters of meshes called something like *_body_geo_bpCurve_m_botLipInner_weightMesh_curveParamWeights_5*.
+Basically the *blendShapesAndSliders()* function creates those. 
+You can adjust the weights, export - and next time you build, it'll take those weights.  
+![Alt text](../images/mouth_splitLipCtrlsSkinCluster.jpg)  
+!!! tip "Recommendation"
+    Tweaking this splitting skinCluster works well for small fixes. But if you feel that you need to do bigger adjustments, it might be better to
+    explore another way, such as [bSPLINES](#splines) or [Tweaker Lip Splines with bSplines](faceTweakerCtrls.md#tweaker_lips). 
+
 
 
 mouth_ctrl:

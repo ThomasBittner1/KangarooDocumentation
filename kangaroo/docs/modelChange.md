@@ -1,5 +1,5 @@
 Kangaroo has lots of good tools for dealing with model changes. This document gives you an overview of what tools you
-can/should use for different situations. 
+can use in different situations. 
 
 
 ## Same Topology - Different shape

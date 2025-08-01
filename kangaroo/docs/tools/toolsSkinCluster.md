@@ -36,7 +36,7 @@ on top (you can control the smoothness with the *Smooth Steps*
 One thing not fully explained in the video is **Joint Lines**.
 Joint Lines are ... 
 
-### Distribute 
+### Distribute {#distributeflood} 
 *Distribute Weights* is an option inside the *Flood* tool. This gets overlooked a lot, but it's one of those powerful 
 features that make Kangaroo Skinning Tools special!   
 It first gathers all the weights assigned to the selected joints, and then reassigns the weights based 
@@ -67,7 +67,7 @@ with the *Expanded Full Weight Loops* and *Expanded Fade Out Loops*.
 The tool also works for high density meshes where you are skipping joints, for example you only have a joint for each second
 or third vertex. If you are skipping many joints, keep an eye on the *Max Connection Path Count* option.  
 
-### Distribute
+### Distribute {#distributeclosestexpand}
 The *ClosestExpand* tool also comes with a **Distribute** attribute. The idea is the same as with the one in the *Flood* tool - it first
 gathers all the weights that are already on the joints, and uses that as a mask for the new operation.   
 Make sure to set *Full Weight Loops* to a higher value such as 30, because the fade out amount is already handled through 

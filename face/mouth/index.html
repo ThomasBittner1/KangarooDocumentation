@@ -864,9 +864,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#count-and-position" class="md-nav__link">
+  <a href="#countpositions" class="md-nav__link">
     <span class="md-ellipsis">
-      Count and Position
+      Count/Positions
     </span>
   </a>
   
@@ -1710,9 +1710,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#count-and-position" class="md-nav__link">
+  <a href="#countpositions" class="md-nav__link">
     <span class="md-ellipsis">
-      Count and Position
+      Count/Positions
     </span>
   </a>
   
@@ -1937,10 +1937,12 @@
 
 
 
-<p>For lips you also have option between blendShapes and splines.<br />
-But what's different to the other setups is that on the lips you do both ways with the same function: <em>BASEMouthCtrls()</em></p>
+<p>For mouth you also have option between blendShapes and splines.<br />
+But what's different to the other setups is that on the mouth both ways happen with the same function: <em>BASEMouthCtrls()</em></p>
 <h2 id="blueprints">Blueprints</h2>
-<p>The first part of the blueprints is the same between blendShapes and Splines</p>
+<p>Creating the blueprints also happen with the buttons on the side:<br />
+<img alt="Alt text" src="../../images/mouth_blueprintButtons.jpg" />  <br />
+When you are doing blendShape rig, you don't need to do the <em>Corner Sliding Plane</em>, but the other 3 things you need.</p>
 <h3 id="blueprints-inner-and-outer-curves">Blueprints - Inner and Outer Curves</h3>
 <p>First select the closest (or smallest) loop of vertices, and press <strong>Create Inner Curves and Locators</strong>
 <img alt="Alt text" src="../../images/mouth_edgeloop.jpg" />  <br />
@@ -1948,18 +1950,18 @@ This gives you this blueprint curve with locators. Make sure the locators are at
 are separating the top and the bottom.<br />
 <img alt="Alt text" src="../../images/mouth_blueprintcurve.jpg" />  <br />
 Now there's a very important and easy to miss attribute - <strong>bFlipInnerMouthCurves</strong>. On many characters the lips
-are so close together, that in the middle the upper vertices are lower than the lower vertices. If this is the case,
-then you'll need to set that attribute to True. Otherwise False.  <br />
+are so close together, that some upper vertices are lower than the lower vertices. If this is the case,
+then you'll need to set that attribute to <em>True</em>. Otherwise False.  <br />
 <img alt="Alt text" src="../../images/mouth_bFlipInnerMouthCurves.jpg" />    </p>
 <div class="admonition warning">
 <p class="admonition-title">Don't forget!</p>
-<p>Make sure to doublecheck the <em>bFlipInnerMouthCurves</em>, you might not notice it's wrong until the very end.</p>
+<p>Make sure to doublecheck the <em>bFlipInnerMouthCurves</em>. You might not notice if it's wrong until the very end. And
+even though there are tools to fix the skinning if it was flipped, it's still better to have it correct from the start.</p>
 </div>
-<p>And then select the loop of the outer corner of the lips, and press <strong>Create Outer Curves and Locators</strong>
+<p>Next select the loop of the outer corner of the lips, and press <strong>Create Outer Curves and Locators</strong>
 <img alt="Alt text" src="../../images/mouth_edgeloopOutside.jpg" />  </p>
 <h3 id="blueprints-mouth-pivot">Blueprints - Mouth Pivot</h3>
-<p>Then click <strong>Create Mouth Pivot</strong>. Imagine if the mouth moves left/right in a sperical motion, where should the center be?<br />
-That's where you place the <em>bp_m_mouthPivot</em></p>
+<p>Then click <strong>Create Mouth Pivot</strong>. When the mouth moves left/right in a sperical motion, the <em>bp_m_mouthPivot</em> is where the center is. </p>
 <p>It's important that the X axis is pointing up, Y axis is pointing back, and the Z axis is pointing to the right.<br />
 <em>Why is not not closer to worldspace?</em> That's because it's closer to how the head joint is. 
 <img alt="Alt text" src="../../images/mouth_pivotBlueprintOrientation.jpg" />  </p>
@@ -1982,9 +1984,11 @@ If the lip ctrls or the corner ctrls are doing some very bad jumps or generally 
 this surface is often not placed well.</p>
 </div>
 <h2 id="upper-and-lower-ctrls">Upper and Lower Ctrls</h2>
-<h3 id="count-and-position">Count and Position</h3>
-<p>The Lip Ctrls (Upper and Lower Lips Ctrls) are the only dynamic ones, where you can specify how many you'd like.<br />
-And you do that with the <strong>fLeftLipParamPercs</strong>. Now thats's a bit technical and needs to be understood.
+<h3 id="countpositions">Count/Positions</h3>
+<p>The Lip Ctrls (Upper and Lower Lips Ctrls) are the only ones where you can decide many you want.<br />
+And you do that with the <strong>fLeftLipParamPercs</strong>: <br />
+<img alt="Alt text" src="../../images/mouth_leftLipParams.jpg" /><br />
+It might look a little <em>"technical"</em> at first glance, so here's the explanation:  <br />
 If you set the attribute to <em>[0.20, 0.33, 0.5]</em>, you'll get this many lip ctrls:<br />
 <img alt="Alt text" src="../../images/mouth_lipCtrls.jpg" /><br />
 <em>Is it too many?</em> Yes, for a human most likely. But for dogs thave have long mouths, this could be the right amount.<br />
@@ -1992,13 +1996,13 @@ For humans you might want to set it to <em>[0.33, 0.5]</em>, which means one in 
 Or if you don't want the middle, just set it to <em>[0.33]</em></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You see how we don't specify parameters after 0.5? That's because as the name already says it, we only specify 
+<p>You see how we don't specify parameters higher than 0.5? That's because as the name already says it, we only specify 
 the left ones, and the right ones are mirrored. </p>
 </div>
 <h3 id="orientation">Orientation</h3>
 <p>The orientation of those ctrls happens with the slider blueprints (<em>sliderBp_l_lipsBot1</em>, <em>sliderBp_l_lipsBot0</em>, ..). 
-But unlike the other (simpler) slider blueprints, the ones for the lips are not live!<br />
-So you have to adjust before running the <em>BASEMouthCtrls()</em>, export those and rebuild.</p>
+Keep in mind that unlike the other (simpler) slider blueprints, the ones for the lips are not live!<br />
+So you have to adjust before running the <em>BASEMouthCtrls()</em>, export those and rebuild to see the result.</p>
 <h2 id="blendshapes">BlendShapes</h2>
 <p>Here you can see a list of blendShapes. Those can all be used with or without the <em>bSPLINES</em> attribute.<br />
 If you set <em>bSPLINES</em> to True, then the blendShapes will act as correctives.  </p>
@@ -2012,19 +2016,30 @@ If you set <em>bSPLINES</em> to True, then the blendShapes will act as correctiv
     cornerInUp (diagonal)
     cornerInDown (diagonal)
 </code></pre></div>
-If you are using the diagonal ones, you need to set <strong>bbCornerBarycentricCoords</strong> in <em>blendShapesAndSliders()</em> to <strong>True</strong>.     </p>
+If you are using the diagonal ones, you need to set <strong>bCornerBarycentricCoords</strong> in <em>blendShapesAndSliders()</em> to <strong>True</strong>.     </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For simple rigs you'll likely get away with just the simple ones (<em>cornerIn, cornerOuot, cornerUp, cornerDown</em>). 
-Or use the simple ones and add combos, such as <em>cornerOut_cornerUp</em> instead of <em>cornerOutUp</em>.<br />
+You can even use the simple ones and add combos, such as <em>cornerOut_cornerUp</em> instead of <em>cornerOutUp</em>.  <br />
 But for more high fidelity rigs you'll definitely get better blending between the poses if you use the diagonal ones.</p>
 </div>
-<p>Upper/Lower Lips (<em>lipsTop[0-9]_[lr]_ctrl</em>):
+<p>Upper/Lower Lips - those are triggered from the <a href="#upper-and-lower-ctrls">Upper and Lower Ctrls</a>:
 <div class="highlight"><pre><span></span><code>    upperUp (upper lip raiser)
     upperDown (opposite of upperUp)
     lowerDown (lower lip depressor)
     lowerUp (opposite of lowerDown)
-</code></pre></div></p>
+</code></pre></div>
+They are being split between all the lip ctrls. If it's just one at each side, it's using the split radius. But if there are more 
+than 2 lip ctrls it's using some split-by-curve algorithm. It often gives great weights - but whenever it doesn't, 
+you can adjust the weights with the skinClusters of meshes called something like <em>_body_geo_bpCurve_m_botLipInner_weightMesh_curveParamWeights_5</em>.
+Basically the <em>blendShapesAndSliders()</em> function creates those. 
+You can adjust the weights, export - and next time you build, it'll take those weights.<br />
+<img alt="Alt text" src="../../images/mouth_splitLipCtrlsSkinCluster.jpg" />  </p>
+<div class="admonition tip">
+<p class="admonition-title">Recommendation</p>
+<p>Tweaking this splitting skinCluster works well for small fixes. But if you feel that you need to do bigger adjustments, it might be better to
+explore another way, such as <a href="#splines">bSPLINES</a> or <a href="../faceTweakerCtrls/#tweaker_lips">Tweaker Lip Splines with bSplines</a>. </p>
+</div>
 <p>mouth_ctrl:
 <div class="highlight"><pre><span></span><code>    funnel
     lipPress

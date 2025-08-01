@@ -839,9 +839,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#brow-splines-middle" class="md-nav__link">
+  <a href="#rom-animation" class="md-nav__link">
     <span class="md-ellipsis">
-      Brow Splines - Middle
+      Rom Animation
     </span>
   </a>
   
@@ -851,6 +851,15 @@
   <a href="#brow-splines-extra-attributes" class="md-nav__link">
     <span class="md-ellipsis">
       Brow Splines - Extra Attributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brow-splines-middle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Brow Splines - Middle
     </span>
   </a>
   
@@ -867,9 +876,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#micro-ctrls" class="md-nav__link">
+  <a href="#spline-ctrls" class="md-nav__link">
     <span class="md-ellipsis">
-      Micro Ctrls
+      Spline Ctrls
     </span>
   </a>
   
@@ -916,7 +925,7 @@
           <li class="md-nav__item">
   <a href="#for-browssplinessurface-the-brows-are-moving-in-a-different-direction-than-the-ctrls" class="md-nav__link">
     <span class="md-ellipsis">
-      for BrowsSplinesSurface the brows are moving in a different direction than the ctrls
+      For BrowsSplinesSurface the brows are moving in a different direction than the ctrls
     </span>
   </a>
   
@@ -1581,9 +1590,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#brow-splines-middle" class="md-nav__link">
+  <a href="#rom-animation" class="md-nav__link">
     <span class="md-ellipsis">
-      Brow Splines - Middle
+      Rom Animation
     </span>
   </a>
   
@@ -1593,6 +1602,15 @@
   <a href="#brow-splines-extra-attributes" class="md-nav__link">
     <span class="md-ellipsis">
       Brow Splines - Extra Attributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brow-splines-middle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Brow Splines - Middle
     </span>
   </a>
   
@@ -1609,9 +1627,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#micro-ctrls" class="md-nav__link">
+  <a href="#spline-ctrls" class="md-nav__link">
     <span class="md-ellipsis">
-      Micro Ctrls
+      Spline Ctrls
     </span>
   </a>
   
@@ -1658,7 +1676,7 @@
           <li class="md-nav__item">
   <a href="#for-browssplinessurface-the-brows-are-moving-in-a-different-direction-than-the-ctrls" class="md-nav__link">
     <span class="md-ellipsis">
-      for BrowsSplinesSurface the brows are moving in a different direction than the ctrls
+      For BrowsSplinesSurface the brows are moving in a different direction than the ctrls
     </span>
   </a>
   
@@ -1694,92 +1712,124 @@
     browOut
     outerBrowUp
     outerBrowDown
-</code></pre></div></p>
+</code></pre></div>
+In here we used all of them. No inbetweens, but you could add some:<br />
+<img alt="Alt text" src="../../images/brows_blendShapes.gif" />  </p>
+<p>If you need to stick to blendShapes, and you find that those predefined targets are not enough, you should consider 
+<a href="../faceGeneral/#define-your-own-targets">Custom Targets</a>.<br />
+Those are very powerful for brows, especially if combined with <a href="../shapeEditor1/#combos">Combos</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>There are some additional corrective targets that can be sculpted, but those are only available when you use the
-Splines as shown below</p>
+<p>Further below in <a href="#brow-splines---correctives">Brow Splines - Correctives</a> you'll see some more targets you can sculpt 
+when using doing Splines.</p>
 </div>
 <h2 id="brow-splines">Brow Splines</h2>
 <p>If you want a spline rig with a ton of ctrls, use the <em>browSplinesSurface()</em> function. On the brows the control set
 is different to the control set you get with blendShapes.</p>
-<video autoplay muted loop controls width="640">
+<video autoplay muted loop controls width="1378">
     <source src="../../images/face_browSplines.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 
 <h3 id="brow-splines-blueprints">Brow Splines - Blueprints</h3>
-<p>And those joints are sliding along the two nurbs surfaces <strong>surface_forehead</strong> and <strong>surface_forehead_eyeSocket</strong>
+<p>The spline joints are sliding along the two nurbs surfaces <strong>surface_forehead</strong> and <strong>surface_forehead_eyeSocket</strong>
 <img alt="Alt text" src="../../images/face_browSplines_surfaces.jpg" /><br />
+<em>Why are there 2 surfaces?</em><br />
 Most joints are sliding along the <em>surface_forhead</em> surface but the ones below the main line are sliding along
-the <em>surface_forehead_eyeSocket</em><br />
+the <em>surface_forehead_eyeSocket</em>  <br />
 To create those surfaces, first click the button <strong>Import Default Surfaces</strong> and shape them.    </p>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>To get them shaped as good as possible to the forhead, the easiest thing might be to shape it roughly
-and then create a shrinkWrap with option <em>closest</em> to snap it to the head geo.<br />
-Then select vertices and click the button <strong>Create Left Brow Curve</strong>. You adjust the curve after, the cvs of that
-curve don't necessarily need to be on the vertices of the skin mesh.  </p>
+<p class="admonition-title">Tip - Use ShrinkWrap deformer to sculpt the Surfaces</p>
+<p>To get them shaped as good as possible to the forhead, the easiest thing might be to shape it roughly first
+and then create a shrinkWrap with option <em>closest</em> to snap it to the head geo.  </p>
 </div>
+<p>Then select vertices and click the button <strong>Create Left Brow Curve</strong>. You adjust the curve after, the cvs of that
+curve don't necessarily need to be on the vertices of the skin mesh:  <br />
+<img alt="Alt text" src="../../images/brows_blueprintCurve.jpg" />  </p>
 <p>Then click <strong>Create Left Brow Orientation Locators</strong> and orient those locators. Make sure to have their <em>up</em> axis
-go along the lines of the surfaces, otherwise you might get the feeling the joints are moving a slightly different location:<br />
+go along the lines of the surfaces:<br />
 <img alt="Alt text" src="../../images/face_browSplines_orientationLocators.jpg" />  </p>
 <h3 id="brow-splines-fverticalsplineoffsets">Brow Splines - fVerticalSplineOffsets</h3>
 <p><em>fVerticalSplineOffsets</em> is the attribute that defines the exra rows. It's a list of all the rows. Negative is below the
-main brows, and positive is above. If you want those extra rows, you can try with  [-0.05, 0.1]
-Adjusting the speed of those is done with passer attributes. <br />
+main brows, and positive is above. 
+<img alt="Alt text" src="../../images/brows_verticalSplineOffsets.jpg" />  </p>
+<p>Adjusting the speed of those is done with passer attributes:   <br />
 <img alt="Alt text" src="../../images/brows_extraRowsPasser.jpg" /></p>
 <h3 id="brow-splines-skincluster">Brow Splines - skinCluster</h3>
-<p>For skinning them, just select the mesh and click the button <strong>Add Influences to Selected</strong>. This just adds the influences!
-Then you can paint them with the <strong>SkinCluster -&gt; Flood</strong> tool. Also, you can use the <strong>SkinCluster -&gt; Smooth</strong> tool, but
+<p>For skinning them, just select the mesh and click the button <strong>Add Influences to Selected</strong>. This just adds the influences,
+and you can then paint them with the <strong>SkinCluster -&gt; Flood</strong> tool. Also, you can use the <strong>SkinCluster -&gt; Smooth</strong> tool, but
 try to keep the iterations at 1! </p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If later you change the joint count or blueprint positions, you can also fix the skinning with the <strong>Flood</strong> tool, but
-turn on the <strong>Distribute Weights</strong> option</p>
+turn on the <a href="../../tools/toolsSkinCluster/#distributeflood"><strong>Distribute Weights</strong></a> option.</p>
 </div>
-<p>This did NOT do the middle brows yet. Because it's best to just work on the skinning of the main brows first. And only add
-the Middle one if you actually need it.</p>
+<p>This did NOT do the middle brow joints yet. Because it's best to just work on the skinning of the main brows first. And only add
+the Middle ones if you actually need them.</p>
+<h3 id="rom-animation">Rom Animation</h3>
+<p>Once you've skinned it, it's very helpful to apply the Rom Animation by clicking the button <strong>Create Rom Animation</strong>:<br />
+<img alt="Alt text" src="../../images/brows_createRomAnimation.jpg" /><br />
+What you see at this point is probably not great yet, and the next chapters below will help you to fine tune the motion.</p>
+<h3 id="brow-splines-extra-attributes">Brow Splines - Extra Attributes</h3>
+<p>Once you have a rough skinning pass, it's time to adjust the Passer Attributes.<br />
+But first make sure that you are familiar with <a href="../faceGeneral/#defaultattrs">** === DEFAULT ATTRS === **</a>.</p>
+<p>On the Passer of <em>browMain_l_ctrl</em> you've got <strong>multiplyIn/Out/Down/Up</strong>, those are to fine tune the movements when for example
+the brows shouldn't go down as much as they should go up. Even though thoes are on the main ctrl, the 
+spline ctrls (blue/red cube ctrls - <strong>browSplines[ABC]_l_ctrl</strong>) will also get affected by this.<br />
+<img alt="Alt text" src="../../images/brows_multiplyAttributes.jpg" />   </p>
+<p>The passers of the three spline ctrls (<strong>browSplines[ABC]_l_ctrl</strong>) have</p>
+<table>
+<thead>
+<tr>
+<th>Attributes</th>
+<th>What they are doing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>offsetSplineRotateByAnim</em></td>
+<td>When rotating the spline ctrls, should the offset splines also get that rotation?</td>
+</tr>
+<tr>
+<td><em>autoAim</em></td>
+<td>should the spline ctrls aim to each others or not)</td>
+</tr>
+<tr>
+<td><em>upVectorFromCurveTangent</em></td>
+<td>if it's 1.0, the joints are aiming along the curve. For the outer ones you might want to set it to 0</td>
+</tr>
+<tr>
+<td><em>followOuterCtrls</em> (only on the middle)</td>
+<td>This will make the middle ctrl follow the inner and outer ctrl</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Alt text" src="../../images/brows_splinePasserAttributes.jpg" />   </p>
 <h3 id="brow-splines-middle">Brow Splines - Middle</h3>
-<p>The middle brow ctrl should be on by default, but if not, turn on <strong>bMiddle</strong><br />
+<p>The middle brow ctrl is on by default - but if not, turn on <strong>bMiddle</strong>.<br />
 And it comes with 2 joints:</p>
 <ul>
-<li>jnt_m_browMiddleDefault: Just following the side ctrls</li>
-<li>jnt_m_browMiddle: like the default one, but also reacting to the <strong>browMiddle_ctrl</strong></li>
+<li>jnt_m_browMiddleDefault: Just follows the side ctrls</li>
+<li>jnt_m_browMiddle: like the first one, but also reacting to the <strong>browMiddle_ctrl</strong></li>
 </ul>
 <p>On the actual <em>browMiddle_ctrl</em> you can set how much he should follow the side ctrls. And on the passer you have some extra
 attributes that you can use to "sculpt" a crease with skinning when the side brows are coming in. Sometimes you get a nicely
-lightweight crease. But depending on the model, sometimes it's easier to just do the crease with corrective blendShapes.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Don't forget to save those values with the ** === DEFAULT ATTRS === ** button</p>
+lightweight crease with it. But depending on the model it's sometimes it's easier to just do the crease with corrective blendShapes.</p>
+<div class="admonition question">
+<p class="admonition-title">How does it get saved?</p>
+<p>The values on the ctrl at this point would have to get saved using a python function. But the values on the passer 
+are saved with the <a href="../faceGeneral/#defaultattrs">** === DEFAULT ATTRS === **</a> button.</p>
 </div>
-<h3 id="brow-splines-extra-attributes">Brow Splines - Extra Attributes</h3>
-<p>Once you have a rough skinning pass, it's time to adjust the Passer Attributes.<br />
-On the Passer of <em>browMain_l_ctrl</em> you've got <strong>multiplyIn/Out/Down/Up</strong>, those are to finetune the movements when for example
-the brows shouldn't go down as much as they should go up. Even though thoes are on the main ctrl, the 
-micro ctrls (<strong>browSplines[ABC]_l_ctrl</strong>) will also get affected by this  </p>
-<p>The passers of the three micro ctrls (<strong>browSplines[ABC]_l_ctrl</strong>) have</p>
-<ul>
-<li>offsetSplineRotateByAnim: When rotating the micro ctrls, should the offset splines also get that rotation?</li>
-<li>autoAim: should the micro ctrls aim to each others or not</li>
-<li>upVectorFromCurveTangent: if it's 1.0, the joints are aiming along the curve. For the outer ones you might want to set it to 0</li>
-</ul>
 <h3 id="brow-splines-poselocs">Brow Splines - PoseLocs</h3>
 <p>There are 2 sets of locators.</p>
-<h4 id="micro-ctrls">Micro Ctrls</h4>
-<p>Those are driven by the <strong>browMain_l_ctrl</strong>, and are posing the Micro Ctrls (<strong>browSplines[ABC]_l_ctrl</strong>):<br />
+<h4 id="spline-ctrls">Spline Ctrls</h4>
+<p>The locators inside the hierarchy of the spline ctrls are posing the spline ctrls based on the <strong>browMain_l_ctrl</strong>:<br />
 <img alt="Alt text" src="../../images/brows_mainPoseLocators.jpg" /><br />
-Very often they are just used for the down motion and just the middle, to have the brow 
-straighten as the browMain_l_ctrl goes down: <br />
+Very often they are just used for the down motion, to have the brow straighten as the browMain_l_ctrl goes down: <br />
 <img alt="Alt text" src="../../images/brows_straighten.gif" /></p>
 <h4 id="tangent-ctrls">Tangent Ctrls</h4>
-<p>With those you can pose the Tangent Ctrls:<br />
+<p>With those you can pose the Tangent Ctrls, driven by the spline ctrls:<br />
 <img alt="Alt text" src="../../images/brows_tangentPoseLocators.jpg" /></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>At this point it's very helpful to apply the Rom Animation by clicking the button <strong>Create Rom Animation</strong></p>
-</div>
 <h3 id="brow-splines-correctives">Brow Splines - Correctives</h3>
 <p>If you get stuck not being able to hit a proper shapes with combination of skinning and poseLocators, there's still the 
 option of adding correctives.
@@ -1797,17 +1847,18 @@ browSplinesSplitJointsUp (experimental - heavy!)
 browSplinesSplitJointsDown (experimental - heavy!)
 </code></pre></div>
 The ones starting with <em>browSplinesSplitCtrls</em> are probably the most used ones. Their pose is the <strong>browMain_[lr]_ctrl</strong> 
-going up or down. And then in the <em>blendShapesAndSliders()</em> function they will get split into the micro ctrls.</p>
+going up or down. And then in the <em>blendShapesAndSliders()</em> function they will get split into the three spline ctrls (blue/red cube ctrls).</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Keep in mind you are not limited to those. You can create combo of them, and even combo with others.   <br />
-And if it's still not enough, you can add extra correctives with the <strong>ddCorrectives</strong> attribute
-in <em>blendShapesAndSliders()</em> function.</p>
+And if it's still not enough, you can add extra correctives with the <a href="../faceGeneral/#ddcorrectives"><strong>ddCorrectives</strong></a> attribute
+in the <em>blendShapesAndSliders()</em> function.</p>
 </div>
 <h2 id="trouble-shooting">Trouble Shooting</h2>
-<h3 id="for-browssplinessurface-the-brows-are-moving-in-a-different-direction-than-the-ctrls">for BrowsSplinesSurface the brows are moving in a different direction than the ctrls</h3>
+<h3 id="for-browssplinessurface-the-brows-are-moving-in-a-different-direction-than-the-ctrls">For BrowsSplinesSurface the brows are moving in a different direction than the ctrls</h3>
 <p>The brows are moving in straight lines of the surface. At this time the best is to adjust the orientation of the ctrls so 
-they are oriented to the lines of the surfaces. (There could be a fix in future to support ctrls going more diagonal)</p>
+they are oriented to the lines of the surfaces. <br />
+In future there might be a fix to support ctrls going more diagonal.</p>
 
 
 

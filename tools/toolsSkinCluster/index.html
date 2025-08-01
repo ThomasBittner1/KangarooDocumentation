@@ -1105,7 +1105,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#distribute" class="md-nav__link">
+  <a href="#distributeflood" class="md-nav__link">
     <span class="md-ellipsis">
       Distribute
     </span>
@@ -1129,7 +1129,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#distribute_1" class="md-nav__link">
+  <a href="#distributeclosestexpand" class="md-nav__link">
     <span class="md-ellipsis">
       Distribute
     </span>
@@ -1578,7 +1578,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#distribute" class="md-nav__link">
+  <a href="#distributeflood" class="md-nav__link">
     <span class="md-ellipsis">
       Distribute
     </span>
@@ -1602,7 +1602,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#distribute_1" class="md-nav__link">
+  <a href="#distributeclosestexpand" class="md-nav__link">
     <span class="md-ellipsis">
       Distribute
     </span>
@@ -1773,7 +1773,7 @@ on top (you can control the smoothness with the <em>Smooth Steps</em> </li>
 </div>
 <p>One thing not fully explained in the video is <strong>Joint Lines</strong>.
 Joint Lines are ... </p>
-<h3 id="distribute">Distribute</h3>
+<h3 id="distributeflood">Distribute</h3>
 <p><em>Distribute Weights</em> is an option inside the <em>Flood</em> tool. This gets overlooked a lot, but it's one of those powerful 
 features that make Kangaroo Skinning Tools special! <br />
 It first gathers all the weights assigned to the selected joints, and then reassigns the weights based 
@@ -1799,7 +1799,7 @@ It basically finds the closest vertices for each joint, and then expands the inf
 with the <em>Expanded Full Weight Loops</em> and <em>Expanded Fade Out Loops</em>.</p>
 <p>The tool also works for high density meshes where you are skipping joints, for example you only have a joint for each second
 or third vertex. If you are skipping many joints, keep an eye on the <em>Max Connection Path Count</em> option.  </p>
-<h3 id="distribute_1">Distribute</h3>
+<h3 id="distributeclosestexpand">Distribute</h3>
 <p>The <em>ClosestExpand</em> tool also comes with a <strong>Distribute</strong> attribute. The idea is the same as with the one in the <em>Flood</em> tool - it first
 gathers all the weights that are already on the joints, and uses that as a mask for the new operation. <br />
 Make sure to set <em>Full Weight Loops</em> to a higher value such as 30, because the fade out amount is already handled through 

@@ -71,7 +71,7 @@ If the topology is the same, you can use the [warpXforms tool](tools/toolsGeomet
 warp the blueprint rig to the new model.
 
 ### Different Proportions - Shape Editor
-If the topology is also different, it's more complex. It's like creating a new character - check [Shape Editor](face/shapeEditor2.md#transfer-to-new-character)
+If the topology is also different, it's more complex. It's like creating a new character - check [Shape Editor](face/shapeEditor2.md#transfertonewcharacter)
 
 ### Different Proportions - Face
 And then basically every blueprint group in the mayaImport folder needs to be warped to the new mesh.

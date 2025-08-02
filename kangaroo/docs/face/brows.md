@@ -18,7 +18,7 @@ If you need to stick to blendShapes, and you find that those predefined targets 
 Those are very powerful for brows, especially if combined with [Combos](shapeEditor1.md#combos).
 
 !!! Note
-    Further below in [Brow Splines - Correctives](#brow-splines---correctives) you'll see some more targets you can sculpt 
+    Further below in [Brow Splines - Correctives](#browsplinescorrectives) you'll see some more targets you can sculpt 
     when using doing Splines.
 
 ## Brow Splines
@@ -131,7 +131,7 @@ With those you can pose the Tangent Ctrls, driven by the spline ctrls:
 ![Alt text](../images/brows_tangentPoseLocators.jpg)
 
 
-### Brow Splines - Correctives
+### Brow Splines - Correctives {browsplinescorrectives}
 If you get stuck not being able to hit a proper shapes with combination of skinning and poseLocators, there's still the 
 option of adding correctives.
 ```

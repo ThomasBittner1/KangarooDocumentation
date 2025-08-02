@@ -45,7 +45,7 @@ it's in different space). And the *Up Axis* is one of the other two.
 *Which one?* Just try it out which one is more stable in your case. But never set *Angle Axis* and *Up Axis* to 
 be identlical, because this *will* lead to troubles. 
 
-Here's a short video how we create the singedAngle for the knee:
+Here's a short video how we create the signedAngle for the knee:
 <video autoplay muted loop controls width="1400">
     <source src="../../images/poseEditor_creatingSignedAngle.mp4" type="video/mp4">
     Your browser does not support the video tag.

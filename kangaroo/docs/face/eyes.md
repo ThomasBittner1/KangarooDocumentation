@@ -86,7 +86,7 @@ eyeLowerDown
 ```
 
 !!! tip
-    While those blendShapes could be applied without a joint setup, it's recommended to run at least the [*simpleLidSetup()*](#simple-lid) Joints. 
+    While those blendShapes could be applied without a joint setup, it's recommended to run at least the [*simpleLidSetup()*](#simple-lid-joints) Joints. 
     Because if you do a blendShape alone, a blink might be too linear and without inbetweens giving intersections with the eyeballs very quickly.
 
 

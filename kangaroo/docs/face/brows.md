@@ -118,7 +118,7 @@ lightweight crease with it. But depending on the model it's sometimes it's easie
     The values on the ctrl at this point would have to get saved using a python function. But the values on the passer 
     are saved with the [** === DEFAULT ATTRS === **](faceGeneral.md#defaultattrs) button.
 
-### Brow Splines - PoseLocs
+### Brow Splines - Pose Loccators
 There are 2 sets of locators.
 #### Spline Ctrls
 The locators inside the hierarchy of the spline ctrls are posing the spline ctrls based on the **browMain_l_ctrl**:  

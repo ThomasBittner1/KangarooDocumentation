@@ -145,51 +145,76 @@ Box Ctrls Rotations:
 
 
 ## Rom
-At this point it's good to check out the Rom - by clicking the button **Create Rom Animation**. 
+The button **Create Rom Animation** creates a ROM animation.   
+![Alt text](../images/mouth_romAnimationButton.jpg)   
 
 ## Mouth Directions
-If you move the mouth_ctrl up/down/left/right or rotate it in rotateZ, (Frame 75-135 in the ROM), you can do this with the 
+If you move the **mouth_ctrl** up/down/left/right or rotate it in rotateZ, (Frame 75-135 in the ROM), you can do this with the 
 *mouthLeft/mouthRight/mouthUp/mouthDown* blendShapes (except the rotateZ).    
-But you can also do that with skinning. Select the area around the mouth, open the Face Skinning UI and click **Move Jaw/Head to frontPivots**
+
+But you can also do that with skinning, which would also take care of the rotateZ. 
+If you use the *bSPLINES* option explained very soon, please skip this section! Because the splines will take care of that. 
+But without the *bSPLINES*, here's how to skin the lips so you get the influences for the mouth_ctrl:  
+
+Click the shelf button ![Alt text](../images/mouth_faceSkinShelfButton.jpg) (faceSkn)
+to get the Face Skinning UI. Then select the area around the mouth and click **Move Jaw/Head to frontPivots**:  
+![Alt text](../images/mouth_paintPivots.jpg)  
+This skins to the joints *jnt_m_mouthPivotFrontHead* and *jnt_m_mouthPivotFrontJaw*. 
+
+!!! tip
+    If you skinned too much to the front pivots, you can also go back by selecting vertices and clicking the button just below - 
+    **Move frontPivots to Jaw/Head**. 
 
 Remember the mouth pivot blueprint? It's rotating the mouth along that pivot. But if you don't like the motion, there's
 not always the need to go back and adjust the blueprint - instead you can just adjust the passer values.   
-On the passer of mouth_ctrl, you can find those values you can adjust:
-![Alt text](../images/mouth_mouthDirectionAttributes.jpg)  
+On the passer of **mouth_ctrl**, you can find those values you can adjust:
+![Alt text](../images/mouth_mouthDirectionAttributes.jpg)   
+And don't forget to save those values with the [** === DEFAULT ATTRS === **](faceGeneral.md#defaultattrs) button.
 
-!!! tip
+!!! tip "If you don't need it"
     If you feel like you want to do the mouth directions entirely with blendShapes because you are concerned that the joint movements
     are just working against you, just set all those attributes to 0.0.  
-    Or if you also don't need the rotateZ, you can ignore this setup by just not skinning the joints.
+    Or if you also don't need the rotateZ, you can ignore this setup by just not skinning to the joints.
 
 ## Splines
 
-Splines are using the same controls like the blendShapes. This brings a few advantages:
+On the Mouth Rig, the Splines are using the same controls as the blendShapes. This brings a few advantages:
 
 - You can use all the blendShapes stated above also as correctives
 - You can have some characters with blendShapes and some with splines, and animators will have the same sets of controls
 
-You'll get the splines when you set **bSPLINE** to *True*.  
-And also set **bBorders** to *False*. The borders are useful for blendShapes, but not for Splines.
+To turn on the splines, set **bSPLINE** to *True*.  
+And also set **bBorders** to *False*. The borders are useful for blendShapes, but not for Splines.  
+![Alt text](../images/mouth_splinesAttributes.jpg)    
+
 
 ### Spline - The Joints
 For the spline rig there are the Big Joints (**jnt_l_botMouthSplineBig_???**) and the Small Joints (**jnt_l_botMouthSplineSmall_???**). 
-By default they are a joint at each vertex on the loop.
-But if you have a character that has a ton of joints, then you can set the **iSkipSplineJoints** value to something higher than 0.
-For example if you set it to 1, it means it skips every other joint. If you set it to 2, it always skips 2 joints until the next
-one.  
+By default they are a joint at each vertex on the loop:
 ![Alt text](../images/mouth_splineJoints.jpg)    
+  
+
+!!! note 
+    If you have a character with a very dense geometry so that a joint at every vertex would be too much, just set 
+    the **iSkipSplineJoints** value to something higher than 0.
+    For example if you set it to 1, it means it skips every other joint. If you set it to 2, it always skips 2 joints until the next
+    one. Here we've set this attribute to 2:  
+    ![Alt text](../images/mouth_skipJointSplineJoints.jpg)  
+
+
 *Why are they called Big and Small Joints?*  
-That's becuase the bigger ones are bigger, ..  
-But also because the bigger ones have (should have) a wider range of influence. Basically the Small Joints should just affect the lips 
+That's because the bigger ones are bigger, and the smaller ones are smaller.  
+But also because the bigger ones should have a wider range of influence. Basically the Small Joints should just affect the lips 
 since they are taking more rotation from the ctrls.  
-The Big Joints take less rotational movements from the Ctrls, and therefore are more stable to use for the area around the lips.     
+The Big Joints take less rotational movements from the Ctrls, and therefore are more stable to use for the area outside the lips.     
 
 There's 2 more special joints, which are **jnt_l_lipsEnd** and **jnt_r_lipsEnd**. Those sit at the corner, and it's best to bind
-the area left and right of the lips. Basically part of the cheekcs
+the area left and right of the lips. Basically part of the cheeks.  
+![Alt text](../images/mouth_lipsEndJoints.jpg)    
+
 
 ### Splines - Skinning
-At this point before skinning the Mouth Spline Joints, it helps a lot if the jaw is already skinned nicely. But don't worry - 
+At this point before skinning the Mouth Spline Joints, it helps if the jaw is already skinned nicely. But don't worry too much - 
 if you do want to adjust the jaw weighting later, there's nice buttons that transfer skinning from spline joints to jaw/head and back.
 
 !!! note
@@ -197,18 +222,17 @@ if you do want to adjust the jaw weighting later, there's nice buttons that tran
     involves tools that are made specifically for this setup.  
 
 
-To get the Mouth Spline Skinning tools, click this shelf button:  
-![Alt text](../images/mouth_faceSkinShelfButton.jpg)  
-Which brings up this UI:   
+To get the Mouth Spline Skinning tools, click this shelf button ![Alt text](../images/mouth_faceSkinShelfButton.jpg) (faceSkn).  
+
+Which opens this UI:   
 ![Alt text](../images/mouth_faceSkin.jpg)
 
 #### Big Joints
-The best thing is to just start with the button **Add to Big Joints** when you have the whole head selected. 
-But first set the **Rigid Loops** and **Fade Loops** values.
-It's using the **ClosestExpand** SkinCluster tool under the hood, therefore it's best to check that for reference.
+The best thing is to just start with the button **Add to Big Joints** when you have the whole head mesh selected. 
+But first set the **Rigid Loops** and **Fade Loops** values.  
+![Alt text](../images/mouth_addToBigJoints.jpg)    
 
-!!! tip
-    Make sure to use the *Grow Selection* (CTRL >) and *Shrink Selection* (CTRL <) Maya commands and Soft Selection!
+It's using the [**ClosestExpand** tool](../tools/toolsSkinCluster.md#closestexpand) under the hood.
 
 At this point it's best to load the [Rom Animation](#rom)
 
@@ -216,29 +240,38 @@ Now you can do a few combinations of:
 
 - clicking the *Add to Big Joints* on different vertex selections
 - smoothing with just one iteration (there's a **Smooth** button at the bottom of the UI)
-- add some weights to the lipsEnd Joints using the **Move head/jaw to LipsEnds** button
+- add some weights to the lipsEnd Joints using the **Move head/jaw to LipsEnds** button further below.
 
 
 !!! warning
     You might be tempted to use the smooth tool a lot. But please don't overdo this. And if you use the smooth in the skinning tools,
     make sure to NEVER do more than one iteration when it's about the face. Unless it's a very high resolution face.
 
-At this point try to get it to look clean, but don't worry too much about the details yet. That part comes later.
+At this point try to get it to look clean, but don't worry too much about the details yet. That part comes next.
 
 #### Small Joints
 Did you notice that at this point in the Rom between 60 and 75 it's just rotating the box ctrls, but nothing is happening?  
 That's because the small joints are handling the lip rolls.  
-Select the vertices of just the lips (or the whole face and lower the *Rigid/Fade Loops*), and click **Add To Small Joints**.  
-To see the results, check the roll movements a bit later in the Rom that you applied before.
 
+You have 2 options:
+
+- Set the *rigid loops* and *fade loops* smaller, and having the whole head selected click **Add to SmallJoints**
+- Keep the *rigid loops* and *fade loops* big, and instead of selecting the whole head, just select lip vertices 
+(with soft selection) before clicking **Add to SmallJoints** 
+
+!!! question "What are the *perc* attributes??"
+    If you want to for example fade out the upper part slower, you can give the *top perc* a lower value. 
+    But it has shown that adjusting these types of things is easier by doing vertex (soft) selection.
 
 #### Fixing Weights
-If your weights got messy because you changed spline joint count (either by adjusting the curves or iSkipSplineJoints flag),
-or if just used the smooth tool too much - there's a way to fix this.
+If your weights got messy because you changed spline joint count (either by adjusting the curves or *iSkipSplineJoints* flag),
+or if just used the smooth tool too much - here's a way to fix this:
 
-In the FaceSkininng UI, click the “Distribute BigJoints” and “Distribute SmallJoints” buttons.
+In the FaceSkininng UI, click the “Distribute BigJoints” and “Distribute SmallJoints” buttons.  
+![Alt text](../images/mouth_distributeButtons.jpg)    
 
-This grabs the current weights of all the joints, and uses that as a mask while redoing the expand weights operation.
+This grabs the current weights of all the joints, sums them together per each vertex and then uses that as a mask 
+while redoing the expand weights operation.
 
 
 
@@ -246,17 +279,21 @@ This grabs the current weights of all the joints, and uses that as a mask while 
 ### Splines - Adjust Ctrl Behaviors
 At some point when the skinning looks somewhat clean, it's best to start adjusting the behaviors of the ctrls some more.  
 The following things (1-5) should be done roughly in the same order, but most likely you'll be jumping back and forward,
-and even might adjust skinCluster here and there.   
-The goal is to get the shapes and behaviors looking as good as possible without adding blendShapes (even though you can still
-add corrective blendShapes on top - the better the underlining setup, the more smooth the rig will be) 
+and even might go back to adjusting skinCluster here and there.   
+The goal is to get the shapes and behaviors looking as good as possible without adding blendShapes. Even though you can still
+add corrective blendShapes on top - the better the underlining setup, the more smooth the rig will be! 
 
 
 #### 1. Slider Blueprints
-Especially for the corners ctrls, try to find the right blueprint scale to get the best overall possible range.  
+Especially for the corners ctrls, try to find the right blueprint scale to get the best overall possible range.
+They are *sliderBp_l_lipsCorner* and *sliderBp_r_lipsCorner*.
+
 !!! note
     Unfortunately the slider blueprints don't affect the ctrls live. So you'll have to guess (or calculate) the scale,
     and rerun the *BASEMouthCtrls()* function.
 
+You'll probably hit the limitation that for the outwards motion you want a different range than the inwards motion.
+You can adjust that in the following section.
 
 #### 2. Corner Multiply Values
 The corner multiply values specify how much the joints should move based on the corner ctrl movements.  
@@ -266,58 +303,88 @@ than the cornerIn
 
 
 #### 3. Defining a different Corner Range
-So far the poses happen on a unified range, where corner ctrls only go to 1.0s or -1.0s. But in some cases (especially cornerOut ones) you might 
-want to specify for example the ctrl corner_l_ctrl.tx to be 2.5. 
+So far the poses happen on a unified range, where corner ctrls only go to 1.0 or -1.0. But in some cases you might 
+want to specify a different value, for example the *cornerOut* being *corner_l_ctrl.tx* at 2.5 instead of 1.0. 
 
-This can be done with the **ddPoseCtrlValues** attribute.
+This can be done with the **ddPoseCtrlValues** attribute, using the [JSON Editor](../builder/jsonEditor.md):     
+![Alt text](../images/mouth_cornerPoseValues.jpg)
+
 And it will affect Pose Locators, BlendShape Poses and even the *Create Rom Animation* button.
 
 !!! warning
-    While the kangaroo tools such as pose editor support this, it can be cleaner to stay in a unified range. Therefor it's best to try to solve things with 
+    While the kangaroo tools such as the Shape Editor support this, it can be cleaner to stay in a unified range. So it's best to try to solve things with 
     Slider Blueprints and Corner Multiply Values first. 
 
 
 #### 4. Lip Ctrl Passer Values
-The lips attributes come with a few passer attributes that specify how the lip ctrls should react to the neighboring ones, and to the corner ctrls:  
-![Alt text](../images/mouth_lipsAttributes.jpg)
 
+The passers of the [Lip Ctrls](#upper-and-lower-ctrls) come with a few extra attributes:
+![Alt text](../images/mouth_lipCtrlsShow.jpg) ![Alt text](../images/mouth_lipsAttributes.jpg)
+
+
+| Attributes                       | What they are doing                                                                   |
+|----------------------------------|---------------------------------------------------------------------------------------
+| *Follow Corner Surface Vert*     | When corners move up/down in Y, how much the lip ctrls should follow that motion      |
+| *Follow Corner Z*                | When corners move in/out in Z, how much the lip ctrls should follow that motion       |
+| *Follow Corner Surface In*       | When corners in in X, how much the lip ctrls should follow that motion                |
+| *Follow Corner Surface  Out*     | When corners out in X, how much the lip ctrls should follow that motion               |
+| *Aim To Neighbors*               | Creates a more smooth behavior by rotating the tangents based on the neighboring ctrls |
+| *Aim To NeighborsPuckerMultiply* | On CornerIn the aiming is a bit unstable, with this multiplier you can turn it off    |
+| *Live Tangent*                   | If this is 1.0, the joints get aimed along the spline                                 |
+
+Saving those attributes happens with the [** === DEFAULT ATTRS === **](faceGeneral.md#defaultattrs) button.
 
 
 #### 5. Pose Locators
-Almost all ctrls come with lots of poseLocators that are used to define the ctrl behaviors even more. In *funnel* and *lipPress* they are even
-used to define the whole pose.  
+Almost all ctrls come with lots of poseLocators that are used to define the ctrl behaviors even more. In *funnel* and *lipPress* 
+(mouth_ctrl.tz) they are even used to define the whole pose.  
 And all the pose locators are easily found by just selecting the ctrls, and in the outliner press **f**. You'll always see the the currently
 activated one as shown and the others are invisible:
 ![Alt text](../images/mouth_poseLocators.jpg)
 
 !!! tip
     There's a lot of poseLocators in the *BASEMouthCtrls()* function, even for each detail ctrls. If you end up using them a lot, it's worth checking out the options under the
-    button ** -- PoseLoc Tools -- ** 
+    button ** -- PoseLoc Tools -- **.  
+    ![Alt text](../images/mouth_poseLocTools.jpg)
 
-### Adjusting Pivots for Lip Rolls
-In some characters you might be struggling with getting proper lip rolls because they pivot around the joints while ideally they should pivot
-around the center of the lips.
+
+### Splines - Adjusting Pivots for Lip Rolls
+In some characters you might be struggling with getting proper lip rolls (*mouthBot_ctrl.rx* and *mouthTop_ctrl.rx*) 
+because they pivot around the joints while ideally they should pivot around the center of the lips.
 But there's a solution - you can change the pivot using the offset groups ending with *Pivot*:
 ![Alt text](../images/mouth_pivotgroups.jpg)
 
 Adjusting those will move the joints, so it's best to turn off the skinCluster. And show the curve with *mouth_ctrl.curveVis*.
 
-Then you save their values with the [**=== Default Attr === **](faceGeneral.md#defaultattrs) button, and rebuild. You should be able to get nicer Lip Rolls now.
+Then you save their values with the [**=== Default Attr === **](faceGeneral.md#defaultattrs) button, and **rebuild**. You should be able to get nicer Lip Rolls now.
 
-!!! warning
-    This will mess with the zipper! So if you are adjusting the pivot groups, it's best to set **bZipper* to *False* and use the 
-    [*postZipper()*](#post-lip-zipper) function if needed
+!!! warning "A few Warnings"
+    If you've placed pose locators already, likely you'll have to revise those after you changed it.      
+    And this will mess with the zipper! So if you are adjusting the pivot groups, it's best to set **bZipper** to *False* and use the 
+    [*postZipper()*](#post-lip-zipper) function if needed.  
 
+
+### Splines - Detail Ctrls
+Detail Ctrls are automatically there. Animators can turn them on with **mouth_ctrl.detailCtrlsVis**:
+![Alt text](../images/mouth_detailCtrls.jpg)  
+Each of them also comes with a set of [Pose Locators](#5-pose-locators), so you can use them to enhance some of your poses.  
+*Do you think they are too many?*  
+Well, they are just a ctrl for each small joint. If you want less, you can consider to set a higher value to *iSkipSplineJoints*.  
+But honestly they shouldn't be animated too much, they are really just to fine tune things. 
+     
 
 ## NLF Setup
 *NLF* stands for *Nasolabial Fold*, and it's that line between the nose wing and the mouth corners. Some characters have it more prominent than others.
 But the hardest ones to rig are those where you don't see the line in the model, but it's expected on the smile - such as many female characters.  
-In any case the *createNlfSetup()* can be very useful for keeping that line stable. But this function only works if you have *createBASEMouth()* with *bSLINE* attribute enabled.
+In any case the *createNlfSetup()* can be very useful for keeping that line stable. But this function only works if you have *createBASEMouth()* with *bSPLINE* attribute enabled.
 ![Alt text](../images/mouth_nlfCtrlls.jpg)
 
 You can adjust how many ctrls you want, in the picture above it's the default - 2 at the top (*fTopCtrlPercs*) and one at the bottom (*fBotCtrlPercs*) 
 
 Each ctrl comes with extra attributes to adjust the behavior, and they all come a Pose Locator Setup driven by the Corner Poses.
+
+!!! note
+    This function is optional. Since it requires more technical abilities to manage so many joints, some projects in the past opted for blendShape NLF lines instead of this. 
 
 ## Cheek Setup
 The setup is very similar to NLF lines, except that those lines are a bit further outside. And it's used mainly to enhance the smile a bit more
@@ -325,7 +392,7 @@ by bulging out the cheeks
 ![Alt text](../images/mouth_cheekSetup.jpg)
 
 !!! note
-    This function is optional. Since it requires more technical abilities to manage so many joints, some projects in the past opted for blendShape NLF lines instead of this. 
+    This function is optional. Since it requires more technical abilities to manage so many joints, some projects in the past opted for blendShapes instead of this Cheek Setup. 
 
 
 # Post Lip Zipper

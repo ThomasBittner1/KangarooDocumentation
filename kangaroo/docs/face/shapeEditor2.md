@@ -213,7 +213,7 @@ Look at this example where we use the *upperUp* target to open the lips slightly
     Your browser does not support the video tag.
 </video>
 
-## Transfer to New Character
+## Transfer to New Character {#transfertonewcharacter}
 Transfering to a new character is more advanced. It requires downloading Wrap3D (https://www.russian3dscanner.com/download/) 
 and possibly even getting a license.  
 

@@ -11,6 +11,11 @@ It consists of Interpolators, Interpolator Attributes and Targets, Meshes and Ct
     To see how the Pose Editor works in action, you can also watch this [Video](https://www.youtube.com/embed/oPQHf2HOq5o).    
     But keep in mind it's a bit outdated, especially the [model update (Pose Editor II)](poseEditor2.md#model-change) part has changed.
 
+
+## It's NOT the Shape Editor!
+For differences with the Shape Editor, see [Shape Editor - It's NOT the Pose Editor](../face/shapeEditor1.md#its-not-the-pose-editor)
+
+
 ## Interpolators - Calculating the Pose
 Interpolators are little setups that analyze the rig to see if and how strong
 we are in a pose.   
@@ -237,12 +242,14 @@ We do that by setting the mirror table with the right click menu on the mesh in 
 ![Alt text](../images/poseEditor_setMirrorTable.gif)  
 Your options are:  
 
-- middle mesh (edgeflow)
-- middle mesh (vertex positions)
-- middle mesh (face points)
-- side meshes (ids)
-- side meshes (vertex positions)
-- side meshes (face points)  
+| Table                         | Description                                                       |
+|-------------------------------|-------------------------------------------------------------------
+| middle mesh, edgeflow         | maping vertices through the middle edge (edgeflow) algorithm      |
+| middle mesh, vertex positions | mapping through vertex positions                                  |
+| middle mesh, face points      | finds point on face, and does barycentric mapping                 |
+| side meshes, ids              | needs 2 meshes with same vertex orders                            |
+| side meshes, vertex positions | needs 2 meshes, maps by vertex positions                          |
+| side meshes, face points      | needs 2 meshes, maps by point on face and barycentric coordinates |
 
 Edgeflow is that mirror algorithm where it takes a middle edge and with that finds all the other vertices by the
 edge connection patterns.

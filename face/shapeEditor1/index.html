@@ -15,7 +15,7 @@
         <link rel="next" href="../shapeEditor2/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
@@ -90,7 +90,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="kangaroo-builder.com" class="md-header__button md-logo" aria-label="kangaroo-builder.com" data-md-component="logo">
       
-  <img src="../../assets/evilKangaroo_100.png" alt="logo">
+  <img src="../../images/evilKangaroo_100.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -187,7 +187,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="kangaroo-builder.com" class="md-nav__button md-logo" aria-label="kangaroo-builder.com" data-md-component="logo">
       
-  <img src="../../assets/evilKangaroo_100.png" alt="logo">
+  <img src="../../images/evilKangaroo_100.png" alt="logo">
 
     </a>
     kangaroo-builder.com
@@ -1820,35 +1820,52 @@
 But keep in mind that some menu options changed since the time of making that video.</p>
 </div>
 <p>You can open the <em>Shape Editor</em> with the shelf button <img alt="Alt text" src="../../images/shapeEditor_shelfButton.jpg" /> </p>
-<p><img alt="Alt text" src="../../images/shapeEditor_ui.jpg" />   <br />
-On the left side of the UI you see all the Main Targets. And on the right side you see the Combo Targets.</p>
+<p><img alt="Alt text" src="../../images/shapeEditor_ui.jpg" />     </p>
 <h2 id="its-not-the-pose-editor">It's NOT the Pose Editor!</h2>
 <p>You might find a few similarities to the <a href="../../body/poseEditor1/">Pose Editor</a>, but the architecture and how we
-use it is quite different:   </p>
-<ul>
-<li>The <em>Pose Editor</em> runs on the actual rig, but the <em>Shape Editor</em> runs on another file that gets imported in the <em>importBlendShapeFile()</em>
-and gets applied to the rig in the function <em>blendShapesAndSliders()</em></li>
-<li>While the <em>Pose Editor</em> focuses on how shapes are driven and can add shapes on its own, the <em>Shape Editor</em> mainly (apart from combos) is just
-about sculpting and managing the shapes.</li>
-</ul>
+use it is different:   </p>
+<table>
+<thead>
+<tr>
+<th>Shape Editor</th>
+<th>Pose Editor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Runs in a separate file that gets imported in <em>importBlendShapeFile()</em></td>
+<td>Runs on the actual rig</td>
+</tr>
+<tr>
+<td>Focuses on sculpting and managing main/combo targets</td>
+<td>Focuses on evaluations with interpolators, but also does sculpting</td>
+</tr>
+<tr>
+<td>Creates one blendShape for the whole setup</td>
+<td>Creates a blendShape for each mesh</td>
+</tr>
+<tr>
+<td>The EDIT button handles <em>ALL</em> the meshes inside the blendShape</td>
+<td>The EDIT button only does what you have selected before clicking it</td>
+</tr>
+<tr>
+<td>Mirroring works with right click on the mesh in the meshes table. And meshes still need to get selected in scene, too</td>
+<td>Mirroring works with right click on the Target, having the meshes selected</td>
+</tr>
+</tbody>
+</table>
 <h2 id="getting-started">Getting Started</h2>
 <p>You can select any polygon mesh, and click the <strong>&lt;&lt;</strong> button:  <br />
 <img alt="Alt text" src="../../images/shapeEditor_initiate.gif" /><br />
 If that polygon mesh wasn't used with the <em>Shape Editor</em> yet, it'll ask you to choose a <em>Target List</em>. <br />
 By default you just have <em>cartoon</em> and <em>general</em>. If you are creating a blendShape rig where you want to do most 
 shapes including mouth, eyes, etc with blendShapes - choose <em>general</em>. But if you are doing a rig where you want
-do do most tarets with splines, then <em>cartoon</em> is a better start, because it only lists the targets that doesn't 
+do do most targets with splines, then <em>cartoon</em> is a better start, because it only lists the targets that doesn't 
 have spline rigs.  </p>
 <p><em>What did he do under the hood?</em><br />
-He created a new blendShape node. And all the Targets that you see in the UI are basically blendShape Targets on 
-the blendShape, just like you've already used before:  <br />
+He created a new blendShape node. And all the Targets that you see in the UI are basically targets on 
+the blendShape, just like what you've probably already created before:  <br />
 <img alt="Alt text" src="../../images/shapeEditor_blendShape.jpg" />  </p>
-<div class="admonition info">
-<p class="admonition-title">Kangaroo Tool Tip</p>
-<p>While in the gif above I just selected vertices and moved them, you can do a lot more. For example you can use
-the sculpting tools (<strong>Mesh Tools -&gt; Sculpting Tools</strong>) or use some Kangaroo Geometry Tools such as the <strong>Match</strong>
-or <strong>Smooth Vertices</strong> tools.</p>
-</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You are not limited to just <em>general</em> or <em>cartoon</em>! Later in <a href="../shapeEditor2/#adding-more-main-targets">Adding More Main Targets</a>
@@ -1857,10 +1874,16 @@ you'll see how to either create your own custom lists or just add targets to you
 <p>Now to sculpt some main targets by clicking the <em>Edit</em> button and sculpt:
 <img alt="Alt text" src="../../images/ShapeEditor_EDIT.gif" />  </p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">Comparing with Pose Editor</p>
 <p>Here we have a similarity to the <em>Pose Editor</em> but also a difference. While in the <em>Pose Editor</em> you also have those
 <em>EDIT</em> buttons that you use to sculpt the Targets, in the <em>Pose Editor</em> you have to select the meshes, while in the
 <em>Shape Editor</em> it just does it on all the meshes that are in the collection. </p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Kangaroo Tool Tip</p>
+<p>While in the gif above I just selected vertices and moved them, you can do a lot more. For example you can use
+the sculpting tools (<strong>Mesh Tools -&gt; Sculpting Tools</strong>) or use some Kangaroo Geometry Tools such as the <a href="../../tools/toolsGeometry/#match-vertex-positions"><strong>Match</strong></a>
+or <a href="../../tools/toolsGeometry/#smooth-vertices"><strong>Smooth Vertices</strong></a> tools.</p>
 </div>
 <h2 id="combos">Combos</h2>
 <h3 id="combos-create-them">Combos - Create Them</h3>
@@ -1871,7 +1894,7 @@ For a combination of 2 targets the combo would be called for example <em>cornerU
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You will never have to name them yourself, the tool takes care of it. You just need to be aware that whenever you create a <em>Main Target</em>
-yourself, it <em>cannot</em> have the _ sign in there.</p>
+yourself, it <strong>cannot</strong> have the _ sign in there.</p>
 </div>
 <p>Creating them is easy, just select the main targets, right click -&gt; <strong>create combo Targets</strong>:<br />
 <img alt="Alt text" src="../../images/shapeEditor_comboTargets.gif" /></p>
@@ -1881,7 +1904,7 @@ yourself, it <em>cannot</em> have the _ sign in there.</p>
 the combination will be 0.4 (0.8 * 0.5).<br />
 And in <em>Minimum</em> in the same example it would be 0.5, because 0.5 is the smaller one between 0.8 and 0.5.  </p>
 <p>Both modes have pros and cons. If you use <em>Multiply</em>, the result will be smoother but the issue is that the shape will not 
-be driven linearly while all main targets are being activated the same time. For example if you have 2 main targets that are both 
+be driven linearly when all main targets are being activated the same time. For example if you have 2 main targets that are both 
 activated as 0.5, the combo target will be 0.25. But ideally it should also be 0.5. Look at this example where we have
 a combination of 3 Main Targets. See how it moves slower at smaller values, and then speeds up at higher values?
 <img alt="Alt text" src="../../images/shapeEditor_multiply.gif" />  </p>
@@ -1898,21 +1921,21 @@ combo. So keep it to a minimum! Any combination of more than 3 targets can get v
 <h3 id="combos-add-percentage">Combos - add Percentage</h3>
 <p>When you open the blendShapes.ma on the <em>THOMAS</em> asset, you'll see a combo called jawOpen50_mouthClose. This just means
 that the jawOpen will only go to 0.5 (50 %):  </p>
-<video controls width="640">
+<video controls width="1570">
     <source src="../../images/shapeEditor_comboWithPercantage.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 
-<p>Try it out! But don't overuse them. The art of sculpting shapes is making this work with the simplest logics. But if you
-do need the extra complexity, it's there.<br />
-Changing and adding percentages happens through the marking menu:<br />
+<p>Changing and adding percentages happens through the marking menu:<br />
 <img alt="Alt text" src="../../images/shapeEditor_setPercentage.jpg" />   </p>
+<p>Try it out, but don't overuse it! The art of sculpting shapes is making this work with the simplest logics. But if you
+do need the extra complexity, it's there.  </p>
 <h2 id="extra-sliders">Extra Sliders</h2>
 <p>At the bottom you see a lot of sliders. Those are just representations of how the rig will later set them up. So they are basically
 a great way to get a feeling of how they will work later. <br />
 On each slider you could also isolate the targets with the right click menu, so you can see what targets are driven by them. <br />
 Open the Shape Editor File from the templates asset <em>THOMAS</em>, and play around with the sliders:  </p>
-<video autoplay muted loop controls width="640">
+<video autoplay muted loop controls width="1500">
     <source src="../../images/shapeEditor_sliders.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
@@ -1922,15 +1945,41 @@ Open the Shape Editor File from the templates asset <em>THOMAS</em>, and play ar
 <h3 id="mirror-table">Mirror Table</h3>
 <p>Right click on the mesh in the <em>Mesh Table</em> at the bottom right: <br />
 <img alt="Alt text" src="../../images/shapeEditor_mirrorTable.gif" /> <br />
-You can choose between:</p>
-<ul>
-<li>middle mesh, edgeflow: maping vertices through the middle edge algorithm</li>
-<li>middle mesh, vertex positions, mapping through vertex positions</li>
-<li>middle mesh, face points: finds point on face, and does barycentric mapping</li>
-<li>side meshes, ids: needs 2 meshes with same vertex orders </li>
-<li>side meshes, vertex positions: needs 2 meshes, maps by vertex positions</li>
-<li>side meshes, face points, needs 2 meshes, maps by point on face and barycentric coordinates</li>
-</ul>
+Here's a list of the options: </p>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>middle mesh, edgeflow</td>
+<td>maping vertices through the middle edge (edgeflow) algorithm</td>
+</tr>
+<tr>
+<td>middle mesh, vertex positions</td>
+<td>mapping through vertex positions</td>
+</tr>
+<tr>
+<td>middle mesh, face points</td>
+<td>finds point on face, and does barycentric mapping</td>
+</tr>
+<tr>
+<td>side meshes, ids</td>
+<td>needs 2 meshes with same vertex orders</td>
+</tr>
+<tr>
+<td>side meshes, vertex positions</td>
+<td>needs 2 meshes, maps by vertex positions</td>
+</tr>
+<tr>
+<td>side meshes, face points</td>
+<td>needs 2 meshes, maps by point on face and barycentric coordinates</td>
+</tr>
+</tbody>
+</table>
 <h3 id="actually-mirroring">Actually Mirroring</h3>
 <p>Mirroring also works on vertex selection. But you do need to right click on the actual mesh for the mirror.
 <img alt="Alt text" src="../../images/shapeEditor_mirror.gif" />    </p>
@@ -1944,7 +1993,7 @@ would do the mesh. But from the power of being able to select vertices comes the
 <img alt="Alt text" src="../../images/shapeEditor_inbetween.gif" /> </p>
 <h3 id="interpolate">Interpolate</h3>
 <p>Inbetweens are basically another shape stored in the node. It may not appear like this at first because when you apply the 
-inbetween, it gives it a default shape which is the interpolated shape at the time of when you apply it.<br />
+inbetween, it gives it a default shape which is the interpolated shape at the position of where you apply it.<br />
 BUT if you change the Full Target, the inbetween will NOT change.<br />
 But there's a solution to it - you can re-interpolate the inbetweens. You'll loose the shape that you sculpted on the inbetween, but
 it'll follow again that the full shape does. You'll see the options on the right click menu:  <br />
@@ -1953,12 +2002,12 @@ it'll follow again that the full shape does. You'll see the options on the right
 <p class="admonition-title">Note</p>
 <p>You'll see the words <em>All Inbetweens</em> and <em>Closest Inbetwween</em> a lot in the <em>Shape Editor</em>. It's relevant when you 
 have more than one inbetween. So in the picture above where there are 3 inbetweens (red marks) the current weight
-is closer to the first one, therefore the <em>Closest Inbetween</em> would only touch the first one. </p>
+is closer to the first one, so the <em>Closest Inbetween</em> would only touch the first one. </p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Watch Out</p>
 <p>When the <em>blendShapesAndSliders()</em> adds the blendShapes, the logic of inbetweens is a bit complicated because of a few
-mathematical challenges on how those inbetweens work. This means in certain situations you might find things behaving a bit strange. <br />
+mathematical challenges on how inbetweens work in general. This means in certain situations you might find things behaving a bit strange. <br />
 It's recommended to keep inbetweens to minimum. And if you do use them, watch out for the results carefully.</p>
 </div>
 <h2 id="meshes">Meshes</h2>
@@ -1968,7 +2017,7 @@ It's recommended to keep inbetweens to minimum. And if you do use them, watch ou
 <div class="admonition info">
 <p class="admonition-title">Kangaroo Tool Tip</p>
 <p>By default they are just sitting there and not following the main skin. But you can make it follow the skin with
-the <a href="../shapeEditor2/#makemeshesfollow">Tools</a> explained below.</p>
+the <a href="../shapeEditor2/#makemeshesfollow">Tools explained in Shape Editor 2</a>.</p>
 </div>
 <h3 id="meshesmainmesh">Meshes - Main Mesh</h3>
 <p>It's important to keep the Main Mesh (<em>skin</em> in this example) as the main mesh. It's usually always the case, unless
@@ -1991,7 +2040,7 @@ but it's not difficult:<br />
 are screwed, either fix them manually or try the <a href="../shapeEditor2/#warp-uvs">Warp UVs</a></p>
 <h4 id="different-topology-and-different-shape">different topology and different shape</h4>
 <p>If the topology is different AND the shape is entirely different, we are basically talking about making a new character.
-Check <a href="../shapeEditor2/#transfer-to-new-character">Transfer to New Character</a> further below.</p>
+Check <a href="../shapeEditor2/#transfertonewcharacter">Shape Editor 2 - Transfer to New Character</a>.</p>
 
 
 

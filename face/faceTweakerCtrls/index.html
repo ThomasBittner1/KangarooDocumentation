@@ -15,7 +15,7 @@
         <link rel="next" href="../shapeEditor1/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#what-are-they" class="md-skip">
+        <a href="#the-functions" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="kangaroo-builder.com" class="md-header__button md-logo" aria-label="kangaroo-builder.com" data-md-component="logo">
       
-  <img src="../../assets/evilKangaroo_100.png" alt="logo">
+  <img src="../../images/evilKangaroo_100.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -187,7 +187,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="kangaroo-builder.com" class="md-nav__button md-logo" aria-label="kangaroo-builder.com" data-md-component="logo">
       
-  <img src="../../assets/evilKangaroo_100.png" alt="logo">
+  <img src="../../images/evilKangaroo_100.png" alt="logo">
 
     </a>
     kangaroo-builder.com
@@ -858,15 +858,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-are-they" class="md-nav__link">
-    <span class="md-ellipsis">
-      What are they?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#the-functions" class="md-nav__link">
     <span class="md-ellipsis">
       The Functions...
@@ -1529,15 +1520,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-are-they" class="md-nav__link">
-    <span class="md-ellipsis">
-      What are they?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#the-functions" class="md-nav__link">
     <span class="md-ellipsis">
       The Functions...
@@ -1681,28 +1663,31 @@
 
   <h1>Face Tweaker Ctrls</h1>
 
-<h2 id="what-are-they">What are they?</h2>
-<p>Tweaker Ctrls are some extra ctrls on top of your setup that animators can use to add some secondary behavior.</p>
+<p>Tweaker Ctrls are some extra ctrls on top of the main setup that animators can use to add some secondary behavior.<br />
+<img alt="Alt text" src="../../images/faceTweakers_functions.jpg" /></p>
 <div class="admonition info">
-<p class="admonition-title">Info</p>
+<p class="admonition-title">They are NOT the puppet tweakers</p>
 <p>Remember <a href="../../puppet/tweakerCtrls/">Tweaker Ctrls in Puppet</a>? The Tweaker ctrls we are talking about here work with the same logic, and most
 things here you could theoretically recreate with what you've learned in Tweaker Ctrls before. But the functions
-here are  engineered a bit more specifically for facial rigging purposes.</p>
+here are  engineered a bit more specific for facial rigging purposes.</p>
 </div>
-<p>Apart from the <strong>sockets</strong> we usually just use those tweakers on blendShape driven setups. If you are already using
+<p>Most tweaker setups we just use on blendShape driven setups. If you are already using
 spline setups such as <em>splineLidSetup()</em>, <em>browSplinesSurface()</em> or the <em>bSPLINE</em> mode of <em>BASEMouthCtrls()</em>, 
-most of the tweaker setups won't be that useful since those spline setups already come with a lot of ctrls.</p>
+those tweaker setups won't be that useful since the spline setups already come with a lot of ctrls.  </p>
+<p>An exception is the <strong>sockets</strong>. Even if you are doing eyelid splines, animators might still want to have the 
+socket tweakers.</p>
 <h2 id="the-functions">The Functions...</h2>
 <h3 id="tweaker_lids"><em>TWEAKER_lids()</em></h3>
 <p>Those are for eyelids. Great for when you have blendShape driven Eyelids, and you just want to give animators some
 extra control on top of those.<br />
-<img alt="Alt text" src="../../images/tweakers_eyelids.jpg" />
+<img alt="Alt text" src="../../images/tweakers_eyelids.jpg" /><br />
 First specify the skin mesh under <strong>sAttachmesh</strong>. This is so later the <em>parallelAttachFunction()</em> knows where to
 attach the passers to.</p>
 <p>To create the blueprints - select the vertex loop selected: <br />
 <img alt="Alt text" src="../../images/tweakers_eyevertices.jpg" /><br />
-Click the button <strong>Create Left Curve and Locators</strong>.<br />
-That gives you this curve with locators. <br />
+Click the button <strong>Create Left Curve and Locators</strong>:  <br />
+<img alt="Alt text" src="../../images/faceTweakers_createBps.jpg" />    </p>
+<p>That gives you this curve with locators. <br />
 <img alt="Alt text" src="../../images/tweakers_eyeCurve.jpg" />  <br />
 Make sure the locators are at the corners, since those are what separates bottom and top lids.  </p>
 <p>And then click <strong>-Export Eyelid Tweaker BPs -</strong> </p>
@@ -1710,20 +1695,20 @@ Make sure the locators are at the corners, since those are what separates bottom
 <p><img alt="Alt text" src="../../images/tweakers_sockets.jpg" /><br />
 That's the eye sockets. On cartoony characters animators almost always expect them to have some extra control when
 brows move down.<br />
-Creating the blueprints and exporting works the same as in <a href="#tweaker_lids">TWEAKER_lids</a></p>
+Creating the blueprints and exporting works the same as in <a href="#tweaker_lids"><em>TWEAKER_lids()</em></a></p>
 <h3 id="tweaker_browssimple"><em>TWEAKER_browsSimple()</em></h3>
 <p>Nothing fancy, just 3 controls per side:  <br />
 <img alt="Alt text" src="../../images/tweakers_simpleBrows.jpg" />
-Creating the blueprints and exporting works the same as in <a href="#tweaker_lids">TWEAKER_lids</a><br />
+Creating the blueprints and exporting works the same as in <a href="#tweaker_lids"><em>TWEAKER_lids()</em></a><br />
 You do have some extra BPs for the brows to specify the orientations with <strong>Create Left Brow Orientation Locators</strong>:<br />
 <img alt="Alt text" src="../../images/tweakers_browExtraBps.jpg" />     </p>
 <h3 id="tweaker_lips"><em>TWEAKER_lips()</em></h3>
-<p><img alt="Alt text" src="../../images/tweakers_lips.jpg" />
-Creating the blueprints starts (!) the same as in <a href="#tweaker_lids">TWEAKER_lids</a>,<br />
+<p><img alt="Alt text" src="../../images/tweakers_lips.jpg" /><br />
+Creating the blueprints starts (!) the same as in <a href="#tweaker_lids"><em>TWEAKER_lids()</em></a>,<br />
 But then you need to specify the <strong>bFlipInnerBpCurves</strong> attribute. Set it to <em>True</em> if in the center cvs the upper 
 one is below the lower one.  </p>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<p class="admonition-title">If you realize too late that the bFlipInnerBpCurves is wrong..</p>
 <p>If you made a mistake with the <strong>bFlipInnerBpCurves</strong> and you need to swich that attributes after you've already skinned it, you can fix
 the weights with <strong>distribute</strong> option on either the <em>Flood</em> or the <em>ClosestExpand</em> tool. For both select the whole
 mesh. For the <em>ClosestExpand</em> tool also set the loop attributes very high, so you let the fade out be handled by the
@@ -1737,8 +1722,8 @@ But setting it to <em>True</em> means he's running a joint spline through the ve
 <h3 id="easy-ones-first">Easy ones first..</h3>
 <p>All of these <em>TWEAKER_..()</em> functions come with a button called <strong>Add Influences to Selected</strong>.<br />
 And then you can use the <strong>Flood</strong> tool to bind those vertices.<br />
-Just set the <strong>Choose Skin Cluster</strong> to <em>__TWEAKER</em>, reload the list, enter the type of tweakers
-in the search field (<em>lids</em>, <em>lips</em>, etc), select the joints, put in a nice vertex selection -&gt; <strong>Flood</strong> <br />
+Just set the <strong>Choose Skin Cluster</strong> to <em>__TWEAKER</em>, reload the list with the <img alt="Alt text" src="../../images/python_reloadButtonSmall.jpg" /> (reload) button, 
+enter the type of tweakers in the search field (<em>lids</em>, <em>lips</em>, etc), select the joints, put in a nice vertex selection -&gt; <strong>Flood</strong> <br />
 On characters with lower resolution, also put the <strong>Smooth Steps</strong> to 1.
 <img alt="Alt text" src="../../images/tweakers_paintTheSockets.jpg" />   </p>
 <div class="admonition tip">
@@ -1755,31 +1740,32 @@ for the tweakers the skinCluster needs extra settings under the hood. Those woul
 that is not from Kangaroo.</p>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<p class="admonition-title">Distribute</p>
 <p>The <strong>Flood</strong> tool can also be very useful with the <em>Distribute</em> option activated.<br />
 For example if you already flooded the weights, but it's too smooth - run it with distribute 
 but in the same tool also set the <em>Smooth Steps</em> lower.</p>
 </div>
 <h3 id="skinning-tweaker-lips-splines">Skinning Tweaker Lips Splines</h3>
 <p>If you've set the <strong>bSplines</strong> attribute to <em>False</em>, most of it is the same as in the other setups tools. </p>
-<p>But if you <strong>bSplines</strong> as <em>True</em>, then instead of the <em>Flood</em> tool, you should use the <strong>SkinCluster -&gt; ClosestExpand</strong> tool 
-for binding them.<br />
+<p>But if you have <strong>bSplines</strong> as <em>True</em>, then instead of the <em>Flood</em> tool, you should use the 
+<a href="../../tools/toolsSkinCluster/#closestexpand">ClosestExpand tool</a> for binding them.<br />
 <em>Why?</em> <br />
 Because we have a joint for each vertex on the loop.   </p>
 <h2 id="ctrl-attachments">Ctrl Attachments</h2>
 <h3 id="parallelattachtransforms"><em>parallelAttachTransforms()</em></h3>
 <p>Same as for Custom Attachers, the <em>parallAttachTransforms()</em> function is making the ctrl passers follow the mesh.<br />
-It's called <em>parallel</em> because it seems like it's getting attached to the mesh, but in fact
+<img alt="Alt text" src="../../images/faceTweakers_parallelAttachFunction.jpg" /><br />
+It's called <em>parallel</em> because it only seems like it's getting attached by the mesh, while in fact
 it's looking at which joints the closest vertex of each ctrl is bound to, and then recreates the
 skincluster behavior of that vertex with matrix nodes. It works for more than one skinCluster, but
 does NOT include the actual <em>__TWEAKER</em> skinCluster that those ctrls are influencing. Otherwise you'd
 get a cycle.
-It's similar for blendShapes, except instead of matrix nodes it's using range nodes.  </p>
+It also takes blendShapes, except instead of matrix nodes it's creating range nodes.  </p>
 <h3 id="what-if-a-ctrl-doesnt-follow-nicely">What if a ctrl doesn't follow nicely?</h3>
 <p>In some rare cases it doesn't find a good vertex. You'll see that when for example on open mouth or closing eyelids 
 one or two ctrls are following a bit too slow or too fast.</p>
-<p>Whenever that happens, the first thing is check if your function has the <strong>bSnapToBlueprintCvs</strong> attribute.
-If it does, try setting that to <em>True</em>.</p>
+<p>Whenever that happens, the first thing is check if your function has the <strong>bSnapToBlueprintCvs</strong> attribute. 
+If it does, try setting that to <em>True</em>. Keep in mind that this changes the positions of the ctrls! So use it with caution.</p>
 <p>If that doesn't help - we can fix it with a python function
 that's moving the passer groups closer to the actual vertex you'd like to bind to:</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@builderTools</span><span class="o">.</span><span class="n">addToBuild</span><span class="p">(</span><span class="n">iOrder</span><span class="o">=</span><span class="mf">85.5</span><span class="p">,</span> <span class="n">dButtons</span><span class="o">=</span><span class="p">{})</span>
@@ -1804,7 +1790,7 @@ the <em>TWEAKER_*()</em> functions and <em>parallAttachTransforms()</em></p>
 Setting it up is a bit more advanced:</p>
 <ul>
 <li>right click on <em>TWEAKER_lips()</em> -&gt; <em>set function instance count</em> -&gt; 2 (or more)</li>
-<li>on the second function that just appeared: set the <strong>sSuffix</strong> attribute to something like 'A', otherwise you'll end up having clashing names </li>
+<li>on the second function that just appeared: set the <strong>sSuffix</strong> attribute to something like 'A', otherwise you'd end up having clashing names </li>
 <li>And for the second function you also have to add the first skincluster (.._TWEAKER) into the <em>sAdditionalAttachDeformers()</em> list, so it also follows the first one</li>
 </ul>
 

@@ -15,7 +15,7 @@
         <link rel="next" href="../poseEditor2/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#interpolators-calculating-the-pose" class="md-skip">
+        <a href="#its-not-the-shape-editor" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="kangaroo-builder.com" class="md-header__button md-logo" aria-label="kangaroo-builder.com" data-md-component="logo">
       
-  <img src="../../assets/evilKangaroo_100.png" alt="logo">
+  <img src="../../images/evilKangaroo_100.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -187,7 +187,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="kangaroo-builder.com" class="md-nav__button md-logo" aria-label="kangaroo-builder.com" data-md-component="logo">
       
-  <img src="../../assets/evilKangaroo_100.png" alt="logo">
+  <img src="../../images/evilKangaroo_100.png" alt="logo">
 
     </a>
     kangaroo-builder.com
@@ -650,6 +650,15 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#its-not-the-shape-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      It's NOT the Shape Editor!
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#interpolators-calculating-the-pose" class="md-nav__link">
@@ -1589,6 +1598,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#its-not-the-shape-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      It's NOT the Shape Editor!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#interpolators-calculating-the-pose" class="md-nav__link">
     <span class="md-ellipsis">
       Interpolators - Calculating the Pose
@@ -1811,6 +1829,8 @@
 <p>To see how the Pose Editor works in action, you can also watch this <a href="https://www.youtube.com/embed/oPQHf2HOq5o">Video</a>.  <br />
 But keep in mind it's a bit outdated, especially the <a href="../poseEditor2/#model-change">model update (Pose Editor II)</a> part has changed.</p>
 </div>
+<h2 id="its-not-the-shape-editor">It's NOT the Shape Editor!</h2>
+<p>For differences with the Shape Editor, see <a href="../../face/shapeEditor1/#its-not-the-pose-editor">Shape Editor - It's NOT the Pose Editor</a></p>
 <h2 id="interpolators-calculating-the-pose">Interpolators - Calculating the Pose</h2>
 <p>Interpolators are little setups that analyze the rig to see if and how strong
 we are in a pose. <br />
@@ -1838,7 +1858,7 @@ confusing, because those are the ones on the joints, not the ctrl!
 it's in different space). And the <em>Up Axis</em> is one of the other two. 
 <em>Which one?</em> Just try it out which one is more stable in your case. But never set <em>Angle Axis</em> and <em>Up Axis</em> to 
 be identlical, because this <em>will</em> lead to troubles. </p>
-<p>Here's a short video how we create the singedAngle for the knee:</p>
+<p>Here's a short video how we create the signedAngle for the knee:</p>
 <video autoplay muted loop controls width="1400">
     <source src="../../images/poseEditor_creatingSignedAngle.mp4" type="video/mp4">
     Your browser does not support the video tag.
@@ -2016,14 +2036,40 @@ Right click on Interpolator -&gt; Mirror:<br />
 We do that by setting the mirror table with the right click menu on the mesh in the Meshes Table: <br />
 <img alt="Alt text" src="../../images/poseEditor_setMirrorTable.gif" /><br />
 Your options are:  </p>
-<ul>
-<li>middle mesh (edgeflow)</li>
-<li>middle mesh (vertex positions)</li>
-<li>middle mesh (face points)</li>
-<li>side meshes (ids)</li>
-<li>side meshes (vertex positions)</li>
-<li>side meshes (face points)  </li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>middle mesh, edgeflow</td>
+<td>maping vertices through the middle edge (edgeflow) algorithm</td>
+</tr>
+<tr>
+<td>middle mesh, vertex positions</td>
+<td>mapping through vertex positions</td>
+</tr>
+<tr>
+<td>middle mesh, face points</td>
+<td>finds point on face, and does barycentric mapping</td>
+</tr>
+<tr>
+<td>side meshes, ids</td>
+<td>needs 2 meshes with same vertex orders</td>
+</tr>
+<tr>
+<td>side meshes, vertex positions</td>
+<td>needs 2 meshes, maps by vertex positions</td>
+</tr>
+<tr>
+<td>side meshes, face points</td>
+<td>needs 2 meshes, maps by point on face and barycentric coordinates</td>
+</tr>
+</tbody>
+</table>
 <p>Edgeflow is that mirror algorithm where it takes a middle edge and with that finds all the other vertices by the
 edge connection patterns.</p>
 <p>Then to do the actual flipping: Right click on Target -&gt; <strong>Side:Pose Combinations and Flip Meshes</strong>

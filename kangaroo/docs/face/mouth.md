@@ -396,8 +396,23 @@ by bulging out the cheeks
 
 
 # Post Lip Zipper
-If you are not using spline (or you are using spline but offsetted the pivot groups), then the only way to do a zipper is
-the *postZipper()* function.  
-This creates another skinCluster with the **__ZIPPER** suffix.
+If you are not using spline, or you are using spline but offsetted the pivot groups, then you can use the *postZipper()* 
+function to create a zipper using an extra skinCluster.
 
+It's very easy to setup. Just set the sMesh attribute in the *postZipper()* to the main mesh  
+![Alt text](../images/mouth_zipperSetMesh.jpg)  
+and run the function.
 
+Then having the mesh selected - click the *bind selected* button to
+create the skinCluster with the **__ZIPPER** suffix.
+![Alt text](../images/mouth_postZipperBind.jpg)
+
+In the end you'll have this skinCluster that has those joints:  
+![Alt text](../images/mouth_postZipperSkinCluster.jpg)  
+
+But you don't have to look for the joints, they are already in the skinCluster, and from here you can just use 
+the [ClosestExpand tool](../tools/toolsSkinCluster.md#closestexpand) to set the weights:
+![Alt text](../images/mouth_postZipperClosestExpand.jpg)  
+
+!!! note 
+    This is taking the blueprints from the *BASEMouthSetup()* function.

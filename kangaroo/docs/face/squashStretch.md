@@ -1,5 +1,5 @@
 
-The *createBendSetup()* function function is creating some general squash/stretch setup. They are two additional skinClusters, suffixed by *__BEND* and *__BENDTOP*.
+The *createBendSetup()* function function is creating some general squash/stretch setup. They are two additional skinClusters, suffixed with *__BEND* and *__BENDTOP*.
 
 ![Alt text](../images/bend_presentation.gif)  
 
@@ -20,7 +20,7 @@ that other skinning tools won't.
 These are the joints:
 ![Alt text](../images/bend_joints.jpg)
 But don't worry you don't actually have to look for them or select them in the scene or outliner. just follow the instructions
-how to do that with the **Flood** tool, and you'll be done very fast with this.
+how to do that with the **Flood** tool, and you'll be done with this in no time.
 
 
 ### Using the Flood tool

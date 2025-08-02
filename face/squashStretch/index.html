@@ -1585,10 +1585,12 @@
 
   <h1>Squash/Stretch</h1>
 
-<p>The <em>createBendSetup()</em> function function is creating some general squash/stretch setup. They are two additional skinClusters, suffixed by <em>__BEND</em> and <em>__BENDTOP</em>.</p>
+<p>The <em>createBendSetup()</em> function is creating some general squash/stretch setup. They are two additional skinClusters, suffixed with <em>__BEND</em> and <em>__BENDTOP</em>.</p>
 <p><img alt="Alt text" src="../../images/bend_presentation.gif" />  </p>
 <h2 id="blueprints">Blueprints</h2>
-<p>When you click <em>Create BPs</em>, he just creates some colored joints that you need to lay out to the shape of the head
+<p>When you click <em>Create BPs</em>,<br />
+<img alt="Alt text" src="../../images/bend_createBPs.jpg" /> <br />
+he just creates some colored joints that you need to lay out to the shape of the head:<br />
 <img alt="Alt text" src="../../images/bend_blueprints.jpg" /></p>
 <h2 id="ctrl-shapes">Ctrl Shapes</h2>
 <p>After running the <em>createBendSetup()</em> function, move those ctrl shapes to the right place, just be dragging their cvs:
@@ -1600,13 +1602,14 @@ that other skinning tools won't.<br />
 These are the joints:
 <img alt="Alt text" src="../../images/bend_joints.jpg" />
 But don't worry you don't actually have to look for them or select them in the scene or outliner. just follow the instructions
-how to do that with the <strong>Flood</strong> tool, and you'll be done very fast with this.</p>
+how to do that with the <a href="../../tools/toolsSkinCluster/#flood">Flood tool</a> , and you'll be done with this in no time.</p>
 <h3 id="using-the-flood-tool">Using the Flood tool</h3>
 <p>To create the skinClusters, having the main mesh selected start by clicking the buttons <strong>connect Influences (selectded Meshes)</strong> and 
-<strong>connectInfluences TOP (selected meshes)</strong>.</p>
+<strong>connectInfluences TOP (selected meshes)</strong>:<br />
+<img alt="Alt text" src="../../images/bend_bindButtons.jpg" />  </p>
 <p>Then apply the rom animation by clicking the button <strong>create rom anim</strong></p>
-<p>In the <strong>Choose Skin Cluster</strong> field, specify <strong>__BEND</strong>, and click the reload button.</p>
-<p>Bind everything above the neck to the <strong>jnt_m_faceBendMiddle</strong>. This is the main cube ctrl - frame 0 - 30
+<p>In the <strong>Choose Skin Cluster</strong> field, specify <strong>__BEND</strong>, and click the <img alt="Alt text" src="../../images/python_reloadButtonSmall.jpg" /> (reload) button.</p>
+<p>Bind everything above the neck to the <strong>jnt_m_faceBendMiddle</strong>. This is the main cube ctrl - frame 0 - 30 in the ROM.
 <img alt="Alt text" src="../../images/bend_mainInfluence.jpg" /></p>
 <p>Then in the flood tool select the <strong>jnt_m_botFaceBendSquash_001</strong> joint and bind the bottom part of the face to it.<br />
 <img alt="Alt text" src="../../images/bend_botInfluence2.jpg" />  </p>
@@ -1614,7 +1617,7 @@ how to do that with the <strong>Flood</strong> tool, and you'll be done very fas
 <p class="admonition-title">Note</p>
 <p>Even though there's more bottom joints, the bottom part <em>usually</em> works better with painted to just one joint.</p>
 </div>
-<p>Next, the <strong>Choose Skin Cluster</strong> field, specify <strong>__BENDTOP</strong>, and click the reload button.
+<p>Next, the <strong>Choose Skin Cluster</strong> field, specify <strong>__BENDTOP</strong>, and click the <img alt="Alt text" src="../../images/python_reloadButtonSmall.jpg" /> (reload) button.
 And bind the whole head to all the top influence joints
 <img alt="Alt text" src="../../images/bend_topInfluences.jpg" /></p>
 <h3 id="transfer-from-main-mesh-to-others">Transfer from main mesh to others</h3>
@@ -1623,7 +1626,7 @@ Set the <em>From</em> to the name of the skinCluster that you created before, an
 <img alt="Alt text" src="../../images/bend_transferSkinclusters.jpg" />  </p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Do not forget the <strong>Auto Create New SkinCluster</strong> otherwise you will damage your existing weights.</p>
+<p>Do not forget the <strong>Auto Create New SkinCluster</strong>! Running it without it would damage your existing weights.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1636,12 +1639,13 @@ But those are easily fixed with the <strong>Smooth</strong> tool. Just make sure
 <img alt="Alt text" src="../../images/bend_smooth.jpg" /></p>
 <h2 id="tweak-it">Tweak it</h2>
 <p>When you look at the Rom or play around with the ctrls, it's probably not looking perfect yet.  </p>
-<p>You can adjust the squash/stretch values with the attributes on the passers of the ctrls.<br />
-Those get saved with the <strong>DEFAULT ATTRS</strong> button</p>
+<p>You can adjust the squash/stretch values with the attributes on the passers of the ctrls:<br />
+<img alt="Alt text" src="../../images/bend_passerValues.jpg" /><br />
+Those get saved with the <a href="../faceGeneral/#defaultattrs">** === DEFAULT ATTRS === **</a> button.</p>
 <p>And apart from that you might still need to spend some time tweaking the weights with the <strong>Smooth</strong>, <strong>Flood</strong> or <strong>Move</strong> tool.</p>
 <h2 id="only-one-skincluster-option">Only one skinCluster option</h2>
-<p>You probably saw that by default he added all the bottom joints also into the <em>__BEND</em> skinCluster.<br />
-If could theoretically solve it all with one skinCluster, but then you'd have to adjust the blueprints
+<p>You probably saw that the <strong>connect Influences (..)</strong> button added all the bottom <em>AND</em> top joints into the <em>__BEND</em> skinCluster.<br />
+You could theoretically skip the <em>__BENDTOP</em> skinCluster and solve it all with <em>__BEND</em>. You'd just have to adjust the blueprints
 so the lower and upper blueprints are not overlapping each other.</p>
 <h2 id="ctrls-following">Ctrls Following</h2>
 <p><em>Kangaroo</em> tries to have most ctrls follow the squash/streth setup. This won't change the deformations, but animators still
@@ -1649,10 +1653,10 @@ appreciate it if ctrls are always staying with the face geo.<br />
 For all the facial setups this should happen automatically in the function <em>parallelAttachCtrls()</em>.  <br />
 But if you have some extra puppet limbs, you'll have to set this with the <strong>FaceExtraMove</strong> flag: <br />
 <img alt="Alt text" src="../../images/bend_faceExtraMove.jpg" />
-Limbs that have it supported are <em>spine</em>, <em>singleTransform</em>, <em>singleBone</em> and <em>belt</em></p>
+Limbs that have this attribute are <em>spine</em>, <em>singleTransform</em>, <em>singleBone</em> and <em>belt</em></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>on some limbs that attribute might be a further below: <br />
+<p>on some limbs that attribute might be a further below under the <em>FK</em> feature: <br />
 <img alt="Alt text" src="../../images/bend_faceExtraMove2.jpg" /></p>
 </div>
 

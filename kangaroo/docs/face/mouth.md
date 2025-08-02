@@ -322,15 +322,15 @@ The passers of the [Lip Ctrls](#upper-and-lower-ctrls) come with a few extra att
 ![Alt text](../images/mouth_lipCtrlsShow.jpg) ![Alt text](../images/mouth_lipsAttributes.jpg)
 
 
-| Attributes                       | What they are doing                                                                   |
-|----------------------------------|---------------------------------------------------------------------------------------
-| *Follow Corner Surface Vert*     | When corners move up/down in Y, how much the lip ctrls should follow that motion      |
-| *Follow Corner Z*                | When corners move in/out in Z, how much the lip ctrls should follow that motion       |
-| *Follow Corner Surface In*       | When corners in in X, how much the lip ctrls should follow that motion                |
-| *Follow Corner Surface  Out*     | When corners out in X, how much the lip ctrls should follow that motion               |
-| *Aim To Neighbors*               | Creates a more smooth behavior by rotating the tangents based on the neighboring ctrls |
-| *Aim To NeighborsPuckerMultiply* | On CornerIn the aiming is a bit unstable, with this multiplier you can turn it off    |
-| *Live Tangent*                   | If this is 1.0, the joints get aimed along the spline                                 |
+| Attributes                         | What they are doing                                                                   |
+|------------------------------------|---------------------------------------------------------------------------------------
+| *Follow Corner Surface Vert*       | When corners move up/down in Y, how much the lip ctrls should follow that motion      |
+| *Follow Corner Z*                  | When corners move in/out in Z, how much the lip ctrls should follow that motion       |
+| *Follow Corner Surface In*         | When corners in in X, how much the lip ctrls should follow that motion                |
+| *Follow Corner Surface  Out*       | When corners out in X, how much the lip ctrls should follow that motion               |
+| *Aim To Neighbors*                 | Creates a more smooth behavior by rotating the tangents based on the neighboring ctrls |
+| *Aim To Neighbors Pucker Multiply* | On CornerIn the aiming is a bit unstable, with this multiplier you can turn it off    |
+| *Live Tangent*                     | If this is 1.0, the joints get aimed along the spline                                 |
 
 Saving those attributes happens with the [** === DEFAULT ATTRS === **](faceGeneral.md#defaultattrs) button.
 

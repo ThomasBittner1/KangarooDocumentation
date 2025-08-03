@@ -1,5 +1,4 @@
 
-## What are they?
 Tweaker Ctrls are ctrls that follow your current setup, and then deform the mesh with an additional skinCluster.  
 In this example the Cube Ctrl is a tweaker, that follows the previous skinCluster and blendShape setup, but
 on top of that deforms the mesh with an additional skinCluster.
@@ -14,23 +13,25 @@ on top of that deforms the mesh with an additional skinCluster.
 
 ### Add the limb
 
-This is done with the **postRefJoints** attribute, the following limbs have it:
+The following limbs can work as Tweaker Limbs:
 
  * singleBone    
  * singleTransform    
  * belt
  * spine (fk, ikSpline, simple)
 
-In the example shown above have the singleTransform limb. It's the simplest, but also the most common one.  
-Make sure to set **postRefJoints** attribute to *True*. And the second important thing is setting up
-the Custom Attachers, so it knows what to follow.
+The first thing is to activate the **postRefJoints** attribute. In all limbs it's under the feature, 
+usually located at the bottom:  
+![Alt text](../images/puppetTweaker_postRefJointSingleBone.jpg)   
+
 
 ### Custom Attacher
-First we'll have to setup the [Attachers](puppetGeneral.md#custom-attachers), using the *Custom* option.
+Then we have to setup the *Attachers*, usually with the 
+[Custom](puppetGeneral.md#custom-attachers) option.
 ![Alt text](../images/tweaker_customAttacher.jpg)   
 The deformers you select there are crucial. Select all the deformers that the tweaker ctrl should follow.  
 But absolutely do NOT select the skinCluster that the tweaker ctrl will be driving, otherwise you'd get a 
-cycle.
+cycle!
 
 And don't forget the blueprints.
 
@@ -43,19 +44,20 @@ the **skin** shelf button. In that UI make sure you activate *Post*:
 ![Alt text](../images/tweaker_skinPost.jpg)     
 
 
-## Stacking them
-In our example the cheeks are not following anything in the TWEAKER skinCluster. But in many cases you want
+## Advanced - Stacking them {#advancedstackingthem}
+In our example the cheeks are not following anything in the TWEAKER skinCluster. But in some cases you want
 the Tweaker Ctrl to follow some other Tweaker Ctrls that are already there.  
-To solve that, we stack the tweakers:   
-First in the custom attacher's *Attach DeformerUI* you need to specify the other skinCluster that it should follow.    
-And then create an additional skinCluster that the tweaker ctrl is driving.  
+To solve that, we add more tweaker skinClusters and stack them:   
+Basically for the first skinCluster, in the *Attach DeformerUI* you only specify the blendShape and main Skincluster.
+Then in the second one you add the main skinCluster plus the first tweaker skinCluster etc.
+ 
 !!! warning
     It's very easy to run into cycles here. But it's also easy to avoid that, just be aware that the tweaker joints
     MUST NOT drive any skinCluster that is specified in the attacher. Even just small weights cause a cycle
     and make the whole rig unstable.
 
 !!! note 
-    On some complex characters you might end up with quite a lot of stacked skinClusters:  
+    On some complex characters you might end up with five or even more stacked skinClusters:  
     ![Alt text](../images/tweakers_stackedSkinClusters.jpg)      
 
 !!! tip
@@ -63,7 +65,7 @@ And then create an additional skinCluster that the tweaker ctrl is driving.
     have to be aware that tweakers inside a skinCluster can't affect each others.
 
 
-## Spine Tweakers
+## Advanced - Spine Tweakers
 With the spine you can also do some tweaker fk setup that runs on top of another setup:  
 ![Alt text](../images/tweaker_tail.gif)  
 It works with the **fk**.  
@@ -72,6 +74,6 @@ And you have to set the custom attachers on *ALL* (*root*, *fk_xx*), and for the
 ![Alt text](../images/tweakers_spineAttributes.jpg)
 !!! note
     This can also work well on the face for cartoony dog noses. But since you'll have a few more deformers there already, you'll
-    have to be very confident with how to [stack them](#stacking-them)
+    have to be very confident with how to [stack them](#advancedstackingthem)
 
 

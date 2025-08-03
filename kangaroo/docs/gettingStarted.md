@@ -80,12 +80,12 @@ And we usually grab one from the server. **Templates** is one server that comes 
 - **BASELEGOFIGURE**
 - **THOMAS** (BlendShape driven Face Rig)
 
-<a id="createnew"></a>
 Let's go to the BASEHUMAN, and then in **Export -> NEW**, set the project and new asset name, and then click **Create**:
-    <video autoplay muted loop controls width="826">
-        <source src="../../images/gettingStarted_createNewAsset.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+
+<video autoplay muted loop controls width="826">
+    <source src="../../images/gettingStarted_createNewAsset.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
 !!! note "UPPERCASE/MixedCase"
     By default it's automatically converting the name to UPPERCASE. It's recommended that you keep it this way 

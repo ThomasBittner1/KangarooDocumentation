@@ -50,7 +50,7 @@ For now just shape it roughly, but very likely you'll be revisiting this later a
 
 ## Upper and Lower Ctrls
 ### Count/Positions
-The Lip Ctrls (Upper and Lower Lips Ctrls) are the only ones where you can decide many you want.  
+The Lip Ctrls (Upper and Lower Lips Ctrls) are the only ones where you can decide how many you want.  
 And you do that with the **fLeftLipParamPercs**:   
 ![Alt text](../images/mouth_leftLipParams.jpg)  
 It might look a little *"technical"* at first glance, so here's the explanation:    

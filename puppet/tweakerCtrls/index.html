@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#what-are-they" class="md-skip">
+        <a href="#how-to-set-it-up" class="md-skip">
           Skip to content
         </a>
       
@@ -538,15 +538,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-are-they" class="md-nav__link">
-    <span class="md-ellipsis">
-      What are they?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#how-to-set-it-up" class="md-nav__link">
     <span class="md-ellipsis">
       How to set it up
@@ -589,18 +580,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#stacking-them" class="md-nav__link">
+  <a href="#advancedstackingthem" class="md-nav__link">
     <span class="md-ellipsis">
-      Stacking them
+      Advanced - Stacking them
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#spine-tweakers" class="md-nav__link">
+  <a href="#advanced-spine-tweakers" class="md-nav__link">
     <span class="md-ellipsis">
-      Spine Tweakers
+      Advanced - Spine Tweakers
     </span>
   </a>
   
@@ -1463,15 +1454,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-are-they" class="md-nav__link">
-    <span class="md-ellipsis">
-      What are they?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#how-to-set-it-up" class="md-nav__link">
     <span class="md-ellipsis">
       How to set it up
@@ -1514,18 +1496,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#stacking-them" class="md-nav__link">
+  <a href="#advancedstackingthem" class="md-nav__link">
     <span class="md-ellipsis">
-      Stacking them
+      Advanced - Stacking them
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#spine-tweakers" class="md-nav__link">
+  <a href="#advanced-spine-tweakers" class="md-nav__link">
     <span class="md-ellipsis">
-      Spine Tweakers
+      Advanced - Spine Tweakers
     </span>
   </a>
   
@@ -1549,7 +1531,6 @@
 
   <h1>Puppet Tweaker Ctrls</h1>
 
-<h2 id="what-are-they">What are they?</h2>
 <p>Tweaker Ctrls are ctrls that follow your current setup, and then deform the mesh with an additional skinCluster.<br />
 In this example the Cube Ctrl is a tweaker, that follows the previous skinCluster and blendShape setup, but
 on top of that deforms the mesh with an additional skinCluster.
@@ -1561,22 +1542,23 @@ to set some up for the face, it's recommended to check if those are already take
 </div>
 <h2 id="how-to-set-it-up">How to set it up</h2>
 <h3 id="add-the-limb">Add the limb</h3>
-<p>This is done with the <strong>postRefJoints</strong> attribute, the following limbs have it:</p>
+<p>The following limbs can work as Tweaker Limbs:</p>
 <ul>
 <li>singleBone    </li>
 <li>singleTransform    </li>
 <li>belt</li>
 <li>spine (fk, ikSpline, simple)</li>
 </ul>
-<p>In the example shown above have the singleTransform limb. It's the simplest, but also the most common one.<br />
-Make sure to set <strong>postRefJoints</strong> attribute to <em>True</em>. And the second important thing is setting up
-the Custom Attachers, so it knows what to follow.</p>
+<p>The first thing is to activate the <strong>postRefJoints</strong> attribute. In all limbs it's under the feature, 
+usually located at the bottom:<br />
+<img alt="Alt text" src="../../images/puppetTweaker_postRefJointSingleBone.jpg" />   </p>
 <h3 id="custom-attacher">Custom Attacher</h3>
-<p>First we'll have to setup the <a href="../puppetGeneral/#custom-attachers">Attachers</a>, using the <em>Custom</em> option.
+<p>Then we have to setup the <em>Attachers</em>, usually with the 
+<a href="../puppetGeneral/#custom-attachers">Custom</a> option.
 <img alt="Alt text" src="../../images/tweaker_customAttacher.jpg" /> <br />
 The deformers you select there are crucial. Select all the deformers that the tweaker ctrl should follow.<br />
 But absolutely do NOT select the skinCluster that the tweaker ctrl will be driving, otherwise you'd get a 
-cycle.</p>
+cycle!</p>
 <p>And don't forget the blueprints.</p>
 <h3 id="skincluster">SkinCluster</h3>
 <p>After you've built everything - for skinning you need to bind it with an additional skinCluster that has
@@ -1585,12 +1567,12 @@ a suffix, in this example we use the TWEAKER skinCluster: <br />
 If you don't have an additional skinCluster with a suffix yet, create one by selecting the mesh and clicking
 the <strong>skin</strong> shelf button. In that UI make sure you activate <em>Post</em>:  <br />
 <img alt="Alt text" src="../../images/tweaker_skinPost.jpg" />     </p>
-<h2 id="stacking-them">Stacking them</h2>
-<p>In our example the cheeks are not following anything in the TWEAKER skinCluster. But in many cases you want
+<h2 id="advancedstackingthem">Advanced - Stacking them</h2>
+<p>In our example the cheeks are not following anything in the TWEAKER skinCluster. But in some cases you want
 the Tweaker Ctrl to follow some other Tweaker Ctrls that are already there.<br />
-To solve that, we stack the tweakers: <br />
-First in the custom attacher's <em>Attach DeformerUI</em> you need to specify the other skinCluster that it should follow.  <br />
-And then create an additional skinCluster that the tweaker ctrl is driving.  </p>
+To solve that, we add more tweaker skinClusters and stack them: <br />
+Basically for the first skinCluster, in the <em>Attach DeformerUI</em> you only specify the blendShape and main Skincluster.
+Then in the second one you add the main skinCluster plus the first tweaker skinCluster etc.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>It's very easy to run into cycles here. But it's also easy to avoid that, just be aware that the tweaker joints
@@ -1599,7 +1581,7 @@ and make the whole rig unstable.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>On some complex characters you might end up with quite a lot of stacked skinClusters:<br />
+<p>On some complex characters you might end up with five or even more stacked skinClusters:<br />
 <img alt="Alt text" src="../../images/tweakers_stackedSkinClusters.jpg" />      </p>
 </div>
 <div class="admonition tip">
@@ -1607,7 +1589,7 @@ and make the whole rig unstable.</p>
 <p>Keep in mind you can always group some tweakers into one skinCluster to keep the number of skinClusters low. You just
 have to be aware that tweakers inside a skinCluster can't affect each others.</p>
 </div>
-<h2 id="spine-tweakers">Spine Tweakers</h2>
+<h2 id="advanced-spine-tweakers">Advanced - Spine Tweakers</h2>
 <p>With the spine you can also do some tweaker fk setup that runs on top of another setup:<br />
 <img alt="Alt text" src="../../images/tweaker_tail.gif" /><br />
 It works with the <strong>fk</strong>.<br />
@@ -1617,7 +1599,7 @@ And you have to set the custom attachers on <em>ALL</em> (<em>root</em>, <em>fk_
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This can also work well on the face for cartoony dog noses. But since you'll have a few more deformers there already, you'll
-have to be very confident with how to <a href="#stacking-them">stack them</a></p>
+have to be very confident with how to <a href="#advancedstackingthem">stack them</a></p>
 </div>
 
 

@@ -516,6 +516,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Trouble shooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-bell-is-flipping-as-i-rotate-it-to-90-degrees" class="md-nav__link">
+    <span class="md-ellipsis">
+      The bell is flipping as I rotate it to 90 degrees
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-bell-jumps-very-unnatural-as-it-touches-the-ringer" class="md-nav__link">
+    <span class="md-ellipsis">
+      The bell jumps very unnatural as it touches the ringer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1445,6 +1469,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Trouble shooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-bell-is-flipping-as-i-rotate-it-to-90-degrees" class="md-nav__link">
+    <span class="md-ellipsis">
+      The bell is flipping as I rotate it to 90 degrees
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-bell-jumps-very-unnatural-as-it-touches-the-ringer" class="md-nav__link">
+    <span class="md-ellipsis">
+      The bell jumps very unnatural as it touches the ringer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1472,9 +1520,9 @@ While it looks great in the video, it does
 come with the disadvantage that he can only handle cylinders. But those can be scaled non-uniformly, translated and rotated.
 And with some multiply attributes you can specify it to be weaker in either front, back or on the sides.</p>
 <h2 id="setting-it-up">Setting it up</h2>
-<p>It's quick to setup. Just add a singleBone limb, declare it as a bell with the <strong>isBell</strong> attribute, and
+<p>Add a singleBone limb, declare it as a bell with the <strong>IsBell</strong> attribute, and
 define the <strong>ringer</strong> in the attacher below. The ringer in this case is another <em>singleBone</em> limb that is 
-located close to the bell. And the ringer itself doesn't need any extra settings. Actually it doesn't even know that 
+located close to the bell. The ringer itself doesn't need any extra settings. Actually it doesn't even know that 
 it's a ringer. We just named it ringer.<br />
 <img alt="Alt text" src="../../images/bellCollider_settings.jpg" />  </p>
 <h2 id="shaping-the-cylinders">Shaping the Cylinders</h2>
@@ -1485,12 +1533,11 @@ Multiply values can be useful, too - but don't overuse them! They are only here 
 When you are happy with how it works, save the settings in the puppet limb's right click menu <strong>Custom: Store Bell Settings</strong> <br />
 <img alt="Alt text" src="../../images/bellCollider_rightClick.gif" /></p>
 <h2 id="trouble-shooting">Trouble shooting</h2>
-<p>Especially when setting it up the first time, you might find it's not behaving as you want it to. Here's a few common issues
-and how to solve them:</p>
-<ol>
-<li><em>The bell is flipping as I rotate it to 90 degrees:</em> Might be an easy solve - switch the <strong>Bell Up Vector</strong> from default of (0,1,0) to (0,0,1)</li>
-<li><em>The bell </em>jumps<em> very unnatural as it touches the ringer:</em> Give the bell a blended attacher, that it already moves like the ringer 50 % without the bell setup. </li>
-</ol>
+<p>Here's a few common issues and how to solve them:</p>
+<h3 id="the-bell-is-flipping-as-i-rotate-it-to-90-degrees">The bell is flipping as I rotate it to 90 degrees</h3>
+<p>Switch the <strong>Bell Up Vector</strong> from default of (0,1,0) to (0,0,1)</p>
+<h3 id="the-bell-jumps-very-unnatural-as-it-touches-the-ringer">The bell <em>jumps</em> very unnatural as it touches the ringer</h3>
+<p>Give the bell a blended attacher, so that it already moves like the ringer 50 % without the bell setup </p>
 
 
 

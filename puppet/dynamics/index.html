@@ -1447,6 +1447,37 @@
 
   <h1>Dynamics</h1>
 
+<p>There's 2 options - Springs and Dynamics.</p>
+<table>
+<thead>
+<tr>
+<th>Springs</th>
+<th>Dynamics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Expressions</td>
+<td>hairSystem</td>
+</tr>
+<tr>
+<td>SingleBone, SingleTransform and Spine (fk, fkSpline)</td>
+<td>only Spine (Advanced section)</td>
+</tr>
+<tr>
+<td>Controls top groups of the Ctrls</td>
+<td>Is running at the end, before the Squash Joints</td>
+</tr>
+<tr>
+<td>Easier to tweak with stiffness and damping</td>
+<td>Has a ton of attributes that are tricky to tweak for specific behaviors</td>
+</tr>
+<tr>
+<td>Only FKs</td>
+<td>Can do Spine FK and IK, can even have the end point locked</td>
+</tr>
+</tbody>
+</table>
 <h2 id="springs">Springs</h2>
 <p>The following limbs come with a <strong>Spring</strong> attribute:</p>
 <ul>

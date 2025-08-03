@@ -7,9 +7,9 @@ come with the disadvantage that he can only handle cylinders. But those can be s
 And with some multiply attributes you can specify it to be weaker in either front, back or on the sides.
 
 ## Setting it up
-It's quick to setup. Just add a singleBone limb, declare it as a bell with the **isBell** attribute, and
+Add a singleBone limb, declare it as a bell with the **IsBell** attribute, and
 define the **ringer** in the attacher below. The ringer in this case is another *singleBone* limb that is 
-located close to the bell. And the ringer itself doesn't need any extra settings. Actually it doesn't even know that 
+located close to the bell. The ringer itself doesn't need any extra settings. Actually it doesn't even know that 
 it's a ringer. We just named it ringer.  
 ![Alt text](../images/bellCollider_settings.jpg)  
 
@@ -23,11 +23,13 @@ When you are happy with how it works, save the settings in the puppet limb's rig
 
 
 ## Trouble shooting
-Especially when setting it up the first time, you might find it's not behaving as you want it to. Here's a few common issues
-and how to solve them:
+Here's a few common issues and how to solve them:
 
-1. *The bell is flipping as I rotate it to 90 degrees:* Might be an easy solve - switch the **Bell Up Vector** from default of (0,1,0) to (0,0,1)
-2. *The bell *jumps* very unnatural as it touches the ringer:* Give the bell a blended attacher, that it already moves like the ringer 50 % without the bell setup. 
+### The bell is flipping as I rotate it to 90 degrees
+Switch the **Bell Up Vector** from default of (0,1,0) to (0,0,1)
+
+### The bell *jumps* very unnatural as it touches the ringer
+Give the bell a blended attacher, so that it already moves like the ringer 50 % without the bell setup 
 
 
 

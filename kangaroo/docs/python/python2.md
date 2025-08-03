@@ -159,9 +159,24 @@ def post_publish(sProject, sToAssetFolder, sComments):
 
 ## Custom Limbs
 Writing your own puppet limbs is where things get very advanced, therefore a decent python level is required.  
-Start by creating an empy folder, and declare it with the Environment Variable **KANGAROO_EXTRALIMBS_PATH**.  
-Then copy/paste one of the existing limbs from the *kangarooLimbs* folder of your Kangaroo installation in to that new folder.
+Start by creating an empy folder, and declare it with the Environment Variable **KANGAROO_EXTRALIMBS_PATH**.
+
+After setting the Environment Variable restart Maya!
+
+Then copy/paste one of the existing limbs from the *kangarooLimbs* folder of your Kangaroo installation into that new folder.
 Simplest one to start with is probably *singleTransform*.  
+So in this example copy the highest version of *singleTransform* - at the time of this writing *singleTransform_v18.py* - into that folder, and rename
+it to reflect your new limb. It's important to keep the version syntax and make it start at version 0.  
+So for example: *myLimb_v0.py* 
+
+If you open the new file, the class name is probably still called LSingleTransform. Rename it - in the example above it would be LMyLimb.
+Ideally also change the value of the default attribute *sName* from 'singleTransform' to 'myLimb'.
+
+At this point if you click the ![Alt text](../images/python_reloadButtonSmall.jpg) (reload) button next to the *Limbs Library*, 
+the new limb should show up. If not, check you restarted maya after you've specified the Environment Variable.  
+![Alt text](../images/python_customLimbsReload.jpg)  
+
+Now you have a good starting point, and you can work on your newly created limb.
 
 The attributes that you see in the Puppet tool on the right side are all either just the function parameters of the
 *\_\_init\_\_()* function or the feature functions (*feature_fk()* in this case)

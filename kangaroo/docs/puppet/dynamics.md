@@ -1,3 +1,14 @@
+There's 2 options - Springs and Dynamics.
+
+| Springs                                              | Dynamics                                                                |
+|------------------------------------------------------|-------------------------------------------------------------------------
+| Expressions                                          | hairSystem                                                              |
+| SingleBone, SingleTransform and Spine (fk, fkSpline) | only Spine (Advanced section)                                           |
+| Controls top groups of the Ctrls                     | Is running at the end, before the Squash Joints                         |
+| Easier to tweak with stiffness and damping           | Has a ton of attributes that are tricky to tweak for specific behaviors |
+| Only FKs                                             | Can do Spine FK and IK, can even have the end point locked              |
+
+
 ## Springs
 The following limbs come with a **Spring** attribute:
 

@@ -1735,9 +1735,19 @@ So the publish function later will run it as something like:
 </code></pre></div></p>
 <h2 id="custom-limbs">Custom Limbs</h2>
 <p>Writing your own puppet limbs is where things get very advanced, therefore a decent python level is required.<br />
-Start by creating an empy folder, and declare it with the Environment Variable <strong>KANGAROO_EXTRALIMBS_PATH</strong>.<br />
-Then copy/paste one of the existing limbs from the <em>kangarooLimbs</em> folder of your Kangaroo installation in to that new folder.
-Simplest one to start with is probably <em>singleTransform</em>.  </p>
+Start by creating an empy folder, and declare it with the Environment Variable <strong>KANGAROO_EXTRALIMBS_PATH</strong>.</p>
+<p>After setting the Environment Variable restart Maya!</p>
+<p>Then copy/paste one of the existing limbs from the <em>kangarooLimbs</em> folder of your Kangaroo installation into that new folder.
+Simplest one to start with is probably <em>singleTransform</em>.<br />
+So in this example copy the highest version of <em>singleTransform</em> - at the time of this writing <em>singleTransform_v18.py</em> - into that folder, and rename
+it to reflect your new limb. It's important to keep the version syntax and make it start at version 0.<br />
+So for example: <em>myLimb_v0.py</em> </p>
+<p>If you open the new file, the class name is probably still called LSingleTransform. Rename it - in the example above it would be LMyLimb.
+Ideally also change the value of the default attribute <em>sName</em> from 'singleTransform' to 'myLimb'.</p>
+<p>At this point if you click the <img alt="Alt text" src="../../images/python_reloadButtonSmall.jpg" /> (reload) button next to the <em>Limbs Library</em>, 
+the new limb should show up. If not, check you restarted maya after you've specified the Environment Variable.<br />
+<img alt="Alt text" src="../../images/python_customLimbsReload.jpg" />  </p>
+<p>Now you have a good starting point, and you can work on your newly created limb.</p>
 <p>The attributes that you see in the Puppet tool on the right side are all either just the function parameters of the
 <em>__init__()</em> function or the feature functions (<em>feature_fk()</em> in this case)</p>
 <p>The attachers get declared with extra functions:

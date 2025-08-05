@@ -31,16 +31,15 @@ In there open a *Command Prompt* (either by right click, or type *cmd* in the ad
     </video>
 
 ### For Mac
-the mayapip location looks a bit different - like this:
+The mayapy location looks a bit more like this:
 ``` bash
 /Applications/Autodesk/maya2024/Maya.app/Contents/bin
 ```
-And you run the mayapy without the .exe - like this:
+And you run the mayapy without the *.exe*:
 ``` bash
-./mayapy.exe -m pip install ‐‐user numpy
+./mayapy -m pip install numpy
 ```
-
-And apart from numpy, you also have to install **pyobjc**:
+Apart from numpy, you also have to install **pyobjc**:
 ``` bash
 ./mayapy -m pip install pyobjc
 ```

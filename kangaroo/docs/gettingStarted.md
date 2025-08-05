@@ -30,6 +30,17 @@ In there open a *Command Prompt* (either by right click, or type *cmd* in the ad
         Your browser does not support the video tag.
     </video>
 
+### For Mac
+the mayapip location looks a bit different - like this:
+``` bash
+/Applications/Autodesk/maya2024/Maya.app/Contents/bin
+```
+And apart from numpy, you also have to install **pyobjc**:
+``` bash
+./mayapy.exe -m pip install ‐‐user pyobjc
+```
+
+
 ## The Directories
 
 If you just want to use the SkinCluster/Geometry Tools or the Shape Editor or the Picker - you don't need to setup the directories.

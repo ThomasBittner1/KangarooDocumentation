@@ -35,10 +35,18 @@ the mayapip location looks a bit different - like this:
 ``` bash
 /Applications/Autodesk/maya2024/Maya.app/Contents/bin
 ```
+And you run the mayapy without the .exe - like this:
+``` bash
+./mayapy.exe -m pip install ‐‐user numpy
+```
+
 And apart from numpy, you also have to install **pyobjc**:
 ``` bash
-./mayapy.exe -m pip install ‐‐user pyobjc
+./mayapy -m pip install pyobjc
 ```
+
+
+
 
 
 ## The Directories

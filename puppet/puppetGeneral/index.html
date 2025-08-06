@@ -1968,9 +1968,14 @@ for another character with different topology:<br />
 <p>In all the template characters there's the <em>display_ctrl</em> that has a lot of display attributes:<br />
 <img alt="Alt text" src="../../images/puppet_displayCtrl.jpg" />  </p>
 <p>And that's just a simple <em>singleTransform</em> limb with its own blueprint:
-<img alt="Alt text" src="../../images/puppet_displayLimb.jpg" /><br />
-Don't move it around in the hierarchy in puppet tool! It's important that this is at the top, first limb
-after the master limb (<em>m_placement</em> in this case)  </p>
+<img alt="Alt text" src="../../images/puppet_displayLimb.jpg" />  </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Don't move it around in the hierarchy of the puppet tool! It's important that this is at the top, first limb
+after the master limb (<em>m_placement</em> in this case)<br />
+It even cannot be after the cog, it needs to be before:
+<img alt="Alt text" src="../../images/puppetGeneral_wrongDisplay.jpg" />     </p>
+</div>
 <p>And all the limbs have display attributes to which tag (attribute) they belong to:<br />
 <img alt="Alt text" src="../../images/puppet_displayCtrlAttributes.jpg" />     </p>
 <div class="admonition note">

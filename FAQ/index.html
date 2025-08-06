@@ -1316,9 +1316,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#after-building-the-character-some-vertices-are-stretched-to-the-origin" class="md-nav__link">
+  <a href="#do-animators-need-kangaroo-installed" class="md-nav__link">
     <span class="md-ellipsis">
-      After building the character, some vertices are stretched to the origin
+      Do Animators need Kangaroo installed?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-i-build-rigs-in-windows-and-animate-in-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Can I build rigs in Windows and animate in Linux
     </span>
   </a>
   
@@ -1328,6 +1337,15 @@
   <a href="#maya-crashes-very-often" class="md-nav__link">
     <span class="md-ellipsis">
       Maya crashes very often
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#after-building-the-character-some-vertices-are-stretched-to-the-origin" class="md-nav__link">
+    <span class="md-ellipsis">
+      After building the character, some vertices are stretched to the origin
     </span>
   </a>
   
@@ -1461,9 +1479,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#after-building-the-character-some-vertices-are-stretched-to-the-origin" class="md-nav__link">
+  <a href="#do-animators-need-kangaroo-installed" class="md-nav__link">
     <span class="md-ellipsis">
-      After building the character, some vertices are stretched to the origin
+      Do Animators need Kangaroo installed?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-i-build-rigs-in-windows-and-animate-in-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Can I build rigs in Windows and animate in Linux
     </span>
   </a>
   
@@ -1473,6 +1500,15 @@
   <a href="#maya-crashes-very-often" class="md-nav__link">
     <span class="md-ellipsis">
       Maya crashes very often
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#after-building-the-character-some-vertices-are-stretched-to-the-origin" class="md-nav__link">
+    <span class="md-ellipsis">
+      After building the character, some vertices are stretched to the origin
     </span>
   </a>
   
@@ -1507,19 +1543,29 @@
 <h3 id="which-maya-versions-are-supported">Which Maya versions are supported?</h3>
 <ul>
 <li>Maya 2022 (Windows)</li>
-<li>Maya 2023 (Windows, Linux)</li>
-<li>Maya 2024 (Windows, Linux)</li>
-<li>Maya 2025 (Windows, Linux)</li>
+<li>Maya 2023 (Windows, Linux, Mac)</li>
+<li>Maya 2024 (Windows, Linux, Mac)</li>
+<li>Maya 2025 (Windows, Linux, Mac)</li>
+<li>Maya 2026 (Windows, Linux, Mac)</li>
 </ul>
 <h3 id="does-it-work-in-linux-or-mac">Does it work in Linux or Mac?</h3>
 <p>The latest version 5 does support all three systems</p>
-<h3 id="after-building-the-character-some-vertices-are-stretched-to-the-origin">After building the character, some vertices are stretched to the origin</h3>
-<p>Most likely this is because the <em>loadDeformer()</em> function is skinning some influences that don’t exist in the rig anymore. If those influences don’t exist in the rig, the <em>loadDeformer()</em> function will create them as simple joints outside the hierarchy.
-To debug that, either just run until loadDeformer or Run All with the clean function turned off. Then look at joints outside the hierarchy. Easiest way to fix the weights of those is with the move skinCluster tool</p>
+<h3 id="do-animators-need-kangaroo-installed">Do Animators need Kangaroo installed?</h3>
+<p>No, Kangaroo-Builder doesn't use any custom nodes, the rigs work in basic Maya.
+Animators might want to use the animation tools from Kangaroo though - but for that you can also give them just
+the kangarooAnim path - see <a href="../picker/#tool-installation">here</a> for more detail.</p>
+<h3 id="can-i-build-rigs-in-windows-and-animate-in-linux">Can I build rigs in Windows and animate in Linux</h3>
+<p>Yes, this has been done many times. Just keep in mind that Linux runs on a different binary, so you might find a few
+evaluation bugs in Linux that don't happen in Windows. It's rare, but does happen.</p>
 <h3 id="maya-crashes-very-often">Maya crashes very often</h3>
 <p>Make sure you are in <strong>DG</strong> mode at the time you open Maya:<br />
 Windows -&gt; Settings -&gt; Preferences -&gt; Animation -&gt; switch to <em>DG</em> at the very top. Then restart Maya and verify that it’s still on <em>DG</em>.  <br />
 This is not just for Kangaroo. Generally Rigging should be done in <em>DG</em> while <em>parallel</em> and <em>GPU</em> is for Animating.</p>
+<h3 id="after-building-the-character-some-vertices-are-stretched-to-the-origin">After building the character, some vertices are stretched to the origin</h3>
+<p>Most likely this is because the <em>loadDeformer()</em> function is skinning some influences that don’t exist in the rig anymore. 
+If those influences don’t exist in the rig, the <em>loadDeformer()</em> function will create them as simple joints outside the hierarchy.
+To debug that, either just run until <em>loadDeformer()</em> or click <em>Run All</em> with the <em>clean()</em> function turned off. 
+Then look at joints outside the hierarchy. Easiest way to fix the weights of those is with the move skinCluster tool</p>
 <h3 id="when-i-use-studio-library-on-kangaroo-rigs-it-breaks-on-saving-animation-and-creates-some-transforms-called-curve1-curve2">When I use Studio Library on Kangaroo Rigs, it breaks on saving Animation, and creates some transforms called CURVE1, CURVE2,..</h3>
 <p>First try to get the latest version. of Studio Library. Older versions didn't get along with joint controls, and on Kangaroo rigs the 
 hand/foot iks are joints. 

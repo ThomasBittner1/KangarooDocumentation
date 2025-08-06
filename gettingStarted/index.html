@@ -288,6 +288,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#for-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Mac
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1485,6 +1494,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#for-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Mac
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1589,6 +1607,16 @@ the location of Maya:
     Your browser does not support the video tag.
 </video></p>
 </div>
+<h3 id="for-mac">For Mac</h3>
+<p>The mayapy location looks a bit more like this:
+<div class="highlight"><pre><span></span><code>/Applications/Autodesk/maya2024/Maya.app/Contents/bin
+</code></pre></div>
+And you run the mayapy without the <em>.exe</em>:
+<div class="highlight"><pre><span></span><code>./mayapy<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>numpy
+</code></pre></div>
+Apart from numpy, you also have to install <strong>pyobjc</strong>:
+<div class="highlight"><pre><span></span><code>./mayapy<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pyobjc
+</code></pre></div></p>
 <h2 id="the-directories">The Directories</h2>
 <p>If you just want to use the SkinCluster/Geometry Tools or the Shape Editor or the Picker - you don't need to setup the directories.</p>
 <p>But if you want to build characters, there's a little bit of more setup we have to do now.</p>

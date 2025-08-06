@@ -5,8 +5,6 @@ title: Builder General
 # Builder General
 
 
-
-## What is the builder?
 The **Builder** is the first most important tool that you need to get familiar with for creating characters.
 
 The builder is basically a central tool that manages a ton of Python functions from different files, and lets

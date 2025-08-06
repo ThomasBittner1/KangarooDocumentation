@@ -98,8 +98,14 @@ Upper/Lower Lips - those are triggered from the [Upper and Lower Ctrls](#upper-a
     lowerDown (lower lip depressor)
     lowerUp (opposite of lowerDown)
 ```    
-They are being split between all the lip ctrls. If it's just one at each side, it's using the split radius. But if there are more 
-than 2 lip ctrls it's using some split-by-curve algorithm. It often gives great weights - but whenever it doesn't, 
+They are being split between all the lip ctrls. But how they are split depends on how many ctrls you have.
+
+If it's just one at each side and no middle, it's using the split radien *fLowerLips* and *fUpperLips* defined in 
+*dSplitRadienFactors* (edit it with the [JSON Editor](../builder/jsonEditor.md)):
+![Alt text](../images/mouth_splitRadienLips.jpg)  
+
+But if there are more 
+than 2 lip ctrls it's using a split-by-curve algorithm. It often gives great weights. But whenever it doesn't, 
 you can adjust the weights with the skinClusters of meshes called something like *_body_geo_bpCurve_m_botLipInner_weightMesh_curveParamWeights_5*.
 Basically the *blendShapesAndSliders()* function creates those. 
 You can adjust the weights, export - and next time you build, it'll take those weights.  

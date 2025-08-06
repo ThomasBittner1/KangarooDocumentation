@@ -2047,8 +2047,12 @@ But for more high fidelity rigs you'll definitely get better blending between th
     lowerDown (lower lip depressor)
     lowerUp (opposite of lowerDown)
 </code></pre></div>
-They are being split between all the lip ctrls. If it's just one at each side, it's using the split radius. But if there are more 
-than 2 lip ctrls it's using some split-by-curve algorithm. It often gives great weights - but whenever it doesn't, 
+They are being split between all the lip ctrls. But how they are split depends on how many ctrls you have.</p>
+<p>If it's just one at each side and no middle, it's using the split radien <em>fLowerLips</em> and <em>fUpperLips</em> defined in 
+<em>dSplitRadienFactors</em> (edit it with the <a href="../../builder/jsonEditor/">JSON Editor</a>):
+<img alt="Alt text" src="../../images/mouth_splitRadienLips.jpg" />  </p>
+<p>But if there are more 
+than 2 lip ctrls it's using a split-by-curve algorithm. It often gives great weights. But whenever it doesn't, 
 you can adjust the weights with the skinClusters of meshes called something like <em>_body_geo_bpCurve_m_botLipInner_weightMesh_curveParamWeights_5</em>.
 Basically the <em>blendShapesAndSliders()</em> function creates those. 
 You can adjust the weights, export - and next time you build, it'll take those weights.<br />

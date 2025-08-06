@@ -166,8 +166,11 @@ In all the template characters there's the *display_ctrl* that has a lot of disp
 
 And that's just a simple *singleTransform* limb with its own blueprint:
 ![Alt text](../images/puppet_displayLimb.jpg)  
-Don't move it around in the hierarchy in puppet tool! It's important that this is at the top, first limb
-after the master limb (*m_placement* in this case)  
+!!! warning 
+    Don't move it around in the hierarchy of the puppet tool! It's important that this is at the top, first limb
+    after the master limb (*m_placement* in this case)  
+    It even cannot be after the cog, it needs to be before:
+    ![Alt text](../images/puppetGeneral_wrongDisplay.jpg)     
 
 And all the limbs have display attributes to which tag (attribute) they belong to:  
 ![Alt text](../images/puppet_displayCtrlAttributes.jpg)     
@@ -183,7 +186,7 @@ And all the limbs have display attributes to which tag (attribute) they belong t
     *buildPuppet()* function. Just open that attribute in the [JSON Editor](../builder/jsonEditor.md), and add
     and/or reorder entries.
     ![Alt text](../images/puppet_displayCtrlOrderOfAttributes.jpg)     
-    
+
 ### visibilityAttributes()
 For any ctrls that are not setup-ed for the *displayCtrl*, you can use the *visibilityAttributes()* function.
 ![Alt text](../images/puppet_visibilityAttrs.jpg)     

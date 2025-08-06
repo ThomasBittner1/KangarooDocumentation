@@ -17,13 +17,13 @@ You can open the *Shape Editor* with the shelf button ![Alt text](../images/shap
 You might find a few similarities to the [Pose Editor](../body/poseEditor1.md), but the architecture and how we
 use it is different:   
 
-| Shape Editor                                                                                                          | Pose Editor                                                                |
-|-----------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------
-| Runs in a separate file that gets imported in *importBlendShapeFile()*                                                | Runs on the actual rig                                                     |
-| Focuses on sculpting and managing main/combo targets                                                                  | Focuses on evaluations with interpolators, but also does sculpting         |
-| Creates one blendShape for the whole setup                                                                            | Creates a blendShape for each mesh                                         |
-| The EDIT button handles *ALL* the meshes inside the blendShape                                                        | The EDIT button only does what you have selected before clicking it        |
-| Mirroring works with right click on the mesh in the meshes table. And meshes still need to get selected in scene, too | Mirroring works with right click on the Target, having the meshes selected |
+| Shape Editor                                                                                                    | Pose Editor                                                                    |
+|-----------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------
+| Runs in a separate file that gets imported in *importBlendShapeFile()*                                          | Runs on the actual rig                                                         |
+| Focuses on sculpting and managing main/combo targets                                                            | Focuses on evaluations with interpolators, but also does sculpting             |
+| Creates one blendShape node for the whole setup                                                                 | Creates many blendShape nodes. One for each mesh                               |
+| The EDIT button handles *ALL* the meshes inside the blendShape                                                  | The EDIT button only does the meshes that you have selected before clicking it |
+| Mirroring works with right click on the mesh in the meshes table. And meshes need to get selected in scene, too | Mirroring works with right click on the Target, having the meshes selected     |
 
 
 ## Getting Started

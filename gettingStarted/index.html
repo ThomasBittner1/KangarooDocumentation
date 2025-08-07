@@ -289,9 +289,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#for-mac" class="md-nav__link">
+  <a href="#mac" class="md-nav__link">
     <span class="md-ellipsis">
-      For Mac
+      Mac
     </span>
   </a>
   
@@ -1495,9 +1495,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#for-mac" class="md-nav__link">
+  <a href="#mac" class="md-nav__link">
     <span class="md-ellipsis">
-      For Mac
+      Mac
     </span>
   </a>
   
@@ -1607,14 +1607,14 @@ the location of Maya:
     Your browser does not support the video tag.
 </video></p>
 </div>
-<h3 id="for-mac">For Mac</h3>
-<p>The mayapy location looks a bit more like this:
+<h3 id="mac">Mac</h3>
+<p>If you are on a Mac, the mayapy location looks a bit more like this:
 <div class="highlight"><pre><span></span><code>/Applications/Autodesk/maya2024/Maya.app/Contents/bin
 </code></pre></div>
 And you run the mayapy without the <em>.exe</em>:
 <div class="highlight"><pre><span></span><code>./mayapy<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>numpy
 </code></pre></div>
-Apart from numpy, you also have to install <strong>pyobjc</strong>:
+Another extra thing you have to do if you are on Mac is install <strong>pyobjc</strong>:
 <div class="highlight"><pre><span></span><code>./mayapy<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pyobjc
 </code></pre></div></p>
 <h2 id="the-directories">The Directories</h2>
@@ -1685,9 +1685,11 @@ But you have to setup the server at some point anyway, why not do it now.</p>
 </ol>
 <p>The new server should be on another disk. It could be a folder setup-ed with Smartdrive from <em>Dropbox</em>, <em>Box</em> or <em>GoogleDrive</em>.
 Or if you are working in a network, it can be a location on the network. </p>
-<div class="admonition note">
-<p class="admonition-title">Smart Drives</p>
-<p>In case you want to do it with a smart drive, and you have to decide - we've tried all the smart drives in Windows, and the most stable one has been Dropbox.</p>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>If you use Smart Drives, it's best to manually make the version folder (e.g. <em>v3</em>) <strong>available offline</strong> before localizing. Otherwise
+he might not grab <em>all</em> the content. That's because the Smart Drives are trying to help you by keeping the file
+storage small - which makes the localizing unstable in some cases.</p>
 </div>
 <p>If you don't have one yet, just create an empty folder again.
 And after that, open the <strong>pathEnv.mel</strong> file with a text editor, and change the path after <em>default@</em> to be your server path.

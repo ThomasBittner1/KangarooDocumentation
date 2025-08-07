@@ -1376,12 +1376,26 @@
 
 
 <h1 id="motion-capture">Motion Capture</h1>
-<p>Maya has a great tool for Motion Capture retargeting, which is called <em>humanIK</em>. Kangaroo is simplifying this for you.
-If just turn on the function <em>humanIkSkeleton()</em>, it'll create this skeleton:<br />
-<img alt="Alt text" src="../../images/body_motionCaptureSkeleton.jpg" /><br />
-There's nothing for you to do at this point. Just know that it'll use this later under the hood when Animators apply 
-Motion Capture using the Picker.<br />
-For more information check: <strong>Animator Tools</strong></p>
+<p>Maya has a great tool for Motion Capture retargeting, which is called <em>humanIK</em>. Kangaroo is simplifying this for you.</p>
+<p>If just turn on the function <em>humanIkSkeleton()</em><br />
+<img alt="Alt text" src="../../images/humanIk_function.jpg" />  <br />
+it'll create this skeleton:<br />
+<img alt="Alt text" src="../../images/body_motionCaptureSkeleton.jpg" />  </p>
+<p>This function also needs the T Pose. So just pose your character into TPose - just left side is enough:<br />
+<img alt="Alt text" src="../../images/humanIk_rightSideTPose.jpg" /></p>
+<div class="admonition question">
+<p class="admonition-title">Unclear about the thumbs?</p>
+<p>To see what rotations the thumbs need to have, just open your motion capture and set it to T Pose (either by going to 
+first frame if it's got a t pose, or by zero-ing all rotation values). <br />
+On a Skeleton Cache from Mixamo it looks like this:<br />
+<img alt="Alt text" src="../../images/humanIk_mixamoThumbs.jpg" />
+But in some other examples you might find them oriented more straight to the palms.</p>
+</div>
+<p>And click the button <em>Record T Pose</em>:<br />
+<img alt="Alt text" src="../../images/humanIk_recordTPose.jpg" />   </p>
+<p>Then build again. To verify that it works, turn on the HumanIkVis, and check that it's in TPose:<br />
+<img alt="Alt text" src="../../images/humanIk_verifyTPose.jpg" />   </p>
+<p>From here you can use the <a href="../../picker/#motion-capture">Motion Capture Tool</a> to connect it to a Skeleton Cache.</p>
 
 
 

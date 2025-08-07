@@ -1242,6 +1242,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#motion-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Motion Capture
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1521,6 +1530,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#motion-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Motion Capture
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1635,6 +1653,25 @@ from the start.</p>
 <p class="admonition-title">Video</p>
 <p>Watch how to mirror ctrl poses or animation <a href="https://www.youtube.com/watch?v=5W2JQYoyohQ&amp;t=1m32s">here</a></p>
 </div>
+<h3 id="motion-capture">Motion Capture</h3>
+<p>On Bipeds you can connect the rig directly to a Motion Capture Rig for example from Mixamo, Rokoko, ..  </p>
+<p>To be able to use that you need to have the <em>humanIk:Reference</em> hierarchy in your rig. If it's not there,
+tell your rigger to set it up as shown in <a href="../body/motionCapture/">here</a>
+<img alt="Alt text" src="../images/humanIk_checkIfAttrIsThere.jpg" />  </p>
+<p>If you've got it in there, select any node of the character rig, and make sure it's in the top of the UI at Namespace.
+And then click <em>Connect Body to Human Ik</em>.
+<img alt="Alt text" src="../images/humanIk_connectingTheCharacter.jpg" /> <br />
+Now load in your Motion Capture Cache into Maya, select any node of it and click
+<em>Characterize Selected Mocap and connect to HumanIk Skeleton</em>:<br />
+<img alt="Alt text" src="../images/humanIk_characterize.jpg" />     </p>
+<p>Now you get this message:<br />
+<img alt="Alt text" src="../images/humanIk_setRotationsToZero.jpg" /><br />
+You can click yes IF by setting all the rotations of the Skeleton Cache the rig is in its T-Pose.<br />
+If you have a Skeleton Cache where setting all the joints rotations to 0 does not result in a T-Pose, you have to 
+put the rig into T-Pose first (some skeleton cache animations have the T-Pose on frame 0), and in this case you would
+say No to that message.
+And now the rig should be nicely following the Skeleton Cache.
+<img alt="Alt text" src="../images/humanIk_worked.jpg" />  </p>
 <h2 id="for-riggers">For Riggers..</h2>
 <p>Riggers mainly need to create the <em>elements</em> and <em>jpg</em> files.
 Watch the video from <a href="https://www.youtube.com/watch?v=5W2JQYoyohQ&amp;t=1m47s">here</a> to see how to do that.</p>

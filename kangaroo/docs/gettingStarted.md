@@ -30,8 +30,8 @@ In there open a *Command Prompt* (either by right click, or type *cmd* in the ad
         Your browser does not support the video tag.
     </video>
 
-### For Mac
-The mayapy location looks a bit more like this:
+### Mac
+If you are on a Mac, the mayapy location looks a bit more like this:
 ``` bash
 /Applications/Autodesk/maya2024/Maya.app/Contents/bin
 ```
@@ -39,7 +39,7 @@ And you run the mayapy without the *.exe*:
 ``` bash
 ./mayapy -m pip install numpy
 ```
-Apart from numpy, you also have to install **pyobjc**:
+Another extra thing you have to do if you are on Mac is install **pyobjc**:
 ``` bash
 ./mayapy -m pip install pyobjc
 ```
@@ -124,8 +124,11 @@ You need a server location where you publish the characters to. And that is for 
 The new server should be on another disk. It could be a folder setup-ed with Smartdrive from *Dropbox*, *Box* or *GoogleDrive*.
 Or if you are working in a network, it can be a location on the network. 
 
-!!! note "Smart Drives"
-    In case you want to do it with a smart drive, and you have to decide - we've tried all the smart drives in Windows, and the most stable one has been Dropbox.
+!!! warning "Important"
+    If you use Smart Drives, it's best to manually make the version folder (e.g. *v3*) **available offline** before localizing. Otherwise
+    he might not grab *all* the content. That's because the Smart Drives are trying to help you by keeping the file
+    storage small - which makes the localizing unstable in some cases.
+    
 
 If you don't have one yet, just create an empty folder again.
 And after that, open the **pathEnv.mel** file with a text editor, and change the path after *default@* to be your server path.

@@ -31,9 +31,36 @@ The space switch button can help animators to switch between spaces.
 !!! note "Isolated Menu"
     If you just want this switch without the whole UI, that's possible and you can see [here](#isolated-menus) how it looks.
 
+
+
 ### Mirror 
 !!! video
     Watch how to mirror ctrl poses or animation [here](https://www.youtube.com/watch?v=5W2JQYoyohQ&t=1m32s)
+
+
+### Motion Capture
+On Bipeds you can connect the rig directly to a Motion Capture Rig for example from Mixamo, Rokoko, ..  
+
+To be able to use that you need to have the *humanIk:Reference* hierarchy in your rig. If it's not there,
+tell your rigger to set it up as shown in [here](body/motionCapture.md)
+![Alt text](images/humanIk_checkIfAttrIsThere.jpg)  
+
+If you've got it in there, select any node of the character rig, and make sure it's in the top of the UI at Namespace.
+And then click *Connect Body to Human Ik*.
+![Alt text](images/humanIk_connectingTheCharacter.jpg)   
+Now load in your Motion Capture Cache into Maya, select any node of it and click
+*Characterize Selected Mocap and connect to HumanIk Skeleton*:  
+![Alt text](images/humanIk_characterize.jpg)     
+
+Now you get this message:  
+![Alt text](images/humanIk_setRotationsToZero.jpg)  
+You can click yes IF by setting all the rotations of the Skeleton Cache the rig is in its T-Pose.  
+If you have a Skeleton Cache where setting all the joints rotations to 0 does not result in a T-Pose, you have to 
+put the rig into T-Pose first (some skeleton cache animations have the T-Pose on frame 0), and in this case you would
+say No to that message.
+And now the rig should be nicely following the Skeleton Cache.
+![Alt text](images/humanIk_worked.jpg)  
+
 
 
 ## For Riggers..

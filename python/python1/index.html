@@ -1665,14 +1665,28 @@
 
 <p>As you remember from the builder documentations, everything is written in Python. And we can customize a lot</p>
 <h2 id="pycharm">PyCharm</h2>
-<p>If you have pycharm installed, there's lots of quick ways to jump to a specific code.<br />
-But for that we have to link it first.<br />
-On the settings, 
+<p>If you have pycharm installed, there's a few quick ways to jump to a specific code.<br />
+But for that we have to link it first in the settings, 
 <img alt="Alt text" src="../../images/python_pycharm.jpg" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Linux this path might look something like this:
+<div class="highlight"><pre><span></span><code>/mnt/apps/pycharm/pycharm2023.1.2/bin/pycharm.sh    
+</code></pre></div>
+If unclear which path - you can go to <em>Tools -&gt; Create Command Line Launcher</em>, it opens a dialog that tells you
+the path to put into the $Path variable. You don't actually have to do anything with $Path variable, just take
+the path from that message.</p>
+</div>
 <p>And then you can go to any function to the builder and with right click quickly jump to the code.<br />
 <img alt="Alt text" src="../../images/python_goToFunction.gif" /></p>
 <p>Same thing happens on Errors in the Kangaroo Log - those are links you can just click on 
 <img alt="Alt text" src="../../images/python_error.jpg" /></p>
+<div class="admonition known bug">
+<p class="admonition-title">Known</p>
+<p>This works very unstable unless those files are inside a Pycharm Project. Sometimes you might notice that 
+he opens pycharm but doesn't go to the file. Or he opens the file but doesn't jump to the line number.
+To fix that - add the python root folder to <em>Settings -&gt; Project Structure -&gt; + Add Content Root</em>.</p>
+</div>
 <h2 id="simple-way-of-adding-a-function">Simple way of adding a Function</h2>
 <p>The simplest way to add a function is just in the character script. Basically the python file that is 
 inside your version folder.<br />

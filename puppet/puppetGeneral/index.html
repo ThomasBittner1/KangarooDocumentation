@@ -1891,6 +1891,15 @@ Moving around joint roots can be useful when placing them for the first time aft
 <p>Theoretically it does let you export without building the BP Rig, but that's not recommended it's only there
 for debugging purposes. </p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do <strong>NOT</strong> change the <em>Display Joint Size</em>! If you've specified 
+a different value than 1.0 in <em>Display -&gt; Animation -&gt; Joint Size..</em>, please change it back to 1.0.
+This is because some ctrls will be sized based on the joint radius values. And if you have a different <em>Display Joint Size</em>,
+those radius values will be bad.<br />
+If you find the joints are all too big or too small, click the <img alt="Alt text" src="../../images/puppetGeneral_allJButtons.jpg" /> 
+(allJ) buttons to change all their sizes at once.</p>
+</div>
 <h2 id="adding-limbs">Adding Limbs</h2>
 <p>You can easily add limbs by dragging one from the libarary table into the limbs table: <br />
 <img alt="Alt text" src="../../images/puppetGeneral_addingLimb.gif" />  </p>

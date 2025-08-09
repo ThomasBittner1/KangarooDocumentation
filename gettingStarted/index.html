@@ -297,6 +297,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1503,6 +1512,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1617,6 +1635,10 @@ And you run the mayapy without the <em>.exe</em>:
 Another extra thing you have to do if you are on Mac is install <strong>pyobjc</strong>:
 <div class="highlight"><pre><span></span><code>./mayapy<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pyobjc
 </code></pre></div></p>
+<h3 id="linux">Linux</h3>
+<p>For some copy/paste things to work, you need to install <em>clip</em>:
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>xclip
+</code></pre></div></p>
 <h2 id="the-directories">The Directories</h2>
 <p>If you just want to use the SkinCluster/Geometry Tools or the Shape Editor or the Picker - you don't need to setup the directories.</p>
 <p>But if you want to build characters, there's a little bit of more setup we have to do now.</p>
@@ -1686,10 +1708,13 @@ But you have to setup the server at some point anyway, why not do it now.</p>
 <p>The new server should be on another disk. It could be a folder setup-ed with Smartdrive from <em>Dropbox</em>, <em>Box</em> or <em>GoogleDrive</em>.
 Or if you are working in a network, it can be a location on the network. </p>
 <div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p>If you use Smart Drives, it's best to manually make the version folder (e.g. <em>v3</em>) <strong>available offline</strong> before localizing. Otherwise
-he might not grab <em>all</em> the content. That's because the Smart Drives are trying to help you by keeping the file
-storage small - which makes the localizing unstable in some cases.</p>
+<p class="admonition-title">Careful with Smart Drives</p>
+<p>Smart Drives are trying to help you by keeping the file storage small - which makes the localizing unstable in some cases.
+Therefore If you use Smart Drives, it's best to manually make the version folder (e.g. <em>v3</em>) <strong>available offline</strong> before localizing. Otherwise
+he might not grab <em>all</em> the content without even telling you, and later you'll get confusing errors. <br />
+Or if you use <em>Box</em>, localizing might take a very long time without making it available offline first.
+Dropbox has been the most stable one so far. Actually with DropBox we don't usually do <em>available offline</em> before localizing, unless
+we've just added the folder to <em>synch</em> the last minutes.</p>
 </div>
 <p>If you don't have one yet, just create an empty folder again.
 And after that, open the <strong>pathEnv.mel</strong> file with a text editor, and change the path after <em>default@</em> to be your server path.

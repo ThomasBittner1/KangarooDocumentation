@@ -1944,11 +1944,15 @@ to what you have defined as rotateZ, it'll also translate the jaw ctrl the same 
 Check <a href="../faceGeneral/#auto-translate">Jaw - Auto Translate</a> for more info.</p>
 </div>
 <h3 id="getting-eye-look-from-the-rig">Getting Eye Look from the rig</h3>
-<p>It all works the same as the jaw, but it's a little simpler because we are not sending back and forward values.
+<p>It works similar as the jaw, but it's a little simpler because we are not sending back and forward infos as much as with the jaw.
 Just make sure the eyeballs are skinned to the eye joints, and the targets that have the extra are <em>eyelookUp</em>, <em>eyelookDown</em>,
 <em>eyelooLeft</em>, <em>eyelookRight</em>.<br />
 And if you are a skilled modeler, you can create some nice eyelook targets: <br />
-<img alt="Alt text" src="../../images/shapeEditor_eyelook.gif" />     </p>
+<img alt="Alt text" src="../../images/shapeEditor_eyelook.gif" />   <br />
+Make sure to also adjust the eyeball rotation with the <strong>*</strong> button! Note that those will make it into the rig. 
+<img alt="Alt text" src="../../images/eyes_lidFollowStarButtons.jpg" />   <br />
+With those values you basically specify the eyeball rotations where the shapes will be activated fully. </p>
+<p>For more detail on Lids following the eyeball rotations, see <a href="../eyes/#eye-lid-follow">Eyes - Eye Lid Follow</a>.</p>
 <h3 id="grab-targets-for-corrective-sculpting">Grab targets for corrective sculpting</h3>
 <p>Especially for cartoony rig we want to use the <em>Shape Editor</em> to sculpt some correctives. Select any target and some mesh
 (full mesh or vertex/soft selection), and click the button <strong>Pose Rig and Match Mesh/Vertex Selection</strong>. 

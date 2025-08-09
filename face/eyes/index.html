@@ -944,6 +944,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#eye-lid-follow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eye Lid Follow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#eye-lattice-ctrls" class="md-nav__link">
     <span class="md-ellipsis">
       Eye Lattice Ctrls
@@ -1791,6 +1800,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#eye-lid-follow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eye Lid Follow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#eye-lattice-ctrls" class="md-nav__link">
     <span class="md-ellipsis">
       Eye Lattice Ctrls
@@ -2054,6 +2072,45 @@ If you have 2 poses (lower and upper), then it's spliting those in the <em>blend
 <p>The lower lid up as shown in the gif above is actually very common. 
 Often we add that shape but keep it unchanged, just to create a combo with the <em>squint</em>.</p>
 </div>
+<h2 id="eye-lid-follow">Eye Lid Follow</h2>
+<p>When you are moving around the eye aim ctrls, the lids follow, and animators can adjust it with the 
+<em>eyesLookAt_l_ctrl.lidFollow</em> attribute.
+<img alt="Alt text" src="../../images/eyes_lidFollowAttribute.jpg" />  </p>
+<p>This is all happening by default, and in most cases the default is good. But sometimes not, and you have
+to fine tune things. This section explains where to find all the components.  </p>
+<p>Changing the default happens in the <strong>EyesLookatLimb</strong>:<br />
+<img alt="Alt text" src="../../images/eyes_changeDefaultLidFollow.jpg" />    </p>
+<p>How this affects the eyelids depends on how you've set them up.<br />
+If you've done <a href="#simple-lid-joints">Simple Lid Joints</a>, it's moving around the lid joints based on the Sibling Transforms
+with the <em>Extra</em> name in there.
+If you've done <a href="#eyelid-splines">Eyelid Splines</a>, it's rotating the splines up/down.  </p>
+<p>You can also add blendShapes to the eyes, with the <em>eyeLook..</em> targets:
+<div class="highlight"><pre><span></span><code>eyelookUp
+eyelookDown
+eyelookLeft
+eyelookRight
+</code></pre></div>
+These can be sculpted in the <em>Shape Editor</em> while checking the results automatically, 
+see <a href="../shapeEditor2/#getting-eye-look-from-the-rig">Shape Editor 2 - Getting Eye Look from the Rig</a> for more detail.
+It also explains at which eyeball rotation those targets get activated. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you add those blendShape targets, animators can tune adjust their strength with the <em>eyesLookAt_l_ctrl.lidFollow</em>
+attribute shown above. 
+But tuning the <em>Lid Follow Default</em> attribute in the <em>Puppet</em> tool does <strong>NOT</strong> change the behavior of the blendShapes! This is to 
+ensure that if you want to adjust the strength for the blendShapes, you do it solely in the <em>Shape Editor</em>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">For most organic looking results</p>
+<p>First just see how the default looks like, it might be enough.
+But then especially for more realistic looking characters, adding <em>eyelookLeft</em>/<em>eyelookRight</em> blendShape targets 
+will give you an extra organic feel. You probably won't need the <em>eyelookUp</em>/<em>eyelookDown</em> targets.</p>
+</div>
+<p><em>Still want more control?</em><br />
+If you still want more control such as moving some eyelid ctrls - you can hook things into the
+passer values of the eye aim ctrls, this is basically what the other functions are looking at:<br />
+<img alt="Alt text" src="../../images/eyes_lidFollowHiddenAttributes.jpg" />   <br />
+You could for example use the <a href="../../body/poseEditor1/">Pose Editor</a> to drive some eyelid spline or tweaker ctrls. </p>
 <h2 id="eye-lattice-ctrls">Eye Lattice Ctrls</h2>
 <p><img alt="Alt text" src="../../images/face_eyelattice.gif" /><br />
 Just turn on the <strong>eyeLatticeCtrls()</strong> function and specify the eyeBall geos (<strong>sLeftMeshes</strong>, <strong>sRightMeshes</strong>), and the mesh that has

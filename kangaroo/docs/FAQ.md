@@ -19,7 +19,7 @@ Animators might want to use the animation tools from Kangaroo though - but for t
 the kangarooAnim path - see [here](picker.md#tool-installation) for more detail.
 
 
-### Can I build rigs in Windows and animate in Linux
+### Can I build rigs in Windows and animate in Linux?
 Yes, this has been done many times. Just keep in mind that Linux runs on a different binary, so you might find a few
 evaluation bugs in Linux that don't happen in Windows. It's rare, but does happen.
 

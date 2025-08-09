@@ -87,7 +87,7 @@ are talking about animation ctrls.
     This is because some ctrls will be sized based on the joint radius values. And if you have a different *Display Joint Size*,
     those radius values will be bad.  
     If you find the joints are all too big or too small, click the ![Alt text](../images/puppetGeneral_allJButtons.jpg) 
-    (allJ) buttons to make them all bigger or smaller.
+    (allJ) buttons to change all their sizes at once.
 
 
 ## Adding Limbs

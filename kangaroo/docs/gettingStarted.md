@@ -129,10 +129,13 @@ You need a server location where you publish the characters to. And that is for 
 The new server should be on another disk. It could be a folder setup-ed with Smartdrive from *Dropbox*, *Box* or *GoogleDrive*.
 Or if you are working in a network, it can be a location on the network. 
 
-!!! warning "Important"
-    If you use Smart Drives, it's best to manually make the version folder (e.g. *v3*) **available offline** before localizing. Otherwise
-    he might not grab *all* the content. That's because the Smart Drives are trying to help you by keeping the file
-    storage small - which makes the localizing unstable in some cases.
+!!! warning "Careful with Smart Drives"
+    Smart Drives are trying to help you by keeping the file storage small - which makes the localizing unstable in some cases.
+    Therefore If you use Smart Drives, it's best to manually make the version folder (e.g. *v3*) **available offline** before localizing. Otherwise
+    he might not grab *all* the content without even telling you, and later you'll get confusing errors.   
+    Or if you use *Box*, localizing might take a very long time without making it available offline first.
+    Dropbox has been the most stable one so far. Actually with DropBox we don't usually do *available offline* before localizing, unless
+    we've just added the folder to *synch* the last minutes.
     
 
 If you don't have one yet, just create an empty folder again.

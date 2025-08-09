@@ -23,6 +23,7 @@ To change the Locations, you need the **BP Rig**. And to get the *BP Rig*, click
 You'll click these 3 buttons together a million times, here's a gif that shows this process:
 ![Alt text](../images/cleanImportBuild.gif)
 
+
 **BP Skeleton** is a file with simple joints that tells the builder where the locations are.
 And the **BP Rig** is a small rig with ctrls and some logic build on top of the *BP Skeleton* that helps you place it. 
 
@@ -79,6 +80,14 @@ are talking about animation ctrls.
 !!! note
     Theoretically it does let you export without building the BP Rig, but that's not recommended it's only there
     for debugging purposes. 
+
+!!! warning
+    Do **NOT** change the *Display Joint Size*! If you've specified 
+    a different value than 1.0 in *Display -> Animation -> Joint Size..*, please change it back to 1.0.
+    This is because some ctrls will be sized based on the joint radius values. And if you have a different *Display Joint Size*,
+    those radius values will be bad.  
+    If you find the joints are all too big or too small, click the ![Alt text](../images/puppetGeneral_allJButtons.jpg) 
+    (allJ) buttons to make them all bigger or smaller.
 
 
 ## Adding Limbs

@@ -3,16 +3,29 @@
 As you remember from the builder documentations, everything is written in Python. And we can customize a lot
 
 ## PyCharm
-If you have pycharm installed, there's lots of quick ways to jump to a specific code.  
-But for that we have to link it first.  
-On the settings, 
+If you have pycharm installed, there's a few quick ways to jump to a specific code.  
+But for that we have to link it first in the settings, 
 ![Alt text](../images/python_pycharm.jpg)
+!!! note
+    On Linux this path might look something like this:
+    ```
+    /mnt/apps/pycharm/pycharm2023.1.2/bin/pycharm.sh    
+    ```
+    If unclear which path - you can go to *Tools -> Create Command Line Launcher*, it opens a dialog that tells you
+    the path to put into the $Path variable. You don't actually have to do anything with $Path variable, just take
+    the path from that message.
+
 
 And then you can go to any function to the builder and with right click quickly jump to the code.  
 ![Alt text](../images/python_goToFunction.gif)
 
 Same thing happens on Errors in the Kangaroo Log - those are links you can just click on 
 ![Alt text](../images/python_error.jpg)
+
+!!! known bug 
+    This works very unstable unless those files are inside a Pycharm Project. Sometimes you might notice that 
+    he opens pycharm but doesn't go to the file. Or he opens the file but doesn't jump to the line number.
+    To fix that - add the python root folder to *Settings -> Project Structure -> + Add Content Root*.
 
 
 ## Simple way of adding a Function

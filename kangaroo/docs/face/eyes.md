@@ -234,7 +234,56 @@ If you have 2 poses (lower and upper), then it's spliting those in the *blendSha
     The lower lid up as shown in the gif above is actually very common. 
     Often we add that shape but keep it unchanged, just to create a combo with the *squint*.
 
-   
+
+## Eye Lid Follow
+When you are moving around the eye aim ctrls, the lids follow, and animators can adjust it with the 
+*eyesLookAt_l_ctrl.lidFollow* attribute.
+![Alt text](../images/eyes_lidFollowAttribute.jpg)  
+
+This is all happening by default, and in most cases the default is good. But sometimes not, and you have
+to fine tune things. This section explains where to find all the components.  
+
+Changing the default happens in the **EyesLookatLimb**:  
+![Alt text](../images/eyes_changeDefaultLidFollow.jpg)    
+
+How this affects the eyelids depends on how you've set them up.  
+If you've done [Simple Lid Joints](#simple-lid-joints), it's moving around the lid joints based on the Sibling Transforms
+with the *Extra* name in there.
+If you've done [Eyelid Splines](#eyelid-splines), it's rotating the splines up/down.  
+
+You can also add blendShapes to the eyes, with the *eyeLook..* targets:
+```
+eyelookUp
+eyelookDown
+eyelookLeft
+eyelookRight
+```
+These can be sculpted in the *Shape Editor* while checking the results automatically, 
+see [Shape Editor 2 - Getting Eye Look from the Rig](shapeEditor2.md#getting-eye-look-from-the-rig) for more detail.
+It also explains at which eyeball rotation those targets get activated. 
+!!! note
+    If you add those blendShape targets, animators can tune adjust their strength with the *eyesLookAt_l_ctrl.lidFollow*
+    attribute shown above. 
+    But tuning the *Lid Follow Default* attribute in the *Puppet* tool does **NOT** change the behavior of the blendShapes! This is to 
+    ensure that if you want to adjust the strength for the blendShapes, you do it solely in the *Shape Editor*.
+
+!!! tip "For most organic looking results"
+    First just see how the default looks like, it might be enough.
+    But then especially for more realistic looking characters, adding *eyelookLeft*/*eyelookRight* blendShape targets 
+    will give you an extra organic feel. You probably won't need the *eyelookUp*/*eyelookDown* targets.
+
+*Still want more control?*  
+If you still want more control such as moving some eyelid ctrls - you can hook things into the
+passer values of the eye aim ctrls, this is basically what the other functions are looking at:  
+![Alt text](../images/eyes_lidFollowHiddenAttributes.jpg)     
+You could for example use the [Pose Editor](../body/poseEditor1.md) to drive some eyelid spline or tweaker ctrls. 
+
+
+
+
+
+
+
 
 ## Eye Lattice Ctrls
 ![Alt text](../images/face_eyelattice.gif)  

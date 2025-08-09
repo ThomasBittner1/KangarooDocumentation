@@ -56,11 +56,16 @@ and add some translation values:
     Check [Jaw - Auto Translate](faceGeneral.md#auto-translate) for more info.
 
 ### Getting Eye Look from the rig
-It all works the same as the jaw, but it's a little simpler because we are not sending back and forward values.
+It works similar as the jaw, but it's a little simpler because we are not sending back and forward infos as much as with the jaw.
 Just make sure the eyeballs are skinned to the eye joints, and the targets that have the extra are *eyelookUp*, *eyelookDown*,
 *eyelooLeft*, *eyelookRight*.  
 And if you are a skilled modeler, you can create some nice eyelook targets:   
 ![Alt text](../images/shapeEditor_eyelook.gif)     
+Make sure to also adjust the eyeball rotation with the **\*** button! Note that those will make it into the rig. 
+![Alt text](../images/eyes_lidFollowStarButtons.jpg)     
+With those values you basically specify the eyeball rotations where the shapes will be activated fully. 
+
+For more detail on Lids following the eyeball rotations, see [Eyes - Eye Lid Follow](eyes.md#eye-lid-follow).
 
 ### Grab targets for corrective sculpting
 Especially for cartoony rig we want to use the *Shape Editor* to sculpt some correctives. Select any target and some mesh

@@ -44,7 +44,12 @@ Another extra thing you have to do if you are on Mac is install **pyobjc**:
 ./mayapy -m pip install pyobjc
 ```
 
+### Linux
 
+For some copy/paste things to work, you need to install *clip*:
+``` bash
+sudo dnf install xclip
+```
 
 
 

@@ -1,4 +1,4 @@
-# Muscle Joints
+## Muscle Joints
 Muscle joints are simple lightweight joints that can be great for preserving volume,
 or some piston type parts
 <iframe width="560" height="315"
@@ -8,7 +8,7 @@ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; pic
 allowfullscreen></iframe>
 
 
-# Blend Joints
+## Blend Joints
 Those are simple joints that rotate a percentage of the main joints. And they have a lot of
 attributes to make them translate or scale based on their parents' rotation
 

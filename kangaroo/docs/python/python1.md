@@ -22,10 +22,16 @@ And then you can go to any function to the builder and with right click quickly 
 Same thing happens on Errors in the Kangaroo Log - those are links you can just click on 
 ![Alt text](../images/python_error.jpg)
 
-!!! known bug 
-    This works very unstable unless those files are inside a Pycharm Project. Sometimes you might notice that 
+
+!!! tip
+    For most efficiency inside Pycharm add the Kangaroo Tools **script** folder to the Project Structure.
+    (In Pycharm: *Settings -> Project Structure -> + Add Content Root*), and also add the *assetsLocal* directory.  
+    If that is setup-ed correctly, you can get some things like Auto Correction, or [STRG]+B on a function jumping to its definition.
+
+!!! warning "Known Bug" 
+    Sometimes you might notice that 
     he opens pycharm but doesn't go to the file. Or he opens the file but doesn't jump to the line number.
-    To fix that - add the python root folder to *Settings -> Project Structure -> + Add Content Root*.
+    To fix that - add the python root folder (In Pycharm: *Settings -> Project Structure -> + Add Content Root*)
 
 
 ## Simple way of adding a Function

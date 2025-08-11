@@ -1210,8 +1210,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Game Engines
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1224,6 +1235,83 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gameskeleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      GAMESKELETON
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unrealengine-biped" class="md-nav__link">
+    <span class="md-ellipsis">
+      UnrealEngine Biped
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zipper" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zipper
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tweakers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tweakers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-control-rigs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building Control Rigs
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1356,8 +1444,74 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gameskeleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      GAMESKELETON
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unrealengine-biped" class="md-nav__link">
+    <span class="md-ellipsis">
+      UnrealEngine Biped
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zipper" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zipper
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tweakers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tweakers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-control-rigs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building Control Rigs
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1373,7 +1527,9 @@
 
 
 
-<h1 id="gameskeleton">GAMESKELETON</h1>
+  <h1>Game Engines</h1>
+
+<h2 id="gameskeleton">GAMESKELETON</h2>
 <p>Game Engines usually just want a very simple rig that has only joints and skinCluster.<br />
 To get that, turn on the function <em>create_GAMESKELETON()</em><br />
 <img alt="Alt text" src="../images/game_createGAMESKELETON_function.jpg" />  </p>
@@ -1393,7 +1549,7 @@ joint transform values are still connected, they are connected locally, so an an
 <p>While you can export the <em>GAMESKELETON</em> yourself with <em>File -&gt; Export Selection</em>, there's a shortcut - the <em>Export FBX</em> button. This 
 exports it into the <em>fbx</em> folder in your build/version folder. 
 <img alt="Alt text" src="../images/game_exportFBX.jpg" />  </p>
-<h1 id="unrealengine-biped">UnrealEngine Biped</h1>
+<h2 id="unrealengine-biped">UnrealEngine Biped</h2>
 <p>For Bipeds you can make it create the joints as from UnrealEngine. This will give
 you a lot of things for free, for example you could just create the Biped Control Rig without much effort.
 <img alt="Alt text" src="../images/game_ueSkeleton.jpg" />  </p>
@@ -1405,20 +1561,20 @@ you a lot of things for free, for example you could just create the Biped Contro
 <p>It's important to use the actual biped limbs. If you have something else like a Quadruped, he won't know what to do.
 If unclear, just restart the asset by copying from BASEHUMAN in the template and disable the <em>doAllMuscleJoints()</em> function.</p>
 </div>
-<h1 id="limitations">Limitations</h1>
+<h2 id="limitations">Limitations</h2>
 <p>In the usual case Game Engines just want simple blendShapes and skinCluster. That means most of the face tools 
 don't work in the Game Engine the same way as in Maya.<br />
 So when you setup the face, best only stick with blendShapes.</p>
 <p>There's a few setups that can get converted to blendShapes. It's still lower quality and can end up with a ton
 of blendShapes. But in situations where you are creating cinematics or movies and you are using UnrealEngine just
 as a Render Tool, those blendShape convertions might just be the right thing.   </p>
-<h2 id="zipper">Zipper</h2>
+<h3 id="zipper">Zipper</h3>
 <p>If you create <em>postZipper()</em>, you can run the function <em>blendShapifyPostZipper()</em>, and that'll bake the setup into 
 a lot of blendShapes.</p>
-<h2 id="tweakers">Tweakers</h2>
+<h3 id="tweakers">Tweakers</h3>
 <p>If you used the <em>TWEAKER_lips()</em> (without bSpline), <em>TWEAKER_lids()</em> or <em>TWEAKER_simpleBrows()</em>, you can get
 those baked with the <em>blendShapifyTweakers()</em> function </p>
-<h1 id="building-control-rigs">Building Control Rigs</h1>
+<h2 id="building-control-rigs">Building Control Rigs</h2>
 <p>In older versions of Kangaroo there was a Control Rig Builder.<br />
 Unfortunately that is no more in Kangaroo Version 5 due to lack of funding.  <br />
 If you are curious about what was there and might (!) come back in future, here's a few videos:  </p>

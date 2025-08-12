@@ -133,7 +133,7 @@ for realistic creatures where you need to have the torsos keep their lengths:
 ![Alt text](../images/puppetLimbs_splineIkLockLength.jpg)   
 !!! warning
     *Spline Ik* does NOT have stable twist values! If you use that mode, you'll have to turn on the *Ctrl Twist* in the 
-    [*Advanced*](#advanced) section
+    [*Advanced*](#advanced-spine) section
 
 **CurveInfo nodes** is using the *pointOnCurveInfo* nodes, and the **motionPath nodes** are using the *motionPath* nodes. CurveInfo nodes
 is faster and should be used in most cases. But motionPath sometimes gives better distribution. So if with *motionPath*
@@ -212,7 +212,7 @@ There's just a small *known bug* that the attacher weights will get ignored *unl
 
 
 
-### ikSpline - Advanced
+### Advanced (Spine)
 If you turn on the *Advanced* checkbox at the bottom, you'll get those extra squash joints:   
 ![Alt text](../images/puppetLimbs_squashJoints.jpg)    
 This give you a few more options:  

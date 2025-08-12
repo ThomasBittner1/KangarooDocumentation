@@ -159,7 +159,7 @@ another *server*.
 
 
 ## Roadmap for First Character
-Once you've setup-ed your directories and started the character with the [**create NEW**](#createnew) tool, you are ready
+Once you've setup-ed your directories and started the character with the **create NEW** tool (explained under [Templates](#templates) above), you are ready
 to actually rig your character by following the points below!  
 
 !!! note "Keep in Mind!"

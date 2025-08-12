@@ -131,7 +131,7 @@ With those you can pose the Tangent Ctrls, driven by the spline ctrls:
 ![Alt text](../images/brows_tangentPoseLocators.jpg)
 
 
-### Brow Splines - Correctives {browsplinescorrectives}
+### Brow Splines - Correctives {#browsplinescorrectives}
 If you get stuck not being able to hit a proper shapes with combination of skinning and poseLocators, there's still the 
 option of adding correctives.
 ```

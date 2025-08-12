@@ -53,7 +53,7 @@ nav:
       - Geometry: tools/toolsGeometry.md
       - Deformer Import: tools/toolsDeformerImport.md
       - Plane Cutter: tools/toolsPlaneCutter.md
-  - Animator Tools: picker.md
+  - Animation Tools: animationTools.md
   - Model Change: modelChange.md
   - Game Engines: gameEngines.md
   - Model Naming Convention: modelNamingConvention.md

@@ -16,7 +16,7 @@ The latest version 5 does support all three systems
 ### Do Animators need Kangaroo installed?
 No, Kangaroo-Builder doesn't use any custom nodes, the rigs work in basic Maya.
 Animators might want to use the animation tools from Kangaroo though - but for that you can also give them just
-the kangarooAnim path - see [here](picker.md#tool-installation) for more detail.
+the kangarooAnim path - see [here](animationTools.md#tool-installation) for more detail.
 
 
 ### Can I build rigs in Windows and animate in Linux?
@@ -46,4 +46,9 @@ to
 ``` python
 if maya.cmds.nodeType(node_path) in [“transform”, “joint”]:
 ```
+
+### Should Mouth be modelled in Open or Closed pose?
+Kangaroo prefers mouth to be modelled **closed**. If it's open, things will still work. But you'll get situations where you
+wish the mouth had been modelled in closed position.
+
 

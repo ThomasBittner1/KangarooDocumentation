@@ -28,4 +28,4 @@ And click the button *Record T Pose*:
 Then build again. To verify that it works, turn on the HumanIkVis, and check that it's in TPose:  
 ![Alt text](../images/humanIk_verifyTPose.jpg)   
 
-From here you can use the [Motion Capture Tool](../picker.md#motion-capture) to connect it to a Skeleton Cache.
+From here you can use the [Motion Capture Tool](../animationTools.md#motion-capture) to connect it to a Skeleton Cache.

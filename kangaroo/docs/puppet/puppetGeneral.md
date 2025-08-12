@@ -134,7 +134,7 @@ In this gif I'm splitting them, and copying from (t) to (r) using the **CTRL+C**
 By default it's just a switch. Animators prefer that in most cases since it's the simplest:  
 ![Alt text](../images/attachers_switchAttr.gif)  
 !!! note "Kangaroo Tool Tip"
-    There's this [tool](../picker.md#space-switch) for animators to switch between the spaces.
+    There's this [tool](../animationTools.md#space-switch) for animators to switch between the spaces.
 
 
 If you activate the **blend** checkbox, you'll get an extra attribute for each output point:  

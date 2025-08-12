@@ -8,7 +8,7 @@ This is an animation tool that can do stuff like:
 - Biped Motion Capture
 - Motion Path (experimental)
 
-## For Animators..
+## Picker - For Animators..
 
 ![Alt text](images/picker.jpg)  
 
@@ -63,7 +63,7 @@ And now the rig should be nicely following the Skeleton Cache.
 
 
 
-## For Riggers..
+## Picker - For Riggers..
 Riggers mainly need to create the *elements* and *jpg* files.
 Watch the video from [here](https://www.youtube.com/watch?v=5W2JQYoyohQ&t=1m47s) to see how to do that.
 
@@ -130,4 +130,25 @@ Or they can run the lines shown in [Isolated Menus](#isolated-menus)
 
 
 
+## Save/Load Animation
+Kangaroo has a tool for import/export animation keys. We mainly use it for test animations and ROMs.  
+While for animators there are better suited solutions such as *Studio Library*, the Kangaroo Animation Export
+is more convenient for riggers since it saves and manages animation inside the character level.  
+![Alt text](images/keys_importExport.jpg)   
+For navigating through the files just do a right click on the file field:  
+![Alt text](images/keys_filesMarkingMenu.gif)  
+
+
+
+## MP4 Playblast
+When you create a playblast in Maya, it doesn't give you any good codex options. This means the file you get is usually either
+huge or has horrible quality. So Kangaroo is here to help.
+
+When you click the shelf button ![Alt text](images/movShelfButton.jpg) (mov), it creates a playblast and then uses
+ffmpeg to do the standard mp4 code that most computers can play by default.
+
+But for this to work you have to download [**ffmpeg**](https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl-shared.zip).
+Once you downloaded it, extract the content and put it into a folder called *ffmpeg* inside your tool directory's *kangarooAnimation* folder.  
+It should look like this:  
+![Alt text](images/ffmpeg_installation.jpg)  
 

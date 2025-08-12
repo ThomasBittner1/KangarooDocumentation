@@ -43,9 +43,8 @@ For now just shape it roughly, but very likely you'll be revisiting this later a
 ![Alt text](../images/mouth_slidingPlane.jpg)  
 
 !!! warning "Watch Out"
-    Make sure that this spans from almost the symmetry line to as far back as the lip ctrls should go, and ideally
-    a bit further.  
-    If the lip ctrls or the corner ctrls are doing some very bad jumps or generally some unstable motions, 
+    Make sure that this spans from as far back as the lip ctrls can go, **to the symmetry line and further**.  
+    If later you see that the lip ctrls or the corner ctrls are doing some very bad jumps or generally some unstable motions, 
     this surface is often not placed well.
 
 ## Upper and Lower Ctrls
@@ -192,6 +191,11 @@ On the Mouth Rig, the Splines are using the same controls as the blendShapes. Th
 To turn on the splines, set **bSPLINE** to *True*.  
 And also set **bBorders** to *False*. The borders are useful for blendShapes, but not for Splines.  
 ![Alt text](../images/mouth_splinesAttributes.jpg)    
+
+Another attribute to be aware of is the **bSplineStaticCurves**. If you have that set to *True*, only the corner ctrls
+will be sliding along the surface, and the lip ctrls will be sliding along static curves. This is the old behavior
+from *facePro_v16* and below, and it was depricated for a while. However later it turned out that for simple human mouths 
+it was still very useful since it's not so sensitive with the surface blueprint.
 
 
 ### Spline - The Joints
@@ -344,9 +348,12 @@ Saving those attributes happens with the [** === DEFAULT ATTRS === **](faceGener
 #### 5. Pose Locators
 Almost all ctrls come with lots of poseLocators that are used to define the ctrl behaviors even more. In *funnel* and *lipPress* 
 (mouth_ctrl.tz) they are even used to define the whole pose.  
-And all the pose locators are easily found by just selecting the ctrls, and in the outliner press **f**. You'll always see the the currently
+And all the pose locators are easily found by just selecting the ctrls, and in the outliner press **f**. You'll always see the currently
 activated one as shown and the others are invisible:
 ![Alt text](../images/mouth_poseLocators.jpg)
+
+As you move around those locators, it's recommended to turn off the **lipPush** on all top ctrls - **lipsTop\*_ctrl**!
+The next time you build it, it remembers the offset, and incorporates those into the lipPush setup.
 
 !!! tip
     There's a lot of poseLocators in the *BASEMouthCtrls()* function, even for each detail ctrls. If you end up using them a lot, it's worth checking out the options under the
@@ -401,7 +408,7 @@ by bulging out the cheeks
     This function is optional. Since it requires more technical abilities to manage so many joints, some projects in the past opted for blendShapes instead of this Cheek Setup. 
 
 
-# Post Lip Zipper
+## Post Lip Zipper
 If you are not using spline, or you are using spline but offsetted the pivot groups, then you can use the *postZipper()* 
 function to create a zipper using an extra skinCluster.
 
@@ -422,3 +429,21 @@ the [ClosestExpand tool](../tools/toolsSkinCluster.md#closestexpand) to set the 
 
 !!! note 
     This is taking the blueprints from the *BASEMouthSetup()* function.
+
+
+### Open Mouth in the Model
+The zipper works much better if the mouth is closed in the model. But if it's open, you can still make it work.
+In the attribute 
+
+
+### Very tiny characters
+If you are rigging a very small character, you have to be aware of the **fBlendShapeMinimumDistance** attribute. This is about
+the joints following the blendShapes. If a blendShape target is making a vertex go less than that threshold value,
+it will not be affected. So basically you just have to watch if you see any artefacts such as some joints not moving - try 
+to set this value lower.
+
+
+### Stick on LipPress
+If you set the attribute **bStickOnLipPress** to *True*, and there's a *lipPress* mesh present - on mouth_ctrl.tz as -1.0
+it will also use that setup to lock the mouth close.
+

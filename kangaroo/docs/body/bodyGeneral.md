@@ -67,6 +67,12 @@ has priority 106.
 !!! note "Works with Namespaces" 
     The default button also works with namespaces! This is very useful when you have a rig referenced.
 
+!!! note "Python"
+    You can also call the function to put the rig into default pose:
+    ``` python
+    import kangarooAnimation.KangarooMatchTools as KangarooMatchTools;
+    KangarooMatchTools.goToDefaultPoseSelected(bSkipFk2IkAttrs=False)    
+    ```
 
 ## ZV Groups
 The function *addZVGroups()* is for the tool [ZV Parent Master](https://apps.autodesk.com/MAYA/en/Detail/Index?id=3374365102069298437&appLang=en&os=Win64).

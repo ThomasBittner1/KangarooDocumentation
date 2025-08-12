@@ -29,7 +29,7 @@ nav:
       - Dynamics: puppet/dynamics.md
       - Puppet Tweaker Ctrls: puppet/tweakerCtrls.md
   - Body:
-      - Deformations: body/deformations.md
+      - General: body/bodyGeneral.md
       - Motion Capture: body/motionCapture.md
       - Pose Editor I: body/poseEditor1.md
       - Pose Editor II: body/poseEditor2.md

@@ -1160,12 +1160,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../picker/" class="md-nav__link">
+      <a href="../animationTools/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Animator Tools
+    Animation Tools
     
   </span>
   
@@ -1360,6 +1360,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#should-mouth-be-modelled-in-open-or-closed-pose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Should Mouth be modelled in Open or Closed pose?
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1523,6 +1532,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#should-mouth-be-modelled-in-open-or-closed-pose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Should Mouth be modelled in Open or Closed pose?
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1553,7 +1571,7 @@
 <h3 id="do-animators-need-kangaroo-installed">Do Animators need Kangaroo installed?</h3>
 <p>No, Kangaroo-Builder doesn't use any custom nodes, the rigs work in basic Maya.
 Animators might want to use the animation tools from Kangaroo though - but for that you can also give them just
-the kangarooAnim path - see <a href="../picker/#tool-installation">here</a> for more detail.</p>
+the kangarooAnim path - see <a href="../animationTools/#tool-installation">here</a> for more detail.</p>
 <h3 id="can-i-build-rigs-in-windows-and-animate-in-linux">Can I build rigs in Windows and animate in Linux?</h3>
 <p>Yes, this has been done many times. Just keep in mind that Linux runs on a different binary, so you might find a few
 evaluation bugs in Linux that don't happen in Windows. It's rare, but does happen.</p>
@@ -1575,6 +1593,9 @@ To go around that problem, go into the studio library code. Find the file animat
 to
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">maya</span><span class="o">.</span><span class="n">cmds</span><span class="o">.</span><span class="n">nodeType</span><span class="p">(</span><span class="n">node_path</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="err">“</span><span class="n">transform</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="n">joint</span><span class="err">”</span><span class="p">]:</span>
 </code></pre></div></p>
+<h3 id="should-mouth-be-modelled-in-open-or-closed-pose">Should Mouth be modelled in Open or Closed pose?</h3>
+<p>Kangaroo prefers mouth to be modelled <strong>closed</strong>. If it's open, things will still work. But you'll get situations where you
+wish the mouth had been modelled in closed position.</p>
 
 
 

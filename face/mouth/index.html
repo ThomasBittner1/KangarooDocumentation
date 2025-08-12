@@ -1082,6 +1082,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Post Lip Zipper">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-mouth-in-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open Mouth in the Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#very-tiny-characters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Very tiny characters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stick-on-lippress" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stick on LipPress
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1473,12 +1506,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../picker/" class="md-nav__link">
+      <a href="../../animationTools/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Animator Tools
+    Animation Tools
     
   </span>
   
@@ -1937,6 +1970,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Post Lip Zipper">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-mouth-in-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open Mouth in the Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#very-tiny-characters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Very tiny characters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stick-on-lippress" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stick on LipPress
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1954,6 +2020,8 @@
                   
 
 
+
+  <h1>Mouth</h1>
 
 <p>For mouth you also have option between blendShapes and splines.<br />
 But what's different to the other setups is that on the mouth both ways happen with the same function: <em>BASEMouthCtrls()</em></p>
@@ -1996,9 +2064,8 @@ For now just shape it roughly, but very likely you'll be revisiting this later a
 <img alt="Alt text" src="../../images/mouth_slidingPlane.jpg" />  </p>
 <div class="admonition warning">
 <p class="admonition-title">Watch Out</p>
-<p>Make sure that this spans from almost the symmetry line to as far back as the lip ctrls should go, and ideally
-a bit further.<br />
-If the lip ctrls or the corner ctrls are doing some very bad jumps or generally some unstable motions, 
+<p>Make sure that this spans from as far back as the lip ctrls can go, <strong>to the symmetry line and further</strong>.<br />
+If later you see that the lip ctrls or the corner ctrls are doing some very bad jumps or generally some unstable motions, 
 this surface is often not placed well.</p>
 </div>
 <h2 id="upper-and-lower-ctrls">Upper and Lower Ctrls</h2>
@@ -2127,6 +2194,10 @@ Or if you also don't need the rotateZ, you can ignore this setup by just not ski
 <p>To turn on the splines, set <strong>bSPLINE</strong> to <em>True</em>.<br />
 And also set <strong>bBorders</strong> to <em>False</em>. The borders are useful for blendShapes, but not for Splines.<br />
 <img alt="Alt text" src="../../images/mouth_splinesAttributes.jpg" />    </p>
+<p>Another attribute to be aware of is the <strong>bSplineStaticCurves</strong>. If you have that set to <em>True</em>, only the corner ctrls
+will be sliding along the surface, and the lip ctrls will be sliding along static curves. This is the old behavior
+from <em>facePro_v16</em> and below, and it was depricated for a while. However later it turned out that for simple human mouths 
+it was still very useful since it's not so sensitive with the surface blueprint.</p>
 <h3 id="spline-the-joints">Spline - The Joints</h3>
 <p>For the spline rig there are the Big Joints (<strong>jnt_l_botMouthSplineBig_???</strong>) and the Small Joints (<strong>jnt_l_botMouthSplineSmall_???</strong>). 
 By default they are a joint at each vertex on the loop:
@@ -2274,9 +2345,11 @@ Slider Blueprints and Corner Multiply Values first. </p>
 <h4 id="5-pose-locators">5. Pose Locators</h4>
 <p>Almost all ctrls come with lots of poseLocators that are used to define the ctrl behaviors even more. In <em>funnel</em> and <em>lipPress</em> 
 (mouth_ctrl.tz) they are even used to define the whole pose.<br />
-And all the pose locators are easily found by just selecting the ctrls, and in the outliner press <strong>f</strong>. You'll always see the the currently
+And all the pose locators are easily found by just selecting the ctrls, and in the outliner press <strong>f</strong>. You'll always see the currently
 activated one as shown and the others are invisible:
 <img alt="Alt text" src="../../images/mouth_poseLocators.jpg" /></p>
+<p>As you move around those locators, it's recommended to turn off the <strong>lipPush</strong> on all top ctrls - <strong>lipsTop*_ctrl</strong>!
+The next time you build it, it remembers the offset, and incorporates those into the lipPush setup.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>There's a lot of poseLocators in the <em>BASEMouthCtrls()</em> function, even for each detail ctrls. If you end up using them a lot, it's worth checking out the options under the
@@ -2322,7 +2395,7 @@ by bulging out the cheeks
 <p class="admonition-title">Note</p>
 <p>This function is optional. Since it requires more technical abilities to manage so many joints, some projects in the past opted for blendShapes instead of this Cheek Setup. </p>
 </div>
-<h1 id="post-lip-zipper">Post Lip Zipper</h1>
+<h2 id="post-lip-zipper">Post Lip Zipper</h2>
 <p>If you are not using spline, or you are using spline but offsetted the pivot groups, then you can use the <em>postZipper()</em> 
 function to create a zipper using an extra skinCluster.</p>
 <p>It's very easy to setup. Just set the sMesh attribute in the <em>postZipper()</em> to the main mesh<br />
@@ -2340,6 +2413,17 @@ the <a href="../../tools/toolsSkinCluster/#closestexpand">ClosestExpand tool</a>
 <p class="admonition-title">Note</p>
 <p>This is taking the blueprints from the <em>BASEMouthSetup()</em> function.</p>
 </div>
+<h3 id="open-mouth-in-the-model">Open Mouth in the Model</h3>
+<p>The zipper works much better if the mouth is closed in the model. But if it's open, you can still make it work.
+In the attribute </p>
+<h3 id="very-tiny-characters">Very tiny characters</h3>
+<p>If you are rigging a very small character, you have to be aware of the <strong>fBlendShapeMinimumDistance</strong> attribute. This is about
+the joints following the blendShapes. If a blendShape target is making a vertex go less than that threshold value,
+it will not be affected. So basically you just have to watch if you see any artefacts such as some joints not moving - try 
+to set this value lower.</p>
+<h3 id="stick-on-lippress">Stick on LipPress</h3>
+<p>If you set the attribute <strong>bStickOnLipPress</strong> to <em>True</em>, and there's a <em>lipPress</em> mesh present - on mouth_ctrl.tz as -1.0
+it will also use that setup to lock the mouth close.</p>
 
 
 

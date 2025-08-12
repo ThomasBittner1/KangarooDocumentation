@@ -1558,6 +1558,13 @@ has priority 106.</p>
 <p class="admonition-title">Works with Namespaces</p>
 <p>The default button also works with namespaces! This is very useful when you have a rig referenced.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Python</p>
+<p>You can also call the function to put the rig into default pose:
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">kangarooAnimation.KangarooMatchTools</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">KangarooMatchTools</span><span class="p">;</span>
+<span class="n">KangarooMatchTools</span><span class="o">.</span><span class="n">goToDefaultPoseSelected</span><span class="p">(</span><span class="n">bSkipFk2IkAttrs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>    
+</code></pre></div></p>
+</div>
 <h2 id="zv-groups">ZV Groups</h2>
 <p>The function <em>addZVGroups()</em> is for the tool <a href="https://apps.autodesk.com/MAYA/en/Detail/Index?id=3374365102069298437&amp;appLang=en&amp;os=Win64">ZV Parent Master</a>.
 You can adjust the <em>sCtrls</em> parameter for which ctrls you would like to have groups for. 

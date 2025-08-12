@@ -13,7 +13,7 @@ The purpose of this tool is to fix some deformers if:
      
 
 ## When to NOT use it
-### Simple Mesh Changes
+### Simple Name Changes
 When the mesh names changed, very often you can just rename the *.wts* files inside the *deformers* folder. 
 They all have the same naming convention (*TYPE__MESHNAME.wts* or *TYPE__MESHNAME__SUFFIX.wts*).   
 

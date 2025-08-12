@@ -65,7 +65,7 @@ use the same blendShapes targets. The only difference is that for the spline rig
 
 ### Brows
 [Brows (BlendShape Setup)](brows.md#blendshapes)  
-[Brows (Splines Setup)](brows.md#brow-splines-correctives)  
+[Brows (Splines Setup)](brows.md#browsplinescorrectives)  
 For the brows the ctrls are different between the blendShape setup and spline setup. That's why we have different sets of targets:
 
 ### Some more..

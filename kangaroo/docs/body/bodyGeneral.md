@@ -25,6 +25,10 @@ Mirroring and Saving those values can be done with the DEFAULTATTRS options.
     we come to the face
 
 
+## Finger Poses
+The *fingerPoses()* function creates those attributes that poses fingers:   
+![Alt text](../images/fingerPoses_fist.jpg)
+
 ## ZV Groups
 The function *addZVGroups()* is for the tool [ZV Parent Master](https://apps.autodesk.com/MAYA/en/Detail/Index?id=3374365102069298437&appLang=en&os=Win64).
 You can adjust the *sCtrls* parameter for which ctrls you would like to have groups for. 

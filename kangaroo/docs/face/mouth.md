@@ -373,7 +373,7 @@ Then you save their values with the [**=== Default Attr === **](faceGeneral.md#d
 
 !!! warning "A few Warnings"
     If you've placed pose locators already, likely you'll have to revise those after you changed it.      
-    And this will mess with the zipper! So if you are adjusting the pivot groups, it's best to set **bZipper** to *False* and use the 
+    And this will mess with the zipper! So if you are adjusting the pivot groups, it's best to set **bSplineZipper** to *False* and use the 
     [*postZipper()*](#post-lip-zipper) function if needed.  
 
 

@@ -166,6 +166,9 @@ geometry data inside the puppet data and that gets messy when the mesh topology 
 for another character with different topology:  
 ![Alt text](../images/puppet_customAttacherVertexId.jpg)  
 
+!!! note
+    You won't see the result of the custom attachers after running *Test Build* or the *buildPuppet()* function. Instead 
+    the builder needs to run until *puppetCustomAttachments()*, since the real magic of the custom attachers is happening there. 
 
 
 ## Display Attributes

@@ -624,6 +624,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#finger-poses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finger Poses
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-pose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default Pose
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#zv-groups" class="md-nav__link">
     <span class="md-ellipsis">
       ZV Groups
@@ -1439,6 +1457,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#finger-poses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finger Poses
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-pose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default Pose
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#zv-groups" class="md-nav__link">
     <span class="md-ellipsis">
       ZV Groups
@@ -1487,6 +1523,40 @@ attributes to make them translate or scale based on their parents' rotation</p>
 <p class="admonition-title">Note</p>
 <p>the DEFAULTATTRS thing is a common workflow throughout all the kangaroo tools. Especially when
 we come to the face</p>
+</div>
+<h2 id="finger-poses">Finger Poses</h2>
+<p>The <em>fingerPoses()</em> function creates those attributes that poses fingers: <br />
+<img alt="Alt text" src="../../images/fingerPoses_fist.jpg" /></p>
+<p>This function is very flexible. With the <strong>sPoseKeys</strong> you can specify which pose attributes you'd like.
+<img alt="Alt text" src="../../images/fingerPoses_entries.jpg" /><br />
+Some of them have the word <em>negative</em> in it, such as <em>armGlobal_l_ctrl.curl negative</em>. In this example it's just
+the <em>armGlobal_l_ctrl.curl</em> attribute going negative.</p>
+<p>After adjusting the <em>sPoseKeys</em> attribute and clicking the <img alt="Alt text" src="../../images/python_reloadButtonSmall.jpg" /> (reload) button,
+you'll get those buttons on the side: <br />
+<img alt="Alt text" src="../../images/fingerPoses_poseButtons.jpg" /><br />
+Now for each pose:<br />
+1. rotate/translate the animation ctrls to put the hands into the pose <br />
+2. click the fill button</p>
+<p>Inbetween poses you can click the <strong>reset</strong> button at the top to go back to default. And if you want to see where the fill buttons
+saved the poses, it's the <strong>ddPoses</strong> attribute, which you can inspect in the <a href="../../builder/jsonEditor/">JSON Editor</a>.</p>
+<p>Animators usually want the <em>curl</em> additionally for each finger separate:<br />
+<img alt="Alt text" src="../../images/fingerPoses_extraFingers.jpg" /><br />
+This happens with the <strong>dSeparateFingers</strong> attribute.</p>
+<p><em>What about the toes??</em><br />
+For the toes you can just duplicate the function, we'll do that a lot on quadrupeds. Actually the BASEDOG in the templates
+has that setup-ed:<br />
+<img alt="Alt text" src="../../images/fingerPoses_duplicateFunction.gif" />    </p>
+<h2 id="default-pose">Default Pose</h2>
+<p>Whenever you click the shelf button <img alt="Alt text" src="../../images/shelfButton_default.jpg" /> (default), the selected rig jumps into
+default pose. </p>
+<p><em>But how does the button know what's the default?</em><br />
+The ctrls have an attribute called <em>dDefaultAttrs</em>. This is created in the function <em>updateDefaultCtrlAttrDicts()</em>. 
+It is very important to be aware of this, because when you add python code to set some default attributes, it will only 
+register those as default values if you put that function before the <em>updateDefaultCtrlAttrDicts()</em> function, which 
+has priority 106.</p>
+<div class="admonition note">
+<p class="admonition-title">Works with Namespaces</p>
+<p>The default button also works with namespaces! This is very useful when you have a rig referenced.</p>
 </div>
 <h2 id="zv-groups">ZV Groups</h2>
 <p>The function <em>addZVGroups()</em> is for the tool <a href="https://apps.autodesk.com/MAYA/en/Detail/Index?id=3374365102069298437&amp;appLang=en&amp;os=Win64">ZV Parent Master</a>.

@@ -1972,6 +1972,11 @@ To use them, just set the combo box to <strong>&lt;Custom&gt;</strong> and havin
 geometry data inside the puppet data and that gets messy when the mesh topology changes or you want to reuse the setup
 for another character with different topology:<br />
 <img alt="Alt text" src="../../images/puppet_customAttacherVertexId.jpg" />  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You won't see the result of the custom attachers after running <em>Test Build</em> or the <em>buildPuppet()</em> function. Instead 
+the builder needs to run until <em>puppetCustomAttachments()</em>, since the real magic of the custom attachers is happening there. </p>
+</div>
 <h2 id="display-attributes">Display Attributes</h2>
 <h3 id="display_ctrl">display_ctrl</h3>
 <p>In all the template characters there's the <em>display_ctrl</em> that has a lot of display attributes:<br />

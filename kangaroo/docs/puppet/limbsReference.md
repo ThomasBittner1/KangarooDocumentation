@@ -261,7 +261,7 @@ This changes the ctrl names (*elbow* -> *knee*, ..) default blueprints and defau
     And then it might be risky to change at that point.
 
 ### ik (feature)
-#### World Orient Ctrl {#worldorientctrlarmlegik}
+#### World Orient Ik Ctrl {#worldorientctrlarmlegik}
 *World Orient Ctrl* makes the ik ctrls as joints, so it can make use of the joint orient values:  
 ![Alt text](../images/limbsReference_worldIkCtrlOutliner.jpg)  
 Because feet should always translate in worldspace. But if they are oriented outwards in the model 

@@ -82,7 +82,7 @@ so the lower and upper blueprints are not overlapping each other.
 
 
 ## Ctrls Following
-*Kangaroo* tries to have most ctrls follow the squash/streth setup. This won't change the deformations, but animators still
+*Kangaroo* tries to have most ctrls follow the squash/stretch setup. This won't change the deformations, but animators still
 appreciate it if ctrls are always staying with the face geo.  
 For all the facial setups this should happen automatically in the function *parallelAttachCtrls()*.    
 But if you have some extra puppet limbs, you'll have to set this with the **FaceExtraMove** flag:   

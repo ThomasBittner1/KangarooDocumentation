@@ -36,7 +36,7 @@ It's important that the X axis is pointing up, Y axis is pointing back, and the 
     If the lip ctrls are not translating up/down in Y, it could also be the fault of this mouth pivot blueprint.     
 
 ### Blueprints - Slide Surfaces
-This is only for spline rigs. If you leave the *bSPLINE* attribute as False, you can skip this.   
+This is only for **Spline** Rigs. If you leave the *bSPLINE* attribute as *False*, you can skip this.   
 But for splines, this is the surface that the controls slide along. In most cases this is better to represent the shape
 of the teeth, instead of the shape of the skin.  
 For now just shape it roughly, but very likely you'll be revisiting this later and adjust the shape.
@@ -44,8 +44,8 @@ For now just shape it roughly, but very likely you'll be revisiting this later a
 
 !!! warning "Watch Out"
     Make sure that this spans from as far back as the lip ctrls can go, **to the symmetry line and further**.  
-    If later you see that the lip ctrls or the corner ctrls are doing some very bad jumps or generally some unstable motions, 
-    this surface is often not placed well.
+    If later you see that the lip ctrls or the corner ctrls are doing some very bad jumps or artefacts in movements, 
+    a badly placed slide surface is often the cause.
 
 ## Upper and Lower Ctrls
 ### Count/Positions

@@ -328,3 +328,50 @@ of the blink onto the lower and upper ones:
 
 When doing the spline rig (*splineLidSetup()*), moving *lidTop_l_ctrl* fully down, and *lidBot_l_ctrl* fully up will close the eye. 
 And with the blinkLine you can control at which point they close. 
+
+
+## Squashed Eye Balls
+Kangaroo can handle squashed eye balls, but at this time only *without* spline rig.  
+The feature may seem a bit hidden, so here we explain how to set them up - basically you rig everything in unsquashed, but a lattice
+box provided by the modelers is squashing the eyeballs after the skinClusters.  
+**1. Model**   
+The model needs to have the eyeball spherical, but with lattice box that scales them up:  
+![Alt text](../images/squashedEyeballs_lattice.jpg)   
+So basically the modelers are adding the lattice boxes.
+When you lay out the blueprints, remove the lattice boxes.  
+!!! warning "No Translate or Rotate"
+    The lattice boxes in the model should ONLY be scaled, it cannot be translated or rotated. Modelers sometimes like
+    to do that to save time on their side, but unfortunately this would result in bad behavior later in the rig.  
+
+**2. SimpleLidSetup() function**  
+In the *SimpleLidSetup()* function we'll have to tell him about the lattice with the attribute *bEyeballsHaveLatticeBoxes*:  
+![Alt text](../images/squashedEyeballs_functionAttribute.jpg)   
+!!! question "Why is this happening inside the eyelid function if we are talking about eyeballs?"
+    This is due to legacy reasons. This function used to be the specific function for eyelids on squashed eyeballs, but then later it
+    turned out those sibling transforms where very useful for setting up behavior not only for squashed eyelids. Then it became
+    the main function used for all types of eyeballs.
+
+**3. Activation Function**  
+Make sure the *activateEyeSQUASHED* function is on:  
+![Alt text](../images/squashedEyeballs_activateFunction.jpg)   
+
+**4. Deformer order**  
+After skinning the eyeballs, you may have to change the deformer order to have the lattice box deformers (*ffd*)
+after the skinClusters. After fixing the order, just export the deformers and it'll remember the deformer order.
+
+And that's it for squashed eye balls. For setting up the eyelids, you can just use the [*simpleLidSetup()*](#simple-lid-joints) and/or
+[blendShapes](#eyelid-blendshapes) the same way as if the eye balls wouldn't be squashed.
+
+
+
+## Second Inner Eyelids (Membranes)
+Some characters such as birds or dinosaurs have a membrane blink. This is what the *fInnerBlink* attribute is for. 
+If you set it to something like *[0,100,0]*, it'll create this attribute on the blink ctrls:   
+![Alt text](../images/eyes_innerBlinkAttr.jpg)  
+And there's this new joint called **jnt_l_innerEyeLid**, which is under the eye main joints (*jnt_l_eyeMain*), and
+the vector you specified ([0,100,0] in our example) is the rotation of that joint when the blink is activated.
+!!! tip
+    Try to get the modelers to do the membrane mesh as spherical as possible, otherwise you'll spend a lot of time
+    creating correctives.
+
+

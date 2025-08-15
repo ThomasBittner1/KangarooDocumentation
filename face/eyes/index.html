@@ -60,7 +60,7 @@
   
   <meta property="og:type" content="website">
   <meta property="og:title" content="kangaroo-builder.com">
-  <meta property="og:description" content="The Ultimate Rigging Solution in Maya3">
+  <meta property="og:description" content="The Ultimate Rigging Solution in Maya">
   <meta property="og:image" content="../../images/previewWide.png">
   <meta name="author" content="Thomas Bittner">
 
@@ -1006,6 +1006,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#squashed-eye-balls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Squashed Eye Balls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#second-inner-eyelids-membranes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Second Inner Eyelids (Membranes)
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1872,6 +1890,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#squashed-eye-balls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Squashed Eye Balls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#second-inner-eyelids-membranes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Second Inner Eyelids (Membranes)
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2190,6 +2226,48 @@ of the blink onto the lower and upper ones:<br />
 <img alt="Alt text" src="../../images/eyes_setExtrasFromBlink.jpg" /></p>
 <p>When doing the spline rig (<em>splineLidSetup()</em>), moving <em>lidTop_l_ctrl</em> fully down, and <em>lidBot_l_ctrl</em> fully up will close the eye. 
 And with the blinkLine you can control at which point they close. </p>
+<h2 id="squashed-eye-balls">Squashed Eye Balls</h2>
+<p>Kangaroo can handle squashed eye balls, but at this time only <em>without</em> spline rig.<br />
+The feature may seem a bit hidden, so here we explain how to set them up - basically you rig everything in unsquashed, but a lattice
+box provided by the modelers is squashing the eyeballs after the skinClusters.<br />
+<strong>1. Model</strong> <br />
+The model needs to have the eyeball spherical, but with lattice box that scales them up:<br />
+<img alt="Alt text" src="../../images/squashedEyeballs_lattice.jpg" /> <br />
+So basically the modelers are adding the lattice boxes.
+When you lay out the blueprints, remove the lattice boxes.  </p>
+<div class="admonition warning">
+<p class="admonition-title">No Translate or Rotate</p>
+<p>The lattice boxes in the model should ONLY be scaled, it cannot be translated or rotated. Modelers sometimes like
+to do that to save time on their side, but unfortunately this would result in bad behavior later in the rig.  </p>
+</div>
+<p><strong>2. SimpleLidSetup() function</strong><br />
+In the <em>SimpleLidSetup()</em> function we'll have to tell him about the lattice with the attribute <em>bEyeballsHaveLatticeBoxes</em>:<br />
+<img alt="Alt text" src="../../images/squashedEyeballs_functionAttribute.jpg" />   </p>
+<div class="admonition question">
+<p class="admonition-title">Why is this happening inside the eyelid function if we are talking about eyeballs?</p>
+<p>This is due to legacy reasons. This function used to be the specific function for eyelids on squashed eyeballs, but then later it
+turned out those sibling transforms where very useful for setting up behavior not only for squashed eyelids. Then it became
+the main function used for all types of eyeballs.</p>
+</div>
+<p><strong>3. Activation Function</strong><br />
+Make sure the <em>activateEyeSQUASHED</em> function is on:<br />
+<img alt="Alt text" src="../../images/squashedEyeballs_activateFunction.jpg" />   </p>
+<p><strong>4. Deformer order</strong><br />
+After skinning the eyeballs, you may have to change the deformer order to have the lattice box deformers (<em>ffd</em>)
+after the skinClusters. After fixing the order, just export the deformers and it'll remember the deformer order.</p>
+<p>And that's it for squashed eye balls. For setting up the eyelids, you can just use the <a href="#simple-lid-joints"><em>simpleLidSetup()</em></a> and/or
+<a href="#eyelid-blendshapes">blendShapes</a> the same way as if the eye balls wouldn't be squashed.</p>
+<h2 id="second-inner-eyelids-membranes">Second Inner Eyelids (Membranes)</h2>
+<p>Some characters such as birds or dinosaurs have a membrane blink. This is what the <em>fInnerBlink</em> attribute is for. 
+If you set it to something like <em>[0,100,0]</em>, it'll create this attribute on the blink ctrls: <br />
+<img alt="Alt text" src="../../images/eyes_innerBlinkAttr.jpg" /><br />
+And there's this new joint called <strong>jnt_l_innerEyeLid</strong>, which is under the eye main joints (<em>jnt_l_eyeMain</em>), and
+the vector you specified ([0,100,0] in our example) is the rotation of that joint when the blink is activated.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Try to get the modelers to do the membrane mesh as spherical as possible, otherwise you'll spend a lot of time
+creating correctives.</p>
+</div>
 
 
 

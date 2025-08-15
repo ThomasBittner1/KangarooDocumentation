@@ -1286,15 +1286,8 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
+              
+                
   
   
   
@@ -1311,6 +1304,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1652,6 +1653,13 @@ Check <a href="../../puppet/puppetGeneral/"><strong>Puppet</strong></a> for more
 <p>This loads the ctrl shapes. To export the ctrls shapes that he should load - go to <strong>Ctrls</strong> -&gt; <strong>Export</strong> -&gt; <strong>Export All Ctrls</strong>: <br />
 <img alt="Alt text" src="../../images/builderGeneral_ctrlShapeExport.jpg" /><br />
 This just exports the shape of <em>all</em> ctrls in scene.  </p>
+<div class="admonition note">
+<p class="admonition-title">Colors</p>
+<p>The function has an attribute <em>bDoColor</em>. It's best to leave that at <em>False</em>, so you can entirely let the puppet
+tool handle the colors. But if you ever need to get specific about colors and need to change the colors of the ctrl directly,
+you can set that attribute to <em>True</em>.
+<img alt="Alt text" src="../../images/loadCtrls_leaveColor.jpg" />  </p>
+</div>
 <h3 id="loaddeformers"><em>loadDeformers()</em></h3>
 <p>This loads all the deformers (mainly skinCluster weights) from the <em>deformers</em> folder. <br />
 You can export the deformers in <strong>Export</strong> -&gt; <strong>Deformers</strong><br />

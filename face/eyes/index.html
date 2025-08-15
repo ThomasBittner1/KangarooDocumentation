@@ -930,6 +930,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#eyelid-splines-wide-target-curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eyelid Splines - Wide Target Curves
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#eyelidsplinecorrectives" class="md-nav__link">
     <span class="md-ellipsis">
       Eyelid Splines - BlendShape Correctives
@@ -1414,15 +1423,8 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
+              
+                
   
   
   
@@ -1439,6 +1441,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1786,6 +1796,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#eyelid-splines-wide-target-curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eyelid Splines - Wide Target Curves
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#eyelidsplinecorrectives" class="md-nav__link">
     <span class="md-ellipsis">
       Eyelid Splines - BlendShape Correctives
@@ -1869,8 +1888,8 @@
 <p>For the eyeballs you have 3 specific limbs:</p>
 <ul>
 <li><strong>Eye</strong></li>
-<li><strong>EyesLookat</strong></li>
-<li><strong>EyeLookatIndiv</strong></li>
+<li><strong>EyesLookAt</strong></li>
+<li><strong>EyeLookAtIndiv</strong></li>
 </ul>
 <p>Usually those are already setup-ed when you copied from another character. If you do need to set them up yourself,
 make sure to specify the eyes in <em>attacher: eyes (c)</em>
@@ -2047,6 +2066,11 @@ Which can be unwanted behavior. </p>
 Those just specify how the lids behave when they get opened wider. <br />
 If you want to finetune those, you'll more likely want to set the <strong>bLipsCanPushOut</strong> value to <strong>True</strong>, otherwise
 the lips will always be constraint onto the eyeballs</p>
+<h3 id="eyelid-splines-wide-target-curves">Eyelid Splines - Wide Target Curves</h3>
+<p>After running that function you can see that it created those target curves: 
+<img alt="Alt text" src="../../images/eyes_splineWideTargets.jpg" />  <br />
+Those are for when the lids move apart. You can adjust those and export.
+But keep in mind you might not see much difference unless you set the <strong>bLipsCanPushOut</strong> attribute to <em>True</em>.</p>
 <h3 id="eyelidsplinecorrectives">Eyelid Splines - BlendShape Correctives</h3>
 <p>If the PoseLocs are not enough, you can also go more in detail with sculpting shapes. For that the <a href="../shapeEditor1/">Shape Editor</a>
 needs to be understood.<br />
@@ -2129,7 +2153,7 @@ Sounds simple - but how it really behaves depends on which functions you've used
 <thead>
 <tr>
 <th>Situation</th>
-<th>What the clink line does</th>
+<th>What the blink line does</th>
 </tr>
 </thead>
 <tbody>

@@ -68,7 +68,7 @@ markdown_extensions:
   - pymdownx.details
   - attr_list
 
-site_description: The Ultimate Rigging Solution
+site_description: The Ultimate Rigging Solution for Maya
 
 extra_css:
   - extra2.css

@@ -57,13 +57,15 @@ of those tools, you can use this tool to warp them.
 
 
 ## Head Reset
-This is usually for modelers, it's to reorder the vertices so all the head ones start from 0. This has the advantage that
+This tool reorders the vertices so all the head ones start from 0. We do this so that
 facial blendShapes can be sculpted on a smaller mesh that doesn't include the body.
+Apart from resetting the vertex count, it also creates this extra head geo that has the same vertex order as the new 
+geo:  
+![Alt text](../images/tools_headReset.jpg)  
 
-Select the head faces, and click **Head Reset selected Faces**. This will create 2 new meshes:  
-One with suffix *_HEAD1*, and one with suffix *_NEWTOPOLOGY*. It does NOT change the original mesh! So you'll have to
-delete the original mesh and replace it with the *_NEWTOPOLOGY* one.
-The *_HEAD* one is the one that you can use for creating blendShapes.
+Select the head faces, and click **Head Reset selected Faces**. This will create   
+a new mesh with suffix *_HEAD* and recreates the old one so it has the matching vertex count with the head one.
+From now on you can use the HEAD one for sculpting.
 
 
 ## Smooth Vertices

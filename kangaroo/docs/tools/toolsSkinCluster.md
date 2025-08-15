@@ -171,8 +171,7 @@ Similar to the Maya prune, but first assigns stuff into weight islands. This mea
 without getting weight artefacts.
 !!! info "Video"
     Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=16m37s) for better explanation.   
-    Actually to get the full picture it's best starting from 
-    [Why can I not paint Weights Kangaroo Skin Tools?](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=15m57s).
+    Actually to get the full picture it's best starting from [Why can I not paint Weights Kangaroo Skin Tools?](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=15m57s).   
 
 
 ## MaxInf

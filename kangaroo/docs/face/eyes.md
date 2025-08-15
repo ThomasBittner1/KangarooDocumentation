@@ -1,13 +1,10 @@
 
-
-
-
 ## Eye Puppet Limbs
 For the eyeballs you have 3 specific limbs:
 
 * **Eye**
-* **EyesLookat**
-* **EyeLookatIndiv**
+* **EyesLookAt**
+* **EyeLookAtIndiv**
 
 Usually those are already setup-ed when you copied from another character. If you do need to set them up yourself,
 make sure to specify the eyes in *attacher: eyes (c)*
@@ -210,6 +207,14 @@ If you want to finetune those, you'll more likely want to set the **bLipsCanPush
 the lips will always be constraint onto the eyeballs
 
 
+### Eyelid Splines - Wide Target Curves
+After running that function you can see that it created those target curves: 
+![Alt text](../images/eyes_splineWideTargets.jpg)    
+Those are for when the lids move apart. You can adjust those and export.
+But keep in mind you might not see much difference unless you set the **bLipsCanPushOut** attribute to *True*.
+
+
+
 ### Eyelid Splines - BlendShape Correctives {#eyelidsplinecorrectives}
 If the PoseLocs are not enough, you can also go more in detail with sculpting shapes. For that the [Shape Editor](shapeEditor1.md)
 needs to be understood.  
@@ -304,7 +309,7 @@ There's an attribute on the **blink_l_ctrl** that can changes the blink when the
 ![Alt text](../images/eyes_blinkLine.jpg)  
 Sounds simple - but how it really behaves depends on which functions you've used:  
 
-| Situation          | What the clink line does                  
+| Situation          | What the blink line does                  
 |--------------------|-------------------------------------------
 | Just BlendShapes   | Not doing anything                        |
 | *simpleLidSetup()* | It post-rotates the eyelid joints up/down |

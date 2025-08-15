@@ -349,7 +349,7 @@ Works similar to the *DogArmLeg* in many ways. But it's simpler to setup because
 ![Alt text](../images/puppetLimbs_horseLeg.gif)      
 
 
-## BirdArmLeg
+## BirdLeg
 Also similar to the *DogArmLeg*, but it's got the main difference that the first bone is an FK and second and third
 bones are the IK, while on *DogArmLeg* the IK is on the first two bones.  
 ![Alt text](../images/puppetLimbs_birdLeg.gif)  

@@ -144,8 +144,8 @@ For navigating through the files just do a right click on the file field:
 When you create a playblast in Maya, it doesn't give you any good codex options. This means the file you get is usually either
 huge or has horrible quality. So Kangaroo is here to help.
 
-When you click the shelf button ![Alt text](images/movShelfButton.jpg) (aMP4), it creates a playblast and then uses
-ffmpeg to do the standard mp4 code that most computers can play by default.
+When you click the shelf button ![Alt text](images/movShelfButton.jpg) (aMP4), or click the **Playplast** button in **Export -> Playblast**, 
+it creates a playblast and then uses ffmpeg to do the standard mp4 code that most computers can play by default.
 
 But for this to work you have to download [**ffmpeg**](https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl-shared.zip).
 Once you downloaded it, extract the content and put it into a folder called *ffmpeg* inside your tool directory's *kangarooAnimation* folder.  

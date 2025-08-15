@@ -61,6 +61,12 @@ This loads the ctrl shapes. To export the ctrls shapes that he should load - go 
 ![Alt text](../images/builderGeneral_ctrlShapeExport.jpg)  
 This just exports the shape of *all* ctrls in scene.  
 
+!!! note "Colors"
+    The function has an attribute *bDoColor*. It's best to leave that at *False*, so you can entirely let the puppet
+    tool handle the colors. But if you ever need to get specific about colors and need to change the colors of the ctrl directly,
+    you can set that attribute to *True*.
+    ![Alt text](../images/loadCtrls_leaveColor.jpg)  
+    
 
 ### *loadDeformers()*
 This loads all the deformers (mainly skinCluster weights) from the *deformers* folder.   

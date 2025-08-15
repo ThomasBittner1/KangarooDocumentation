@@ -1,12 +1,14 @@
-There's 2 options - Springs and Dynamics.
+# <!-- dummy title to prevent auto-generated one-->
 
-| Springs                                              | Dynamics                                                                |
-|------------------------------------------------------|-------------------------------------------------------------------------
-| Expressions                                          | hairSystem                                                              |
-| SingleBone, SingleTransform and Spine (fk, fkSpline) | only Spine (Advanced section)                                           |
-| Controls top groups of the Ctrls                     | Is running at the end, before the Squash Joints                         |
-| Easier to tweak with stiffness and damping           | Has a ton of attributes that are tricky to tweak for specific behaviors |
-| Only FKs                                             | Can do Spine FK and IK, can even have the end point locked              |
+There's 2 options - **Springs** and **Dynamics**.
+
+| Springs                                                               | Dynamics                                                                |
+|-----------------------------------------------------------------------|-------------------------------------------------------------------------
+| Expressions                                                           | hairSystem                                                              |
+| SingleBone, SingleTransform and Spine (fk, fkSpline)                  | only Spine (Advanced section)                                           |
+| Controls top groups of the Ctrls                                      | Is running at the end, before the Squash Joints                         |
+| Easier to tweak with stiffness and damping                            | Has a ton of attributes that are tricky to tweak for specific behaviors |
+| Only FKs                                                              | Can do Spine FK and IK, can even have the end point locked              |
 
 
 ## Springs
@@ -26,7 +28,7 @@ For tweaking those values, it's best to first keep them the same value, and try 
 *STIFFNESS* is how fast it comes back (stronger values = coming back quicker)  
 *DAMPING* is how loose it is (weaker values = looser)  
 
-## Spine Dynamics
+## Dynamics {#spine-dynamics}
 The Spine limb also has Dynamics attribute in the **advanced** section, which is using **hairSystem** under the hood.  
 Can give great results, too. But trickier to tweak the behavior. 
 

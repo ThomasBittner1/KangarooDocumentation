@@ -256,8 +256,19 @@ edge connection patterns.
 
 Then to do the actual flipping: Right click on Target -> **Side:Pose Combinations and Flip Meshes**
 ![Alt text](../images/poseEditor_flipPose.gif)  
+!!! info "Trouble Shoot"
+    Sometimes you'll see that he did something on the opposite side, but it's not fully matching. Whenever that happens,
+    check if **the skinCluster is fully mirrored**. If it's not, then the pose editor mirror will also not fully mirror.    
+    If you deeply checked the skinCluster, and it's still not mirroring the shapes 100 % correct, another possibility is that
+    there's some garbage somewhere in memory, you can fix that by exporting your pose editor setup, and rebuilding all. 
+    
+It's important that the skinCluster is mirrored also.     
+
 !!! warning "Select Mesh"
-    Don't forget to select the mesh! 
+    Don't forget to select the mesh! He'll only mirrors what you have selected. This is because you can also
+    mirror selected vertices with soft selection.
+
+
 
 ### Split into Left/Right 
 Flipping does not work well in cases where you want to sculpt a little bit in the middle (central line of the character), 

@@ -1,7 +1,4 @@
 
-Please keep in mind this is new beta documentation of Version 5 that is not published yet.
-The current website (Version 4) is [www.kangaroo-builder.com](https://www.kangaroo-builder.com) 
-
 For general questions or bug reports, please go to
 [Kangaroo Builder Forum](https://kangaroobuilder.discourse.group/)
 

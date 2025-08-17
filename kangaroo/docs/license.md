@@ -19,6 +19,6 @@ Recommonded for small studios
 **Unlimited Seats Perpetual** - 3500 EUR  
 [Pay with Paypal](https://www.paypal.com/ncp/payment/U9FV5546336KY)
 
-Don't find the right License for you? Contact us at [info@kangaroobuilder.com](info@kangaroobuilder.com).  
+Don't find the right License for you? Contact us at [info@kangaroobuilder.com](mailto:info@kangaroobuilder.com).  
 If you are in Austria, also contact us before purchasing.
 

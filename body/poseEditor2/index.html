@@ -1463,6 +1463,28 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://kangaroobuilder.discourse.group" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Forum
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1625,6 +1647,14 @@ And then right click -&gt; <strong>paste</strong> on the same location in the ot
 <p>While you could also share Target Infos using the JSON Editor, we don't do that as often as sharing interpolators.</p>
 </div>
 <h2 id="useful-tools">Useful tools</h2>
+<p>It's a lot of tools under the <strong>TOOLS</strong> button.</p>
+<div class="admonition bug">
+<p class="admonition-title">Known Bug</p>
+<p>There's one little gotcha - these buttons will only work if there's already a blendShape target on the actual blendShape
+node.<br />
+But it's an easy fix, just click the <em>EDIT</em> button and click it again to deactivate it. This will create an empty
+target on the blendShape node, and the tools under the <em>TOOLS</em> button will be happy.</p>
+</div>
 <h3 id="multiply">Multiply</h3>
 <p>The multiply tool just multiplies by a certain value. In this gif we just multiplied things by 0.0 to fix some artefacts:<br />
 <img alt="Alt text" src="../../images/poseEditor_multiply.gif" /><br />
@@ -1640,20 +1670,19 @@ multiply by 0.0.</p>
 we just warp to secondary meshes such as costume. To do that, put the skin mesh (<em>body_geo</em>) into the <strong>Master</strong> field,
 select all the targets, select the mesh in the scene, and then <strong>TOOLS -&gt; Warp ..</strong>.
 <img alt="Alt text" src="../../images/poseEditor_warp.jpg" />  </p>
-<div class="admonition warning">
-<p class="admonition-title">Known Bug</p>
-<p>At this time the warp tool expects you to already have the mesh inside the mesh table and have it activated for all targets.
-Basically what you get when you check the mesh having all targets selected. If you don't do that, it'll either
-quietly do nothing, or give you a strange error.</p>
-</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Don't forget to have the mesh that you want to warp selected in scene. Btw, you can also do vertex and soft selection
+<p>Don't forget to have the mesh that you want to warp selected in scene. You can also do vertex and soft selection
 for that, and it'll only warp the vertices you have selected.</p>
 </div>
 <h3 id="blend-ids">Blend IDs</h3>
 <p>If you have another mesh that has the pose sculpted already, the <em>Blend IDs</em> tool can help you with that, also under 
 the <strong>TOOLS</strong> button.</p>
+<p>Keep in mind that like all other tools this will just blend the pose of the specified target in an isolated way. So
+if you have any other shapes that are activated at the same time, using the <em>blend IDs</em> the vertices might not be exactly 
+snapped to the master mesh.<br />
+If you want it to be fully snapped, it's better to instead do it through the <em>EDIT</em> button and use the 
+<a href="../../tools/toolsGeometry/#match-vertex-positions">Match Tool</a>.</p>
 
 
 

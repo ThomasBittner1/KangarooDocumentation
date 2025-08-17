@@ -1583,6 +1583,28 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://kangaroobuilder.discourse.group" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Forum
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2084,9 +2106,18 @@ Your options are:  </p>
 edge connection patterns.</p>
 <p>Then to do the actual flipping: Right click on Target -&gt; <strong>Side:Pose Combinations and Flip Meshes</strong>
 <img alt="Alt text" src="../../images/poseEditor_flipPose.gif" />  </p>
+<div class="admonition info">
+<p class="admonition-title">Trouble Shoot</p>
+<p>Sometimes you'll see that he did something on the opposite side, but it's not fully matching. Whenever that happens,
+check if <strong>the skinCluster is fully mirrored</strong>. If it's not, then the pose editor mirror will also not fully mirror.  <br />
+If you deeply checked the skinCluster, and it's still not mirroring the shapes 100 % correct, another possibility is that
+there's some garbage somewhere in memory, you can fix that by exporting your pose editor setup, and rebuilding all. </p>
+</div>
+<p>It's important that the skinCluster is mirrored also.     </p>
 <div class="admonition warning">
 <p class="admonition-title">Select Mesh</p>
-<p>Don't forget to select the mesh! </p>
+<p>Don't forget to select the mesh! He'll only mirrors what you have selected. This is because you can also
+mirror selected vertices with soft selection.</p>
 </div>
 <h3 id="split-into-leftright">Split into Left/Right</h3>
 <p>Flipping does not work well in cases where you want to sculpt a little bit in the middle (central line of the character), 

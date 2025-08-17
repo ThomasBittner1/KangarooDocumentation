@@ -63,7 +63,6 @@ nav:
   - Contact: contact.md
   - Forum: https://kangaroobuilder.discourse.group
 
-
 markdown_extensions:
   - admonition
   - pymdownx.superfences
@@ -76,3 +75,4 @@ extra_css:
   - extra2.css
 extra_javascript:
   - javascripts/scroll-behavior-toggle.js
+  - javascripts/openExternalLinks.js

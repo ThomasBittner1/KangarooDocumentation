@@ -61,6 +61,8 @@ nav:
   - License: license.md
   - Download: download.md
   - Contact: contact.md
+  - Forum: https://kangaroobuilder.discourse.group
+
 
 markdown_extensions:
   - admonition

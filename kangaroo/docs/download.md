@@ -1,7 +1,4 @@
 
-Download of Kangaroo Version 5 is not available yet.
+[Kangaroo Builder v5.13](https://github.com/ThomasBittner1/KangarooBuilderPublic/releases/download/v5.13/kangarooBuilder_5_13.zip)
 
-In the meantime, please download from [www.kangaroo-builder.com](https://www.kangaroo-builder.com) 
-
-For more info - [contact](contact.md)
 

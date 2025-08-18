@@ -51,3 +51,13 @@ Siva.V, Rigging Supervisor at M2 Animation
 <br>
 
 
+<div style="text-align: right"> <em>
+"As Animation Director of an animated Feature Film I checked the kangaroo rigs in Detail for the production. 
+We had  plenty of different Characters and the rigs worked great for each of them! Especially the performance and 
+usability were amazing, and I’d be happy to use the same rig system for our next production again! " <br> 
+</em>
+Chris Stodt, Animation Director at Seru Animation
+</div>
+<br>
+
+

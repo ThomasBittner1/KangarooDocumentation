@@ -128,6 +128,18 @@ KangarooAnimTool.showUI(False)
 ```
 Or they can run the lines shown in [Isolated Menus](#isolated-menus) 
 
+If you are struggling with getting it sourced, and it keeps telling you something like *kangarooAnimation* is not found,
+you can also do the brute force *sys.path.append* trick. Just take the following code and replace the path in the first line
+to the parent path of *kangarooAnimation* folder. 
+``` python
+sParentPath = r'C:\mayaTools\KANGAROO\sandbox'
+import sys
+if sParentPath not in sys.path:
+    print ('appending to sys: %s' % sParentPath)
+    sys.path.append(sParentPath)
+```
+
+
 
 
 ## Save/Load Animation

@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#plane-cutter" class="md-skip">
+        <a href="#how-does-it-work" class="md-skip">
           Skip to content
         </a>
       
@@ -1187,9 +1187,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#plane-cutter" class="md-nav__link">
+  <a href="#how-does-it-work" class="md-nav__link">
     <span class="md-ellipsis">
-      Plane Cutter
+      How does it work?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#order-of-the-siblings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Order of the Siblings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plane-influence-goes-into-infinity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plane Influence goes into Infinity
     </span>
   </a>
   
@@ -1279,6 +1297,51 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-better-default-planes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting better Default Planes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-planes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export Planes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxy-cuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxy Cuts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reset-planes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reset Planes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rebuild" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rebuild
+    </span>
+  </a>
   
 </li>
       
@@ -1522,9 +1585,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#plane-cutter" class="md-nav__link">
+  <a href="#how-does-it-work" class="md-nav__link">
     <span class="md-ellipsis">
-      Plane Cutter
+      How does it work?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#order-of-the-siblings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Order of the Siblings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plane-influence-goes-into-infinity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plane Influence goes into Infinity
     </span>
   </a>
   
@@ -1617,6 +1698,51 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#getting-better-default-planes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting better Default Planes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-planes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export Planes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxy-cuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxy Cuts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reset-planes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reset Planes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rebuild" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rebuild
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1635,8 +1761,8 @@
 
   <h1>Plane Cutter</h1>
 
-<h2 id="plane-cutter">Plane Cutter</h2>
-<p>Plane Skinner is a tool that can get you quick first pass <strong>SkinCluster</strong> or <strong>Proxy Geometries</strong></p>
+<p>Plane Cutter is a tool that can get you a quick first pass <strong>SkinCluster</strong> or <strong>Proxy Cut Geometries</strong>.</p>
+<p>The way it works is that you define a set of nurbs planes, and he'll use those to assign the regions.</p>
 <video autoplay muted loop controls width="1266">
     <source src="../../images/planeCutter_selectedPolysAllPlanes.mp4" type="video/mp4">
     Your browser does not support the video tag.
@@ -1644,7 +1770,9 @@
 
 <div class="admonition info">
 <p class="admonition-title">Video</p>
-<p>While this document explains it all - if you find it simpler to follow in a video, click <a href="https://www.youtube.com/embed/sQqQVCS2vWY" target="_blank">here</a></p>
+<p>While this document explains it all - if you find it simpler to follow in a video, click <a href="https://www.youtube.com/embed/sQqQVCS2vWY" target="_blank">here</a>.
+The video is still up to date for the most part, except the bug that is mentioned in there where it creates planes 
+for dynamic joints is fixed.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">LinkedIn</p>
@@ -1652,8 +1780,56 @@
 <a href="https://www.linkedin.com/posts/thomas-bittner-6bb6302_this-tool-generates-a-skincluster-from-nurbs-activity-7216376145527644160-BsOr?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABy3u8BK03tH_Bovh-T4-W99NGXldU3f_g" 
 target="_blank">LinkedIn Post</a></p>
 </div>
+<h2 id="how-does-it-work">How does it work?</h2>
+<p>In the following image you can see how the planes are
+ordered in a hierarchy:<br />
+<img alt="Alt text" src="../../images/planeCutter_hierarchy.jpg" />  <br />
+While each plane represents a joint, the hierarchy is not the same as the joint hierarchy. One of the differences you see is that <strong>plane_l_clavicleMain</strong>
+and <strong>plane_m_head</strong> are at the top of the hierarchy. This means he will cut the clavicle and head first.<br />
+But another important point is also that he's traversing through all the planes recursively, which means that after every plane he uses to cut,
+he will go through all the child planes one by one, and when all the child planes are done, he'll go back and do the sibling of the parent etc..  </p>
+<p>So let's start with <strong>plane_l_clavicle</strong>. He'll just cut the part from the front side of that plane (picture right side, painted in red). And since
+it's the first plane, he'll conisider the whole mesh (yellow):
+<img alt="Alt text" src="../../images/planeCutter_firstPlane.jpg" />    </p>
+<p>Let's look at <strong>plane_l_arm_upperTwist_000</strong> next. The plane is a bit small, but in the following picture you'll see the blue arrow 
+pointing to it. I've marked in yellow the part that this plane is considering. Which is the part that its parent 
+(<em>plane_l_clavicleMain</em>) was cutting out already. And in red I've marked the part that this plane is actually cutting out:<br />
+<img alt="Alt text" src="../../images/planeCutter_arm.jpg" />    </p>
+<p>Now it gets interesting when we get to the fingers. When we are cutting the <strong>plane_l_thumbMeta</strong>, we are only 
+considering the part that I've marked in yellow, again because that is what the parent plane before (<strong>plane_l_armWrist</strong>) 
+was cutting out. And the part that I'ved marked in dark red is what this plane
+is actually cutting out:<br />
+<img alt="Alt text" src="../../images/planeCutter_fingerHierarchy.jpg" />    </p>
+<p>After the clavicles (and the children such as arms, and wrist, and fingers...), he'll do the head. 
+And guess what - for cutting the head, again he'll only
+consider everything that was NOT cut yet by the previous planes, which is what I marked in yellow in the following image.
+And again red is that part that this plane is cutting:<br />
+<img alt="Alt text" src="../../images/planeCutter_headPart.jpg" />    </p>
+<p>And the upper leg comes after the head:<br />
+<img alt="Alt text" src="../../images/planeCutter_upperlegPart.jpg" />    </p>
+<p>The shape of the last plane in the top hierarchy is irrelevant, but the plane is still important. Because at the time it 
+gets to this plane, he'll assign all the remaining weights to this joint:<br />
+<img alt="Alt text" src="../../images/planeCutter_lastPlane.jpg" />    </p>
+<h2 id="order-of-the-siblings">Order of the Siblings</h2>
+<p>So far we've mainly talked the order is that it goes to the children first etc. But underneath the siblings, which ones will
+he do first?<br />
+This is determined by the <strong>priority</strong> attribute, each plane has it:<br />
+<img alt="Alt text" src="../../images/planeCutter_priorityAttribute.jpg" />  <br />
+Basically from all the siblings, the ones that have higher priority will be called first. And if a plane doesn't have siblings,
+this attribute is ignored.</p>
+<h2 id="plane-influence-goes-into-infinity">Plane Influence goes into Infinity</h2>
+<p>You might have noticed already that some of the planes are very small. And that's ok in most cases, he'll sort of creates a tangent
+from the edge of the planes, so their influence go into the infinity. In the following image you can see what <em>can happen</em> 
+if the plane is smaller. I drew a grey line to where the influence goes, and there you can see he's grabbing some of the 
+vertices that shouldn't be affected.
+<img alt="Alt text" src="../../images/planeCutter_cuttingGoneBad.jpg" />    </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This tangent/infinity is by far the most common cause for troubles. Whenever you have things not working as expected, 
+first check the tangents of all the planes.</p>
+</div>
 <h2 id="create-the-planes">Create the Planes</h2>
-<p>Here we'll show how to set it up for a Biped. For quadrupeds it would be similar.</p>
+<p>Now that we know how the planes hierarchy works, let's look at how to create them for a Biped. For quadrupeds it would be similar.</p>
 <h3 id="1-create">1. Create</h3>
 <p>After you built the character, in the <strong>Segments</strong> tab, under <strong>Create</strong>, click <strong>Create for All Joints</strong>:<br />
 <img alt="Alt text" src="../../images/planeCutter_createForAllJoints.jpg" />  <br />
@@ -1674,7 +1850,7 @@ aligned a bit strangely, this might be a good time to go back into the blueprint
 <p><img alt="Alt text" src="../../images/planeCutter_upperLeg.jpg" />        </p>
 <h3 id="5-take-care-of-the-ankle">5. Take care of the ankle</h3>
 <p>By default, the ankle plane (<em>plane_l_legWrist</em>) is oriented based on the joints. But that's not a good thing. In the following image, this plane
-would cut the heel off the foot:<br />
+would cut the heel from the foot:<br />
 <img alt="Alt text" src="../../images/planeCutter_ankleBad.jpg" /><br />
 So we need to rotate the CVs, so the plane cuts the foot as a whole:<br />
 <img alt="Alt text" src="../../images/planeCutter_ankleGood.jpg" />  </p>
@@ -1684,8 +1860,72 @@ So we need to rotate the CVs, so the plane cuts the foot as a whole:<br />
 <p><img alt="Alt text" src="../../images/planeCutter_mirrorAllPlanes.jpg" />    </p>
 <h3 id="8-try-it-out">8. Try it out</h3>
 <p><img alt="Alt text" src="../../images/planeCutter_skinCluster.jpg" />  <br />
-Then move around the ctrls, or apply some ROM. Is probably not perfect at the first time, so just adjust the planes, mirror, and 
-click the <strong>Selected Polys all Planes</strong> button again.</p>
+Then move around the ctrls, or apply some ROM. It's probably not perfect at the first time, so just adjust the planes, mirror, and 
+click the <strong>Selected Polys all Planes</strong> button again. Repeat that cycle until you find it's good enough for a first pass.</p>
+<h2 id="getting-better-default-planes">Getting better Default Planes</h2>
+<p>When you click the button <strong>Create for All Joints</strong>, he'll just create the planes based on what he sees in the rig.
+There's a way to define a little bit how this button should create planes. For example you can specify a few limbs to not
+have joints. Or you can specify a few limbs to be in the top hierarchy.  </p>
+<p>In the puppet tool all limbs have this <strong>Segments Priority</strong> attribute: <br />
+<img alt="Alt text" src="../../images/planeCutter_segmentPriorityDefault.jpg" />    </p>
+<p>It's a multifunctional attribute, see in the following table how to set it:</p>
+<table>
+<thead>
+<tr>
+<th>Segments Priority</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-1</td>
+<td>don't create planes for this limb</td>
+</tr>
+<tr>
+<td>0</td>
+<td>default, just put those planes under the parent limb in the puppet tool</td>
+</tr>
+<tr>
+<td>&gt; 0</td>
+<td>put it at the top of the hierarchy and assign this value as the priority</td>
+</tr>
+</tbody>
+</table>
+<h2 id="export-planes">Export Planes</h2>
+<p>The export tool just exports the <em>_planes</em> group. No need to select anything for it: <br />
+<img alt="Alt text" src="../../images/planeCutter_export.jpg" />    </p>
+<h2 id="proxy-cuts">Proxy Cuts</h2>
+<p>You can also use those planes to create Proxy Cut geometry:  <br />
+<img alt="Alt text" src="../../images/planeCutter_proxyCuts.jpg" />    </p>
+<p>When you've got the planes in the scene, just use the <strong>GeoCut</strong> tool:<br />
+<img alt="Alt text" src="../../images/planeCutter_proxyCutsTool.jpg" />  <br />
+After that you may have to use the <strong>Proxy</strong> tool to create proper meshes from the geos the previous tool cut:<br />
+<img alt="Alt text" src="../../images/planeCutter_makeProxys.jpg" />  <br />
+And export those using the <strong>Export -&gt; MayaImport</strong> tool.</p>
+<p>But then setting those up in the rig is a python thing at this point. But you can copy/paste this python script
+as a start:<br />
+<div class="highlight"><pre><span></span><code><span class="nd">@builderTools</span><span class="o">.</span><span class="n">addToBuild</span><span class="p">(</span><span class="n">iOrder</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">proxys</span><span class="p">():</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">kangarooTabTools.segments</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">segments</span>
+    <span class="n">segments</span><span class="o">.</span><span class="n">parentProxyMeshes</span><span class="p">()</span>
+
+    <span class="n">sMaster</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">getMasterName</span><span class="p">()</span>
+    <span class="n">cmds</span><span class="o">.</span><span class="n">parent</span><span class="p">(</span><span class="s1">&#39;_proxys&#39;</span><span class="p">,</span> <span class="n">sMaster</span><span class="p">)</span>
+
+    <span class="n">sProxysAttr</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">addAttr</span><span class="p">(</span><span class="n">sMaster</span><span class="p">,</span> <span class="n">ln</span><span class="o">=</span><span class="s1">&#39;proxys&#39;</span><span class="p">,</span> <span class="n">at</span><span class="o">=</span><span class="s1">&#39;enum&#39;</span><span class="p">,</span> <span class="n">en</span><span class="o">=</span><span class="s1">&#39;OFF:ON:BOTH&#39;</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">nodes</span><span class="o">.</span><span class="n">createConditionNode</span><span class="p">(</span><span class="n">sProxysAttr</span><span class="p">,</span> <span class="s1">&#39;!=&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">sTarget</span><span class="o">=</span><span class="s1">&#39;_proxys.v&#39;</span><span class="p">)</span>
+
+    <span class="n">sModelChildren</span> <span class="o">=</span> <span class="n">cmds</span><span class="o">.</span><span class="n">listRelatives</span><span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">typ</span><span class="o">=</span><span class="s1">&#39;transform&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[]</span>
+    <span class="n">nodes</span><span class="o">.</span><span class="n">createConditionNode</span><span class="p">(</span><span class="n">sProxysAttr</span><span class="p">,</span> <span class="s1">&#39;!=&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">sTarget</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">.v&#39;</span> <span class="o">%</span> <span class="n">sT</span> <span class="k">for</span> <span class="n">sT</span> <span class="ow">in</span> <span class="n">sModelChildren</span><span class="p">])</span>
+
+    <span class="n">cmds</span><span class="o">.</span><span class="n">setAttr</span><span class="p">(</span><span class="s1">&#39;_proxys.overrideEnabled&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">cmds</span><span class="o">.</span><span class="n">setAttr</span><span class="p">(</span><span class="s1">&#39;_proxys.overrideDisplayType&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div></p>
+<h2 id="reset-planes">Reset Planes</h2>
+<p>Resetting the planes is setting them to the point that they would be if you clicked the <strong>Create for All Joints</strong> button.</p>
+<p>This is especially useful for the fingers, where those planes get funky quickly as you adjust blueprints.</p>
+<h2 id="rebuild">Rebuild</h2>
+<p>This is for adding more or less resolution to the planes. It's basically just calling <strong>Surfaces -&gt; Rebuild</strong></p>
 
 
 

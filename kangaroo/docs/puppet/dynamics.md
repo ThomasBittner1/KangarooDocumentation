@@ -70,7 +70,7 @@ the *Dynamics* attribute to **lock start and end**:
 
 
 ## Baking Simulation
-For baking you can just click the **Sim** button in the [picker](../tools/animTool.mod):  
+For baking you can just click the **Sim** button in the [picker](../animationTools.md):  
 ![Alt text](../images/dynamics_bakeoptions.jpg)   
 This bakes the simulations to the ctrls. 
 For Springs this is very accurate. But for Dynamics (hairSystem), since that's a post thing, the keys baked to the ctrls are more like an appreviation. 

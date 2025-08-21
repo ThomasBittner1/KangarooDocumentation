@@ -6,7 +6,7 @@
 ## Mirror
 
 !!! info "Video"
-    The Mirror is shown in the first part of the [Video](https://www.youtube.com/watch?v=0ZUVseX12dQ)
+    The Mirror is shown in the first part of the [Video](https://www.youtube.com/watch?v=0ZUVseX12dQ){target="_blank"}
 
 While the video already gives you a good intro in how to use them, here's a few extra features that got added after
 creating the video:
@@ -21,14 +21,14 @@ topology of your mesh is unsymmetrical
  
 ## Create Symmetry Mesh
 !!! info "Video"
-    Creating symmetry mesh is explained [here](https://www.youtube.com/watch?v=0ZUVseX12dQ&t=2m10s)
+    Creating symmetry mesh is explained [here](https://www.youtube.com/watch?v=0ZUVseX12dQ&t=2m10s){target="_blank"}
     
     
    
 ## Match Vertex Positions
 Very simple but extremely seful tool to just match some vertices to another mesh.
 !!! info "Video"
-    See it in action [here](https://www.youtube.com/watch?v=0ZUVseX12dQ&t=2m53s)
+    See it in action [here](https://www.youtube.com/watch?v=0ZUVseX12dQ&t=2m53s){target="_blank"}
 
 
 
@@ -39,7 +39,7 @@ If you are using *Shape Editor* or *Pose Editor*, the warping is tied into there
 of those tools, you can use this tool to warp them.
 
 !!! info "Video"
-    See how it works in this [video (Model Change)](https://www.youtube.com/watch?v=3V0RUjhqewY&t=7m14s).  
+    See how it works in this [video (Model Change)](https://www.youtube.com/watch?v=3V0RUjhqewY&t=7m14s){target="_blank"}.  
     For the options, the video recommends *matrix*, but lately is has shown that most of the time **Wrap Deformer** 
     is the best option, even if topology is the same.  
     **The first part of this video is outdated!**. We now use the Pose Editor instead of those python functions.
@@ -52,7 +52,7 @@ If you are using *Shape Editor* or *Pose Editor*, the warping is tied into there
 of those tools, you can use this tool to warp them.
 
 !!! info "Video"
-    See how it works in this [video](https://www.youtube.com/watch?v=3V0RUjhqewY&t=6m45s).   
+    See how it works in this [video](https://www.youtube.com/watch?v=3V0RUjhqewY&t=6m45s){target="_blank"}.   
     **The first part of this video is outdated!**. We now use the Pose Editor instead of those python functions.
 
 

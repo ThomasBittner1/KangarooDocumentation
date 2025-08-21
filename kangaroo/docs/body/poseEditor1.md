@@ -8,7 +8,7 @@ It consists of Interpolators, Interpolator Attributes and Targets, Meshes and Ct
 ![Alt text](../images/poseEditor_ui.jpg)  
 
 !!! info "Video" 
-    To see how the Pose Editor works in action, you can also watch this [Video](https://www.youtube.com/embed/oPQHf2HOq5o).    
+    To see how the Pose Editor works in action, you can also watch this [Video](https://www.youtube.com/embed/oPQHf2HOq5o){target="_blank"}.    
     But keep in mind it's a bit outdated, especially the [model update (Pose Editor II)](poseEditor2.md#model-change) part has changed.
 
 

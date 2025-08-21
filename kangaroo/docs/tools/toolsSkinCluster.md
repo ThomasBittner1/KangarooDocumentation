@@ -4,7 +4,7 @@ and then click the buttons. This usually keeps the weights cleaner than if you w
 
 ![Alt text](../images/tools_skinCluster.jpg)  
 
-The best way to learn about the skinning tools is by watching [this video](https://www.youtube.com/watch?v=z4GYYWd6gS4).  
+The best way to learn about the skinning tools is by watching [this video](https://www.youtube.com/watch?v=z4GYYWd6gS4){target="_blank"}.  
 Use this page more as a *table of contents*. You'll see a lot of direct links to the proper time stamps of that video.
 
 
@@ -12,7 +12,7 @@ Use this page more as a *table of contents*. You'll see a lot of direct links to
 The skinning tools work for multiple skinClusters, and the attribute to specify which one is **Choose SkinCluster**. 
 If you leave it empty, it chooses the default one. 
 !!! info "Video"
-    Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=8m13s) to see in action how *Choose SkinCluster* works.
+    Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=8m13s){target="_blank"} to see in action how *Choose SkinCluster* works.
 !!! note
     One thing that got added after the video was created is that you can also specify suffixes in the *Choose SkinCluster*
     field, such as *\_\_BEND* or *\_\_ZIPPER*.  
@@ -31,7 +31,7 @@ on top (you can control the smoothness with the *Smooth Steps*
 
 
 !!! info "Video"
-    Flood is the first thing shown in the [Video](https://www.youtube.com/watch?v=z4GYYWd6gS4)
+    Flood is the first thing shown in the [Video](https://www.youtube.com/watch?v=z4GYYWd6gS4){target="_blank"}
 
 One thing not fully explained in the video is **Joint Lines**.
 Joint Lines are ... 
@@ -53,7 +53,7 @@ This is useful for:
 
     
 !!! info "Video"
-    Check Distribute Option [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=1m36s)
+    Check Distribute Option [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=1m36s){target="_blank"}
 
 
 
@@ -75,7 +75,7 @@ the previous weights.
 This is useful when you've already generated the weights and then you did changes to the setup.  
 
 !!! info "Video"
-    Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=12m15s) to see *ClosestExpand* in action  
+    Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=12m15s){target="_blank"} to see *ClosestExpand* in action  
 
 
 
@@ -84,7 +84,7 @@ Well - what can I say, the properly most popular tool in the set.
 But don't overuse it!!
 
 !!! info "Video"
-    Check Smooth Tool [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=3m26s)
+    Check Smooth Tool [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=3m26s){target="_blank"}
 
 
 ## Average
@@ -92,7 +92,7 @@ This averages the weights. Often you use it on buttons. It can also average isla
 for example when you have a lot of buttons combined into a single mesh.  
 
 !!! info "Video"
-    Check Average Tool [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=4m08s)
+    Check Average Tool [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=4m08s){target="_blank"}
 
 
 ## Transfer 
@@ -100,7 +100,7 @@ Transfers weights from another mesh. Make sure you try using it together with Ve
 But there's also a lot of other imporant hidden features, best watch the video from the link below:
 
 !!! info "Video"
-    Check Average Tool [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=4m45s)
+    Check Average Tool [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=4m45s){target="_blank"}
 
 
 ## IntTransfer
@@ -109,7 +109,7 @@ To use that properly, just select a few vertices **without** Soft Selection. Bec
 vertex find the the closest non-selected vertex and transfer from that.   
 
 !!! info "Video"
-    Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=11m32s) to see *IntTransfer* in action  
+    Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=11m32s){target="_blank"} to see *IntTransfer* in action  
 
 
 ## Copy/Paste
@@ -117,7 +117,7 @@ Select a vertex to copy from, and click *Copy*, then select vertices you want to
 On the *Paste* you can also do Soft Selection, and also you can paste onto a different mesh. It'll just ask you
 if he should assign the new influences.
 !!! info "Video"
-    Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=18m27s) to see copy/paste in action.   
+    Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=18m27s){target="_blank"} to see copy/paste in action.   
 
 
 ## MirrorTopo
@@ -126,7 +126,7 @@ which vertex belongs to which.
 It works on meshes that have different shape left and right, as long as the topology is symmetrical. By *Topology* we refer
 to the way how edges are connected together.
 !!! info "Video"
-    Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=18m57s) for better explanation.   
+    Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=18m57s){target="_blank"} for better explanation.   
 
 
 
@@ -137,7 +137,7 @@ meshes selected, and he can mirror from left to right meshes.
 **Mirror Middle** is the second button in that tool - it just averages left/right, best apply it just to vertices close to the symmetry line.
 
 !!! info "Video"
-    Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=20m50s) to see it in action.    
+    Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=20m50s){target="_blank"} to see it in action.    
     Just the *Mirror Middle* is a new button and therefore not shown in the video.
 
 
@@ -154,7 +154,7 @@ example: "^, namespace0:" will find the To joints in the namespace "namespace0:"
 - You can also add joints to the columns by right click *Set From Selected*
 
 !!! info "Video"
-    Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=21m39s) to see it in action.    
+    Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=21m39s){target="_blank"} to see it in action.    
 
 
 !!! tip
@@ -170,15 +170,15 @@ example: "^, namespace0:" will find the To joints in the namespace "namespace0:"
 Similar to the Maya prune, but first assigns stuff into weight islands. This means you can prune with a higher value
 without getting weight artefacts.
 !!! info "Video"
-    Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=16m37s) for better explanation.   
-    Actually to get the full picture it's best starting from [Why can I not paint Weights Kangaroo Skin Tools?](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=15m57s).   
+    Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=16m37s){target="_blank"} for better explanation.   
+    Actually to get the full picture it's best starting from [Why can I not paint Weights Kangaroo Skin Tools?](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=15m57s){target="_blank"}.   
 
 
 ## MaxInf
 This makes sure that each vertex has not more than a specific amount of influences. Very important when you are rigging for Game Engines.  
 Only works on full meshes (no vertex selection)
 !!! info "Video"
-    Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=25m29s) to see it in action.   
+    Check [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=25m29s){target="_blank"} to see it in action.   
 
 
 ## Normalize
@@ -189,4 +189,4 @@ Only works on full meshes (no vertex selection)
 ## Python
 You can also run those tools in python
 !!! info "Video"
-    Check how to run those tools in python [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=3m32s)
+    Check how to run those tools in python [here](https://www.youtube.com/watch?v=z4GYYWd6gS4&t=3m32s){target="_blank"}

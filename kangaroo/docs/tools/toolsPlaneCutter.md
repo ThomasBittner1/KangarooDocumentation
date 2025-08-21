@@ -1,13 +1,10 @@
 
-## Plane Cutter
-Plane Skinner is a tool that can get you quick first pass **SkinCluster** or **Proxy Geometries**
+Plane Cutter is a tool that can get you quick first pass **SkinCluster** or **Proxy Geometries**
 
 <video autoplay muted loop controls width="1266">
     <source src="../../images/planeCutter_selectedPolysAllPlanes.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
-
- 
 
 !!! info "Video"
     While this document explains it all - if you find it simpler to follow in a video, click [here](https://www.youtube.com/embed/sQqQVCS2vWY){target="_blank"}
@@ -19,8 +16,57 @@ Plane Skinner is a tool that can get you quick first pass **SkinCluster** or **P
     target="_blank">LinkedIn Post</a>
 
 
-## Create the Planes
+## How does it work??
+Before we create the planes, let's have a look at a finished example. In the following image you can see how the planes are
+ordered in a hierarchy:  
+![Alt text](../images/planeCutter_hierarchy.jpg)    
+And the hierarchy is not the same as the joint hierarchy. One of the differences you see is that **plane_l_clavicleMain**
+and **plane_m_head** are at the top of the hierarchy. This means he will cut the clavicle and head first.  
+But what also matters is that he's traversing through all the planes recursively, which means that for every plane he uses to cut,
+he will go through all the child planes one by one, and when all the child planes are done, he'll go back and do the sibling of the parent etc..  
 
+Let's look at **plane_l_arm_upperTwist_000** in the following picture. The plane is a bit small, but you'll see the blue arrow 
+pointing to it. I've marked in yellow the part that this plane is considering. Which is the part that its parent   
+(*plane_l_clavicleMain*) was cutting out already. And in red I've marked the part that this plane is actually cutting out:  
+![Alt text](../images/planeCutter_arm.jpg)    
+
+Now it gets interesting when we get to the fingers. When we are cutting the **plane_l_thumbMeta**
+(which is where the blue arrow is pointing to), we are only considering the part that I've marked in yellow, again because that is 
+what the parent plane before (**plane_l_armWrist**) was cutting out. And the part that I'ved marked in dark red is what this plane
+is actually cutting out:  
+![Alt text](../images/planeCutter_fingerHierarchy.jpg)    
+
+After the clavicles (and the children such as arms, and wrist, and fingers...), he'll do the head. And guess what - for cutting the head, he'll only
+consider everything that was NOT cut yet by the previous planes, which is what I marked in yellow in the following image.
+And again red is that part that this plane is cutting:  
+![Alt text](../images/planeCutter_headPart.jpg)    
+
+And this the upper leg comes after the head:  
+![Alt text](../images/planeCutter_upperlegPart.jpg)    
+
+
+## Order of the Siblings
+So far we've mainly talked the order is that it goes to the children first etc. But underneath the siblings, which ones will
+he do first?  
+This is determined by the **priority** attribute, each plane has it:  
+![Alt text](../images/planeCutter_priorityAttribute.jpg)    
+Basically from all the siblings, the ones that have higher priority will be called first. And if a plane doesn't have siblings,
+this attribute is ignored.
+
+## Plane Influence goes into Infinity
+You might have noticed already that some of the planes are very small. And that's ok in most cases, he'll sort of creates a tangent
+from the edge of the planes, so their influence go into the infinity. In the following image you can see what *can happen* 
+if the plane is smaller. I drew a grey line to where the influence goes, and there you can see he's grabbing some of the 
+vertices that shouldn't be affected.
+![Alt text](../images/planeCutter_cuttingGoneBad.jpg)    
+!!! note
+    This tangent/infinity is by far the most common cause for troubles. Whenever you have things not working as expected, 
+    first check the tangents of all the planes.
+
+
+
+
+## Create the Planes
 Here we'll show how to set it up for a Biped. For quadrupeds it would be similar.
 
 ### 1. Create
@@ -33,6 +79,7 @@ This creates simple planes, and takes care of the hierarchy.
 The clavice plane is one of the few that you have to sculpt. Sculpt it so it cuts off the clavicle from the body:  
 ![Alt text](../images/planeCutter_shapeClavicle.jpg)    
 
+
 ### 3. Inspect the fingers
 In this case the fingers already work well, but sometimes you might have to adjust the cvs a bit, especially when in the
 model the fingers are very close to each others.  
@@ -40,6 +87,7 @@ model the fingers are very close to each others.
 !!! note
     Those planes between the fingers are created based on the finger joint orientations. If you see that the planes are
     aligned a bit strangely, this might be a good time to go back into the blueprints.
+
 
 ### 4. Shape the Upper Legs
 ![Alt text](../images/planeCutter_upperLeg.jpg)        
@@ -68,3 +116,9 @@ click the **Selected Polys all Planes** button again.
 
 
 
+## Getting a better Default
+
+
+
+
+## Proxy Shapes

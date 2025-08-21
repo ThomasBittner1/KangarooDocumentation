@@ -528,6 +528,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#start-frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start Frame
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#springs" class="md-nav__link">
     <span class="md-ellipsis">
       Springs
@@ -540,6 +549,24 @@
   <a href="#spine-dynamics" class="md-nav__link">
     <span class="md-ellipsis">
       Dynamics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baking-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Baking Simulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collisions
     </span>
   </a>
   
@@ -1450,6 +1477,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#start-frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start Frame
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#springs" class="md-nav__link">
     <span class="md-ellipsis">
       Springs
@@ -1462,6 +1498,24 @@
   <a href="#spine-dynamics" class="md-nav__link">
     <span class="md-ellipsis">
       Dynamics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baking-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Baking Simulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collisions
     </span>
   </a>
   
@@ -1494,8 +1548,20 @@
 </thead>
 <tbody>
 <tr>
+<td>We use that in 90 % of the cases</td>
+<td>Used rarely, but can pay off when you have many of them</td>
+</tr>
+<tr>
+<td>Easier to tweak with stiffness and damping</td>
+<td>Has a ton of attributes that are tricky to tweak for specific behaviors</td>
+</tr>
+<tr>
 <td>Expressions</td>
 <td>hairSystem</td>
+</tr>
+<tr>
+<td>Can be slower if you have many of them</td>
+<td>Better speed if you have many, as long as they get calculated in one hairSystem node</td>
 </tr>
 <tr>
 <td>SingleBone, SingleTransform and Spine (fk, fkSpline)</td>
@@ -1506,15 +1572,14 @@
 <td>Is running at the end, before the Squash Joints</td>
 </tr>
 <tr>
-<td>Easier to tweak with stiffness and damping</td>
-<td>Has a ton of attributes that are tricky to tweak for specific behaviors</td>
-</tr>
-<tr>
-<td>Only FKs</td>
+<td>Only FKs or Single Points</td>
 <td>Can do Spine FK and IK, can even have the end point locked</td>
 </tr>
 </tbody>
 </table>
+<h2 id="start-frame">Start Frame</h2>
+<p>Regardless if you create Springs or Dynamics, do not forget to set the start frame on the master node:<br />
+<img alt="Alt text" src="../../images/dynamics_startFrame.jpg" /></p>
 <h2 id="springs">Springs</h2>
 <p>The following limbs come with a <strong>Spring</strong> attribute:</p>
 <ul>
@@ -1522,24 +1587,51 @@
 <li>singleTransform    </li>
 <li>spine (fk, fkSpline)</li>
 </ul>
+<p>Here we used it with spines:  </p>
+<video autoplay muted loop controls width="1820">
+    <source src="../../images/dynamics_branchSprings.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
 <p>They work with a very basic spring equation done with Expressions:
 <div class="highlight"><pre><span></span><code>Acceleration = (Target - Position) * STIFFNESS - Velocity * DAMPING
 Velocity += Acceleration
 </code></pre></div>
 <em>STIFFNESS</em> and <em>DAMPING</em> are the attributes that are exposed and can be tweaked, even by animators. <br />
-For tweaking those values, it's best to first keep them the same value, and try variations from 0-1. <br />
+For tweaking those values, it's best to keep them the same value at first, and then try small deviations between 0.05 and 0.2. <br />
 <em>STIFFNESS</em> is how fast it comes back (stronger values = coming back quicker)<br />
-<em>DAMPING</em> is how loose it is (weaker values = looser)  </p>
+<em>DAMPING</em> is how loose it is or how far they travel (weaker values = looser)<br />
+Keep in mind the expression above is just pseudo code - the real expression is in MEL syntax.</p>
 <h2 id="spine-dynamics">Dynamics</h2>
-<p>The Spine limb also has Dynamics attribute in the <strong>advanced</strong> section, which is using <strong>hairSystem</strong> under the hood.<br />
-Can give great results, too. But trickier to tweak the behavior. </p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>You can still tweak that behavior, but it's more advanced. You'll have to find the hairSystem node and in there
-you can find all the attributes. You could even setup collisions for that.</p>
-</div>
-<p>Here we attach both end points. 
+<p>The Spine limb also has <strong>Dynamics</strong> attribute in the <strong>Advanced</strong> section. It's using <strong>hairSystem</strong> under the hood.
+Just switch <em>Dynamics</em> to <em>lock start</em>.<br />
+This creates those extra dyn joints between the main joints and the squash joints:<br />
+<img alt="Alt text" src="../../images/dynamics_joints.jpg" />  </p>
+<p>So as you can see here, this is some sort of post simulate, which means you wouldn't be able to do something like in the springs
+video above where we have a main branch and a lot of extra things parented under it.
+So for skinning, paint it to the squash joints, and not the dynamics joints!</p>
+<p>To turn on the dynamics, switch the <strong>Chain Simulation On Off</strong> attribute on the master to <strong>On</strong>.</p>
+<p>You can tweak the results with the <em>hairSystem</em> node. You'll find the <em>hairSystem</em> node for example by right click on the spine
+limb in the puppet tool, and click <em>Select Hair System</em>. 
+You can see that it's named after what you specified in <em>Dynamics Master Ctrl</em>. All the spines with the same <em>Dynamics Master Ctrl</em>
+are grouped into the same hairSystem node.</p>
+<p>The main advantage that comes with Dynamics instead of Springs is evaluation speed. If we have a ton of strands, they 
+are likely evaluating faster when we set them up as dynamics instead of springs.</p>
+<p>Another place where we'd use it instead of springs is when we want to attach the start <em>and</em> the end. For that we can just switch 
+the <em>Dynamics</em> attribute to <strong>lock start and end</strong>:<br />
 <img alt="Alt text" src="../../images/dynamics_spineTwoEndPoints.gif" />  </p>
+<h2 id="baking-simulation">Baking Simulation</h2>
+<p>For baking you can just click the <strong>Sim</strong> button in the <a href="../tools/animTool.mod">picker</a>:<br />
+<img alt="Alt text" src="../../images/dynamics_bakeoptions.jpg" /> <br />
+This bakes the simulations to the ctrls. 
+For Springs this is very accurate. But for Dynamics (hairSystem), since that's a post thing, the keys baked to the ctrls are more like an appreviation. 
+Another option you have with the dynamics is to cache nHair, which is also in the same marking menu.</p>
+<h2 id="collisions">Collisions</h2>
+<p>Collisions with both systems have been done before, but it gets very technical.</p>
+<p>For the Springs, you can do some post collision setup. Create a group between the ctrl and the spring offset 
+(e.g. <em>mainActrlSpring000</em>), and with a aimConstraint or aimMatrix node make sure this group doesn't rotate into for example
+a sphere. </p>
+<p>For Dynamics, you have the hairSystem node, and you can create collisions to that using anything from the dynamics tools in Maya.</p>
 
 
 

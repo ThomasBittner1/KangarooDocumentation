@@ -117,8 +117,59 @@ click the **Selected Polys all Planes** button again.
 
 
 ## Getting a better Default
+In the puppet tool all limbs have this **Segments Priority** attribute:   
+![Alt text](../images/planeCutter_segmentPriorityDefault.jpg)    
+
+It's a multifunctional attribute, see in the following table how to set it:
+
+| Segments Priority |                                                                          |
+|-------------------|--------------------------------------------------------------------------
+| -1                | don't create planes for this limb                                        |
+| 0                 | default, just put those planes under the parent limb in the puppet tool  |
+| > 0               | put it at the top of the hierarchy and assign this value as the priority |
+
+
+## Export Planes
+The export tool just exports the *_planes* group. No need to select anything for it:   
+![Alt text](../images/planeCutter_export.jpg)    
 
 
 
+## Proxy Cuts
+You can also use those planes to create Proxy Cut geometry:    
+![Alt text](../images/planeCutter_proxyCuts.jpg)    
 
-## Proxy Shapes
+When you've got the planes in the scene, just use the **GeoCut** tool:  
+![Alt text](../images/planeCutter_proxyCutsTool.jpg)    
+After that you may have to use the **Proxy** tool to create proper meshes from the geos the previous tool cut:  
+![Alt text](../images/planeCutter_makeProxys.jpg)    
+
+But then constraining those the joints is a python thing at this point. But you can copy/paste this python script
+as a start:  
+``` python
+@builderTools.addToBuild(iOrder=4)
+def proxys():
+    import kangarooTabTools.segments as segments
+    segments.parentProxyMeshes()
+
+    sMaster = utils.getMasterName()
+    cmds.parent('_proxys', sMaster)
+
+    sProxysAttr = nodes.addAttr(sMaster, ln='proxys', at='enum', en='OFF:ON:BOTH', k=True)
+    nodes.createConditionNode(sProxysAttr, '!=', 0, True, False, sTarget='_proxys.v')
+
+    sModelChildren = cmds.listRelatives('model', c=True, typ='transform') or []
+    nodes.createConditionNode(sProxysAttr, '!=', 1, True, False, sTarget=['%s.v' % sT for sT in sModelChildren])
+
+    cmds.setAttr('_proxys.overrideEnabled', 1)
+    cmds.setAttr('_proxys.overrideDisplayType', 2)
+
+```
+
+
+## Reset Planes
+
+
+## Rebuild
+
+

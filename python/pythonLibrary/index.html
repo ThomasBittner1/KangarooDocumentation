@@ -1983,6 +1983,14 @@ use it on a more complex function:
 <div class="highlight"><pre><span></span><code><span class="n">sExpr</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> * (1.0 - (</span><span class="si">%0.8f</span><span class="s1"> ^ ((</span><span class="si">%s</span><span class="s1"> - </span><span class="si">%s</span><span class="s1">) / </span><span class="si">%s</span><span class="s1">))) + </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">sSoftAttr</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="p">,</span> <span class="n">sSoftAttrRev</span><span class="p">,</span> <span class="n">sDistanceNormalized</span><span class="p">,</span> <span class="n">sSoftAttrSafe</span><span class="p">,</span> <span class="n">sSoftAttrRev</span><span class="p">)</span>
 <span class="n">sSoftExpr</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">fromEquation</span><span class="p">(</span><span class="n">sExpr</span><span class="p">,</span> <span class="n">sFullName</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_createNodeName</span><span class="p">(</span><span class="s1">&#39;softIk&#39;</span><span class="p">))</span>
 </code></pre></div></p>
+<p>One little gotcha you need to know is that this function cannot handle the scientific notifications which sometimes kicks in
+on very small numbers, such as <strong>1e-06</strong>.<br />
+This one for example:<br />
+<div class="highlight"><pre><span></span><code>nodes.fromEquation(f&#39;{fStrength} + 3.0&#39;)
+</code></pre></div>
+might create the scientific notation from the fStrength variable. Instead, do it like this:
+<div class="highlight"><pre><span></span><code>nodes.fromEquation(f&#39;{fStrength:.8f} + 3.0&#39;)
+</code></pre></div></p>
 <h2 id="driven-keys">Driven Keys</h2>
 <h3 id="direct">direct</h3>
 <div class="highlight"><pre><span></span><code><span class="n">nodes</span><span class="o">.</span><span class="n">setDrivenKey</span><span class="p">(</span><span class="n">sDriverAttr</span><span class="p">,</span> <span class="n">fDriverVals</span><span class="p">,</span> <span class="n">sDrivenAttrPath</span><span class="p">,</span> <span class="n">fDrivenVals</span><span class="p">,</span> <span class="n">sInTanType</span><span class="o">=</span><span class="s1">&#39;clamped&#39;</span><span class="p">,</span> <span class="n">sOutTanType</span><span class="o">=</span><span class="s1">&#39;clamped&#39;</span><span class="p">)</span>

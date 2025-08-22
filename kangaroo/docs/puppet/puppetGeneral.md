@@ -285,3 +285,27 @@ See how those joints would be better parented under one of the lower spine joint
 the *PARENT* attributee:  
 ![Alt text](../images/puppet_skeletonJointsBad.jpg)  
 
+
+
+## Auto Parent and Auto Set
+Like mentioned before, the *PARENT* attribute doesn't actually change the rig logic, the real entry that makes
+the top nodes of the limb follow another limb is the *root attacher* (**attacher: root**). If you didn't know that, it's
+best to go back and read about [Attachers](#attachers).  
+
+Now imagine you have lots of limbs attached to another limb, all those child limbs need to have the **attacher: root** 
+set properly, otherwise they'd get the default which is rarely a good thing:  
+![Alt text](../images/puppetGeneral_branch.jpg)  
+
+But there's a trick. **After you built the rig**, with right-click and **set to closest** on the combo box you can make him find the closest 
+output (joint) of the current root limb:  
+![Alt text](../images/puppetGeneral_setToClosest.gif)  
+The reason why it needs the rig built is that it's actually checking inside the rig (maya scene) which are the closest joints.
+
+To have the *PARENT* attribute set automatically from the **attacher: root**, right click on the *PARENT* combo box -> 
+**set to root attacher**:  
+![Alt text](../images/puppetGeneral_setToRootAttacher.gif)  
+
+
+
+
+

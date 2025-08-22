@@ -60,7 +60,7 @@ gets to this plane, he'll assign all the remaining weights to this joint:
 
 
 ## Order of the Siblings
-So far we've mainly talked the order is that it goes to the children first etc. But underneath the siblings, which ones will
+So far we discussed that the order is so it goes to the children first. But after the children and between the siblings, which ones will
 he do first?  
 This is determined by the **priority** attribute, each plane has it:  
 ![Alt text](../images/planeCutter_priorityAttribute.jpg)    

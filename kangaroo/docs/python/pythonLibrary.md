@@ -90,6 +90,19 @@ sExpr = '%s * (1.0 - (%0.8f ^ ((%s - %s) / %s))) + %s' % (sSoftAttr, math.e, sSo
 sSoftExpr = nodes.fromEquation(sExpr, sFullName=self._createNodeName('softIk'))
 ```
 
+One little gotcha you need to know is that this function cannot handle the scientific notifications which sometimes kicks in
+on very small numbers, such as **1e-06**.  
+This one for example:  
+```
+nodes.fromEquation(f'{fStrength} + 3.0')
+```
+might create the scientific notation from the fStrength variable. Instead, do it like this:
+```
+nodes.fromEquation(f'{fStrength:.8f} + 3.0')
+```
+
+
+
 
 ## Driven Keys 
 ### direct

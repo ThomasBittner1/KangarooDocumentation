@@ -662,6 +662,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#auto-parent-and-auto-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auto Parent and Auto Set
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1839,6 +1848,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#auto-parent-and-auto-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auto Parent and Auto Set
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2108,6 +2126,20 @@ This doesn't really change the rig logic, but it specifies where the joints shou
 See how those joints would be better parented under one of the lower spine joints? That's what you can fix with 
 the <em>PARENT</em> attributee:<br />
 <img alt="Alt text" src="../../images/puppet_skeletonJointsBad.jpg" />  </p>
+<h2 id="auto-parent-and-auto-set">Auto Parent and Auto Set</h2>
+<p>Like mentioned before, the <em>PARENT</em> attribute doesn't actually change the rig logic, the real entry that makes
+the top nodes of the limb follow another limb is the <em>root attacher</em> (<strong>attacher: root</strong>). If you didn't know that, it's
+best to go back and read about <a href="#attachers">Attachers</a>.  </p>
+<p>Now imagine you have lots of limbs attached to another limb, all those child limbs need to have the <strong>attacher: root</strong> 
+set properly, otherwise they'd get the default which is rarely a good thing:<br />
+<img alt="Alt text" src="../../images/puppetGeneral_branch.jpg" />  </p>
+<p>But there's a trick. <strong>After you built the rig</strong>, with right-click and <strong>set to closest</strong> on the combo box you can make him find the closest 
+output (joint) of the current root limb:<br />
+<img alt="Alt text" src="../../images/puppetGeneral_setToClosest.gif" /><br />
+The reason why it needs the rig built is that it's actually checking inside the rig (maya scene) which are the closest joints.</p>
+<p>To have the <em>PARENT</em> attribute set automatically from the <strong>attacher: root</strong>, right click on the <em>PARENT</em> combo box -&gt; 
+<strong>set to root attacher</strong>:<br />
+<img alt="Alt text" src="../../images/puppetGeneral_setToRootAttacher.gif" />  </p>
 
 
 

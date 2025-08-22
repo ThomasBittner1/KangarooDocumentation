@@ -86,7 +86,7 @@ the *Assets Local Dir*, and click **Save**:
 
 Then inside that new folder, let's create another empty folder for your project, and name it *\_\_MYPROJECT\_\_*
 It's important that there are **2 underscores** before the name, and **2 underscores** after the name. 
-And all has to be UPPERCASE.  
+And all has to be **UPPERCASE**.  
 Without following those rules, Kangaroo won't recognize the folder as a project.
 
 !!! note "Environment Variables"
@@ -191,3 +191,12 @@ your character so you can track things back easier whenever something's not work
 
 Keep in mind if you got until here, it means you still just scratched the surface of what you can do with Kangaroo. 
 Best keep reading the documentation and see how you can improve your rig with what you've learend.
+
+
+## You are not alone
+Always remember, you are not alone. Whenever you get stuck, there's always the [Forum](https://kangaroobuilder.discourse.group/){target="_blank"}.
+
+And while working in kangaroo, you'll see a ton of those **Go do Documentation..** links - on almost all tools inside kangaroo, when you right-click on the 
+builder functions, on the right side of the builder below the buttons, when you right click on the puppet limbs.....
+
+

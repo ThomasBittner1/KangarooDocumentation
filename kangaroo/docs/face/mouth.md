@@ -117,28 +117,34 @@ You can adjust the weights, export - and next time you build, it'll take those w
 
 mouth_ctrl:
 ```
-    funnel
-    lipPress
-    mouthLeft
-    mouthRight
-    mouthUp
-    mouthDown
+    funnel (translateZ)
+    lipPress (translateZ)
+    mouthLeft (translateX)
+    mouthRight (translateX)
+    mouthUp (translateY)
+    mouthDown (translateY)
 ```
 
 Box Ctrls Translations (*mouthBot_ctrl*, *mouthTop_ctrl*):
 ```
-    funnelBot
-    funnelTop
-    lipPressBot
-    lipPressTop    
+    funnelBot (translateZ)
+    funnelTop (translateZ)
+    lipPressBot (translateZ)
+    lipPressTop  (translateZ)
+    mouthLeft (translateX, gets split automatically between bot/top)  
+    mouthRight (translateX, gets split automatically between bot/top)  
+    upperUp (translateY, they also get used by the upper/lower spherical lip ctrls)  
+    upperDown (translateY, they also get used by the upper/lower spherical lip ctrls)  
+    lowerDown (translateY, they also get used by the upper/lower spherical lip ctrls)  
+    lowerUp (translateY, they also get used by the upper/lower spherical lip ctrls)  
 ```
 
 Box Ctrls Rotations:
 ```
-    lowerRollIn
-    lowerRollOut
-    upperRollIn
-    upperRollOut
+    lowerRollIn (rotateX)
+    lowerRollOut (rotateX)
+    upperRollIn (rotateX)
+    upperRollOut (rotateX)
 ```
 
 

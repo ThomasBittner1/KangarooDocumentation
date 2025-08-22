@@ -3,11 +3,6 @@ Plane Cutter is a tool that can get you a quick first pass **SkinCluster** or **
 
 The way it works is that you define a set of nurbs planes, and he'll use those to assign the regions.
 
-<video autoplay muted loop controls width="1266">
-    <source src="../../images/planeCutter_selectedPolysAllPlanes.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-
 !!! info "Video"
     While this document explains it all - if you find it simpler to follow in a video, click [here](https://www.youtube.com/embed/sQqQVCS2vWY){target="_blank"}.
     The video is still up to date for the most part, except the bug that is mentioned in there where it creates planes 

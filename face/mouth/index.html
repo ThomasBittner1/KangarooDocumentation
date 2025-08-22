@@ -2162,24 +2162,30 @@ You can adjust the weights, export - and next time you build, it'll take those w
 explore another way, such as <a href="#splines">bSPLINES</a> or <a href="../faceTweakerCtrls/#tweaker_lips">Tweaker Lip Splines with bSplines</a>. </p>
 </div>
 <p>mouth_ctrl:
-<div class="highlight"><pre><span></span><code>    funnel
-    lipPress
-    mouthLeft
-    mouthRight
-    mouthUp
-    mouthDown
+<div class="highlight"><pre><span></span><code>    funnel (translateZ)
+    lipPress (translateZ)
+    mouthLeft (translateX)
+    mouthRight (translateX)
+    mouthUp (translateY)
+    mouthDown (translateY)
 </code></pre></div></p>
 <p>Box Ctrls Translations (<em>mouthBot_ctrl</em>, <em>mouthTop_ctrl</em>):
-<div class="highlight"><pre><span></span><code>    funnelBot
-    funnelTop
-    lipPressBot
-    lipPressTop    
+<div class="highlight"><pre><span></span><code>    funnelBot (translateZ)
+    funnelTop (translateZ)
+    lipPressBot (translateZ)
+    lipPressTop  (translateZ)
+    mouthLeft (translateX, gets split automatically between bot/top)  
+    mouthRight (translateX, gets split automatically between bot/top)  
+    upperUp (translateY)  
+    upperDown (translateY)  
+    lowerDown (translateY)  
+    lowerUp (translateY)  
 </code></pre></div></p>
 <p>Box Ctrls Rotations:
-<div class="highlight"><pre><span></span><code>    lowerRollIn
-    lowerRollOut
-    upperRollIn
-    upperRollOut
+<div class="highlight"><pre><span></span><code>    lowerRollIn (rotateX)
+    lowerRollOut (rotateX)
+    upperRollIn (rotateX)
+    upperRollOut (rotateX)
 </code></pre></div></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

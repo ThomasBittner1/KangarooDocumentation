@@ -128,7 +128,7 @@ click the **Selected Polys all Planes** button again. Repeat that cycle until yo
 ## Getting better Default Planes
 When you click the button **Create for All Joints**, he'll just create the planes based on what he sees in the rig.
 There's a way to define a little bit how this button should create planes. For example you can specify a few limbs to not
-have joints. Or you can specify a few limbs to be in the top hierarchy.  
+have planes. Or you can specify a few limbs to create their planes be in the top hierarchy.  
 
 In the puppet tool all limbs have this **Segments Priority** attribute:   
 ![Alt text](../images/planeCutter_segmentPriorityDefault.jpg)    

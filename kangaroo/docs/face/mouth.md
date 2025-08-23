@@ -348,7 +348,7 @@ The passers of the [Lip Ctrls](#upper-and-lower-ctrls) come with a few extra att
 | *Aim To Neighbors Pucker Multiply* | On CornerIn the aiming is a bit unstable, with this multiplier you can turn it off    |
 | *Live Tangent*                     | If this is 1.0, the joints get aimed along the spline                                 |
 
-Saving those attributes happens with the [** === DEFAULT ATTRS === **](faceGeneral.md#defaultattrs) button.
+**Mirroring** and **saving** those attributes happens with the [** === DEFAULT ATTRS === **](faceGeneral.md#defaultattrs) button.
 
 
 #### 5. Pose Locators
@@ -358,13 +358,15 @@ And all the pose locators are easily found by just selecting the ctrls, and in t
 activated one as shown and the others are invisible:
 ![Alt text](../images/mouth_poseLocators.jpg)
 
-As you move around those locators, it's recommended to turn off the **lipPush** on all top ctrls - **lipsTop\*_ctrl**!
+As you move around those locators, make sure to turn off the **lipPush** on all top ctrls(**lipsTop\*_ctrl**)!
 The next time you build it, it remembers the offset, and incorporates those into the lipPush setup.
 
 !!! tip
     There's a lot of poseLocators in the *BASEMouthCtrls()* function, even for each detail ctrls. If you end up using them a lot, it's worth checking out the options under the
     button ** -- PoseLoc Tools -- **.  
     ![Alt text](../images/mouth_poseLocTools.jpg)
+
+Same as with passer attributes, **mirroring** and **saving** the Pose Locator values happens with the [** === DEFAULT ATTRS === **](faceGeneral.md#defaultattrs) button.
 
 
 ### Splines - Adjusting Pivots for Lip Rolls
@@ -390,7 +392,39 @@ Each of them also comes with a set of [Pose Locators](#5-pose-locators), so you 
 *Do you think they are too many?*  
 Well, they are just a ctrl for each small joint. If you want less, you can consider to set a higher value to *iSkipSplineJoints*.  
 But honestly they shouldn't be animated too much, they are really just to fine tune things. 
-     
+   
+
+## MouthClose Attribute
+**This does NOT close the mouth if the mouth is open in the model!**
+Ideally the mouth is closed in the model already. If it's open, this attribute (and other setups in Kangaroo) will not work nicely.
+
+Adn the mouthClose attribute basically just closes the mouth as the jaw opens:  
+![Alt text](../images/mouth_mouthClose.gif)  
+
+The way you set it up is different in splines and blendShapes.
+
+### MouthClose with Splines
+For Splines we use the Pose Locators.  
+First you define the *jawOpen* pose of how far the mouthClose is supported in the **dPoseCtrlValues** attribute:  
+![Alt text](../images/mouth_mouthClosePose.jpg)  
+
+After building open the jaw by setting it to that value (*jaw_ctrl.rz* to -20.0 in our example), set the *mouthClose*
+attribute to 1.0, and adjust the pose locators to make the mouth close:  
+![Alt text](../images/mouth_mouthClosePoseLoc.jpg)  
+You find those Pose Locators on the box ctrls, but also on the spherical bot/top lips ctrls.  
+
+And don't forget to save the pose locator setup with the [** === DEFAULT ATTRS === **](faceGeneral.md#defaultattrs) button. 
+
+
+### MouthClose with BlendShapes
+The blendShape way works a bit different. First it's ignoring the *jawOpenOnMouthClose* attribute in the *dPoseCtrlValues*.
+And then in the shape editor you have this combo called **jawOpen50_mouthClose**:  
+![Alt text](../images/mouth_mouthCloseShapeEditor.jpg)  
+This is bascially the shape that is called by jawOpen (50 %) and mouthClose attribute activated. MouthClose should stay as an empty target.
+You can change the percentage of the jaw, see [Combos - Add Percentage](shapeEditor1.md#combos-add-percentage)
+
+
+
 
 ## NLF Setup
 *NLF* stands for *Nasolabial Fold*, and it's that line between the nose wing and the mouth corners. Some characters have it more prominent than others.

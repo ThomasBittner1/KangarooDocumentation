@@ -93,7 +93,7 @@ Look at this example. See how it moves more linear, but if I move one alone it s
     The disadvantages of both modes (*Multiply* and *Minimum*) are only getting worse the more Main Targets you use for the 
     combo. So keep it to a minimum! Any combination of more than 3 targets can get very nasty.
 
-### Combos - add Percentage
+### Combos - add Percentage {#combos-add-percentage}
 When you open the blendShapes.ma on the *THOMAS* asset, you'll see a combo called jawOpen50_mouthClose. This just means
 that the jawOpen will only go to 0.5 (50 %):  
 

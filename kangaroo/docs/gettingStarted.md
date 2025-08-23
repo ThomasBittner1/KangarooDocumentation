@@ -210,7 +210,7 @@ Whenever you get stuck, there's always the [Forum](https://kangaroobuilder.disco
 
 And there's the option of getting extra support - [info@kangaroobuilder.com](mailto:info@kangaroobuilder.com) 
 
-Also - while working in kangaroo, you'll see a ton of those **Go do Documentation..** links, for example at the top 
+Also - while working in Kangaroo, you'll see a lot of **"Go to Documentation.."** links, for example at the top 
 of almost every tool:  
 ![Alt text](images/goToDocumentation_topOfTool.jpg)  
 
@@ -229,7 +229,7 @@ Even in the limbs library:
 And many puppet attributes have info on their right click:  
 ![Alt text](images/goToDocumentation_puppetAttributes.jpg)  
 
-So yes, there's a lot to learn, **but you can do it!**
+So yes, there's a lot to learn - but **you can do it!**
 
 
 

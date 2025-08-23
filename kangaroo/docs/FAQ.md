@@ -3,7 +3,7 @@
 ### Which Maya versions are supported?
 
 - Maya 2022 (Windows)
-- Maya 2023 (Windows, Linux, Mac)
+- Maya 2023 (Windows, Mac)
 - Maya 2024 (Windows, Linux, Mac)
 - Maya 2025 (Windows, Linux, Mac)
 - Maya 2026 (Windows, Linux, Mac)

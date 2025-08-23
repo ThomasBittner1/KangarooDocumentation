@@ -305,7 +305,9 @@ To have the *PARENT* attribute set automatically from the **attacher: root**, ri
 **set to root attacher**:  
 ![Alt text](../images/puppetGeneral_setToRootAttacher.gif)  
 
-
+!!! note 
+    There's a little known issue at this time - when you click **set to attacher**, the combo box doesn't always update
+    right away. But you'll see that it did something when you deselect and select again.  
 
 
 

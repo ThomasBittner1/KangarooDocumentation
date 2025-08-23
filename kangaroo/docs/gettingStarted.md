@@ -5,6 +5,13 @@
 3. You should see the new KangarooBuilder shelf already.
 4. Restart Maya
 
+This is the shelf that you should get (*KangarooBuilder*):  
+![Alt text](images/gettingstarted_shelf.jpg)  
+If you don't have it by now, check in the script editor if you get any errors when dropping the *install.mel* file.   
+
+Then to open the UI that has about 90 % of Kangaroo Tools, click ![Alt text](images/gettingStarted_uiButton.jpg) (UI)
+on the very left of the *KangarooBuilder* shelf.
+
 ### Numpy
 If you get an error that numpy is missing, you'll have to install numpy, too.
 We do that with *pip install*.  
@@ -12,11 +19,11 @@ We do that with *pip install*.
 Here we'll explain how to do that in Windows. If you are on Linux or Mac it would be a bit different but similar.
 
 Navigate to your maya installation folder, it will look something like this:
-```bash
+``` 
 C:\Program Files\Autodesk\Maya2024\bin 
 ```
 In there open a *Command Prompt* (either by right click, or type *cmd* in the address bar), and run
-``` bash
+``` 
 ./mayapy.exe -m pip install ‐‐user numpy
 ```
 !!! note
@@ -32,17 +39,17 @@ In there open a *Command Prompt* (either by right click, or type *cmd* in the ad
 
 ### Mac
 If you are on a Mac, the mayapy location looks a bit more like this:
-``` bash
+``` 
 /Applications/Autodesk/maya2024/Maya.app/Contents/bin
 ```
 And you run the mayapy without the *.exe*:
-``` bash
+``` 
 ./mayapy -m pip install numpy
 ```
 
 <!--
 Another extra thing you have to do if you are on Mac is install **pyobjc**:
-``` bash
+``` 
 ./mayapy -m pip install pyobjc
 ```
 -->
@@ -50,7 +57,7 @@ Another extra thing you have to do if you are on Mac is install **pyobjc**:
 ### Linux
 
 For some copy/paste options to work, you need to install *clip*:
-``` bash
+``` 
 sudo dnf install xclip
 ```
 
@@ -60,7 +67,7 @@ sudo dnf install xclip
 
 If you just want to use the SkinCluster/Geometry Tools or the Shape Editor or the Picker - you don't need to setup the directories.
 
-But if you want to build characters, there's a little bit of more setup we have to do now.
+But if you want to build characters, there's a little bit of more setup we have to do.
 
 First of all you need to understand that Kangaroo is not just a Rigging Tool. It's a *Rigging Pipeline* that helps you also
 increment/version your assets, and even backup and share with the team.    
@@ -106,6 +113,11 @@ And we usually grab one from the server. **Templates** is one server that comes 
 - **BASELEGOFIGURE**
 - **THOMAS** (BlendShape driven Face Rig)
 
+!!! note
+    If you are rigging a bear, you may find that some types of bears are running on their front legs more like dogs 
+    (digigrades). If you find that your bear is like this, you can replace the front legs with dogs leg. But before
+    doing that, get familiar with the [Puppet Tool](puppet/puppetGeneral.md) first.
+
 Let's go to the BASEHUMAN, and then in **Export -> NEW**, set the project and new asset name, and then click **Create**:
 
 <video autoplay muted loop controls width="826">
@@ -144,7 +156,7 @@ Or if you are working in a network, it can be a location on the network.
 If you don't have one yet, just create an empty folder again.
 And after that, open the **pathEnv.mel** file with a text editor, and change the path after *default@* to be your server path.
 Important: even in Windows, do not use **\\** for separating the folders, it all has to be **/**. 
-```bash
+```
 putenv "KANGAROO_SERVER_PATH" "templates@./templates; default@C:/Users/thoma/Dropbox/assetsServer";
 ```
 !!! note "Windows"
@@ -193,10 +205,32 @@ Keep in mind if you got until here, it means you still just scratched the surfac
 Best keep reading the documentation and see how you can improve your rig with what you've learend.
 
 
-## You are not alone
-Always remember, you are not alone. Whenever you get stuck, there's always the [Forum](https://kangaroobuilder.discourse.group/){target="_blank"}.
+## You are not alone!
+Whenever you get stuck, there's always the [Forum](https://kangaroobuilder.discourse.group/){target="_blank"}.
 
-And while working in kangaroo, you'll see a ton of those **Go do Documentation..** links - on almost all tools inside kangaroo, when you right-click on the 
-builder functions, on the right side of the builder below the buttons, when you right click on the puppet limbs.....
+And there's the option of getting extra support - [info@kangaroobuilder.com](mailto:info@kangaroobuilder.com) 
+
+Also - while working in kangaroo, you'll see a ton of those **Go do Documentation..** links, for example at the top 
+of almost every tool:  
+![Alt text](images/goToDocumentation_topOfTool.jpg)  
+
+Many builder functions have it on right-click:  
+![Alt text](images/goToDocumentation_manyBuilderFunctions.jpg)  
+
+Some builder buttons have those **?** buttons:  
+![Alt text](images/goToDocumentation_questionButtons.jpg)    
+
+When you right-click on the limbs:  
+![Alt text](images/goToDocumentation_rightclickonLimbs.jpg)    
+
+Even in the limbs library:  
+![Alt text](images/goToDocumentation_rightclickonLimbLibrary.jpg)
+
+And many puppet attributes have info on their right click:  
+![Alt text](images/goToDocumentation_puppetAttributes.jpg)  
+
+So yes, there's a lot to learn, **but you can do it!**
+
+
 
 

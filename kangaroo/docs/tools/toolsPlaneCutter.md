@@ -123,6 +123,9 @@ So we need to rotate the CVs, so the plane cuts the foot as a whole:
 Then move around the ctrls, or apply some ROM. It's probably not perfect at the first time, so just adjust the planes, mirror, and 
 click the **Selected Polys all Planes** button again. Repeat that cycle until you find it's good enough for a first pass.
 
+!!! tip "Don't overdo it!"
+    Keep in mind this tool is just here to give you a first pass. While there's no harm in getting the plane setup as 
+    good as possible, at some point it might be more efficient to proceed to the other skinning tools for finetuning the weights.
 
 
 ## Getting better Default Planes

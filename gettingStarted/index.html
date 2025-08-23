@@ -374,7 +374,7 @@
         <li class="md-nav__item">
   <a href="#you-are-not-alone" class="md-nav__link">
     <span class="md-ellipsis">
-      You are not alone
+      You are not alone!
     </span>
   </a>
   
@@ -1621,7 +1621,7 @@
         <li class="md-nav__item">
   <a href="#you-are-not-alone" class="md-nav__link">
     <span class="md-ellipsis">
-      You are not alone
+      You are not alone!
     </span>
   </a>
   
@@ -1652,15 +1652,20 @@
 <li>You should see the new KangarooBuilder shelf already.</li>
 <li>Restart Maya</li>
 </ol>
+<p>This is the shelf that you should get (<em>KangarooBuilder</em>):<br />
+<img alt="Alt text" src="../images/gettingstarted_shelf.jpg" /><br />
+If you don't have it by now, check in the script editor if you get any errors when dropping the <em>install.mel</em> file.   </p>
+<p>Then to open the UI that has about 90 % of Kangaroo Tools, click <img alt="Alt text" src="../images/gettingStarted_uiButton.jpg" /> (UI)
+on the very left of the <em>KangarooBuilder</em> shelf.</p>
 <h3 id="numpy">Numpy</h3>
 <p>If you get an error that numpy is missing, you'll have to install numpy, too.
 We do that with <em>pip install</em>.  </p>
 <p>Here we'll explain how to do that in Windows. If you are on Linux or Mac it would be a bit different but similar.</p>
 <p>Navigate to your maya installation folder, it will look something like this:
-<div class="highlight"><pre><span></span><code>C:<span class="se">\P</span>rogram<span class="w"> </span>Files<span class="se">\A</span>utodesk<span class="se">\M</span>aya2024<span class="se">\b</span>in<span class="w"> </span>
+<div class="highlight"><pre><span></span><code>C:\Program Files\Autodesk\Maya2024\bin 
 </code></pre></div>
 In there open a <em>Command Prompt</em> (either by right click, or type <em>cmd</em> in the address bar), and run
-<div class="highlight"><pre><span></span><code>./mayapy.exe<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>‐‐user<span class="w"> </span>numpy
+<div class="highlight"><pre><span></span><code>./mayapy.exe -m pip install ‐‐user numpy
 </code></pre></div></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1680,21 +1685,21 @@ the location of Maya:
 <div class="highlight"><pre><span></span><code>/Applications/Autodesk/maya2024/Maya.app/Contents/bin
 </code></pre></div>
 And you run the mayapy without the <em>.exe</em>:
-<div class="highlight"><pre><span></span><code>./mayapy<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>numpy
+<div class="highlight"><pre><span></span><code>./mayapy -m pip install numpy
 </code></pre></div></p>
 <!--
 Another extra thing you have to do if you are on Mac is install **pyobjc**:
-<div class="highlight"><pre><span></span><code>./mayapy<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pyobjc
+<div class="highlight"><pre><span></span><code>./mayapy -m pip install pyobjc
 </code></pre></div>
 -->
 
 <h3 id="linux">Linux</h3>
 <p>For some copy/paste options to work, you need to install <em>clip</em>:
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>xclip
+<div class="highlight"><pre><span></span><code>sudo dnf install xclip
 </code></pre></div></p>
 <h2 id="the-directories">The Directories</h2>
 <p>If you just want to use the SkinCluster/Geometry Tools or the Shape Editor or the Picker - you don't need to setup the directories.</p>
-<p>But if you want to build characters, there's a little bit of more setup we have to do now.</p>
+<p>But if you want to build characters, there's a little bit of more setup we have to do.</p>
 <p>First of all you need to understand that Kangaroo is not just a Rigging Tool. It's a <em>Rigging Pipeline</em> that helps you also
 increment/version your assets, and even backup and share with the team.    </p>
 <div class="admonition note">
@@ -1737,6 +1742,12 @@ And we usually grab one from the server. <strong>Templates</strong> is one serve
 <li><strong>BASELEGOFIGURE</strong></li>
 <li><strong>THOMAS</strong> (BlendShape driven Face Rig)</li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are rigging a bear, you may find that some types of bears are running on their front legs more like dogs 
+(digigrades). If you find that your bear is like this, you can replace the front legs with dogs leg. But before
+doing that, get familiar with the <a href="../puppet/puppetGeneral/">Puppet Tool</a> first.</p>
+</div>
 <p>Let's go to the BASEHUMAN, and then in <strong>Export -&gt; NEW</strong>, set the project and new asset name, and then click <strong>Create</strong>:</p>
 <video autoplay muted loop controls width="826">
     <source src="../../images/gettingStarted_createNewAsset.mp4" type="video/mp4">
@@ -1772,7 +1783,7 @@ we've just added the folder to <em>synch</em> the last minutes.</p>
 <p>If you don't have one yet, just create an empty folder again.
 And after that, open the <strong>pathEnv.mel</strong> file with a text editor, and change the path after <em>default@</em> to be your server path.
 Important: even in Windows, do not use <strong>\</strong> for separating the folders, it all has to be <strong>/</strong>. 
-<div class="highlight"><pre><span></span><code>putenv<span class="w"> </span><span class="s2">&quot;KANGAROO_SERVER_PATH&quot;</span><span class="w"> </span><span class="s2">&quot;templates@./templates; default@C:/Users/thoma/Dropbox/assetsServer&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code>putenv &quot;KANGAROO_SERVER_PATH&quot; &quot;templates@./templates; default@C:/Users/thoma/Dropbox/assetsServer&quot;;
 </code></pre></div></p>
 <div class="admonition note">
 <p class="admonition-title">Windows</p>
@@ -1819,10 +1830,23 @@ on the server.</p>
 </div>
 <p>Keep in mind if you got until here, it means you still just scratched the surface of what you can do with Kangaroo. 
 Best keep reading the documentation and see how you can improve your rig with what you've learend.</p>
-<h2 id="you-are-not-alone">You are not alone</h2>
-<p>Always remember, you are not alone. Whenever you get stuck, there's always the <a href="https://kangaroobuilder.discourse.group/" target="_blank">Forum</a>.</p>
-<p>And while working in kangaroo, you'll see a ton of those <strong>Go do Documentation..</strong> links - on almost all tools inside kangaroo, when you right-click on the 
-builder functions, on the right side of the builder below the buttons, when you right click on the puppet limbs.....</p>
+<h2 id="you-are-not-alone">You are not alone!</h2>
+<p>Whenever you get stuck, there's always the <a href="https://kangaroobuilder.discourse.group/" target="_blank">Forum</a>.</p>
+<p>And there's the option of getting extra support - <a href="mailto:info@kangaroobuilder.com">info@kangaroobuilder.com</a> </p>
+<p>Also - while working in kangaroo, you'll see a ton of those <strong>Go do Documentation..</strong> links, for example at the top 
+of almost every tool:<br />
+<img alt="Alt text" src="../images/goToDocumentation_topOfTool.jpg" />  </p>
+<p>Many builder functions have it on right-click:<br />
+<img alt="Alt text" src="../images/goToDocumentation_manyBuilderFunctions.jpg" />  </p>
+<p>Some builder buttons have those <strong>?</strong> buttons:<br />
+<img alt="Alt text" src="../images/goToDocumentation_questionButtons.jpg" />    </p>
+<p>When you right-click on the limbs:<br />
+<img alt="Alt text" src="../images/goToDocumentation_rightclickonLimbs.jpg" />    </p>
+<p>Even in the limbs library:<br />
+<img alt="Alt text" src="../images/goToDocumentation_rightclickonLimbLibrary.jpg" /></p>
+<p>And many puppet attributes have info on their right click:<br />
+<img alt="Alt text" src="../images/goToDocumentation_puppetAttributes.jpg" />  </p>
+<p>So yes, there's a lot to learn, <strong>but you can do it!</strong></p>
 
 
 

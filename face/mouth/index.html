@@ -1067,6 +1067,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mouthclose-attribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      MouthClose Attribute
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MouthClose Attribute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mouthclose-with-splines" class="md-nav__link">
+    <span class="md-ellipsis">
+      MouthClose with Splines
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mouthclose-with-blendshapes" class="md-nav__link">
+    <span class="md-ellipsis">
+      MouthClose with BlendShapes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#nlf-setup" class="md-nav__link">
     <span class="md-ellipsis">
       NLF Setup
@@ -1978,6 +2011,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mouthclose-attribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      MouthClose Attribute
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MouthClose Attribute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mouthclose-with-splines" class="md-nav__link">
+    <span class="md-ellipsis">
+      MouthClose with Splines
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mouthclose-with-blendshapes" class="md-nav__link">
+    <span class="md-ellipsis">
+      MouthClose with BlendShapes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#nlf-setup" class="md-nav__link">
     <span class="md-ellipsis">
       NLF Setup
@@ -2379,14 +2445,14 @@ Slider Blueprints and Corner Multiply Values first. </p>
 </tr>
 </tbody>
 </table>
-<p>Saving those attributes happens with the <a href="../faceGeneral/#defaultattrs">** === DEFAULT ATTRS === **</a> button.</p>
+<p><strong>Mirroring</strong> and <strong>saving</strong> those attributes happens with the <a href="../faceGeneral/#defaultattrs">** === DEFAULT ATTRS === **</a> button.</p>
 <h4 id="5-pose-locators">5. Pose Locators</h4>
 <p>Almost all ctrls come with lots of poseLocators that are used to define the ctrl behaviors even more. In <em>funnel</em> and <em>lipPress</em> 
 (mouth_ctrl.tz) they are even used to define the whole pose.<br />
 And all the pose locators are easily found by just selecting the ctrls, and in the outliner press <strong>f</strong>. You'll always see the currently
 activated one as shown and the others are invisible:
 <img alt="Alt text" src="../../images/mouth_poseLocators.jpg" /></p>
-<p>As you move around those locators, it's recommended to turn off the <strong>lipPush</strong> on all top ctrls - <strong>lipsTop*_ctrl</strong>!
+<p>As you move around those locators, make sure to turn off the <strong>lipPush</strong> on all top ctrls(<strong>lipsTop*_ctrl</strong>)!
 The next time you build it, it remembers the offset, and incorporates those into the lipPush setup.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2394,6 +2460,7 @@ The next time you build it, it remembers the offset, and incorporates those into
 button ** -- PoseLoc Tools -- **.<br />
 <img alt="Alt text" src="../../images/mouth_poseLocTools.jpg" /></p>
 </div>
+<p>Same as with passer attributes, <strong>mirroring</strong> and <strong>saving</strong> the Pose Locator values happens with the <a href="../faceGeneral/#defaultattrs">** === DEFAULT ATTRS === **</a> button.</p>
 <h3 id="splines-adjusting-pivots-for-lip-rolls">Splines - Adjusting Pivots for Lip Rolls</h3>
 <p>In some characters you might be struggling with getting proper lip rolls (<em>mouthBot_ctrl.rx</em> and <em>mouthTop_ctrl.rx</em>) 
 because they pivot around the joints while ideally they should pivot around the center of the lips.
@@ -2414,6 +2481,27 @@ Each of them also comes with a set of <a href="#5-pose-locators">Pose Locators</
 <em>Do you think they are too many?</em><br />
 Well, they are just a ctrl for each small joint. If you want less, you can consider to set a higher value to <em>iSkipSplineJoints</em>.<br />
 But honestly they shouldn't be animated too much, they are really just to fine tune things. </p>
+<h2 id="mouthclose-attribute">MouthClose Attribute</h2>
+<p><strong>This does NOT close the mouth if the mouth is open in the model!</strong>
+Ideally the mouth is closed in the model already. If it's open, this attribute (and other setups in Kangaroo) will not work nicely.</p>
+<p>Adn the mouthClose attribute basically just closes the mouth as the jaw opens:<br />
+<img alt="Alt text" src="../../images/mouth_mouthClose.gif" />  </p>
+<p>The way you set it up is different in splines and blendShapes.</p>
+<h3 id="mouthclose-with-splines">MouthClose with Splines</h3>
+<p>For Splines we use the Pose Locators.<br />
+First you define the <em>jawOpen</em> pose of how far the mouthClose is supported in the <strong>dPoseCtrlValues</strong> attribute:<br />
+<img alt="Alt text" src="../../images/mouth_mouthClosePose.jpg" />  </p>
+<p>After building open the jaw by setting it to that value (<em>jaw_ctrl.rz</em> to -20.0 in our example), set the <em>mouthClose</em>
+attribute to 1.0, and adjust the pose locators to make the mouth close:<br />
+<img alt="Alt text" src="../../images/mouth_mouthClosePoseLoc.jpg" /><br />
+You find those Pose Locators on the box ctrls, but also on the spherical bot/top lips ctrls.  </p>
+<p>And don't forget to save the pose locator setup with the <a href="../faceGeneral/#defaultattrs">** === DEFAULT ATTRS === **</a> button. </p>
+<h3 id="mouthclose-with-blendshapes">MouthClose with BlendShapes</h3>
+<p>The blendShape way works a bit different. First it's ignoring the <em>jawOpenOnMouthClose</em> attribute in the <em>dPoseCtrlValues</em>.
+And then in the shape editor you have this combo called <strong>jawOpen50_mouthClose</strong>:<br />
+<img alt="Alt text" src="../../images/mouth_mouthCloseShapeEditor.jpg" /><br />
+This is bascially the shape that is called by jawOpen (50 %) and mouthClose attribute activated. MouthClose should stay as an empty target.
+You can change the percentage of the jaw, see <a href="../shapeEditor1/#combos-add-percentage">Combos - Add Percentage</a></p>
 <h2 id="nlf-setup">NLF Setup</h2>
 <p><em>NLF</em> stands for <em>Nasolabial Fold</em>, and it's that line between the nose wing and the mouth corners. Some characters have it more prominent than others.
 But the hardest ones to rig are those where you don't see the line in the model, but it's expected on the smile - such as many female characters.<br />

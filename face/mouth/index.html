@@ -2487,6 +2487,11 @@ Ideally the mouth is closed in the model already. If it's open, this attribute (
 <p>Adn the mouthClose attribute basically just closes the mouth as the jaw opens:<br />
 <img alt="Alt text" src="../../images/mouth_mouthClose.gif" />  </p>
 <p>The way you set it up is different in splines and blendShapes.</p>
+<div class="admonition warning">
+<p class="admonition-title">Careful with mixing!</p>
+<p>It's recommended to not mix splines/blendShapes for the <em>mouthClose</em>. Because their timing work different, which 
+means that mixing them might give you issues.</p>
+</div>
 <h3 id="mouthclose-with-splines">MouthClose with Splines</h3>
 <p>For Splines we use the Pose Locators.<br />
 First you define the <em>jawOpen</em> pose of how far the mouthClose is supported in the <strong>dPoseCtrlValues</strong> attribute:<br />

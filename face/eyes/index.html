@@ -888,9 +888,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#eyelid-splines-finetune-the-cube-ctrls" class="md-nav__link">
+  <a href="#eyelid-splines-finetune-the-ctrls" class="md-nav__link">
     <span class="md-ellipsis">
-      Eyelid Splines - Finetune the Cube Ctrls
+      Eyelid Splines - Finetune the Ctrls
     </span>
   </a>
   
@@ -1019,6 +1019,39 @@
   <a href="#second-inner-eyelids-membranes" class="md-nav__link">
     <span class="md-ellipsis">
       Second Inner Eyelids (Membranes)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eyelashes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eyelashes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Eyelashes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eyelashes-blendshapes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eyelashes BlendShapes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eyelashes-splines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eyelashes Splines
     </span>
   </a>
   
@@ -1794,9 +1827,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#eyelid-splines-finetune-the-cube-ctrls" class="md-nav__link">
+  <a href="#eyelid-splines-finetune-the-ctrls" class="md-nav__link">
     <span class="md-ellipsis">
-      Eyelid Splines - Finetune the Cube Ctrls
+      Eyelid Splines - Finetune the Ctrls
     </span>
   </a>
   
@@ -1925,6 +1958,39 @@
   <a href="#second-inner-eyelids-membranes" class="md-nav__link">
     <span class="md-ellipsis">
       Second Inner Eyelids (Membranes)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eyelashes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eyelashes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Eyelashes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eyelashes-blendshapes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eyelashes BlendShapes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eyelashes-splines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eyelashes Splines
     </span>
   </a>
   
@@ -2085,13 +2151,13 @@ the tool again, it might be good to move the weights back to the <em>jnt_m_headM
 <p>In many cases if you got until here, you can call it done. But sometimes you need higher fidelity, and there's still
 more things you can do. Just keep reading here.</p>
 </div>
-<h3 id="eyelid-splines-finetune-the-cube-ctrls">Eyelid Splines - Finetune the Cube Ctrls</h3>
+<h3 id="eyelid-splines-finetune-the-ctrls">Eyelid Splines - Finetune the Ctrls</h3>
 <p>The light blue ctrls are manipulating the spline directly:<br />
 <img alt="Alt text" src="../../images/eyes_eyelidSplineCubes.jpg" />
-If you don't like the influence, you can play around with
+If you don't like their influences, you can play around with
 <strong>iCtrlSmoothIterations</strong>. Whenever you modify this value, you'll need to rebuild to see the results.<br />
 For even more precision you can also adjust the weights directly
-on the skinCluster <strong>skinCluster__curve_l_topCombined__CTRLS</strong> of the <strong>curve_l_topCombined</strong> curve.<br />
+on the skinClusters <strong>skinCluster__curve_l_topCombined__CTRLS</strong> and <strong>skinCluster__curve_l_topCombined__CORNERCTRLS</strong> of the <strong>curve_l_topCombined</strong> curve.<br />
 <img alt="Alt text" src="../../images/face_splineLidCtrlCurves.jpg" /><br />
 Make sure you export the weights of those curves! When you click <strong>Export -&gt; Deformers</strong> on those curves, you'll notice he 
 exports all three skinClusters. You could theoretically delete the 2 unchanged ones, but they don't cause many issues if you leave them.</p>
@@ -2290,6 +2356,32 @@ the vector you specified ([0,100,0] in our example) is the rotation of that join
 <p>Try to get the modelers to do the membrane mesh as spherical as possible, otherwise you'll spend a lot of time
 creating correctives.</p>
 </div>
+<h2 id="eyelashes">Eyelashes</h2>
+<h3 id="eyelashes-blendshapes">Eyelashes BlendShapes</h3>
+<p>For blendShapes, eyelashes should just be handled in the ShapeEditor. If you need finer ctrl, that can be handled with
+<a href="../../puppet/tweakerCtrls/">Puppet Tweakers</a>.   </p>
+<p>There used to be a more specific eyelashes function for blendShape splines and maybe it'll come back in the future. 
+But at this point for more detailed ctrls it's best to do the eyes in spline, so you can use <em>lashesSetup_splineLid()</em></p>
+<h2 id="eyelashes-splines">Eyelashes Splines</h2>
+<p>If you rigged the eyelids with splines, you can use <em>lashesSetup_splineLid()</em>. They have a bone for each eyelid joint,
+and three ctrls for upper/lower:<br />
+<img alt="Alt text" src="../../images/eyelashes_splines.gif" />  </p>
+<p>The blueprints look like this:<br />
+<img alt="Alt text" src="../../images/eyelashes_blueprints.jpg" />  </p>
+<p>And it can be created with those buttons:<br />
+<img alt="Alt text" src="../../images/eyelashes_blueprintsButtons.jpg" />  </p>
+<p><strong>Top</strong> and <strong>Bot</strong> means <em>upper eyelid</em> and <em>lower eyelid</em> respectively. 
+For <strong>base</strong> curves select the vertices of the skin where the eyelashes meet the eyelid. It needs to be a continuous 
+vertex line.
+And for the top curves, the tip of the eyelashes need to be selected. The vertices don't need to be in a perfect line,
+but the <strong>selection order is important.</strong> See how there's <strong>(TO)</strong> in the names of the buttons? That means <em>Tracked Order</em>.  </p>
+<p>You can add a bit of auto-movement to those ctrls with <em>Pose Locators</em>. It happens with those buttons:<br />
+<img alt="Alt text" src="../../images/eyelashes_poseLocs.jpg" /> <br />
+1. Pose the eyelids using the <em>blink_l_ctrl</em>, <em>lidBot_l_ctrl</em> or <em>lidTop_l_ctrl</em> <br />
+2. click <strong>Generate PoseLoc at Current Lid Position</strong><br />
+3. adjust the pose locators:<br />
+<img alt="Alt text" src="../../images/eyelashes_poseLocsSetup.jpg" />  <br />
+4. When you are done, click <strong>Fill PoseLocs</strong>  </p>
 
 
 

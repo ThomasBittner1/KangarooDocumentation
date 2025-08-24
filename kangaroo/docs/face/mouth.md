@@ -403,6 +403,10 @@ Adn the mouthClose attribute basically just closes the mouth as the jaw opens:
 
 The way you set it up is different in splines and blendShapes.
 
+!!! warning "Careful with mixing!"
+    It's recommended to not mix splines/blendShapes for the *mouthClose*. Because their timing work different, which 
+    means that mixing them might give you issues.
+
 ### MouthClose with Splines
 For Splines we use the Pose Locators.  
 First you define the *jawOpen* pose of how far the mouthClose is supported in the **dPoseCtrlValues** attribute:  
@@ -414,6 +418,7 @@ attribute to 1.0, and adjust the pose locators to make the mouth close:
 You find those Pose Locators on the box ctrls, but also on the spherical bot/top lips ctrls.  
 
 And don't forget to save the pose locator setup with the [** === DEFAULT ATTRS === **](faceGeneral.md#defaultattrs) button. 
+
 
 
 ### MouthClose with BlendShapes

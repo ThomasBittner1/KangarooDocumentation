@@ -231,6 +231,11 @@ And many puppet attributes have info on their right click:
 
 So yes, there's a lot to learn - but **you can do it!**
 
+!!! Bug "Does link not jump to correct Position on the Page?"
+    It's a common issue, but easy to solve. Just click the link again after a few seconds. 
 
+    Because what happens sometimes is
+    that with all those images it takes a few seconds to load the Page at the first time. So if the link makes it 
+    jump to the specific position, but the page finishes loading *after* that, the position is not correct anymore.
 
 

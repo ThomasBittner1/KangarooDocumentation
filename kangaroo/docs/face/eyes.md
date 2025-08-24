@@ -153,13 +153,13 @@ the tool again, it might be good to move the weights back to the *jnt_m_headMain
     more things you can do. Just keep reading here.
 
 
-### Eyelid Splines - Finetune the Cube Ctrls
+### Eyelid Splines - Finetune the Ctrls
 The light blue ctrls are manipulating the spline directly:  
 ![Alt text](../images/eyes_eyelidSplineCubes.jpg)
-If you don't like the influence, you can play around with
+If you don't like their influences, you can play around with
 **iCtrlSmoothIterations**. Whenever you modify this value, you'll need to rebuild to see the results.  
 For even more precision you can also adjust the weights directly
-on the skinCluster **skinCluster__curve_l_topCombined__CTRLS** of the **curve_l_topCombined** curve.  
+on the skinClusters **skinCluster__curve_l_topCombined__CTRLS** and **skinCluster__curve_l_topCombined__CORNERCTRLS** of the **curve_l_topCombined** curve.  
 ![Alt text](../images/face_splineLidCtrlCurves.jpg)  
 Make sure you export the weights of those curves! When you click **Export -> Deformers** on those curves, you'll notice he 
 exports all three skinClusters. You could theoretically delete the 2 unchanged ones, but they don't cause many issues if you leave them.
@@ -373,5 +373,41 @@ the vector you specified ([0,100,0] in our example) is the rotation of that join
 !!! tip
     Try to get the modelers to do the membrane mesh as spherical as possible, otherwise you'll spend a lot of time
     creating correctives.
+
+
+## Eyelashes
+### Eyelashes BlendShapes
+For blendShapes, eyelashes should just be handled in the ShapeEditor. If you need finer ctrl, that can be handled with
+[Puppet Tweakers](../puppet/tweakerCtrls.md).   
+
+There used to be a more specific eyelashes function for blendShape splines and maybe it'll come back in the future. 
+But at this point for more detailed ctrls it's best to do the eyes in spline, so you can use *lashesSetup_splineLid()*
+
+## Eyelashes Splines
+If you rigged the eyelids with splines, you can use *lashesSetup_splineLid()*. They have a bone for each eyelid joint,
+and three ctrls for upper/lower:  
+![Alt text](../images/eyelashes_splines.gif)  
+
+
+The blueprints look like this:  
+![Alt text](../images/eyelashes_blueprints.jpg)  
+
+
+And it can be created with those buttons:  
+![Alt text](../images/eyelashes_blueprintsButtons.jpg)  
+
+**Top** and **Bot** means *upper eyelid* and *lower eyelid* respectively. 
+For **base** curves select the vertices of the skin where the eyelashes meet the eyelid. It needs to be a continuous 
+vertex line.
+And for the top curves, the tip of the eyelashes need to be selected. The vertices don't need to be in a perfect line,
+but the **selection order is important.** See how there's **(TO)** in the names of the buttons? That means *Tracked Order*.  
+
+You can add a bit of auto-movement to those ctrls with *Pose Locators*. It happens with those buttons:  
+![Alt text](../images/eyelashes_poseLocs.jpg)   
+1. Pose the eyelids using the *blink_l_ctrl*, *lidBot_l_ctrl* or *lidTop_l_ctrl*   
+2. click **Generate PoseLoc at Current Lid Position**  
+3. adjust the pose locators:  
+![Alt text](../images/eyelashes_poseLocsSetup.jpg)    
+4. When you are done, click **Fill PoseLocs**  
 
 

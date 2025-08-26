@@ -68,6 +68,7 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.details
   - attr_list
+  - meta
 
 site_description: The Ultimate Rigging Solution for Maya
 

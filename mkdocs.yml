@@ -77,3 +77,9 @@ extra_css:
 extra_javascript:
   - javascripts/scroll-behavior-toggle.js
   - javascripts/openExternalLinks.js
+
+extra:
+  analytics:
+    provider: google
+    property: G-9TZ5E8B5GL
+

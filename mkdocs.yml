@@ -1,6 +1,6 @@
 site_name: kangaroobuilder.com
 theme:
-  logo: images/evilKangaroo_100.png
+  logo: logos/LogoBright.png
   name: material
   palette:
     scheme: default
@@ -13,7 +13,7 @@ theme:
     - navigation.footer
   footer: false
   copyright: "2025 Kangaroo Builder"
-  favicon: images/favicon.png
+  favicon: logos/favicon.png
 
 nav:
   - Home: index.md

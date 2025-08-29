@@ -1,3 +1,7 @@
+---
+title: Kangaroo's Pose Editor (Maya)
+description: Improve your deformations with just a few clicks
+---
 
 Pose Editor is one of the biggest additions in Kangaroo 5.
 

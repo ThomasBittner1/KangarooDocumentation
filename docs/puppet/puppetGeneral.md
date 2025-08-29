@@ -1,4 +1,9 @@
 ---
+title: Maya Rig Builder - Kangaroo Builder
+description: Learn how to use Kangaroo Builder, a Maya rigging tool for creating character rigs. It includes everything you need - body rig builder, face rig builder, pose editor, and more
+---
+
+---
 title: Puppet General
 ---
 

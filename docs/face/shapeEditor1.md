@@ -1,3 +1,9 @@
+---
+title: Shape Editor in Kangaroo Builder
+description: Sculpt and Manage BlendShapes for Kangaroo Builder in Maya
+---
+
+
 The Shape Editor is a tool for modeling Facial Shapes (targets).  
 
 

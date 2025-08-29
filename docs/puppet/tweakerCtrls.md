@@ -1,3 +1,7 @@
+---
+title: Maya Rig Builder - Kangaroo Builder
+description: Learn how to use Kangaroo Builder, a Maya rigging tool for creating character rigs. It includes everything you need - body rig builder, face rig builder, pose editor, and more
+---
 
 Tweaker Ctrls are ctrls that follow your current setup, and then deform the mesh with an additional skinCluster.  
 In this example the Cube Ctrl is a tweaker, that follows the previous skinCluster and blendShape setup, but

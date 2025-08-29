@@ -1,3 +1,8 @@
+---
+title: Dynamics for Kangaroo Rigs
+description: Creating smart rigging solutions for anything that needs to move automatically and appealing
+---
+
 # <!-- dummy title to prevent auto-generated one-->
 
 There's 2 options - **Springs** and **Dynamics**.

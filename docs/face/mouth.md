@@ -1,3 +1,8 @@
+---
+title: Face Rigging with Kangaroo Builder
+description: Learn how to rig Faces in Kangaroo Builder
+---
+
 For mouth you also have option between blendShapes and splines.  
 But what's different to the other setups is that on the mouth both ways happen with the same function: *BASEMouthCtrls()*
 

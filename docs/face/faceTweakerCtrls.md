@@ -1,3 +1,8 @@
+---
+title: Face Rigging with Kangaroo Builder
+description: Learn how to rig Faces with Kangaroo Builder (Maya)
+---
+
 
 Tweaker Ctrls are some extra ctrls on top of the main setup that animators can use to add some secondary behavior.  
 ![Alt text](../images/faceTweakers_functions.jpg)

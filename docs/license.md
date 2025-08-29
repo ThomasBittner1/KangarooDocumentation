@@ -1,9 +1,13 @@
+---
+title: Pricing for Kangaroo Builder
+description: Kangaroo is free for students and testing purposes, with affordable plans for freelancers and studios
+---
+
 # License
 
-If you are testing *Kangaroo Builder* or using it on student/hobby projects that don't generate income - you are free
-to use it without purchasing a license.
+You can use Kangaroo Builder for free when testing or for student and hobby projects that don’t generate income. For all other uses, see the pricing options below:
 
-For all other cases, see options below.
+
 
 **Indy Perpetual** – 220 EUR   
 For freelancers making less than 85k EUR (100k USD) per year in revenue  

@@ -1,3 +1,8 @@
+---
+title: Change Model with Kangaroo Builder
+description: Topology Change, Pose Change, ... Kangaroo has the right tools for every situation  
+---
+
 Kangaroo has lots of good tools for dealing with model changes. This document gives you an overview of what tools you
 can use in different situations. 
 

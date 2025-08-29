@@ -1,3 +1,7 @@
+---
+title: Face Rigging with Kangaroo Builder
+description: Learn how to rig Faces with Kangaroo Builder (Maya)
+---
 
 The *createBendSetup()* function is creating some general squash/stretch setup. They are two additional skinClusters, suffixed with *__BEND* and *__BENDTOP*.
 

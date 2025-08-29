@@ -1,3 +1,8 @@
+---
+title: Contact us about Kangaroo Builder
+description: Contact us about Kangaroo Builder, a complete rigging system in Maya that has everything you need
+---
+
 
 For general questions or bug reports, please go to
 [Kangaroo Builder Forum](https://kangaroobuilder.discourse.group/){target="_blank"}

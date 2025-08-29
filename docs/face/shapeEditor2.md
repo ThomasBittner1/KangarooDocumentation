@@ -1,4 +1,7 @@
-
+---
+title: Shape Editor in Kangaroo Builder
+description: Sculpt and Manage BlendShapes for Kangaroo Builder in Maya
+---
 
 ## Connecting the Rig
 There's two main reason why we need to connect the rig into the blendShape Editor - getting *jawOpen* and *eyeLook* joints into

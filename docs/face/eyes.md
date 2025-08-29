@@ -1,3 +1,7 @@
+---
+title: Face Rigging with Kangaroo Builder
+description: Learn how to rig Faces in Kangaroo Builder
+---
 
 ## Eye Puppet Limbs
 For the eyeballs you have 3 specific limbs:

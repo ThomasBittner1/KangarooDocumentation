@@ -1,3 +1,7 @@
+---
+title: Python for Kangaroo in Maya
+description: Create functions that appear in Kangaroo Builder's UI 
+---
 
 ## Running Kangaroo Tools
 Many tools in Kangaroo you can run separately in Python. Whenever you click some of the Tool Buttons, check the

@@ -1,3 +1,7 @@
+---
+title: Kangaroo's Bell Collider
+description: Faking dynamics with smart mathematical setups
+---
 
 The **singleBone** limb comes with a Bell Collider. Bell Collider looks like dynamics but it's really just
 interactive angle calculations. It works great for short pants. 

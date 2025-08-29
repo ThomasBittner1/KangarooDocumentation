@@ -1,3 +1,7 @@
+---
+title: Kangaroo's Motion Capture Setup
+description: Uses Maya's HumanIk under the hood, but packs it up so it's more friendly to use
+---
 
 
 # Motion Capture

@@ -1,6 +1,11 @@
+---
+title: Maya Skinning Tools - Kangaroo Builder
+description: Kangaroo's Skinning Tools are a cleaner alternative to weight painting. 
+---
+
 
 Kangaroo's Skinning Tools are an alternative to weight painting. The idea is that you always select vertices with soft selection,
-and then click the buttons. This usually keeps the weights cleaner than if you were using painting tools.  
+and then click the buttons. This mostly keeps the weights cleaner than if you were using painting tools.  
 
 ![Alt text](../images/tools_skinCluster.jpg)  
 
@@ -184,6 +189,10 @@ Only works on full meshes (no vertex selection)
 ## Normalize
 Nothing fancy, just does what the maya normalize does, except that you can choose a specific skinCluster  
 Only works on full meshes (no vertex selection)
+
+
+## First Pass Weights by Planes
+For creating first pass weights, check [Plane Cutter](toolsPlaneCutter.md)
 
 
 ## Python

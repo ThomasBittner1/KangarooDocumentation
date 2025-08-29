@@ -1,3 +1,8 @@
+---
+title: Face Rigging with Kangaroo Builder
+description: Learn how to rig Faces in Kangaroo Builder
+---
+
 Face Rigging in Kangaroo has gotten very powerful in version 5. It's got many different setups to choose
 from for each part - mouth, brows, eyelids, etc - and it's got some general squash/stretch ctrls.
 

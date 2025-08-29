@@ -1,3 +1,9 @@
+---
+title: Python for Kangaroo in Maya
+description: Create functions that appear in Kangaroo Builder's UI 
+---
+
+
 A lot of functions used by Kangaroo tools are very useful. This document shows the most useful ones for whenever you want
 to add a python function to your asset.
 

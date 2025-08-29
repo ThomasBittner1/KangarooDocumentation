@@ -1,4 +1,7 @@
-
+---
+title: Python for Kangaroo in Maya
+description: Create functions that appear in Kangaroo Builder's UI 
+---
 
 As you remember from the builder documentations, everything is written in Python. And we can customize a lot
 

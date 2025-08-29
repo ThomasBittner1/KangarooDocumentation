@@ -1,3 +1,8 @@
+---
+title: Kangaroo's Pose Editor (Maya)
+description: Improve your deformations with just a few clicks
+---
+
 ## Model Change
 Whenever the model changed, open the *poseEditorExports.ma* file from the *Export -> MayaImp* tool,
 and import the new model. Then select the new model + the corresponding Blendshape Mesh you have in scene:    

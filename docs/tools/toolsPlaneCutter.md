@@ -1,3 +1,7 @@
+---
+title: Kangaroo's Plane Cutter
+description: Plane Cutter creates First Pass SkinCluster weights and Proxy Cut Geometries for animation. 
+---
 
 Plane Cutter is a tool that can get you a quick first pass **SkinCluster** or **Proxy Cut Geometries**.
 

@@ -1,6 +1,13 @@
+---
+title: Maya Weightmap Tools - Kangaroo Builder
+description: Kangaroo's Weightmap Tools are an easier way to adjust weights for simpler deformers such as deltaMush, lattice, morph, ... 
+---
+
+
 
 Weightmap tools are for adjusting weightmaps from deformers such as lattice, morph, deltamesh, ... basically almost
-all deformers apart from skinCluster.
+all deformers apart from skinCluster. If you need skinClusters, check [SkinCluster Tools](toolsSkinCluster.md)
+
 
 ![Alt text](../images/tools_weightmaps.jpg)  
  

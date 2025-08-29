@@ -1,4 +1,7 @@
-
+---
+title: Maya Rig Builder - Kangaroo Builder
+description: Learn how to use Kangaroo Builder, a Maya rigging tool for creating character rigs. Includes body rig builder, face rig builder, pose editor, and a lot more.
+---
 
 The JSON Editor is a tool inside the builder that lets you edit complex attributes. By complex attributes
 we are talking about dictionaries or lists that can have other lists/dictionaries embedded - all defined as a single string value.  

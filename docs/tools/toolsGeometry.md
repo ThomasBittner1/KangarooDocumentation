@@ -1,3 +1,7 @@
+---
+title: Maya Geometry Tools for Rigging - Kangaroo Builder
+description: Kangaroo's Geometry Tools, they can mirror, warp poses, reset head geo, smooth vertices,... 
+---
 
 
 ![Alt text](../images/tools_geometry.jpg)  

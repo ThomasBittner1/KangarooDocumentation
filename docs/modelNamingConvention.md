@@ -1,3 +1,9 @@
+---
+title: Model Naming Conventions for Kangaroo Builder
+description: Kangaroo is relatively flexible when it comes to mesh names in the models. Check here for rules.
+---
+
+
 Generally Kangaroo is relatively flexible when it comes to model names.
 
 But there are some rules, and this document lists them:

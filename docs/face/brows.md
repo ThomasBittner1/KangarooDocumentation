@@ -1,3 +1,8 @@
+---
+title: Face Rigging with Kangaroo Builder
+description: Learn how to rig Faces in Kangaroo Builder
+---
+
 
 # Brows
 ## BlendShapes

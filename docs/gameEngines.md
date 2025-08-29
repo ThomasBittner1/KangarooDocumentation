@@ -1,3 +1,9 @@
+---
+title: Export Kangaroo Rigs to Game Engines
+description: Getting clean hierarchy needed by Game Engines. Or even use Unreal Engine's bone hierarchy standard for Biped Rigs
+---
+
+
 ## GAMESKELETON
 Game Engines usually just want a very simple rig that has only joints and skinCluster.  
 To get that, turn on the function *create_GAMESKELETON()*  

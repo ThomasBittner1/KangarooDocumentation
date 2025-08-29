@@ -1,3 +1,7 @@
+---
+title: Download Kangaroo Builder for Maya
+description: Download Kangaroo Builder, a complete rigging system in Maya that has everything you need
+---
 
 
 |                                                                                                                                    | Release Date | Supported Maya Versions

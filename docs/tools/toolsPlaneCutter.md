@@ -3,21 +3,26 @@ title: Kangaroo's Plane Cutter
 description: Plane Cutter creates First Pass SkinCluster weights and Proxy Cut Geometries for animation. 
 ---
 
-Plane Cutter is a tool that can get you a quick first pass **SkinCluster** or **Proxy Cut Geometries**.
+Plane Cutter is a tool that gets you a quick first-pass **SkinCluster** or **Proxy Cut Geometries**.
 
-The way it works is that you define a set of nurbs planes, and he'll use those to assign the regions.
+The way it works is that you define a set of nurbs planes, and he'll use those to separate vertices into regions.
+
+<video autoplay muted loop controls width="1266">
+    <source src="../../images/planeCutter_selectedPolysAllPlanes.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
 !!! info "Video"
-    While this document explains it all - if you find it simpler to follow in a video, click [here](https://www.youtube.com/embed/sQqQVCS2vWY){target="_blank"}.
-    The video is still up to date for the most part, except the bug that is mentioned in there where it creates planes 
-    for dynamic joints is fixed.
+    While this document explains it all - if you find it easier to follow in a video, click [here](https://www.youtube.com/embed/sQqQVCS2vWY){target="_blank"}.
+    The video is still up to date for the most part. One thing that changed is that we fixed the bug  where it creates planes 
+    for dynamic joints.
 
-
+<!--
 !!! info "LinkedIn"
     If you are curious what people say on LinkedIn about this: 
     <a href="https://www.linkedin.com/posts/thomas-bittner-6bb6302_this-tool-generates-a-skincluster-from-nurbs-activity-7216376145527644160-BsOr?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABy3u8BK03tH_Bovh-T4-W99NGXldU3f_g" 
     target="_blank">LinkedIn Post</a>
-
+-->
 
 ## How does it work? 
 In the following image you can see how the planes are
@@ -38,7 +43,7 @@ pointing to it. I've marked in yellow the part that this plane is considering. W
 (*plane_l_clavicleMain*) was cutting out already. And in red I've marked the part that this plane is actually cutting out:  
 ![Alt text](../images/planeCutter_arm.jpg)    
 
-Now it gets interesting when we get to the fingers. When we are cutting the **plane_l_thumbMeta**, we are only 
+It gets interesting when we come to the fingers. When we are cutting the **plane_l_thumbMeta**, we are only 
 considering the part that I've marked in yellow, again because that is what the parent plane before (**plane_l_armWrist**) 
 was cutting out. And the part that I'ved marked in dark red is what this plane
 is actually cutting out:  
@@ -58,7 +63,7 @@ gets to this plane, he'll assign all the remaining weights to this joint:
 ![Alt text](../images/planeCutter_lastPlane.jpg)    
 
 
-## Order of the Siblings
+### Order of the Siblings
 So far we discussed that the order is so it goes to the children first. But after the children and between the siblings, which ones will
 he do first?  
 This is determined by the **priority** attribute, each plane has it:  
@@ -66,7 +71,7 @@ This is determined by the **priority** attribute, each plane has it:
 Basically from all the siblings, the ones that have higher priority will be called first. And if a plane doesn't have siblings,
 this attribute is ignored.
 
-## Plane Influence goes into Infinity
+### Plane Influence goes into Infinity
 You might have noticed already that some of the planes are very small. And that's ok in most cases, he'll sort of creates a tangent
 from the edge of the planes, so their influence go into the infinity. In the following image you can see what *can happen* 
 if the plane is smaller. I drew a grey line to where the influence goes, and there you can see he's grabbing some of the 
@@ -83,9 +88,9 @@ vertices that shouldn't be affected.
 Now that we know how the planes hierarchy works, let's look at how to create them for a Biped. For quadrupeds it would be similar.
 
 ### 1. Create
-After you built the character, in the **Segments** tab, under **Create**, click **Create for All Joints**:  
+After you built the character, in the **Segments** tab, under **Create**, click **Create for All Joints**. This creates simple planes, and takes care of the hierarchy:   
 ![Alt text](../images/planeCutter_createForAllJoints.jpg)    
-This creates simple planes, and takes care of the hierarchy.
+
 
 
 ### 2. Shape the Clavicle
@@ -123,6 +128,7 @@ So we need to rotate the CVs, so the plane cuts the foot as a whole:
 
 
 ### 8. Try it out
+Select the Mesh and click **SkinCluster -> Selected Polys all Planes**:
 ![Alt text](../images/planeCutter_skinCluster.jpg)    
 Then move around the ctrls, or apply some ROM. It's probably not perfect at the first time, so just adjust the planes, mirror, and 
 click the **Selected Polys all Planes** button again. Repeat that cycle until you find it's good enough for a first pass.
@@ -159,13 +165,13 @@ The export tool just exports the *_planes* group. No need to select anything for
 You can also use those planes to create Proxy Cut geometry:    
 ![Alt text](../images/planeCutter_proxyCuts.jpg)    
 
-When you've got the planes in the scene, just use the **GeoCut** tool:  
+To create those - when you've got the planes in the scene, just use the **GeoCut** tool:  
 ![Alt text](../images/planeCutter_proxyCutsTool.jpg)    
-After that you may have to use the **Proxy** tool to create proper meshes from the geos the previous tool cut:  
+After that use the **Proxy** tool to create proper meshes from the geos the previous tool cut:  
 ![Alt text](../images/planeCutter_makeProxys.jpg)    
 And export those using the **Export -> MayaImport** tool.
 
-But then setting those up in the rig is a python thing at this point. But you can copy/paste this python script
+But then setting those up in the rig is a [python](../python/python1.md) thing at this point. But you can copy/paste this python script
 as a start:  
 ``` python
 @builderTools.addToBuild(iOrder=4)

@@ -21,6 +21,9 @@ Kangaroo Builder is a tool for creating Rigs. It’s a complete system that incl
 - Skinning, WeightMaps and Geometry tools   
 - Pipeline for collaborating/sharing within the Team and creating Backups  
 
+Join the Community by visiting our [Forum](https://kangaroobuilder.discourse.group/){target="_blank"}  
+
+And get the latest news by following [Thomas Bittner on LinkedIn](https://www.linkedin.com/in/thomas-bittner-6bb6302/){target="_blank"}
 
 <br>
 
@@ -32,7 +35,6 @@ Thomas Bittner, Author of Kangaroo Builder
 </div>
 <br>
 
-<br>
 
 <div style="text-align: right"> <em>
 "Kangaroo Builder has been an essential part of our rigging workflow over the past year. It allowed us to streamline a complex pipeline with impressive speed, 
@@ -41,7 +43,6 @@ integrating custom workflows into a solid and flexible framework. There’s no c
 Viktor Fillo, Rigging Supervisor at Arx Anima
 </div>
 <br>
-
 
 
 <div style="text-align: right"> <em>

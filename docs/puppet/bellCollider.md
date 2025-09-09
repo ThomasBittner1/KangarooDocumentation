@@ -5,7 +5,13 @@ description: Faking dynamics with smart mathematical setups
 
 The **singleBone** limb comes with a Bell Collider. Bell Collider looks like dynamics but it's really just
 interactive angle calculations. It works great for short pants. 
-![Alt text](../images/bellCollider.gif)  
+
+<video autoplay muted loop controls width="998">
+    <source src="../../images/bellCollider.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+
 While it looks great in the video, it does
 come with the disadvantage that he can only handle cylinders. But those can be scaled non-uniformly, translated and rotated.
 And with some multiply attributes you can specify it to be weaker in either front, back or on the sides.
@@ -19,7 +25,9 @@ it's a ringer. We just named it ringer.
 
 ## Shaping the Cylinders
 Then you need to fine tune the cylinders. Show them with setting **master.rigVis** to **True**. Ringer is easy to see, but for the bell,
-even though you'll see a bell in the scene - the one that you need to adjust is the hidden one right next to it in the outliner.  
+even though you'll see a bell in the scene - the one that you need to adjust is the hidden one right above to it in the outliner:    
+![Alt text](../images/bellCollider_cylinders.jpg)  
+
 And then translate/rotate/scale the bell and the ringer.  
 Multiply values can be useful, too - but don't overuse them! They are only here to limit the bell in a certain direction.  
 When you are happy with how it works, save the settings in the puppet limb's right click menu **Custom: Store Bell Settings**   

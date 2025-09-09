@@ -3,6 +3,8 @@ title: Face Rigging with Kangaroo Builder
 description: Learn how to rig Faces in Kangaroo Builder
 ---
 
+# Eyes/Eyelids
+
 ## Eye Puppet Limbs
 For the eyeballs you have 3 specific limbs:
 
@@ -31,9 +33,8 @@ Make sure to skin the **jnt_l_eyeIris** and **jnt_l_eyePupil** joints!
  
 
 
-# Eyelids
+## Base Ctrls for Eyelids {#base-ctrls}
 If you didn't add the facePro python file, add it now as shown in [faceGeneral](faceGeneral.md) (facePro_v18.py at the time of this writing). 
-## Base Ctrls
 The function *baseLidCtrls()* just creates those three arrow ctrls. Those are being used for all setup, no matter
 if simple lid joints, blendShapes or splines.  
 ![Alt text](../images/face_basicLidCtrls.jpg)

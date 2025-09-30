@@ -111,6 +111,11 @@ Watch this gif to see how it looks in action:
     For a full reference of what limbs are there, check the [Limbs Reference](limbsReference.md)
 
 
+## Deleting Limbs
+For deleting limbs just right click on them in the puppet tool -> **delete**.  
+Ideally you also delete the blueprint skeleton. But the blueprints don't do any harm in case you forget to delete them.
+
+
 ## Attachers
 Attachers are all about spaces. For example the Hand IK following the COG or the Spine. 
 And they need to be fully understood to really use Kangaroo efficiently.  
@@ -315,4 +320,13 @@ To have the *PARENT* attribute set automatically from the **attacher: root**, ri
     right away. But you'll see that it did something when you deselect and select again.  
 
 
+
+## Blueprint Rig Mirror Planes
+When you build the blueprint rig, right left/right limbs get mirored by the world symmetry axis. This is the desired behavior
+in probably 99 % of the time.  
+But in some cases, such as this 3-headed dog - the eyes and ears on the outside heads
+wouldn't really want to get mirrored along the world symmetry axis.  
+![Alt text](../images/puppetGeneral_cerberus.jpg)
+Instead, they'd rather get mirrored along the head joint. You can do that with the attribute **Blueprint Mirror Plane**:  
+![Alt text](../images/puppetGeneral_mirrorBlueprintAxis.jpg)  
 

@@ -88,6 +88,17 @@ lipStretch
 neckStretch
 ```
 
+
+### Create blendShapes as Correctives
+Most of those target shapes mentioned above can be used as base shapes, where you just entirely sculpt them.  
+But some of those shapes can also be used for correctives, especially all the mouth targets. Let's say you are creating the 
+mouth rig with splines - technically you wouldn't need to create any blendShape targets for the mouth then.   
+BUT you can still use those targets as correctives.  
+*So how does it work?*  
+In the **Shape Editor** you need to connect the rig, so you can sculpt the blendShape on top. This is explained in 
+[Shape Editor - Connecting the Rig](shapeEditor2.md#connecting-the-rig).
+
+
 ### Define your own Targets
 But likely you'll hit a point where you want to add a target that you can't find in any of the list. For that case
 we have 3 extra attributes on the *blendShapesAndSliders()* function: *ddTargetsAsAttributes*, *ddExtraTargetSliders* and *ddCorrectives*.
@@ -273,4 +284,20 @@ Or you just disable the jawAutoTranslate function, you may not always need it.
 
 
 
- 
+## Multiple Heads
+You can also build assets that have more than one head, like the Cerberus here:  
+![Alt text](../images/face_threeHeads.jpg)  
+
+For the puppet limbs, make sure to name them properly. And if the heads are not on the symmetry line, 
+follow [Puppet - Blueprint Rig Mirror Planes](../puppet/puppetGeneral.md#blueprint-rig-mirror-planes),
+so you can mirror them easier.
+
+For the functions in the **facePro_v??**, you can duplicate many of them with right click -> **set function instance count**,
+and set that value to something bigger than 1.  
+And then watch out for attributes called **dExtraHeads** or **sSuffix**, and set them accordingly:  
+![Alt text](../images/faceGeneral_extraHead.jpg)  
+
+!!! note
+    Not all functions are supported at this point. If you have a very complex face rig with joint splines etc, at this
+    point it might be easier to build a separate asset, and import it through the *mayaImport* folder in the main asset. 
+

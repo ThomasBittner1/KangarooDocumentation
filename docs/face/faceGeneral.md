@@ -294,10 +294,22 @@ so you can mirror them easier.
 
 For the functions in the **facePro_v??**, you can duplicate many of them with right click -> **set function instance count**,
 and set that value to something bigger than 1.  
-And then watch out for attributes called **dExtraHeads** or **sSuffix**, and set them accordingly:  
+And then watch out for attributes called **dHeadInfo** or **sSuffix**, and set them accordingly:  
 ![Alt text](../images/faceGeneral_extraHead.jpg)  
 
 !!! note
     Not all functions are supported at this point. If you have a very complex face rig with joint splines etc, at this
     point it might be easier to build a separate asset, and import it through the *mayaImport* folder in the main asset. 
+
+Also keep an eye out for the **sMirrorPlane** attribute. You sometimes find it in the **dHeadInfo** attribute. If you leave
+it empty, it mirrors along the world symmetry axis.   
+But you can give it a joint and an axis, for example **headJoint_1.4**, which would assume there's a node called *headJoint_1*
+in scene. The **4** after the dot means negative X (0=X, 1=Y, 2=Z, 3=-X, 4=-Y, 5=-Z).
+![Alt text](../images/faceGeneral_mirrorPlane.jpg)  
+!!! note 
+    In the puppet tool ([Puppet - Blueprint Rig Mirror Planes](../puppet/puppetGeneral.md#blueprint-rig-mirror-planes)) that convention is slightly different, instead of the number
+    you would give it the axis name (e.g. **bp_l_head.Z**). This is because the puppet tool doesn't care about positive or negative. 
+
+
+
 

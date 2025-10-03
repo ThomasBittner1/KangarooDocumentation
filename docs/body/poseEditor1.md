@@ -283,7 +283,8 @@ target for both together. But in most cases it's nicer to do the *Split Target* 
 
 To do splitting - when sculpting it, have the *EDIT* button activated just on the left target (or the right one, wouldn't matter).
 So at first you end up with a situation where when you activate the left target, the right side gets activated the same time.
-And all you have to do is click **Side:Pose Combinations and Split Current Combined Shape into Left/Right**
+And all you have to do is click **Mirror Both** -> **Side:Pose Combinations and Split Current Combined Shape into Left/Right**
+(the following video is slightly out of date - you'll find that option nur under **Mirror Both** in the same marking menu)
 <video autoplay muted loop controls width="1142">
     <source src="../../images/poseEditor_splitTarget.mp4" type="video/mp4">
     Your browser does not support the video tag.
@@ -292,7 +293,7 @@ And all you have to do is click **Side:Pose Combinations and Split Current Combi
 
 
 ### Mirror Ctrls
-For the ctrls you just choose **Side:Pose Combinations and Ctrls**. You can do either the selected
+For the ctrls you just choose **Mirror From Selected Targets** -> **Side:Pose Combinations and Ctrls**. You can do either the selected
 ctrls, or if you don't have any ctrls selected, he'll do all 
 ![Alt text](../images/poseEditor_mirrorCtrls.jpg)  
 

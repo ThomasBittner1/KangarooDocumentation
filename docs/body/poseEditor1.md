@@ -31,7 +31,8 @@ There's a few different types:
 - **upleg** - specialized for upper leg going up
 - **custom** - attributes or for creating your own custom interpolator
 
-To add interpolators, just click the *Add* Button at the very top left of the UI. It tells you what you need to select. And the 
+If you copied from *BASEHUMAN* or *BASEDOG*, you already have a lot of predefined poses. But you can add additional interpolators, 
+just click the **Add** button at the very top left of the UI. It tells you what you need to select. And the 
 selection order doesn't matter here.  
 ![Alt text](../images/poseEditor_add.jpg)   
 
@@ -258,7 +259,7 @@ Your options are:
 Edgeflow is that mirror algorithm where it takes a middle edge and with that finds all the other vertices by the
 edge connection patterns.
 
-Then to do the actual flipping: Right click on Target -> **Side:Pose Combinations and Flip Meshes**
+Then to do the actual flipping: Right click on Target -> **Mirror from Selected Target** -> **Side:Pose Combinations and Flip Meshes**
 ![Alt text](../images/poseEditor_flipPose.gif)  
 !!! info "Trouble Shoot"
     Sometimes you'll see that he did something on the opposite side, but it's not fully matching. Whenever that happens,

@@ -21,9 +21,11 @@ Kangaroo Builder is a tool for creating Rigs. It’s a complete system that incl
 - Skinning, WeightMaps and Geometry tools   
 - Pipeline for collaborating/sharing within the Team and creating Backups  
 
-Join the Community by visiting our [Forum](https://kangaroobuilder.discourse.group/){target="_blank"}  
+The best way to get started is follow the roadmap at [Getting Started](gettingStarted.md).  
+But if you prefer to learn by videos - watch [Rigging a Body](https://youtu.be/5fOMnk8s-KE){target="_blank"} and 
+[Rigging a Face](https://youtu.be/QcWzUT9wfd8){target="_blank"} on YouTube first.
 
-And get the latest news by following [Thomas Bittner on LinkedIn](https://www.linkedin.com/in/thomas-bittner-6bb6302/){target="_blank"}
+To get the latest news - follow [Thomas Bittner on LinkedIn](https://www.linkedin.com/in/thomas-bittner-6bb6302/){target="_blank"}
 
 <br>
 

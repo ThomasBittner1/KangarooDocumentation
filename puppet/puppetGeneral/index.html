@@ -502,6 +502,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#deleting-limbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deleting Limbs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#attachers" class="md-nav__link">
     <span class="md-ellipsis">
       Attachers
@@ -691,6 +700,15 @@
   <a href="#auto-parent-and-auto-set" class="md-nav__link">
     <span class="md-ellipsis">
       Auto Parent and Auto Set
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blueprint-rig-mirror-planes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blueprint Rig Mirror Planes
     </span>
   </a>
   
@@ -1688,6 +1706,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#deleting-limbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deleting Limbs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#attachers" class="md-nav__link">
     <span class="md-ellipsis">
       Attachers
@@ -1882,6 +1909,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#blueprint-rig-mirror-planes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blueprint Rig Mirror Planes
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1989,6 +2025,9 @@ Watch this gif to see how it looks in action:<br />
 <p class="admonition-title">Tip</p>
 <p>For a full reference of what limbs are there, check the <a href="../limbsReference/">Limbs Reference</a></p>
 </div>
+<h2 id="deleting-limbs">Deleting Limbs</h2>
+<p>For deleting limbs just right click on them in the puppet tool -&gt; <strong>delete</strong>.<br />
+Ideally you also delete the blueprint skeleton. But the blueprints don't do any harm in case you forget to delete them.</p>
 <h2 id="attachers">Attachers</h2>
 <p>Attachers are all about spaces. For example the Hand IK following the COG or the Spine. 
 And they need to be fully understood to really use Kangaroo efficiently.<br />
@@ -2170,6 +2209,14 @@ The reason why it needs the rig built is that it's actually checking inside the 
 <p>There's a little known issue at this time - when you click <strong>set to attacher</strong>, the combo box doesn't always update
 right away. But you'll see that it did something when you deselect and select again.  </p>
 </div>
+<h2 id="blueprint-rig-mirror-planes">Blueprint Rig Mirror Planes</h2>
+<p>When you build the blueprint rig, right left/right limbs get mirored by the world symmetry axis. This is the desired behavior
+in probably 99 % of the time.<br />
+But in some cases, such as this 3-headed dog - the eyes and ears on the outside heads
+wouldn't really want to get mirrored along the world symmetry axis.<br />
+<img alt="Alt text" src="../../images/puppetGeneral_cerberus.jpg" />
+Instead, they'd rather get mirrored along the head joint. You can do that with the attribute <strong>Blueprint Mirror Plane</strong>:<br />
+<img alt="Alt text" src="../../images/puppetGeneral_mirrorBlueprintAxis.jpg" />  </p>
 
 
 

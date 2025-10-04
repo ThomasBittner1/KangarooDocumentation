@@ -845,6 +845,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#create-blendshapes-as-correctives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create blendShapes as Correctives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#define-your-own-targets" class="md-nav__link">
     <span class="md-ellipsis">
       Define your own Targets
@@ -1023,6 +1032,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-heads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple Heads
+    </span>
+  </a>
   
 </li>
       
@@ -1767,6 +1785,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#create-blendshapes-as-correctives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create blendShapes as Correctives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#define-your-own-targets" class="md-nav__link">
     <span class="md-ellipsis">
       Define your own Targets
@@ -1948,6 +1975,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#multiple-heads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple Heads
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2033,6 +2069,14 @@ chinRaiser
 lipStretch
 neckStretch
 </code></pre></div>
+<h3 id="create-blendshapes-as-correctives">Create blendShapes as Correctives</h3>
+<p>Most of those target shapes mentioned above can be used as base shapes, where you just entirely sculpt them.<br />
+But some of those shapes can also be used for correctives, especially all the mouth targets. Let's say you are creating the 
+mouth rig with splines - technically you wouldn't need to create any blendShape targets for the mouth then. <br />
+BUT you can still use those targets as correctives.<br />
+<em>So how does it work?</em><br />
+In the <strong>Shape Editor</strong> you need to connect the rig, so you can sculpt the blendShape on top. This is explained in 
+<a href="../shapeEditor2/#connecting-the-rig">Shape Editor - Connecting the Rig</a>.</p>
 <h3 id="define-your-own-targets">Define your own Targets</h3>
 <p>But likely you'll hit a point where you want to add a target that you can't find in any of the list. For that case
 we have 3 extra attributes on the <em>blendShapesAndSliders()</em> function: <em>ddTargetsAsAttributes</em>, <em>ddExtraTargetSliders</em> and <em>ddCorrectives</em>.</p>
@@ -2202,6 +2246,31 @@ You also need to rebuild/rereference the rig, <strong>even if you change the val
 <p>It's most likely happening because it’s getting the motion from the joints in the blendShape file, and in there the jaw joint
 is at the origin. Either delete the joints in the blendShape file, or set them properly by getting Skin Setup from the rig.<br />
 Or you just disable the jawAutoTranslate function, you may not always need it.</p>
+<h2 id="multiple-heads">Multiple Heads</h2>
+<p>You can also build assets that have more than one head, like the Cerberus here:<br />
+<img alt="Alt text" src="../../images/face_threeHeads.jpg" />  </p>
+<p>For the puppet limbs, make sure to name them properly. And if the heads are not on the symmetry line, 
+follow <a href="../../puppet/puppetGeneral/#blueprint-rig-mirror-planes">Puppet - Blueprint Rig Mirror Planes</a>,
+so you can mirror them easier.</p>
+<p>For the functions in the <strong>facePro_v??</strong>, you can duplicate many of them with right click -&gt; <strong>set function instance count</strong>,
+and set that value to something bigger than 1.<br />
+And then watch out for attributes called <strong>dHeadInfo</strong> or <strong>sSuffix</strong>, and set them accordingly:<br />
+<img alt="Alt text" src="../../images/faceGeneral_extraHead.jpg" />  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all functions are supported at this point. If you have a very complex face rig with joint splines etc, at this
+point it might be easier to build a separate asset, and import it through the <em>mayaImport</em> folder in the main asset. </p>
+</div>
+<p>Also keep an eye out for the <strong>sMirrorPlane</strong> attribute. You sometimes find it in the <strong>dHeadInfo</strong> attribute. If you leave
+it empty, it mirrors along the world symmetry axis. <br />
+But you can give it a joint and an axis, for example <strong>headJoint_1.4</strong>, which would assume there's a node called <em>headJoint_1</em>
+in scene. The <strong>4</strong> after the dot means negative X (0=X, 1=Y, 2=Z, 3=-X, 4=-Y, 5=-Z).
+<img alt="Alt text" src="../../images/faceGeneral_mirrorPlane.jpg" />  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the puppet tool (<a href="../../puppet/puppetGeneral/#blueprint-rig-mirror-planes">Puppet - Blueprint Rig Mirror Planes</a>) that convention is slightly different, instead of the number
+you would give it the axis name (e.g. <strong>bp_l_head.Z</strong>). This is because the puppet tool doesn't care about positive or negative. </p>
+</div>
 
 
 

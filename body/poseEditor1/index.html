@@ -1899,7 +1899,8 @@ There's a few different types: </p>
 <li><strong>upleg</strong> - specialized for upper leg going up</li>
 <li><strong>custom</strong> - attributes or for creating your own custom interpolator</li>
 </ul>
-<p>To add interpolators, just click the <em>Add</em> Button at the very top left of the UI. It tells you what you need to select. And the 
+<p>If you copied from <em>BASEHUMAN</em> or <em>BASEDOG</em>, you already have a lot of predefined poses. But you can add additional interpolators, 
+just click the <strong>Add</strong> button at the very top left of the UI. It tells you what you need to select. And the 
 selection order doesn't matter here.<br />
 <img alt="Alt text" src="../../images/poseEditor_add.jpg" />   </p>
 <h3 id="signedangle">signedAngle</h3>
@@ -2129,7 +2130,7 @@ Your options are:  </p>
 </table>
 <p>Edgeflow is that mirror algorithm where it takes a middle edge and with that finds all the other vertices by the
 edge connection patterns.</p>
-<p>Then to do the actual flipping: Right click on Target -&gt; <strong>Side:Pose Combinations and Flip Meshes</strong>
+<p>Then to do the actual flipping: Right click on Target -&gt; <strong>Mirror from Selected Target</strong> -&gt; <strong>Side:Pose Combinations and Flip Meshes</strong>
 <img alt="Alt text" src="../../images/poseEditor_flipPose.gif" />  </p>
 <div class="admonition info">
 <p class="admonition-title">Trouble Shoot</p>
@@ -2151,14 +2152,15 @@ in a sitting pose, it won't blend well together. Theoretically you could create 
 target for both together. But in most cases it's nicer to do the <em>Split Target</em> option.</p>
 <p>To do splitting - when sculpting it, have the <em>EDIT</em> button activated just on the left target (or the right one, wouldn't matter).
 So at first you end up with a situation where when you activate the left target, the right side gets activated the same time.
-And all you have to do is click <strong>Side:Pose Combinations and Split Current Combined Shape into Left/Right</strong></p>
+And all you have to do is click <strong>Mirror Both</strong> -&gt; <strong>Side:Pose Combinations and Split Current Combined Shape into Left/Right</strong>
+(the following video is slightly out of date - you'll find that option nur under <strong>Mirror Both</strong> in the same marking menu)</p>
 <video autoplay muted loop controls width="1142">
     <source src="../../images/poseEditor_splitTarget.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 
 <h3 id="mirror-ctrls">Mirror Ctrls</h3>
-<p>For the ctrls you just choose <strong>Side:Pose Combinations and Ctrls</strong>. You can do either the selected
+<p>For the ctrls you just choose <strong>Mirror From Selected Targets</strong> -&gt; <strong>Side:Pose Combinations and Ctrls</strong>. You can do either the selected
 ctrls, or if you don't have any ctrls selected, he'll do all 
 <img alt="Alt text" src="../../images/poseEditor_mirrorCtrls.jpg" />  </p>
 <h2 id="export">Export</h2>

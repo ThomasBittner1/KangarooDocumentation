@@ -14,11 +14,7 @@ on the very left of the *KangarooBuilder* shelf.
 
 ### Numpy
 If you get an error that numpy is missing, you'll have to install numpy, too.
-We do that with *pip install*.  
-
-Here we'll explain how to do that in Windows. If you are on Linux or Mac it would be a bit different but similar.
-
-Navigate to your maya installation folder, it will look something like this:
+We do that with *pip install*. If you are in Windows - navigate to your maya installation folder, it will look something like this:
 ``` 
 C:\Program Files\Autodesk\Maya2024\bin 
 ```

@@ -8,7 +8,6 @@ description: Learn how to use Kangaroo Builder, a Maya rigging tool for creating
 
 ### Which Maya versions are supported?
 
-- Maya 2022 (Windows)
 - Maya 2023 (Windows, Mac)
 - Maya 2024 (Windows, Linux, Mac)
 - Maya 2025 (Windows, Linux, Mac)

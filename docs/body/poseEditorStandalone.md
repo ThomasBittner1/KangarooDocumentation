@@ -51,6 +51,12 @@ With the **Export** and **Import** buttons you can export/import the setup.
     rigs, import/export wouldn't help you much at this point.
 
 
+If you want to import by script (Python), you can do it this way:
+```python
+from kangarooTools import poseEditorStandalone
+poseEditorStandalone.loadFromFolderPath(sDir)
+```
+
 ## Reusing Interpolators from another character {#reuseinterpolators}
 Reusing Interpolator from another character easily works with the [Export/Import](#exportimport) options.  
 But you can also copy/paste a few interpolators, using the [JSONEditor](../builder/jsonEditor.md). For more info, check further below at [Making adjustments on exported data](#making-adjustments-on-exported-data)

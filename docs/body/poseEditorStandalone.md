@@ -7,8 +7,8 @@ From Kangaroo Builder Version **5.16** you can also use the Pose Editor on rigs 
 You just have to start the Pose Editor a bit different.  
 First run those lines in python:
 ``` python
-from kangarooTools import poseEditorIsolated
-poseEditorIsolated.showUI() 
+from kangarooTools import poseEditorStandalone
+poseEditorStandalone.showUI() 
 ```
 And in there open the Pose Editor with this button:  
 ![Alt text](../images/poseEditorStandalone_openPoseEditor.jpg)  

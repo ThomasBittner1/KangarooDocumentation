@@ -17,19 +17,20 @@ And in there open the Pose Editor with this button:
 
 ## Create the Interpolators
 Creating interpolators requires a bit more attention, because in many cases the axes of the ctrls are different than the default.  
-Before reading further, make sure you are familiar with [interpolators](poseEditor1.md#creatinginterpolators) in general
+To learn about interpolators in general, check [interpolators](poseEditor1.md#creatinginterpolators) first.
 
 For all poses, the PoseEditor assumes that the twist axis is **Y**. But in many rigs it's **X**. So first on *all* 
-newly created interpolators you may have to spend more time to adjust the pose rotations:   
+newly created interpolators you may have to spend more time to adjust the pose rotation values:   
 ![Alt text](../images/poseEditorStandalone_poseRotations.jpg)  
 
 ### Spherical
-Likely you'll have all the values at 25 % at first. Once you adjust the pose rotations for each pose, it should work 
-right away (if you have set the correct joints and ctrls).
+Likely you'll have all the values at 25 % at first (which is bad):  
+![Alt text](../images/poseEditorStandalone_alltwentypercent.jpg)  
+But once you adjust the pose rotation value for each pose, it should work right away (if you have set the correct joints and ctrls).
 
 
 ### Cone
-For the cone - apart from adjusting the Pose Rotations, make sure to check the Twist Axis:  
+For the cone - apart from adjusting the Pose Rotations, make sure to check the **Ctrl Twist Axis**:  
 ![Alt text](../images/poseEditorStandalone_ctrlTwistAxis.jpg)  
 
 
@@ -52,8 +53,7 @@ With the **Export** and **Import** buttons you can export/import the setup.
 
 ## Reusing Interpolators from another character {#reuseinterpolators}
 Reusing Interpolator from another character easily works with the [Export/Import](#exportimport) options.  
-But you can also copy/paste a few interpolators, using the [JSONEditor](../builder/jsonEditor.md).  
-For more info, check further below at [Making adjustments on exported data](#making-adjustments-on-exported-data)
+But you can also copy/paste a few interpolators, using the [JSONEditor](../builder/jsonEditor.md). For more info, check further below at [Making adjustments on exported data](#making-adjustments-on-exported-data)
 
 
 ## Model Update

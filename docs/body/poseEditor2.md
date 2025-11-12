@@ -79,3 +79,13 @@ snapped to the master mesh.
 If you want it to be fully snapped, it's better to instead do it through the *EDIT* button and use the 
 [Match Tool](../tools/toolsGeometry.md#match-vertex-positions).
 
+
+## Use Pose Editor on Custom Rigs
+From Kangaroo version 5.16 you can also use the Pose Editor on rigs that are *not* built with Kangaroo Builder.
+You just have to start the Pose Editor a bit different.  
+First run those lines in python:
+``` python
+from kangarooTools import poseEditorIsolated
+poseEditorIsolated.showUI() 
+```
+

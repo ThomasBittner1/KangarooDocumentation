@@ -33,6 +33,7 @@ nav:
       - Motion Capture: body/motionCapture.md
       - Pose Editor I: body/poseEditor1.md
       - Pose Editor II: body/poseEditor2.md
+      - Pose Editor Standalone: body/poseEditorStandalone.md
   - Face:
       - General: face/faceGeneral.md
       - Eyes: face/eyes.md

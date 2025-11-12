@@ -20,14 +20,14 @@ It consists of Interpolators, Interpolator Attributes and Targets, Meshes and Ct
 For differences with the Shape Editor, see [Shape Editor - It's NOT the Pose Editor](../face/shapeEditor1.md#its-not-the-pose-editor)
 
 
-## Interpolators - Calculating the Pose
+## Interpolators - Calculating the Pose {#creatinginterpolators}
 Interpolators are little setups that analyze the rig to see if and how strong
 we are in a pose.   
 There's a few different types: 
 
 - **signedAngle** - simple rotations like elbow, knees
 - **cones** - 3 dimensional rotations
-- **mayaPose** - 3 dimensional rotations
+- **spherical** - 3 dimensional rotations
 - **upleg** - specialized for upper leg going up
 - **custom** - attributes or for creating your own custom interpolator
 
@@ -58,7 +58,7 @@ Here's a short video how we create the signedAngle for the knee:
 In this video we didn't have to set the Angle Axis and Up Axis, becasue on elbows and knees the default is already correct.
 
 
-### mayaPose
+### spherical
 This is using the maya native interpolator. It interpolates between all the poses of the interpolator at 
 once, and normalizes them in some way that whenever you are in one pose, all the other poses are 0.  
 That's a great thing for when you are doing upper arm or clavicle corrective poses where it's important
@@ -83,9 +83,9 @@ Here's a short video how we create them for the upper arm:
 Cones just calculate *how small the angle is* between joint and the cone.
 ![Alt text](../images/poseEditor_cone.gif)
 
-It's also 3-dimensional poses such as the *MayaPose*, and the first part of just creating them is 
-almost identical to the MayaPose.
-Actually you can even convert between Cones and MayaPose with right-click on the interpolator!
+It's also 3-dimensional poses such as the *spherical*, and the first part of just creating them is 
+almost identical to the spherical one.
+Actually you can even convert between Cones and Spherical with right-click on the interpolator!
 
 But then the algorithm they use for calculating the poses couldn't be more different - and 
 you have more options to *adjust the timing*. And you don't need to have a minimum of 4 poses! Even just one is enough.
@@ -117,14 +117,14 @@ And immediately it'll look much better!
 ![Alt text](../images/poseEditor_coneSolution.gif)    
 
 !!! warning "Watch Out"
-    When you do a cone pose or mayaPose on the upper arm, make sure to set the spine end joint as the JointParent! Otherwise
+    When you do a cone pose or spherical on the upper arm, make sure to set the spine end joint as the JointParent! Otherwise
     you'll hit issues when the clavicle moves around:  
     ![Alt text](../images/poseEditor_coneSpineAsParent.jpg)    
     
 
 ### Upleg
 This is a very specialized one just for upper leg rotating upwards like in a sitting pose. 
-While you could also do that with *Cone* or *MayaPose*, this one is a more special engineered for the uplegs going up.
+While you could also do that with *Cone* or *Spherical*, this one is a more special engineered for the uplegs going up.
 It has a few options such as fading out as the legs rotate outwards. And you can even control if and how much it 
 should fade out when the leg rotates inwards.
 

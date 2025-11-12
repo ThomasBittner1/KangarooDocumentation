@@ -26,8 +26,8 @@ we are in a pose.
 There's a few different types: 
 
 - **signedAngle** - simple rotations like elbow, knees
+- **spherical** - 3 dimensional rotations (used to be called *mayaPose*)
 - **cones** - 3 dimensional rotations
-- **spherical** - 3 dimensional rotations
 - **upleg** - specialized for upper leg going up
 - **custom** - attributes or for creating your own custom interpolator
 
@@ -58,8 +58,9 @@ Here's a short video how we create the signedAngle for the knee:
 In this video we didn't have to set the Angle Axis and Up Axis, becasue on elbows and knees the default is already correct.
 
 
-### spherical
-This is using the maya native interpolator. It interpolates between all the poses of the interpolator at 
+### Spherical (called *MayaPose* in 5.15 and below) {#spherical}
+This is using the maya native interpolator, for that reason in older Kangaroo Versions it was called *mayaPose*.  
+It interpolates between all the poses of the interpolator at 
 once, and normalizes them in some way that whenever you are in one pose, all the other poses are 0.  
 That's a great thing for when you are doing upper arm or clavicle corrective poses where it's important
 that all the poses blend nicely with each others. 
@@ -72,7 +73,7 @@ But it comes with a few disadvantages:
 cases when things are wrong it might even output something like *INF* or all poses having the same output number like 0.25. 
 Whenever that happens just try to align them a bit nicer and make sure that you not less than 4 poses.
 
-Here's a short video how we create them for the upper arm:
+Here's a short video how we create them for the upper arm (update: instead of *mayaPose*, it's *spherical* now):
 <video autoplay muted loop controls width="1700">
     <source src="../../images/poseEditor_creatingMayaPose.mp4" type="video/mp4">
     Your browser does not support the video tag.
@@ -305,11 +306,21 @@ creates the file *poseEditorExports.ma* in the *mayaImport* folder.
 
 
 ## Known Issues
-#### Sometimes the Interpolator doesn't update anymore, even though I'm 100 % sure my settings are correct.
+
+#### Sometimes the Interpolator doesn't update anymore, even though I'm absolutely that sure my settings are correct.
 This is often an evaluation problem that happens if the rig is either very complex, or if there's a cycle
 in there.  
 But there's a workaround: select the interpolator, and set **right click -> rebuild**.  
+
 #### When I export using the **Fill and Export** button, he exports the whole rig.
 Check if you have some connections going from the meshes inside the *_poseEditorExport* group. Sometimes
 it could be a set. You can also try to just delete all your sets in scene
+
+#### The PoseEditor UI is slow
+From version **5.16**, there are now those evaluation curves:  
+![Alt text](../images/poseEditor_evaluationCurves.jpg)  
+Those are very useful for adjusting and debugging, but it can make things slow if your rig is heavier. But you can turn
+those off with the **bShowEvaluationInPoseEditor** attribute:  
+![Alt text](../images/poseEditor_showEvaluationCurvesTurnOff.jpg)  
+
 

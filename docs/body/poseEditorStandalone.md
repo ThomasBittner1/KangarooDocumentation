@@ -14,8 +14,14 @@ And in there open the Pose Editor with this button:
 ![Alt text](../images/poseEditorStandalone_openPoseEditor.jpg)  
 
 
+!!! note
+    The whole standalone workflow has been tested and verified with *mGear* and *AdvancedSkeleton* rigs. However since it hasn't gone 
+    through completed productions with non-kangaroo rigs yet, this part is still *experimental*.  
+    So if you are running into any issues, please don't hesitate to reach out in the [Forum](https://kangaroobuilder.discourse.group/){target="_blank"}!
+    We'll answer those requests with high priority.
 
-## Create the Interpolators
+
+## Creating the Interpolators
 Creating interpolators requires a bit more attention, because in many cases the axes of the ctrls are different than the default.  
 To learn about interpolators in general, check [interpolators](poseEditor1.md#creatinginterpolators) first.
 
@@ -71,7 +77,7 @@ and click those buttons.
 For more information check [Model Change](poseEditor2.md#model-change)
 
 
-### Making adjustments on exported data
+## Making adjustments on exported data
 One big advantage of exporting and importing again ist that you can adjust the data outside your rig scene.  
 When you click **Edit "poseEditorData.json" File**, it opens the [JSONEditor](../builder/jsonEditor.md) on the data file.
 In there you can delete, duplicate, copy/paste things from another character, ... 

@@ -26,7 +26,7 @@ we are in a pose.
 There's a few different types: 
 
 - **signedAngle** - simple rotations like elbow, knees
-- **spherical** - 3 dimensional rotations (used to be called *mayaPose*)
+- **spherical** - 3 dimensional rotations (*mayaPose* in 5.15 and below)
 - **cones** - 3 dimensional rotations
 - **upleg** - specialized for upper leg going up
 - **custom** - attributes or for creating your own custom interpolator
@@ -58,7 +58,7 @@ Here's a short video how we create the signedAngle for the knee:
 In this video we didn't have to set the Angle Axis and Up Axis, becasue on elbows and knees the default is already correct.
 
 
-### Spherical (called *MayaPose* in 5.15 and below) {#spherical}
+### Spherical (*MayaPose* in 5.15 and below) {#spherical}
 This is using the maya native interpolator, for that reason in older Kangaroo Versions it was called *mayaPose*.  
 It interpolates between all the poses of the interpolator at 
 once, and normalizes them in some way that whenever you are in one pose, all the other poses are 0.  
@@ -83,7 +83,6 @@ Here's a short video how we create them for the upper arm (update: instead of *m
 ### Cone
 Cones just calculate *how small the angle is* between joint and the cone.
 ![Alt text](../images/poseEditor_cone.gif)
-
 It's also 3-dimensional poses such as the *spherical*, and the first part of just creating them is 
 almost identical to the spherical one.
 Actually you can even convert between Cones and Spherical with right-click on the interpolator!
@@ -104,6 +103,11 @@ needs to be **equal or smaller than the positive rotation value, and not bigger 
     So even though the angle of the rotation has a negative value, the angle distance is still positive.
     If the rotation is (30,0,0), the angle distance would be 30. And If you have a more complex rotation such as (30,0,-80), 
     the rotation difference would be much harder to calculate, so try to avoid that.
+
+!!! note "Red Evaluation Curves"
+    From Kangaroo Version **5.16** it shows those evaluation curves on the targets. If you have a curve that turns red,
+    then in many cases it's the cone settings - your range being bigger than the pose rotation:  
+    ![Alt text](../images/poseEditor_redEvaluationLine.jpg)
 
 
 Another thing to be aware with cones is that by default they work great as the rig moves into the pose, but when it moves

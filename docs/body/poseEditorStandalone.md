@@ -8,8 +8,15 @@ You just have to start the Pose Editor a bit different.
 First run those lines in python:
 ``` python
 from kangarooTools import poseEditorStandalone
-poseEditorStandalone.showUI() 
+poseEditorStandalone.showUI(sDefaultCtrlTwistAxis='x') 
 ```
+
+!!! note "Default Twist Axis"
+    *MGear* and *AdvancedSkeleton* usually have their ctrl twist axis at **X**, so you can leave the default when you have one of these rigs.
+    But if your twist axis is mostly **Y** (as on Kangaroo Rigs), then switch that flag to **Y**.  
+    Keep in mind this only affects the default options when you create interpolators. Adjusting the interpolator options manually after
+    interpolator creation has the same outcome.
+
 And in there open the Pose Editor with this button:  
 ![Alt text](../images/poseEditorStandalone_openPoseEditor.jpg)  
 
@@ -19,34 +26,6 @@ And in there open the Pose Editor with this button:
     through completed productions with non-kangaroo rigs yet, this part is still *experimental*.  
     So if you are running into any issues, please don't hesitate to reach out in the [Forum](https://kangaroobuilder.discourse.group/){target="_blank"}!
     We'll answer those requests with high priority.
-
-
-## Creating the Interpolators
-Creating interpolators requires a bit more attention, because in many cases the axes of the ctrls are different than the default.  
-To learn about interpolators in general, check [interpolators](poseEditor1.md#creatinginterpolators) first.
-
-For all poses, the PoseEditor assumes that the twist axis is **Y**. But in many rigs it's **X**. So first on *all* 
-newly created interpolators you may have to spend more time to adjust the pose rotation values:   
-![Alt text](../images/poseEditorStandalone_poseRotations.jpg)  
-
-### Spherical
-Likely you'll have all the values at 25 % at first (which is bad):  
-![Alt text](../images/poseEditorStandalone_alltwentypercent.jpg)  
-But once you adjust the pose rotation value for each pose, it should work right away (if you have set the correct joints and ctrls).
-
-
-### Cone
-For the cone - apart from adjusting the Pose Rotations, make sure to check the **Ctrl Twist Axis**:  
-![Alt text](../images/poseEditorStandalone_ctrlTwistAxis.jpg)  
-
-
-### SignedAngle
-Special Attention is needed on the **CtrlAttr**, **Angle Axis (Joint)** and **Up Axis (Joint)**:  
-![Alt text](../images/poseEditorStandalone_signedAngle.jpg)  
-
-
-### Upleg
-Don't use the Upleg one, it's too specific to kangaroo rigs
 
 
 

@@ -4,28 +4,28 @@ description: Improve your deformations with just a few clicks
 ---
 
 From Kangaroo Builder Version **5.16** you can also use the Pose Editor on rigs that are *not* built with Kangaroo Builder.
-You just have to start the Pose Editor a bit different.  
-First run those lines in python:
+
+Keep in mind that this workflow has been tested and verified with *mGear* and *AdvancedSkeleton* rigs, and therefore should
+also work for all other maya rigs out there. 
+However since it hasn't gone through completed productions with non-kangaroo rigs yet, this part is still *experimental*.  
+So if you are running into any issues, please don't hesitate to reach out in the [Forum](https://kangaroobuilder.discourse.group/){target="_blank"}!
+We'll answer those requests with high priority.
+
+
+To open the Pose Editor on standalone, start by running these lines in Python:    
 ``` python
 from kangarooTools import poseEditorStandalone
 poseEditorStandalone.showUI(sDefaultCtrlTwistAxis='x') 
 ```
 
-!!! note "Default Twist Axis"
-    *MGear* and *AdvancedSkeleton* usually have their ctrl twist axis at **X**, so you can leave the default when you have one of these rigs.
+!!! note "Ctrl Twist Axis"
+    *MGear* and *AdvancedSkeleton* usually have their *Ctrl Twist Axis* at **X**, so you can leave the default when you have one of these rigs.
     But if your twist axis is mostly **Y** (as on Kangaroo Rigs), then switch that flag to **Y**.  
     Keep in mind this only affects the default options when you create interpolators. Adjusting the interpolator options manually after
     interpolator creation has the same outcome.
 
 And in there open the Pose Editor with this button:  
 ![Alt text](../images/poseEditorStandalone_openPoseEditor.jpg)  
-
-
-!!! note
-    The whole standalone workflow has been tested and verified with *mGear* and *AdvancedSkeleton* rigs. However since it hasn't gone 
-    through completed productions with non-kangaroo rigs yet, this part is still *experimental*.  
-    So if you are running into any issues, please don't hesitate to reach out in the [Forum](https://kangaroobuilder.discourse.group/){target="_blank"}!
-    We'll answer those requests with high priority.
 
 
 

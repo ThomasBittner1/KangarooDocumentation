@@ -695,7 +695,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interpolators-calculating-the-pose" class="md-nav__link">
+  <a href="#creatinginterpolators" class="md-nav__link">
     <span class="md-ellipsis">
       Interpolators - Calculating the Pose
     </span>
@@ -714,9 +714,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mayapose" class="md-nav__link">
+  <a href="#spherical" class="md-nav__link">
     <span class="md-ellipsis">
-      mayaPose
+      Spherical (MayaPose in 5.15 and below)
     </span>
   </a>
   
@@ -867,9 +867,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sometimes-the-interpolator-doesnt-update-anymore-even-though-im-100-sure-my-settings-are-correct" class="md-nav__link">
+  <a href="#sometimes-the-interpolator-doesnt-update-anymore-even-though-im-absolutely-that-sure-my-settings-are-correct" class="md-nav__link">
     <span class="md-ellipsis">
-      Sometimes the Interpolator doesn't update anymore, even though I'm 100 % sure my settings are correct.
+      Sometimes the Interpolator doesn't update anymore, even though I'm absolutely that sure my settings are correct.
     </span>
   </a>
   
@@ -879,6 +879,15 @@
   <a href="#when-i-export-using-the-fill-and-export-button-he-exports-the-whole-rig" class="md-nav__link">
     <span class="md-ellipsis">
       When I export using the Fill and Export button, he exports the whole rig.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-poseeditor-ui-is-slow" class="md-nav__link">
+    <span class="md-ellipsis">
+      The PoseEditor UI is slow
     </span>
   </a>
   
@@ -911,6 +920,29 @@
   
   <span class="md-ellipsis">
     Pose Editor II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../poseEditorStandalone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pose Editor Standalone
     
   </span>
   
@@ -1664,7 +1696,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interpolators-calculating-the-pose" class="md-nav__link">
+  <a href="#creatinginterpolators" class="md-nav__link">
     <span class="md-ellipsis">
       Interpolators - Calculating the Pose
     </span>
@@ -1683,9 +1715,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mayapose" class="md-nav__link">
+  <a href="#spherical" class="md-nav__link">
     <span class="md-ellipsis">
-      mayaPose
+      Spherical (MayaPose in 5.15 and below)
     </span>
   </a>
   
@@ -1836,9 +1868,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sometimes-the-interpolator-doesnt-update-anymore-even-though-im-100-sure-my-settings-are-correct" class="md-nav__link">
+  <a href="#sometimes-the-interpolator-doesnt-update-anymore-even-though-im-absolutely-that-sure-my-settings-are-correct" class="md-nav__link">
     <span class="md-ellipsis">
-      Sometimes the Interpolator doesn't update anymore, even though I'm 100 % sure my settings are correct.
+      Sometimes the Interpolator doesn't update anymore, even though I'm absolutely that sure my settings are correct.
     </span>
   </a>
   
@@ -1848,6 +1880,15 @@
   <a href="#when-i-export-using-the-fill-and-export-button-he-exports-the-whole-rig" class="md-nav__link">
     <span class="md-ellipsis">
       When I export using the Fill and Export button, he exports the whole rig.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-poseeditor-ui-is-slow" class="md-nav__link">
+    <span class="md-ellipsis">
+      The PoseEditor UI is slow
     </span>
   </a>
   
@@ -1888,14 +1929,14 @@ But keep in mind it's a bit outdated, especially the <a href="../poseEditor2/#mo
 </div>
 <h2 id="its-not-the-shape-editor">It's NOT the Shape Editor!</h2>
 <p>For differences with the Shape Editor, see <a href="../../face/shapeEditor1/#its-not-the-pose-editor">Shape Editor - It's NOT the Pose Editor</a></p>
-<h2 id="interpolators-calculating-the-pose">Interpolators - Calculating the Pose</h2>
+<h2 id="creatinginterpolators">Interpolators - Calculating the Pose</h2>
 <p>Interpolators are little setups that analyze the rig to see if and how strong
 we are in a pose. <br />
 There's a few different types: </p>
 <ul>
 <li><strong>signedAngle</strong> - simple rotations like elbow, knees</li>
+<li><strong>spherical</strong> - 3 dimensional rotations (<em>mayaPose</em> in 5.15 and below)</li>
 <li><strong>cones</strong> - 3 dimensional rotations</li>
-<li><strong>mayaPose</strong> - 3 dimensional rotations</li>
 <li><strong>upleg</strong> - specialized for upper leg going up</li>
 <li><strong>custom</strong> - attributes or for creating your own custom interpolator</li>
 </ul>
@@ -1922,8 +1963,9 @@ be identlical, because this <em>will</em> lead to troubles. </p>
     Your browser does not support the video tag.
 </video>
 <p>In this video we didn't have to set the Angle Axis and Up Axis, becasue on elbows and knees the default is already correct.</p>
-<h3 id="mayapose">mayaPose</h3>
-<p>This is using the maya native interpolator. It interpolates between all the poses of the interpolator at 
+<h3 id="spherical">Spherical (<em>MayaPose</em> in 5.15 and below)</h3>
+<p>This is using the maya native interpolator, for that reason in older Kangaroo Versions it was called <em>mayaPose</em>.<br />
+It interpolates between all the poses of the interpolator at 
 once, and normalizes them in some way that whenever you are in one pose, all the other poses are 0.<br />
 That's a great thing for when you are doing upper arm or clavicle corrective poses where it's important
 that all the poses blend nicely with each others. 
@@ -1936,7 +1978,7 @@ But it comes with a few disadvantages:  </p>
 cases when things are wrong it might even output something like <em>INF</em> or all poses having the same output number like 0.25. 
 Whenever that happens just try to align them a bit nicer and make sure that you not less than 4 poses.</li>
 </ul>
-<p>Here's a short video how we create them for the upper arm:</p>
+<p>Here's a short video how we create them for the upper arm (update: instead of <em>mayaPose</em>, it's <em>spherical</em> now):</p>
 <video autoplay muted loop controls width="1700">
     <source src="../../images/poseEditor_creatingMayaPose.mp4" type="video/mp4">
     Your browser does not support the video tag.
@@ -1944,10 +1986,10 @@ Whenever that happens just try to align them a bit nicer and make sure that you 
 
 <h3 id="cone">Cone</h3>
 <p>Cones just calculate <em>how small the angle is</em> between joint and the cone.
-<img alt="Alt text" src="../../images/poseEditor_cone.gif" /></p>
-<p>It's also 3-dimensional poses such as the <em>MayaPose</em>, and the first part of just creating them is 
-almost identical to the MayaPose.
-Actually you can even convert between Cones and MayaPose with right-click on the interpolator!</p>
+<img alt="Alt text" src="../../images/poseEditor_cone.gif" />
+It's also 3-dimensional poses such as the <em>spherical</em>, and the first part of just creating them is 
+almost identical to the spherical one.
+Actually you can even convert between Cones and Spherical with right-click on the interpolator!</p>
 <p>But then the algorithm they use for calculating the poses couldn't be more different - and 
 you have more options to <em>adjust the timing</em>. And you don't need to have a minimum of 4 poses! Even just one is enough.</p>
 <p>There's the attribute called <strong>Range</strong>, which is very important! Neglecting this <em>will</em> put you in trouble.</p>
@@ -1963,6 +2005,12 @@ So even though the angle of the rotation has a negative value, the angle distanc
 If the rotation is (30,0,0), the angle distance would be 30. And If you have a more complex rotation such as (30,0,-80), 
 the rotation difference would be much harder to calculate, so try to avoid that.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Red Evaluation Curves</p>
+<p>From Kangaroo Version <strong>5.16</strong> it shows those evaluation curves on the targets. If you have a curve that turns red,
+then in many cases it's the cone settings - your range being bigger than the pose rotation:<br />
+<img alt="Alt text" src="../../images/poseEditor_redEvaluationLine.jpg" /></p>
+</div>
 <p>Another thing to be aware with cones is that by default they work great as the rig moves into the pose, but when it moves
 further, the pose fades out. And that can get very nasty. 
 Let's look at this example below (which happens <em>a lot</em> in production!). In here I have range as 15-0, so it starts at 15. 
@@ -1974,13 +2022,13 @@ And immediately it'll look much better!
 <img alt="Alt text" src="../../images/poseEditor_coneSolution.gif" />    </p>
 <div class="admonition warning">
 <p class="admonition-title">Watch Out</p>
-<p>When you do a cone pose or mayaPose on the upper arm, make sure to set the spine end joint as the JointParent! Otherwise
+<p>When you do a cone pose or spherical on the upper arm, make sure to set the spine end joint as the JointParent! Otherwise
 you'll hit issues when the clavicle moves around:<br />
 <img alt="Alt text" src="../../images/poseEditor_coneSpineAsParent.jpg" />    </p>
 </div>
 <h3 id="upleg">Upleg</h3>
 <p>This is a very specialized one just for upper leg rotating upwards like in a sitting pose. 
-While you could also do that with <em>Cone</em> or <em>MayaPose</em>, this one is a more special engineered for the uplegs going up.
+While you could also do that with <em>Cone</em> or <em>Spherical</em>, this one is a more special engineered for the uplegs going up.
 It has a few options such as fading out as the legs rotate outwards. And you can even control if and how much it 
 should fade out when the leg rotates inwards.</p>
 <h3 id="custom">Custom</h3>
@@ -2168,13 +2216,19 @@ ctrls, or if you don't have any ctrls selected, he'll do all
 creates the file <em>poseEditorExports.ma</em> in the <em>mayaImport</em> folder. 
 <img alt="Alt text" src="../../images/PoseEditor_FillAndExport.jpg" />  </p>
 <h2 id="known-issues">Known Issues</h2>
-<h4 id="sometimes-the-interpolator-doesnt-update-anymore-even-though-im-100-sure-my-settings-are-correct">Sometimes the Interpolator doesn't update anymore, even though I'm 100 % sure my settings are correct.</h4>
+<h4 id="sometimes-the-interpolator-doesnt-update-anymore-even-though-im-absolutely-that-sure-my-settings-are-correct">Sometimes the Interpolator doesn't update anymore, even though I'm absolutely that sure my settings are correct.</h4>
 <p>This is often an evaluation problem that happens if the rig is either very complex, or if there's a cycle
 in there.<br />
 But there's a workaround: select the interpolator, and set <strong>right click -&gt; rebuild</strong>.  </p>
 <h4 id="when-i-export-using-the-fill-and-export-button-he-exports-the-whole-rig">When I export using the <strong>Fill and Export</strong> button, he exports the whole rig.</h4>
 <p>Check if you have some connections going from the meshes inside the <em>_poseEditorExport</em> group. Sometimes
 it could be a set. You can also try to just delete all your sets in scene</p>
+<h4 id="the-poseeditor-ui-is-slow">The PoseEditor UI is slow</h4>
+<p>From version <strong>5.16</strong>, there are now those evaluation curves:<br />
+<img alt="Alt text" src="../../images/poseEditor_evaluationCurves.jpg" /><br />
+Those are very useful for adjusting and debugging, but it can make things slow if your rig is heavier. But you can turn
+those off with the <strong>bShowEvaluationInPoseEditor</strong> attribute:<br />
+<img alt="Alt text" src="../../images/poseEditor_showEvaluationCurvesTurnOff.jpg" />  </p>
 
 
 

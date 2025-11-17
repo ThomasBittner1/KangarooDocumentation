@@ -14,7 +14,7 @@
         <link rel="prev" href="../poseEditor1/">
       
       
-        <link rel="next" href="../../face/faceGeneral/">
+        <link rel="next" href="../poseEditorStandalone/">
       
       
       <link rel="icon" href="../../logos/favicon.png">
@@ -792,10 +792,42 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#use-pose-editor-on-custom-rigs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Pose Editor on Custom Rigs
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../poseEditorStandalone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pose Editor Standalone
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1618,6 +1650,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#use-pose-editor-on-custom-rigs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Pose Editor on Custom Rigs
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1708,6 +1749,13 @@ if you have any other shapes that are activated at the same time, using the <em>
 snapped to the master mesh.<br />
 If you want it to be fully snapped, it's better to instead do it through the <em>EDIT</em> button and use the 
 <a href="../../tools/toolsGeometry/#match-vertex-positions">Match Tool</a>.</p>
+<h2 id="use-pose-editor-on-custom-rigs">Use Pose Editor on Custom Rigs</h2>
+<p>From Kangaroo version 5.16 you can also use the Pose Editor on rigs that are <em>not</em> built with Kangaroo Builder.
+You just have to start the Pose Editor a bit different.<br />
+First run those lines in python:
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kangarooTools</span><span class="w"> </span><span class="kn">import</span> <span class="n">poseEditorStandalone</span>
+<span class="n">poseEditorStandalone</span><span class="o">.</span><span class="n">showUI</span><span class="p">()</span> 
+</code></pre></div></p>
 
 
 

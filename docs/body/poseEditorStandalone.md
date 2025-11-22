@@ -5,20 +5,20 @@ description: Improve your deformations with just a few clicks
 
 From Kangaroo Builder Version **5.16** you can also use the Pose Editor on rigs that are *not* built with Kangaroo Builder.
 
-Keep in mind that this workflow has been tested and verified with *mGear* and *AdvancedSkeleton* rigs, and therefore should
+This workflow has been tested and verified with *mGear* and *AdvancedSkeleton* rigs, and therefore should
 also work for all other maya rigs out there. 
-However since it hasn't gone through completed productions with non-kangaroo rigs yet, this part is still *experimental*.  
+However since it hasn't gone through completed productions with *Non-Kangaroo Rigs* yet, this part is still experimental at this point.  
 So if you are running into any issues, please don't hesitate to reach out in the [Forum](https://kangaroobuilder.discourse.group/){target="_blank"}!
 We'll answer those requests with high priority.
 
 
-To open the Pose Editor on standalone, start by running these lines in Python:    
+To open the Pose Editor with *Non-Kangaroo Rigs*, start by running these lines in Python:    
 ``` python
 from kangarooTools import poseEditorStandalone
 poseEditorStandalone.showUI(sDefaultCtrlTwistAxis='x') 
 ```
 
-!!! note "Ctrl Twist Axis"
+!!! note "Ctrl Twist Axis - *sDefaultCtrlTwistAxis*"
     *MGear* and *AdvancedSkeleton* usually have their *Ctrl Twist Axis* at **X**, so you can leave the default when you have one of these rigs.
     But if your twist axis is mostly **Y** (as on Kangaroo Rigs), then switch that flag to **Y**.  
     Keep in mind this only affects the default options when you create interpolators. Adjusting the interpolator options manually after
@@ -27,6 +27,12 @@ poseEditorStandalone.showUI(sDefaultCtrlTwistAxis='x')
 And in there open the Pose Editor with this button:  
 ![Alt text](../images/poseEditorStandalone_openPoseEditor.jpg)  
 
+
+!!! warning "Always be in Default Pose for creating Interpolators"
+    If you are using the Pose Editor on *Non-Kangaroo Rigs*, *ALWAYS* be in default pose when you **create** or **mirror** an **interpolator**. Because it stores that pose as the default,
+    and uses it for certain operations later.  
+    Rigs built with Kangaroo Builder already know the default poses, therefore the pose doesn't matter on Kangaroo Rigs.
+    
 
 
 ## Export/Import
@@ -61,3 +67,14 @@ One big advantage of exporting and importing again ist that you can adjust the d
 When you click **Edit "poseEditorData.json" File**, it opens the [JSONEditor](../builder/jsonEditor.md) on the data file.
 In there you can delete, duplicate, copy/paste things from another character, ... 
 
+
+
+## Known Issues 
+Please also check [Known Issues Pose Editor I](poseEditor1.md#known-issues) for a complete list.
+#### Ctrl Poses are reversed when I mirror them
+It's important to have the right side ctrls/transforms move in the mirrored behavior to the left side ctrls/transforms.
+This is an animator preference in general, and Kangaroo Rigs have that. But on some custom rigs, this behavior may be different.
+
+#### The **Pose Editor** UI is slow
+It could be because of the evaluation curves. If your rig is a little heavier, it's recommended to turn them off with 
+the checkbox below the **Open Pose Editor** button.

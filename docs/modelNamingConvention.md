@@ -36,3 +36,9 @@ The following names are reserved, please don't use them for your meshes:
 - skeleton
 - ctrls
 
+
+## No Namespaces in the meshes
+Namespaces in models are common when you create References instead of just importing the model.
+But in Kangaroo Builder you won't have many advantages from referencing the model anyway, because all the tools are 
+optimized for rebuilding the rig whenever the model changed.
+An exception to this rule is the *PoseEditor* in Standalone mode. The *PoseEditor* does support namespaced models.

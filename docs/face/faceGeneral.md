@@ -10,8 +10,8 @@ from for each part - mouth, brows, eyelids, etc - and it's got some general squa
 
 Most of the time you have the option of doing spline setups or blendShapes. You can also mix.
 
-The first thing to do when you do Face Rig is add the python file **facePro_v18.py** (right click on the Python Files
-in the builder -> **Add File** -> **+default** -> **facePro** -> **facePro_v18.py**:  
+The first thing to do when you do Face Rig is add the python file **facePro_v20.py** (right click on the Python Files
+in the builder -> **Add File** -> **+default** -> **facePro** -> **facePro_v20.py**:  
 ![Alt text](../images/faceGeneral_addingMudule.gif)
 
 ## Puppet Limbs`

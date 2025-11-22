@@ -327,4 +327,7 @@ Those are very useful for adjusting and debugging, but it can make things slow i
 those off with the **bShowEvaluationInPoseEditor** attribute:  
 ![Alt text](../images/poseEditor_showEvaluationCurvesTurnOff.jpg)  
 
-
+#### When I click the EDIT button and want to sculpt, the vertices move in a strange direction
+It could be that you have a deformer that interferes with it. Unfortunately turning the deformer off doesn't always
+solve the issue, and you have to delete the deformer to use the pose editor.  
+You may have noticed that for lattice boxes it's asking you to delete them. 

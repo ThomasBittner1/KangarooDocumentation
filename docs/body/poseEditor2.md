@@ -20,7 +20,7 @@ cases do *Warp*
 It can be very helpful to share Interpolators between characters.
 And there are 2 ways:  
 ### In the PoseEditor UI
-Right click on the interpolator -> *Copy*. Then go to your other character, and right click -> *Paste*  
+Right-click on the interpolator -> *Copy*. Then go to your other character, and right click -> *Paste*  
 ![Alt text](../images/poseEditor_copy.jpg)  
 
 !!! warning "Known bug"

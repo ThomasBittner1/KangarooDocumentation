@@ -767,6 +767,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Known Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ctrl-poses-are-reversed-when-i-mirror-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ctrl Poses are reversed when I mirror them
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-pose-editor-ui-is-slow" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Pose Editor UI is slow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1545,6 +1578,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Known Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ctrl-poses-are-reversed-when-i-mirror-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ctrl Poses are reversed when I mirror them
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-pose-editor-ui-is-slow" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Pose Editor UI is slow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1564,17 +1630,17 @@
   <h1>Pose Editor Standalone</h1>
 
 <p>From Kangaroo Builder Version <strong>5.16</strong> you can also use the Pose Editor on rigs that are <em>not</em> built with Kangaroo Builder.</p>
-<p>Keep in mind that this workflow has been tested and verified with <em>mGear</em> and <em>AdvancedSkeleton</em> rigs, and therefore should
+<p>This workflow has been tested and verified with <em>mGear</em> and <em>AdvancedSkeleton</em> rigs, and therefore should
 also work for all other maya rigs out there. 
-However since it hasn't gone through completed productions with non-kangaroo rigs yet, this part is still <em>experimental</em>.<br />
+However since it hasn't gone through completed productions with <em>Non-Kangaroo Rigs</em> yet, this part is still experimental at this point.<br />
 So if you are running into any issues, please don't hesitate to reach out in the <a href="https://kangaroobuilder.discourse.group/" target="_blank">Forum</a>!
 We'll answer those requests with high priority.</p>
-<p>To open the Pose Editor on standalone, start by running these lines in Python:  <br />
+<p>To open the Pose Editor with <em>Non-Kangaroo Rigs</em>, start by running these lines in Python:  <br />
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kangarooTools</span><span class="w"> </span><span class="kn">import</span> <span class="n">poseEditorStandalone</span>
 <span class="n">poseEditorStandalone</span><span class="o">.</span><span class="n">showUI</span><span class="p">(</span><span class="n">sDefaultCtrlTwistAxis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">)</span> 
 </code></pre></div></p>
 <div class="admonition note">
-<p class="admonition-title">Ctrl Twist Axis</p>
+<p class="admonition-title">Ctrl Twist Axis - <em>sDefaultCtrlTwistAxis</em></p>
 <p><em>MGear</em> and <em>AdvancedSkeleton</em> usually have their <em>Ctrl Twist Axis</em> at <strong>X</strong>, so you can leave the default when you have one of these rigs.
 But if your twist axis is mostly <strong>Y</strong> (as on Kangaroo Rigs), then switch that flag to <strong>Y</strong>.<br />
 Keep in mind this only affects the default options when you create interpolators. Adjusting the interpolator options manually after
@@ -1582,6 +1648,12 @@ interpolator creation has the same outcome.</p>
 </div>
 <p>And in there open the Pose Editor with this button:<br />
 <img alt="Alt text" src="../../images/poseEditorStandalone_openPoseEditor.jpg" />  </p>
+<div class="admonition warning">
+<p class="admonition-title">Always be in Default Pose for creating Interpolators</p>
+<p>If you are using the Pose Editor on <em>Non-Kangaroo Rigs</em>, <em>ALWAYS</em> be in default pose when you <strong>create</strong> or <strong>mirror</strong> an <strong>interpolator</strong> or on <strong>import</strong>. Because it stores that pose as the default,
+and uses it for certain operations later.<br />
+Rigs built with Kangaroo Builder already know the default poses, therefore the pose doesn't matter on Kangaroo Rigs.</p>
+</div>
 <h2 id="exportimport">Export/Import</h2>
 <p>With the <strong>Export</strong> and <strong>Import</strong> buttons you can export/import the setup.</p>
 <div class="admonition warning">
@@ -1607,6 +1679,14 @@ For more information check <a href="../poseEditor2/#model-change">Model Change</
 <p>One big advantage of exporting and importing again ist that you can adjust the data outside your rig scene.<br />
 When you click <strong>Edit "poseEditorData.json" File</strong>, it opens the <a href="../../builder/jsonEditor/">JSONEditor</a> on the data file.
 In there you can delete, duplicate, copy/paste things from another character, ... </p>
+<h2 id="known-issues">Known Issues</h2>
+<p>Please also check <a href="../poseEditor1/#known-issues">Known Issues Pose Editor I</a> for a complete list.</p>
+<h4 id="ctrl-poses-are-reversed-when-i-mirror-them">Ctrl Poses are reversed when I mirror them</h4>
+<p>It's important to have the right side ctrls/transforms move in the mirrored behavior to the left side ctrls/transforms.
+This is an animator preference in general, and Kangaroo Rigs have that. But on some custom rigs, this behavior may be different.</p>
+<h4 id="the-pose-editor-ui-is-slow">The <strong>Pose Editor</strong> UI is slow</h4>
+<p>It could be because of the evaluation curves. If your rig is a little heavier, it's recommended to turn them off with 
+the checkbox below the <strong>Open Pose Editor</strong> button.</p>
 
 
 

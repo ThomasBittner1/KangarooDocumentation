@@ -893,6 +893,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#when-i-click-the-edit-button-and-want-to-sculpt-the-vertices-move-in-a-strange-direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      When I click the EDIT button and want to sculpt, the vertices move in a strange direction
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1894,6 +1903,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#when-i-click-the-edit-button-and-want-to-sculpt-the-vertices-move-in-a-strange-direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      When I click the EDIT button and want to sculpt, the vertices move in a strange direction
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1918,6 +1936,12 @@
   <h1>Pose Editor I</h1>
 
 <p>Pose Editor is one of the biggest additions in Kangaroo 5.</p>
+<div class="admonition note">
+<p class="admonition-title">Kangaroo Rigs</p>
+<p>For the most part of those 2 pages we'll assume that you are using the <em>Pose Editor</em> on a rig that is built with <em>Kangaroo Builder</em>.
+But from version 5.16 you can also use the <em>Pose Editor</em> on rigs that are not built with Kangaroo - 
+check <a href="../poseEditorStandalone/">Pose Editor Standalone</a> for more details</p>
+</div>
 <p>To open it, click the function <em>poseEditorApply()</em> and then the button <strong>Open Editor</strong>:<br />
 <img alt="Alt text" src="../../images/poseEditor_openIt.jpg" />  </p>
 <p>It consists of Interpolators, Interpolator Attributes and Targets, Meshes and Ctrl Tables.<br />
@@ -2229,6 +2253,10 @@ it could be a set. You can also try to just delete all your sets in scene</p>
 Those are very useful for adjusting and debugging, but it can make things slow if your rig is heavier. But you can turn
 those off with the <strong>bShowEvaluationInPoseEditor</strong> attribute:<br />
 <img alt="Alt text" src="../../images/poseEditor_showEvaluationCurvesTurnOff.jpg" />  </p>
+<h4 id="when-i-click-the-edit-button-and-want-to-sculpt-the-vertices-move-in-a-strange-direction">When I click the EDIT button and want to sculpt, the vertices move in a strange direction</h4>
+<p>It could be that you have a deformer that interferes with it. Unfortunately turning the deformer off doesn't always
+solve the issue, and you have to delete the deformer to use the pose editor.<br />
+You may have noticed that for lattice boxes it's asking you to delete them. </p>
 
 
 

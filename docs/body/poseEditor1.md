@@ -5,6 +5,12 @@ description: Improve your deformations with just a few clicks
 
 Pose Editor is one of the biggest additions in Kangaroo 5.
 
+!!! note "Kangaroo Rigs"
+    For the most part of those 2 pages we'll assume that you are using the *Pose Editor* on a rig that is built with *Kangaroo Builder*.
+    But from version 5.16 you can also use the *Pose Editor* on rigs that are not built with Kangaroo - 
+    check [Pose Editor Standalone](poseEditorStandalone.md) for more details
+    
+
 To open it, click the function *poseEditorApply()* and then the button **Open Editor**:  
 ![Alt text](../images/poseEditor_openIt.jpg)  
 

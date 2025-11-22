@@ -29,10 +29,9 @@ And in there open the Pose Editor with this button:
 
 
 !!! warning "Always be in Default Pose for creating Interpolators"
-    If you are using the Pose Editor on *Non-Kangaroo Rigs*, *ALWAYS* be in default pose when you **create** or **mirror** an **interpolator**. Because it stores that pose as the default,
+    If you are using the Pose Editor on *Non-Kangaroo Rigs*, *ALWAYS* be in default pose when you **create** or **mirror** an **interpolator** or on **import**. Because it stores that pose as the default,
     and uses it for certain operations later.  
     Rigs built with Kangaroo Builder already know the default poses, therefore the pose doesn't matter on Kangaroo Rigs.
-    
 
 
 ## Export/Import

@@ -8,7 +8,7 @@ From Kangaroo Builder Version **5.16** you can also use the Pose Editor on rigs 
 This workflow has been tested and verified with *mGear* and *AdvancedSkeleton* rigs, and therefore should
 also work for all other maya rigs out there. 
 However since it hasn't gone through completed productions with *Non-Kangaroo Rigs* yet, this part is still experimental at this point.  
-So if you are running into any issues, please don't hesitate to reach out in the [Forum](https://kangaroobuilder.discourse.group/){target="_blank"}!
+So if you are running into any issues, please don't hesitate to reach out in the [Forum](https://kangaroobuilder.discourse.group/c/pose-editor/12/){target="_blank"}! 
 We'll answer those requests with high priority.
 
 

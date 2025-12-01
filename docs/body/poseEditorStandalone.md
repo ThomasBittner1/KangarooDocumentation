@@ -12,6 +12,10 @@ So if you are running into any issues, please don't hesitate to reach out in the
 We'll answer those requests with high priority.
 
 
+!!! info "Video"
+    If you prefer videos - you can watch [this](https://youtu.be/y6SKKEGZJtc?si=jhiOrzUGZiWTC4d1){target="_blank"} on YouTube first.
+
+
 To open the Pose Editor with *Non-Kangaroo Rigs*, start by running these lines in Python:    
 ``` python
 from kangarooTools import poseEditorStandalone

@@ -25,6 +25,18 @@ If you leave it empty, it chooses the default one.
  
 
 
+## No need to be in Default Pose!
+From version **5.15**, you can see the **Use Orig Model** option in most tools:   
+![Alt text](../images/skinClusterTools_origModel.jpg)  
+This means you can be in any pose, and the tools will still work. It uses the OrigShapes to analyze the geometry,
+and for getting the joint position in default pose, it's using an attribute called *sPostRefJoint* on each joint.
+For rigs that are not built in kangaroo, you can add this attribute with these lines:  
+
+```python
+import kangarooTools.deformers as deformers
+deformers.setCurrentAsReferencePose(sJoints)
+```
+
 
 ## Flood
 It's similar to what the Maya *Flood* button is doing, but here you have more options:  

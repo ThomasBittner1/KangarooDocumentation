@@ -1152,6 +1152,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#no-need-to-be-in-default-pose" class="md-nav__link">
+    <span class="md-ellipsis">
+      No need to be in Default Pose!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#flood" class="md-nav__link">
     <span class="md-ellipsis">
       Flood
@@ -1657,6 +1666,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#no-need-to-be-in-default-pose" class="md-nav__link">
+    <span class="md-ellipsis">
+      No need to be in Default Pose!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#flood" class="md-nav__link">
     <span class="md-ellipsis">
       Flood
@@ -1857,6 +1875,15 @@ If you leave it empty, it chooses the default one. </p>
 field, such as <em>__BEND</em> or <em>__ZIPPER</em>.<br />
 This makes it easier when you have more meshes all with same skinClusters suffixes.</p>
 </div>
+<h2 id="no-need-to-be-in-default-pose">No need to be in Default Pose!</h2>
+<p>From version <strong>5.15</strong>, you can see the <strong>Use Orig Model</strong> option in most tools: <br />
+<img alt="Alt text" src="../../images/skinClusterTools_origModel.jpg" /><br />
+This means you can be in any pose, and the tools will still work. It uses the OrigShapes to analyze the geometry,
+and for getting the joint position in default pose, it's using an attribute called <em>sPostRefJoint</em> on each joint.
+For rigs that are not built in kangaroo, you can add this attribute with these lines:  </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">kangarooTools.deformers</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">deformers</span>
+<span class="n">deformers</span><span class="o">.</span><span class="n">setCurrentAsReferencePose</span><span class="p">(</span><span class="n">sJoints</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="flood">Flood</h2>
 <p>It's similar to what the Maya <em>Flood</em> button is doing, but here you have more options:  </p>
 <ul>

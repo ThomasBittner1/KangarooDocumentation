@@ -35,15 +35,11 @@ And in there open the Pose Editor with this button:
 !!! warning "Always be in Default Pose for creating Interpolators"
     If you are using the Pose Editor on *Non-Kangaroo Rigs*, *ALWAYS* be in default pose when you **create** or **mirror** an **interpolator** or on **import**. Because it stores that pose as the default,
     and uses it for certain operations later.  
-    Rigs built with Kangaroo Builder already know the default poses, therefore the pose doesn't matter on Kangaroo Rigs.
-
+    Rigs built with Kangaroo Builder already know the default poses, therefore the pose doesn't matter on Kangaroo Rigs.  
+    The most common gotcha is that legs are not in FK. **Always make sure that legs are in FK when you create, mirror or import interpolators** 
 
 ## Export/Import
 With the **Export** and **Import** buttons you can export/import the setup.
-!!! warning
-    Do **NOT** import it twice! Importing it is only meant to do on a clean rig that you've rebuilt. If you are not rebuilding 
-    rigs, import/export wouldn't help you much at this point.
-
 
 If you want to import by script (Python), you can do it this way:
 ```python

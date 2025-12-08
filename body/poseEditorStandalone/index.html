@@ -1656,15 +1656,11 @@ interpolator creation has the same outcome.</p>
 <p class="admonition-title">Always be in Default Pose for creating Interpolators</p>
 <p>If you are using the Pose Editor on <em>Non-Kangaroo Rigs</em>, <em>ALWAYS</em> be in default pose when you <strong>create</strong> or <strong>mirror</strong> an <strong>interpolator</strong> or on <strong>import</strong>. Because it stores that pose as the default,
 and uses it for certain operations later.<br />
-Rigs built with Kangaroo Builder already know the default poses, therefore the pose doesn't matter on Kangaroo Rigs.</p>
+Rigs built with Kangaroo Builder already know the default poses, therefore the pose doesn't matter on Kangaroo Rigs.<br />
+The most common gotcha is that legs are not in FK. <strong>Always make sure that legs are in FK when you create, mirror or import interpolators</strong> </p>
 </div>
 <h2 id="exportimport">Export/Import</h2>
 <p>With the <strong>Export</strong> and <strong>Import</strong> buttons you can export/import the setup.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Do <strong>NOT</strong> import it twice! Importing it is only meant to do on a clean rig that you've rebuilt. If you are not rebuilding 
-rigs, import/export wouldn't help you much at this point.</p>
-</div>
 <p>If you want to import by script (Python), you can do it this way:
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kangarooTools</span><span class="w"> </span><span class="kn">import</span> <span class="n">poseEditorStandalone</span>
 <span class="n">poseEditorStandalone</span><span class="o">.</span><span class="n">loadFromFolderPath</span><span class="p">(</span><span class="n">sDir</span><span class="p">)</span>

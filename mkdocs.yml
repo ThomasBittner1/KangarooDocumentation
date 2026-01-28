@@ -55,6 +55,7 @@ nav:
       - Deformer Import: tools/toolsDeformerImport.md
       - Plane Cutter: tools/toolsPlaneCutter.md
       - Animation Tools: animationTools.md
+      - Landmark Warp: landmarkWarp.md
   - Model Change: modelChange.md
   - Game Engines: gameEngines.md
   - Model Naming Convention: modelNamingConvention.md

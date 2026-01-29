@@ -238,7 +238,7 @@ Look at this example where we use the *upperUp* target to open the lips slightly
 ## Transfer to New Character {#transfertonewcharacter}
 Transfering to a new character is more advanced. 
 
-It's in this extra tab.
+It's in the **Model Change different topology** tab:  
 ![Alt text](../images/shapeEditor_modelChangeDifferentTopo.jpg)   
 First set the new mesh next to **->**
 
@@ -253,23 +253,28 @@ Once you have all the markers, click one of the Retopo buttons:
 - **Create Retopos (Faceform Wrap3d)**  
 
 !!! note "Which one is better?"
-    The Faceform one might be more robust, but you first need to [download](https://www.russian3dscanner.com/download/) and install 
+    The Faceform one might be more robust in some cases, but you first need to [download](https://faceform.com/download-wrap/) and install 
     it, and it might require a license. And then you have to open the python file *kangarooShapeEditorUI.py* 
     and adjust the following line to the correct file:
     ``` python
-    kWrap3dExe = 'C:/Program Files/Faceform/Wrap 2023.11.4/WrapCmd.exe'
+    kWrap3dExe = 'C:/Program Files/Faceform/Wrap 2025.11.14/WrapCmd.exe'
     ```
     If you don't have a license yet and if you only warp once in a while, you'll more likely be better off with the 
     standard kangaroo one. The kangaroo one works out of the box, and it should be good enough for most cases. You just might have to do a bit more
-    cleanup in the following step (fixing *retopo* and *retopoOpen*)
+    cleanup in the following step (fixing *retopo* and *retopoOpen*). Keep in mind for the kangaroo one you have to
+    install **scipy** for python, it's shown in [Getting Started](../gettingStarted.md#scipy).
+    If you use the kangaroo one, check [this part](../landmarkWarp.md#inner-mouth-issues-) to see how to improve the mouth. 
+    Basically you'll need to delete the inner mouth faces of the new mesh, and when clicking the **Create Retopo (Kang..)**
+    button, have the inner mouth vertices of the current model selected.
+
 
 Check the new meshes **retopo** and **retopoOpen**. They'll most likely need some tweaks. 
 
 And then click **Wrap with Retopos**, and you should end up with a new mesh in the meshes table
 
 !!! video
-    If you watch the [this part of the Video](https://www.youtube.com/watch?v=cEBJ-tPLMuU&t=17m57s), you'll see roughly how it works. But keep in mind the video 
-    is very outdated, instead of lines we now create those markers. But the selection process is still the same.
+    You can watch [this part of the Video](https://www.youtube.com/watch?v=cEBJ-tPLMuU&t=17m57s) to see roughly how it works. But keep in mind the video 
+    is very outdated, instead of lines we now create those numbered markers. But the selection process is still the same.
     Also at the time of making that video, there was only the *Faceform* one.
 
 

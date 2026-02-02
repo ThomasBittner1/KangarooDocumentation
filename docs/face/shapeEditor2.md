@@ -263,7 +263,7 @@ Once you have all the markers, click one of the Retopo buttons:
     standard kangaroo one. The kangaroo one works out of the box, and it should be good enough for most cases. You just might have to do a bit more
     cleanup in the following step (fixing *retopo* and *retopoOpen*). Keep in mind for the kangaroo one you have to
     install **scipy** for python, it's shown in [Getting Started](../gettingStarted.md#scipy).
-    If you use the kangaroo one, check [this part](../landmarkWarp.md#inner-mouth-issues-) to see how to improve the mouth. 
+    If you use the kangaroo one, check [this part](../landmarkWarp.md#inner-mouth-issues) to see how to improve the mouth. 
     Basically you'll need to delete the inner mouth faces of the new mesh, and when clicking the **Create Retopo (Kang..)**
     button, have the inner mouth vertices of the current model selected.
 

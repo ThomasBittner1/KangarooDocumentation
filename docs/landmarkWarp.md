@@ -7,6 +7,11 @@ From *v5.19* there's now the **Landmark Warp** tool.
 
 ![Alt text](images/landmarkWarp_UI.jpg)
 
+
+!!! note "scipy"
+    In order to the landmarkWarp, you need to have **scipy** installed. See in [getting started](gettingStarted.md#scipy) 
+    how to install it.
+
 ## Markers 
 
 First you create thoes markers that look like in this image:  
@@ -21,7 +26,7 @@ But it only works if you have the mirror table set. To do that, select the whole
 **Set Mirrortable Edgeflow** or **Set Mirrortable Positions**.
 
 
-## Inner Mouth Issues 
+## Inner Mouth Issues
 This tool generally has trouble with inner mouth geometry, but there's an easy way to fix.
 ![Alt text](images/landmarkWarp_innermouthissue.jpg)
 

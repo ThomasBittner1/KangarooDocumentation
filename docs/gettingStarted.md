@@ -59,7 +59,7 @@ sudo dnf install xclip
 
 
 ### Scipy
-If you are using the **landmarkWarp** tool, you need to install **scipy**, too. It works the same as numpy installing numpy, except
+If you are using the **landmarkWarp** tool, you need to install **scipy**, too. It works the same as installing numpy, except
 substitute *numpy* with *scipy*:   
 ```
 ./mayapy.exe -m pip install ‐‐user scipy

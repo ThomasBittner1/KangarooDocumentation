@@ -1503,6 +1503,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../landmarkWarp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Landmark Warp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2196,16 +2219,39 @@ Look at this example where we use the <em>upperUp</em> target to open the lips s
 </video>
 
 <h2 id="transfertonewcharacter">Transfer to New Character</h2>
-<p>Transfering to a new character is more advanced. It requires downloading Wrap3D (https://www.russian3dscanner.com/download/) 
-and possibly even getting a license.  </p>
-<p>At the time of this writing, you also have to specify the tool location in <em>kangarooShapeEditorUI.py</em> file:
-<div class="highlight"><pre><span></span><code><span class="n">kWrap3dExe</span> <span class="o">=</span> <span class="s1">&#39;C:/Program Files/Faceform/Wrap 2023.11.4/WrapCmd.exe&#39;</span>
-</code></pre></div></p>
-<p>Once you have that all setup-ed, you'll have to create those relations between the 2 meshes.<br />
-<img alt="Alt text" src="../../images/shapeEditor_transfer.jpg" />  </p>
+<p>Transfering to a new character is more advanced. </p>
+<p>It's in the <strong>Model Change different topology</strong> tab:<br />
+<img alt="Alt text" src="../../images/shapeEditor_modelChangeDifferentTopo.jpg" /> <br />
+First set the new mesh next to <strong>-&gt;</strong></p>
+<p>And then create all the markers like this:<br />
+- select vertex on old mesh + vertex on new mesh (order doesn't matter)<br />
+- click <strong>Add Marker</strong><br />
+- repeat for each landmark</p>
+<p>Once you have all the markers, click one of the Retopo buttons:  <br />
+- <strong>Create Retopos (Kangaroo Landmark Warp)</strong><br />
+- <strong>Create Retopos (Faceform Wrap3d)</strong>  </p>
+<div class="admonition note">
+<p class="admonition-title">Which one is better?</p>
+<p>The Faceform one might be more robust in some cases, but you first need to <a href="https://faceform.com/download-wrap/">download</a> and install 
+it, and it might require a license. And then you have to open the python file <em>kangarooShapeEditorUI.py</em> 
+and adjust the following line to the correct file:
+<div class="highlight"><pre><span></span><code><span class="n">kWrap3dExe</span> <span class="o">=</span> <span class="s1">&#39;C:/Program Files/Faceform/Wrap 2025.11.14/WrapCmd.exe&#39;</span>
+</code></pre></div>
+If you don't have a license yet and if you only warp once in a while, you'll more likely be better off with the 
+standard kangaroo one. The kangaroo one works out of the box, and it should be good enough for most cases. You just might have to do a bit more
+cleanup in the following step (fixing <em>retopo</em> and <em>retopoOpen</em>). Keep in mind for the kangaroo one you have to
+install <strong>scipy</strong> for python, it's shown in <a href="../../gettingStarted/#scipy">Getting Started</a>.
+If you use the kangaroo one, check <a href="../../landmarkWarp/#inner-mouth-issues">this part</a> to see how to improve the mouth. 
+Basically you'll need to delete the inner mouth faces of the new mesh, and when clicking the <strong>Create Retopo (Kang..)</strong>
+button, have the inner mouth vertices of the current model selected.</p>
+</div>
+<p>Check the new meshes <strong>retopo</strong> and <strong>retopoOpen</strong>. They'll most likely need some tweaks. </p>
+<p>And then click <strong>Wrap with Retopos</strong>, and you should end up with a new mesh in the meshes table</p>
 <div class="admonition video">
 <p class="admonition-title">Video</p>
-<p>To see how that works in detail, watch <a href="https://www.youtube.com/watch?v=cEBJ-tPLMuU&amp;t=17m57s">this part of the Video</a></p>
+<p>You can watch <a href="https://www.youtube.com/watch?v=cEBJ-tPLMuU&amp;t=17m57s">this part of the Video</a> to see roughly how it works. But keep in mind the video 
+is very outdated, instead of lines we now create those numbered markers. But the selection process is still the same.
+Also at the time of making that video, there was only the <em>Faceform</em> one.</p>
 </div>
 
 

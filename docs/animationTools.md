@@ -10,7 +10,6 @@ This is an animation tool that can do stuff like:
 - space switch
 - mirror ctrl poses/animations
 - Biped Motion Capture
-- Motion Path (experimental)
 
 ## Picker - For Animators..
 

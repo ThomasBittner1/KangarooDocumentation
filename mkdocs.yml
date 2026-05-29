@@ -34,6 +34,7 @@ nav:
       - Pose Editor I: body/poseEditor1.md
       - Pose Editor II: body/poseEditor2.md
       - Pose Editor Standalone: body/poseEditorStandalone.md
+      - Sliding Deformer: body/slidingDeformer.md
   - Face:
       - General: face/faceGeneral.md
       - Eyes: face/eyes.md

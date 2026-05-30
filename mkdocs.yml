@@ -44,7 +44,7 @@ nav:
       - Face Tweaker Ctrls: face/faceTweakerCtrls.md
       - Shape Editor I: face/shapeEditor1.md
       - Shape Editor II: face/shapeEditor2.md
-      - Speech-Machine: face/speechmachine.md
+      - SpeechMachine: face/speechmachine.md
   - Python:
         - Python I: python/python1.md
         - Python II: python/python2.md

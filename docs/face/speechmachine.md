@@ -4,9 +4,9 @@ hide:
     title: true
 ---
 
-# Speechmachine
+# Speech Machine
 
-Speech-Machine is a tool that gives you clean Lip Sync Animation from an Audio File.
+Speech Machine is a tool that gives you clean Lip Sync Animation from an Audio File.
 The keys are *not* baked as in other lip sync solutions. Instead those keys are animator friendly, so animators
 can adjust them, delete them, add more, ...
 
@@ -38,20 +38,30 @@ Just keep in mind you might get issues if you use one control attribute for more
 - Zipper
 - Tongue Controls
 
-
-## Tutorial
+## How it works for Animators
 
 !!! info "video"
-    Before going through this tutorial, it’s best to watch the [Speech-Machine for Animators](https://www.youtube.com/watch?v=9SmJqNh1j0A){target="_blank"}
-    video first, so you’ll know how animators are going to use it.
+    This video [Speech Machine for Animators](https://www.youtube.com/watch?v=9SmJqNh1j0A){target="_blank"} shows how to 
+    add audio file, type down the text, and let it create the animation keys.
 
-The Setup process of the Speech-Machine is mapping the controls in your rig to the Containers. During this process you are working with the tool similar to how animators are working with it – the character rig needs to be referenced in scene, and at the top of the UI the namespace needs to be specified by selecting any control and clicking Set from Selected at the top of the UI.
+You can use the Nora_Lipsync Rig to test it:  
+After you've installed Kangaroo and downloaded the speechMachine files as shown [here](#download),
+you should have this rig in your Kangaroo installation folder:
+`scripts/speechMachine/external_tools/RIG_NORA_LIPSYNC_v1.ma"`.  
+Drag it into Maya, ideally with a namespace.
+And then you can test everything shown in the video above.  
+
+## Setup Tutorial
+
+This section tells you how to setup your character to work with the SpeechMachine.
+
+It's all about mapping the controls in your rig to the Containers. During this process you are working with the tool similar to how animators are working with it – the character rig needs to be referenced in scene, and at the top of the UI the namespace needs to be specified by selecting any control and clicking Set from Selected at the top of the UI.
 
 This has the advantage that later even animators can make adjustments to the settings on the Setup Node and send back to rigging to update it in the rig.
 
 !!! info "video"
     If you prefer videos instead of Tutorials, 
-    [Speech-Machine for Riggers](https://www.youtube.com/watch?v=IoappUgHWbQ){target="_blank"} shows it all .
+    [Speech Machine for Riggers](https://www.youtube.com/watch?v=IoappUgHWbQ){target="_blank"} shows it all .
 
 
 ### Setup Node
@@ -95,7 +105,7 @@ For the S, just make sure the tip of the teeth are meeting. In most rigs that wo
 
 
 ### Other Containers
-Before moving further, let’s make sure we know what exactly a Container is. The speech-machine has those containers:
+Before moving further, let’s make sure we know what exactly a Container is. The speech machine has those containers:
 
 - **Jaw** – we’ve done this already above
 - **CornerInOut** – In the UI they are split into CornerIn, CornerOut
@@ -146,6 +156,19 @@ You can find an example to it in the MOUTH character inside the template project
 
 
 ## Download
-First you need to download and install Kangaroo-Builder [here](../download.md)
+First you need to download and install Kangaroo-Builder [here](../download.md).
 
-That doesn't give you everything, you also need to download [this](xxx)
+That doesn't give you everything, you also need to download [this](xxx) and put it inside  
+`scripts/speechMachine/external_tools`.  
+
+So your external_tools folder should look like this:  
+```text
+mayaTools/
+└── external_tools/
+    ├── bin/
+    ├── ffmpeg/
+    ├── licenses/
+    ├── montreal-forced-aligner/
+    ├── montreal-forced-aligner-lexicons/
+    └── RIG_NORA_LIPSYNC_v1.ma
+```

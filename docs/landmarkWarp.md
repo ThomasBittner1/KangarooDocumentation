@@ -3,8 +3,15 @@ title: Kangaroo's Landmark Warp Tool
 description: Warp, Different Topology,  
 ---
 
-From *v5.19* there's now the **Landmark Warp** tool.
+From *v5.19* there's now the **Landmark Warp** tool, it can warp characters to other topologies, so you can blend them
+like in this video:
+<video autoplay muted loop controls width="742">
+    <source src="../../images/topowarp.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
+
+You can find it under **Geometry** -> **LandmarkW**:  
 ![Alt text](images/landmarkWarp_UI.jpg)
 
 

@@ -12,7 +12,7 @@ theme:
   features:
     - navigation.footer
   footer: false
-  copyright: "2025 Kangaroo Builder"
+  copyright: "2026 Kangaroo Builder"
   favicon: logos/favicon.png
 
 nav:

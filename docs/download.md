@@ -6,14 +6,12 @@ description: Download Kangaroo Builder, a complete rigging system in Maya that h
 
 |                                                                                                                                    | Release Date | Supported Maya Versions
 |------------------------------------------------------------------------------------------------------------------------------------|--------------| -----
+| [Kangaroo Builder v5.21](https://github.com/ThomasBittner1/KangarooBuilderPublic/releases/download/v5.21/kangarooBuilder_5_21.zip) | 2026-05-30   | Windows: 2023-2026, Linux: 2024-2026, Mac: 2023-2026
 | [Kangaroo Builder v5.20](https://github.com/ThomasBittner1/KangarooBuilderPublic/releases/download/v5.20/kangarooBuilder_5_20.zip) | 2026-02-15   | Windows: 2023-2026, Linux: 2024-2026, Mac: 2023-2026
 | [Kangaroo Builder v5.18](https://github.com/ThomasBittner1/KangarooBuilderPublic/releases/download/v5.18/kangarooBuilder_5_18.zip) | 2025-12-01   | Windows: 2023-2026, Linux: 2024-2026, Mac: 2023-2026
 | [Kangaroo Builder v5.16](https://github.com/ThomasBittner1/KangarooBuilderPublic/releases/download/v5.16/kangarooBuilder_5_16.zip) | 2025-11-24   | Windows: 2023-2026, Linux: 2024-2026, Mac: 2023-2026
 | [Kangaroo Builder v5.15](https://github.com/ThomasBittner1/KangarooBuilderPublic/releases/download/v5.15/kangarooBuilder_5_15.zip) | 2025-10-04   | Windows: 2023-2026, Linux: 2024-2026, Mac: 2023-2026
 | [Kangaroo Builder v5.14](https://github.com/ThomasBittner1/KangarooBuilderPublic/releases/download/v5.14/kangarooBuilder_5_14.zip) | 2025-08-24   | Windows: 2023-2026, Linux: 2024-2026, Mac: 2023-2026
-
-*Need an older release?*  
-Please contact us at [info@kangaroobuilder.com](mailto:info@kangaroobuilder.com)
 
 
 

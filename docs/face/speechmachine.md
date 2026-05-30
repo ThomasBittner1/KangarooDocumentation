@@ -21,11 +21,12 @@ allowfullscreen></iframe>
 
 ## Requirements
 
-You can make the Speech Machine work with any rig, but to get the best results possible it’s recommended to have all the controls listed on this page.
+You can make the Speech Machine work with any rig, but to get the best results possible it’s recommended to have all the controls listed below.
 The speech machine only animates your controls. While the responsibility to get good shapes is still in the hands of the rigger, the speech machine only helps the animator.
 
 For each of those points listed below you don’t need just one single attribute. If more than one attributes are required to achieve those, it’ll work. 
-Just keep in mind you might get issues if you use one control attribute for more than one point. More details about that in the Tutorial (Multiple Control Usages)
+Just keep in mind you might get issues if you use one control attribute for more than one point. More details about 
+under [Multiple Control usage](#multiple-control-usage).
 
 - Jaw Open
 - Mouth Corners In and Out 
@@ -44,14 +45,14 @@ Just keep in mind you might get issues if you use one control attribute for more
     This video [Speech Machine for Animators](https://www.youtube.com/watch?v=9SmJqNh1j0A){target="_blank"} shows how to 
     add audio file, type down the text, and let it create the animation keys.
 
-You can use the Nora_Lipsync Rig to test it:  
+You can use the *Nora_Lipsync* Rig to test it:  
 After you've installed Kangaroo and downloaded the speechMachine files as shown [here](#download),
 you should have this rig in your Kangaroo installation folder:
-`scripts/speechMachine/external_tools/RIG_NORA_LIPSYNC_v1.ma"`.  
+`scripts/speechMachine/external_tools/RIG_NORA_LIPSYNC_v1.ma`.  
 Drag it into Maya, ideally with a namespace.
 And then you can test everything shown in the video above.  
 
-## Setup Tutorial
+## How to setup your Character
 
 This section tells you how to setup your character to work with the SpeechMachine.
 
@@ -138,7 +139,7 @@ One exception is the cornerIn and cornerOut containers. You can have a control t
 Another exception is the Puff Container. Since internally this is more like a post effect, it can handle it if there are already extisting control attributes defined here.
 
 ### Finish the Setup
-Now that you know what containers are and how they work – let’s from top to bottom and map the Ctrls and Poses for each container.
+Now that you know what containers are and how they work – go from top to bottom and map the Ctrls and Poses for each container.
 
 Always remember to use the test sliders to see if things are set correctly!
 
@@ -149,26 +150,20 @@ So next time you reference your rig, this node gets reference with the correct n
 
 Also make sure you only have that node in the rig only once to avoid clashing names.
 
-### Kangaroo Builder
-If you are using Kangaroo Builder, you can click the Fill Commands with Setup Node button to store the settings. And when you rebuild the rig, the setup node is created automatically.
-
-You can find an example to it in the MOUTH character inside the template project.
-
 
 ## Download
-First you need to download and install Kangaroo-Builder [here](../download.md).
+First you need to download and install Kangaroo-Builder v5.21 or later [here](../download.md).
 
-That doesn't give you everything, you also need to download [this](xxx) and put it inside  
-`scripts/speechMachine/external_tools`.  
+That doesn't give you everything though, you also need to download [external_tools](https://github.com/ThomasBittner1/SpeechMachine_external_tools/releases/download/untagged-2d9df526e7c1f46aa2b7/speechMachine_external_tools_v1.zip),
+extract it and put the contents inside `scripts/speechMachine/external_tools`.  
 
 So your external_tools folder should look like this:  
 ```text
-mayaTools/
-└── external_tools/
-    ├── bin/
-    ├── ffmpeg/
-    ├── licenses/
-    ├── montreal-forced-aligner/
-    ├── montreal-forced-aligner-lexicons/
+└── external_tools
+    ├── bin
+    ├── ffmpeg
+    ├── licenses
+    ├── montreal-forced-aligner
+    ├── montreal-forced-aligner-lexicons
     └── RIG_NORA_LIPSYNC_v1.ma
 ```
